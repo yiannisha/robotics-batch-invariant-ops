@@ -11,6 +11,7 @@ from batch_invariant_ops import (
     conv2d_batch_invariant,
     is_batch_invariant_mode_enabled,
     matmul_persistent,
+    scaled_dot_product_attention_batch_invariant,
     set_batch_invariant_mode,
 )
 
@@ -148,6 +149,99 @@ def test_mode_overrides_rank_three_matmul_and_conv2d() -> None:
         _assert_first_sample_equal(
             F.conv2d(image[:1], weight, stride=14), F.conv2d(image, weight, stride=14)
         )
+
+
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("batch_size", (2, 3, 5, 17))
+def test_sdpa_is_batch_invariant(dtype: torch.dtype, batch_size: int) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7100 + batch_size)
+    target = torch.randn(1, 16, 256, 72, device="cuda", dtype=dtype, generator=generator)
+    companions = torch.randn(
+        batch_size - 1, 16, 256, 72, device="cuda", dtype=dtype, generator=generator
+    )
+    query = torch.cat((target, companions))
+    key = torch.randn_like(query)
+    value = torch.randn_like(query)
+
+    alone = scaled_dot_product_attention_batch_invariant(
+        query[:1], key[:1], value[:1]
+    )
+    batched = scaled_dot_product_attention_batch_invariant(query, key, value)
+    _assert_first_sample_equal(alone, batched)
+
+
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("causal", (False, True))
+def test_sdpa_matches_torch(dtype: torch.dtype, causal: bool) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7200)
+    query = torch.randn(2, 8, 33, 65, device="cuda", dtype=dtype, generator=generator)
+    key = torch.randn(2, 8, 47, 65, device="cuda", dtype=dtype, generator=generator)
+    value = torch.randn(2, 8, 47, 39, device="cuda", dtype=dtype, generator=generator)
+
+    expected = F.scaled_dot_product_attention(query, key, value, is_causal=causal)
+    actual = scaled_dot_product_attention_batch_invariant(
+        query, key, value, is_causal=causal
+    )
+    torch.testing.assert_close(actual, expected, **TOLERANCES[dtype])
+
+
+@pytest.mark.parametrize("mask_kind", ("boolean", "additive"))
+def test_sdpa_matches_torch_with_mask(mask_kind: str) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7250)
+    query = torch.randn(
+        2, 4, 17, 32, device="cuda", dtype=torch.bfloat16, generator=generator
+    )
+    key = torch.randn(
+        2, 4, 23, 32, device="cuda", dtype=torch.bfloat16, generator=generator
+    )
+    value = torch.randn(
+        2, 4, 23, 24, device="cuda", dtype=torch.bfloat16, generator=generator
+    )
+    boolean_mask = torch.rand(2, 1, 17, 23, device="cuda", generator=generator) > 0.2
+    # Exercise the fully-masked-row behavior as well as ordinary masking.
+    boolean_mask[:, :, -1] = False
+    mask = boolean_mask if mask_kind == "boolean" else torch.where(
+        boolean_mask,
+        torch.tensor(0.0, device="cuda", dtype=torch.bfloat16),
+        torch.tensor(float("-inf"), device="cuda", dtype=torch.bfloat16),
+    )
+
+    expected = F.scaled_dot_product_attention(query, key, value, attn_mask=mask)
+    actual = scaled_dot_product_attention_batch_invariant(
+        query, key, value, attn_mask=mask
+    )
+    torch.testing.assert_close(actual, expected, **TOLERANCES[torch.bfloat16])
+
+
+def test_sdpa_matches_torch_with_grouped_query_attention() -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7275)
+    query = torch.randn(
+        2, 8, 17, 32, device="cuda", dtype=torch.bfloat16, generator=generator
+    )
+    key = torch.randn(
+        2, 2, 23, 32, device="cuda", dtype=torch.bfloat16, generator=generator
+    )
+    value = torch.randn(
+        2, 2, 23, 24, device="cuda", dtype=torch.bfloat16, generator=generator
+    )
+
+    expected = F.scaled_dot_product_attention(query, key, value, enable_gqa=True)
+    actual = scaled_dot_product_attention_batch_invariant(
+        query, key, value, enable_gqa=True
+    )
+    torch.testing.assert_close(actual, expected, **TOLERANCES[torch.bfloat16])
+
+
+def test_mode_overrides_scaled_dot_product_attention() -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7300)
+    query = torch.randn(3, 16, 256, 72, device="cuda", dtype=torch.bfloat16, generator=generator)
+    key = torch.randn_like(query)
+    value = torch.randn_like(query)
+
+    with set_batch_invariant_mode():
+        alone = F.scaled_dot_product_attention(query[:1], key[:1], value[:1])
+        batched = F.scaled_dot_product_attention(query, key, value)
+    _assert_first_sample_equal(alone, batched)
 
 
 def test_mode_context_is_exception_safe_and_reentrant() -> None:

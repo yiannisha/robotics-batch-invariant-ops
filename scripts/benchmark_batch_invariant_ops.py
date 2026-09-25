@@ -11,7 +11,11 @@ from pathlib import Path
 import torch
 import triton
 
-from batch_invariant_ops import bmm_persistent, conv2d_batch_invariant
+from batch_invariant_ops import (
+    bmm_persistent,
+    conv2d_batch_invariant,
+    scaled_dot_product_attention_batch_invariant,
+)
 
 
 def benchmark(
@@ -136,6 +140,39 @@ def main() -> None:
             )
         )
         del left, right
+
+        # OpenPI Pi0.5 SigLIP layer-0 attention shape.  This is the fused-SDPA
+        # path whose stock kernel first diverges when request B changes from 1
+        # to 3.
+        query = torch.randn(
+            batch_size,
+            16,
+            256,
+            72,
+            device="cuda",
+            dtype=dtype,
+            generator=generator,
+        )
+        key = torch.randn_like(query)
+        value = torch.randn_like(query)
+        cases.append(
+            run_case(
+                "scaled_dot_product_attention",
+                {
+                    "query": list(query.shape),
+                    "key": list(key.shape),
+                    "value": list(value.shape),
+                    "dtype": str(dtype),
+                    "causal": False,
+                },
+                lambda: torch.nn.functional.scaled_dot_product_attention(query, key, value),
+                lambda: scaled_dot_product_attention_batch_invariant(query, key, value),
+                batch_size=batch_size,
+                warmup=args.warmup,
+                repetitions=args.repetitions,
+            )
+        )
+        del query, key, value
 
     device = torch.cuda.current_device()
     properties = torch.cuda.get_device_properties(device)

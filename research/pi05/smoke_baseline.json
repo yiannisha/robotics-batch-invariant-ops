@@ -1,0 +1,98 @@
+{
+  "model": "openpi-pi05-random-weights",
+  "batch_invariant_ops": false,
+  "seed": 42,
+  "requested_batch_sizes": [
+    1
+  ],
+  "repeatability": {
+    "exact": true,
+    "tensors": [
+      {
+        "path": "output",
+        "reference_shape": [
+          1,
+          15,
+          32
+        ],
+        "candidate_shape": [
+          1,
+          15,
+          32
+        ],
+        "dtype": "torch.float32",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "847b01d6082f28cba04b08c4e1c1a54a9bfad7ddb378097cc9f4de80ed538b93",
+        "candidate_hash": "847b01d6082f28cba04b08c4e1c1a54a9bfad7ddb378097cc9f4de80ed538b93"
+      }
+    ]
+  },
+  "composition_results": {
+    "duplicate": [
+      {
+        "batch_size": 1,
+        "status": "PASS",
+        "exact": true,
+        "tensors": [
+          {
+            "path": "output",
+            "reference_shape": [
+              1,
+              15,
+              32
+            ],
+            "candidate_shape": [
+              1,
+              15,
+              32
+            ],
+            "dtype": "torch.float32",
+            "exact": true,
+            "differing_elements": 0,
+            "max_abs_difference": 0.0,
+            "mean_abs_difference": 0.0,
+            "first_differing_index": null,
+            "reference_hash": "847b01d6082f28cba04b08c4e1c1a54a9bfad7ddb378097cc9f4de80ed538b93",
+            "candidate_hash": "847b01d6082f28cba04b08c4e1c1a54a9bfad7ddb378097cc9f4de80ed538b93"
+          }
+        ]
+      }
+    ],
+    "unrelated": [
+      {
+        "batch_size": 1,
+        "status": "PASS",
+        "exact": true,
+        "tensors": [
+          {
+            "path": "output",
+            "reference_shape": [
+              1,
+              15,
+              32
+            ],
+            "candidate_shape": [
+              1,
+              15,
+              32
+            ],
+            "dtype": "torch.float32",
+            "exact": true,
+            "differing_elements": 0,
+            "max_abs_difference": 0.0,
+            "mean_abs_difference": 0.0,
+            "first_differing_index": null,
+            "reference_hash": "847b01d6082f28cba04b08c4e1c1a54a9bfad7ddb378097cc9f4de80ed538b93",
+            "candidate_hash": "847b01d6082f28cba04b08c4e1c1a54a9bfad7ddb378097cc9f4de80ed538b93"
+          }
+        ]
+      }
+    ]
+  },
+  "maximum_tested_batch": 1,
+  "end_to_end_exact": true
+}

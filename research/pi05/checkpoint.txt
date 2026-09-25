@@ -1,0 +1,12 @@
+configuration: pi05_droid architecture
+weights: deterministic random initialization (seed 42)
+official_checkpoint: gs://openpi-assets/checkpoints/pi05_droid
+official_checkpoint_native_size_bytes: 12429488598
+official_weights_executed: false
+
+The current official PyTorch workflow requires downloading the 12.43 GB JAX
+checkpoint and writing a second converted safetensors checkpoint. The 30 GB
+workspace had 13 GB free, so that conversion could not be performed without
+exhausting the filesystem. Results in this directory prove behavior of the
+official current PyTorch architecture and inference implementation, not the
+released learned parameters or policy quality.

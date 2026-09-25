@@ -1,4 +1,5 @@
 import contextlib
+import math
 from collections import namedtuple
 from collections.abc import Callable
 from typing import Any, Dict
@@ -16,6 +17,8 @@ __all__ = [
     "matmul_persistent",
     "bmm_persistent",
     "conv2d_batch_invariant",
+    "scaled_dot_product_attention_batch_invariant",
+    "softmax",
 ]
 
 
@@ -585,6 +588,147 @@ def log_softmax(input: torch.Tensor, dim: int = -1) -> torch.Tensor:
 
 
 @triton.jit
+def _softmax_kernel(
+    input_ptr,
+    output_ptr,
+    input_row_stride,
+    output_row_stride,
+    n_cols,
+    BLOCK_SIZE: tl.constexpr,
+):
+    """Compute one softmax row per Triton program.
+
+    The program and reduction tree for an existing row do not depend on the
+    number of other rows.  This is the property needed by attention when the
+    leading dimensions contain the request batch.
+    """
+    row_idx = tl.program_id(0).to(tl.int64)
+    input_row = input_ptr + row_idx * input_row_stride
+    output_row = output_ptr + row_idx * output_row_stride
+
+    max_value = -float("inf")
+    for col_offset in range(0, n_cols, BLOCK_SIZE):
+        columns = col_offset + tl.arange(0, BLOCK_SIZE)
+        mask = columns < n_cols
+        values = tl.load(input_row + columns, mask=mask, other=-float("inf"))
+        max_value = tl.maximum(max_value, tl.max(values))
+
+    denominator = 0.0
+    for col_offset in range(0, n_cols, BLOCK_SIZE):
+        columns = col_offset + tl.arange(0, BLOCK_SIZE)
+        mask = columns < n_cols
+        values = tl.load(input_row + columns, mask=mask, other=-float("inf"))
+        shifted = tl.where(max_value == -float("inf"), -float("inf"), values - max_value)
+        denominator += tl.sum(tl.where(mask, tl.exp(shifted), 0.0))
+
+    for col_offset in range(0, n_cols, BLOCK_SIZE):
+        columns = col_offset + tl.arange(0, BLOCK_SIZE)
+        mask = columns < n_cols
+        values = tl.load(input_row + columns, mask=mask, other=-float("inf"))
+        shifted = tl.where(max_value == -float("inf"), -float("inf"), values - max_value)
+        result = tl.where(denominator == 0.0, 0.0, tl.exp(shifted) / denominator)
+        tl.store(output_row + columns, result, mask=mask)
+
+
+def softmax(
+    input: torch.Tensor,
+    dim: int = -1,
+    *,
+    dtype: torch.dtype | None = None,
+) -> torch.Tensor:
+    """Batch-invariant softmax along the last dimension."""
+    if dim != -1 and dim != input.ndim - 1:
+        raise ValueError("This implementation only supports softmax along the last dimension")
+    if input.dtype not in {torch.float16, torch.bfloat16, torch.float32}:
+        raise ValueError(f"unsupported softmax dtype: {input.dtype}")
+    if dtype not in {None, torch.float16, torch.bfloat16, torch.float32}:
+        raise ValueError(f"unsupported softmax output dtype: {dtype}")
+
+    original_shape = input.shape
+    input_2d = input.reshape(-1, input.shape[-1]).contiguous()
+    output = torch.empty(input_2d.shape, dtype=dtype or input.dtype, device=input.device)
+    if input_2d.numel() == 0:
+        return output.reshape(original_shape)
+    _softmax_kernel[(input_2d.shape[0],)](
+        input_2d,
+        output,
+        input_2d.stride(0),
+        output.stride(0),
+        input_2d.shape[1],
+        BLOCK_SIZE=1024,
+    )
+    return output.reshape(original_shape)
+
+
+def scaled_dot_product_attention_batch_invariant(
+    query: torch.Tensor,
+    key: torch.Tensor,
+    value: torch.Tensor,
+    attn_mask: torch.Tensor | None = None,
+    dropout_p: float = 0.0,
+    is_causal: bool = False,
+    *,
+    scale: float | None = None,
+    enable_gqa: bool = False,
+) -> torch.Tensor:
+    """Eager SDPA with fixed per-head GPU reductions.
+
+    Vendor fused-attention kernels may select a different decomposition when
+    the request batch changes.  This implementation flattens the leading
+    dimensions into independent heads, then uses the batch-invariant BMM and
+    row-wise softmax kernels.  Inference requires ``dropout_p == 0``.
+    """
+    if dropout_p != 0.0:
+        raise ValueError("batch-invariant SDPA only supports dropout_p=0")
+    if query.ndim < 3 or key.ndim != query.ndim or value.ndim != query.ndim:
+        raise ValueError("query, key, and value must have matching rank >= 3")
+    if query.dtype != key.dtype or query.dtype != value.dtype:
+        raise ValueError("query, key, and value must have the same dtype")
+
+    if enable_gqa:
+        if query.shape[-3] % key.shape[-3] or key.shape[-3] != value.shape[-3]:
+            raise ValueError("invalid grouped-query attention head counts")
+        repeats = query.shape[-3] // key.shape[-3]
+        key = key.repeat_interleave(repeats, dim=-3)
+        value = value.repeat_interleave(repeats, dim=-3)
+
+    if query.shape[:-2] != key.shape[:-2] or query.shape[:-2] != value.shape[:-2]:
+        raise ValueError("leading query, key, and value dimensions must match")
+    if query.shape[-1] != key.shape[-1] or key.shape[-2] != value.shape[-2]:
+        raise ValueError("incompatible attention dimensions")
+
+    leading_shape = query.shape[:-2]
+    query_length, key_length = query.shape[-2], key.shape[-2]
+    head_dim, value_dim = query.shape[-1], value.shape[-1]
+    flat_query = query.reshape(-1, query_length, head_dim)
+    flat_key = key.reshape(-1, key_length, head_dim)
+    flat_value = value.reshape(-1, key_length, value_dim)
+
+    scores = bmm_persistent(flat_query, flat_key.transpose(1, 2))
+    scores = scores * (scale if scale is not None else 1.0 / math.sqrt(head_dim))
+    scores = scores.reshape(*leading_shape, query_length, key_length)
+
+    if is_causal:
+        if attn_mask is not None:
+            raise ValueError("attn_mask and is_causal cannot both be set")
+        causal_mask = torch.ones(
+            (query_length, key_length), dtype=torch.bool, device=query.device
+        ).tril()
+        scores = scores.masked_fill(~causal_mask, float("-inf"))
+    elif attn_mask is not None:
+        if attn_mask.dtype == torch.bool:
+            scores = scores.masked_fill(~attn_mask, float("-inf"))
+        else:
+            scores = scores + attn_mask
+
+    probabilities = softmax(scores, dim=-1, dtype=query.dtype)
+    output = bmm_persistent(
+        probabilities.reshape(-1, query_length, key_length), flat_value
+    )
+    return output.reshape(*leading_shape, query_length, value_dim)
+
+
+@triton.jit
 def mean_kernel(
     input_ptr,
     output_ptr,
@@ -779,6 +923,11 @@ def enable_batch_invariant_mode():
     _batch_invariant_LIB.impl("aten::addmm", addmm_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::bmm", bmm_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::convolution", conv2d_batch_invariant, dispatch_key)
+    _batch_invariant_LIB.impl(
+        "aten::scaled_dot_product_attention",
+        scaled_dot_product_attention_batch_invariant,
+        dispatch_key,
+    )
     _batch_invariant_LIB.impl("aten::_log_softmax", _log_softmax_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::mean.dim", mean_batch_invariant, dispatch_key)
 
