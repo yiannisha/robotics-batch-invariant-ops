@@ -1,0 +1,24 @@
+{
+  "batch_size": 2,
+  "composition": "unrelated",
+  "dtype": "torch.bfloat16",
+  "baseline": [
+    {"stage": "inputs_embeds", "exact": true, "max_abs_difference": 0.0},
+    {"stage": "prefill_kv_layer_0", "exact": false, "max_abs_difference": 0.015625},
+    {"step": 0, "joint_model_max_abs_difference": 0.0390625, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 1, "joint_model_max_abs_difference": 0.0546875, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 2, "joint_model_max_abs_difference": 0.046875, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 3, "joint_model_max_abs_difference": 0.0625, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 4, "joint_model_max_abs_difference": 0.046875, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 5, "joint_model_max_abs_difference": 0.046875, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 6, "joint_model_max_abs_difference": 0.0390625, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 7, "joint_model_max_abs_difference": 0.0546875, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 8, "joint_model_max_abs_difference": 0.046875, "updated_action_max_abs_difference": 0.0078125},
+    {"step": 9, "joint_model_max_abs_difference": 0.046875, "updated_action_max_abs_difference": 0.0078125},
+    {"stage": "final_action", "exact": false, "differing_elements": 10, "max_abs_difference": 0.0078125}
+  ],
+  "batch_invariant_ops": {
+    "all_stages_exact": true,
+    "final_action_max_abs_difference": 0.0
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "batch_size": 2,
+  "composition": "unrelated",
+  "last_exact_tensor": {
+    "name": "joint_model.vlm.layer_0.self_attn.k_proj.input",
+    "shape": [1, 276, 2048],
+    "dtype": "torch.bfloat16",
+    "differing_elements": 0,
+    "max_abs_difference": 0.0
+  },
+  "first_non_identical_tensor": {
+    "name": "joint_model.vlm.layer_0.self_attn.k_proj.output",
+    "shape": [1, 276, 256],
+    "dtype": "torch.bfloat16",
+    "differing_elements": 27054,
+    "max_abs_difference": 0.015625,
+    "mean_abs_difference": 0.0007049103151075542
+  },
+  "operation": "aten::mm",
+  "dispatch_path": ["aten::linear", "aten::matmul", "aten::mm"],
+  "root_cause": "The rank-3 linear input is flattened from [B, 276, 2048] to [B*276, 2048]. Changing B changes GEMM M and the vendor kernel's arithmetic schedule.",
+  "replacement": "fixed-configuration persistent Triton matmul registered for aten::mm"
+}

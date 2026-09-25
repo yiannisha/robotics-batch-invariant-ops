@@ -37,9 +37,7 @@ def attention_matmul_case(batch_size: int) -> tuple[torch.Tensor, torch.Tensor]:
     # dimension.  These rank-3 inputs make torch.matmul dispatch aten::bmm,
     # not aten::mm; consequently an mm-only replacement cannot cover it.
     heads, queries, tokens, head_dim = 8, 4, 281, 256
-    query = torch.randn(
-        batch_size * heads, queries, tokens, device="cuda", dtype=torch.float32
-    )
+    query = torch.randn(batch_size * heads, queries, tokens, device="cuda", dtype=torch.float32)
     key = torch.randn(batch_size * heads, tokens, head_dim, device="cuda", dtype=torch.float32)
     alone = torch.matmul(query[:heads], key[:heads]).reshape(1, heads, queries, head_dim)
     batched = torch.matmul(query, key).reshape(batch_size, heads, queries, head_dim)

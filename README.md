@@ -6,6 +6,12 @@ A companion library release to https://thinkingmachines.ai/blog/defeating-nondet
 
 This library primarily leverages torch.Library to sub out existing PyTorch kernels with "batch-invariant" ones. This allows many existing PyTorch models to use the batch-invariant ops with low overhead and non-intrusive code changes.
 
+Batch invariance means that the output for a fixed sample is bitwise identical
+whether it is evaluated alone or beside other samples. This is stricter than
+ordinary run-to-run determinism: a deterministic CUDA library can consistently
+choose one reduction schedule for B=1 and a different, equally deterministic
+schedule for B=32. Floating-point reduction then produces different bits.
+
 ## Installation
 
 ```bash
@@ -89,6 +95,10 @@ with set_batch_invariant_mode(True):
 ### Reduction Operations
 - `torch.mean()` - Mean computation along specified dimensions
 
+The current kernels cover CUDA float32, float16, and bfloat16 paths exercised
+by the tests. Conv2D covers regular non-transposed 2-D convolution, including
+groups and dilation. Unsupported operator overloads and dtypes are not claimed.
+
 ## Conv2d and attention BMM demonstration
 
 On CUDA, run `python scripts/check_conv2d_bmm_batch_invariance.py`.  It
@@ -96,3 +106,58 @@ compares a sample evaluated alone with the same sample at the start of a larger
 batch for a 14x14 patch convolution and an attention-shaped rank-3 matmul.  It
 also profiles the latter to show why an `mm` override does not cover it:
 rank-3 `torch.matmul` dispatches `aten::bmm`.
+
+## Robotics model status
+
+Only configurations that have been executed end to end are marked PASS.
+
+| Model configuration | Precision | Batch sizes | Baseline | With this library |
+|---|---:|---:|---:|---:|
+| π0 pre-fix PyTorch reference, random weights and synthetic inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+
+This π0 entry is a numerical regression of the public companion investigation,
+not an official-checkpoint policy-quality claim. Official π0/π0.5, π0-FAST,
+DreamZero, InternVLA-A, MolmoAct, GR00T, Cosmos, and the other planned model
+families are not yet marked supported.
+
+The raw evidence is in [`research/pi0`](research/pi0), including environment,
+model commits, baseline and fixed hashes, first-divergence diagnostics,
+flow-step amplification, and operator benchmarks.
+
+## Reproduction
+
+Run the operator regression suite and the focused stock-kernel demonstration:
+
+```bash
+python -m pytest -q
+python scripts/check_conv2d_bmm_batch_invariance.py --require-standard-difference
+```
+
+The reusable model harness accepts an adapter module and tests repeatability,
+duplicate batches, and unrelated batches. For the π0 reference adapter, set
+`PIZERO_SOURCE` and `PIZERO_CONFIG` to the companion checkout before running:
+
+```bash
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.pi0_reference \
+  --batch-invariant-ops \
+  --output research/pi0/fixed.json
+```
+
+## Performance
+
+Batch invariance changes the arithmetic decomposition and can be slower than
+vendor kernels. On an NVIDIA H100 NVL with PyTorch 2.5.0, CUDA 12.4, Triton
+3.1.0, and bfloat16 π0 shapes, the Conv2D replacement was 1.86–4.46× slower
+and the BMM replacement was 1.13–3.16× slower across B=1, 8, and 32. See
+[`research/pi0/benchmarks.json`](research/pi0/benchmarks.json) for latency,
+throughput, memory, shapes, and exact environment data.
+
+## Attribution
+
+The operator approach and original matrix/reduction kernels come from Thinking
+Machines Lab's [Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/).
+The Conv2D/BMM investigation and π0 tracing methodology build on
+[Batch-Invariant VLAs](https://yiannisha.dev/blog/batch-invariant-vlas) and its
+companion repositories. π0 is from Physical Intelligence; the regression uses
+the cited open PyTorch reimplementation commit recorded in the research files.

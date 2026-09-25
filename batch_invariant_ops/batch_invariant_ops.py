@@ -85,7 +85,7 @@ def matmul_kernel_persistent(
     offs_k_for_mask = tl.arange(0, BLOCK_SIZE_K)
     num_pid_in_group = GROUP_SIZE_M * num_pid_n
 
-    for tile_id in tl.range(start_pid, num_tiles, NUM_SMS, flatten=True):
+    for tile_id in tl.range(start_pid, num_tiles, NUM_SMS):
         pid_m, pid_n = _compute_pid(tile_id, num_pid_in_group, num_pid_m, GROUP_SIZE_M, NUM_SMS)
         start_m = pid_m * BLOCK_SIZE_M
         start_n = pid_n * BLOCK_SIZE_N
@@ -172,7 +172,7 @@ def bmm_kernel_persistent(
     a_batch_ptr = a_ptr + batch_idx * stride_ab
     b_batch_ptr = b_ptr + batch_idx * stride_bb
     c_batch_ptr = c_ptr + batch_idx * stride_cb
-    for tile_id in tl.range(start_pid, num_tiles, NUM_SMS, flatten=True):
+    for tile_id in tl.range(start_pid, num_tiles, NUM_SMS):
         pid_m, pid_n = _compute_pid(tile_id, num_pid_in_group, num_pid_m, GROUP_SIZE_M, NUM_SMS)
         offs_am = pid_m * BLOCK_SIZE_M + tl.arange(0, BLOCK_SIZE_M)
         offs_bn = pid_n * BLOCK_SIZE_N + tl.arange(0, BLOCK_SIZE_N)
@@ -209,12 +209,12 @@ def get_compute_units():
     for the available accelerator. Assigns the value to NUM_SMS.
     """
     NUM_SMS = None
-    device_type = getattr(torch.accelerator.current_accelerator(), "type", "cpu")
+    device_type = _current_accelerator_type()
 
     # Use match/case for device-specific logic (Python 3.10+)
     match device_type:
         case "cuda":
-            device_properties = torch.cuda.get_device_properties(0)
+            device_properties = torch.cuda.get_device_properties(torch.cuda.current_device())
             NUM_SMS = device_properties.multi_processor_count
         case "xpu":
             device_properties = torch.xpu.get_device_properties(0)
@@ -225,6 +225,21 @@ def get_compute_units():
             NUM_SMS = torch.get_num_threads()
 
     return NUM_SMS
+
+
+def _current_accelerator_type() -> str:
+    """Return the active accelerator across supported PyTorch releases."""
+
+    accelerator = getattr(torch, "accelerator", None)
+    if accelerator is not None:
+        current = accelerator.current_accelerator()
+        if current is not None:
+            return current.type
+    if torch.cuda.is_available():
+        return "cuda"
+    if hasattr(torch, "xpu") and torch.xpu.is_available():
+        return "xpu"
+    return "cpu"
 
 
 def matmul_persistent(a: torch.Tensor, b: torch.Tensor, bias: torch.Tensor | None = None):
@@ -393,17 +408,25 @@ def conv2d_batch_invariant(
     """
     assert input.ndim == 4 and weight.ndim == 4, "only 2-D convolution is supported"
     assert not transposed, "transposed convolution is not supported"
-    assert len(output_padding) == 2 and tuple(output_padding) == (
-        0,
-        0,
-    ), "output_padding requires transposed convolution"
+    assert all(
+        value == 0 for value in output_padding
+    ), f"output_padding requires transposed convolution, got {output_padding!r}"
     assert input.dtype == weight.dtype and (
         bias is None or bias.dtype == input.dtype
     ), "Incompatible dtypes"
     assert input.shape[1] == weight.shape[1] * groups, "Incompatible channel dimensions"
     assert weight.shape[0] % groups == 0, "output channels must be divisible by groups"
 
-    stride, padding, dilation = tuple(stride), tuple(padding), tuple(dilation)
+    def pair(values, name):
+        values = tuple(values)
+        if len(values) == 1:
+            return values * 2
+        assert len(values) == 2, f"{name} must have one or two values, got {values!r}"
+        return values
+
+    stride = pair(stride, "stride")
+    padding = pair(padding, "padding")
+    dilation = pair(dilation, "dilation")
     kernel_size = tuple(weight.shape[-2:])
     output_height = (
         input.shape[-2] + 2 * padding[0] - dilation[0] * (kernel_size[0] - 1) - 1
@@ -749,7 +772,7 @@ def enable_batch_invariant_mode():
     global _batch_invariant_MODE, _batch_invariant_LIB
     if _batch_invariant_MODE:
         return
-    dispatch_key = getattr(torch.accelerator.current_accelerator(), "type", "cpu").upper()
+    dispatch_key = _current_accelerator_type().upper()
     _batch_invariant_MODE = True
     _batch_invariant_LIB = torch.library.Library("aten", "IMPL")
     _batch_invariant_LIB.impl("aten::mm", mm_batch_invariant, dispatch_key)

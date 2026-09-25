@@ -14,7 +14,6 @@ from batch_invariant_ops import (
     set_batch_invariant_mode,
 )
 
-
 pytestmark = pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA is required")
 DTYPES = (torch.float32, torch.float16, torch.bfloat16)
 TOLERANCES = {

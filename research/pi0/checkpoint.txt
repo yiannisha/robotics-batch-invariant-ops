@@ -1,0 +1,4 @@
+No checkpoint used.
+
+This regression uses deterministic randomly initialized weights, matching the
+public companion experiment's inexpensive and reproducible test mode.

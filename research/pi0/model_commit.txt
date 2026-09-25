@@ -1,0 +1,3 @@
+Repository: https://github.com/yiannisha/batch-invariant-pizero
+Pre-fix model commit: f1eca35dd0e493f7d2b5f2cedf5b86d4403a9841
+Synthetic inference config commit: 9a3ddc090aaf31126b69f980536701f7d1175f37
