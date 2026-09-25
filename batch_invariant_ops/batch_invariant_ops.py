@@ -72,6 +72,7 @@ def matmul_kernel_persistent(
     B_LARGE: tl.constexpr,
     C_LARGE: tl.constexpr,
     HAS_BIAS: tl.constexpr,
+    INPUT_PRECISION: tl.constexpr,
 ):
     start_pid = tl.program_id(axis=0)
     num_pid_m = tl.cdiv(M, BLOCK_SIZE_M)
@@ -110,7 +111,7 @@ def matmul_kernel_persistent(
 
             a = tl.load(a_ptrs, mask=offs_k_for_mask[None, :] < K - ki * BLOCK_SIZE_K, other=0.0)
             b = tl.load(b_ptrs, mask=offs_k_for_mask[:, None] < K - ki * BLOCK_SIZE_K, other=0.0)
-            accumulator = tl.dot(a, b, accumulator)
+            accumulator = tl.dot(a, b, accumulator, input_precision=INPUT_PRECISION)
 
         tile_id_c += NUM_SMS
         pid_m, pid_n = _compute_pid(tile_id_c, num_pid_in_group, num_pid_m, GROUP_SIZE_M, NUM_SMS)
@@ -151,6 +152,7 @@ def bmm_kernel_persistent(
     BLOCK_SIZE_K: tl.constexpr,
     GROUP_SIZE_M: tl.constexpr,
     NUM_SMS: tl.constexpr,
+    INPUT_PRECISION: tl.constexpr,
 ):
     """One persistent matmul grid per batch element.
 
@@ -192,7 +194,7 @@ def bmm_kernel_persistent(
                 mask=offs_k_for_mask[:, None] < K - ki * BLOCK_SIZE_K,
                 other=0.0,
             )
-            accumulator = tl.dot(a, b, accumulator)
+            accumulator = tl.dot(a, b, accumulator, input_precision=INPUT_PRECISION)
 
         offs_cm = pid_m * BLOCK_SIZE_M + tl.arange(0, BLOCK_SIZE_M)
         offs_cn = pid_n * BLOCK_SIZE_N + tl.arange(0, BLOCK_SIZE_N)
@@ -294,6 +296,7 @@ def matmul_persistent(a: torch.Tensor, b: torch.Tensor, bias: torch.Tensor | Non
         B_LARGE=b.numel() > 2**31,
         C_LARGE=c.numel() > 2**31,
         HAS_BIAS=bias is not None,
+        INPUT_PRECISION="ieee",
         **configs[dtype],
     )
     return c
@@ -371,6 +374,7 @@ def bmm_persistent(a: torch.Tensor, b: torch.Tensor):
         c.stride(1),
         c.stride(2),
         NUM_SMS=num_sms,
+        INPUT_PRECISION="ieee",
         **configs[a.dtype],
     )
     return c
@@ -428,7 +432,6 @@ def conv2d_batch_invariant(
         ).squeeze(0)
         group_outputs = [
             matmul_persistent(
-                flattened_weight[group * outputs_per_group : (group + 1) * outputs_per_group],
                 patches[
                     group
                     * channels_per_group
@@ -437,13 +440,19 @@ def conv2d_batch_invariant(
                     * channels_per_group
                     * kernel_size[0]
                     * kernel_size[1]
-                ],
-            )
+                ].transpose(0, 1),
+                flattened_weight[
+                    group * outputs_per_group : (group + 1) * outputs_per_group
+                ].transpose(0, 1),
+                bias=(
+                    None
+                    if bias is None
+                    else bias[group * outputs_per_group : (group + 1) * outputs_per_group]
+                ),
+            ).transpose(0, 1)
             for group in range(groups)
         ]
         output = torch.cat(group_outputs, dim=0)
-        if bias is not None:
-            output = output + bias[:, None]
         outputs.append(output.reshape(1, weight.shape[0], output_height, output_width))
     return torch.cat(outputs, dim=0)
 
@@ -761,16 +770,22 @@ def disable_batch_invariant_mode():
 
 @contextlib.contextmanager
 def set_batch_invariant_mode(enabled: bool = True):
-    global _batch_invariant_MODE, _batch_invariant_LIB
-    old_data = (_batch_invariant_MODE, _batch_invariant_LIB)
+    previously_enabled = is_batch_invariant_mode_enabled()
+    if enabled == previously_enabled:
+        yield
+        return
+
     if enabled:
         enable_batch_invariant_mode()
     else:
         disable_batch_invariant_mode()
-    yield
-    if _batch_invariant_LIB is not None:
-        _batch_invariant_LIB._destroy()
-    _batch_invariant_MODE, _batch_invariant_LIB = old_data
+    try:
+        yield
+    finally:
+        if previously_enabled:
+            enable_batch_invariant_mode()
+        else:
+            disable_batch_invariant_mode()
 
 
 AttentionBlockSize = namedtuple("AttentionBlockSize", ["block_m", "block_n"])
