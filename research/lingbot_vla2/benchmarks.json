@@ -1,0 +1,348 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 50,
+  "repetitions": 1000,
+  "cases": [
+    {
+      "operator": "lingbot_vla2_state_projection_addmm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          1,
+          55
+        ],
+        "right": [
+          55,
+          768
+        ],
+        "bias": [
+          768
+        ],
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.006438752174377441,
+        "peak_incremental_bytes": 1054720
+      },
+      "batch_invariant": {
+        "latency_ms": 0.028714879989624024,
+        "peak_incremental_bytes": 6144
+      },
+      "latency_ratio": 4.45969641507447,
+      "stock_samples_per_second": 155309.5961635904,
+      "batch_invariant_samples_per_second": 34825.149900029006
+    },
+    {
+      "operator": "lingbot_vla2_token_choice_moe",
+      "batch_size": 1,
+      "shape": {
+        "hidden": [
+          51,
+          768
+        ],
+        "experts": 32,
+        "top_k": 4,
+        "intermediate": 512,
+        "logical_robot_batch": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.07628530883789063,
+        "peak_incremental_bytes": 1024
+      },
+      "batch_invariant": {
+        "latency_ms": 0.6267797241210937,
+        "peak_incremental_bytes": 15197184
+      },
+      "latency_ratio": 8.216257280324132,
+      "stock_samples_per_second": 13108.683903017822,
+      "batch_invariant_samples_per_second": 1595.456843155316
+    },
+    {
+      "operator": "lingbot_vla2_action_expert_mm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          51,
+          768
+        ],
+        "right": [
+          768,
+          4096
+        ],
+        "logical_robot_batch": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.019903871536254884,
+        "peak_incremental_bytes": 1671168
+      },
+      "batch_invariant": {
+        "latency_ms": 0.08935580444335937,
+        "peak_incremental_bytes": 1671168
+      },
+      "latency_ratio": 4.489368024738195,
+      "stock_samples_per_second": 50241.48182319711,
+      "batch_invariant_samples_per_second": 11191.214787102917
+    },
+    {
+      "operator": "lingbot_vla2_action_attention_bmm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          32,
+          51,
+          128
+        ],
+        "right": [
+          32,
+          128,
+          321
+        ],
+        "logical_robot_batch": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.012507712364196778,
+        "peak_incremental_bytes": 4191232
+      },
+      "batch_invariant": {
+        "latency_ms": 0.031555551528930664,
+        "peak_incremental_bytes": 4191232
+      },
+      "latency_ratio": 2.5228875281189045,
+      "stock_samples_per_second": 79950.67130440989,
+      "batch_invariant_samples_per_second": 31690.144888869494
+    },
+    {
+      "operator": "lingbot_vla2_state_projection_addmm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          2,
+          55
+        ],
+        "right": [
+          55,
+          768
+        ],
+        "bias": [
+          768
+        ],
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.006794271945953369,
+        "peak_incremental_bytes": 1060864
+      },
+      "batch_invariant": {
+        "latency_ms": 0.02838937568664551,
+        "peak_incremental_bytes": 12288
+      },
+      "latency_ratio": 4.178427933482125,
+      "stock_samples_per_second": 294365.6091350875,
+      "batch_invariant_samples_per_second": 70448.88982679562
+    },
+    {
+      "operator": "lingbot_vla2_token_choice_moe",
+      "batch_size": 2,
+      "shape": {
+        "hidden": [
+          102,
+          768
+        ],
+        "experts": 32,
+        "top_k": 4,
+        "intermediate": 512,
+        "logical_robot_batch": 2,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.07605206298828125,
+        "peak_incremental_bytes": 2048
+      },
+      "batch_invariant": {
+        "latency_ms": 0.6321448974609375,
+        "peak_incremental_bytes": 30394368
+      },
+      "latency_ratio": 8.312001971049014,
+      "stock_samples_per_second": 26297.774464161175,
+      "batch_invariant_samples_per_second": 3163.831596257703
+    },
+    {
+      "operator": "lingbot_vla2_action_expert_mm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          102,
+          768
+        ],
+        "right": [
+          768,
+          4096
+        ],
+        "logical_robot_batch": 2,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.02938812828063965,
+        "peak_incremental_bytes": 3342336
+      },
+      "batch_invariant": {
+        "latency_ms": 0.088657470703125,
+        "peak_incremental_bytes": 3342336
+      },
+      "latency_ratio": 3.016778403050966,
+      "stock_samples_per_second": 68054.69136724719,
+      "batch_invariant_samples_per_second": 22558.73063080181
+    },
+    {
+      "operator": "lingbot_vla2_action_attention_bmm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          64,
+          51,
+          128
+        ],
+        "right": [
+          64,
+          128,
+          321
+        ],
+        "logical_robot_batch": 2,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.015420672416687011,
+        "peak_incremental_bytes": 8382464
+      },
+      "batch_invariant": {
+        "latency_ms": 0.049635616302490235,
+        "peak_incremental_bytes": 8382464
+      },
+      "latency_ratio": 3.2187712027900006,
+      "stock_samples_per_second": 129696.03049447837,
+      "batch_invariant_samples_per_second": 40293.646961318365
+    },
+    {
+      "operator": "lingbot_vla2_state_projection_addmm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          8,
+          55
+        ],
+        "right": [
+          55,
+          768
+        ],
+        "bias": [
+          768
+        ],
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.006389599800109863,
+        "peak_incremental_bytes": 1097728
+      },
+      "batch_invariant": {
+        "latency_ms": 0.029854272842407225,
+        "peak_incremental_bytes": 49152
+      },
+      "latency_ratio": 4.672322802109439,
+      "stock_samples_per_second": 1252034.5953219868,
+      "batch_invariant_samples_per_second": 267968.342160932
+    },
+    {
+      "operator": "lingbot_vla2_token_choice_moe",
+      "batch_size": 8,
+      "shape": {
+        "hidden": [
+          408,
+          768
+        ],
+        "experts": 32,
+        "top_k": 4,
+        "intermediate": 512,
+        "logical_robot_batch": 8,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.15033360290527345,
+        "peak_incremental_bytes": 6656
+      },
+      "batch_invariant": {
+        "latency_ms": 2.10996484375,
+        "peak_incremental_bytes": 124166144
+      },
+      "latency_ratio": 14.035217695670525,
+      "stock_samples_per_second": 53214.98218226614,
+      "batch_invariant_samples_per_second": 3791.532367800856
+    },
+    {
+      "operator": "lingbot_vla2_action_expert_mm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          408,
+          768
+        ],
+        "right": [
+          768,
+          4096
+        ],
+        "logical_robot_batch": 8,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.08703529357910156,
+        "peak_incremental_bytes": 13369344
+      },
+      "batch_invariant": {
+        "latency_ms": 0.09982972717285156,
+        "peak_incremental_bytes": 13369344
+      },
+      "latency_ratio": 1.1470028199781028,
+      "stock_samples_per_second": 91916.73482125091,
+      "batch_invariant_samples_per_second": 80136.45060001305
+    },
+    {
+      "operator": "lingbot_vla2_action_attention_bmm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          256,
+          51,
+          128
+        ],
+        "right": [
+          256,
+          128,
+          321
+        ],
+        "logical_robot_batch": 8,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.060595870971679684,
+        "peak_incremental_bytes": 33527808
+      },
+      "batch_invariant": {
+        "latency_ms": 0.16155853271484374,
+        "peak_incremental_bytes": 33527808
+      },
+      "latency_ratio": 2.666164049203127,
+      "stock_samples_per_second": 132022.19675559923,
+      "batch_invariant_samples_per_second": 49517.65694802558
+    }
+  ]
+}

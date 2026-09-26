@@ -12,6 +12,7 @@ from batch_invariant_ops import (
     conv2d_batch_invariant,
     conv3d_batch_invariant,
     conv_transpose3d_batch_invariant,
+    deterministic_token_choice_moe,
     is_batch_invariant_mode_enabled,
     linalg_vector_norm_batch_invariant,
     matmul_persistent,
@@ -597,6 +598,46 @@ def test_varlen_sdpa_empty_kv_range_is_zero() -> None:
         torch.tensor([0, 0], device="cuda", dtype=torch.int32),
     )
     assert torch.count_nonzero(output) == 0
+
+
+def test_deterministic_token_choice_moe_matches_route_reference() -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7400)
+    hidden = torch.randn(7, 12, device="cuda", generator=generator)
+    gate = torch.randn(5, 16, 12, device="cuda", generator=generator)
+    up = torch.randn_like(gate)
+    down = torch.randn(5, 12, 16, device="cuda", generator=generator)
+    selected = torch.randint(0, 5, (7, 3), device="cuda", generator=generator)
+    routing = torch.rand(7, 3, device="cuda", generator=generator)
+
+    actual = deterministic_token_choice_moe(hidden, routing, selected, gate, up, down)
+    repeated = deterministic_token_choice_moe(hidden, routing, selected, gate, up, down)
+    assert torch.equal(actual, repeated)
+    expected = torch.zeros_like(hidden)
+    for token_index in range(hidden.shape[0]):
+        for slot_index in range(selected.shape[1]):
+            expert_index = selected[token_index, slot_index]
+            token = hidden[token_index]
+            intermediate = F.silu(gate[expert_index] @ token) * (up[expert_index] @ token)
+            expected[token_index] += (down[expert_index] @ intermediate) * routing[
+                token_index, slot_index
+            ]
+    torch.testing.assert_close(actual, expected, rtol=2e-5, atol=2e-5)
+
+
+def test_deterministic_token_choice_moe_is_batch_invariant() -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7425)
+    hidden = torch.randn(11, 64, device="cuda", generator=generator)
+    gate = torch.randn(7, 80, 64, device="cuda", generator=generator)
+    up = torch.randn_like(gate)
+    down = torch.randn(7, 64, 80, device="cuda", generator=generator)
+    selected = torch.randint(0, 7, (11, 4), device="cuda", generator=generator)
+    routing = torch.rand(11, 4, device="cuda", generator=generator)
+
+    alone = deterministic_token_choice_moe(
+        hidden[:1], routing[:1], selected[:1], gate, up, down
+    )
+    together = deterministic_token_choice_moe(hidden, routing, selected, gate, up, down)
+    assert torch.equal(alone, together[:1])
 
 
 def test_mode_context_is_exception_safe_and_reentrant() -> None:

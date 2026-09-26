@@ -1,0 +1,3 @@
+Official LingBot-VLA 2.0 PyTorch source
+repository: https://github.com/Robbyant/lingbot-vla-v2
+commit: be969b8fd117fb70550c5d4bf4bc328211b5b1b6

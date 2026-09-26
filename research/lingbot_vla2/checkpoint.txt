@@ -1,0 +1,27 @@
+Official LingBot-VLA 2.0 RoboTwin checkpoint
+repository: https://huggingface.co/robbyant/lingbot-vla-v2-6b-robotwin
+revision: 0451855729ec904f970600e0aec8b84661423afe
+path in repository: checkpoints/global_step_50000/hf_ckpt
+safetensor shards: 6
+checkpoint tensor count: 1,708
+checkpoint element count: 6,375,907,511
+safetensors bytes: 25,503,889,772
+loaded parameter count: 6,375,906,359
+
+Qwen3-VL tokenizer/config assets
+repository: https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct
+revision: ebb281ec70b05090aa6165b016eac8ec08e71b17
+
+Real three-camera fixture
+repository: https://huggingface.co/datasets/lesjie/dexvla_example_data
+revision: 5e7f53a
+file: episode_47.hdf5
+task: Cook rice.
+frames: 396
+cameras: cam_high, cam_left_wrist, cam_right_wrist
+state dimension: 14
+
+The fixture is a public real ALOHA-style episode, not a RoboTwin evaluation
+episode. Its three camera names and 14-D joint state map directly through the
+official `robotwin.yaml` feature transform. The investigation claims numerical
+batch invariance only, not task success or distribution-matched evaluation.

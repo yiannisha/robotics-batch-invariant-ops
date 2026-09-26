@@ -72,9 +72,12 @@ to the README support table only after end-to-end execution.
   checkpoint depends on separately gated Cosmos-Predict2 base assets that were
   unavailable in this environment. Status: access-blocked; see
   `research/deva/constraint_audit.md`.
-- **LingBot-VLA 2.0:** newly released cross-embodiment 6B VLA with public code
-  and weight collections; it meets the discovery criteria and should be added
-  after the named Tier 1 models.
+- **LingBot-VLA 2.0:** the official PyTorch implementation and official 6B
+  RoboTwin checkpoint have now been executed in the released FP32 inference
+  mode. After replacing the released nondeterministic atomic MoE inference
+  kernel with the reusable deterministic semantic fallback, stock inference
+  fails every batch above one and invariant addmm/MM/BMM makes all ten flow
+  steps exact through B=64. It is now in the support table.
 - **UniVLA:** public unified image-grounding/video/action repository; candidate
   after UVA because it broadens the video/action coverage.
 

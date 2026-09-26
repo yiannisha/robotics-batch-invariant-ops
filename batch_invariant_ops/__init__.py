@@ -18,6 +18,7 @@ from .batch_invariant_ops import (
     get_batch_invariant_attention_block_size,
     AttentionBlockSize,
 )
+from .moe import deterministic_token_choice_moe
 
 __version__ = "0.1.0"
 
@@ -40,4 +41,5 @@ __all__ = [
     "mean_dim",
     "get_batch_invariant_attention_block_size",
     "AttentionBlockSize",
+    "deterministic_token_choice_moe",
 ]

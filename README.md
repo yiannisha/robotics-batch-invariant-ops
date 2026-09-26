@@ -85,6 +85,12 @@ with set_batch_invariant_mode(True):
 - `torch.bmm()` - Batch matrix multiplication, including rank-3 attention
   `torch.matmul()` calls that dispatch to `aten::bmm`
 
+### Mixture-of-Experts Operations
+
+- `deterministic_token_choice_moe()` - deterministic top-k SwiGLU routing for
+  fused expert weights, using dense fixed-schedule expert BMMs, top-k gather,
+  and fixed-order route accumulation instead of atomic packing/accumulation
+
 ### Attention Operations
 - `torch.nn.functional.scaled_dot_product_attention()` - evaluation-time SDPA
   (`dropout_p=0`) using independent batch-invariant BMM and Triton softmax
@@ -151,6 +157,7 @@ Only configurations that have been executed end to end are marked PASS.
 | SmolVLA maintained LeRobot PyTorch, public LIBERO checkpoint and real inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | OpenVLA-OFT official PyTorch, public LIBERO-Spatial checkpoint and real inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | DexVLA official PyTorch classes, closest public complete checkpoint and real inputs | bfloat16 network, float32 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33 (64 OOM) | FAIL | PASS |
+| LingBot-VLA 2.0 official PyTorch, official RoboTwin checkpoint and real three-camera inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -271,6 +278,21 @@ vision block-0 packed SDPA; with that repaired, ScaleDP's conditioning
 FiLM context at its own EOS. The complete 50x14 action is exact through B=33;
 B=64 OOMs. Three target frames pass all B=2/B=4 checks.
 
+The LingBot-VLA 2.0 row uses the authors' official PyTorch repository and
+complete official 6B RoboTwin checkpoint without weight conversion. The
+released inference MoE uses relaxed atomic route packing and accumulation and
+is not even repeatable at B=1, so the adapter substitutes the reusable
+deterministic token-choice MoE reference before measuring batch effects. It
+also clones explicit per-frame flow noise and clears upstream shape-only
+vision cache state between calls. The controlled stock path fails every batch
+above one. Its first divergence is the flow state projection's FP32
+`aten::addmm`; invariant addmm plus MM still leaves eager-attention BMM as a
+later boundary. Generic addmm, MM, and BMM make all ten flow steps and the
+complete 50x55 action chunk exact through B=64. Three target frames pass all
+B=2/B=4 checks. The real three-camera fixture conforms to the official
+RoboTwin transform but is not claimed as a distribution-matched task-success
+evaluation.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -285,7 +307,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/uva`](research/uva), SmolVLA evidence is in
 [`research/smolvla`](research/smolvla), and OpenVLA-OFT evidence is in
 [`research/openvla_oft`](research/openvla_oft). DexVLA evidence is in
-[`research/dexvla`](research/dexvla). The earlier random-weight
+[`research/dexvla`](research/dexvla), and LingBot-VLA 2.0 evidence is in
+[`research/lingbot_vla2`](research/lingbot_vla2). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -547,6 +570,17 @@ staged trace, three-target regression, and operator benchmark are
 `scripts/check_dexvla_multiple_inputs.py`, and
 `scripts/benchmark_dexvla_ops.py`.
 
+For LingBot-VLA 2.0, use the official source, RoboTwin checkpoint, and pinned
+Qwen3-VL assets recorded under `research/lingbot_vla2`. Set
+`LINGBOT_VLA2_CHECKPOINT`, `LINGBOT_VLA2_SAMPLE`, and `QWEN3VL_PATH`, add the
+official source to `PYTHONPATH`, and run the generic harness with adapter
+`scripts.model_invariance.adapters.lingbot_vla2`. The released-kernel
+comparison, staged trace, three-target regression, and operator benchmark are
+`scripts/check_lingbot_vla2_official_equivalence.py`,
+`scripts/trace_lingbot_vla2_batch_invariance.py`,
+`scripts/check_lingbot_vla2_multiple_inputs.py`, and
+`scripts/benchmark_lingbot_vla2_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -621,6 +655,13 @@ For DexVLA on the same environment, invariant segmented vision SDPA is 5.11x,
 5.39x, and 6.08x slower than stock at robot B=1, 2, and 8. The invariant
 ScaleDP conditioning addmm is 3.72x, 2.99x, and 2.85x slower. See
 [`research/dexvla/benchmarks.json`](research/dexvla/benchmarks.json).
+
+For LingBot-VLA 2.0 FP32 inference on the same environment, invariant
+state-projection addmm is 4.46x, 4.18x, and 4.67x slower at B=1, 2, and 8;
+action-expert MM is 4.49x, 3.02x, and 1.15x slower; action-attention BMM is
+2.52x, 3.22x, and 2.67x slower; and the dense deterministic MoE fallback is
+8.22x, 8.31x, and 14.04x slower than the released atomic kernel. See
+[`research/lingbot_vla2/benchmarks.json`](research/lingbot_vla2/benchmarks.json).
 
 ## Attribution
 

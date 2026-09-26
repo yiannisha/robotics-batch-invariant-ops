@@ -1,0 +1,94 @@
+{
+  "model": "lingbot-vla2-6b-robotwin-official-pytorch",
+  "seed": 0,
+  "released_repeatability": {
+    "exact": false,
+    "tensors": [
+      {
+        "path": "output",
+        "reference_shape": [
+          1,
+          50,
+          55
+        ],
+        "candidate_shape": [
+          1,
+          50,
+          55
+        ],
+        "dtype": "torch.float32",
+        "exact": false,
+        "differing_elements": 2750,
+        "max_abs_difference": 0.004252731800079346,
+        "mean_abs_difference": 0.0001953480823431164,
+        "first_differing_index": [
+          0,
+          0,
+          0
+        ],
+        "reference_hash": "06e4801ac5df9b169b6df169ff95aa7b8169c971d06132362cc1d7f279abef13",
+        "candidate_hash": "eed9c18998b260428d3caefbdf24f5f00e73255f06eab5ba768138f2a60940fb"
+      }
+    ]
+  },
+  "deterministic_vs_released_first": {
+    "exact": false,
+    "tensors": [
+      {
+        "path": "output",
+        "reference_shape": [
+          1,
+          50,
+          55
+        ],
+        "candidate_shape": [
+          1,
+          50,
+          55
+        ],
+        "dtype": "torch.float32",
+        "exact": false,
+        "differing_elements": 2750,
+        "max_abs_difference": 0.011592477560043335,
+        "mean_abs_difference": 0.000989330350421369,
+        "first_differing_index": [
+          0,
+          0,
+          0
+        ],
+        "reference_hash": "67d216d64b1bd8fc1ed5d3bbecfffa3cacd0d26836fee387d10ed4a8748fd882",
+        "candidate_hash": "06e4801ac5df9b169b6df169ff95aa7b8169c971d06132362cc1d7f279abef13"
+      }
+    ]
+  },
+  "deterministic_vs_released_second": {
+    "exact": false,
+    "tensors": [
+      {
+        "path": "output",
+        "reference_shape": [
+          1,
+          50,
+          55
+        ],
+        "candidate_shape": [
+          1,
+          50,
+          55
+        ],
+        "dtype": "torch.float32",
+        "exact": false,
+        "differing_elements": 2750,
+        "max_abs_difference": 0.011887311935424805,
+        "mean_abs_difference": 0.0010166577994823456,
+        "first_differing_index": [
+          0,
+          0,
+          0
+        ],
+        "reference_hash": "67d216d64b1bd8fc1ed5d3bbecfffa3cacd0d26836fee387d10ed4a8748fd882",
+        "candidate_hash": "eed9c18998b260428d3caefbdf24f5f00e73255f06eab5ba768138f2a60940fb"
+      }
+    ]
+  }
+}
