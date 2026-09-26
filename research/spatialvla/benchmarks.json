@@ -1,0 +1,174 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 5,
+  "repetitions": 20,
+  "cases": [
+    {
+      "operator": "spatialvla_zoedepth_conv_transpose2d",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          256,
+          24,
+          24
+        ],
+        "weight": [
+          256,
+          256,
+          4,
+          4
+        ],
+        "bias": [
+          256
+        ],
+        "stride": [
+          4,
+          4
+        ],
+        "padding": [
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.bfloat16",
+        "checkpoint_weight": "vision_zoe_model.neck.reassemble_stage.layers.0.resize.weight"
+      },
+      "stock": {
+        "latency_ms": 0.048107200860977174,
+        "peak_incremental_bytes": 16548352
+      },
+      "batch_invariant": {
+        "latency_ms": 0.08637920022010803,
+        "peak_incremental_bytes": 14155776
+      },
+      "latency_ratio": 1.7955565627218963,
+      "stock_samples_per_second": 20786.908864015073,
+      "batch_invariant_samples_per_second": 11576.861066690128,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "spatialvla_zoedepth_conv_transpose2d",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          256,
+          24,
+          24
+        ],
+        "weight": [
+          256,
+          256,
+          4,
+          4
+        ],
+        "bias": [
+          256
+        ],
+        "stride": [
+          4,
+          4
+        ],
+        "padding": [
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.bfloat16",
+        "checkpoint_weight": "vision_zoe_model.neck.reassemble_stage.layers.0.resize.weight"
+      },
+      "stock": {
+        "latency_ms": 0.07206559777259827,
+        "peak_incremental_bytes": 31457280
+      },
+      "batch_invariant": {
+        "latency_ms": 0.0871999979019165,
+        "peak_incremental_bytes": 28311552
+      },
+      "latency_ratio": 1.2100086670629524,
+      "stock_samples_per_second": 27752.493031570553,
+      "batch_invariant_samples_per_second": 22935.780368362182,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "spatialvla_zoedepth_conv_transpose2d",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          256,
+          24,
+          24
+        ],
+        "weight": [
+          256,
+          256,
+          4,
+          4
+        ],
+        "bias": [
+          256
+        ],
+        "stride": [
+          4,
+          4
+        ],
+        "padding": [
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.bfloat16",
+        "checkpoint_weight": "vision_zoe_model.neck.reassemble_stage.layers.0.resize.weight"
+      },
+      "stock": {
+        "latency_ms": 0.1928928017616272,
+        "peak_incremental_bytes": 117703168
+      },
+      "batch_invariant": {
+        "latency_ms": 0.17979999780654907,
+        "peak_incremental_bytes": 113246208
+      },
+      "latency_ratio": 0.9321239370494605,
+      "stock_samples_per_second": 41473.8130554308,
+      "batch_invariant_samples_per_second": 44493.882634010835,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    }
+  ]
+}

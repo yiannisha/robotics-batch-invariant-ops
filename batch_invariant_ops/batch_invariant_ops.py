@@ -19,6 +19,7 @@ __all__ = [
     "conv1d_batch_invariant",
     "conv2d_batch_invariant",
     "conv3d_batch_invariant",
+    "conv_transpose2d_batch_invariant",
     "conv_transpose3d_batch_invariant",
     "scaled_dot_product_attention_batch_invariant",
     "varlen_scaled_dot_product_attention_batch_invariant",
@@ -779,6 +780,87 @@ def conv3d_batch_invariant(
     return output.permute(0, 1, 3, 2).reshape(input.shape[0], weight.shape[0], *output_shape)
 
 
+def conv_transpose2d_batch_invariant(
+    input, weight, bias, stride, padding, dilation, output_padding, groups
+):
+    """Batch-invariant non-overlapping 2-D transposed convolution.
+
+    For ``stride == kernel_size`` with unit dilation and no padding, each
+    output position receives one spatial contribution.  A grouped BMM can
+    therefore compute every input position independently before a layout
+    transform expands the learned patches.  SpatialVLA's ZoeDepth reassembly
+    tower uses exactly this learned-upsampling form (4x4/stride-4 and
+    2x2/stride-2).
+    """
+    assert input.ndim == 4 and weight.ndim == 4, "only 2-D convolution is supported"
+    assert input.dtype == weight.dtype and (
+        bias is None or bias.dtype == input.dtype
+    ), "Incompatible dtypes"
+    assert input.shape[1] == weight.shape[0], "Incompatible input channels"
+    assert input.shape[1] % groups == 0, "input channels must be divisible by groups"
+
+    def pair(values, name):
+        values = tuple(values)
+        if len(values) == 1:
+            return values * 2
+        assert len(values) == 2, f"{name} must have one or two values, got {values!r}"
+        return values
+
+    stride = pair(stride, "stride")
+    padding = pair(padding, "padding")
+    dilation = pair(dilation, "dilation")
+    output_padding = pair(output_padding, "output_padding")
+    kernel_size = tuple(weight.shape[-2:])
+    assert stride == kernel_size, (
+        "batch-invariant ConvTranspose2d currently requires non-overlapping "
+        f"stride == kernel_size, got stride={stride}, kernel_size={kernel_size}"
+    )
+    assert padding == (0, 0), f"padding is not supported, got {padding}"
+    assert output_padding == (0, 0), f"output_padding is not supported, got {output_padding}"
+    assert dilation == (1, 1), f"dilation is not supported, got {dilation}"
+
+    output_channels_per_group = weight.shape[1]
+    output_channels = output_channels_per_group * groups
+    if bias is not None:
+        assert bias.shape == (output_channels,), "Incompatible bias shape"
+    output_shape = tuple(input.shape[index + 2] * kernel_size[index] for index in range(2))
+    if input.shape[0] == 0:
+        return torch.empty(
+            (0, output_channels, *output_shape), device=input.device, dtype=input.dtype
+        )
+
+    channels_per_group = input.shape[1] // groups
+    input_volume = math.prod(input.shape[-2:])
+    kernel_volume = math.prod(kernel_size)
+    grouped_input = (
+        input.reshape(input.shape[0], groups, channels_per_group, input_volume)
+        .permute(0, 1, 3, 2)
+        .reshape(input.shape[0] * groups, input_volume, channels_per_group)
+    )
+    grouped_weight = (
+        weight.reshape(groups, channels_per_group, output_channels_per_group * kernel_volume)
+        .unsqueeze(0)
+        .expand(input.shape[0], -1, -1, -1)
+        .reshape(
+            input.shape[0] * groups,
+            channels_per_group,
+            output_channels_per_group * kernel_volume,
+        )
+    )
+    output = bmm_persistent(grouped_input, grouped_weight).reshape(
+        input.shape[0],
+        groups,
+        *input.shape[-2:],
+        output_channels_per_group,
+        *kernel_size,
+    )
+    if bias is not None:
+        output = output + bias.reshape(1, groups, 1, 1, output_channels_per_group, 1, 1)
+    return output.permute(0, 1, 4, 2, 5, 3, 6).reshape(
+        input.shape[0], output_channels, *output_shape
+    )
+
+
 def conv_transpose3d_batch_invariant(
     input, weight, bias, stride, padding, dilation, output_padding, groups
 ):
@@ -871,6 +953,10 @@ def convolution_batch_invariant(
         return conv1d_batch_invariant(
             input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
         )
+    if input.ndim == 4 and weight.ndim == 4 and transposed:
+        return conv_transpose2d_batch_invariant(
+            input, weight, bias, stride, padding, dilation, output_padding, groups
+        )
     if input.ndim == 4 and weight.ndim == 4:
         return conv2d_batch_invariant(
             input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
@@ -958,18 +1044,15 @@ def log_softmax(input: torch.Tensor, dim: int = -1) -> torch.Tensor:
 
     Args:
         input: Input tensor
-        dim: Dimension along which to compute log_softmax (only -1 or last dim supported)
-    >> Stashed changes
+        dim: Dimension along which to compute log_softmax
     Returns:
         Tensor with log_softmax applied along the specified dimension
     """
-    if dim != -1 and dim != input.ndim - 1:
-        raise ValueError("This implementation only supports log_softmax along the last dimension")
-
-    # Flatten all dimensions except the last one
-    original_shape = input.shape
-    input_2d = input.reshape(-1, input.shape[-1])
-    input_2d = input_2d.contiguous()
+    dim %= input.ndim
+    permutation = tuple(index for index in range(input.ndim) if index != dim) + (dim,)
+    inverse_permutation = tuple(permutation.index(index) for index in range(input.ndim))
+    kernel_input = input.permute(permutation).contiguous()
+    input_2d = kernel_input.reshape(-1, kernel_input.shape[-1])
 
     n_rows, n_cols = input_2d.shape
 
@@ -989,8 +1072,7 @@ def log_softmax(input: torch.Tensor, dim: int = -1) -> torch.Tensor:
         n_cols,
         BLOCK_SIZE=BLOCK_SIZE,
     )
-    # Reshape output back to original shape
-    return output.reshape(original_shape)
+    return output.reshape(kernel_input.shape).permute(inverse_permutation)
 
 
 @triton.jit
@@ -1042,19 +1124,20 @@ def softmax(
     *,
     dtype: torch.dtype | None = None,
 ) -> torch.Tensor:
-    """Batch-invariant softmax along the last dimension."""
-    if dim != -1 and dim != input.ndim - 1:
-        raise ValueError("This implementation only supports softmax along the last dimension")
+    """Batch-invariant softmax along an arbitrary dimension."""
     if input.dtype not in {torch.float16, torch.bfloat16, torch.float32}:
         raise ValueError(f"unsupported softmax dtype: {input.dtype}")
     if dtype not in {None, torch.float16, torch.bfloat16, torch.float32}:
         raise ValueError(f"unsupported softmax output dtype: {dtype}")
 
-    original_shape = input.shape
-    input_2d = input.reshape(-1, input.shape[-1]).contiguous()
+    dim %= input.ndim
+    permutation = tuple(index for index in range(input.ndim) if index != dim) + (dim,)
+    inverse_permutation = tuple(permutation.index(index) for index in range(input.ndim))
+    kernel_input = input.permute(permutation).contiguous()
+    input_2d = kernel_input.reshape(-1, kernel_input.shape[-1])
     output = torch.empty(input_2d.shape, dtype=dtype or input.dtype, device=input.device)
     if input_2d.numel() == 0:
-        return output.reshape(original_shape)
+        return output.reshape(kernel_input.shape).permute(inverse_permutation)
     _softmax_kernel[(input_2d.shape[0],)](
         input_2d,
         output,
@@ -1063,7 +1146,7 @@ def softmax(
         input_2d.shape[1],
         BLOCK_SIZE=1024,
     )
-    return output.reshape(original_shape)
+    return output.reshape(kernel_input.shape).permute(inverse_permutation)
 
 
 def scaled_dot_product_attention_batch_invariant(
@@ -1535,6 +1618,11 @@ def _log_softmax_batch_invariant(input, dim, _half_to_float):
     return log_softmax(input, dim=dim)
 
 
+def _softmax_batch_invariant(input, dim, _half_to_float):
+    assert not _half_to_float, "not implemented"
+    return softmax(input, dim=dim)
+
+
 def mean_batch_invariant(input, dim, keepdim=False, dtype: torch.dtype | None = None):
     assert dtype is None or dtype == torch.float32, f"unsupported dtype: {dtype}"
     if len(dim) == 1:
@@ -1580,6 +1668,7 @@ def enable_batch_invariant_mode():
         scaled_dot_product_attention_batch_invariant,
         dispatch_key,
     )
+    _batch_invariant_LIB.impl("aten::_softmax", _softmax_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::_log_softmax", _log_softmax_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::mean.dim", mean_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl(

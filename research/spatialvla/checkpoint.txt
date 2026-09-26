@@ -1,0 +1,17 @@
+IPEC-COMMUNITY/spatialvla-4b-224-pt
+revision: 886c4557dfde53b44c0f74fde7d89bf83a26c3cd
+
+sha256  config.json
+0c5d94be86f9e15b708650c4b829033ae99243f85507012b1dafa0263f799909
+
+sha256  model.safetensors.index.json
+6c351156136b2452db86d3a426ff30adc9d11363b43f46fa69fe79d76b6d5c79
+
+sha256  model-00001-of-00002.safetensors
+713ee1bd116c8f77e2f56903d15e6c3f3dff6ea6b12fc71bfcc3bd4a53a2cc2b
+
+sha256  model-00002-of-00002.safetensors
+b8c87abc1b91598ad237c31ee2286c5c783bfb9f4142696d9b1c36e62f634a34
+
+sha256  example.png
+15aa5d7c8db76a719eb8c86c13ab9543dbfbc322393287308c372aee2c08f4a5

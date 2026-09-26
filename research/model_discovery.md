@@ -78,8 +78,23 @@ to the README support table only after end-to-end execution.
   kernel with the reusable deterministic semantic fallback, stock inference
   fails every batch above one and invariant addmm/MM/BMM makes all ten flow
   steps exact through B=64. It is now in the support table.
-- **UniVLA:** public unified image-grounding/video/action repository; candidate
-  after UVA because it broadens the video/action coverage.
+- **UniVLA:** the official BAAI PyTorch LIBERO image-policy checkpoint, Emu3
+  vision tokenizer, and FAST action tokenizer have now been executed through
+  B=33. The released actions happen to remain stable in stock mode, but its
+  cached-decode logits fail; invariant MM repairs every score and action. B=64
+  OOMs. It is now in the support table.
+- **SpatialVLA:** the official PyTorch 4B 224-pixel checkpoint and published
+  example have now been executed directly through B=64. Stock changes the
+  final action; reusable convolution, mean, MM, and BMM repairs make every
+  tested score and action exact. The ZoeDepth path also motivated generic
+  ConvTranspose2D and direct arbitrary-dimension softmax dispatch coverage.
+  It is now in the support table.
+- **RDT-1B:** `thu-ml/RoboticsDiffusionTransformer` provides official PyTorch
+  code and public weights. It is the next diffusion-transformer candidate.
+- **CogACT:** `microsoft/CogACT` provides official PyTorch code and public
+  Small/Base/Large checkpoints. It remains queued after RDT-1B.
+- **OpenHelix:** official PyTorch code and public checkpoints exist, but its
+  CALVIN inference setup is more involved; it remains queued after CogACT.
 
 ## Primary sources
 
@@ -98,3 +113,8 @@ to the README support table only after end-to-end execution.
 - https://github.com/juruobenruo/DexVLA
 - https://github.com/Robbyant/lingbot-vla-v2
 - https://github.com/baaivision/UniVLA
+- https://github.com/SpatialVLA/SpatialVLA
+- https://huggingface.co/IPEC-COMMUNITY/spatialvla-4b-224-pt
+- https://github.com/thu-ml/RoboticsDiffusionTransformer
+- https://github.com/microsoft/CogACT
+- https://github.com/OpenHelix-Team/OpenHelix

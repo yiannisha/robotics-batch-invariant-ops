@@ -108,11 +108,16 @@ with set_batch_invariant_mode(True):
   convolution using batch-independent grouped im2col/BMM
 - `torch.nn.functional.conv3d()` / `nn.Conv3d` - Regular 3-D convolution using
   batch-independent grouped im2col/BMM, including Qwen3.5-VL patch embedding
+- `torch.nn.functional.conv_transpose2d()` / `nn.ConvTranspose2d` -
+  Non-overlapping 2-D learned upsampling (`stride == kernel_size`) using a
+  fixed-schedule grouped BMM, including SpatialVLA's ZoeDepth reassembly tower
 - `torch.nn.functional.conv_transpose3d()` / `nn.ConvTranspose3d` -
   Non-overlapping 3-D learned upsampling (`stride == kernel_size`) using a
   fixed-schedule grouped BMM, including UVA's temporal action upsampler
 
 ### Activation Functions
+- `torch.softmax()` / `torch.nn.functional.softmax()` - Arbitrary-dimension
+  softmax through a canonical layout and fixed per-row Triton reduction
 - `torch.log_softmax()` - Log-softmax activation
 - `batch_invariant_ops.softmax()` - last-dimension softmax used by the SDPA
   replacement
@@ -125,7 +130,7 @@ with set_batch_invariant_mode(True):
 
 The current kernels cover CUDA float32, float16, and bfloat16 paths exercised
 by the tests. Conv1D/2D/3D cover regular non-transposed convolution, including
-groups and dilation. ConvTranspose3D currently covers the non-overlapping,
+groups and dilation. ConvTranspose2D/3D currently cover the non-overlapping,
 zero-padding case. Unsupported operator overloads and dtypes are not claimed.
 
 ## Conv2d and attention BMM demonstration
@@ -159,6 +164,7 @@ Only configurations that have been executed end to end are marked PASS.
 | DexVLA official PyTorch classes, closest public complete checkpoint and real inputs | bfloat16 network, float32 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33 (64 OOM) | FAIL | PASS |
 | LingBot-VLA 2.0 official PyTorch, official RoboTwin checkpoint and real three-camera inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | BAAI UniVLA official PyTorch LIBERO image policy, official weights and real inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33 (64 OOM) | PASS actions / FAIL logits | PASS |
+| SpatialVLA 4B official PyTorch, official pretrained checkpoint and real image inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -305,6 +311,18 @@ makes every captured logit, token, and final action exact through B=33; B=64
 OOMs. Three target frames pass all B=2/B=4 action checks in both stock and
 invariant modes. The separately released video-SFT checkpoint was not tested.
 
+The SpatialVLA row uses the authors' official PyTorch repository, complete
+official 4.03B-parameter 224-pixel checkpoint, and its published image,
+prompt, processor, Bridge action statistics, and greedy generation path. Stock
+changes the 4x7 action at most tested batch sizes, including six scalars and a
+maximum 0.0276571 error at B=2. The first boundary is ZoeDepth's final 3x3
+stride-2 `aten::convolution`, with 250 differing BF16 outputs from an exact
+input. Staged convolution, mean, MM, and BMM replacements make all 265,347-way
+generation scores, spatial action tokens, and float64 actions exact through
+B=64. This integration also adds generic non-overlapping ConvTranspose2D and
+direct arbitrary-dimension softmax dispatch coverage. The official target and
+two additional real targets pass all B=2/B=4 checks in repaired mode.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -321,7 +339,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/openvla_oft`](research/openvla_oft). DexVLA evidence is in
 [`research/dexvla`](research/dexvla), and LingBot-VLA 2.0 evidence is in
 [`research/lingbot_vla2`](research/lingbot_vla2). BAAI UniVLA evidence is in
-[`research/univla_baai`](research/univla_baai). The earlier random-weight
+[`research/univla_baai`](research/univla_baai), and SpatialVLA evidence is in
+[`research/spatialvla`](research/spatialvla). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -605,6 +624,16 @@ three-target regression, and actual LM-head benchmark are
 `scripts/check_univla_baai_multiple_inputs.py`, and
 `scripts/benchmark_univla_baai.py`.
 
+For SpatialVLA, use the official source, `spatialvla-4b-224-pt` checkpoint,
+and real LIBERO companion fixture revisions recorded under
+`research/spatialvla`. Set `SPATIALVLA_CHECKPOINT`, `SPATIALVLA_SOURCE`, and
+`SPATIALVLA_SAMPLE_DIR`, then run the generic harness with adapter
+`scripts.model_invariance.adapters.spatialvla`. The staged trace,
+three-target regression, and actual ZoeDepth ConvTranspose2D benchmark are
+`scripts/trace_spatialvla_batch_invariance.py`,
+`scripts/check_spatialvla_multiple_inputs.py`, and
+`scripts/benchmark_spatialvla_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -691,6 +720,12 @@ For BAAI UniVLA on PyTorch 2.8.0/CUDA 12.8, invariant MM on the checkpoint's
 actual 4,096x184,622 autoregressive LM head is 1.47x, 1.38x, and 1.40x slower
 than stock at B=1, 2, and 8, with identical incremental output allocation. See
 [`research/univla_baai/benchmarks.json`](research/univla_baai/benchmarks.json).
+
+For SpatialVLA on the same environment, invariant ConvTranspose2D on the
+checkpoint's actual ZoeDepth 256-channel 4x4/stride-4 upsampler is 1.80x and
+1.21x slower than stock at B=1 and B=2, and 0.93x stock latency at B=8, with
+lower measured incremental memory at every size. See
+[`research/spatialvla/benchmarks.json`](research/spatialvla/benchmarks.json).
 
 ## Attribution
 
