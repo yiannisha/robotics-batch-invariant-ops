@@ -102,6 +102,9 @@ with set_batch_invariant_mode(True):
   convolution using batch-independent grouped im2col/BMM
 - `torch.nn.functional.conv3d()` / `nn.Conv3d` - Regular 3-D convolution using
   batch-independent grouped im2col/BMM, including Qwen3.5-VL patch embedding
+- `torch.nn.functional.conv_transpose3d()` / `nn.ConvTranspose3d` -
+  Non-overlapping 3-D learned upsampling (`stride == kernel_size`) using a
+  fixed-schedule grouped BMM, including UVA's temporal action upsampler
 
 ### Activation Functions
 - `torch.log_softmax()` - Log-softmax activation
@@ -116,7 +119,8 @@ with set_batch_invariant_mode(True):
 
 The current kernels cover CUDA float32, float16, and bfloat16 paths exercised
 by the tests. Conv1D/2D/3D cover regular non-transposed convolution, including
-groups and dilation. Unsupported operator overloads and dtypes are not claimed.
+groups and dilation. ConvTranspose3D currently covers the non-overlapping,
+zero-padding case. Unsupported operator overloads and dtypes are not claimed.
 
 ## Conv2d and attention BMM demonstration
 
@@ -142,6 +146,8 @@ Only configurations that have been executed end to end are marked PASS.
 | Cosmos 3 Nano Policy official NVIDIA PyTorch, public DROID weights and real inputs | bfloat16 network, float32 outputs | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | Cosmos 3 Edge Policy official NVIDIA PyTorch, public DROID weights and real inputs | bfloat16 network, float32 outputs | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | X-VLA maintained LeRobot PyTorch, public `lerobot/xvla-libero` weights and real inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| UVA official PyTorch action-only LIBERO-10, public checkpoint and real inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31 (duplicate) | FAIL | PASS |
+| UVA official PyTorch joint video/action LIBERO-10, decoded RGB output | float32 | 1, 2 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -219,6 +225,19 @@ After convolution alone is repaired, the bias-free multimodal projector's
 make all ten flow steps and the official 30x7 trajectory exact through B=64.
 Three real targets pass duplicate and unrelated B=2/B=4 checks.
 
+The UVA rows use the authors' official PyTorch repository and complete public
+LIBERO-10 EMA checkpoint. All VAE, video-diffusion, and action-diffusion random
+draws are explicit per-example inputs. Stock action-only inference fails every
+batch above one through B=64; the invariant path is exact for both composition
+modes through B=17 and additionally at duplicate B=31 (unrelated B=31 and
+duplicate B=32 exceed memory). Three real target windows pass all B=2/B=4
+checks. The first stock divergence is CLIP's block-0 `aten::addmm`; after GEMM
+repair, the VAE's second downsample `aten::convolution` is next. The released
+action-serving mode intentionally bypasses video generation, so the separate
+joint-path check executes 100 controlled video-diffusion steps and verifies
+the 4x16x16x16 video latent, official VAE-decoded 4x256x256 RGB video, and
+8x10 action output at B=2.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -229,7 +248,8 @@ multiple-input checks, iteration notes, and operator benchmarks. MolmoAct2 evide
 [`research/groot_n17`](research/groot_n17). Cosmos 3 Nano evidence is in
 [`research/cosmos3_nano`](research/cosmos3_nano), and Cosmos 3 Edge evidence
 is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
-[`research/xvla`](research/xvla). The earlier random-weight
+[`research/xvla`](research/xvla), and UVA evidence is in
+[`research/uva`](research/uva). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -441,6 +461,27 @@ boundaries, `scripts/check_lerobot_xvla_multiple_inputs.py` for the three-target
 regression, and `scripts/benchmark_lerobot_xvla_ops.py` for the exact Conv2d
 and projector-MM benchmarks.
 
+For UVA, check out the official commit and download the LIBERO-10 checkpoint
+recorded in [`research/uva/checkpoint.txt`](research/uva/checkpoint.txt). With
+the same real LIBERO fixture, run:
+
+```bash
+UVA_LIBERO_CHECKPOINT=/path/to/libero10.ckpt \
+UVA_LIBERO_SAMPLE_DIR=/path/to/libero-episode-zero \
+PYTHONPATH="$PWD:/path/to/unified_video_action" \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.uva_libero10 \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/uva/fixed.json
+```
+
+Use the `uva_libero10_joint` adapter for joint decoded-video/action checks,
+`scripts/trace_uva_libero10_batch_invariance.py` for the staged addmm/Conv2d
+trace, `scripts/check_uva_libero10_multiple_inputs.py` for the three-target
+regression, and `scripts/benchmark_uva_libero10_ops.py` for the actual learned
+temporal-upsample shape.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -493,6 +534,13 @@ stage-3 Conv2d is 14.12x, 11.44x, and 12.70x slower than cuDNN at B=1, 2, and
 8, while reducing incremental memory at B=1/B=2. The invariant image-projector
 MM is 7.93x, 5.95x, and 2.44x slower. See
 [`research/xvla/benchmarks.json`](research/xvla/benchmarks.json).
+
+For UVA on the same environment, its float32 1024-channel temporal
+ConvTranspose3d is 1.99× slower at B=1 and 4.37× slower at B=64 with the
+fixed-schedule implementation. Both paths happen to be exact at this shape
+through B=64, but the replacement supplies a batch-independent decomposition
+and lets the generic convolution dispatcher cover the full model. See
+[`research/uva/benchmarks.json`](research/uva/benchmarks.json).
 
 ## Attribution
 

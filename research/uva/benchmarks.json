@@ -1,0 +1,900 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.14.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92400,
+    "triton": "3.8.0"
+  },
+  "warmup": 2,
+  "repetitions": 5,
+  "cases": [
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.1425279974937439,
+        "peak_incremental_bytes": 71303680
+      },
+      "batch_invariant": {
+        "latency_ms": 0.28402559757232665,
+        "peak_incremental_bytes": 50331648
+      },
+      "latency_ratio": 1.9927705613403683,
+      "stock_samples_per_second": 7016.165368098249,
+      "batch_invariant_samples_per_second": 3520.809421923148,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.19641599655151368,
+        "peak_incremental_bytes": 125829632
+      },
+      "batch_invariant": {
+        "latency_ms": 0.5351679801940918,
+        "peak_incremental_bytes": 100663296
+      },
+      "latency_ratio": 2.7246659619891718,
+      "stock_samples_per_second": 10182.47003866339,
+      "batch_invariant_samples_per_second": 3737.144362176995,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 3,
+      "shape": {
+        "input": [
+          3,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.26652159690856936,
+        "peak_incremental_bytes": 180355584
+      },
+      "batch_invariant": {
+        "latency_ms": 0.8921279907226562,
+        "peak_incremental_bytes": 150994944
+      },
+      "latency_ratio": 3.347300935723802,
+      "stock_samples_per_second": 11256.123461653859,
+      "batch_invariant_samples_per_second": 3362.746187987993,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 4,
+      "shape": {
+        "input": [
+          4,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.32572159767150877,
+        "peak_incremental_bytes": 234881536
+      },
+      "batch_invariant": {
+        "latency_ms": 1.0459967613220216,
+        "peak_incremental_bytes": 201326592
+      },
+      "latency_ratio": 3.211321474533944,
+      "stock_samples_per_second": 12280.426071205791,
+      "batch_invariant_samples_per_second": 3824.103618585255,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 5,
+      "shape": {
+        "input": [
+          5,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.40290560722351076,
+        "peak_incremental_bytes": 289407488
+      },
+      "batch_invariant": {
+        "latency_ms": 1.39552640914917,
+        "peak_incremental_bytes": 251658240
+      },
+      "latency_ratio": 3.463655963405358,
+      "stock_samples_per_second": 12409.85459213593,
+      "batch_invariant_samples_per_second": 3582.87737675163,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 7,
+      "shape": {
+        "input": [
+          7,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.5371391773223877,
+        "peak_incremental_bytes": 398459392
+      },
+      "batch_invariant": {
+        "latency_ms": 2.0229375839233397,
+        "peak_incremental_bytes": 352321536
+      },
+      "latency_ratio": 3.7661330048714445,
+      "stock_samples_per_second": 13032.004172353718,
+      "batch_invariant_samples_per_second": 3460.3143743189603,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.6395584106445312,
+        "peak_incremental_bytes": 452985344
+      },
+      "batch_invariant": {
+        "latency_ms": 2.530816078186035,
+        "peak_incremental_bytes": 402653184
+      },
+      "latency_ratio": 3.9571304763790707,
+      "stock_samples_per_second": 12508.630747171,
+      "batch_invariant_samples_per_second": 3161.03571055784,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 9,
+      "shape": {
+        "input": [
+          9,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.7240960121154785,
+        "peak_incremental_bytes": 507511296
+      },
+      "batch_invariant": {
+        "latency_ms": 2.876422309875488,
+        "peak_incremental_bytes": 452984832
+      },
+      "latency_ratio": 3.972432193725102,
+      "stock_samples_per_second": 12429.2909357505,
+      "batch_invariant_samples_per_second": 3128.8868707146075,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 15,
+      "shape": {
+        "input": [
+          15,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 1.1355520248413087,
+        "peak_incremental_bytes": 834667008
+      },
+      "batch_invariant": {
+        "latency_ms": 4.734572982788086,
+        "peak_incremental_bytes": 754974720
+      },
+      "latency_ratio": 4.169402087455864,
+      "stock_samples_per_second": 13209.434417675599,
+      "batch_invariant_samples_per_second": 3168.184344085627,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 16,
+      "shape": {
+        "input": [
+          16,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 1.202406406402588,
+        "peak_incremental_bytes": 889192960
+      },
+      "batch_invariant": {
+        "latency_ms": 5.328838348388672,
+        "peak_incremental_bytes": 805306368
+      },
+      "latency_ratio": 4.431811341002185,
+      "stock_samples_per_second": 13306.648995550098,
+      "batch_invariant_samples_per_second": 3002.530561813357,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 17,
+      "shape": {
+        "input": [
+          17,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 1.2696767807006837,
+        "peak_incremental_bytes": 943718912
+      },
+      "batch_invariant": {
+        "latency_ms": 5.4620929718017575,
+        "peak_incremental_bytes": 855638016
+      },
+      "latency_ratio": 4.301955469948381,
+      "stock_samples_per_second": 13389.234377128943,
+      "batch_invariant_samples_per_second": 3112.360058271268,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 31,
+      "shape": {
+        "input": [
+          31,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 2.2379648208618166,
+        "peak_incremental_bytes": 1707082240
+      },
+      "batch_invariant": {
+        "latency_ms": 10.375110626220703,
+        "peak_incremental_bytes": 1560281088
+      },
+      "latency_ratio": 4.635957870966603,
+      "stock_samples_per_second": 13851.870999501336,
+      "batch_invariant_samples_per_second": 2987.919947730932,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 32,
+      "shape": {
+        "input": [
+          32,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 2.3129024505615234,
+        "peak_incremental_bytes": 1761608192
+      },
+      "batch_invariant": {
+        "latency_ms": 10.29261474609375,
+        "peak_incremental_bytes": 1610612736
+      },
+      "latency_ratio": 4.450085970376711,
+      "stock_samples_per_second": 13835.430020938013,
+      "batch_invariant_samples_per_second": 3109.0253341255807,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 33,
+      "shape": {
+        "input": [
+          33,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 2.3984447479248048,
+        "peak_incremental_bytes": 1816134144
+      },
+      "batch_invariant": {
+        "latency_ms": 10.823225402832032,
+        "peak_incremental_bytes": 1660944384
+      },
+      "latency_ratio": 4.512601514876072,
+      "stock_samples_per_second": 13758.916076158284,
+      "batch_invariant_samples_per_second": 3048.9986830880507,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    },
+    {
+      "operator": "uva_action_conv_transpose3d",
+      "batch_size": 64,
+      "shape": {
+        "input": [
+          64,
+          1024,
+          4,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          1024,
+          4,
+          1,
+          1
+        ],
+        "bias": [
+          1024
+        ],
+        "stride": [
+          4,
+          1,
+          1
+        ],
+        "padding": [
+          0,
+          0,
+          0
+        ],
+        "output_padding": [
+          0,
+          0,
+          0
+        ],
+        "groups": 1,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 4.5376640319824215,
+        "peak_incremental_bytes": 3506438656
+      },
+      "batch_invariant": {
+        "latency_ms": 19.84167022705078,
+        "peak_incremental_bytes": 3221225472
+      },
+      "latency_ratio": 4.37266181171688,
+      "stock_samples_per_second": 14104.173325507218,
+      "batch_invariant_samples_per_second": 3225.53491050097,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "stock_max_abs_difference": 0.0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0,
+        "batch_invariant_max_abs_difference": 0.0
+      }
+    }
+  ]
+}

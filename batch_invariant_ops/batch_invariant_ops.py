@@ -19,6 +19,7 @@ __all__ = [
     "conv1d_batch_invariant",
     "conv2d_batch_invariant",
     "conv3d_batch_invariant",
+    "conv_transpose3d_batch_invariant",
     "scaled_dot_product_attention_batch_invariant",
     "varlen_scaled_dot_product_attention_batch_invariant",
     "linalg_vector_norm_batch_invariant",
@@ -778,10 +779,94 @@ def conv3d_batch_invariant(
     return output.permute(0, 1, 3, 2).reshape(input.shape[0], weight.shape[0], *output_shape)
 
 
+def conv_transpose3d_batch_invariant(
+    input, weight, bias, stride, padding, dilation, output_padding, groups
+):
+    """Batch-invariant non-overlapping 3-D transposed convolution.
+
+    When stride equals kernel size, with unit dilation and no padding, every
+    output position receives exactly one spatial contribution. The operation
+    can therefore be expressed as an independent fixed-schedule BMM per input
+    sample and group, followed by a layout transform. This covers temporal or
+    spatial learned upsamplers without atomics or batch-shaped cuDNN choices.
+    """
+    assert input.ndim == 5 and weight.ndim == 5, "only 3-D convolution is supported"
+    assert input.dtype == weight.dtype and (
+        bias is None or bias.dtype == input.dtype
+    ), "Incompatible dtypes"
+    assert input.shape[1] == weight.shape[0], "Incompatible input channels"
+    assert input.shape[1] % groups == 0, "input channels must be divisible by groups"
+
+    def triple(values, name):
+        values = tuple(values)
+        if len(values) == 1:
+            return values * 3
+        assert len(values) == 3, f"{name} must have one or three values, got {values!r}"
+        return values
+
+    stride = triple(stride, "stride")
+    padding = triple(padding, "padding")
+    dilation = triple(dilation, "dilation")
+    output_padding = triple(output_padding, "output_padding")
+    kernel_size = tuple(weight.shape[-3:])
+    assert stride == kernel_size, (
+        "batch-invariant ConvTranspose3d currently requires non-overlapping "
+        f"stride == kernel_size, got stride={stride}, kernel_size={kernel_size}"
+    )
+    assert padding == (0, 0, 0), f"padding is not supported, got {padding}"
+    assert output_padding == (0, 0, 0), (
+        f"output_padding is not supported, got {output_padding}"
+    )
+    assert dilation == (1, 1, 1), f"dilation is not supported, got {dilation}"
+
+    output_channels_per_group = weight.shape[1]
+    output_channels = output_channels_per_group * groups
+    if bias is not None:
+        assert bias.shape == (output_channels,), "Incompatible bias shape"
+    output_shape = tuple(input.shape[index + 2] * kernel_size[index] for index in range(3))
+    if input.shape[0] == 0:
+        return torch.empty(
+            (0, output_channels, *output_shape), device=input.device, dtype=input.dtype
+        )
+
+    channels_per_group = input.shape[1] // groups
+    input_volume = math.prod(input.shape[-3:])
+    kernel_volume = math.prod(kernel_size)
+    grouped_input = (
+        input.reshape(input.shape[0], groups, channels_per_group, input_volume)
+        .permute(0, 1, 3, 2)
+        .reshape(input.shape[0] * groups, input_volume, channels_per_group)
+    )
+    grouped_weight = (
+        weight.reshape(groups, channels_per_group, output_channels_per_group * kernel_volume)
+        .unsqueeze(0)
+        .expand(input.shape[0], -1, -1, -1)
+        .reshape(
+            input.shape[0] * groups,
+            channels_per_group,
+            output_channels_per_group * kernel_volume,
+        )
+    )
+    output = bmm_persistent(grouped_input, grouped_weight).reshape(
+        input.shape[0],
+        groups,
+        *input.shape[-3:],
+        output_channels_per_group,
+        *kernel_size,
+    )
+    if bias is not None:
+        output = output + bias.reshape(
+            1, groups, 1, 1, 1, output_channels_per_group, 1, 1, 1
+        )
+    return output.permute(0, 1, 5, 2, 6, 3, 7, 4, 8).reshape(
+        input.shape[0], output_channels, *output_shape
+    )
+
+
 def convolution_batch_invariant(
     input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
 ):
-    """Dispatch regular 1-D, 2-D and 3-D ``aten::convolution`` calls."""
+    """Dispatch supported regular and transposed ``aten::convolution`` calls."""
     if input.ndim == 3 and weight.ndim == 3:
         return conv1d_batch_invariant(
             input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
@@ -789,6 +874,10 @@ def convolution_batch_invariant(
     if input.ndim == 4 and weight.ndim == 4:
         return conv2d_batch_invariant(
             input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
+        )
+    if input.ndim == 5 and weight.ndim == 5 and transposed:
+        return conv_transpose3d_batch_invariant(
+            input, weight, bias, stride, padding, dilation, output_padding, groups
         )
     if input.ndim == 5 and weight.ndim == 5:
         return conv3d_batch_invariant(

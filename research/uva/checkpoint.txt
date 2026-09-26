@@ -1,0 +1,9 @@
+Official checkpoint: libero10.ckpt
+Download page: https://github.com/ShuangLI59/unified_video_action#checkpoints
+Google Drive file ID: 11c2VrmaRp48yw__5A5xpcu8EPzkexHSi
+Size: 1,860,710,688 tensor bytes (465,177,545 parameters/buffers)
+SHA256: 4554b9bb2f4f3d44a7e51d5c7bd42a7740451874ac6cf1fea91e088a949f0dbf
+
+The complete EMA state includes the VAE, MAR video/action model, CLIP text
+encoder, and action normalizer. No learned tensor is omitted or synthesized.
+

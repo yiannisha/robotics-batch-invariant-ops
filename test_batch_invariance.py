@@ -11,6 +11,7 @@ from batch_invariant_ops import (
     conv1d_batch_invariant,
     conv2d_batch_invariant,
     conv3d_batch_invariant,
+    conv_transpose3d_batch_invariant,
     is_batch_invariant_mode_enabled,
     linalg_vector_norm_batch_invariant,
     matmul_persistent,
@@ -254,7 +255,48 @@ def test_qwen_patch_conv3d_is_batch_invariant(dtype: torch.dtype, batch_size: in
     )
 
 
-def test_mode_overrides_matmul_and_conv1d_conv2d_conv3d() -> None:
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("groups", (1, 2))
+def test_nonoverlapping_conv_transpose3d_matches_torch(
+    dtype: torch.dtype, groups: int
+) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(6750 + groups)
+    inputs = torch.randn(2, 4, 2, 3, 3, device="cuda", dtype=dtype, generator=generator)
+    weight = torch.randn(4, 6 // groups, 2, 2, 2, device="cuda", dtype=dtype, generator=generator)
+    bias = torch.randn(6, device="cuda", dtype=dtype, generator=generator)
+    actual = conv_transpose3d_batch_invariant(
+        inputs,
+        weight,
+        bias,
+        stride=(2, 2, 2),
+        padding=(0, 0, 0),
+        dilation=(1, 1, 1),
+        output_padding=(0, 0, 0),
+        groups=groups,
+    )
+    expected = F.conv_transpose3d(inputs, weight, bias, stride=2, groups=groups)
+    torch.testing.assert_close(actual, expected, **TOLERANCES[dtype])
+
+
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("batch_size", (2, 5, 17))
+def test_nonoverlapping_conv_transpose3d_is_batch_invariant(
+    dtype: torch.dtype, batch_size: int
+) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(6800 + batch_size)
+    inputs = torch.randn(
+        batch_size, 8, 2, 3, 3, device="cuda", dtype=dtype, generator=generator
+    )
+    weight = torch.randn(8, 6, 4, 1, 1, device="cuda", dtype=dtype, generator=generator)
+    bias = torch.randn(6, device="cuda", dtype=dtype, generator=generator)
+    args = (weight, bias, (4, 1, 1), (0, 0, 0), (1, 1, 1), (0, 0, 0), 1)
+    _assert_first_sample_equal(
+        conv_transpose3d_batch_invariant(inputs[:1], *args),
+        conv_transpose3d_batch_invariant(inputs, *args),
+    )
+
+
+def test_mode_overrides_matmul_and_convolution_family() -> None:
     generator = torch.Generator(device="cuda").manual_seed(7000)
     query = torch.randn(5, 19, 23, device="cuda", generator=generator)
     key = torch.randn(5, 23, 17, device="cuda", generator=generator)
@@ -264,6 +306,10 @@ def test_mode_overrides_matmul_and_conv1d_conv2d_conv3d() -> None:
     signal_weight = torch.randn(8, 1, 4, device="cuda", generator=generator)
     video = torch.randn(5, 3, 2, 16, 16, device="cuda", generator=generator)
     video_weight = torch.randn(8, 3, 2, 16, 16, device="cuda", generator=generator)
+    latent = torch.randn(5, 8, 2, 3, 3, device="cuda", generator=generator)
+    transpose_weight = torch.randn(
+        8, 6, 4, 1, 1, device="cuda", generator=generator
+    )
 
     with set_batch_invariant_mode():
         _assert_first_sample_equal(query[:1] @ key[:1], query @ key)
@@ -277,6 +323,10 @@ def test_mode_overrides_matmul_and_conv1d_conv2d_conv3d() -> None:
         _assert_first_sample_equal(
             F.conv3d(video[:1], video_weight, stride=(2, 16, 16)),
             F.conv3d(video, video_weight, stride=(2, 16, 16)),
+        )
+        _assert_first_sample_equal(
+            F.conv_transpose3d(latent[:1], transpose_weight, stride=(4, 1, 1)),
+            F.conv_transpose3d(latent, transpose_weight, stride=(4, 1, 1)),
         )
 
 
