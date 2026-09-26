@@ -1,0 +1,186 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.9.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.5.0"
+  },
+  "warmup": 3,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "groot_n17_action_encoder_w2_bmm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          1,
+          40,
+          3072
+        ],
+        "right": [
+          1,
+          3072,
+          1536
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.01398719996213913,
+        "peak_incremental_bytes": 245760
+      },
+      "batch_invariant": {
+        "latency_ms": 0.03888320028781891,
+        "peak_incremental_bytes": 245760
+      },
+      "latency_ratio": 2.7799130914742647,
+      "stock_samples_per_second": 71493.93750763718,
+      "batch_invariant_samples_per_second": 25718.047706923804
+    },
+    {
+      "operator": "groot_n17_action_dit_cross_attention_k_addmm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          156,
+          2048
+        ],
+        "right": [
+          2048,
+          1536
+        ],
+        "bias": [
+          1536
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.011948800086975098,
+        "peak_incremental_bytes": 958464
+      },
+      "batch_invariant": {
+        "latency_ms": 0.03415679931640625,
+        "peak_incremental_bytes": 958464
+      },
+      "latency_ratio": 2.858596601146519,
+      "stock_samples_per_second": 83690.41181717145,
+      "batch_invariant_samples_per_second": 29276.747822202367
+    },
+    {
+      "operator": "groot_n17_action_encoder_w2_bmm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          2,
+          40,
+          3072
+        ],
+        "right": [
+          2,
+          3072,
+          1536
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.010659199953079224,
+        "peak_incremental_bytes": 491520
+      },
+      "batch_invariant": {
+        "latency_ms": 0.040275201201438904,
+        "peak_incremental_bytes": 491520
+      },
+      "latency_ratio": 3.778445040784156,
+      "stock_samples_per_second": 187631.3427652927,
+      "batch_invariant_samples_per_second": 49658.349066883035
+    },
+    {
+      "operator": "groot_n17_action_dit_cross_attention_k_addmm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          312,
+          2048
+        ],
+        "right": [
+          2048,
+          1536
+        ],
+        "bias": [
+          1536
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.011660800129175187,
+        "peak_incremental_bytes": 1916928
+      },
+      "batch_invariant": {
+        "latency_ms": 0.041171199083328246,
+        "peak_incremental_bytes": 1916928
+      },
+      "latency_ratio": 3.5307353378194333,
+      "stock_samples_per_second": 171514.81698035653,
+      "batch_invariant_samples_per_second": 48577.64759175728
+    },
+    {
+      "operator": "groot_n17_action_encoder_w2_bmm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          8,
+          40,
+          3072
+        ],
+        "right": [
+          8,
+          3072,
+          1536
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.0290336012840271,
+        "peak_incremental_bytes": 1966080
+      },
+      "batch_invariant": {
+        "latency_ms": 0.052374398708343504,
+        "peak_incremental_bytes": 1966080
+      },
+      "latency_ratio": 1.8039236054797445,
+      "stock_samples_per_second": 275542.8071680938,
+      "batch_invariant_samples_per_second": 152746.38367782463
+    },
+    {
+      "operator": "groot_n17_action_dit_cross_attention_k_addmm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          1248,
+          2048
+        ],
+        "right": [
+          2048,
+          1536
+        ],
+        "bias": [
+          1536
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.018617600202560425,
+        "peak_incremental_bytes": 7667712
+      },
+      "batch_invariant": {
+        "latency_ms": 0.03139840066432953,
+        "peak_incremental_bytes": 7667712
+      },
+      "latency_ratio": 1.6864902201526166,
+      "stock_samples_per_second": 429700.9234788371,
+      "batch_invariant_samples_per_second": 254790.0476054655
+    }
+  ]
+}

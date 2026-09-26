@@ -26,12 +26,18 @@ to the README support table only after end-to-end execution.
   the support table. No video-output result is claimed.
 - **MolmoAct:** MolmoAct2 supersedes the original MolmoAct release. Public base,
   DROID, BimanualYAM, SO100/101, LIBERO, and Think-LIBERO checkpoints and a
-  LeRobot inference implementation are available. Prioritize MolmoAct2-LIBERO
-  for a contained continuous flow-matching test.
+  PyTorch Transformers implementation are available. The official
+  MolmoAct2-LIBERO continuous flow-matching path has now been executed with
+  public weights and real inputs through B=64 and added to the support table.
 - **GR00T:** N1.7 supersedes N1.6. The official 3B base model has a PyTorch
   inference command and an approximately 6 GB checkpoint; DROID and LIBERO
-  fine-tuned checkpoints are also public. The Cosmos-Reason2-2B backbone is
-  gated, so Hugging Face authorization is an external prerequisite.
+  fine-tuned checkpoints are also public. The official N1.7 LIBERO-10 path has
+  now been executed with public weights and real inputs through B=64 and added
+  to the support table. Although the constructor resolves the gated
+  Cosmos-Reason2-2B base first, the public GR00T shards contain the complete
+  backbone. The investigation uses the exact public Qwen3-VL architecture and
+  processor assets only for construction, then loads every model tensor from
+  NVIDIA's checkpoint; no substitute weights or conversion are involved.
 - **Cosmos:** Cosmos 3 publishes Nano-Policy-DROID and Edge-Policy-DROID action
   policies. The Edge server command is public; the documentation also exposes
   WAM inference that returns both actions and future visual rollout. Nano is

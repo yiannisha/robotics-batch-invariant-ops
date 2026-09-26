@@ -1,0 +1,7 @@
+repository: https://github.com/NVIDIA/Isaac-GR00T
+commit: 51d4c89f72fda44cbf77285c6a8114b52676b8a1
+implementation: official NVIDIA PyTorch GR00T N1.7 repository
+
+The official Gr00tN1d7 model, processor, collator, feature preparation, action
+decoder, and LIBERO embodiment metadata are used directly. No JAX source,
+weight, or conversion is used.

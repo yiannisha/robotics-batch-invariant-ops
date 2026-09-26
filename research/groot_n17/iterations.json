@@ -1,0 +1,16 @@
+{
+  "comparison": "target LIBERO frame 0, B=1 versus unrelated B=2",
+  "tensor": "40x132 normalized flow velocity before Euler update",
+  "baseline": [
+    {"step": 0, "differing_elements": 3764, "max_abs_difference": 0.017578125, "mean_abs_difference": 0.0008869079756550491},
+    {"step": 1, "differing_elements": 3906, "max_abs_difference": 0.015625, "mean_abs_difference": 0.0009847346227616072},
+    {"step": 2, "differing_elements": 4124, "max_abs_difference": 0.0234375, "mean_abs_difference": 0.0012307867873460054},
+    {"step": 3, "differing_elements": 4298, "max_abs_difference": 0.046875, "mean_abs_difference": 0.0016800548182800412}
+  ],
+  "batch_invariant_ops": [
+    {"step": 0, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 1, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 2, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 3, "differing_elements": 0, "max_abs_difference": 0.0}
+  ]
+}

@@ -1,0 +1,37 @@
+repository: https://huggingface.co/nvidia/GR00T-N1.7-LIBERO
+subdirectory: libero_10
+repository_commit: 2ea293aa20ba7cf5bbf3ba17a5fbcb1a01cbfe21
+format: PyTorch safetensors, two shards
+model_shards_total_size_bytes: 6910499416
+model-00001-of-00002.safetensors_size_bytes: 4990519232
+model-00001-of-00002.safetensors_sha256: 39b7beaadd9a06c87502f2b741a36f939b84941f37fef757c6177e54e34a5eff
+model-00002-of-00002.safetensors_size_bytes: 1919980184
+model-00002-of-00002.safetensors_sha256: 8c4fa56f1b4f25a1a842c811e8a12d2bf6d77d73942f9a04f5b876a11bd6d703
+config.json_sha256: ce763f74ad1cda2ca9e67491229cbc5810d83cae675cb4dad839a69a9731fd97
+processor_config.json_sha256: 545bb44c7d8caaf5ac82df55b90831271a1469a4e48adcc9a5f469f064f4e121
+statistics.json_sha256: cbd3765acaec31fb65109304fa0c2ebd637732ddbe1b3cab0cc11bf244a498e1
+
+base_repository: https://huggingface.co/nvidia/Cosmos-Reason2-2B
+base_repository_commit: 9ce19a195e423419c349abfc86fd07178b230561
+base_access: gated; license acceptance was unavailable in this environment
+
+processor_fallback_repository: https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct
+processor_fallback_commit: 89644892e4d85e24eaac8bacfd4f463576704203
+processor_fallback_use: architecture config and processor/tokenizer assets only
+config.json_sha256: bec4b3d446efa05807365c9e1cec03ac590836879d02f3a6da879971154bdd3b
+tokenizer.json_sha256: a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7
+tokenizer_config.json_sha256: c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399
+preprocessor_config.json_sha256: 27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516
+video_preprocessor_config.json_sha256: 7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13
+
+dataset_repository: https://huggingface.co/datasets/lerobot/libero
+dataset_commit: a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4
+episode_data_file: data/chunk-000/file-000.parquet
+episode_data_sha256: 71e4088ce5877ba3234d0cde284c403f449ed560a656a2626e72fc2c3399502d
+camera_0_video_sha256: 77d59b50e309e2099e562e70806603a1bdb66b893efcaecc2534b2c9fa3e02ae
+camera_1_video_sha256: ba95edeb5190528b45364d7c8e518b7f12afa8ded72108e19a8349aa3f0a7d58
+
+The full backbone and action-head tensors come from NVIDIA's released GR00T
+checkpoint. Qwen supplies no model weights and is not a model substitute: its
+public config and processor assets only avoid a redundant construction-time
+download of the separately gated, architecture-identical Cosmos base.

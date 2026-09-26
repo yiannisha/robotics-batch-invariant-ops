@@ -1,0 +1,773 @@
+{
+  "model": "nvidia-gr00t-n1.7-libero-official-pytorch-public-weights",
+  "target_frames": [
+    0,
+    10,
+    20
+  ],
+  "batch_sizes": [
+    2,
+    4
+  ],
+  "compositions": [
+    "duplicate",
+    "unrelated"
+  ],
+  "seed": 0,
+  "modes": {
+    "baseline": {
+      "all_exact": false,
+      "results": [
+        {
+          "target_frame": 0,
+          "composition": "duplicate",
+          "batch_size": 2,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 78,
+              "max_abs_difference": 0.012660384178161621,
+              "mean_abs_difference": 0.0016251959605142474,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "126ddfabbd037714aa3bdbd407b17dd2aecf19e95192bec1560fd7ae0a1a2b39",
+              "candidate_hash": "3736a5c369461d367d46c51811669bc2e49001cfd47067be736630388e086e89"
+            }
+          ]
+        },
+        {
+          "target_frame": 0,
+          "composition": "duplicate",
+          "batch_size": 4,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 57,
+              "max_abs_difference": 0.0063301920890808105,
+              "mean_abs_difference": 0.0005077935638837516,
+              "first_differing_index": [
+                0,
+                0,
+                4
+              ],
+              "reference_hash": "126ddfabbd037714aa3bdbd407b17dd2aecf19e95192bec1560fd7ae0a1a2b39",
+              "candidate_hash": "6d9b10580450127241149393f6544a8a576a5196089590b593b7b887323b92f9"
+            }
+          ]
+        },
+        {
+          "target_frame": 0,
+          "composition": "unrelated",
+          "batch_size": 2,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 78,
+              "max_abs_difference": 0.012660384178161621,
+              "mean_abs_difference": 0.0016251959605142474,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "126ddfabbd037714aa3bdbd407b17dd2aecf19e95192bec1560fd7ae0a1a2b39",
+              "candidate_hash": "3736a5c369461d367d46c51811669bc2e49001cfd47067be736630388e086e89"
+            }
+          ]
+        },
+        {
+          "target_frame": 0,
+          "composition": "unrelated",
+          "batch_size": 4,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 57,
+              "max_abs_difference": 0.0063301920890808105,
+              "mean_abs_difference": 0.0005077935638837516,
+              "first_differing_index": [
+                0,
+                0,
+                4
+              ],
+              "reference_hash": "126ddfabbd037714aa3bdbd407b17dd2aecf19e95192bec1560fd7ae0a1a2b39",
+              "candidate_hash": "6d9b10580450127241149393f6544a8a576a5196089590b593b7b887323b92f9"
+            }
+          ]
+        },
+        {
+          "target_frame": 10,
+          "composition": "duplicate",
+          "batch_size": 2,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 57,
+              "max_abs_difference": 0.0033220648765563965,
+              "mean_abs_difference": 0.0003967314842157066,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "dc28f1a9f3691ea4013616b03e8780fa1b461450712fe9fd2c7513c8b1f4f1df",
+              "candidate_hash": "7229879eefc0c9ac533ebb8cee0e93dfd504b5e77ee58f778cd78ff0d28e154d"
+            }
+          ]
+        },
+        {
+          "target_frame": 10,
+          "composition": "duplicate",
+          "batch_size": 4,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 47,
+              "max_abs_difference": 0.0033220648765563965,
+              "mean_abs_difference": 0.00034328611218370497,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "dc28f1a9f3691ea4013616b03e8780fa1b461450712fe9fd2c7513c8b1f4f1df",
+              "candidate_hash": "3b3b090d5f62d7df410f208b0c2daf854cd3c5adf6d7f4b61cc77f952914f59d"
+            }
+          ]
+        },
+        {
+          "target_frame": 10,
+          "composition": "unrelated",
+          "batch_size": 2,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 57,
+              "max_abs_difference": 0.0033220648765563965,
+              "mean_abs_difference": 0.0003967314842157066,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "dc28f1a9f3691ea4013616b03e8780fa1b461450712fe9fd2c7513c8b1f4f1df",
+              "candidate_hash": "7229879eefc0c9ac533ebb8cee0e93dfd504b5e77ee58f778cd78ff0d28e154d"
+            }
+          ]
+        },
+        {
+          "target_frame": 10,
+          "composition": "unrelated",
+          "batch_size": 4,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 47,
+              "max_abs_difference": 0.0033220648765563965,
+              "mean_abs_difference": 0.00034328611218370497,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "dc28f1a9f3691ea4013616b03e8780fa1b461450712fe9fd2c7513c8b1f4f1df",
+              "candidate_hash": "3b3b090d5f62d7df410f208b0c2daf854cd3c5adf6d7f4b61cc77f952914f59d"
+            }
+          ]
+        },
+        {
+          "target_frame": 20,
+          "composition": "duplicate",
+          "batch_size": 2,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 53,
+              "max_abs_difference": 0.0033220648765563965,
+              "mean_abs_difference": 0.00036967365304008126,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "b5d02ee49db99ac1ed1812faa7bb25d1030911256b5ba72f0f71a0d3648e8194",
+              "candidate_hash": "cb04dc65e64610a1067767746dc6f263c2d822899b37cdb4b714ad09f0023211"
+            }
+          ]
+        },
+        {
+          "target_frame": 20,
+          "composition": "duplicate",
+          "batch_size": 4,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 44,
+              "max_abs_difference": 0.00274658203125,
+              "mean_abs_difference": 0.0003048327926080674,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "b5d02ee49db99ac1ed1812faa7bb25d1030911256b5ba72f0f71a0d3648e8194",
+              "candidate_hash": "6be6e68382182891bbb2d619ff3defa06f89ce835823f73e8d316bdae9e73b60"
+            }
+          ]
+        },
+        {
+          "target_frame": 20,
+          "composition": "unrelated",
+          "batch_size": 2,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 53,
+              "max_abs_difference": 0.0033220648765563965,
+              "mean_abs_difference": 0.00036967365304008126,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "b5d02ee49db99ac1ed1812faa7bb25d1030911256b5ba72f0f71a0d3648e8194",
+              "candidate_hash": "cb04dc65e64610a1067767746dc6f263c2d822899b37cdb4b714ad09f0023211"
+            }
+          ]
+        },
+        {
+          "target_frame": 20,
+          "composition": "unrelated",
+          "batch_size": 4,
+          "exact": false,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": false,
+              "differing_elements": 44,
+              "max_abs_difference": 0.00274658203125,
+              "mean_abs_difference": 0.0003048327926080674,
+              "first_differing_index": [
+                0,
+                0,
+                0
+              ],
+              "reference_hash": "b5d02ee49db99ac1ed1812faa7bb25d1030911256b5ba72f0f71a0d3648e8194",
+              "candidate_hash": "6be6e68382182891bbb2d619ff3defa06f89ce835823f73e8d316bdae9e73b60"
+            }
+          ]
+        }
+      ]
+    },
+    "fixed": {
+      "all_exact": true,
+      "results": [
+        {
+          "target_frame": 0,
+          "composition": "duplicate",
+          "batch_size": 2,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347",
+              "candidate_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347"
+            }
+          ]
+        },
+        {
+          "target_frame": 0,
+          "composition": "duplicate",
+          "batch_size": 4,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347",
+              "candidate_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347"
+            }
+          ]
+        },
+        {
+          "target_frame": 0,
+          "composition": "unrelated",
+          "batch_size": 2,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347",
+              "candidate_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347"
+            }
+          ]
+        },
+        {
+          "target_frame": 0,
+          "composition": "unrelated",
+          "batch_size": 4,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347",
+              "candidate_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347"
+            }
+          ]
+        },
+        {
+          "target_frame": 10,
+          "composition": "duplicate",
+          "batch_size": 2,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "5890461e59bbd0d0a6932706d314dccb2f55a75bcfc752e73eb9321a3ebfd5c5",
+              "candidate_hash": "5890461e59bbd0d0a6932706d314dccb2f55a75bcfc752e73eb9321a3ebfd5c5"
+            }
+          ]
+        },
+        {
+          "target_frame": 10,
+          "composition": "duplicate",
+          "batch_size": 4,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "5890461e59bbd0d0a6932706d314dccb2f55a75bcfc752e73eb9321a3ebfd5c5",
+              "candidate_hash": "5890461e59bbd0d0a6932706d314dccb2f55a75bcfc752e73eb9321a3ebfd5c5"
+            }
+          ]
+        },
+        {
+          "target_frame": 10,
+          "composition": "unrelated",
+          "batch_size": 2,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "5890461e59bbd0d0a6932706d314dccb2f55a75bcfc752e73eb9321a3ebfd5c5",
+              "candidate_hash": "5890461e59bbd0d0a6932706d314dccb2f55a75bcfc752e73eb9321a3ebfd5c5"
+            }
+          ]
+        },
+        {
+          "target_frame": 10,
+          "composition": "unrelated",
+          "batch_size": 4,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "5890461e59bbd0d0a6932706d314dccb2f55a75bcfc752e73eb9321a3ebfd5c5",
+              "candidate_hash": "5890461e59bbd0d0a6932706d314dccb2f55a75bcfc752e73eb9321a3ebfd5c5"
+            }
+          ]
+        },
+        {
+          "target_frame": 20,
+          "composition": "duplicate",
+          "batch_size": 2,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "02a2e82f3e0ae9ceb32194c98b2db6ac21bb7cf44f6329fb722083f37802554a",
+              "candidate_hash": "02a2e82f3e0ae9ceb32194c98b2db6ac21bb7cf44f6329fb722083f37802554a"
+            }
+          ]
+        },
+        {
+          "target_frame": 20,
+          "composition": "duplicate",
+          "batch_size": 4,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "02a2e82f3e0ae9ceb32194c98b2db6ac21bb7cf44f6329fb722083f37802554a",
+              "candidate_hash": "02a2e82f3e0ae9ceb32194c98b2db6ac21bb7cf44f6329fb722083f37802554a"
+            }
+          ]
+        },
+        {
+          "target_frame": 20,
+          "composition": "unrelated",
+          "batch_size": 2,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "02a2e82f3e0ae9ceb32194c98b2db6ac21bb7cf44f6329fb722083f37802554a",
+              "candidate_hash": "02a2e82f3e0ae9ceb32194c98b2db6ac21bb7cf44f6329fb722083f37802554a"
+            }
+          ]
+        },
+        {
+          "target_frame": 20,
+          "composition": "unrelated",
+          "batch_size": 4,
+          "exact": true,
+          "tensors": [
+            {
+              "path": "output",
+              "reference_shape": [
+                1,
+                16,
+                7
+              ],
+              "candidate_shape": [
+                1,
+                16,
+                7
+              ],
+              "dtype": "torch.float32",
+              "exact": true,
+              "differing_elements": 0,
+              "max_abs_difference": 0.0,
+              "mean_abs_difference": 0.0,
+              "first_differing_index": null,
+              "reference_hash": "02a2e82f3e0ae9ceb32194c98b2db6ac21bb7cf44f6329fb722083f37802554a",
+              "candidate_hash": "02a2e82f3e0ae9ceb32194c98b2db6ac21bb7cf44f6329fb722083f37802554a"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

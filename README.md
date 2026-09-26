@@ -131,6 +131,7 @@ Only configurations that have been executed end to end are marked PASS.
 | InternVLA-A1.5 official PyTorch standard action backend, public LIBERO weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | InternVLA-A1.5 official PyTorch optimized action-only backend, public LIBERO weights and real inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | MolmoAct2 official PyTorch, public `allenai/MolmoAct2-LIBERO` weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| GR00T N1.7 official NVIDIA PyTorch, public `libero_10` weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -141,8 +142,8 @@ per-sample noise. Its deterministic inputs are synthetic, so the result is a
 learned-weight numerical inference regression rather than a policy-quality
 claim. The π0-FAST row uses LeRobot's maintained PyTorch implementation with
 real observations from the public LIBERO dataset. Stock inference changed the
-final action at B=3, 4, 5, and 7; the library was exact through B=64. GR00T,
-Cosmos, and the other planned model families are not yet marked supported.
+final action at B=3, 4, 5, and 7; the library was exact through B=64. Cosmos
+and the other planned model families are not yet marked supported.
 DreamZero is recorded as blocked under the single-H100 constraint:
 its released PyTorch checkpoint is 45.85 GB and its official inference path
 requires at least two GPUs.
@@ -164,13 +165,24 @@ cuBLASLt selects split-K at B=1 and a different non-split-K kernel at B=2. The
 existing generic invariant MM repair makes all ten continuous flow steps and
 the final 10x7 action exact through B=64.
 
+The GR00T row uses NVIDIA's official N1.7 PyTorch classes and complete public
+LIBERO-10 checkpoint. Because the constructor redundantly resolves the gated
+Cosmos base before overwriting it, the adapter constructs the exact public
+Qwen3-VL architecture without base weights and then lets the official loader
+fill every tensor from NVIDIA's shards. Stock fails every B above one. Its
+first divergence is a category-conditioned `aten::bmm`; after BMM alone is
+repaired, an action-DiT `aten::addmm` is the next divergence. The generic
+invariant BMM and MM/addmm paths make all four flow steps and the final 16x7
+action exact through B=64.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
-[`research/internvla_a15`](research/internvla_a15), including environments, upstream
-commits, baseline/fixed hashes, first-divergence diagnostics, multiple-input
-checks, iteration notes, and operator benchmarks. MolmoAct2 evidence is in
-[`research/molmoact2`](research/molmoact2). The earlier random-weight
+[`research/internvla_a15`](research/internvla_a15), including environments,
+upstream commits, baseline/fixed hashes, first-divergence diagnostics,
+multiple-input checks, iteration notes, and operator benchmarks. MolmoAct2 evidence is in
+[`research/molmoact2`](research/molmoact2), and GR00T N1.7 evidence is in
+[`research/groot_n17`](research/groot_n17). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -287,6 +299,32 @@ flow-step trace, `scripts/check_molmoact2_multiple_inputs.py` for the
 three-target regression, and `scripts/benchmark_molmoact2_ops.py` for the exact
 projector-MM benchmark.
 
+For GR00T N1.7, check out NVIDIA's pinned Isaac-GR00T commit and download the
+`libero_10` subdirectory of the pinned `nvidia/GR00T-N1.7-LIBERO` PyTorch
+snapshot recorded in
+[`research/groot_n17/checkpoint.txt`](research/groot_n17/checkpoint.txt).
+The separately gated Cosmos base is not needed for its weights: download only
+the config and processor/tokenizer assets of the pinned public
+`Qwen/Qwen3-VL-2B-Instruct` snapshot. Reuse the LIBERO fixture above, add the
+official repository to `PYTHONPATH`, then run:
+
+```bash
+GROOT_N17_CHECKPOINT=/path/to/GR00T-N1.7-LIBERO/libero_10 \
+GROOT_N17_PROCESSOR=/path/to/Qwen3-VL-2B-Instruct-processor-assets \
+GROOT_N17_SAMPLE_DIR=/path/to/libero-episode-zero \
+PYTHONPATH="$PWD:/path/to/Isaac-GR00T" \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.groot_n17 \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/groot_n17/fixed.json
+```
+
+Use `scripts/trace_groot_n17_batch_invariance.py` for the two causal
+operator boundaries and four-step trace,
+`scripts/check_groot_n17_multiple_inputs.py` for the three-target regression,
+and `scripts/benchmark_groot_n17_ops.py` for the exact BMM/addmm benchmarks.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -316,6 +354,11 @@ stock latency. See
 For MolmoAct2 on the same environment, the invariant image-projector MM was
 2.38×, 1.75×, and 1.41× slower than stock at B=1, 2, and 8, respectively. See
 [`research/molmoact2/benchmarks.json`](research/molmoact2/benchmarks.json).
+
+For GR00T N1.7 on PyTorch 2.9.0/CUDA 12.8, the invariant action-encoder BMM
+was 2.78×, 3.78×, and 1.80× slower at B=1, 2, and 8. The action-DiT addmm was
+2.86×, 3.53×, and 1.69× slower. See
+[`research/groot_n17/benchmarks.json`](research/groot_n17/benchmarks.json).
 
 ## Attribution
 

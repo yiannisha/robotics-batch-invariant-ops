@@ -1,0 +1,6093 @@
+{
+  "model": "nvidia-gr00t-n1.7-libero-official-pytorch-public-weights",
+  "comparison": "B=1 target versus first sample at unrelated B=2",
+  "first_stock_difference": {
+    "label": "flow.action_encoder.W2.output",
+    "call": 0,
+    "reference_shape": [
+      1,
+      40,
+      1536
+    ],
+    "candidate_full_shape": [
+      2,
+      40,
+      1536
+    ],
+    "dtype": "torch.bfloat16",
+    "exact": false,
+    "reference_hash": "7609891f7cbe84f1b06e7319fdbad643848a3435e9da9a8af8d49d6a9598d54c",
+    "candidate_hash": "9458783be5e516f5712ef75032bebe3613b52e302ed437918ad5158d87566d14",
+    "differing_elements": 2,
+    "first_differing_index": [
+      0,
+      15,
+      1392
+    ],
+    "max_abs_difference": 0.00048828125,
+    "mean_abs_difference": 1.1920929132713809e-08
+  },
+  "first_after_bmm_difference": {
+    "label": "action.dit.block0.k.output",
+    "call": 0,
+    "reference_shape": [
+      1,
+      156,
+      1536
+    ],
+    "candidate_full_shape": [
+      2,
+      156,
+      1536
+    ],
+    "dtype": "torch.bfloat16",
+    "exact": false,
+    "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+    "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+    "differing_elements": 210049,
+    "first_differing_index": [
+      0,
+      0,
+      1
+    ],
+    "max_abs_difference": 0.140625,
+    "mean_abs_difference": 0.01597137749195099
+  },
+  "stock_trace": [
+    {
+      "label": "preprocess.input_ids",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156
+      ],
+      "candidate_full_shape": [
+        2,
+        156
+      ],
+      "dtype": "torch.int64",
+      "exact": true,
+      "reference_hash": "c73a19b8c82965b2cab1ecd8143098ab9f77592834954da317b484bce700247a",
+      "candidate_hash": "c73a19b8c82965b2cab1ecd8143098ab9f77592834954da317b484bce700247a",
+      "differing_elements": 0,
+      "first_differing_index": null
+    },
+    {
+      "label": "preprocess.pixel_values",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1536
+      ],
+      "candidate_full_shape": [
+        1024,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "candidate_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.initial_noise",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "candidate_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.patch_conv.input",
+      "call": 0,
+      "reference_shape": [
+        512,
+        3,
+        2,
+        16,
+        16
+      ],
+      "candidate_full_shape": [
+        1024,
+        3,
+        2,
+        16,
+        16
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "candidate_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.patch_conv.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024,
+        1,
+        1,
+        1
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024,
+        1,
+        1,
+        1
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "2cb38335b4bed09926f6148dbb541f3ab614db0db4f52fe4b24dbfe0497eb1e2",
+      "candidate_hash": "2cb38335b4bed09926f6148dbb541f3ab614db0db4f52fe4b24dbfe0497eb1e2",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block0.qkv.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        3072
+      ],
+      "candidate_full_shape": [
+        1024,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "938012ea342a90e75ebe2a2e8d9496ef908ad5bda174aa9c51abfe57c5032941",
+      "candidate_hash": "938012ea342a90e75ebe2a2e8d9496ef908ad5bda174aa9c51abfe57c5032941",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block0.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "774da6870480b7aaf3baec8ff8b5c788e207b2478a05b6650f791ec7311f45e3",
+      "candidate_hash": "774da6870480b7aaf3baec8ff8b5c788e207b2478a05b6650f791ec7311f45e3",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block23.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "7fab20c041ff3642c92e3471215cb7d267b22385ecbb18c4bc2908191382766a",
+      "candidate_hash": "7fab20c041ff3642c92e3471215cb7d267b22385ecbb18c4bc2908191382766a",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.merger.output",
+      "call": 0,
+      "reference_shape": [
+        128,
+        2048
+      ],
+      "candidate_full_shape": [
+        256,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d74a04fa7e27df46dc18043ad69556d4f7afce8c2d8e91d06c41ba81111ec893",
+      "candidate_hash": "d74a04fa7e27df46dc18043ad69556d4f7afce8c2d8e91d06c41ba81111ec893",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "language.block0.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "7b89c4b9d0ed0cbd8052f8c83a8a8ff9e2f279c97ee31e25019f5e749fd51bf0",
+      "candidate_hash": "aa6bbda67d3a5b5baf6271c4e41831f05da2a60179434bdab496c9dff36d07f5",
+      "differing_elements": 264,
+      "first_differing_index": [
+        0,
+        0,
+        7
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 2.5575818654033355e-06
+    },
+    {
+      "label": "language.block15.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e0aa655ef0e297e61633b96d3e8a2921aaa715831d22e2c98495eeb387ca3899",
+      "candidate_hash": "977a2d920b2fe7cda407eff7a48b04076db0a14f152afc7ca0d2fcfbce5ff830",
+      "differing_elements": 279848,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 2.0,
+      "mean_abs_difference": 0.03229738026857376
+    },
+    {
+      "label": "action.vl_projector",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.state_encoder",
+      "call": 0,
+      "reference_shape": [
+        1,
+        1,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        1,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d2f25abbff0f82ff374f1c69c8c7144ad52546902896769ef6b7241138923be3",
+      "candidate_hash": "d2f25abbff0f82ff374f1c69c8c7144ad52546902896769ef6b7241138923be3",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "candidate_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "5fc51051d609ac941ffa495a67f1aa4ac628ae71fcf69edee7c0ff9257b3b4da",
+      "candidate_hash": "4518a03b5fe24b4c74f852a7a98ca9c4138ee5d64e0fcbaf1ea9259535c75f2a",
+      "differing_elements": 661,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.00022471457486972213
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "984c4a85b70aa9a7d733d612555370f0ed698f48cd07c90127eb093f00b1860b",
+      "candidate_hash": "c163db78e23660e9a7b8f935f05c97cd084e24e2e51b62a150ad2c589fc3753a",
+      "differing_elements": 1021,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.00047015855670906603
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "d296d4f2ab40065f9b4db182bf2145b641af0fc576dbf2fa0afc7f39b0a61f0a",
+      "candidate_hash": "8b20da1c6e3bf32fce9c67ad768a9573fbaf58ba994e3db965bf62241f401541",
+      "differing_elements": 1386,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.000746666279155761
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "0507eabe5afb8c8782d5874e898c9a006310f1fe73e59cc12cd77ec9897601d5",
+      "candidate_hash": "0507eabe5afb8c8782d5874e898c9a006310f1fe73e59cc12cd77ec9897601d5",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "48d21895afaca9b134a1833d57201ca910a6ee280a5e301d08c3cd8833f74e50",
+      "candidate_hash": "1898015991bf31389d2009d60248078222cd84d3b1a3317d882e675a51923c07",
+      "differing_elements": 20650,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.00390625,
+      "mean_abs_difference": 0.0002279633336002007
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "81b41c170687f1e2ccd1b61f7072751c8a7e3b883eb3e9bd85b1f24afc38188f",
+      "candidate_hash": "408ca8463d0f712885e3852aa044cd5f94d57244ca99c193273cceed79995a9e",
+      "differing_elements": 29094,
+      "first_differing_index": [
+        0,
+        0,
+        2
+      ],
+      "max_abs_difference": 0.005859375,
+      "mean_abs_difference": 0.0003889629733748734
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "bed19af072280dfa38e041908a3dc1948f9031fd27637bfc894be6a1b140bdd1",
+      "candidate_hash": "6cccc60150809f25858e2299d18f12eda6c2f4c879d2ccf99632d3020234a4f8",
+      "differing_elements": 33935,
+      "first_differing_index": [
+        0,
+        0,
+        5
+      ],
+      "max_abs_difference": 0.0048828125,
+      "mean_abs_difference": 0.0005310610285960138
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "bc1f3004d1dd3305c7cea9949d076ba3469d4c48339d8d631d6c1cbd49eacdcb",
+      "candidate_hash": "bc1f3004d1dd3305c7cea9949d076ba3469d4c48339d8d631d6c1cbd49eacdcb",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "c590699c3e4d6c0c5489f822ca5079adf1e276edd687ca669749fc498161a7ba",
+      "candidate_hash": "28491411e525173a7122bb425c9694d68eeb38ece5b832f82343feb111b8731e",
+      "differing_elements": 20650,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.00390625,
+      "mean_abs_difference": 0.00011398166680010036
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "5ec613284bf69dda29641328ed227885ec72f15f1415a6287ce97114383edecf",
+      "candidate_hash": "c88fb6cd9220d1ffe257b7bc2e48fbc5671b6dd4705eb2b56ca03eb75472ec9b",
+      "differing_elements": 29094,
+      "first_differing_index": [
+        0,
+        0,
+        2
+      ],
+      "max_abs_difference": 0.005859375,
+      "mean_abs_difference": 0.0001944814866874367
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e1add5c344c5dcd882437ccec1ac210ca69c74a922935d09d45f3e04e88c586e",
+      "candidate_hash": "fcc0a98d56889222ed8a596fffbf787c04972ea1d1ddade9c55693421b84b6b2",
+      "differing_elements": 33935,
+      "first_differing_index": [
+        0,
+        0,
+        5
+      ],
+      "max_abs_difference": 0.0048828125,
+      "mean_abs_difference": 0.0002655305142980069
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "7609891f7cbe84f1b06e7319fdbad643848a3435e9da9a8af8d49d6a9598d54c",
+      "candidate_hash": "9458783be5e516f5712ef75032bebe3613b52e302ed437918ad5158d87566d14",
+      "differing_elements": 2,
+      "first_differing_index": [
+        0,
+        15,
+        1392
+      ],
+      "max_abs_difference": 0.00048828125,
+      "mean_abs_difference": 1.1920929132713809e-08
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "668945e14a05712b4dd8645a9a4e5eb1673babbb3b757f49d297fa84dd8e8de3",
+      "candidate_hash": "eb2c53781100e6a3b02559ba123b546451f4e057144dcfb2c0572a2a6798a49e",
+      "differing_elements": 20674,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.00205095368437469
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "256cec8a968274d7fb27ff60e6ed5e76b4eca34467b57cbe49028973672a2d99",
+      "candidate_hash": "c449dda32631c86cd43b573cf9b40f985f074579e00ab39b8c1e039065314d80",
+      "differing_elements": 32072,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.033203125,
+      "mean_abs_difference": 0.0038586598820984364
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "97d72b8daf9da449d7d0825b4a322bebce8278a145c8446e39feb6b13f7ae5e8",
+      "candidate_hash": "d644b84d51d42fc8c02462af9a9a1917b02af7fe6175a9bba2a4d5a395292f9f",
+      "differing_elements": 36265,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.00531704630702734
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "444e3735bb92d145cea5062a765b425d8cdcc32d12ce33bebb737e8088c82f38",
+      "candidate_hash": "0b8c27de60a11821e51931643ac9faecb67a3c4b22ea5caf7bedf181c031278d",
+      "differing_elements": 2,
+      "first_differing_index": [
+        0,
+        15,
+        1392
+      ],
+      "max_abs_difference": 0.000244140625,
+      "mean_abs_difference": 5.9604645663569045e-09
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "67a543043793a3dcf712ddc0faac09f514ad0cf273427355172959a7fdd8a200",
+      "candidate_hash": "dbbdad42998a328b59acbd449a223cf879f50bc8b5fd79da9d56578d4be17314",
+      "differing_elements": 17653,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0014152980875223875
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "bc22e90ce1c9753b5efc21f6f3aab46cdf707a212218fbc8762bc2d0bd4c6f54",
+      "candidate_hash": "aab85b61cb153fe9569f707bd0d90d8cc7c1d54a129e22c38c6a76d4298a2e76",
+      "differing_elements": 28465,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0029790312983095646
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e20e9b0ffe257b324f9be335dc2e2b4e29f6dcd2fdef71116ae0eb0b3b45ac51",
+      "candidate_hash": "7c1142dc302a60cefa1e66d0320fde2b876d5930142cd24aa4956049337b6c65",
+      "differing_elements": 33287,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.004559138789772987
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "69dc43a626131d3d7abe160497e5a3875ac5eba3724143444827bc0df7a7213b",
+      "candidate_hash": "3f46c6fdc16d0a8d2db605ae13f0c301c2023914e802371dd3e28f661b4b4063",
+      "differing_elements": 3,
+      "first_differing_index": [
+        0,
+        15,
+        244
+      ],
+      "max_abs_difference": 0.0078125,
+      "mean_abs_difference": 1.9098321502042381e-07
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "9ca2a79230dacad3bb7498e8bb51f6cd567e5df56672e4b86edb1ee3e763d372",
+      "candidate_hash": "074d9908ebb176c068f1edcfb8cdf50be6def8a094c29148b5de91d6215e4ff2",
+      "differing_elements": 26550,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.004658941645175219
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "85e3d1beaf87fb762d036c62af580ae21a7320fd5b49e1e8afa7c1ba1eb35bce",
+      "candidate_hash": "ca73fc2d14b4ff85465975db7030d26a92f2a29c85b438b36419ec2247d3e90a",
+      "differing_elements": 39031,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.009007036685943604
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "1231b2175c86e49d072504fb2d43f056aaba2f8d213f8ecd260a41044559544e",
+      "candidate_hash": "8026ac461b83d34a42c15abe92c66bdc4f017667d33c16e222655e30fde24716",
+      "differing_elements": 46658,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.013800940476357937
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f709ee89836f14d0f004af7e454ba7d2047808c35a7271981a35b31733f51dd6",
+      "candidate_hash": "b3e11af76d8b65e89a97490ee826b257c22612a7ef3baf91f51f2e7656cbccb7",
+      "differing_elements": 2,
+      "first_differing_index": [
+        0,
+        16,
+        584
+      ],
+      "max_abs_difference": 0.0078125,
+      "mean_abs_difference": 1.860827865129977e-07
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "07daf3453468786f71de0e60c6747db68a44006520471a33ba7f629a49a163da",
+      "candidate_hash": "823d87fde662f5835ce4e6a29d13069535dc8b8e0ca2dff360aced8fc0b93b31",
+      "differing_elements": 24558,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.004558596294373274
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "fe4bb70dd0c4f2867fa66c5bfcce8dd753451634fc878b29ec813547437c289e",
+      "candidate_hash": "77e2d3f63f2a26c60c9aa5ae2a71cfdceb935970815a695c75d7324b1466baaa",
+      "differing_elements": 37022,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.008808597922325134
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "62a384e7bd624b0146181f7aeb99b785df5831414e8db6486965cef0897785f6",
+      "candidate_hash": "7c3d3298e3e53c741962340a72036d23f6f00490566e21809b473a76e02fd15a",
+      "differing_elements": 44856,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.013456836342811584
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "7e55ee4acec34f5e85f1f183d0fd4bd37d40793a3ce3c09d63ea3a014f8c556e",
+      "candidate_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "differing_elements": 2,
+      "first_differing_index": [
+        0,
+        16,
+        584
+      ],
+      "max_abs_difference": 0.00390625,
+      "mean_abs_difference": 7.753449438041571e-08
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "6a6132a70cdc3ea0fe4c3bc528f190b05997e7987b761ec3ccd67abbd5523fc0",
+      "candidate_hash": "f6280e970ea9d7e02d5cb4d550d546972d093106b94583eee64a13617b7038ab",
+      "differing_elements": 20025,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0005096245440654457
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "03399f0f0855d03ece40e0805ac6a575be2912c3cc9512f2d657ad1874defad5",
+      "candidate_hash": "9c833295c87750864b2c5be1be97ad5ef54201f0dbfc50b9c8bda81c911bee1c",
+      "differing_elements": 32711,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0009414745145477355
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e4614043776a927198e3002d6f3fede06ff57b84f7142336a32f0a90be1c65ef",
+      "candidate_hash": "a3c850b05bfa234cd4d4430970d7d40e51001f8764b46e136c8edde0eb128b8f",
+      "differing_elements": 40946,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0013510073767974973
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "7e55ee4acec34f5e85f1f183d0fd4bd37d40793a3ce3c09d63ea3a014f8c556e",
+      "candidate_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "differing_elements": 2,
+      "first_differing_index": [
+        0,
+        16,
+        584
+      ],
+      "max_abs_difference": 0.00390625,
+      "mean_abs_difference": 7.753449438041571e-08
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "6a6132a70cdc3ea0fe4c3bc528f190b05997e7987b761ec3ccd67abbd5523fc0",
+      "candidate_hash": "f6280e970ea9d7e02d5cb4d550d546972d093106b94583eee64a13617b7038ab",
+      "differing_elements": 20025,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0005096245440654457
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "03399f0f0855d03ece40e0805ac6a575be2912c3cc9512f2d657ad1874defad5",
+      "candidate_hash": "9c833295c87750864b2c5be1be97ad5ef54201f0dbfc50b9c8bda81c911bee1c",
+      "differing_elements": 32711,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0009414745145477355
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e4614043776a927198e3002d6f3fede06ff57b84f7142336a32f0a90be1c65ef",
+      "candidate_hash": "a3c850b05bfa234cd4d4430970d7d40e51001f8764b46e136c8edde0eb128b8f",
+      "differing_elements": 40946,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0013510073767974973
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "71d16bbc82cc648385136b8325fe301d6d1ca7f009cf1fac6a60176cf0d27c91",
+      "candidate_hash": "a5813687761250c1c2fe03ffede6bcdb8ec5d61f11467a411d9e266c5c882ec4",
+      "differing_elements": 174,
+      "first_differing_index": [
+        0,
+        16,
+        1
+      ],
+      "max_abs_difference": 0.0078125,
+      "mean_abs_difference": 1.691198463049659e-06
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "97ead3a739e2678cc4fbf4ccabd6f99515a01cbaa4a5e2e94c64fc7ee47022ae",
+      "candidate_hash": "5369d7281200c69bbc4bc14d11164b95239e6ca5d5f039c1c2eb0db9b4bed180",
+      "differing_elements": 29705,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.0007531167357228696
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "7b62eba967d1433296c6cfda4f4dbc207846c233dff1039d2314db10403f61ba",
+      "candidate_hash": "8365c8689008dca6e951f7a7d44033c94c0df7e6d3ce0eab18d9649660b6626e",
+      "differing_elements": 37532,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.0162353515625,
+      "mean_abs_difference": 0.0010971465380862355
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "014f58f20e1d821034ca2cafd81ae7597e38721a528837d00b41adbb06179ee3",
+      "candidate_hash": "651f4b6915949f391416a903627b38d9e03bb1e1b110ce654f184d28dd32391d",
+      "differing_elements": 41866,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.021484375,
+      "mean_abs_difference": 0.001381483394652605
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+      "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+      "differing_elements": 210049,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.140625,
+      "mean_abs_difference": 0.01597137749195099
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+      "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+      "differing_elements": 210049,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.140625,
+      "mean_abs_difference": 0.01597137749195099
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+      "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+      "differing_elements": 210049,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.140625,
+      "mean_abs_difference": 0.01597137749195099
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+      "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+      "differing_elements": 210049,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.140625,
+      "mean_abs_difference": 0.01597137749195099
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "328f06e44f4970203421e666d721fa5fee885131a9c6b83afea2f6afd81e1495",
+      "candidate_hash": "9dae6fbf6fc085a771faefe1a38ad7d676633d871c22fa307ef7b7222b6f142d",
+      "differing_elements": 212095,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.09521484375,
+      "mean_abs_difference": 0.011048153974115849
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "328f06e44f4970203421e666d721fa5fee885131a9c6b83afea2f6afd81e1495",
+      "candidate_hash": "9dae6fbf6fc085a771faefe1a38ad7d676633d871c22fa307ef7b7222b6f142d",
+      "differing_elements": 212095,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.09521484375,
+      "mean_abs_difference": 0.011048153974115849
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "328f06e44f4970203421e666d721fa5fee885131a9c6b83afea2f6afd81e1495",
+      "candidate_hash": "9dae6fbf6fc085a771faefe1a38ad7d676633d871c22fa307ef7b7222b6f142d",
+      "differing_elements": 212095,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.09521484375,
+      "mean_abs_difference": 0.011048153974115849
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "328f06e44f4970203421e666d721fa5fee885131a9c6b83afea2f6afd81e1495",
+      "candidate_hash": "9dae6fbf6fc085a771faefe1a38ad7d676633d871c22fa307ef7b7222b6f142d",
+      "differing_elements": 212095,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.09521484375,
+      "mean_abs_difference": 0.011048153974115849
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "d441397d8d6372f0406cd27dbe9dde9a41562b44f2ca189a03f6d58f0e942771",
+      "candidate_hash": "787c9ca3d546ff0494266b2dce17d2f648b87b3271fd1764524cf2597f3c2e05",
+      "differing_elements": 46177,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0023964992724359035
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "c7a5f2ea35dcab2205cfd2ff382320dc23e489f1cd260fc60cc892fce470da25",
+      "candidate_hash": "187f1060ddd4a588cf7d284b213b0cda180de93bbe186cbb2e933e0123b495c5",
+      "differing_elements": 46667,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.002349281217902899
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "9960d7c1d05dafe702e2fb7158a12aa09c0e3b8a648e1b99ca26074616636af5",
+      "candidate_hash": "e5d9f1f9377af1cb2377c499c52cc1ac18239907a186709ee1ea0070eba8ae99",
+      "differing_elements": 47428,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0024312555324286222
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "5001f90c380a14fc153e627a564cd4ef66c3e10d0d0ffb17c794f150bb114a14",
+      "candidate_hash": "b3abc033ade170e0358385dff975ba86a98619bee874db777608fbfdf6959fce",
+      "differing_elements": 49056,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0026084145065397024
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "5879d6265ddf3135664c7ee7a6cfbb2df146f43aa95d3525355e2b929cb3e304",
+      "candidate_hash": "2274ecde5deaf8015c77c4c0c9e335b46ba39ecfca850515947a8a662af90d33",
+      "differing_elements": 18202,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 1.5,
+      "mean_abs_difference": 0.004357315134257078
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "d2f5df6fb60442cb2c71a820d11348a191d7b8e749998c330ab9ab0803a6707e",
+      "candidate_hash": "940fdb43590b800f80b525a7fdfe89cf748e1c56c8530932189f1764530b6222",
+      "differing_elements": 30435,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 1.5,
+      "mean_abs_difference": 0.008545844815671444
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f90c04da4806bb5da6c727fd8ce4c1935d29631706946d393f8ec88b386633e6",
+      "candidate_hash": "5a8f065e1e517f2916a44b1099346843c503087e49967ebc79af128b628381ab",
+      "differing_elements": 39919,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 2.0,
+      "mean_abs_difference": 0.01277906820178032
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "3adf640c8e344c164666cec14ea734ae5121fcc8667e44fd66b6a2f0eeade1b4",
+      "candidate_hash": "d9926bc1bc91331109b42d34c4dcac2d1ade93961066147c8175e87f96260727",
+      "differing_elements": 47025,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 1.0,
+      "mean_abs_difference": 0.017860447987914085
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "1e1fb03903e752ac67f64101c305e39785e2d6db2d453502343f47031f50447f",
+      "candidate_hash": "51e0e16839940965a3181ec2716f4db336c7645b79e5fbbb2369f7f938c44b39",
+      "differing_elements": 53234,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 8.0,
+      "mean_abs_difference": 0.1424119472503662
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "87bd369325d0cd0d313f4f18074fc9205be6446d0843b8c1353de28274e74402",
+      "candidate_hash": "d876453cb248b6605c701df2829fc8190cec1b22ecfcafb319ee388e91113587",
+      "differing_elements": 53848,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 8.0,
+      "mean_abs_difference": 0.1453690528869629
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "900b354b0bd53a15af53fbf355cfceeed8230727e7080489ce1a5aabe0e0a7a6",
+      "candidate_hash": "c64c71a746566e8d2093ea57e16fc9d9a6e4b59f103a8cd615b8512bae610620",
+      "differing_elements": 54537,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 16.0,
+      "mean_abs_difference": 0.15994001924991608
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "56e9db0d7bfa1b2e9cca529ef00b79add16c18a573bbd3148e2d17826688f51f",
+      "candidate_hash": "5ea89e2a268f230866ec0d5f2ad685ddb1d7aeb0bf47492c7a1c271ed14cc0dd",
+      "differing_elements": 55087,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 16.0,
+      "mean_abs_difference": 0.1696583479642868
+    },
+    {
+      "label": "flow.velocity",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "92362f8db04850d60f8efe32704d1504c6f9c89c770590deaef602d0f32a32d1",
+      "candidate_hash": "a1403a06255b671fb41d943211b6421af08024d1e157613474208c20f598c3d2",
+      "differing_elements": 3764,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.017578125,
+      "mean_abs_difference": 0.0008869079756550491
+    },
+    {
+      "label": "flow.velocity",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "a808e13f05b959c26820e5cbb0b92b5b21c54f95f93e860a6194f146f91be705",
+      "candidate_hash": "9fd13fb73cebdac9541ff206bc143fa5ae8ac448076f63bbc3f7aef875a1117e",
+      "differing_elements": 3906,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.0009847346227616072
+    },
+    {
+      "label": "flow.velocity",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "9dbfacc4f1bf2f88357d89f76ae7fc0187cdffc62baa658a850ac7f44e9b8923",
+      "candidate_hash": "1725bb8ccde8aa5853b638cc284b3944293bf75d4b6dbb779acbed8d689a45b2",
+      "differing_elements": 4124,
+      "first_differing_index": [
+        0,
+        0,
+        2
+      ],
+      "max_abs_difference": 0.0234375,
+      "mean_abs_difference": 0.0012307867873460054
+    },
+    {
+      "label": "flow.velocity",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "af020dc4e6e26fe1154684aac7eecfeeddc311e7c0032df85ccac7b861810d15",
+      "candidate_hash": "f9de1e7dad383f87f1d81987dc9aafea5f625b012069dc02d33f9d4aa4d2aa8e",
+      "differing_elements": 4298,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.046875,
+      "mean_abs_difference": 0.0016800548182800412
+    },
+    {
+      "label": "final.actions",
+      "call": 0,
+      "reference_shape": [
+        1,
+        16,
+        7
+      ],
+      "candidate_full_shape": [
+        2,
+        16,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": false,
+      "reference_hash": "126ddfabbd037714aa3bdbd407b17dd2aecf19e95192bec1560fd7ae0a1a2b39",
+      "candidate_hash": "3736a5c369461d367d46c51811669bc2e49001cfd47067be736630388e086e89",
+      "differing_elements": 78,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.012660384178161621,
+      "mean_abs_difference": 0.0016251960769295692
+    }
+  ],
+  "bmm_only_trace": [
+    {
+      "label": "preprocess.input_ids",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156
+      ],
+      "candidate_full_shape": [
+        2,
+        156
+      ],
+      "dtype": "torch.int64",
+      "exact": true,
+      "reference_hash": "c73a19b8c82965b2cab1ecd8143098ab9f77592834954da317b484bce700247a",
+      "candidate_hash": "c73a19b8c82965b2cab1ecd8143098ab9f77592834954da317b484bce700247a",
+      "differing_elements": 0,
+      "first_differing_index": null
+    },
+    {
+      "label": "preprocess.pixel_values",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1536
+      ],
+      "candidate_full_shape": [
+        1024,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "candidate_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.initial_noise",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "candidate_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.patch_conv.input",
+      "call": 0,
+      "reference_shape": [
+        512,
+        3,
+        2,
+        16,
+        16
+      ],
+      "candidate_full_shape": [
+        1024,
+        3,
+        2,
+        16,
+        16
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "candidate_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.patch_conv.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024,
+        1,
+        1,
+        1
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024,
+        1,
+        1,
+        1
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "2cb38335b4bed09926f6148dbb541f3ab614db0db4f52fe4b24dbfe0497eb1e2",
+      "candidate_hash": "2cb38335b4bed09926f6148dbb541f3ab614db0db4f52fe4b24dbfe0497eb1e2",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block0.qkv.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        3072
+      ],
+      "candidate_full_shape": [
+        1024,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "938012ea342a90e75ebe2a2e8d9496ef908ad5bda174aa9c51abfe57c5032941",
+      "candidate_hash": "938012ea342a90e75ebe2a2e8d9496ef908ad5bda174aa9c51abfe57c5032941",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block0.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "774da6870480b7aaf3baec8ff8b5c788e207b2478a05b6650f791ec7311f45e3",
+      "candidate_hash": "774da6870480b7aaf3baec8ff8b5c788e207b2478a05b6650f791ec7311f45e3",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block23.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "7fab20c041ff3642c92e3471215cb7d267b22385ecbb18c4bc2908191382766a",
+      "candidate_hash": "7fab20c041ff3642c92e3471215cb7d267b22385ecbb18c4bc2908191382766a",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.merger.output",
+      "call": 0,
+      "reference_shape": [
+        128,
+        2048
+      ],
+      "candidate_full_shape": [
+        256,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d74a04fa7e27df46dc18043ad69556d4f7afce8c2d8e91d06c41ba81111ec893",
+      "candidate_hash": "d74a04fa7e27df46dc18043ad69556d4f7afce8c2d8e91d06c41ba81111ec893",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "language.block0.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "7b89c4b9d0ed0cbd8052f8c83a8a8ff9e2f279c97ee31e25019f5e749fd51bf0",
+      "candidate_hash": "aa6bbda67d3a5b5baf6271c4e41831f05da2a60179434bdab496c9dff36d07f5",
+      "differing_elements": 264,
+      "first_differing_index": [
+        0,
+        0,
+        7
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 2.5575818654033355e-06
+    },
+    {
+      "label": "language.block15.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e0aa655ef0e297e61633b96d3e8a2921aaa715831d22e2c98495eeb387ca3899",
+      "candidate_hash": "977a2d920b2fe7cda407eff7a48b04076db0a14f152afc7ca0d2fcfbce5ff830",
+      "differing_elements": 279848,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 2.0,
+      "mean_abs_difference": 0.03229738026857376
+    },
+    {
+      "label": "action.vl_projector",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.state_encoder",
+      "call": 0,
+      "reference_shape": [
+        1,
+        1,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        1,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d2f25abbff0f82ff374f1c69c8c7144ad52546902896769ef6b7241138923be3",
+      "candidate_hash": "d2f25abbff0f82ff374f1c69c8c7144ad52546902896769ef6b7241138923be3",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "candidate_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "331e6cd077c762e9fc7cb15f333e605c055b80f34e063b8986641d803480707e",
+      "candidate_hash": "4518a03b5fe24b4c74f852a7a98ca9c4138ee5d64e0fcbaf1ea9259535c75f2a",
+      "differing_elements": 612,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.00021383690182119608
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "5d20251570389f9536637e5cf842c95bc94db740b83e3349692ea5bf90a8205e",
+      "candidate_hash": "00d4bbe50f5e76280682ad89cf877a2d2aafd1b6f7c087795674354f13871f3c",
+      "differing_elements": 1001,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.0004581364628393203
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "88736c48dbd6ca526af4da307a0c528b8992549b95cbf5681e86a1364b17285b",
+      "candidate_hash": "c5c0a6e537c65db405d0206d3dd20295d7bd322d9e46ae345604a60bdf5b9911",
+      "differing_elements": 1362,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.0007068142876960337
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "0507eabe5afb8c8782d5874e898c9a006310f1fe73e59cc12cd77ec9897601d5",
+      "candidate_hash": "0507eabe5afb8c8782d5874e898c9a006310f1fe73e59cc12cd77ec9897601d5",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f18465a59c96cf0552f9fae813ebf6c47b8c7bce88ef7f0330cd0dc2b05ddba0",
+      "candidate_hash": "cfdf964b9cca068bd1e28616191de53643c2ca584ba9d6afb846a7b57240ea07",
+      "differing_elements": 20678,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.00390625,
+      "mean_abs_difference": 0.00022775742399971932
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "dea9593345c93b166c9bb67104ecd0a96fa0caebcc4b84e092f536aabdb4eeae",
+      "candidate_hash": "bda28104b29244aaafdd2481791f3dd26f0873c8dc5095f2dd431efe931e146c",
+      "differing_elements": 29416,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.005859375,
+      "mean_abs_difference": 0.0003989475080743432
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "ab482f893dff77e35c5585b3fa8348fd1071e4d3ae57c5c8238b6d1e227f8e6d",
+      "candidate_hash": "1ebbf78181d584513e2dc633190cd896c87f2d7de56b3d44455ee378bc94c90a",
+      "differing_elements": 33757,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.00390625,
+      "mean_abs_difference": 0.0005265267682261765
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "bc1f3004d1dd3305c7cea9949d076ba3469d4c48339d8d631d6c1cbd49eacdcb",
+      "candidate_hash": "bc1f3004d1dd3305c7cea9949d076ba3469d4c48339d8d631d6c1cbd49eacdcb",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "6c186cee6086bfe8b6bd400bbe40a3f1f725ba361555b53615e7959aca39fb5e",
+      "candidate_hash": "535267e542f2babc01cbbf7780b4daaa09b800cbcd9a27da4da7b7693dd71948",
+      "differing_elements": 20678,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.00390625,
+      "mean_abs_difference": 0.00011387871199985966
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "861aabfad7bdd23eb4b51977586b0c3f288216661af9886ff4e9c772d5dc483a",
+      "candidate_hash": "d07f69e62eb8c5c49ad48e0903885944c3de9a787850dea81a19e9a882b9c001",
+      "differing_elements": 29416,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.005859375,
+      "mean_abs_difference": 0.0001994737540371716
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "0301ba3248878bb017a67b3218d1176ff92acf2b55ac059faafc1e841eb15494",
+      "candidate_hash": "7b27576b55fd91ad2f3bdd4bbeb39ccee2ecab7ba1c34587872f5895bbf9f4e5",
+      "differing_elements": 33757,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.00390625,
+      "mean_abs_difference": 0.0002632634132169187
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9458783be5e516f5712ef75032bebe3613b52e302ed437918ad5158d87566d14",
+      "candidate_hash": "9458783be5e516f5712ef75032bebe3613b52e302ed437918ad5158d87566d14",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "4b9dbd5615c3a3f9af54479536d4b31d3ff405feac01ba2ab0bfb5e9c4469349",
+      "candidate_hash": "89df0156416b9fcc7ca919a7ac4524861f83a1e7ea3001e85b46bf1b0097358a",
+      "differing_elements": 20363,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.002004062058404088
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "9a9da2a2af5f97896a84045675e702f57700fce128790576743b667d4eb48158",
+      "candidate_hash": "f1658048684036100178e261457d40e4aee072edb7ee3b901b39ca8ef0bafeb8",
+      "differing_elements": 32738,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0390625,
+      "mean_abs_difference": 0.004023076966404915
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "6a2da6d76ca4daa945a6a968096c255e473191f1905b97f492388f107f9f8660",
+      "candidate_hash": "5fecb729f80715a4c35db72f0a421ef3e13bac01c1eff10c1e67695dbb8ef6c0",
+      "differing_elements": 36248,
+      "first_differing_index": [
+        0,
+        0,
+        2
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.005355221685022116
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "0b8c27de60a11821e51931643ac9faecb67a3c4b22ea5caf7bedf181c031278d",
+      "candidate_hash": "0b8c27de60a11821e51931643ac9faecb67a3c4b22ea5caf7bedf181c031278d",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f1c83de40207443bbdbed26a0155a24358bb96effdd7d7086313ceba002a9439",
+      "candidate_hash": "64b58ffa2f7e0aa9b64b8bf004c0eb531e2fde865d1378420b41cd953fea3933",
+      "differing_elements": 17417,
+      "first_differing_index": [
+        0,
+        0,
+        2
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0013991546584293246
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "c4d1718e9f8a3a1eba21147a88252582e2bfb6e41255ed3e8459283a435f11d8",
+      "candidate_hash": "ade56a3596d35a48fea34e8cf56f3274bb6bb4e07c7310db96f7c1fa7442589a",
+      "differing_elements": 29166,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0031058257445693016
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f055436804fb366248c43850f2ccf98684d368ba9795c4c0e759e1ce7cbcb5dc",
+      "candidate_hash": "98fd7d827f523fd8675b830c73dd82cfa561371bb7bff408a978929f2accfc53",
+      "differing_elements": 33312,
+      "first_differing_index": [
+        0,
+        0,
+        2
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.004606044851243496
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "3f46c6fdc16d0a8d2db605ae13f0c301c2023914e802371dd3e28f661b4b4063",
+      "candidate_hash": "3f46c6fdc16d0a8d2db605ae13f0c301c2023914e802371dd3e28f661b4b4063",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "13c329fb431569110e7fc13d41790088bab14017be8583cda18b19beae248b46",
+      "candidate_hash": "6d64bc4fee807ca3272616d26d3ca49bca153c3ea3d66863f02acc31704d99f0",
+      "differing_elements": 26380,
+      "first_differing_index": [
+        0,
+        0,
+        3
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.0045946636237204075
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "cc68b5f76bb3de3cb14956292cb2e85ec1e1605a538e1cc9cd487de1dc1a4957",
+      "candidate_hash": "67439b16e00cf4d3168d5775378ffc2c65348c668cc608ef6f8044b6a5b31576",
+      "differing_elements": 39666,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.009387060068547726
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "85b48630b2937a1034e36d60030e8827e036e51486a679770eec866bdbda1876",
+      "candidate_hash": "16fc11f6ad1105b808dfd8a0169cb3268d4541e85255e3e4f7ee7350d81f91b4",
+      "differing_elements": 46712,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.013981086201965809
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "b3e11af76d8b65e89a97490ee826b257c22612a7ef3baf91f51f2e7656cbccb7",
+      "candidate_hash": "b3e11af76d8b65e89a97490ee826b257c22612a7ef3baf91f51f2e7656cbccb7",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "3dfc0c6fc3ad77bf8bd27d9fdf98adadecd1799dec1a5eb849c04ac1b36b942c",
+      "candidate_hash": "42c85f23868a12ef7df95fcf7c385ce406bd112958f905c45731bf9bc877811d",
+      "differing_elements": 24415,
+      "first_differing_index": [
+        0,
+        1,
+        3
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.004490100312978029
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "76d75565b2498bf8f4852e6af39d421b802410a95c2d4b49a11d92d151e3e834",
+      "candidate_hash": "997874001002ad880e24a3fb2bcd46f90fcaf47cf01830ec393302d3af3c17f4",
+      "differing_elements": 37643,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.009168768301606178
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "d8a75df724770b64108be0195f710cbd6fb0dc5662eaf8d6468ec33b7a816501",
+      "candidate_hash": "7dd98cbb433dfcff93a718de4ca1827706f39851977852c3b9a8db3024b9eaee",
+      "differing_elements": 44859,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.013628543354570866
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "candidate_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "cba5874883f123aed54031ddf2ff6374a2b1022f56fc2e4142e3b8463009938f",
+      "candidate_hash": "29275bddf50e0107a0acbaccb573a887d8fdde173365f6d0f9789f59a40fbe9f",
+      "differing_elements": 19832,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0005077794776298106
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "71b7153ca8d39f3b5e5032561afd26fe19ada5ef33ad52997f3e4ecc2a3161da",
+      "candidate_hash": "3d83175f64c7d739b91087c01bd7817a498c5d719f86e6a88ca02d665278edb0",
+      "differing_elements": 33422,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0009735026978887618
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "414bfd27a34104f0ef619adcf42693af7798b2239f7480b0cd1ffb76a111c654",
+      "candidate_hash": "955da60ae112256a8dd6fb7421b96fc44549e34b8f9f0ccbcd5a70e12fd51ff3",
+      "differing_elements": 41073,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0013693452347069979
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "candidate_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "cba5874883f123aed54031ddf2ff6374a2b1022f56fc2e4142e3b8463009938f",
+      "candidate_hash": "29275bddf50e0107a0acbaccb573a887d8fdde173365f6d0f9789f59a40fbe9f",
+      "differing_elements": 19832,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0005077794776298106
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "71b7153ca8d39f3b5e5032561afd26fe19ada5ef33ad52997f3e4ecc2a3161da",
+      "candidate_hash": "3d83175f64c7d739b91087c01bd7817a498c5d719f86e6a88ca02d665278edb0",
+      "differing_elements": 33422,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0009735026978887618
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "414bfd27a34104f0ef619adcf42693af7798b2239f7480b0cd1ffb76a111c654",
+      "candidate_hash": "955da60ae112256a8dd6fb7421b96fc44549e34b8f9f0ccbcd5a70e12fd51ff3",
+      "differing_elements": 41073,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.03125,
+      "mean_abs_difference": 0.0013693452347069979
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "a5813687761250c1c2fe03ffede6bcdb8ec5d61f11467a411d9e266c5c882ec4",
+      "candidate_hash": "a5813687761250c1c2fe03ffede6bcdb8ec5d61f11467a411d9e266c5c882ec4",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "a2b1c6f4e33a94dbd0fb29a3564ce0417288dba166345c7e3b3070886171d6b8",
+      "candidate_hash": "f0672e53e3983ceebc94b8ac58e5cc9a52c56a609e769e8ebbe7aa638e2d6460",
+      "differing_elements": 29513,
+      "first_differing_index": [
+        0,
+        1,
+        1
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.000745463534258306
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "ddc10a989d20a45f5d8ba9e28fab15bbf4968c9851c5f02cc868861f22f80b2e",
+      "candidate_hash": "ade014d51aacf92c7050c2b2e31fc8716ae3faf1191d0a3482a055b6df05d5d2",
+      "differing_elements": 38230,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.001131840399466455
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "d0e5bfd044d4ca5fe615ac63a1384829a8ca49fae3aba403828f90b931b36077",
+      "candidate_hash": "5fbbf672cbd97b9ff8d07091ae4c9b624c2e5387d7089168da6a16e645e0ed42",
+      "differing_elements": 41898,
+      "first_differing_index": [
+        0,
+        1,
+        0
+      ],
+      "max_abs_difference": 0.021484375,
+      "mean_abs_difference": 0.0013837998267263174
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e92a43ef8309b475b789554d68f86acd651a1f69000283500902bb9fee589236",
+      "candidate_hash": "cda2e9a98aef21f0da7fd038e9fe96b9e2363ad733cd1cb1212eef7bc1e1844d",
+      "differing_elements": 284049,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 0.02009439840912819
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+      "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+      "differing_elements": 210049,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.140625,
+      "mean_abs_difference": 0.01597137749195099
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+      "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+      "differing_elements": 210049,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.140625,
+      "mean_abs_difference": 0.01597137749195099
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+      "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+      "differing_elements": 210049,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.140625,
+      "mean_abs_difference": 0.01597137749195099
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f996ad2ca5280f3bf5fa433b619f16ff78a7b16cb80f390371821161d1934aeb",
+      "candidate_hash": "801f1002f91b35485ba19b4bdba65b439f2fcc7bd131f80710a176eaf24a7bd8",
+      "differing_elements": 210049,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.140625,
+      "mean_abs_difference": 0.01597137749195099
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "328f06e44f4970203421e666d721fa5fee885131a9c6b83afea2f6afd81e1495",
+      "candidate_hash": "9dae6fbf6fc085a771faefe1a38ad7d676633d871c22fa307ef7b7222b6f142d",
+      "differing_elements": 212095,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.09521484375,
+      "mean_abs_difference": 0.011048153974115849
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "328f06e44f4970203421e666d721fa5fee885131a9c6b83afea2f6afd81e1495",
+      "candidate_hash": "9dae6fbf6fc085a771faefe1a38ad7d676633d871c22fa307ef7b7222b6f142d",
+      "differing_elements": 212095,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.09521484375,
+      "mean_abs_difference": 0.011048153974115849
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "328f06e44f4970203421e666d721fa5fee885131a9c6b83afea2f6afd81e1495",
+      "candidate_hash": "9dae6fbf6fc085a771faefe1a38ad7d676633d871c22fa307ef7b7222b6f142d",
+      "differing_elements": 212095,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.09521484375,
+      "mean_abs_difference": 0.011048153974115849
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "328f06e44f4970203421e666d721fa5fee885131a9c6b83afea2f6afd81e1495",
+      "candidate_hash": "9dae6fbf6fc085a771faefe1a38ad7d676633d871c22fa307ef7b7222b6f142d",
+      "differing_elements": 212095,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.09521484375,
+      "mean_abs_difference": 0.011048153974115849
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "58fd9bae8a7f898b11a6c40b48e08d3cf3651db3d8aaba9ec5fabd1e8d51d287",
+      "candidate_hash": "787c9ca3d546ff0494266b2dce17d2f648b87b3271fd1764524cf2597f3c2e05",
+      "differing_elements": 46174,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0023956189397722483
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "a667c028397076481e0302d32e737bbfa1c406511d76a8ccc1d6f3a47441bd89",
+      "candidate_hash": "4d0b13a99a9679b5cf60c1d4257bbae404c70d9b0a9982bb8f092db0857b8f79",
+      "differing_elements": 46638,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0023579373955726624
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "6d7de4bb24d62169889887c8bdc44a691330d50651455e2e59705ae80bf687d7",
+      "candidate_hash": "5d9ffeb1e2cb53d6a8345bfa6c959dac10df75100aafce7075359038aa8d1901",
+      "differing_elements": 48004,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0025317801628261805
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "3e8daa09d6fca47d842f1206e69f5203b8be36955d27130078851ab33ab72ae0",
+      "candidate_hash": "629d20f910d0eb45e50e344b4eab21a39cc149debc248a3fbe1333b7b26ae3a7",
+      "differing_elements": 48558,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.0625,
+      "mean_abs_difference": 0.0024936343543231487
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "834e506c16cd8b61e126a5a0e63b94d7578ba1c53d3b95f2cbf91b20b81ad856",
+      "candidate_hash": "2274ecde5deaf8015c77c4c0c9e335b46ba39ecfca850515947a8a662af90d33",
+      "differing_elements": 18195,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 1.5,
+      "mean_abs_difference": 0.004356311168521643
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "1f25a3d6808e92f95e46b2d861a80d4770e2167ff56ad760a759db1d3d0b9263",
+      "candidate_hash": "41fe2c85de9251432e05a2090683fd7e3202ad09b9d7f3ceb9f122ba3c2ae49d",
+      "differing_elements": 30213,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 1.5,
+      "mean_abs_difference": 0.008408854715526104
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "4291302dbee81d9ef6ca5a0e5d6d7ef3d4316c643ebd6597837cc720bff41f1f",
+      "candidate_hash": "84c97574a60c1c5762de893a54cfdb27f051bda7dcdbfbf8975d676d2897ad04",
+      "differing_elements": 40920,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 2.0,
+      "mean_abs_difference": 0.013515162281692028
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "5d2cdedb6d7e59c77e43f602fc8b23f23613abbe5b69b0599f2d563820096194",
+      "candidate_hash": "4b846a6a63f02673355e4055859c18e238108f3a8121f86cf70d27e1a1cca0b7",
+      "differing_elements": 46717,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 1.0,
+      "mean_abs_difference": 0.017752036452293396
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "4a8439d1c304c1b941bfb827ac2e405c79d65554cc07c3ae883e5de8cb709cbd",
+      "candidate_hash": "51e0e16839940965a3181ec2716f4db336c7645b79e5fbbb2369f7f938c44b39",
+      "differing_elements": 53276,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 8.0,
+      "mean_abs_difference": 0.14169718325138092
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "37fd7cc0db4e5e8ee3a676656a756ea39d3ff88515e1a4680daa26e419c636cb",
+      "candidate_hash": "a106bc0616fed65cfefaaba20d7c59f68416ebb671456e64817b0085a29f6040",
+      "differing_elements": 53865,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 8.0,
+      "mean_abs_difference": 0.1474887728691101
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "4a521d9f3e6806a156cd31ef05f0b94258e8f6a0f1aed258e0ffc1f8c7a57143",
+      "candidate_hash": "c8df63058dbbcad91add0d73c4e1be49d311cb414cf2aa5b9b0910eff33f9c31",
+      "differing_elements": 54398,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 16.0,
+      "mean_abs_difference": 0.1588343232870102
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "17a49cb091f56166371fa08d8ca7c74a1859dd573528b87e4aefb9212905aff1",
+      "candidate_hash": "aa5659f4e77045f0b95d19d7709b6555b6e3bcbb37234b8a7b15009887ddd588",
+      "differing_elements": 55240,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 16.0,
+      "mean_abs_difference": 0.1760517954826355
+    },
+    {
+      "label": "flow.velocity",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "f448d8e743c9e6bf777807a1d6e1336cda26788f7ab9cd73617c19cd8d33bbe3",
+      "candidate_hash": "a1403a06255b671fb41d943211b6421af08024d1e157613474208c20f598c3d2",
+      "differing_elements": 3711,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.0008451725589111447
+    },
+    {
+      "label": "flow.velocity",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "eaa72678326962ac24695eece90a2de0ed0f114b33c5752fd30f279ab3862a7a",
+      "candidate_hash": "9ecd55201e19be53c87a5dee83d6c8474627dcba021d97cf6cd5cc6d4a9ccf96",
+      "differing_elements": 3813,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 0.0009548019152134657
+    },
+    {
+      "label": "flow.velocity",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e831f237a2a59a0e250321e179b8688a3d8a1696f25ded9765e48e4e06a8a518",
+      "candidate_hash": "2f8f1e563123985e58e0213dd26f82ddafffdb33b604bdc728b107c9732c65ec",
+      "differing_elements": 4094,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.0234375,
+      "mean_abs_difference": 0.0011997369583696127
+    },
+    {
+      "label": "flow.velocity",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "reference_hash": "e18e34fe42a9ca161ffd0dcb2587fbaaa4e18ee9eb3a0589c5c6c0d6b3157fae",
+      "candidate_hash": "6158c780237533ae7d0fa4a7042b1798fac96f2257d2e0f4479fcf35f35b0d53",
+      "differing_elements": 4255,
+      "first_differing_index": [
+        0,
+        0,
+        1
+      ],
+      "max_abs_difference": 0.046875,
+      "mean_abs_difference": 0.0017189722275361419
+    },
+    {
+      "label": "final.actions",
+      "call": 0,
+      "reference_shape": [
+        1,
+        16,
+        7
+      ],
+      "candidate_full_shape": [
+        2,
+        16,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": false,
+      "reference_hash": "bf48d5fccc086375074585ba89ba3f3bf499f8ea907955f3612963c511efcc55",
+      "candidate_hash": "fefb6aa870ffb4ae14a93d1042fada789912c54356ce36cc00545fc2fc1891bb",
+      "differing_elements": 76,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "max_abs_difference": 0.012660384178161621,
+      "mean_abs_difference": 0.0016166450222954154
+    }
+  ],
+  "fixed_trace": [
+    {
+      "label": "preprocess.input_ids",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156
+      ],
+      "candidate_full_shape": [
+        2,
+        156
+      ],
+      "dtype": "torch.int64",
+      "exact": true,
+      "reference_hash": "c73a19b8c82965b2cab1ecd8143098ab9f77592834954da317b484bce700247a",
+      "candidate_hash": "c73a19b8c82965b2cab1ecd8143098ab9f77592834954da317b484bce700247a",
+      "differing_elements": 0,
+      "first_differing_index": null
+    },
+    {
+      "label": "preprocess.pixel_values",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1536
+      ],
+      "candidate_full_shape": [
+        1024,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "candidate_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.initial_noise",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "candidate_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.patch_conv.input",
+      "call": 0,
+      "reference_shape": [
+        512,
+        3,
+        2,
+        16,
+        16
+      ],
+      "candidate_full_shape": [
+        1024,
+        3,
+        2,
+        16,
+        16
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "candidate_hash": "fbd3a014c5bb672c70700f0c080155f0ec5a978229589215fa55a28a097adcaa",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.patch_conv.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024,
+        1,
+        1,
+        1
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024,
+        1,
+        1,
+        1
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9ad3fb5584baac7029846f7ed92f8b1c1b0b71a6435fe61eaa75f908e7fdbb15",
+      "candidate_hash": "9ad3fb5584baac7029846f7ed92f8b1c1b0b71a6435fe61eaa75f908e7fdbb15",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block0.qkv.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        3072
+      ],
+      "candidate_full_shape": [
+        1024,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "8fdd3af723c43a9c199d221c16359724dec2d4a6ca58589147ae620d3b212c25",
+      "candidate_hash": "8fdd3af723c43a9c199d221c16359724dec2d4a6ca58589147ae620d3b212c25",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block0.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "ce28e29edda63fd6f88f98b45fd5697dad20610d43d0a39309e0097e860c1b08",
+      "candidate_hash": "ce28e29edda63fd6f88f98b45fd5697dad20610d43d0a39309e0097e860c1b08",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.block23.output",
+      "call": 0,
+      "reference_shape": [
+        512,
+        1024
+      ],
+      "candidate_full_shape": [
+        1024,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5dd1f846f265c4f4042dde0fac7cbf2ebf912ec5559dc2d8618292eeaaa2d32c",
+      "candidate_hash": "5dd1f846f265c4f4042dde0fac7cbf2ebf912ec5559dc2d8618292eeaaa2d32c",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "vision.merger.output",
+      "call": 0,
+      "reference_shape": [
+        128,
+        2048
+      ],
+      "candidate_full_shape": [
+        256,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5a6d1b0adbacadc067e4932c3b1aabbab275dea9b6638e4686181a37d04fa904",
+      "candidate_hash": "5a6d1b0adbacadc067e4932c3b1aabbab275dea9b6638e4686181a37d04fa904",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "language.block0.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "83e26b07fc9fed27ff312650895c2aac792e4e35ae7f47e79501d52cfb2ba3a0",
+      "candidate_hash": "83e26b07fc9fed27ff312650895c2aac792e4e35ae7f47e79501d52cfb2ba3a0",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "language.block15.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "02bba097bfb91c13aa243548f9ec7da08148c2193763a35d7a2458bbc47ec522",
+      "candidate_hash": "02bba097bfb91c13aa243548f9ec7da08148c2193763a35d7a2458bbc47ec522",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.vl_projector",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "candidate_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.state_encoder",
+      "call": 0,
+      "reference_shape": [
+        1,
+        1,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        1,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d2f25abbff0f82ff374f1c69c8c7144ad52546902896769ef6b7241138923be3",
+      "candidate_hash": "d2f25abbff0f82ff374f1c69c8c7144ad52546902896769ef6b7241138923be3",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "candidate_hash": "b5ee9e3cae372a0a653362d81b0df6e51554f291033b09b0b586f00c30a2b778",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "7c3af72258157c080ea743d2819d74191f8c28983f4a88110ec7b79e226c3d8f",
+      "candidate_hash": "7c3af72258157c080ea743d2819d74191f8c28983f4a88110ec7b79e226c3d8f",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "35a5b5d14b9df34bd884bca55aed5cc6b63b5dfb281916a0018538e36918bb47",
+      "candidate_hash": "35a5b5d14b9df34bd884bca55aed5cc6b63b5dfb281916a0018538e36918bb47",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9369767b0db2be833df4d0d5fac8b870c1d13117831d7cfcf6886b7030ab6a25",
+      "candidate_hash": "9369767b0db2be833df4d0d5fac8b870c1d13117831d7cfcf6886b7030ab6a25",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "0507eabe5afb8c8782d5874e898c9a006310f1fe73e59cc12cd77ec9897601d5",
+      "candidate_hash": "0507eabe5afb8c8782d5874e898c9a006310f1fe73e59cc12cd77ec9897601d5",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "086c04ea2ec72fb44527618c8e5216c623aa07ce06d8bc7bc1cc45d7ed72c119",
+      "candidate_hash": "086c04ea2ec72fb44527618c8e5216c623aa07ce06d8bc7bc1cc45d7ed72c119",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "a343433e30165fdc35a27efdea31e9c1c7e50d478f306b13caa82e4f6810dc69",
+      "candidate_hash": "a343433e30165fdc35a27efdea31e9c1c7e50d478f306b13caa82e4f6810dc69",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W1.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5cb7615096936a427c2cad78d2802354bb7915f65561d39269834576aabdfd64",
+      "candidate_hash": "5cb7615096936a427c2cad78d2802354bb7915f65561d39269834576aabdfd64",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "bc1f3004d1dd3305c7cea9949d076ba3469d4c48339d8d631d6c1cbd49eacdcb",
+      "candidate_hash": "bc1f3004d1dd3305c7cea9949d076ba3469d4c48339d8d631d6c1cbd49eacdcb",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "3a63c778a8420668d5feee17afba55f93cde1f8b5d75ee0a89511582e0ee1507",
+      "candidate_hash": "3a63c778a8420668d5feee17afba55f93cde1f8b5d75ee0a89511582e0ee1507",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "a36cf405a68f29dd24eff35be3ca0dd297a8ce70f1adb63df15250b556c001ff",
+      "candidate_hash": "a36cf405a68f29dd24eff35be3ca0dd297a8ce70f1adb63df15250b556c001ff",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        3072
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9e985e413dbc043e95b7f20fb0620847591f2977bf2211cc47ccccdbe722e526",
+      "candidate_hash": "9e985e413dbc043e95b7f20fb0620847591f2977bf2211cc47ccccdbe722e526",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9458783be5e516f5712ef75032bebe3613b52e302ed437918ad5158d87566d14",
+      "candidate_hash": "9458783be5e516f5712ef75032bebe3613b52e302ed437918ad5158d87566d14",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "44c0e7605f70ff1b015f3256820f29a892d1b5ca0e0a69d8889268ab20fcd66c",
+      "candidate_hash": "44c0e7605f70ff1b015f3256820f29a892d1b5ca0e0a69d8889268ab20fcd66c",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "2e4a88b47303212489c228a8a21251d00aa07a214cdec6682ae7bc4ee864a034",
+      "candidate_hash": "2e4a88b47303212489c228a8a21251d00aa07a214cdec6682ae7bc4ee864a034",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W2.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "a61e0314dfaab2d3ca93107cb65594befe3320291777bee43a276823bf903289",
+      "candidate_hash": "a61e0314dfaab2d3ca93107cb65594befe3320291777bee43a276823bf903289",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "0b8c27de60a11821e51931643ac9faecb67a3c4b22ea5caf7bedf181c031278d",
+      "candidate_hash": "0b8c27de60a11821e51931643ac9faecb67a3c4b22ea5caf7bedf181c031278d",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "e20751b44f6c9d67219ddd8e41446f0294a3f24ad2970d37c22f41d27e59ab48",
+      "candidate_hash": "e20751b44f6c9d67219ddd8e41446f0294a3f24ad2970d37c22f41d27e59ab48",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d01dbb058bccef2e74800705c5603f71316bd2c0e36d91a9654fb298ab0db360",
+      "candidate_hash": "d01dbb058bccef2e74800705c5603f71316bd2c0e36d91a9654fb298ab0db360",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "3932ab2bdbca38e66dfd5672ba650c265d2f8d4c4006a5a44933f7dcdbcf2156",
+      "candidate_hash": "3932ab2bdbca38e66dfd5672ba650c265d2f8d4c4006a5a44933f7dcdbcf2156",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "3f46c6fdc16d0a8d2db605ae13f0c301c2023914e802371dd3e28f661b4b4063",
+      "candidate_hash": "3f46c6fdc16d0a8d2db605ae13f0c301c2023914e802371dd3e28f661b4b4063",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "cd0317167fd2bf5c485383c3466ae2d3834ccd48adb4324b14b260935744b6d9",
+      "candidate_hash": "cd0317167fd2bf5c485383c3466ae2d3834ccd48adb4324b14b260935744b6d9",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "c2abc98cf9c704623170d3358b16c4ce48f2245fe2782975bcecfafc13ea19e4",
+      "candidate_hash": "c2abc98cf9c704623170d3358b16c4ce48f2245fe2782975bcecfafc13ea19e4",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.action_encoder.W3.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        40,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        40,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "3ef09628f2f6172432984a1b231d9469037b34a138bd1db54301c5f5de042550",
+      "candidate_hash": "3ef09628f2f6172432984a1b231d9469037b34a138bd1db54301c5f5de042550",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "b3e11af76d8b65e89a97490ee826b257c22612a7ef3baf91f51f2e7656cbccb7",
+      "candidate_hash": "b3e11af76d8b65e89a97490ee826b257c22612a7ef3baf91f51f2e7656cbccb7",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "dd7bd12b13b213a1cd9db1005c2133878833d1e812fdadc1084e0f6fd1bde13a",
+      "candidate_hash": "dd7bd12b13b213a1cd9db1005c2133878833d1e812fdadc1084e0f6fd1bde13a",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "8f487a40aaba7644ccbf053a92ae99b9baa07e93226a012201eb01d999f4a12a",
+      "candidate_hash": "8f487a40aaba7644ccbf053a92ae99b9baa07e93226a012201eb01d999f4a12a",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9dade18e23ff8ba40fb2544e4a2d35e91a2710c039ab58cf41f46bab1e555aa9",
+      "candidate_hash": "9dade18e23ff8ba40fb2544e4a2d35e91a2710c039ab58cf41f46bab1e555aa9",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "candidate_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9453fdd1ae43324e3cd84139928b2a8cbc24c9bbe92ad04901a8dc5ba655b721",
+      "candidate_hash": "9453fdd1ae43324e3cd84139928b2a8cbc24c9bbe92ad04901a8dc5ba655b721",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "074b0fa231d5f0dea33e627c0a2acbe6a2bf0ba8283cdbda4d89f73d9e277eff",
+      "candidate_hash": "074b0fa231d5f0dea33e627c0a2acbe6a2bf0ba8283cdbda4d89f73d9e277eff",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.norm1",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "e689ba1fd7189f9a7c7db43c96fb1f752dcfdb34e52ee932715e46e33c5070e7",
+      "candidate_hash": "e689ba1fd7189f9a7c7db43c96fb1f752dcfdb34e52ee932715e46e33c5070e7",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "candidate_hash": "17f346832275c8b6f4e01eb5058680b3fc9f5b1616b980e4cf5c4490e43dc259",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9453fdd1ae43324e3cd84139928b2a8cbc24c9bbe92ad04901a8dc5ba655b721",
+      "candidate_hash": "9453fdd1ae43324e3cd84139928b2a8cbc24c9bbe92ad04901a8dc5ba655b721",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "074b0fa231d5f0dea33e627c0a2acbe6a2bf0ba8283cdbda4d89f73d9e277eff",
+      "candidate_hash": "074b0fa231d5f0dea33e627c0a2acbe6a2bf0ba8283cdbda4d89f73d9e277eff",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "e689ba1fd7189f9a7c7db43c96fb1f752dcfdb34e52ee932715e46e33c5070e7",
+      "candidate_hash": "e689ba1fd7189f9a7c7db43c96fb1f752dcfdb34e52ee932715e46e33c5070e7",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "a5813687761250c1c2fe03ffede6bcdb8ec5d61f11467a411d9e266c5c882ec4",
+      "candidate_hash": "a5813687761250c1c2fe03ffede6bcdb8ec5d61f11467a411d9e266c5c882ec4",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "a2d2c650dce314c0e27fe31f5b3cae33618fbcff97eaab9e58ed3c9d66a8aa5f",
+      "candidate_hash": "a2d2c650dce314c0e27fe31f5b3cae33618fbcff97eaab9e58ed3c9d66a8aa5f",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "97e23748a47181201498b34c494173eab3a5d05bd98db50ce990f0bf7867deb2",
+      "candidate_hash": "97e23748a47181201498b34c494173eab3a5d05bd98db50ce990f0bf7867deb2",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.q.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "9f7c81538348d7582033368c06be234c54b29fbcd78e0750e381aa48ebb2320f",
+      "candidate_hash": "9f7c81538348d7582033368c06be234c54b29fbcd78e0750e381aa48ebb2320f",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "candidate_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "candidate_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "candidate_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.k.input",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        2048
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "candidate_hash": "5334781cb2c660ffba105efd673a1d469501d96d390953736820ccd0bf5c924d",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d50fc7c229308e0ee3112495d3a8d39ba26a43f983a29cbbd1f92f7552f4854b",
+      "candidate_hash": "d50fc7c229308e0ee3112495d3a8d39ba26a43f983a29cbbd1f92f7552f4854b",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d50fc7c229308e0ee3112495d3a8d39ba26a43f983a29cbbd1f92f7552f4854b",
+      "candidate_hash": "d50fc7c229308e0ee3112495d3a8d39ba26a43f983a29cbbd1f92f7552f4854b",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d50fc7c229308e0ee3112495d3a8d39ba26a43f983a29cbbd1f92f7552f4854b",
+      "candidate_hash": "d50fc7c229308e0ee3112495d3a8d39ba26a43f983a29cbbd1f92f7552f4854b",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.k.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "d50fc7c229308e0ee3112495d3a8d39ba26a43f983a29cbbd1f92f7552f4854b",
+      "candidate_hash": "d50fc7c229308e0ee3112495d3a8d39ba26a43f983a29cbbd1f92f7552f4854b",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 0,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "03090c6be9ccc9bb71478b2ea41513a7af29a069353bf21f98374f4be83f6eab",
+      "candidate_hash": "03090c6be9ccc9bb71478b2ea41513a7af29a069353bf21f98374f4be83f6eab",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 1,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "03090c6be9ccc9bb71478b2ea41513a7af29a069353bf21f98374f4be83f6eab",
+      "candidate_hash": "03090c6be9ccc9bb71478b2ea41513a7af29a069353bf21f98374f4be83f6eab",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 2,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "03090c6be9ccc9bb71478b2ea41513a7af29a069353bf21f98374f4be83f6eab",
+      "candidate_hash": "03090c6be9ccc9bb71478b2ea41513a7af29a069353bf21f98374f4be83f6eab",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.v.output",
+      "call": 3,
+      "reference_shape": [
+        1,
+        156,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        156,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "03090c6be9ccc9bb71478b2ea41513a7af29a069353bf21f98374f4be83f6eab",
+      "candidate_hash": "03090c6be9ccc9bb71478b2ea41513a7af29a069353bf21f98374f4be83f6eab",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "f50323cedef90145e88fed108aa94fc37fd44eef3b1bfc6f2e3d021453b8fad8",
+      "candidate_hash": "f50323cedef90145e88fed108aa94fc37fd44eef3b1bfc6f2e3d021453b8fad8",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "4f805e8b29802acfb86d5887d870c5ff6ee36f7846bb9bef70a803a999d4ca64",
+      "candidate_hash": "4f805e8b29802acfb86d5887d870c5ff6ee36f7846bb9bef70a803a999d4ca64",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "6df114bbda3f14d6564ffee43ecbe86f418a7b0a24fd45ef65a3341e87d03c72",
+      "candidate_hash": "6df114bbda3f14d6564ffee43ecbe86f418a7b0a24fd45ef65a3341e87d03c72",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0.attention",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "8ff650980a5faf2c1cc652f5f40b95cbff4d8687208019ff3f0def0e9806ab3b",
+      "candidate_hash": "8ff650980a5faf2c1cc652f5f40b95cbff4d8687208019ff3f0def0e9806ab3b",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "36c551c4c6493858de1f0741c1c45f946ea0015d15e82786bc8152474c03f0db",
+      "candidate_hash": "36c551c4c6493858de1f0741c1c45f946ea0015d15e82786bc8152474c03f0db",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "78a3b1a327a1c5e1b552b850a3126a43b418b257a6cee568cef9b6a84e33c366",
+      "candidate_hash": "78a3b1a327a1c5e1b552b850a3126a43b418b257a6cee568cef9b6a84e33c366",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "0c6d5f11aaf4d2182bba5e342aa1b9b4cee0893b6551a774393ccf6dd792dda9",
+      "candidate_hash": "0c6d5f11aaf4d2182bba5e342aa1b9b4cee0893b6551a774393ccf6dd792dda9",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block0",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "64b0528451612e42d445932bfd8ec69560951580b25e530793ae394c760600ac",
+      "candidate_hash": "64b0528451612e42d445932bfd8ec69560951580b25e530793ae394c760600ac",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "4f2d34d3009988141f553cc9572e2ab6f13ad6f3379080cb81f21147de703040",
+      "candidate_hash": "4f2d34d3009988141f553cc9572e2ab6f13ad6f3379080cb81f21147de703040",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "0371f088ea06ca3eba4749098c0a4bc20716b10988fb363fe3f88f18b437c27e",
+      "candidate_hash": "0371f088ea06ca3eba4749098c0a4bc20716b10988fb363fe3f88f18b437c27e",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "a25b89b675117f94ad4cc19ed519ec5c6bc058edec542c65294d16aa5fdb2552",
+      "candidate_hash": "a25b89b675117f94ad4cc19ed519ec5c6bc058edec542c65294d16aa5fdb2552",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "action.dit.block31",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        1536
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        1536
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "90dd07a0a1050321325eb020cb7e78243b73bc3c0f7868081b895439b3c60d36",
+      "candidate_hash": "90dd07a0a1050321325eb020cb7e78243b73bc3c0f7868081b895439b3c60d36",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.velocity",
+      "call": 0,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "f1815346b3964209f34d1149ff4c3d2b3fe6df74a04e971e2c5a7501d8abdb2c",
+      "candidate_hash": "f1815346b3964209f34d1149ff4c3d2b3fe6df74a04e971e2c5a7501d8abdb2c",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.velocity",
+      "call": 1,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "5b969a82d9e8669c70b4e36b711b117addb7f4ed5be90d8325c39f79e9513728",
+      "candidate_hash": "5b969a82d9e8669c70b4e36b711b117addb7f4ed5be90d8325c39f79e9513728",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.velocity",
+      "call": 2,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "6d2830f95b75a191a04464c96a065e78a99589a591de00ff671ee4aa4b8071fa",
+      "candidate_hash": "6d2830f95b75a191a04464c96a065e78a99589a591de00ff671ee4aa4b8071fa",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "flow.velocity",
+      "call": 3,
+      "reference_shape": [
+        1,
+        41,
+        132
+      ],
+      "candidate_full_shape": [
+        2,
+        41,
+        132
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "reference_hash": "a79c7527548b99f5c27ba2b52dc29b158cac5dade1d3af1806a50246806074e6",
+      "candidate_hash": "a79c7527548b99f5c27ba2b52dc29b158cac5dade1d3af1806a50246806074e6",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    },
+    {
+      "label": "final.actions",
+      "call": 0,
+      "reference_shape": [
+        1,
+        16,
+        7
+      ],
+      "candidate_full_shape": [
+        2,
+        16,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "reference_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347",
+      "candidate_hash": "5058066dcb0714386f37f4d26559000cace82756e0ca9743573ed93347cfe347",
+      "differing_elements": 0,
+      "first_differing_index": null,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0
+    }
+  ],
+  "first_divergent_operator_profile": [
+    {
+      "input_shape": [
+        1,
+        40,
+        3072
+      ],
+      "selected_weight_shape": [
+        1,
+        3072,
+        1536
+      ],
+      "aten_operators": [
+        "aten::_to_copy",
+        "aten::add",
+        "aten::as_strided",
+        "aten::bmm",
+        "aten::copy_",
+        "aten::empty_strided",
+        "aten::index",
+        "aten::reshape",
+        "aten::to",
+        "aten::unsqueeze",
+        "aten::view"
+      ],
+      "cuda_kernels": [
+        "nvjet_tst_64x40_64x16_4x1_v_bz_splitK_NNT",
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1})",
+        "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+        "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)"
+      ]
+    },
+    {
+      "input_shape": [
+        2,
+        40,
+        3072
+      ],
+      "selected_weight_shape": [
+        2,
+        3072,
+        1536
+      ],
+      "aten_operators": [
+        "aten::_to_copy",
+        "aten::add",
+        "aten::as_strided",
+        "aten::bmm",
+        "aten::copy_",
+        "aten::empty_strided",
+        "aten::index",
+        "aten::reshape",
+        "aten::to",
+        "aten::unsqueeze",
+        "aten::view"
+      ],
+      "cuda_kernels": [
+        "nvjet_tst_64x24_64x16_4x2_v_bz_NNT",
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1})",
+        "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, long, long, bool)"
+      ]
+    }
+  ],
+  "second_divergent_operator_profile": [
+    {
+      "input_shape": [
+        1,
+        156,
+        2048
+      ],
+      "weight_shape": [
+        1536,
+        2048
+      ],
+      "aten_operators": [
+        "aten::addmm",
+        "aten::as_strided",
+        "aten::linear",
+        "aten::reshape",
+        "aten::t",
+        "aten::transpose",
+        "aten::view"
+      ],
+      "cuda_kernels": [
+        "nvjet_tst_64x32_64x16_4x1_v_bz_bias_TNT"
+      ]
+    },
+    {
+      "input_shape": [
+        2,
+        156,
+        2048
+      ],
+      "weight_shape": [
+        1536,
+        2048
+      ],
+      "aten_operators": [
+        "aten::addmm",
+        "aten::as_strided",
+        "aten::linear",
+        "aten::reshape",
+        "aten::t",
+        "aten::transpose",
+        "aten::view"
+      ],
+      "cuda_kernels": [
+        "nvjet_tst_64x64_64x13_4x1_v_bz_bias_TNT"
+      ]
+    }
+  ]
+}
