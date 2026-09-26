@@ -1,0 +1,27 @@
+{
+  "model": "OpenPI pi0.5 official PyTorch architecture, random weights",
+  "comparison": "B=1 target versus identical target at B=2",
+  "last_exact_boundary": "preceding layer-0 MLP gate_proj and up_proj leaf-module outputs",
+  "first_differing_boundary": {
+    "module": "paligemma_with_expert.paligemma.model.language_model.layers.0.mlp.down_proj",
+    "call": 0,
+    "shape": [1, 968, 2048],
+    "dtype": "torch.bfloat16",
+    "b1_sha256": "51a58a6635d2e65059ab7045ee7522b2f71dabc3b407399f49d963c6747016f23",
+    "b2_sha256": "01a3b1c563920e2f3f15de339af043b6cdb5fc422f92285dd085c675f73ce025"
+  },
+  "underlying_operation": "aten::mm through bias-free nn.Linear",
+  "cause": "nn.Linear flattens B and sequence into M; vendor GEMM changes its arithmetic decomposition when M changes from 968 to 1936",
+  "next_divergence_after_existing_mm_bmm_conv2d_overrides": {
+    "comparison": "B=1 versus B=3",
+    "last_exact_boundary": "SigLIP vision layer 0 q_proj, k_proj, and v_proj outputs",
+    "first_differing_boundary": "paligemma_with_expert.paligemma.model.vision_tower.vision_model.encoder.layers.0.self_attn.out_proj output",
+    "shape": [1, 256, 1152],
+    "dtype": "torch.bfloat16",
+    "b1_sha256": "8b125cfb6ea4f8ca89b7045ee7522b2f71dabc3b407399f49d963c6747016f23",
+    "b3_sha256": "e389e15ac7a0632ce5f2d161be3a6670cb433805a323652ab4984665423d01e7",
+    "underlying_operation": "aten::_scaled_dot_product_flash_attention selected by aten::scaled_dot_product_attention",
+    "kernel_family": "pytorch_flash::flash_fwd_kernel",
+    "cause": "OpenPI leaves the SigLIP vision tower on the SDPA backend; fused flash attention changes its request-batch-dependent decomposition at B=3"
+  }
+}

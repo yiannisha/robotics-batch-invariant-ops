@@ -1,12 +1,15 @@
-configuration: pi05_droid architecture
-weights: deterministic random initialization (seed 42)
-official_checkpoint: gs://openpi-assets/checkpoints/pi05_droid
-official_checkpoint_native_size_bytes: 12429488598
-official_weights_executed: false
+repository: https://huggingface.co/lerobot/pi05_base
+repository_commit: b211f3d44c36b6acfcf7ae94a64e8e96f75a64ba
+format: PyTorch safetensors
+config_file: config.json
+config_size_bytes: 1896
+config_sha256: 367869712a2847c27e95c431ecb03f17bec4eee01a63995e2fb2d91940752b53
+weights_file: model.safetensors
+weights_size_bytes: 14467165872
+weights_sha256: 0eb11ca9587678c1d2ef8cf32807c29f8ce53a2bfdfc1aa4a4c96f16fca59b0f
+checkpoint_type: pi05
+checkpoint_dtype: float32
+official_openpi_checkpoint_converted: false
 
-The current official PyTorch workflow requires downloading the 12.43 GB JAX
-checkpoint and writing a second converted safetensors checkpoint. The 30 GB
-workspace had 13 GB free, so that conversion could not be performed without
-exhausting the filesystem. Results in this directory prove behavior of the
-official current PyTorch architecture and inference implementation, not the
-released learned parameters or policy quality.
+The experiment downloads and executes the public PyTorch checkpoint directly.
+No JAX checkpoint was downloaded or converted.

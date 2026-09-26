@@ -1,27 +1,43 @@
 {
-  "model": "OpenPI pi0.5 official PyTorch architecture, random weights",
-  "comparison": "B=1 target versus identical target at B=2",
-  "last_exact_boundary": "preceding layer-0 MLP gate_proj and up_proj leaf-module outputs",
-  "first_differing_boundary": {
-    "module": "paligemma_with_expert.paligemma.model.language_model.layers.0.mlp.down_proj",
-    "call": 0,
-    "shape": [1, 968, 2048],
-    "dtype": "torch.bfloat16",
-    "b1_sha256": "51a58a6635d2e65059ab7045ee7522b2f71dabc3b407399f49d963c6747016f23",
-    "b2_sha256": "01a3b1c563920e2f3f15de339af043b6cdb5fc422f92285dd085c675f73ce025"
+  "batch_size": 2,
+  "composition": "unrelated",
+  "request_to_vision_batch_mapping": {
+    "request_batch_1": 3,
+    "request_batch_2": 6,
+    "reason": "three camera views are flattened into the vision batch"
   },
-  "underlying_operation": "aten::mm through bias-free nn.Linear",
-  "cause": "nn.Linear flattens B and sequence into M; vendor GEMM changes its arithmetic decomposition when M changes from 968 to 1936",
-  "next_divergence_after_existing_mm_bmm_conv2d_overrides": {
-    "comparison": "B=1 versus B=3",
-    "last_exact_boundary": "SigLIP vision layer 0 q_proj, k_proj, and v_proj outputs",
-    "first_differing_boundary": "paligemma_with_expert.paligemma.model.vision_tower.vision_model.encoder.layers.0.self_attn.out_proj output",
-    "shape": [1, 256, 1152],
-    "dtype": "torch.bfloat16",
-    "b1_sha256": "8b125cfb6ea4f8ca89b7045ee7522b2f71dabc3b407399f49d963c6747016f23",
-    "b3_sha256": "e389e15ac7a0632ce5f2d161be3a6670cb433805a323652ab4984665423d01e7",
-    "underlying_operation": "aten::_scaled_dot_product_flash_attention selected by aten::scaled_dot_product_attention",
-    "kernel_family": "pytorch_flash::flash_fwd_kernel",
-    "cause": "OpenPI leaves the SigLIP vision tower on the SDPA backend; fused flash attention changes its request-batch-dependent decomposition at B=3"
-  }
+  "last_exact_tensor": {
+    "name": "vit.to_patch_embed.0.input",
+    "shape": [3, 3, 224, 224],
+    "dtype": "torch.float32",
+    "differing_elements": 0,
+    "max_abs_difference": 0.0,
+    "reference_hash": "3fd17cc2a4428357b259ac84796717268b3933646d60a993b8f73387d434178f",
+    "candidate_hash": "3fd17cc2a4428357b259ac84796717268b3933646d60a993b8f73387d434178f"
+  },
+  "first_non_identical_tensor": {
+    "name": "vit.to_patch_embed.0.output",
+    "shape": [3, 1152, 16, 16],
+    "dtype": "torch.float32",
+    "differing_elements": 884543,
+    "max_abs_difference": 0.0007791966199874878,
+    "mean_abs_difference": 0.00007333991379709914,
+    "first_differing_index": [0, 0, 0, 0],
+    "reference_hash": "7a40f07edd02e6fa533342e20ef3b3e7259faff7f8a0879a6371fa403db1067c",
+    "candidate_hash": "63daefb79f62a3e48e9e2ca8b2c0f643cc56d656f577785439f02eb07374ba05"
+  },
+  "operation": "aten::convolution",
+  "dispatch_path": [
+    "nn.Conv2d",
+    "aten::conv2d",
+    "aten::convolution",
+    "aten::_convolution",
+    "aten::cudnn_convolution"
+  ],
+  "profiled_stock_kernels": {
+    "vision_batch_3": "sm80_xmma_fprop_implicit_gemm_indexed_f32f32_f32f32_f32_nchwkcrs_nchw_tilesize32x32x8_stage3_warpsize1x2x1_g1_ffma_aligna4_alignc4_execute_kernel__5x_cudnn",
+    "vision_batch_6": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x32x16_stage1_warpsize4x1x1_g1_tensor16x8x8_aligna4_execute_kernel__5x_cudnn"
+  },
+  "root_cause": "Changing request batch size changes the flattened camera batch from 3 to 6. cuDNN consequently selects different layouts, kernels, tiles, and arithmetic (the profiled B=3 kernel uses f32 FFMA while B=6 uses TF32 tensor operations), so the same target image gets different floating-point bits.",
+  "replacement": "per-sample unfold plus fixed-configuration batch-invariant Triton GEMM registered for aten::convolution"
 }

@@ -1,0 +1,50 @@
+diff --git a/pi-zero-pytorch/pi_zero_pytorch/load.py b/pi-zero-pytorch/pi_zero_pytorch/load.py
+index 7eaf12d..4c43133 100644
+--- a/pi-zero-pytorch/pi_zero_pytorch/load.py
++++ b/pi-zero-pytorch/pi_zero_pytorch/load.py
+@@ -196,11 +196,15 @@ def build_converted_state_dict(pi_weights, pz_state):
+         if has_adaptive_norms:
+             # AdaptiveRMSNorm
+             # input_layernorm -> cond_layers[i][0]
+-            pz_state[f'cond_layers.{i}.0.norm.weight'].copy_(pi_weights.get_tensor(f'{pi_e}.input_layernorm.weight'))
++            input_norm_weight = f'{pi_e}.input_layernorm.weight'
++            if input_norm_weight in pi_keys:
++                pz_state[f'cond_layers.{i}.0.norm.weight'].copy_(pi_weights.get_tensor(input_norm_weight))
+             pz_state[f'cond_layers.{i}.0.to_modulation.weight'].copy_(pi_weights.get_tensor(f'{pi_e}.input_layernorm.dense.weight'))
+             pz_state[f'cond_layers.{i}.0.to_modulation.bias'].copy_(pi_weights.get_tensor(f'{pi_e}.input_layernorm.dense.bias'))
+             # post_attention_layernorm -> cond_layers[i][1] (was index 2 in old 4-element structure)
+-            pz_state[f'cond_layers.{i}.1.norm.weight'].copy_(pi_weights.get_tensor(f'{pi_e}.post_attention_layernorm.weight'))
++            post_norm_weight = f'{pi_e}.post_attention_layernorm.weight'
++            if post_norm_weight in pi_keys:
++                pz_state[f'cond_layers.{i}.1.norm.weight'].copy_(pi_weights.get_tensor(post_norm_weight))
+             pz_state[f'cond_layers.{i}.1.to_modulation.weight'].copy_(pi_weights.get_tensor(f'{pi_e}.post_attention_layernorm.dense.weight'))
+             pz_state[f'cond_layers.{i}.1.to_modulation.bias'].copy_(pi_weights.get_tensor(f'{pi_e}.post_attention_layernorm.dense.bias'))
+         else:
+@@ -229,7 +233,9 @@ def build_converted_state_dict(pi_weights, pz_state):
+     # Check if final_actions_norm is Adaptive (has .norm submodule) or standard RMSNorm
+     if 'final_actions_norm.norm.weight' in pz_state:
+         # AdaptiveRMSNorm
+-        pz_state['final_actions_norm.norm.weight'].copy_(pi_weights.get_tensor(f'{expert_norm_p}.weight'))
++        expert_norm_weight = f'{expert_norm_p}.weight'
++        if expert_norm_weight in pi_keys:
++            pz_state['final_actions_norm.norm.weight'].copy_(pi_weights.get_tensor(expert_norm_weight))
+         
+         if f'{expert_norm_p}.dense.weight' in pi_keys:
+             pz_state['final_actions_norm.to_modulation.weight'].copy_(pi_weights.get_tensor(f'{expert_norm_p}.dense.weight'))
+diff --git a/pi-zero-pytorch/pi_zero_pytorch/pi_zero.py b/pi-zero-pytorch/pi_zero_pytorch/pi_zero.py
+index 09472a1..0a96808 100644
+--- a/pi-zero-pytorch/pi_zero_pytorch/pi_zero.py
++++ b/pi-zero-pytorch/pi_zero_pytorch/pi_zero.py
+@@ -1330,9 +1330,9 @@ class PiZero(Module):
+         if time_sinusoidal:
+             # If time-infused, sinusoidal dim should match dim_action (usually 1024)
+             # cats [action_tokens (1024), sinusoidal (1024)] -> 2048
+-            # BUT the to_time_cond MLP might expect a different input dim (e.g. 2048 in pretrained)
+-            
+-            mlp_in_dim = dim
++            # Pi0.5 conditions the 1024-wide action expert, and its released
++            # time_mlp_in parameter is correspondingly 1024 x 1024.
++            mlp_in_dim = dim_time_cond if layer_time_cond else dim
+             time_embed = SinusoidalEmbed(mlp_in_dim, min_period = time_min_period, max_period = time_max_period)
+ 
+             if time_infused_action_tokens:

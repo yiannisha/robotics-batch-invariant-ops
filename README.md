@@ -122,21 +122,25 @@ Only configurations that have been executed end to end are marked PASS.
 | Model configuration | Precision | Batch sizes | Baseline | With this library |
 |---|---:|---:|---:|---:|
 | π0 pre-fix PyTorch reference, random weights and synthetic inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
-| Official OpenPI π0.5 PyTorch architecture, random weights and controlled synthetic inputs | mixed bfloat16/float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| π0.5 `pi-zero-pytorch` reference, public `lerobot/pi05_base` weights and controlled synthetic inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
-The π0.5 entry runs the current official OpenPI implementation, including all
-10 flow steps, but uses random parameters: OpenPI distributes the checkpoint
-in a 12.43 GB JAX form and the available workspace could not also hold the
-converted PyTorch copy. Neither row is an official-checkpoint policy-quality
-claim. Official-weight π0/π0.5, π0-FAST, DreamZero, InternVLA-A, MolmoAct,
-GR00T, Cosmos, and the other planned model families are not yet marked
-supported.
+The π0.5 row uses the PyTorch implementation vendored by
+[`batch-invariant-pizero`](https://github.com/yiannisha/batch-invariant-pizero)
+and loads the public 14.47 GB PyTorch safetensors checkpoint directly. It runs
+all 10 integration time points (18 midpoint ODE evaluations) with explicit
+per-sample noise. Its deterministic inputs are synthetic, so the result is a
+learned-weight numerical inference regression rather than a policy-quality
+claim. π0-FAST, DreamZero, InternVLA-A, MolmoAct, GR00T, Cosmos, and the other
+planned model families are not yet marked supported.
 
 Raw evidence is in [`research/pi0`](research/pi0) and
 [`research/pi05`](research/pi05), including environments, upstream commits,
 baseline/fixed hashes, first-divergence diagnostics, iteration notes, and
-operator benchmarks.
+operator benchmarks. The earlier random-weight official OpenPI architecture
+experiment is retained separately in
+[`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
+not the basis of the π0.5 support row.
 
 ## Reproduction
 
@@ -158,20 +162,29 @@ python scripts/check_model_batch_invariance.py \
   --output research/pi0/fixed.json
 ```
 
-For the official OpenPI PyTorch architecture, run from an OpenPI environment
-with its documented Transformers replacement installed and this repository on
-`PYTHONPATH`:
+For π0.5, check out the pinned companion reference, apply the recorded loader
+compatibility patch, and download the public PyTorch checkpoint:
 
 ```bash
-OPENPI_NUM_STEPS=10 python scripts/check_model_batch_invariance.py \
-  --adapter scripts.model_invariance.adapters.openpi_pi05 \
+git clone https://github.com/yiannisha/batch-invariant-pizero
+git -C batch-invariant-pizero checkout f1eca35dd0e493f7d2b5f2cedf5b86d4403a9841
+git -C batch-invariant-pizero apply \
+  "$PWD/scripts/model_invariance/patches/pi_zero_pytorch_pi05_compat.patch"
+
+# Download config.json and model.safetensors from lerobot/pi05_base, then:
+PIZERO_PYTORCH_SOURCE="$PWD/batch-invariant-pizero/pi-zero-pytorch" \
+PIZERO_PI05_CHECKPOINT=/path/to/pi05_base \
+PIZERO_PI05_STEPS=10 \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.pizero_pi05_reference \
   --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
   --batch-invariant-ops \
   --output research/pi05/fixed.json
 ```
 
-Set `OPENPI_PYTORCH_WEIGHTS` to a converted `model.safetensors` path to run the
-same adapter with released parameters.
+Omit `--batch-invariant-ops` and write to `baseline.json` for the stock CUDA
+comparison. The adapter copies tensors directly from safetensors into the
+model, so it does not create a second 14 GB converted checkpoint.
 
 ## Performance
 
@@ -182,9 +195,10 @@ and the BMM replacement was 1.13–3.16× slower across B=1, 8, and 32. See
 [`research/pi0/benchmarks.json`](research/pi0/benchmarks.json) for latency,
 throughput, memory, shapes, and exact environment data.
 
-On the OpenPI PyTorch 2.7.1/CUDA 12.6 environment, batch-invariant SDPA was
-4.27–7.27× slower than fused flash attention for the π0.5 SigLIP shape across
-B=1, 8, and 32, with a larger materialized attention matrix. See
+For the π0.5 float32 reference on PyTorch 2.14.0/CUDA 13.0, the actual SigLIP
+patch Conv2d replacement was 3.53–12.02× slower across B=1, 8, and 32. The
+explicit SigLIP QK BMM replacement was 1.28–1.75× slower and its
+attention-value BMM was 1.35–2.75× slower. See
 [`research/pi05/benchmarks.json`](research/pi05/benchmarks.json).
 
 ## Attribution
@@ -192,8 +206,8 @@ B=1, 8, and 32, with a larger materialized attention matrix. See
 The operator approach and original matrix/reduction kernels come from Thinking
 Machines Lab's [Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/).
 The Conv2D/BMM investigation and π0 tracing methodology build on
-[Batch-Invariant VLAs](https://yiannisha.dev/blog/batch-invariant-vlas) and its
-companion repositories. π0 is from Physical Intelligence; the regression uses
-the cited open PyTorch reimplementation commit recorded in the research files.
-The π0.5 architecture regression uses Physical Intelligence's official OpenPI
-PyTorch implementation at the exact commit recorded in `research/pi05`.
+[Batch-Invariant VLAs](https://yiannisha.dev/blog/batch-invariant-vlas) and the
+[`batch-invariant-pizero`](https://github.com/yiannisha/batch-invariant-pizero)
+companion repository. π0 and π0.5 are from Physical Intelligence; these
+regressions use the cited open PyTorch implementations and exact commits
+recorded in the research files.

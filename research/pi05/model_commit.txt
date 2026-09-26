@@ -1,2 +1,10 @@
-repository: https://github.com/Physical-Intelligence/openpi
-commit: 215abfb217dbac7d5f1273282331b9b1866c0479
+reference_repository: https://github.com/yiannisha/batch-invariant-pizero
+reference_commit: f1eca35dd0e493f7d2b5f2cedf5b86d4403a9841
+implementation_directory: pi-zero-pytorch
+implementation_upstream: https://github.com/lucidrains/pi-zero-pytorch
+current_upstream_commit_checked: 37ab0be213d219586971dce65a63707effe9dfa7
+
+The reference commit is the last batch-invariant-pizero revision that vendors
+pi-zero-pytorch, including its pi05 configuration. The current maintained
+upstream was also inspected and had the same two checkpoint-loading gaps; the
+small compatibility patch used here is checked into this repository.

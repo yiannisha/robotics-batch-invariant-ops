@@ -1,7 +1,7 @@
 {
-  "model": "pi-zero-pytorch-pi05-public-weights",
+  "model": "openpi-pi05-random-weights",
   "batch_invariant_ops": false,
-  "seed": 44,
+  "seed": 42,
   "requested_batch_sizes": [
     1,
     2,
@@ -26,12 +26,12 @@
         "path": "output",
         "reference_shape": [
           1,
-          50,
+          15,
           32
         ],
         "candidate_shape": [
           1,
-          50,
+          15,
           32
         ],
         "dtype": "torch.float32",
@@ -40,8 +40,8 @@
         "max_abs_difference": 0.0,
         "mean_abs_difference": 0.0,
         "first_differing_index": null,
-        "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-        "candidate_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea"
+        "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+        "candidate_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263"
       }
     ]
   },
@@ -56,12 +56,12 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
@@ -70,8 +70,8 @@
             "max_abs_difference": 0.0,
             "mean_abs_difference": 0.0,
             "first_differing_index": null,
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263"
           }
         ]
       },
@@ -84,26 +84,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1590,
-            "max_abs_difference": 0.0002853870391845703,
-            "mean_abs_difference": 1.1273882591922302e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.0029878616333007812,
+            "mean_abs_difference": 0.0007449681870639324,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "7024962cdb1601808b5c8dcbd026ca29bee918dfb9e1816c9d3a45d634c042df"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "77c0a4903b41a127891520a6d71171badd57ebe0758d7073f2e5c81797d9509e"
           }
         ]
       },
@@ -116,26 +116,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1588,
-            "max_abs_difference": 0.000278472900390625,
-            "mean_abs_difference": 1.1163535418745596e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.003857523202896118,
+            "mean_abs_difference": 0.0009560221224091947,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "0b562f329d8aeb88d5d0bab9501a65a0de2777666cb48cc02bbcf8b0d3bc0306"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "aa54d36e90a28330c52aa4178c660d007e877b8e64ba8d7502d4dbe687e6cf2b"
           }
         ]
       },
@@ -148,26 +148,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1591,
-            "max_abs_difference": 0.00028252601623535156,
-            "mean_abs_difference": 1.1135358363389969e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.0034666061401367188,
+            "mean_abs_difference": 0.0010007302043959498,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "5c810674017982ce084301820aec99321846ca1d384b3404ef6d1078b2200f26"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "3d12370042e70c9ebbef6fb5824bb32031643bc14e01ca4f702b9a2c3ce5496d"
           }
         ]
       },
@@ -180,26 +180,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1598,
-            "max_abs_difference": 0.0002808570861816406,
-            "mean_abs_difference": 1.1156092114106286e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004016876220703125,
+            "mean_abs_difference": 0.0010647973977029324,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "c09179ce42748e384f4e71af8fb55a00e9ce4bb3d6064296afd3b2fd73b55752"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "c3a05fdea32b86f62cdb15b7bdc90e8f8c300e3092b3fc2d46a2555e11695785"
           }
         ]
       },
@@ -212,26 +212,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1591,
-            "max_abs_difference": 0.00027751922607421875,
-            "mean_abs_difference": 1.1094362889707554e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.0036492347717285156,
+            "mean_abs_difference": 0.0010076630860567093,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "cc688374ba6c16e7cf63c89cd9121e8c1e54faa0fdc8f44a8c5c2fd37bf575ce"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "8651af44ce808645bab1d0d69efe858e59e202268b5bdd57d1e5946f1d776171"
           }
         ]
       },
@@ -244,26 +244,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1592,
-            "max_abs_difference": 0.0002799034118652344,
-            "mean_abs_difference": 1.1204473594261799e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.005166977643966675,
+            "mean_abs_difference": 0.0010725854663178325,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "dc104813a68ea37d3af344b21f73097fcd322077bad548b67df7a916695ff1c7"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "32bc5a44be69051c35954e103be6ab97a6b55e8f65f3f9c2554f592eb1eaa5ba"
           }
         ]
       },
@@ -276,26 +276,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1592,
-            "max_abs_difference": 0.0002799034118652344,
-            "mean_abs_difference": 1.1204473594261799e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004364013671875,
+            "mean_abs_difference": 0.0010173780610784888,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "dc104813a68ea37d3af344b21f73097fcd322077bad548b67df7a916695ff1c7"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "7db5e669fef9764c03646f2488b40f9c33b493effa22469ff1244786b3717d9f"
           }
         ]
       },
@@ -308,26 +308,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1591,
-            "max_abs_difference": 0.00028324127197265625,
-            "mean_abs_difference": 1.116659495892236e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004323601722717285,
+            "mean_abs_difference": 0.001064468640834093,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "1bc0f858e15b5eaa0b42867544cb516dd017de87293d60ec2e0beceb1032d2fd"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "09722ecded8a21fe92300fea5fd306a49d525f3ef39e2650061aa1f7a288721f"
           }
         ]
       },
@@ -340,26 +340,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1592,
-            "max_abs_difference": 0.00028061866760253906,
-            "mean_abs_difference": 1.1141508366563357e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004323601722717285,
+            "mean_abs_difference": 0.001064468640834093,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "1026251615f5e56baf65527770d85ff3e47ae04a448f100745bdf8d681cdcaff"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "09722ecded8a21fe92300fea5fd306a49d525f3ef39e2650061aa1f7a288721f"
           }
         ]
       },
@@ -372,26 +372,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1588,
-            "max_abs_difference": 0.00027942657470703125,
-            "mean_abs_difference": 1.1102071766799781e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004574298858642578,
+            "mean_abs_difference": 0.0010392876574769616,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "87939db858ae61cc42e9b665eb8009a2380f49f7a9a74d2554e4b31b89f67bda"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "851bf0e1ea39ec8b8417b3cdcb3aff372da0c8bb7dbbdb6b478f175cd0aa0735"
           }
         ]
       },
@@ -404,26 +404,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1589,
-            "max_abs_difference": 0.000278472900390625,
-            "mean_abs_difference": 1.1093731700384524e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004187464714050293,
+            "mean_abs_difference": 0.0010438294848427176,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "010358b91340fbff31d4c674c13c0aed4e2146bdfd9089af36c63f70e62fc2d8"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "0faf1446f706fc1a96ca47b6893ab9607add651cf16436ddb715f5931014dcd6"
           }
         ]
       },
@@ -436,26 +436,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1589,
-            "max_abs_difference": 0.000278472900390625,
-            "mean_abs_difference": 1.1093731700384524e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.003914475440979004,
+            "mean_abs_difference": 0.001000547083094716,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "010358b91340fbff31d4c674c13c0aed4e2146bdfd9089af36c63f70e62fc2d8"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "a35bc487d098c56f27441165e1b962083a11f7841d24a8d93ca77150f8b192f1"
           }
         ]
       },
@@ -468,26 +468,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1589,
-            "max_abs_difference": 0.0002810955047607422,
-            "mean_abs_difference": 1.106779291148996e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004149138927459717,
+            "mean_abs_difference": 0.00099057680927217,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "898ebbd8227276e1a222631871e4c1f5b104b4a2adfce6f4b3a19c845f448fe1"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "819e8f704222c95eb591a48ebeb7664208e1582373ef412a989b266c5dbded6d"
           }
         ]
       },
@@ -500,26 +500,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1597,
-            "max_abs_difference": 0.00028014183044433594,
-            "mean_abs_difference": 1.1126624485768843e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.0037670135498046875,
+            "mean_abs_difference": 0.0010069082491099834,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "7cbefff5b9b8ada19894b93343f19bf187702ad14c2588f41ad74d50a0d09a25"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "77cc8242c4e991c75dd1a7a7255c06f72c4abd87a3d8c27efd533d7aa10c5077"
           }
         ]
       }
@@ -534,12 +534,12 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
@@ -548,8 +548,8 @@
             "max_abs_difference": 0.0,
             "mean_abs_difference": 0.0,
             "first_differing_index": null,
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263"
           }
         ]
       },
@@ -562,26 +562,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1590,
-            "max_abs_difference": 0.0002853870391845703,
-            "mean_abs_difference": 1.1273882591922302e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.0029878616333007812,
+            "mean_abs_difference": 0.0007449681870639324,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "7024962cdb1601808b5c8dcbd026ca29bee918dfb9e1816c9d3a45d634c042df"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "77c0a4903b41a127891520a6d71171badd57ebe0758d7073f2e5c81797d9509e"
           }
         ]
       },
@@ -594,26 +594,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1588,
-            "max_abs_difference": 0.000278472900390625,
-            "mean_abs_difference": 1.1163535418745596e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.003857523202896118,
+            "mean_abs_difference": 0.0009560221224091947,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "0b562f329d8aeb88d5d0bab9501a65a0de2777666cb48cc02bbcf8b0d3bc0306"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "aa54d36e90a28330c52aa4178c660d007e877b8e64ba8d7502d4dbe687e6cf2b"
           }
         ]
       },
@@ -626,26 +626,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1591,
-            "max_abs_difference": 0.00028252601623535156,
-            "mean_abs_difference": 1.1135358363389969e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.0034666061401367188,
+            "mean_abs_difference": 0.0010007302043959498,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "5c810674017982ce084301820aec99321846ca1d384b3404ef6d1078b2200f26"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "3d12370042e70c9ebbef6fb5824bb32031643bc14e01ca4f702b9a2c3ce5496d"
           }
         ]
       },
@@ -658,26 +658,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1598,
-            "max_abs_difference": 0.0002808570861816406,
-            "mean_abs_difference": 1.1156092114106286e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004016876220703125,
+            "mean_abs_difference": 0.0010647973977029324,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "c09179ce42748e384f4e71af8fb55a00e9ce4bb3d6064296afd3b2fd73b55752"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "c3a05fdea32b86f62cdb15b7bdc90e8f8c300e3092b3fc2d46a2555e11695785"
           }
         ]
       },
@@ -690,26 +690,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1591,
-            "max_abs_difference": 0.00027751922607421875,
-            "mean_abs_difference": 1.1094362889707554e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.0036492347717285156,
+            "mean_abs_difference": 0.0010076630860567093,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "cc688374ba6c16e7cf63c89cd9121e8c1e54faa0fdc8f44a8c5c2fd37bf575ce"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "8651af44ce808645bab1d0d69efe858e59e202268b5bdd57d1e5946f1d776171"
           }
         ]
       },
@@ -722,26 +722,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1592,
-            "max_abs_difference": 0.0002799034118652344,
-            "mean_abs_difference": 1.1204473594261799e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.005166977643966675,
+            "mean_abs_difference": 0.0010725854663178325,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "dc104813a68ea37d3af344b21f73097fcd322077bad548b67df7a916695ff1c7"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "32bc5a44be69051c35954e103be6ab97a6b55e8f65f3f9c2554f592eb1eaa5ba"
           }
         ]
       },
@@ -754,26 +754,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1592,
-            "max_abs_difference": 0.0002799034118652344,
-            "mean_abs_difference": 1.1204473594261799e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004364013671875,
+            "mean_abs_difference": 0.0010173780610784888,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "dc104813a68ea37d3af344b21f73097fcd322077bad548b67df7a916695ff1c7"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "7db5e669fef9764c03646f2488b40f9c33b493effa22469ff1244786b3717d9f"
           }
         ]
       },
@@ -786,26 +786,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1591,
-            "max_abs_difference": 0.00028324127197265625,
-            "mean_abs_difference": 1.116659495892236e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004323601722717285,
+            "mean_abs_difference": 0.001064468640834093,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "1bc0f858e15b5eaa0b42867544cb516dd017de87293d60ec2e0beceb1032d2fd"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "09722ecded8a21fe92300fea5fd306a49d525f3ef39e2650061aa1f7a288721f"
           }
         ]
       },
@@ -818,26 +818,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1592,
-            "max_abs_difference": 0.00028061866760253906,
-            "mean_abs_difference": 1.1141508366563357e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004323601722717285,
+            "mean_abs_difference": 0.001064468640834093,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "1026251615f5e56baf65527770d85ff3e47ae04a448f100745bdf8d681cdcaff"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "09722ecded8a21fe92300fea5fd306a49d525f3ef39e2650061aa1f7a288721f"
           }
         ]
       },
@@ -850,26 +850,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1588,
-            "max_abs_difference": 0.00027942657470703125,
-            "mean_abs_difference": 1.1102071766799781e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004574298858642578,
+            "mean_abs_difference": 0.0010392876574769616,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "87939db858ae61cc42e9b665eb8009a2380f49f7a9a74d2554e4b31b89f67bda"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "851bf0e1ea39ec8b8417b3cdcb3aff372da0c8bb7dbbdb6b478f175cd0aa0735"
           }
         ]
       },
@@ -882,26 +882,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1589,
-            "max_abs_difference": 0.000278472900390625,
-            "mean_abs_difference": 1.1093731700384524e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004187464714050293,
+            "mean_abs_difference": 0.0010438294848427176,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "010358b91340fbff31d4c674c13c0aed4e2146bdfd9089af36c63f70e62fc2d8"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "0faf1446f706fc1a96ca47b6893ab9607add651cf16436ddb715f5931014dcd6"
           }
         ]
       },
@@ -914,26 +914,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1589,
-            "max_abs_difference": 0.000278472900390625,
-            "mean_abs_difference": 1.1093731700384524e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.003914475440979004,
+            "mean_abs_difference": 0.001000547083094716,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "010358b91340fbff31d4c674c13c0aed4e2146bdfd9089af36c63f70e62fc2d8"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "a35bc487d098c56f27441165e1b962083a11f7841d24a8d93ca77150f8b192f1"
           }
         ]
       },
@@ -946,26 +946,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1589,
-            "max_abs_difference": 0.0002810955047607422,
-            "mean_abs_difference": 1.106779291148996e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.004149138927459717,
+            "mean_abs_difference": 0.00099057680927217,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "898ebbd8227276e1a222631871e4c1f5b104b4a2adfce6f4b3a19c845f448fe1"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "819e8f704222c95eb591a48ebeb7664208e1582373ef412a989b266c5dbded6d"
           }
         ]
       },
@@ -978,26 +978,26 @@
             "path": "output",
             "reference_shape": [
               1,
-              50,
+              15,
               32
             ],
             "candidate_shape": [
               1,
-              50,
+              15,
               32
             ],
             "dtype": "torch.float32",
             "exact": false,
-            "differing_elements": 1597,
-            "max_abs_difference": 0.00028014183044433594,
-            "mean_abs_difference": 1.1126624485768843e-05,
+            "differing_elements": 480,
+            "max_abs_difference": 0.0037670135498046875,
+            "mean_abs_difference": 0.0010069082491099834,
             "first_differing_index": [
               0,
               0,
               0
             ],
-            "reference_hash": "810803e159b507b98dc8ebaa3d03b455e3c1a93d7e22c0b4f9ebfee70d0567ea",
-            "candidate_hash": "7cbefff5b9b8ada19894b93343f19bf187702ad14c2588f41ad74d50a0d09a25"
+            "reference_hash": "84685c61148b6aca9c411ea5d4a53a9adbfd6413581b0667cfb21d917070d263",
+            "candidate_hash": "77cc8242c4e991c75dd1a7a7255c06f72c4abd87a3d8c27efd533d7aa10c5077"
           }
         ]
       }

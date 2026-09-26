@@ -66,6 +66,12 @@ def run_case(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch-sizes", default="1,8,32")
+    parser.add_argument(
+        "--dtype",
+        choices=("float32", "float16", "bfloat16"),
+        default="bfloat16",
+        help="tensor dtype used by every benchmark case",
+    )
     parser.add_argument("--warmup", type=int, default=5)
     parser.add_argument("--repetitions", type=int, default=20)
     parser.add_argument("--output")
@@ -74,7 +80,7 @@ def main() -> None:
         raise SystemExit("CUDA is required")
 
     batch_sizes = tuple(int(value) for value in args.batch_sizes.split(","))
-    dtype = torch.bfloat16
+    dtype = getattr(torch, args.dtype)
     cases = []
     for batch_size in batch_sizes:
         generator = torch.Generator(device="cuda").manual_seed(8000 + batch_size)
@@ -140,6 +146,71 @@ def main() -> None:
             )
         )
         del left, right
+
+        # pi-zero-pytorch's SigLIP attention uses explicit einsums rather than
+        # fused SDPA.  These are the actual QK^T and attention-value BMM
+        # shapes for its 16 heads, 256 image tokens, and 72-wide head dim.
+        q = torch.randn(
+            batch_size * 16,
+            256,
+            72,
+            device="cuda",
+            dtype=dtype,
+            generator=generator,
+        )
+        k_t = torch.randn(
+            batch_size * 16,
+            72,
+            256,
+            device="cuda",
+            dtype=dtype,
+            generator=generator,
+        )
+        cases.append(
+            run_case(
+                "siglip_attention_qk_bmm",
+                {"left": list(q.shape), "right": list(k_t.shape), "dtype": str(dtype)},
+                lambda: torch.bmm(q, k_t),
+                lambda: bmm_persistent(q, k_t),
+                batch_size=batch_size,
+                warmup=args.warmup,
+                repetitions=args.repetitions,
+            )
+        )
+        del q, k_t
+
+        attention = torch.randn(
+            batch_size * 16,
+            256,
+            256,
+            device="cuda",
+            dtype=dtype,
+            generator=generator,
+        )
+        value = torch.randn(
+            batch_size * 16,
+            256,
+            72,
+            device="cuda",
+            dtype=dtype,
+            generator=generator,
+        )
+        cases.append(
+            run_case(
+                "siglip_attention_value_bmm",
+                {
+                    "left": list(attention.shape),
+                    "right": list(value.shape),
+                    "dtype": str(dtype),
+                },
+                lambda: torch.bmm(attention, value),
+                lambda: bmm_persistent(attention, value),
+                batch_size=batch_size,
+                warmup=args.warmup,
+                repetitions=args.repetitions,
+            )
+        )
+        del attention, value
 
         # OpenPI Pi0.5 SigLIP layer-0 attention shape.  This is the fused-SDPA
         # path whose stock kernel first diverges when request B changes from 1

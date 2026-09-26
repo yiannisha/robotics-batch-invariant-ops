@@ -1,0 +1,39 @@
+{
+  "comparison": "request B=1 target versus first sample of unrelated request B=2",
+  "integrator": "torchdiffeq midpoint",
+  "time_points": 10,
+  "ode_evaluations": 18,
+  "baseline": [
+    {"evaluation": 0, "state_exact": true, "state_max_abs_difference": 0.0, "flow_max_abs_difference": 0.00008514523506164551},
+    {"evaluation": 1, "state_exact": false, "state_max_abs_difference": 0.000004738569259643555, "flow_max_abs_difference": 0.00001811981201171875},
+    {"evaluation": 2, "state_exact": false, "state_max_abs_difference": 0.0000020265579223632812, "flow_max_abs_difference": 0.000022113323211669922},
+    {"evaluation": 3, "state_exact": false, "state_max_abs_difference": 0.0000027418136596679688, "flow_max_abs_difference": 0.000017642974853515625},
+    {"evaluation": 4, "state_exact": false, "state_max_abs_difference": 0.00000286102294921875, "flow_max_abs_difference": 0.00001990795135498047},
+    {"evaluation": 5, "state_exact": false, "state_max_abs_difference": 0.0000030994415283203125, "flow_max_abs_difference": 0.000018358230590820312},
+    {"evaluation": 6, "state_exact": false, "state_max_abs_difference": 0.0000050067901611328125, "flow_max_abs_difference": 0.00007784366607666016},
+    {"evaluation": 7, "state_exact": false, "state_max_abs_difference": 0.00000667572021484375, "flow_max_abs_difference": 0.00008058547973632812},
+    {"evaluation": 8, "state_exact": false, "state_max_abs_difference": 0.000010967254638671875, "flow_max_abs_difference": 0.00005519390106201172},
+    {"evaluation": 9, "state_exact": false, "state_max_abs_difference": 0.000012278556823730469, "flow_max_abs_difference": 0.000041961669921875},
+    {"evaluation": 10, "state_exact": false, "state_max_abs_difference": 0.000014662742614746094, "flow_max_abs_difference": 0.00009965896606445312},
+    {"evaluation": 11, "state_exact": false, "state_max_abs_difference": 0.000014901161193847656, "flow_max_abs_difference": 0.00007104873657226562},
+    {"evaluation": 12, "state_exact": false, "state_max_abs_difference": 0.000015616416931152344, "flow_max_abs_difference": 0.00011897087097167969},
+    {"evaluation": 13, "state_exact": false, "state_max_abs_difference": 0.000018835067749023438, "flow_max_abs_difference": 0.00021195411682128906},
+    {"evaluation": 14, "state_exact": false, "state_max_abs_difference": 0.000030994415283203125, "flow_max_abs_difference": 0.0003445148468017578},
+    {"evaluation": 15, "state_exact": false, "state_max_abs_difference": 0.00003218650817871094, "flow_max_abs_difference": 0.0006480216979980469},
+    {"evaluation": 16, "state_exact": false, "state_max_abs_difference": 0.00006890296936035156, "flow_max_abs_difference": 0.00008392333984375},
+    {"evaluation": 17, "state_exact": false, "state_max_abs_difference": 0.00006842613220214844, "flow_max_abs_difference": 0.000036776065826416016}
+  ],
+  "baseline_final_action": {
+    "exact": false,
+    "differing_elements": 1577,
+    "elements": 1600,
+    "max_abs_difference": 0.00006914138793945312,
+    "mean_abs_difference": 0.000003489927394184633
+  },
+  "fixed": {
+    "all_18_state_inputs_exact": true,
+    "all_18_predicted_flows_exact": true,
+    "final_action_exact": true,
+    "max_abs_difference": 0.0
+  }
+}
