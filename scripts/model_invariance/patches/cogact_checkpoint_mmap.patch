@@ -1,0 +1,16 @@
+diff --git a/vla/cogactvla.py b/vla/cogactvla.py
+index e82a2cb..690a582 100644
+--- a/vla/cogactvla.py
++++ b/vla/cogactvla.py
+@@ -217,3 +217,10 @@ class CogACT(nn.Module):
+         # Load from Checkpoint (Custom --> should load both *projector* and *llm* weights)
+-        model_state_dict = torch.load(pretrained_checkpoint, map_location="cpu")["model"]
++        # Trusted official checkpoint; mmap avoids a redundant 30 GB host copy
++        # while preserving the released state dictionary exactly.
++        model_state_dict = torch.load(
++            pretrained_checkpoint,
++            map_location="cpu",
++            mmap=True,
++            weights_only=False,
++        )["model"]
+         assert (

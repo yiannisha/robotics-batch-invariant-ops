@@ -166,6 +166,7 @@ Only configurations that have been executed end to end are marked PASS.
 | BAAI UniVLA official PyTorch LIBERO image policy, official weights and real inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33 (64 OOM) | PASS actions / FAIL logits | PASS |
 | SpatialVLA 4B official PyTorch, official pretrained checkpoint and real image inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | RDT-1B official PyTorch ManiSkill policy, official weights/task embedding and real image fixtures | bfloat16 network, float32 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| CogACT-Small official PyTorch, official checkpoint/example and released batch path | bfloat16 VLM, float32 DiT-S, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -336,6 +337,17 @@ exact through B=64. Three real image/state/noise targets pass all B=2/B=4
 checks. The real images are off-domain numerical fixtures, not a ManiSkill
 task-success evaluation.
 
+The CogACT-Small row uses Microsoft's official PyTorch repository, official
+30.2 GB checkpoint, bundled test image, published prompt, RT-1 action
+statistics, CFG 1.5, and all ten DDIM steps. Its explicit-noise path is bitwise
+identical to the released `predict_action_batch` method at B=1. Stock changes
+96 of 112 final values at every tested B above one. The first divergence is
+DINO block-0 `aten::scaled_dot_product_attention`; after SDPA repair, Llama
+layer 0's bias-free MLP down-projection `aten::mm` is next. Generic SDPA and
+MM/addmm make the complete 16x7 trajectory exact through B=64. Three image
+targets pass all B=2/B=4 checks. The checkpoint contains every learned vision,
+projector, Llama, and DiT-S tensor; construction uses no substitute weights.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -354,7 +366,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/lingbot_vla2`](research/lingbot_vla2). BAAI UniVLA evidence is in
 [`research/univla_baai`](research/univla_baai), and SpatialVLA evidence is in
 [`research/spatialvla`](research/spatialvla). RDT-1B evidence is in
-[`research/rdt_1b`](research/rdt_1b). The earlier random-weight
+[`research/rdt_1b`](research/rdt_1b), and CogACT-Small evidence is in
+[`research/cogact_small`](research/cogact_small). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -658,6 +671,19 @@ three-target regression, and actual-shape operator benchmark are
 `scripts/check_rdt_1b_multiple_inputs.py`, and
 `scripts/benchmark_rdt_1b_ops.py`.
 
+For CogACT-Small, use the official CogACT source, authors' OpenVLA dependency,
+checkpoint, and source/example revisions recorded under
+`research/cogact_small`. Apply
+`scripts/model_invariance/patches/cogact_checkpoint_mmap.patch` to CogACT and
+`scripts/model_invariance/patches/cogact_openvla_inference_only.patch` to its
+OpenVLA dependency. Set `COGACT_CHECKPOINT`, `COGACT_SOURCE`,
+`COGACT_OPENVLA_SOURCE`, and `COGACT_SAMPLE_DIR`, then run the generic harness
+with adapter `scripts.model_invariance.adapters.cogact_small`. The staged
+trace, three-target regression, and actual-shape benchmark are
+`scripts/trace_cogact_small_batch_invariance.py`,
+`scripts/check_cogact_small_multiple_inputs.py`, and
+`scripts/benchmark_cogact_small_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -756,6 +782,11 @@ For RDT-1B on the same environment, invariant SDPA for the actual 32-head,
 than stock at B=1, 2, and 8. Invariant language-adapter addmm is 3.23x stock
 latency at B=1, 0.65x at B=2, and 2.32x at B=64. See
 [`research/rdt_1b/benchmarks.json`](research/rdt_1b/benchmarks.json).
+
+For CogACT-Small on the same environment, invariant DINO block-0 SDPA is
+3.17x, 8.87x, and 5.42x slower than stock at B=1, 2, and 8. Invariant Llama
+layer-0 MLP down-projection MM is 2.30x, 2.16x, and 1.36x slower. See
+[`research/cogact_small/benchmarks.json`](research/cogact_small/benchmarks.json).
 
 ## Attribution
 

@@ -95,8 +95,11 @@ to the README support table only after end-to-end execution.
   first boundary is long image cross-attention SDPA, with a second addmm
   threshold at B=64. Generic SDPA and addmm repairs make all five diffusion
   steps and the complete action exact. It is now in the support table.
-- **CogACT:** `microsoft/CogACT` provides official PyTorch code and public
-  Small/Base/Large checkpoints. It remains queued after RDT-1B.
+- **CogACT:** the official PyTorch `CogACT-Small` checkpoint, bundled example,
+  and released batch inference path have now been executed through B=64.
+  Stock fails every non-unit batch; invariant SDPA repairs DINO attention and
+  invariant MM repairs the later Llama MLP boundary. All ten DDIM steps and
+  final actions are exact after repair. It is now in the support table.
 - **OpenHelix:** official PyTorch code and public checkpoints exist, but its
   CALVIN inference setup is more involved; it remains queued after CogACT.
 

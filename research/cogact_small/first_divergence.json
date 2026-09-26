@@ -1,0 +1,603 @@
+{
+  "model": "cogact-small-official-pytorch",
+  "stock_b2_first_divergence": {
+    "module": "vlm.vision_backbone.dino_featurizer.blocks.0.attn",
+    "operator": "aten::scaled_dot_product_attention",
+    "logical_qkv_shapes": {
+      "query": [
+        1,
+        16,
+        261,
+        64
+      ],
+      "key": [
+        1,
+        16,
+        261,
+        64
+      ],
+      "value": [
+        1,
+        16,
+        261,
+        64
+      ]
+    },
+    "boundaries": {
+      "patch_input": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          3,
+          224,
+          224
+        ],
+        "candidate_shape": [
+          1,
+          3,
+          224,
+          224
+        ],
+        "dtype": "torch.float32",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "c9c3264bb11672ca507a5e2b1dc95701649b1c41df9c351e61c46f4b2b658476",
+        "candidate_hash": "c9c3264bb11672ca507a5e2b1dc95701649b1c41df9c351e61c46f4b2b658476"
+      },
+      "patch_output": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          1024,
+          16,
+          16
+        ],
+        "candidate_shape": [
+          1,
+          1024,
+          16,
+          16
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "7799effdb00b07fb854b81d26d76c4218453dd7c5d6173472206e34dd771753c",
+        "candidate_hash": "7799effdb00b07fb854b81d26d76c4218453dd7c5d6173472206e34dd771753c"
+      },
+      "attention_input": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          261,
+          1024
+        ],
+        "candidate_shape": [
+          1,
+          261,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "f3ee3867451a532f30291efa96a89e49579f61abfcce02faeffbf81078f1799a",
+        "candidate_hash": "f3ee3867451a532f30291efa96a89e49579f61abfcce02faeffbf81078f1799a"
+      },
+      "qkv_projection": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          261,
+          3072
+        ],
+        "candidate_shape": [
+          1,
+          261,
+          3072
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "d6b0daf56832c06c7fdabd604667f33315d2ab0b4d0dab68bf8e5644ddd4ca04",
+        "candidate_hash": "d6b0daf56832c06c7fdabd604667f33315d2ab0b4d0dab68bf8e5644ddd4ca04"
+      },
+      "sdpa_output": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          261,
+          1024
+        ],
+        "candidate_shape": [
+          1,
+          261,
+          1024
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": false,
+        "differing_elements": 7590,
+        "max_abs_difference": 0.015625,
+        "mean_abs_difference": 9.397729627380613e-06,
+        "first_differing_index": [
+          0,
+          0,
+          52
+        ],
+        "reference_hash": "99b5c6b7cebe32a9e2456914fc56e837b439e6ef28f8b168d3522de88839b214",
+        "candidate_hash": "4ccaf6dac3c90d6f21bd4ace085339888366a62141f93fd327868eba2f2046ab"
+      },
+      "attention_projection": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          261,
+          1024
+        ],
+        "candidate_shape": [
+          1,
+          261,
+          1024
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": false,
+        "differing_elements": 48280,
+        "max_abs_difference": 0.015625,
+        "mean_abs_difference": 4.063608139404096e-05,
+        "first_differing_index": [
+          0,
+          0,
+          4
+        ],
+        "reference_hash": "af8b70552ff3c95d458b1cf4580d541dffc49880d63e3c6519d1022a05080f87",
+        "candidate_hash": "d813235be44a41eb9098cd23870c8884132f40364b55009bee87ea6009f297ea"
+      }
+    },
+    "final_action": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        7
+      ],
+      "dtype": "torch.float64",
+      "exact": false,
+      "differing_elements": 96,
+      "max_abs_difference": 0.002151882043108344,
+      "mean_abs_difference": 0.0002898159727919847,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "reference_hash": "eb25e455006094d55f49adf38127b16b5f2dc2220ca8326396922d3c600d3501",
+      "candidate_hash": "1a41e5eabcb8fb937d19a0d21905dbd49e574cb2abf747425bcf3d23b1f045b8"
+    }
+  },
+  "sdpa_only_b2": {
+    "ordered_boundaries": [
+      {
+        "label": "dino_final",
+        "path": "output",
+        "reference_shape": [
+          1,
+          261,
+          1024
+        ],
+        "candidate_shape": [
+          1,
+          261,
+          1024
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "0e9ad3483f61302879f7d8fcda6cb5416d34d783d57d13ffc9efb8e70452bbcd",
+        "candidate_hash": "0e9ad3483f61302879f7d8fcda6cb5416d34d783d57d13ffc9efb8e70452bbcd"
+      },
+      {
+        "label": "siglip_final",
+        "path": "output",
+        "reference_shape": [
+          1,
+          256,
+          1152
+        ],
+        "candidate_shape": [
+          1,
+          256,
+          1152
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "38f96bb561a41398bb853032616de999dc1a215d9c2295138ef760410126d9ef",
+        "candidate_hash": "38f96bb561a41398bb853032616de999dc1a215d9c2295138ef760410126d9ef"
+      },
+      {
+        "label": "projector_final",
+        "path": "output",
+        "reference_shape": [
+          1,
+          256,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          256,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "2ca9f6bd3094a7f7b3d7a7349806cefc05ac4546de1df2341cea5c47304aae66",
+        "candidate_hash": "2ca9f6bd3094a7f7b3d7a7349806cefc05ac4546de1df2341cea5c47304aae66"
+      },
+      {
+        "label": "llama_input_norm",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "9e8be20499411739a4302a980a8e78539718af12ea3e746eaec06f87fd4755da",
+        "candidate_hash": "9e8be20499411739a4302a980a8e78539718af12ea3e746eaec06f87fd4755da"
+      },
+      {
+        "label": "llama_q_projection",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "577485883ec76ed4f1dd8baaeedad010aca94900df9b7ba35a6d70c54b65aaae",
+        "candidate_hash": "577485883ec76ed4f1dd8baaeedad010aca94900df9b7ba35a6d70c54b65aaae"
+      },
+      {
+        "label": "llama_k_projection",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "e1ddbb05cdf2530c948b5627defc3b793087f491fb5e8ab3756067a7e9c1d0d6",
+        "candidate_hash": "e1ddbb05cdf2530c948b5627defc3b793087f491fb5e8ab3756067a7e9c1d0d6"
+      },
+      {
+        "label": "llama_v_projection",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "23d21b185c5b4f958d52a85b6e7963d1764e1fb2af8815a8ddd0a66b46ef767d",
+        "candidate_hash": "23d21b185c5b4f958d52a85b6e7963d1764e1fb2af8815a8ddd0a66b46ef767d"
+      },
+      {
+        "label": "llama_attention_output",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "2151364dd07922fbe7ec428b084f0495aec2d7d18fcb2b6d7e7934abf3d8779a",
+        "candidate_hash": "2151364dd07922fbe7ec428b084f0495aec2d7d18fcb2b6d7e7934abf3d8779a"
+      },
+      {
+        "label": "llama_o_projection",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "5428283c6ea54ed79bb9ec02da243df49774c7116cf61cf7e2fc0a406ac578db",
+        "candidate_hash": "5428283c6ea54ed79bb9ec02da243df49774c7116cf61cf7e2fc0a406ac578db"
+      },
+      {
+        "label": "llama_post_attention_norm",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "cbdb611d7f75d16704b79e2937053b3d2f5282afe73e8ba4a0d2367254f63f10",
+        "candidate_hash": "cbdb611d7f75d16704b79e2937053b3d2f5282afe73e8ba4a0d2367254f63f10"
+      },
+      {
+        "label": "llama_gate_projection",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          11008
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          11008
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "b53c2dc4e4365b201ec3c7412c6c9a468f723fef50c076095efb5a6e07a45e3f",
+        "candidate_hash": "b53c2dc4e4365b201ec3c7412c6c9a468f723fef50c076095efb5a6e07a45e3f"
+      },
+      {
+        "label": "llama_up_projection",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          11008
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          11008
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "a01ef2f4fe0efdb87377032da1bffc7677ca00e21f6e31840f6307af6b7ad660",
+        "candidate_hash": "a01ef2f4fe0efdb87377032da1bffc7677ca00e21f6e31840f6307af6b7ad660"
+      },
+      {
+        "label": "llama_down_input",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          11008
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          11008
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "84deb152ac7e851ad4294a4942e50b4fe124c835074ea22e051d9d78a3ed0fea",
+        "candidate_hash": "84deb152ac7e851ad4294a4942e50b4fe124c835074ea22e051d9d78a3ed0fea"
+      },
+      {
+        "label": "llama_down_projection",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": false,
+        "differing_elements": 4156,
+        "max_abs_difference": 0.001953125,
+        "mean_abs_difference": 6.351866232989778e-08,
+        "first_differing_index": [
+          0,
+          0,
+          601
+        ],
+        "reference_hash": "4e606f2c27ec4360efaac6a559bb4d3bc6ef80e52b6f6b92ba3f4ef181779bc9",
+        "candidate_hash": "5dfb82f5a2c9e769f2b3e4c358051f713a9b4c4a1fedf6a99c9be9f6b18d35d5"
+      },
+      {
+        "label": "llama_layer_output",
+        "path": "output",
+        "reference_shape": [
+          1,
+          278,
+          4096
+        ],
+        "candidate_shape": [
+          1,
+          278,
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": false,
+        "differing_elements": 154,
+        "max_abs_difference": 0.015625,
+        "mean_abs_difference": 6.828030763017523e-08,
+        "first_differing_index": [
+          0,
+          0,
+          3033
+        ],
+        "reference_hash": "62a83ab0b502f3e04eed33ca276f5e44d1fcbe839b228f9cb2e75b56f19b9577",
+        "candidate_hash": "e0e65613ded421d01fa487594bf37887186439cbb5ac77bc9fbc544280b97ab7"
+      }
+    ],
+    "final_action": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        7
+      ],
+      "dtype": "torch.float64",
+      "exact": false,
+      "differing_elements": 96,
+      "max_abs_difference": 0.00890541821718216,
+      "mean_abs_difference": 0.0006868048803880811,
+      "first_differing_index": [
+        0,
+        0,
+        0
+      ],
+      "reference_hash": "cbef90b1eea9fa74953f2ff7d7ac0f458dfa27c74e4b430b306501aae845cb1d",
+      "candidate_hash": "c93eb0c4048805f61da9164e8af5514ac78f59b290bd309d33ff6e70bd78c9cd"
+    }
+  },
+  "minimal_sdpa_plus_mm_addmm": {
+    "duplicate_b64": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        7
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "d9cd8a238054fb2fb36a1a60d51dbaf609d5fe7fe133c2cbcb8064e0251f9d19",
+      "candidate_hash": "d9cd8a238054fb2fb36a1a60d51dbaf609d5fe7fe133c2cbcb8064e0251f9d19"
+    },
+    "unrelated_b64": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        7
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "d9cd8a238054fb2fb36a1a60d51dbaf609d5fe7fe133c2cbcb8064e0251f9d19",
+      "candidate_hash": "d9cd8a238054fb2fb36a1a60d51dbaf609d5fe7fe133c2cbcb8064e0251f9d19"
+    }
+  }
+}

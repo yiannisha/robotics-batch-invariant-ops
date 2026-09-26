@@ -1,0 +1,11 @@
+{
+  "model": "cogact-small-official-pytorch",
+  "cuda_noise_seed": 74000,
+  "official_method": "CogACT.predict_action_batch",
+  "controlled_method": "same released batch path with explicit initial noise and progressive ten-step DDIM iteration",
+  "action_shape": [1, 16, 7],
+  "action_dtype": "torch.float64",
+  "reference_hash": "eb25e455006094d55f49adf38127b16b5f2dc2220ca8326396922d3c600d3501",
+  "exact": true,
+  "differing_elements": 0
+}

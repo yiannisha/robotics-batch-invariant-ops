@@ -1,0 +1,43 @@
+diff --git a/prismatic/__init__.py b/prismatic/__init__.py
+index fad1d6a..9c06865 100644
+--- a/prismatic/__init__.py
++++ b/prismatic/__init__.py
+@@ -1 +1,2 @@
+-from .models import available_model_names, available_models, get_model_description, load
++# Inference-only environment: avoid importing the RLDS training data stack
++# (TensorFlow/dlimp) while CogACT imports explicit model submodules.
+diff --git a/prismatic/models/__init__.py b/prismatic/models/__init__.py
+index 073c620..826e1ed 100644
+--- a/prismatic/models/__init__.py
++++ b/prismatic/models/__init__.py
+@@ -1,2 +1,3 @@
+-from .load import available_model_names, available_models, get_model_description, load, load_vla
++# Inference-only environment: CogACT imports materialize/backbone/VLM modules
++# directly, so do not eagerly import OpenVLA's RLDS-dependent public loader.
+ from .materialize import get_llm_backbone_and_tokenizer, get_vision_backbone_and_transform, get_vlm
+diff --git a/prismatic/models/backbones/llm/llama2.py b/prismatic/models/backbones/llm/llama2.py
+index 60f1f57..50639fa 100644
+--- a/prismatic/models/backbones/llm/llama2.py
++++ b/prismatic/models/backbones/llm/llama2.py
+@@ -26,3 +26,5 @@ LLAMA2_MODELS = {
+     "llama2-7b-pure": {
+-        "llm_family": "llama2", "llm_cls": LlamaForCausalLM, "hf_hub_path": "meta-llama/Llama-2-7b-hf"
++        # Byte-identical public config/tokenizer mirror. CogACT's checkpoint
++        # supplies every learned LLM tensor; this path is construction-only.
++        "llm_family": "llama2", "llm_cls": LlamaForCausalLM, "hf_hub_path": "NousResearch/Llama-2-7b-hf"
+     },
+diff --git a/prismatic/models/backbones/vision/dinosiglip_vit.py b/prismatic/models/backbones/vision/dinosiglip_vit.py
+index bced8d1..6f702ba 100644
+--- a/prismatic/models/backbones/vision/dinosiglip_vit.py
++++ b/prismatic/models/backbones/vision/dinosiglip_vit.py
+@@ -50,3 +50,4 @@ class DinoSigLIPViTBackbone(VisionBackbone):
+         self.dino_featurizer: VisionTransformer = timm.create_model(
+-            self.dino_timm_path_or_url, pretrained=True, num_classes=0, img_size=self.default_image_size
++            # CogACT's complete checkpoint overwrites every vision tensor.
++            self.dino_timm_path_or_url, pretrained=False, num_classes=0, img_size=self.default_image_size
+         )
+@@ -55,3 +56,3 @@ class DinoSigLIPViTBackbone(VisionBackbone):
+         self.siglip_featurizer: VisionTransformer = timm.create_model(
+-            self.siglip_timm_path_or_url, pretrained=True, num_classes=0, img_size=self.default_image_size
++            self.siglip_timm_path_or_url, pretrained=False, num_classes=0, img_size=self.default_image_size
+         )

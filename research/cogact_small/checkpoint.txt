@@ -1,0 +1,18 @@
+CogACT/CogACT-Small
+revision: ca302a300542393a0b06e291465076a7d9105c23
+
+sha256  checkpoints/CogACT-Small.pt
+013cf0d4954e8a560064905ee03785ce3d0fa126697d4410cfde9a6754665e44
+
+sha256  config.json
+acab8c046e576225262ed733fcb38e9e2d986613d82ed2ce897fbdfa3fb12a39
+
+sha256  dataset_statistics.json
+b9f87dcc2b4449ca552066aecb90337507848810a9cf3d0cf18b9f86f03be61c
+
+sha256  official scripts/aml/test_image.png
+b6ef52ed5fc9eb9025833a7d5ad2530cd2a486fef8a50fb16af75a88a82a0af7
+
+Construction-only Llama-2 config/tokenizer mirror:
+NousResearch/Llama-2-7b-hf
+revision: 8efe6c9b93655b934e27bd9981e3ec13e55aee9d
