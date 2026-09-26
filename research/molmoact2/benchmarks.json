@@ -1,0 +1,93 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 3,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "molmoact2_image_projector_w2_mm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          392,
+          9728
+        ],
+        "right": [
+          9728,
+          2560
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.05119040012359619,
+        "peak_incremental_bytes": 4014080
+      },
+      "batch_invariant": {
+        "latency_ms": 0.12157759666442872,
+        "peak_incremental_bytes": 4014080
+      },
+      "latency_ratio": 2.3750077430707086,
+      "stock_samples_per_second": 19534.912748983388,
+      "batch_invariant_samples_per_second": 8225.199604497371
+    },
+    {
+      "operator": "molmoact2_image_projector_w2_mm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          784,
+          9728
+        ],
+        "right": [
+          9728,
+          2560
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.11551040410995483,
+        "peak_incremental_bytes": 8028160
+      },
+      "batch_invariant": {
+        "latency_ms": 0.20185599327087403,
+        "peak_incremental_bytes": 8028160
+      },
+      "latency_ratio": 1.7475135233595622,
+      "stock_samples_per_second": 17314.457649167183,
+      "batch_invariant_samples_per_second": 9908.0535959919
+    },
+    {
+      "operator": "molmoact2_image_projector_w2_mm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          3136,
+          9728
+        ],
+        "right": [
+          9728,
+          2560
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.3123840093612671,
+        "peak_incremental_bytes": 32112640
+      },
+      "batch_invariant": {
+        "latency_ms": 0.4410848140716553,
+        "peak_incremental_bytes": 32112640
+      },
+      "latency_ratio": 1.4119954954593972,
+      "stock_samples_per_second": 25609.505481274904,
+      "batch_invariant_samples_per_second": 18137.101402680302
+    }
+  ]
+}

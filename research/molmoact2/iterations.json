@@ -1,0 +1,28 @@
+{
+  "comparison": "target LIBERO frame 0, B=1 versus unrelated B=2",
+  "tensor": "10x32 normalized flow velocity before Euler update",
+  "baseline": [
+    {"step": 0, "differing_elements": 95, "max_abs_difference": 0.0078125, "mean_abs_difference": 0.0005618438008241355},
+    {"step": 1, "differing_elements": 91, "max_abs_difference": 0.015625, "mean_abs_difference": 0.0006182670476846397},
+    {"step": 2, "differing_elements": 92, "max_abs_difference": 0.015625, "mean_abs_difference": 0.0006501197931356728},
+    {"step": 3, "differing_elements": 93, "max_abs_difference": 0.015625, "mean_abs_difference": 0.0006266444688662887},
+    {"step": 4, "differing_elements": 97, "max_abs_difference": 0.015625, "mean_abs_difference": 0.0008568525081500411},
+    {"step": 5, "differing_elements": 101, "max_abs_difference": 0.03125, "mean_abs_difference": 0.0009564399952068925},
+    {"step": 6, "differing_elements": 109, "max_abs_difference": 0.015625, "mean_abs_difference": 0.0012187957763671875},
+    {"step": 7, "differing_elements": 111, "max_abs_difference": 0.02734375, "mean_abs_difference": 0.0015458822017535567},
+    {"step": 8, "differing_elements": 125, "max_abs_difference": 0.03125, "mean_abs_difference": 0.0017710328102111816},
+    {"step": 9, "differing_elements": 126, "max_abs_difference": 0.046875, "mean_abs_difference": 0.0033705823589116335}
+  ],
+  "batch_invariant_ops": [
+    {"step": 0, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 1, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 2, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 3, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 4, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 5, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 6, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 7, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 8, "differing_elements": 0, "max_abs_difference": 0.0},
+    {"step": 9, "differing_elements": 0, "max_abs_difference": 0.0}
+  ]
+}

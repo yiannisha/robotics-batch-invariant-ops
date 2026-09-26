@@ -1,0 +1,6 @@
+repository: https://github.com/allenai/molmoact2
+commit: 66b87e64efd99dfd103241418113955cf64dfa9c
+implementation: official PyTorch MolmoAct2 repository and Hugging Face remote code
+
+The public PyTorch implementation and checkpoint are used directly. No JAX
+source, weight, or conversion is used.

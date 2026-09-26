@@ -130,6 +130,7 @@ Only configurations that have been executed end to end are marked PASS.
 | π0-FAST LeRobot PyTorch, public `lerobot/pi0fast-libero` weights and real LIBERO inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | InternVLA-A1.5 official PyTorch standard action backend, public LIBERO weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | InternVLA-A1.5 official PyTorch optimized action-only backend, public LIBERO weights and real inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| MolmoAct2 official PyTorch, public `allenai/MolmoAct2-LIBERO` weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -140,9 +141,9 @@ per-sample noise. Its deterministic inputs are synthetic, so the result is a
 learned-weight numerical inference regression rather than a policy-quality
 claim. The π0-FAST row uses LeRobot's maintained PyTorch implementation with
 real observations from the public LIBERO dataset. Stock inference changed the
-final action at B=3, 4, 5, and 7; the library was exact through B=64. DreamZero,
-MolmoAct, GR00T, Cosmos, and the other planned model families are not yet marked
-supported. DreamZero is recorded as blocked under the single-H100 constraint:
+final action at B=3, 4, 5, and 7; the library was exact through B=64. GR00T,
+Cosmos, and the other planned model families are not yet marked supported.
+DreamZero is recorded as blocked under the single-H100 constraint:
 its released PyTorch checkpoint is 45.85 GB and its official inference path
 requires at least two GPUs.
 
@@ -154,12 +155,22 @@ the library, including three real target frames. A1.5's WAN foresight branch is
 training-only for the recommended action deployment and was not loaded, so no
 world/video-output PASS is claimed.
 
+The MolmoAct2 row uses the official PyTorch Transformers implementation and
+five-shard public LIBERO checkpoint. Its released B>1 image-attention mask has
+a broadcast bug, so the adapter applies the documented semantics-preserving
+batch-dimension correction before numerical testing. Stock then fails every B
+above one. The first divergence is the image projector's final `aten::mm`:
+cuBLASLt selects split-K at B=1 and a different non-split-K kernel at B=2. The
+existing generic invariant MM repair makes all ten continuous flow steps and
+the final 10x7 action exact through B=64.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
 [`research/internvla_a15`](research/internvla_a15), including environments, upstream
 commits, baseline/fixed hashes, first-divergence diagnostics, multiple-input
-checks, iteration notes, and operator benchmarks. The earlier random-weight
+checks, iteration notes, and operator benchmarks. MolmoAct2 evidence is in
+[`research/molmoact2`](research/molmoact2). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -257,6 +268,25 @@ path. `scripts/trace_internvla_a15_batch_invariance.py` records the precise
 attention boundary and flow-step propagation;
 `scripts/check_internvla_a15_multiple_inputs.py` runs the three-target check.
 
+For MolmoAct2, download the pinned `allenai/MolmoAct2-LIBERO` PyTorch snapshot
+recorded in [`research/molmoact2/checkpoint.txt`](research/molmoact2/checkpoint.txt).
+Reuse the LIBERO episode-zero fixture above, then run:
+
+```bash
+MOLMOACT2_CHECKPOINT=/path/to/MolmoAct2-LIBERO \
+MOLMOACT2_SAMPLE_DIR=/path/to/libero-episode-zero \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.molmoact2 \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/molmoact2/fixed.json
+```
+
+Use `scripts/trace_molmoact2_batch_invariance.py` for the first-divergence and
+flow-step trace, `scripts/check_molmoact2_multiple_inputs.py` for the
+three-target regression, and `scripts/benchmark_molmoact2_ops.py` for the exact
+projector-MM benchmark.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -282,6 +312,10 @@ was 2.45–6.40× slower and the Qwen visual Conv3d was 2.24–4.74× slower acr
 B=1, 2, and 8. The specialized invariant Qwen depthwise Conv1d was 0.49–0.59×
 stock latency. See
 [`research/internvla_a15/benchmarks.json`](research/internvla_a15/benchmarks.json).
+
+For MolmoAct2 on the same environment, the invariant image-projector MM was
+2.38×, 1.75×, and 1.41× slower than stock at B=1, 2, and 8, respectively. See
+[`research/molmoact2/benchmarks.json`](research/molmoact2/benchmarks.json).
 
 ## Attribution
 

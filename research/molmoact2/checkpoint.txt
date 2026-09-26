@@ -1,0 +1,24 @@
+repository: https://huggingface.co/allenai/MolmoAct2-LIBERO
+repository_commit: 0d24a92bd1faf321ef497c3bbd5681af97c65aa2
+format: PyTorch safetensors, five shards
+total_repository_size_bytes: 21781549144
+model-00001-of-00005.safetensors_size_bytes: 4919324120
+model-00001-of-00005.safetensors_sha256: 5aa56113a3c1c95f0c03b90bada5b7ac2babf59c752a3d6201b8362a530c6809
+model-00002-of-00005.safetensors_size_bytes: 4844690992
+model-00002-of-00005.safetensors_sha256: 1fd95aec9ad144d3f4eac42db88a000321e016beeae606ecfcb84fcbdb13ecf4
+model-00003-of-00005.safetensors_size_bytes: 4844691024
+model-00003-of-00005.safetensors_sha256: e6c455434915e74a8d750bedd0fc4c23b5a8ce37954aaff9c3e3f22085a26890
+model-00004-of-00005.safetensors_size_bytes: 4877619536
+model-00004-of-00005.safetensors_sha256: 4e5bcf5bad81573153d6deaa3d25c3e53dc697658488b1cdbab4c8a3dffba1b6
+model-00005-of-00005.safetensors_size_bytes: 2282630240
+model-00005-of-00005.safetensors_sha256: 76140ad00c225f95b80eb6b6a5fea2f985e4fdde3356a3c67c93d87d083d4ee2
+
+dataset_repository: https://huggingface.co/datasets/lerobot/libero
+dataset_commit: a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4
+episode_data_file: data/chunk-000/file-000.parquet
+episode_data_sha256: 71e4088ce5877ba3234d0cde284c403f449ed560a656a2626e72fc2c3399502d
+camera_0_video_sha256: 77d59b50e309e2099e562e70806603a1bdb66b893efcaecc2534b2c9fa3e02ae
+camera_1_video_sha256: ba95edeb5190528b45364d7c8e518b7f12afa8ded72108e19a8349aa3f0a7d58
+
+The public checkpoint's custom Transformers source and PyTorch weights are
+loaded directly from this pinned snapshot. No JAX artifact is used.
