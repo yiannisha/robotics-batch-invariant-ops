@@ -1,0 +1,95 @@
+{
+  "model": "opendw-dw05-robotwin-official-pytorch-action",
+  "module": "action_expert.action_encoder",
+  "operation": "aten::linear",
+  "dtype": "torch.bfloat16",
+  "b1_shapes": {
+    "input": [
+      1,
+      32,
+      14
+    ],
+    "flattened_input": [
+      32,
+      14
+    ],
+    "weight": [
+      1024,
+      14
+    ],
+    "bias": [
+      1024
+    ]
+  },
+  "b2_shapes": {
+    "input": [
+      2,
+      32,
+      14
+    ],
+    "flattened_input": [
+      64,
+      14
+    ],
+    "weight": [
+      1024,
+      14
+    ],
+    "bias": [
+      1024
+    ]
+  },
+  "input_target_comparison": {
+    "path": "output",
+    "reference_shape": [
+      1,
+      32,
+      14
+    ],
+    "candidate_shape": [
+      1,
+      32,
+      14
+    ],
+    "dtype": "torch.bfloat16",
+    "exact": true,
+    "differing_elements": 0,
+    "max_abs_difference": 0.0,
+    "mean_abs_difference": 0.0,
+    "first_differing_index": null,
+    "reference_hash": "8787fdceb1c7d465b84b5ed6df554050197ff81566ab73f7d79ad5d9cec69ded",
+    "candidate_hash": "8787fdceb1c7d465b84b5ed6df554050197ff81566ab73f7d79ad5d9cec69ded"
+  },
+  "output_target_comparison": {
+    "path": "output",
+    "reference_shape": [
+      1,
+      32,
+      1024
+    ],
+    "candidate_shape": [
+      1,
+      32,
+      1024
+    ],
+    "dtype": "torch.bfloat16",
+    "exact": false,
+    "differing_elements": 9096,
+    "max_abs_difference": 0.015625,
+    "mean_abs_difference": 0.0005048204911872745,
+    "first_differing_index": [
+      0,
+      0,
+      4
+    ],
+    "reference_hash": "c8fa666982a599949f29cf9c74e90adc6ba3195601a760f4f1032954483ca6a2",
+    "candidate_hash": "7ec676ac3fb9a08957873afbd64601f21196360f92f40fad9e0af8b6f0af1a46"
+  },
+  "stock_cuda_kernels_b1": [
+    "void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align2>(cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align2::Params)"
+  ],
+  "stock_cuda_kernels_b2": [
+    "Memset (Device)",
+    "void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_tn_align2>(cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_tn_align2::Params)"
+  ]
+}

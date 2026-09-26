@@ -1,0 +1,10 @@
+Checkpoint: https://huggingface.co/Dexmal/DW05-Robotwin
+Revision: 6ab5f9e2636610cba440d08264663efe70c3f761
+model.pt size: 12041813433 bytes
+model.pt SHA-256: 4ea55d5fd73aceab9917886d51717b8bdac21854a77b98e12dfed8ee34164529
+text_encoder/model.pth size: 11361920418 bytes
+vae/model.pth size: 2818839170 bytes
+
+The learned action and proprio tensors are 14-D. The bundle's top-level
+config.json says 32-D, but the official runtime's checkpoint-dimension path
+also infers 14-D from model.pt; the adapter follows the learned tensors.

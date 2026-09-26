@@ -1,0 +1,28 @@
+diff --git a/dexbotic/model/dw05/dw05_core.py b/dexbotic/model/dw05/dw05_core.py
+index f66bf86..a073e5a 100644
+--- a/dexbotic/model/dw05/dw05_core.py
++++ b/dexbotic/model/dw05/dw05_core.py
+@@ -538,7 +538,7 @@ class DW05Core(DW05Wan22WorldActionModel):
+         torch.save(payload, path)
+
+     def load_checkpoint(self, path, optimizer=None):
+-        payload = torch.load(path, map_location="cpu")
++        payload = torch.load(path, map_location="cpu", mmap=True, weights_only=True)
+         if "mot" in payload:
+             self.mot.load_state_dict(payload["mot"], strict=False)
+         elif "dit" in payload:
+diff --git a/dexbotic/model/modules/wan22/helpers/io.py b/dexbotic/model/modules/wan22/helpers/io.py
+index 26d65d0..fb246ad 100644
+--- a/dexbotic/model/modules/wan22/helpers/io.py
++++ b/dexbotic/model/modules/wan22/helpers/io.py
+@@ -137,7 +137,9 @@ def load_state_dict_from_safetensors(file_path, torch_dtype=None, device="cpu"):
+
+
+ def load_state_dict_from_bin(file_path, torch_dtype=None, device="cpu"):
+-    state_dict = torch.load(file_path, map_location=device, weights_only=True)
++    state_dict = torch.load(
++        file_path, map_location=device, mmap=True, weights_only=True
++    )
+     if len(state_dict) == 1:
+         if "state_dict" in state_dict:
+             state_dict = state_dict["state_dict"]

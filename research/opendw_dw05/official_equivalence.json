@@ -1,0 +1,27 @@
+{
+  "model": "opendw-dw05-robotwin-official-pytorch-action",
+  "seed": 0,
+  "scope": "released infer_action B=1 path",
+  "official_equivalent": true,
+  "comparison": {
+    "path": "output",
+    "reference_shape": [
+      1,
+      32,
+      14
+    ],
+    "candidate_shape": [
+      1,
+      32,
+      14
+    ],
+    "dtype": "torch.float32",
+    "exact": true,
+    "differing_elements": 0,
+    "max_abs_difference": 0.0,
+    "mean_abs_difference": 0.0,
+    "first_differing_index": null,
+    "reference_hash": "c8b43656f52b5eef4454978e73292929a998b3e595f9951da69e3d55a3ac174c",
+    "candidate_hash": "c8b43656f52b5eef4454978e73292929a998b3e595f9951da69e3d55a3ac174c"
+  }
+}

@@ -120,8 +120,10 @@ to the README support table only after end-to-end execution.
   ten DDIM states, and final action exact. It is now in the support table.
 - **OpenDW / DW05:** Dexmal publishes native PyTorch world-action code and a
   public RoboTwin checkpoint with both action and video components. The bundled
-  policy, text encoder, and VAE total approximately 26 GB. Status: runnable
-  candidate, not yet a support claim.
+  policy, text encoder, and VAE total approximately 26 GB. Its official action
+  path is exact through B=64 after generic linear repair; its joint 9-frame
+  video/action output is exact at B=2, including decoded RGB. It is now in the
+  support table.
 - **OpenWAM:** the authors publish native PyTorch code and public checkpoints
   for the 2026-09 world-action release. Status: runnable candidate, not yet a
   support claim.

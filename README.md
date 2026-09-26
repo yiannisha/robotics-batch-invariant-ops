@@ -175,6 +175,8 @@ Regenerate the evidence-backed console summary with
 | OpenHelix official PyTorch CALVIN policy, official checkpoint and real CALVIN observations | bfloat16 planner, float32 diffusion policy/actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | WSA Base official PyTorch LIBERO policy, official checkpoint and real inputs | bfloat16 network, float32 flow/actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | VITRA-VLA-3B official Microsoft PyTorch policy, complete official checkpoint and released real images | float32 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| OpenDW DW05 official PyTorch RoboTwin action policy, complete official checkpoint and real three-camera inputs | bfloat16 network, float32 actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| OpenDW DW05 official PyTorch joint video/action path, decoded 9-frame RGB output | bfloat16 network, float32 actions, uint8 video | 1, 2 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -930,6 +932,12 @@ FP32 `[B,2304]` FOV projection is 46.16x, 36.46x, 22.31x, and 6.99x slower
 than stock at B=1, 2, 8, and 64, respectively. Its absolute latency is about
 0.5 ms and the projection runs once per policy call. See
 [`research/vitra_vla_3b/benchmarks.json`](research/vitra_vla_3b/benchmarks.json).
+
+For OpenDW DW05 in the same environment, invariant linear on the actual BF16
+`[B,32,14]` ActionDiT encoder input is 3.72x, 3.22x, 3.50x, and 3.60x slower
+than stock at B=1, 2, 8, and 64. Absolute latency is 0.039-0.047 ms and measured
+incremental memory is lower at every size. See
+[`research/opendw_dw05/benchmarks.json`](research/opendw_dw05/benchmarks.json).
 
 ## Attribution
 

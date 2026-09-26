@@ -1,0 +1,296 @@
+{
+  "model": "opendw-dw05-robotwin-official-pytorch-action",
+  "seed": 0,
+  "targets": "three distinct frames from a real three-camera RobotWin episode",
+  "all_exact": true,
+  "checks": [
+    {
+      "target_frame": 0,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e19c0d10ea465062378c72985f7e18f615d90b039cd50f89a8af6995c3224393",
+      "candidate_hash": "e19c0d10ea465062378c72985f7e18f615d90b039cd50f89a8af6995c3224393"
+    },
+    {
+      "target_frame": 0,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e19c0d10ea465062378c72985f7e18f615d90b039cd50f89a8af6995c3224393",
+      "candidate_hash": "e19c0d10ea465062378c72985f7e18f615d90b039cd50f89a8af6995c3224393"
+    },
+    {
+      "target_frame": 0,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e19c0d10ea465062378c72985f7e18f615d90b039cd50f89a8af6995c3224393",
+      "candidate_hash": "e19c0d10ea465062378c72985f7e18f615d90b039cd50f89a8af6995c3224393"
+    },
+    {
+      "target_frame": 0,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e19c0d10ea465062378c72985f7e18f615d90b039cd50f89a8af6995c3224393",
+      "candidate_hash": "e19c0d10ea465062378c72985f7e18f615d90b039cd50f89a8af6995c3224393"
+    },
+    {
+      "target_frame": 1,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "31812d81e59193adb152eaa76e7cb1d1dc5f0af324d1ff21fa0541546cc1c03b",
+      "candidate_hash": "31812d81e59193adb152eaa76e7cb1d1dc5f0af324d1ff21fa0541546cc1c03b"
+    },
+    {
+      "target_frame": 1,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "31812d81e59193adb152eaa76e7cb1d1dc5f0af324d1ff21fa0541546cc1c03b",
+      "candidate_hash": "31812d81e59193adb152eaa76e7cb1d1dc5f0af324d1ff21fa0541546cc1c03b"
+    },
+    {
+      "target_frame": 1,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "31812d81e59193adb152eaa76e7cb1d1dc5f0af324d1ff21fa0541546cc1c03b",
+      "candidate_hash": "31812d81e59193adb152eaa76e7cb1d1dc5f0af324d1ff21fa0541546cc1c03b"
+    },
+    {
+      "target_frame": 1,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "31812d81e59193adb152eaa76e7cb1d1dc5f0af324d1ff21fa0541546cc1c03b",
+      "candidate_hash": "31812d81e59193adb152eaa76e7cb1d1dc5f0af324d1ff21fa0541546cc1c03b"
+    },
+    {
+      "target_frame": 2,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "dc7f0c400fcb632a14373b1348396ba4136141235dcfa9f575b2c3c98197a950",
+      "candidate_hash": "dc7f0c400fcb632a14373b1348396ba4136141235dcfa9f575b2c3c98197a950"
+    },
+    {
+      "target_frame": 2,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "dc7f0c400fcb632a14373b1348396ba4136141235dcfa9f575b2c3c98197a950",
+      "candidate_hash": "dc7f0c400fcb632a14373b1348396ba4136141235dcfa9f575b2c3c98197a950"
+    },
+    {
+      "target_frame": 2,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "dc7f0c400fcb632a14373b1348396ba4136141235dcfa9f575b2c3c98197a950",
+      "candidate_hash": "dc7f0c400fcb632a14373b1348396ba4136141235dcfa9f575b2c3c98197a950"
+    },
+    {
+      "target_frame": 2,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        32,
+        14
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        14
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "dc7f0c400fcb632a14373b1348396ba4136141235dcfa9f575b2c3c98197a950",
+      "candidate_hash": "dc7f0c400fcb632a14373b1348396ba4136141235dcfa9f575b2c3c98197a950"
+    }
+  ]
+}
