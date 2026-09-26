@@ -1,0 +1,255 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 2,
+  "repetitions": 5,
+  "cases": [
+    {
+      "operator": "rdt_1b_block1_image_cross_attention_sdpa",
+      "batch_size": 1,
+      "shape": {
+        "query": [
+          1,
+          32,
+          67,
+          64
+        ],
+        "key": [
+          1,
+          32,
+          4374,
+          64
+        ],
+        "value": [
+          1,
+          32,
+          4374,
+          64
+        ],
+        "dtype": "torch.bfloat16",
+        "causal": false,
+        "checkpoint_boundary": "model.blocks.1.cross_attn"
+      },
+      "stock": {
+        "latency_ms": 0.0383296012878418,
+        "peak_incremental_bytes": 2788352
+      },
+      "batch_invariant": {
+        "latency_ms": 0.2234368085861206,
+        "peak_incremental_bytes": 38199296
+      },
+      "latency_ratio": 5.829353843474367,
+      "stock_samples_per_second": 26089.496535337075,
+      "batch_invariant_samples_per_second": 4475.538324808125,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "rdt_1b_block1_image_cross_attention_sdpa",
+      "batch_size": 2,
+      "shape": {
+        "query": [
+          2,
+          32,
+          67,
+          64
+        ],
+        "key": [
+          2,
+          32,
+          4374,
+          64
+        ],
+        "value": [
+          2,
+          32,
+          4374,
+          64
+        ],
+        "dtype": "torch.bfloat16",
+        "causal": false,
+        "checkpoint_boundary": "model.blocks.1.cross_attn"
+      },
+      "stock": {
+        "latency_ms": 0.057183998823165896,
+        "peak_incremental_bytes": 3345920
+      },
+      "batch_invariant": {
+        "latency_ms": 0.3091455936431885,
+        "peak_incremental_bytes": 76595200
+      },
+      "latency_ratio": 5.4061555680843725,
+      "stock_samples_per_second": 34974.81885071978,
+      "batch_invariant_samples_per_second": 6469.443657373852,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 51391,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "rdt_1b_block1_image_cross_attention_sdpa",
+      "batch_size": 8,
+      "shape": {
+        "query": [
+          8,
+          32,
+          67,
+          64
+        ],
+        "key": [
+          8,
+          32,
+          4374,
+          64
+        ],
+        "value": [
+          8,
+          32,
+          4374,
+          64
+        ],
+        "dtype": "torch.bfloat16",
+        "causal": false,
+        "checkpoint_boundary": "model.blocks.1.cross_attn"
+      },
+      "stock": {
+        "latency_ms": 0.17828480005264283,
+        "peak_incremental_bytes": 4460544
+      },
+      "batch_invariant": {
+        "latency_ms": 0.8737855911254883,
+        "peak_incremental_bytes": 306380800
+      },
+      "latency_ratio": 4.901066108089317,
+      "stock_samples_per_second": 44872.02497149398,
+      "batch_invariant_samples_per_second": 9155.564112353375,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 58574,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "rdt_1b_language_adaptor_addmm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          20,
+          4096
+        ],
+        "right": [
+          4096,
+          2048
+        ],
+        "bias": [
+          2048
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "lang_adaptor.0"
+      },
+      "stock": {
+        "latency_ms": 0.018400000035762788,
+        "peak_incremental_bytes": 1212416
+      },
+      "batch_invariant": {
+        "latency_ms": 0.05941759943962097,
+        "peak_incremental_bytes": 163840
+      },
+      "latency_ratio": 3.2292173545725626,
+      "stock_samples_per_second": 54347.825981324466,
+      "batch_invariant_samples_per_second": 16830.03031814136,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "rdt_1b_language_adaptor_addmm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          40,
+          4096
+        ],
+        "right": [
+          4096,
+          2048
+        ],
+        "bias": [
+          2048
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "lang_adaptor.0"
+      },
+      "stock": {
+        "latency_ms": 0.08387839794158936,
+        "peak_incremental_bytes": 1376256
+      },
+      "batch_invariant": {
+        "latency_ms": 0.054553598165512085,
+        "peak_incremental_bytes": 327680
+      },
+      "latency_ratio": 0.6503891288374598,
+      "stock_samples_per_second": 23844.041482441593,
+      "batch_invariant_samples_per_second": 36661.19316148734,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "rdt_1b_language_adaptor_addmm",
+      "batch_size": 64,
+      "shape": {
+        "left": [
+          1280,
+          4096
+        ],
+        "right": [
+          4096,
+          2048
+        ],
+        "bias": [
+          2048
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "lang_adaptor.0"
+      },
+      "stock": {
+        "latency_ms": 0.04631040096282959,
+        "peak_incremental_bytes": 11534336
+      },
+      "batch_invariant": {
+        "latency_ms": 0.1074112057685852,
+        "peak_incremental_bytes": 10485760
+      },
+      "latency_ratio": 2.319375421836605,
+      "stock_samples_per_second": 1381978.9651868644,
+      "batch_invariant_samples_per_second": 595840.9976132883,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 85,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    }
+  ]
+}

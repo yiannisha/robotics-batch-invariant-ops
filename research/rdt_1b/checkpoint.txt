@@ -1,0 +1,20 @@
+robotics-diffusion-transformer/maniskill-model
+revision: 9622afab2b7ce2312a6cf1febc526928589b77eb
+
+sha256  rdt/mp_rank_00_model_states.pt
+3fa89cbf7bbb1b2559b29f9ae153b431541cdaa0b3f1ee44b83b9934599b9fb8
+
+sha256  lang_embeds/text_embed_PickCube-v1.pt
+a9ac30bc88ef12b171e9323b8a2c64f0b0ae9a54715deb061c021deaadb37f7a
+
+google/siglip-so400m-patch14-384
+revision: 9fdffc58afc957d1a03a25b10dba0329ab15c2a3
+
+sha256  model.safetensors
+ea2abad2b7f8a9c1aa5e49a244d5d57ffa71c56f720c94bc5d240ef4d6e1d94a
+
+sha256  config.json
+adc04928d8fd19a61822584fe0cf2e813e5ebac17f3e49fb1ea096860ae6457b
+
+sha256  preprocessor_config.json
+f59da2f87c3cd079bd4f8f3037e81b277c60c498e279a8020331f67a5a3157e8

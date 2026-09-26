@@ -1,0 +1,11 @@
+{
+  "model": "rdt-1b-maniskill-official-pytorch",
+  "cuda_noise_seed": 73001,
+  "official_method": "RDTRunner.predict_action",
+  "controlled_method": "explicit-noise five-step DPM-Solver loop",
+  "action_shape": [1, 64, 8],
+  "action_dtype": "torch.float32",
+  "exact": true,
+  "differing_elements": 0,
+  "note": "Both paths use the official unified-state indices 0-6 and 10 and the released ManiSkill action bounds."
+}

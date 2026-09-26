@@ -1,0 +1,102 @@
+{
+  "model": "google/siglip-so400m-patch14-384 via official RDT tower",
+  "per_request_images": 6,
+  "modes": {
+    "baseline": {
+      "duplicate_b2": [
+        {
+          "path": "output",
+          "reference_shape": [
+            6,
+            729,
+            1152
+          ],
+          "candidate_shape": [
+            6,
+            729,
+            1152
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "cec447774837b2b47445ae21c7c4142144f85a99d91438eb6e0215c030b620dc",
+          "candidate_hash": "cec447774837b2b47445ae21c7c4142144f85a99d91438eb6e0215c030b620dc"
+        }
+      ],
+      "unrelated_b2": [
+        {
+          "path": "output",
+          "reference_shape": [
+            6,
+            729,
+            1152
+          ],
+          "candidate_shape": [
+            6,
+            729,
+            1152
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "cec447774837b2b47445ae21c7c4142144f85a99d91438eb6e0215c030b620dc",
+          "candidate_hash": "cec447774837b2b47445ae21c7c4142144f85a99d91438eb6e0215c030b620dc"
+        }
+      ]
+    },
+    "fixed": {
+      "duplicate_b2": [
+        {
+          "path": "output",
+          "reference_shape": [
+            6,
+            729,
+            1152
+          ],
+          "candidate_shape": [
+            6,
+            729,
+            1152
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "eb9fd86129293ec3d6e8ad9ddf4be0aca2de4fab3330fb660d06fbeeada71b9d",
+          "candidate_hash": "eb9fd86129293ec3d6e8ad9ddf4be0aca2de4fab3330fb660d06fbeeada71b9d"
+        }
+      ],
+      "unrelated_b2": [
+        {
+          "path": "output",
+          "reference_shape": [
+            6,
+            729,
+            1152
+          ],
+          "candidate_shape": [
+            6,
+            729,
+            1152
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "eb9fd86129293ec3d6e8ad9ddf4be0aca2de4fab3330fb660d06fbeeada71b9d",
+          "candidate_hash": "eb9fd86129293ec3d6e8ad9ddf4be0aca2de4fab3330fb660d06fbeeada71b9d"
+        }
+      ]
+    }
+  }
+}

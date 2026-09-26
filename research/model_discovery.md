@@ -89,8 +89,12 @@ to the README support table only after end-to-end execution.
   tested score and action exact. The ZoeDepth path also motivated generic
   ConvTranspose2D and direct arbitrary-dimension softmax dispatch coverage.
   It is now in the support table.
-- **RDT-1B:** `thu-ml/RoboticsDiffusionTransformer` provides official PyTorch
-  code and public weights. It is the next diffusion-transformer candidate.
+- **RDT-1B:** the official PyTorch implementation, official ManiSkill policy,
+  official SigLIP tower, and checkpoint-published PickCube task embedding have
+  now been executed through B=64. Stock fails every non-unit policy batch; the
+  first boundary is long image cross-attention SDPA, with a second addmm
+  threshold at B=64. Generic SDPA and addmm repairs make all five diffusion
+  steps and the complete action exact. It is now in the support table.
 - **CogACT:** `microsoft/CogACT` provides official PyTorch code and public
   Small/Base/Large checkpoints. It remains queued after RDT-1B.
 - **OpenHelix:** official PyTorch code and public checkpoints exist, but its
@@ -116,5 +120,6 @@ to the README support table only after end-to-end execution.
 - https://github.com/SpatialVLA/SpatialVLA
 - https://huggingface.co/IPEC-COMMUNITY/spatialvla-4b-224-pt
 - https://github.com/thu-ml/RoboticsDiffusionTransformer
+- https://huggingface.co/robotics-diffusion-transformer/maniskill-model
 - https://github.com/microsoft/CogACT
 - https://github.com/OpenHelix-Team/OpenHelix

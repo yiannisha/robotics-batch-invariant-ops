@@ -165,6 +165,7 @@ Only configurations that have been executed end to end are marked PASS.
 | LingBot-VLA 2.0 official PyTorch, official RoboTwin checkpoint and real three-camera inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | BAAI UniVLA official PyTorch LIBERO image policy, official weights and real inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33 (64 OOM) | PASS actions / FAIL logits | PASS |
 | SpatialVLA 4B official PyTorch, official pretrained checkpoint and real image inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| RDT-1B official PyTorch ManiSkill policy, official weights/task embedding and real image fixtures | bfloat16 network, float32 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -323,6 +324,18 @@ B=64. This integration also adds generic non-overlapping ConvTranspose2D and
 direct arbitrary-dimension softmax dispatch coverage. The official target and
 two additional real targets pass all B=2/B=4 checks in repaired mode.
 
+The RDT-1B row uses the authors' official PyTorch repository, complete
+official ManiSkill policy, official SigLIP tower, and checkpoint-published
+PickCube-v1 T5 embedding. The adapter's explicit-noise five-step DPM-Solver
+loop is bitwise identical to the released `predict_action` method at B=1.
+Stock changes 21 of 512 final action scalars at B=2. The first boundary is
+block 1's 4,374-token image `aten::scaled_dot_product_attention`; SDPA alone
+repairs B=2, while B=64 additionally exposes `aten::addmm` in the language
+adapter. Those two generic replacements make the complete 64x8 float32 action
+exact through B=64. Three real image/state/noise targets pass all B=2/B=4
+checks. The real images are off-domain numerical fixtures, not a ManiSkill
+task-success evaluation.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -340,7 +353,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/dexvla`](research/dexvla), and LingBot-VLA 2.0 evidence is in
 [`research/lingbot_vla2`](research/lingbot_vla2). BAAI UniVLA evidence is in
 [`research/univla_baai`](research/univla_baai), and SpatialVLA evidence is in
-[`research/spatialvla`](research/spatialvla). The earlier random-weight
+[`research/spatialvla`](research/spatialvla). RDT-1B evidence is in
+[`research/rdt_1b`](research/rdt_1b). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -634,6 +648,16 @@ three-target regression, and actual ZoeDepth ConvTranspose2D benchmark are
 `scripts/check_spatialvla_multiple_inputs.py`, and
 `scripts/benchmark_spatialvla_ops.py`.
 
+For RDT-1B, use the official source, ManiSkill checkpoint, SigLIP SO400M
+snapshot, and real image fixture revisions recorded under `research/rdt_1b`.
+Set `RDT_CHECKPOINT`, `RDT_SIGLIP`, `RDT_SOURCE`, and `RDT_SAMPLE_DIR`, add the
+official source to `PYTHONPATH`, and run the generic harness with adapter
+`scripts.model_invariance.adapters.rdt_maniskill`. The staged trace,
+three-target regression, and actual-shape operator benchmark are
+`scripts/trace_rdt_1b_batch_invariance.py`,
+`scripts/check_rdt_1b_multiple_inputs.py`, and
+`scripts/benchmark_rdt_1b_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -726,6 +750,12 @@ checkpoint's actual ZoeDepth 256-channel 4x4/stride-4 upsampler is 1.80x and
 1.21x slower than stock at B=1 and B=2, and 0.93x stock latency at B=8, with
 lower measured incremental memory at every size. See
 [`research/spatialvla/benchmarks.json`](research/spatialvla/benchmarks.json).
+
+For RDT-1B on the same environment, invariant SDPA for the actual 32-head,
+67-query, 4,374-key image cross-attention is 5.83x, 5.41x, and 4.90x slower
+than stock at B=1, 2, and 8. Invariant language-adapter addmm is 3.23x stock
+latency at B=1, 0.65x at B=2, and 2.32x at B=64. See
+[`research/rdt_1b/benchmarks.json`](research/rdt_1b/benchmarks.json).
 
 ## Attribution
 
