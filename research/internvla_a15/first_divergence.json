@@ -1,0 +1,41 @@
+{
+  "comparison": "target LIBERO frame 0 at B=1 versus the same target at unrelated B=2, standard backend",
+  "module": "action_expert.layers.19.self_attn eager attention value product",
+  "operation": "aten::bmm through rank-4 torch.matmul",
+  "dtype": "torch.bfloat16",
+  "last_exact_tensor": {
+    "name": "attention probabilities after mask and float32 softmax",
+    "b1_shape": [1, 8, 58, 708],
+    "b2_shape": [2, 8, 58, 708],
+    "target_differing_elements": 0,
+    "max_abs_difference": 0.0,
+    "reference_hash": "3dd416152ce413c82900b2d5533ff3c44d6c1641bbd2a2f20740ad227e5f3b40",
+    "candidate_hash": "3dd416152ce413c82900b2d5533ff3c44d6c1641bbd2a2f20740ad227e5f3b40"
+  },
+  "also_exact": {
+    "post_rope_query_shape": [1, 8, 58, 256],
+    "expanded_key_shape": [1, 8, 708, 256],
+    "expanded_value_shape": [1, 8, 708, 256],
+    "qk_scores_shape": [1, 8, 58, 708]
+  },
+  "first_non_identical_tensor": {
+    "name": "attention probabilities multiplied by values",
+    "target_shape": [1, 8, 58, 256],
+    "differing_elements": 2,
+    "max_abs_difference": 0.00006103515625,
+    "mean_abs_difference": 5.178474871136984e-10,
+    "first_differing_index": [0, 1, 1, 72],
+    "reference_hash": "e9cff6511b98d05fae54d7c4d2a3bf367f0cc00d10b445a80029e723c12085b3",
+    "candidate_hash": "8c143b8d6c53a7357c37ec761ffe9dd1de9acd36aa54f6287adaa6b26422f760"
+  },
+  "flattened_bmm_shapes": {
+    "b1": [[8, 58, 708], [8, 708, 256]],
+    "b2": [[16, 58, 708], [16, 708, 256]]
+  },
+  "profiled_stock_kernels": {
+    "b1_batch_heads_8": "cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_nn_align2",
+    "b2_batch_heads_16": "cutlass_80_tensorop_bf16_s16816gemm_bf16_64x64_64x6_nn_align2"
+  },
+  "root_cause": "Rank-4 torch.matmul flattens request and head dimensions into aten::bmm. Changing request B changes the BMM batch count from 8 to 16, and stock CUDA selects a different CUTLASS kernel and reduction schedule for the unchanged target matrices.",
+  "replacement": "bmm_persistent with a fixed per-matrix Triton reduction schedule"
+}

@@ -16,7 +16,9 @@ __all__ = [
     "enable_batch_invariant_mode",
     "matmul_persistent",
     "bmm_persistent",
+    "conv1d_batch_invariant",
     "conv2d_batch_invariant",
+    "conv3d_batch_invariant",
     "scaled_dot_product_attention_batch_invariant",
     "softmax",
 ]
@@ -155,6 +157,7 @@ def bmm_kernel_persistent(
     BLOCK_SIZE_K: tl.constexpr,
     GROUP_SIZE_M: tl.constexpr,
     NUM_SMS: tl.constexpr,
+    BATCH_TILE_SLOTS: tl.constexpr,
     INPUT_PRECISION: tl.constexpr,
 ):
     """One persistent matmul grid per batch element.
@@ -163,8 +166,9 @@ def bmm_kernel_persistent(
     output element independent of both the batch size and its position in the
     batch.  The kernel intentionally has no cross-batch accumulation.
     """
-    batch_idx = tl.program_id(axis=1)
-    start_pid = tl.program_id(axis=0)
+    flat_pid = tl.program_id(axis=0)
+    batch_idx = flat_pid // BATCH_TILE_SLOTS
+    start_pid = flat_pid % BATCH_TILE_SLOTS
     num_pid_m = tl.cdiv(M, BLOCK_SIZE_M)
     num_pid_n = tl.cdiv(N, BLOCK_SIZE_N)
     num_tiles = num_pid_m * num_pid_n
@@ -373,7 +377,13 @@ def bmm_persistent(a: torch.Tensor, b: torch.Tensor):
 
     def grid(meta):
         tiles = triton.cdiv(m, meta["BLOCK_SIZE_M"]) * triton.cdiv(n, meta["BLOCK_SIZE_N"])
-        return (min(num_sms, tiles), batch_size)
+        return (min(num_sms, tiles) * batch_size,)
+
+    batch_tile_slots = min(
+        num_sms,
+        triton.cdiv(m, configs[a.dtype]["BLOCK_SIZE_M"])
+        * triton.cdiv(n, configs[a.dtype]["BLOCK_SIZE_N"]),
+    )
 
     bmm_kernel_persistent[grid](
         a,
@@ -392,10 +402,175 @@ def bmm_persistent(a: torch.Tensor, b: torch.Tensor):
         c.stride(1),
         c.stride(2),
         NUM_SMS=num_sms,
+        BATCH_TILE_SLOTS=batch_tile_slots,
         INPUT_PRECISION="ieee",
         **configs[a.dtype],
     )
     return c
+
+
+@triton.jit
+def depthwise_conv1d_kernel(
+    input_ptr,
+    weight_ptr,
+    bias_ptr,
+    output_ptr,
+    total_outputs,
+    input_length,
+    output_length,
+    channels,
+    input_stride_b,
+    input_stride_c,
+    input_stride_l,
+    weight_stride_c,
+    weight_stride_k,
+    output_stride_b,
+    output_stride_c,
+    output_stride_l,
+    KERNEL_SIZE: tl.constexpr,
+    STRIDE: tl.constexpr,
+    PADDING: tl.constexpr,
+    DILATION: tl.constexpr,
+    HAS_BIAS: tl.constexpr,
+    BLOCK_SIZE: tl.constexpr,
+):
+    offsets = tl.program_id(0) * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)
+    output_index = offsets % output_length
+    channel_index = (offsets // output_length) % channels
+    batch_index = offsets // (output_length * channels)
+    valid_output = offsets < total_outputs
+
+    accumulator = tl.zeros((BLOCK_SIZE,), dtype=tl.float32)
+    for kernel_index in range(KERNEL_SIZE):
+        input_index = output_index * STRIDE - PADDING + kernel_index * DILATION
+        valid_input = valid_output & (input_index >= 0) & (input_index < input_length)
+        value = tl.load(
+            input_ptr
+            + batch_index * input_stride_b
+            + channel_index * input_stride_c
+            + input_index * input_stride_l,
+            mask=valid_input,
+            other=0.0,
+        )
+        weight = tl.load(
+            weight_ptr + channel_index * weight_stride_c + kernel_index * weight_stride_k,
+            mask=valid_output,
+            other=0.0,
+        )
+        accumulator += value.to(tl.float32) * weight.to(tl.float32)
+    if HAS_BIAS:
+        accumulator += tl.load(bias_ptr + channel_index, mask=valid_output, other=0.0).to(
+            tl.float32
+        )
+    tl.store(
+        output_ptr
+        + batch_index * output_stride_b
+        + channel_index * output_stride_c
+        + output_index * output_stride_l,
+        accumulator,
+        mask=valid_output,
+    )
+
+
+def conv1d_batch_invariant(
+    input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
+):
+    """Batch-invariant regular 1-D convolution.
+
+    Depthwise convolution uses a dedicated fixed-order Triton kernel. Other
+    group layouts use a per-sample grouped BMM decomposition.
+    """
+    assert input.ndim == 3 and weight.ndim == 3, "only 1-D convolution is supported"
+    assert not transposed, "transposed convolution is not supported"
+    assert all(
+        value == 0 for value in output_padding
+    ), f"output_padding requires transposed convolution, got {output_padding!r}"
+    assert input.dtype == weight.dtype and (
+        bias is None or bias.dtype == input.dtype
+    ), "Incompatible dtypes"
+    assert input.shape[1] == weight.shape[1] * groups, "Incompatible channel dimensions"
+    assert weight.shape[0] % groups == 0, "output channels must be divisible by groups"
+
+    def single(values, name):
+        values = tuple(values)
+        assert len(values) == 1, f"{name} must have one value, got {values!r}"
+        return values[0]
+
+    stride = single(stride, "stride")
+    padding = single(padding, "padding")
+    dilation = single(dilation, "dilation")
+    kernel_size = weight.shape[-1]
+    output_length = (input.shape[-1] + 2 * padding - dilation * (kernel_size - 1) - 1) // stride + 1
+    if input.shape[0] == 0:
+        return torch.empty(
+            (0, weight.shape[0], output_length), device=input.device, dtype=input.dtype
+        )
+
+    if groups == input.shape[1] == weight.shape[0] and weight.shape[1] == 1:
+        output = torch.empty(
+            (input.shape[0], weight.shape[0], output_length),
+            device=input.device,
+            dtype=input.dtype,
+        )
+        block_size = 256
+        total_outputs = output.numel()
+        depthwise_conv1d_kernel[(triton.cdiv(total_outputs, block_size),)](
+            input,
+            weight,
+            bias,
+            output,
+            total_outputs,
+            input.shape[-1],
+            output_length,
+            input.shape[1],
+            input.stride(0),
+            input.stride(1),
+            input.stride(2),
+            weight.stride(0),
+            weight.stride(2),
+            output.stride(0),
+            output.stride(1),
+            output.stride(2),
+            KERNEL_SIZE=kernel_size,
+            STRIDE=stride,
+            PADDING=padding,
+            DILATION=dilation,
+            HAS_BIAS=bias is not None,
+            BLOCK_SIZE=block_size,
+            num_warps=8,
+        )
+        return output
+
+    channels_per_group = input.shape[1] // groups
+    outputs_per_group = weight.shape[0] // groups
+    grouped_weight = weight.reshape(groups, outputs_per_group, -1).transpose(1, 2)
+    padded = F.pad(input, (padding, padding))
+    batch_stride, channel_stride, length_stride = padded.stride()
+    patches = padded.as_strided(
+        size=(input.shape[0], padded.shape[1], output_length, kernel_size),
+        stride=(
+            batch_stride,
+            channel_stride,
+            length_stride * stride,
+            length_stride * dilation,
+        ),
+    )
+    grouped_patches = (
+        patches.reshape(input.shape[0], groups, channels_per_group, output_length, kernel_size)
+        .permute(0, 1, 3, 2, 4)
+        .reshape(input.shape[0] * groups, output_length, channels_per_group * kernel_size)
+    )
+    grouped_weight = (
+        grouped_weight.unsqueeze(0)
+        .expand(input.shape[0], -1, -1, -1)
+        .reshape(input.shape[0] * groups, channels_per_group * kernel_size, outputs_per_group)
+    )
+    output = bmm_persistent(grouped_patches, grouped_weight).reshape(
+        input.shape[0], groups, output_length, outputs_per_group
+    )
+    if bias is not None:
+        output = output + bias.reshape(1, groups, 1, outputs_per_group)
+    return output.permute(0, 1, 3, 2).reshape(input.shape[0], weight.shape[0], output_length)
 
 
 def conv2d_batch_invariant(
@@ -481,6 +656,126 @@ def conv2d_batch_invariant(
         output = torch.cat(group_outputs, dim=0)
         outputs.append(output.reshape(1, weight.shape[0], output_height, output_width))
     return torch.cat(outputs, dim=0)
+
+
+def conv3d_batch_invariant(
+    input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
+):
+    """Batch-invariant regular 3-D convolution via per-sample im2col.
+
+    Qwen3.5-VL uses a ``Conv3d`` patch embedding whose leading dimension is
+    the number of image patches.  Running every leading-dimension element
+    through the same fixed GEMM prevents that patch count (and therefore the
+    request batch size) from changing the reduction schedule.
+    """
+    assert input.ndim == 5 and weight.ndim == 5, "only 3-D convolution is supported"
+    assert not transposed, "transposed convolution is not supported"
+    assert all(
+        value == 0 for value in output_padding
+    ), f"output_padding requires transposed convolution, got {output_padding!r}"
+    assert input.dtype == weight.dtype and (
+        bias is None or bias.dtype == input.dtype
+    ), "Incompatible dtypes"
+    assert input.shape[1] == weight.shape[1] * groups, "Incompatible channel dimensions"
+    assert weight.shape[0] % groups == 0, "output channels must be divisible by groups"
+
+    def triple(values, name):
+        values = tuple(values)
+        if len(values) == 1:
+            return values * 3
+        assert len(values) == 3, f"{name} must have one or three values, got {values!r}"
+        return values
+
+    stride = triple(stride, "stride")
+    padding = triple(padding, "padding")
+    dilation = triple(dilation, "dilation")
+    kernel_size = tuple(weight.shape[-3:])
+    output_shape = tuple(
+        (input.shape[axis + 2] + 2 * padding[axis] - dilation[axis] * (kernel_size[axis] - 1) - 1)
+        // stride[axis]
+        + 1
+        for axis in range(3)
+    )
+    if input.shape[0] == 0:
+        return torch.empty(
+            (0, weight.shape[0], *output_shape), device=input.device, dtype=input.dtype
+        )
+
+    channels_per_group = input.shape[1] // groups
+    outputs_per_group = weight.shape[0] // groups
+    kernel_volume = math.prod(kernel_size)
+    flattened_weight = weight.reshape(weight.shape[0], -1)
+    padded = F.pad(
+        input,
+        (
+            padding[2],
+            padding[2],
+            padding[1],
+            padding[1],
+            padding[0],
+            padding[0],
+        ),
+    )
+    batch_stride, channel_stride, depth_stride, height_stride, width_stride = padded.stride()
+    patches = padded.as_strided(
+        size=(input.shape[0], padded.shape[1], *output_shape, *kernel_size),
+        stride=(
+            batch_stride,
+            channel_stride,
+            depth_stride * stride[0],
+            height_stride * stride[1],
+            width_stride * stride[2],
+            depth_stride * dilation[0],
+            height_stride * dilation[1],
+            width_stride * dilation[2],
+        ),
+    )
+    output_volume = math.prod(output_shape)
+    grouped_patches = (
+        patches.permute(0, 2, 3, 4, 1, 5, 6, 7)
+        .reshape(input.shape[0], output_volume, groups, channels_per_group * kernel_volume)
+        .permute(0, 2, 1, 3)
+        .reshape(input.shape[0] * groups, output_volume, channels_per_group * kernel_volume)
+    )
+    grouped_weight = (
+        flattened_weight.reshape(groups, outputs_per_group, -1)
+        .transpose(1, 2)
+        .unsqueeze(0)
+        .expand(input.shape[0], -1, -1, -1)
+        .reshape(
+            input.shape[0] * groups,
+            channels_per_group * kernel_volume,
+            outputs_per_group,
+        )
+    )
+    output = bmm_persistent(grouped_patches, grouped_weight).reshape(
+        input.shape[0], groups, output_volume, outputs_per_group
+    )
+    if bias is not None:
+        output = output + bias.reshape(1, groups, 1, outputs_per_group)
+    return output.permute(0, 1, 3, 2).reshape(input.shape[0], weight.shape[0], *output_shape)
+
+
+def convolution_batch_invariant(
+    input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
+):
+    """Dispatch regular 1-D, 2-D and 3-D ``aten::convolution`` calls."""
+    if input.ndim == 3 and weight.ndim == 3:
+        return conv1d_batch_invariant(
+            input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
+        )
+    if input.ndim == 4 and weight.ndim == 4:
+        return conv2d_batch_invariant(
+            input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
+        )
+    if input.ndim == 5 and weight.ndim == 5:
+        return conv3d_batch_invariant(
+            input, weight, bias, stride, padding, dilation, transposed, output_padding, groups
+        )
+    raise AssertionError(
+        f"only 1-D, 2-D and 3-D convolution are supported, got input rank {input.ndim} "
+        f"and weight rank {weight.ndim}"
+    )
 
 
 @triton.jit
@@ -722,9 +1017,7 @@ def scaled_dot_product_attention_batch_invariant(
             scores = scores + attn_mask
 
     probabilities = softmax(scores, dim=-1, dtype=query.dtype)
-    output = bmm_persistent(
-        probabilities.reshape(-1, query_length, key_length), flat_value
-    )
+    output = bmm_persistent(probabilities.reshape(-1, query_length, key_length), flat_value)
     return output.reshape(*leading_shape, query_length, value_dim)
 
 
@@ -922,7 +1215,7 @@ def enable_batch_invariant_mode():
     _batch_invariant_LIB.impl("aten::mm", mm_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::addmm", addmm_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::bmm", bmm_batch_invariant, dispatch_key)
-    _batch_invariant_LIB.impl("aten::convolution", conv2d_batch_invariant, dispatch_key)
+    _batch_invariant_LIB.impl("aten::convolution", convolution_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl(
         "aten::scaled_dot_product_attention",
         scaled_dot_product_attention_batch_invariant,

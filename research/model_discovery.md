@@ -12,13 +12,18 @@ to the README support table only after end-to-end execution.
   now been executed through B=64 and added to the support table. No JAX code or
   checkpoint conversion is needed or in scope.
 - **DreamZero:** the official repository now publishes DreamZero-DROID and
-  DreamZero-AgiBot checkpoints, local distributed inference, DiT caching, and
-  reports approximately three-second inference on H100. This is runnable in
-  scope and remains the next distinct world-action architecture.
+  DreamZero-AgiBot checkpoints, local distributed inference, and DiT caching.
+  The released 14B inference path requires at least two GPUs and its PyTorch
+  checkpoint is 45.85 GB. A single-process Wan2.2 5B server exists, but no
+  trained public DreamZero checkpoint is released for it. Status: BLOCKED
+  under the single-H100 constraint; see `research/dreamzero/blocked.md`.
 - **InternVLA-A:** InternVLA-A1.5 supersedes A1. Its public project links code
   and weights. The inference graph uses a VLM plus lightweight continuous
   action expert; latent foresight is training-only in A1.5, so the plan's
-  foresight/action-only inference ablation applies to A1 rather than A1.5.
+  foresight/action-only inference ablation applies to A1 rather than A1.5. The
+  official A1.5 PyTorch standard and optimized action paths have now been
+  executed with public LIBERO weights and real inputs through B=64; both are in
+  the support table. No video-output result is claimed.
 - **MolmoAct:** MolmoAct2 supersedes the original MolmoAct release. Public base,
   DROID, BimanualYAM, SO100/101, LIBERO, and Think-LIBERO checkpoints and a
   LeRobot inference implementation are available. Prioritize MolmoAct2-LIBERO

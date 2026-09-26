@@ -1,0 +1,16 @@
+droid_repository: https://huggingface.co/GEAR-Dreams/DreamZero-DROID
+droid_repository_commit: 96ad344138c66e82536422432ad742f015784942
+droid_total_repository_bytes: 64789159581
+droid_pytorch_weight_shards: 10
+droid_pytorch_weight_bytes: 45849242646
+
+agibot_repository: https://huggingface.co/GEAR-Dreams/DreamZero-AgiBot
+agibot_repository_commit: a8e108456e537ab30e7e84523d41d12a7e739ca5
+agibot_total_repository_bytes: 45849242646
+agibot_pytorch_weight_shards: 10
+agibot_pytorch_weight_bytes: 45849242646
+
+The DROID total includes an approximately 9.4 GB ONNX external-data file and
+an approximately 9.4 GB TensorRT engine in addition to the PyTorch checkpoint.
+No public trained DreamZero Wan2.2 5B checkpoint was listed by the publisher;
+the repository's Wan2.2 path is for training or smoke-checkpoint inference.

@@ -92,8 +92,12 @@ with set_batch_invariant_mode(True):
   supported
 
 ### Convolution Operations
+- `torch.nn.functional.conv1d()` / `nn.Conv1d` - Regular 1-D convolution,
+  including a fixed-order Triton depthwise path used by Qwen3.5
 - `torch.nn.functional.conv2d()` / `nn.Conv2d` - Regular (non-transposed) 2-D
   convolution, implemented as an independent unfold-and-GEMM for each sample
+- `torch.nn.functional.conv3d()` / `nn.Conv3d` - Regular 3-D convolution using
+  batch-independent grouped im2col/BMM, including Qwen3.5-VL patch embedding
 
 ### Activation Functions
 - `torch.log_softmax()` - Log-softmax activation
@@ -104,7 +108,7 @@ with set_batch_invariant_mode(True):
 - `torch.mean()` - Mean computation along specified dimensions
 
 The current kernels cover CUDA float32, float16, and bfloat16 paths exercised
-by the tests. Conv2D covers regular non-transposed 2-D convolution, including
+by the tests. Conv1D/2D/3D cover regular non-transposed convolution, including
 groups and dilation. Unsupported operator overloads and dtypes are not claimed.
 
 ## Conv2d and attention BMM demonstration
@@ -124,6 +128,8 @@ Only configurations that have been executed end to end are marked PASS.
 | π0 pre-fix PyTorch reference, random weights and synthetic inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | π0.5 `pi-zero-pytorch` reference, public `lerobot/pi05_base` weights and controlled synthetic inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | π0-FAST LeRobot PyTorch, public `lerobot/pi0fast-libero` weights and real LIBERO inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| InternVLA-A1.5 official PyTorch standard action backend, public LIBERO weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| InternVLA-A1.5 official PyTorch optimized action-only backend, public LIBERO weights and real inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -135,17 +141,29 @@ learned-weight numerical inference regression rather than a policy-quality
 claim. The π0-FAST row uses LeRobot's maintained PyTorch implementation with
 real observations from the public LIBERO dataset. Stock inference changed the
 final action at B=3, 4, 5, and 7; the library was exact through B=64. DreamZero,
-InternVLA-A, MolmoAct, GR00T, Cosmos, and the other planned model families are
-not yet marked supported.
+MolmoAct, GR00T, Cosmos, and the other planned model families are not yet marked
+supported. DreamZero is recorded as blocked under the single-H100 constraint:
+its released PyTorch checkpoint is 45.85 GB and its official inference path
+requires at least two GPUs.
+
+The InternVLA rows use the official A1.5 PyTorch repository and public policy
+and Qwen3.5-2B safetensors directly. Both upstream action paths run ten
+flow-matching steps with explicit per-sample noise. Standard stock fails every
+B above 1; optimized stock first fails at B=4. Both are exact through B=64 with
+the library, including three real target frames. A1.5's WAN foresight branch is
+training-only for the recommended action deployment and was not loaded, so no
+world/video-output PASS is claimed.
 
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
-[`research/pi_fast`](research/pi_fast), including environments, upstream
+[`research/pi_fast`](research/pi_fast), and
+[`research/internvla_a15`](research/internvla_a15), including environments, upstream
 commits, baseline/fixed hashes, first-divergence diagnostics, multiple-input
 checks, iteration notes, and operator benchmarks. The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
-not the basis of the π0.5 support row.
+not the basis of the π0.5 support row. The DreamZero constraint audit is in
+[`research/dreamzero`](research/dreamzero).
 
 ## Reproduction
 
@@ -216,6 +234,29 @@ python scripts/check_model_batch_invariance.py \
 Use `scripts/trace_pi0fast_batch_invariance.py` for layer-boundary hashes and
 `scripts/check_pi0fast_multiple_inputs.py` for the three-target regression.
 
+For InternVLA-A1.5, check out the commit and download the pinned policy and
+Qwen PyTorch snapshots recorded in
+[`research/internvla_a15/checkpoint.txt`](research/internvla_a15/checkpoint.txt).
+Use the same LIBERO episode-zero fixture as π0-FAST, then run either official
+action backend:
+
+```bash
+INTERNVLA_A15_CHECKPOINT=/path/to/InternVLA-A1.5-Libero \
+INTERNVLA_A15_QWEN=/path/to/Qwen3.5-2B \
+INTERNVLA_A15_SAMPLE_DIR=/path/to/libero-episode-zero \
+INTERNVLA_A15_BACKEND=standard \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.internvla_a15 \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/internvla_a15/standard_fixed.json
+```
+
+Set `INTERNVLA_A15_BACKEND=optimized` for the recommended optimized action-only
+path. `scripts/trace_internvla_a15_batch_invariance.py` records the precise
+attention boundary and flow-step propagation;
+`scripts/check_internvla_a15_multiple_inputs.py` runs the three-target check.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -235,6 +276,12 @@ For π0-FAST on PyTorch 2.8.0/CUDA 12.8, the invariant layer-0 MLP down GEMM
 was 1.17–1.39× slower across B=1, 2, and 8. The invariant RMS mean took about
 0.030–0.036 ms versus 0.007–0.009 ms for stock. See
 [`research/pi_fast/benchmarks.json`](research/pi_fast/benchmarks.json).
+
+For InternVLA-A1.5 on PyTorch 2.8.0/CUDA 12.8, the actual action-attention BMM
+was 2.45–6.40× slower and the Qwen visual Conv3d was 2.24–4.74× slower across
+B=1, 2, and 8. The specialized invariant Qwen depthwise Conv1d was 0.49–0.59×
+stock latency. See
+[`research/internvla_a15/benchmarks.json`](research/internvla_a15/benchmarks.json).
 
 ## Attribution
 

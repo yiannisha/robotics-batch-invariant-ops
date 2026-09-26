@@ -1,0 +1,306 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 2,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "internvla_action_attention_value_bmm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          8,
+          58,
+          708
+        ],
+        "right": [
+          8,
+          708,
+          256
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.012470400333404541,
+        "peak_incremental_bytes": 475136
+      },
+      "batch_invariant": {
+        "latency_ms": 0.037676799297332766,
+        "peak_incremental_bytes": 475136
+      },
+      "latency_ratio": 3.0212982975701013,
+      "stock_samples_per_second": 80189.88751478119,
+      "batch_invariant_samples_per_second": 26541.532684566242
+    },
+    {
+      "operator": "qwen35_vision_patch_conv3d",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          512,
+          3,
+          2,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          3,
+          2,
+          16,
+          16
+        ],
+        "stride": [
+          2,
+          16,
+          16
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.2779936075210571,
+        "peak_incremental_bytes": 2097152
+      },
+      "batch_invariant": {
+        "latency_ms": 0.6239776134490966,
+        "peak_incremental_bytes": 4718592
+      },
+      "latency_ratio": 2.2445754023384596,
+      "stock_samples_per_second": 3597.2050181918416,
+      "batch_invariant_samples_per_second": 1602.621598028819
+    },
+    {
+      "operator": "qwen35_depthwise_causal_conv1d",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          6144,
+          650
+        ],
+        "weight": [
+          6144,
+          1,
+          4
+        ],
+        "padding": [
+          3
+        ],
+        "groups": 6144,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.07055360078811646,
+        "peak_incremental_bytes": 16048128
+      },
+      "batch_invariant": {
+        "latency_ms": 0.03440319895744324,
+        "peak_incremental_bytes": 16048128
+      },
+      "latency_ratio": 0.487617904304579,
+      "stock_samples_per_second": 14173.6210318047,
+      "batch_invariant_samples_per_second": 29067.06440982422
+    },
+    {
+      "operator": "internvla_action_attention_value_bmm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          16,
+          58,
+          708
+        ],
+        "right": [
+          16,
+          708,
+          256
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.014019200205802917,
+        "peak_incremental_bytes": 950272
+      },
+      "batch_invariant": {
+        "latency_ms": 0.03434880077838898,
+        "peak_incremental_bytes": 950272
+      },
+      "latency_ratio": 2.4501255616687105,
+      "stock_samples_per_second": 142661.49071557928,
+      "batch_invariant_samples_per_second": 58226.19581113084
+    },
+    {
+      "operator": "qwen35_vision_patch_conv3d",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          1024,
+          3,
+          2,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          3,
+          2,
+          16,
+          16
+        ],
+        "stride": [
+          2,
+          16,
+          16
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.2793855905532837,
+        "peak_incremental_bytes": 4194304
+      },
+      "batch_invariant": {
+        "latency_ms": 1.2225248336791992,
+        "peak_incremental_bytes": 9437184
+      },
+      "latency_ratio": 4.37576193982718,
+      "stock_samples_per_second": 7158.565321995606,
+      "batch_invariant_samples_per_second": 1635.9585874267948
+    },
+    {
+      "operator": "qwen35_depthwise_causal_conv1d",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          6144,
+          650
+        ],
+        "weight": [
+          6144,
+          1,
+          4
+        ],
+        "padding": [
+          3
+        ],
+        "groups": 6144,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.10581120252609252,
+        "peak_incremental_bytes": 32825344
+      },
+      "batch_invariant": {
+        "latency_ms": 0.06016960144042969,
+        "peak_incremental_bytes": 32825344
+      },
+      "latency_ratio": 0.5686505776700927,
+      "stock_samples_per_second": 18901.59030662949,
+      "batch_invariant_samples_per_second": 33239.37589947442
+    },
+    {
+      "operator": "internvla_action_attention_value_bmm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          64,
+          58,
+          708
+        ],
+        "right": [
+          64,
+          708,
+          256
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.018115200102329254,
+        "peak_incremental_bytes": 3866624
+      },
+      "batch_invariant": {
+        "latency_ms": 0.11601920127868652,
+        "peak_incremental_bytes": 3866624
+      },
+      "latency_ratio": 6.404522203636534,
+      "stock_samples_per_second": 441618.0861822972,
+      "batch_invariant_samples_per_second": 68954.10338831261
+    },
+    {
+      "operator": "qwen35_vision_patch_conv3d",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          4096,
+          3,
+          2,
+          16,
+          16
+        ],
+        "weight": [
+          1024,
+          3,
+          2,
+          16,
+          16
+        ],
+        "stride": [
+          2,
+          16,
+          16
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 1.0302592277526856,
+        "peak_incremental_bytes": 16777216
+      },
+      "batch_invariant": {
+        "latency_ms": 4.883935928344727,
+        "peak_incremental_bytes": 37748736
+      },
+      "latency_ratio": 4.7404922924088755,
+      "stock_samples_per_second": 7765.036006957664,
+      "batch_invariant_samples_per_second": 1638.0231267103
+    },
+    {
+      "operator": "qwen35_depthwise_causal_conv1d",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          6144,
+          650
+        ],
+        "weight": [
+          6144,
+          1,
+          4
+        ],
+        "padding": [
+          3
+        ],
+        "groups": 6144,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.4617311954498291,
+        "peak_incremental_bytes": 130023424
+      },
+      "batch_invariant": {
+        "latency_ms": 0.2744319915771484,
+        "peak_incremental_bytes": 130023424
+      },
+      "latency_ratio": 0.5943544518576236,
+      "stock_samples_per_second": 17326.098125568962,
+      "batch_invariant_samples_per_second": 29151.120297689627
+    }
+  ]
+}

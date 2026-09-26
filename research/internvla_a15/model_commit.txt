@@ -1,0 +1,5 @@
+repository: https://github.com/InternRobotics/InternVLA-A-series
+commit: e6fc904f9edbfb14532e97095fc2372202517f76
+implementation: official PyTorch InternVLA-A1.5 LeRobot policy
+
+The checkout is used directly. No JAX source, weights, or conversion are used.

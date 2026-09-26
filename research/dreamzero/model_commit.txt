@@ -1,0 +1,4 @@
+repository: https://github.com/dreamzero0/dreamzero
+commit: ab790c198fbce33503358efbbd4187ce9a89adf3
+implementation: official PyTorch release
+checked_at: 2026-09-26
