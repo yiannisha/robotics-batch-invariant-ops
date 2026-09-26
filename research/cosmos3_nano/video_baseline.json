@@ -1,0 +1,437 @@
+{
+  "model": "nvidia-cosmos3-nano-policy-droid-official-pytorch",
+  "batch_invariant_ops": false,
+  "seed": 0,
+  "requested_batch_sizes": [
+    1,
+    2
+  ],
+  "repeatability": {
+    "exact": true,
+    "tensors": [
+      {
+        "path": "output.action",
+        "reference_shape": [
+          1,
+          32,
+          8
+        ],
+        "candidate_shape": [
+          1,
+          32,
+          8
+        ],
+        "dtype": "torch.float32",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d",
+        "candidate_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d"
+      },
+      {
+        "path": "output.video",
+        "reference_shape": [
+          1,
+          33,
+          528,
+          640,
+          3
+        ],
+        "candidate_shape": [
+          1,
+          33,
+          528,
+          640,
+          3
+        ],
+        "dtype": "torch.uint8",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": null,
+        "mean_abs_difference": null,
+        "first_differing_index": null,
+        "reference_hash": "ba19ceae3ed53920f1b7192c3c651d49a20d1ca937ee71568c52067247f495f5",
+        "candidate_hash": "ba19ceae3ed53920f1b7192c3c651d49a20d1ca937ee71568c52067247f495f5"
+      },
+      {
+        "path": "output.vision_latent",
+        "reference_shape": [
+          1,
+          48,
+          9,
+          33,
+          40
+        ],
+        "candidate_shape": [
+          1,
+          48,
+          9,
+          33,
+          40
+        ],
+        "dtype": "torch.float32",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a",
+        "candidate_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a"
+      }
+    ]
+  },
+  "composition_results": {
+    "duplicate": [
+      {
+        "batch_size": 1,
+        "status": "PASS",
+        "exact": true,
+        "tensors": [
+          {
+            "path": "output.action",
+            "reference_shape": [
+              1,
+              32,
+              8
+            ],
+            "candidate_shape": [
+              1,
+              32,
+              8
+            ],
+            "dtype": "torch.float32",
+            "exact": true,
+            "differing_elements": 0,
+            "max_abs_difference": 0.0,
+            "mean_abs_difference": 0.0,
+            "first_differing_index": null,
+            "reference_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d",
+            "candidate_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d"
+          },
+          {
+            "path": "output.video",
+            "reference_shape": [
+              1,
+              33,
+              528,
+              640,
+              3
+            ],
+            "candidate_shape": [
+              1,
+              33,
+              528,
+              640,
+              3
+            ],
+            "dtype": "torch.uint8",
+            "exact": true,
+            "differing_elements": 0,
+            "max_abs_difference": null,
+            "mean_abs_difference": null,
+            "first_differing_index": null,
+            "reference_hash": "ba19ceae3ed53920f1b7192c3c651d49a20d1ca937ee71568c52067247f495f5",
+            "candidate_hash": "ba19ceae3ed53920f1b7192c3c651d49a20d1ca937ee71568c52067247f495f5"
+          },
+          {
+            "path": "output.vision_latent",
+            "reference_shape": [
+              1,
+              48,
+              9,
+              33,
+              40
+            ],
+            "candidate_shape": [
+              1,
+              48,
+              9,
+              33,
+              40
+            ],
+            "dtype": "torch.float32",
+            "exact": true,
+            "differing_elements": 0,
+            "max_abs_difference": 0.0,
+            "mean_abs_difference": 0.0,
+            "first_differing_index": null,
+            "reference_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a",
+            "candidate_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a"
+          }
+        ]
+      },
+      {
+        "batch_size": 2,
+        "status": "FAIL",
+        "exact": false,
+        "tensors": [
+          {
+            "path": "output.action",
+            "reference_shape": [
+              1,
+              32,
+              8
+            ],
+            "candidate_shape": [
+              1,
+              32,
+              8
+            ],
+            "dtype": "torch.float32",
+            "exact": false,
+            "differing_elements": 255,
+            "max_abs_difference": 0.11333823204040527,
+            "mean_abs_difference": 0.022292472422122955,
+            "first_differing_index": [
+              0,
+              0,
+              0
+            ],
+            "reference_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d",
+            "candidate_hash": "2f28ecf176189994b7535b4a7e61b5f9a93adaf3048e03c7a0ce5a29632a4619"
+          },
+          {
+            "path": "output.video",
+            "reference_shape": [
+              1,
+              33,
+              528,
+              640,
+              3
+            ],
+            "candidate_shape": [
+              1,
+              33,
+              528,
+              640,
+              3
+            ],
+            "dtype": "torch.uint8",
+            "exact": false,
+            "differing_elements": 25410747,
+            "max_abs_difference": null,
+            "mean_abs_difference": null,
+            "first_differing_index": [
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            "reference_hash": "ba19ceae3ed53920f1b7192c3c651d49a20d1ca937ee71568c52067247f495f5",
+            "candidate_hash": "31e75bb7340c318d1aca643f0ac5b6c96233c4ced7914ce02c88953d84c008b5"
+          },
+          {
+            "path": "output.vision_latent",
+            "reference_shape": [
+              1,
+              48,
+              9,
+              33,
+              40
+            ],
+            "candidate_shape": [
+              1,
+              48,
+              9,
+              33,
+              40
+            ],
+            "dtype": "torch.float32",
+            "exact": false,
+            "differing_elements": 506866,
+            "max_abs_difference": 2.8412516117095947,
+            "mean_abs_difference": 0.09645377844572067,
+            "first_differing_index": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "reference_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a",
+            "candidate_hash": "63fc8ed556bad41a1dd018a77f87dafd7a0df61224da0651ec1e29ce610ce01a"
+          }
+        ]
+      }
+    ],
+    "unrelated": [
+      {
+        "batch_size": 1,
+        "status": "PASS",
+        "exact": true,
+        "tensors": [
+          {
+            "path": "output.action",
+            "reference_shape": [
+              1,
+              32,
+              8
+            ],
+            "candidate_shape": [
+              1,
+              32,
+              8
+            ],
+            "dtype": "torch.float32",
+            "exact": true,
+            "differing_elements": 0,
+            "max_abs_difference": 0.0,
+            "mean_abs_difference": 0.0,
+            "first_differing_index": null,
+            "reference_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d",
+            "candidate_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d"
+          },
+          {
+            "path": "output.video",
+            "reference_shape": [
+              1,
+              33,
+              528,
+              640,
+              3
+            ],
+            "candidate_shape": [
+              1,
+              33,
+              528,
+              640,
+              3
+            ],
+            "dtype": "torch.uint8",
+            "exact": true,
+            "differing_elements": 0,
+            "max_abs_difference": null,
+            "mean_abs_difference": null,
+            "first_differing_index": null,
+            "reference_hash": "ba19ceae3ed53920f1b7192c3c651d49a20d1ca937ee71568c52067247f495f5",
+            "candidate_hash": "ba19ceae3ed53920f1b7192c3c651d49a20d1ca937ee71568c52067247f495f5"
+          },
+          {
+            "path": "output.vision_latent",
+            "reference_shape": [
+              1,
+              48,
+              9,
+              33,
+              40
+            ],
+            "candidate_shape": [
+              1,
+              48,
+              9,
+              33,
+              40
+            ],
+            "dtype": "torch.float32",
+            "exact": true,
+            "differing_elements": 0,
+            "max_abs_difference": 0.0,
+            "mean_abs_difference": 0.0,
+            "first_differing_index": null,
+            "reference_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a",
+            "candidate_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a"
+          }
+        ]
+      },
+      {
+        "batch_size": 2,
+        "status": "FAIL",
+        "exact": false,
+        "tensors": [
+          {
+            "path": "output.action",
+            "reference_shape": [
+              1,
+              32,
+              8
+            ],
+            "candidate_shape": [
+              1,
+              32,
+              8
+            ],
+            "dtype": "torch.float32",
+            "exact": false,
+            "differing_elements": 255,
+            "max_abs_difference": 0.11333823204040527,
+            "mean_abs_difference": 0.022292472422122955,
+            "first_differing_index": [
+              0,
+              0,
+              0
+            ],
+            "reference_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d",
+            "candidate_hash": "2f28ecf176189994b7535b4a7e61b5f9a93adaf3048e03c7a0ce5a29632a4619"
+          },
+          {
+            "path": "output.video",
+            "reference_shape": [
+              1,
+              33,
+              528,
+              640,
+              3
+            ],
+            "candidate_shape": [
+              1,
+              33,
+              528,
+              640,
+              3
+            ],
+            "dtype": "torch.uint8",
+            "exact": false,
+            "differing_elements": 25410747,
+            "max_abs_difference": null,
+            "mean_abs_difference": null,
+            "first_differing_index": [
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            "reference_hash": "ba19ceae3ed53920f1b7192c3c651d49a20d1ca937ee71568c52067247f495f5",
+            "candidate_hash": "31e75bb7340c318d1aca643f0ac5b6c96233c4ced7914ce02c88953d84c008b5"
+          },
+          {
+            "path": "output.vision_latent",
+            "reference_shape": [
+              1,
+              48,
+              9,
+              33,
+              40
+            ],
+            "candidate_shape": [
+              1,
+              48,
+              9,
+              33,
+              40
+            ],
+            "dtype": "torch.float32",
+            "exact": false,
+            "differing_elements": 506866,
+            "max_abs_difference": 2.8412516117095947,
+            "mean_abs_difference": 0.09645377844572067,
+            "first_differing_index": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "reference_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a",
+            "candidate_hash": "63fc8ed556bad41a1dd018a77f87dafd7a0df61224da0651ec1e29ce610ce01a"
+          }
+        ]
+      }
+    ]
+  },
+  "maximum_tested_batch": 2,
+  "end_to_end_exact": false
+}

@@ -20,6 +20,7 @@ __all__ = [
     "conv2d_batch_invariant",
     "conv3d_batch_invariant",
     "scaled_dot_product_attention_batch_invariant",
+    "varlen_scaled_dot_product_attention_batch_invariant",
     "softmax",
 ]
 
@@ -158,6 +159,9 @@ def bmm_kernel_persistent(
     GROUP_SIZE_M: tl.constexpr,
     NUM_SMS: tl.constexpr,
     BATCH_TILE_SLOTS: tl.constexpr,
+    A_LARGE: tl.constexpr,
+    B_LARGE: tl.constexpr,
+    C_LARGE: tl.constexpr,
     INPUT_PRECISION: tl.constexpr,
 ):
     """One persistent matmul grid per batch element.
@@ -176,13 +180,20 @@ def bmm_kernel_persistent(
     k_tiles = tl.cdiv(K, BLOCK_SIZE_K)
     offs_k_for_mask = tl.arange(0, BLOCK_SIZE_K)
 
-    a_batch_ptr = a_ptr + batch_idx * stride_ab
-    b_batch_ptr = b_ptr + batch_idx * stride_bb
-    c_batch_ptr = c_ptr + batch_idx * stride_cb
+    a_batch_idx = batch_idx.to(tl.int64) if A_LARGE else batch_idx
+    b_batch_idx = batch_idx.to(tl.int64) if B_LARGE else batch_idx
+    c_batch_idx = batch_idx.to(tl.int64) if C_LARGE else batch_idx
+    a_batch_ptr = a_ptr + a_batch_idx * stride_ab
+    b_batch_ptr = b_ptr + b_batch_idx * stride_bb
+    c_batch_ptr = c_ptr + c_batch_idx * stride_cb
     for tile_id in tl.range(start_pid, num_tiles, NUM_SMS):
         pid_m, pid_n = _compute_pid(tile_id, num_pid_in_group, num_pid_m, GROUP_SIZE_M, NUM_SMS)
         offs_am = pid_m * BLOCK_SIZE_M + tl.arange(0, BLOCK_SIZE_M)
         offs_bn = pid_n * BLOCK_SIZE_N + tl.arange(0, BLOCK_SIZE_N)
+        if A_LARGE:
+            offs_am = offs_am.to(tl.int64)
+        if B_LARGE:
+            offs_bn = offs_bn.to(tl.int64)
         offs_am = tl.where(offs_am < M, offs_am, 0)
         offs_bn = tl.where(offs_bn < N, offs_bn, 0)
         offs_am = tl.max_contiguous(tl.multiple_of(offs_am, BLOCK_SIZE_M), BLOCK_SIZE_M)
@@ -191,6 +202,8 @@ def bmm_kernel_persistent(
         accumulator = tl.zeros((BLOCK_SIZE_M, BLOCK_SIZE_N), dtype=tl.float32)
         for ki in range(k_tiles):
             offs_k = ki * BLOCK_SIZE_K + tl.arange(0, BLOCK_SIZE_K)
+            if A_LARGE or B_LARGE:
+                offs_k = offs_k.to(tl.int64)
             a = tl.load(
                 a_batch_ptr + offs_am[:, None] * stride_am + offs_k[None, :] * stride_ak,
                 mask=offs_k_for_mask[None, :] < K - ki * BLOCK_SIZE_K,
@@ -205,6 +218,9 @@ def bmm_kernel_persistent(
 
         offs_cm = pid_m * BLOCK_SIZE_M + tl.arange(0, BLOCK_SIZE_M)
         offs_cn = pid_n * BLOCK_SIZE_N + tl.arange(0, BLOCK_SIZE_N)
+        if C_LARGE:
+            offs_cm = offs_cm.to(tl.int64)
+            offs_cn = offs_cn.to(tl.int64)
         c_ptrs = c_batch_ptr + offs_cm[:, None] * stride_cm + offs_cn[None, :] * stride_cn
         c_mask = (offs_cm[:, None] < M) & (offs_cn[None, :] < N)
         tl.store(c_ptrs, accumulator.to(c_ptr.dtype.element_ty), mask=c_mask)
@@ -403,6 +419,9 @@ def bmm_persistent(a: torch.Tensor, b: torch.Tensor):
         c.stride(2),
         NUM_SMS=num_sms,
         BATCH_TILE_SLOTS=batch_tile_slots,
+        A_LARGE=a.numel() > 2**31,
+        B_LARGE=b.numel() > 2**31,
+        C_LARGE=c.numel() > 2**31,
         INPUT_PRECISION="ieee",
         **configs[a.dtype],
     )
@@ -979,6 +998,8 @@ def scaled_dot_product_attention_batch_invariant(
         raise ValueError("query, key, and value must have matching rank >= 3")
     if query.dtype != key.dtype or query.dtype != value.dtype:
         raise ValueError("query, key, and value must have the same dtype")
+    if query.dtype not in {torch.float16, torch.bfloat16, torch.float32}:
+        raise ValueError(f"unsupported varlen attention dtype: {query.dtype}")
 
     if enable_gqa:
         if query.shape[-3] % key.shape[-3] or key.shape[-3] != value.shape[-3]:
@@ -1019,6 +1040,137 @@ def scaled_dot_product_attention_batch_invariant(
     probabilities = softmax(scores, dim=-1, dtype=query.dtype)
     output = bmm_persistent(probabilities.reshape(-1, query_length, key_length), flat_value)
     return output.reshape(*leading_shape, query_length, value_dim)
+
+
+def varlen_scaled_dot_product_attention_batch_invariant(
+    query: torch.Tensor,
+    key: torch.Tensor,
+    value: torch.Tensor,
+    cumulative_seqlen_q: torch.Tensor,
+    cumulative_seqlen_kv: torch.Tensor,
+    *,
+    is_causal: bool = False,
+    causal_type: Any | None = None,
+    scale: float | None = None,
+) -> torch.Tensor:
+    """Batch-invariant attention for sequence-packed variable-length inputs.
+
+    The packed convention is ``[1, total_tokens, heads, head_dim]``.  Each
+    logical sequence is evaluated independently with the same fixed BMM and
+    softmax reduction trees used by
+    :func:`scaled_dot_product_attention_batch_invariant`.  Consequently, an
+    existing sequence's arithmetic does not change when other sequences are
+    appended to the pack.
+
+    ``causal_type`` accepts enum-like values named ``TopLeft``,
+    ``BottomRight``, or ``DontCare``.  The latter is valid when query and KV
+    lengths match, as used by self-attention APIs that do not care which
+    causal alignment convention is selected.
+    """
+    if query.ndim != 4 or key.ndim != 4 or value.ndim != 4:
+        raise ValueError("varlen attention expects rank-4 query, key, and value")
+    if query.shape[0] != 1 or key.shape[0] != 1 or value.shape[0] != 1:
+        raise ValueError("varlen attention expects sequence-packed batch size 1")
+    if query.dtype != key.dtype or query.dtype != value.dtype:
+        raise ValueError("query, key, and value must have the same dtype")
+    if key.shape[1] != value.shape[1] or key.shape[2] != value.shape[2]:
+        raise ValueError("key and value token and head dimensions must match")
+    if query.shape[3] != key.shape[3]:
+        raise ValueError("query and key head dimensions must match")
+    if key.shape[2] == 0 or query.shape[2] % key.shape[2]:
+        raise ValueError("query heads must be divisible by key/value heads")
+    if cumulative_seqlen_q.ndim != 1 or cumulative_seqlen_kv.ndim != 1:
+        raise ValueError("cumulative sequence lengths must be rank 1")
+    integer_dtypes = {torch.int32, torch.int64}
+    if (
+        cumulative_seqlen_q.dtype not in integer_dtypes
+        or cumulative_seqlen_kv.dtype not in integer_dtypes
+    ):
+        raise ValueError("cumulative sequence lengths must use int32 or int64")
+    if cumulative_seqlen_q.numel() != cumulative_seqlen_kv.numel():
+        raise ValueError("query and KV cumulative sequence counts must match")
+
+    q_offsets = [int(item) for item in cumulative_seqlen_q.detach().cpu().tolist()]
+    kv_offsets = [int(item) for item in cumulative_seqlen_kv.detach().cpu().tolist()]
+    if not q_offsets or q_offsets[0] != 0 or kv_offsets[0] != 0:
+        raise ValueError("cumulative sequence lengths must start at zero")
+    if q_offsets[-1] > query.shape[1] or kv_offsets[-1] > key.shape[1]:
+        raise ValueError("cumulative sequence lengths exceed packed tensor size")
+
+    output = torch.zeros(
+        (1, query.shape[1], query.shape[2], value.shape[3]),
+        dtype=value.dtype,
+        device=value.device,
+    )
+    causal_name = getattr(causal_type, "name", None)
+    if causal_name is None and causal_type is not None:
+        causal_name = str(causal_type).rsplit(".", 1)[-1]
+
+    segments: dict[tuple[int, int], list[tuple[int, int, int, int]]] = {}
+    for q_start, q_end, kv_start, kv_end in zip(
+        q_offsets[:-1], q_offsets[1:], kv_offsets[:-1], kv_offsets[1:], strict=True
+    ):
+        q_length = q_end - q_start
+        kv_length = kv_end - kv_start
+        if q_length < 0 or kv_length < 0:
+            raise ValueError("cumulative sequence lengths must be nondecreasing")
+        if q_length == 0:
+            continue
+        if kv_length == 0:
+            # Attention over an empty KV range contributes zeros, matching the
+            # fully uncovered packed-output convention used below.
+            continue
+        segments.setdefault((q_length, kv_length), []).append((q_start, q_end, kv_start, kv_end))
+
+    # Sequences with identical geometry can share one launch: the underlying
+    # BMM and softmax kernels still process every (sequence, head, row)
+    # independently, so adding another sequence cannot alter an existing
+    # reduction tree. This is substantially faster than one launch per item
+    # for fixed-length packs such as Cosmos policy inference.
+    for (q_length, kv_length), shape_segments in segments.items():
+        # Eager SDPA materializes scores and probabilities. Keep each launch's
+        # score matrix below 512 MiB so a large pack does not need a transient
+        # allocation proportional to its entire sample count. The chunk size
+        # depends only on per-sequence geometry, never on the total batch.
+        score_bytes_per_sequence = query.shape[2] * q_length * kv_length * query.element_size()
+        max_chunk_size = max(1, (512 * 1024**2) // score_bytes_per_sequence)
+        for chunk_start in range(0, len(shape_segments), max_chunk_size):
+            chunk = shape_segments[chunk_start : chunk_start + max_chunk_size]
+            q_item = torch.cat(
+                [query[:, q_start:q_end] for q_start, q_end, _, _ in chunk]
+            ).transpose(1, 2)
+            k_item = torch.cat(
+                [key[:, kv_start:kv_end] for _, _, kv_start, kv_end in chunk]
+            ).transpose(1, 2)
+            v_item = torch.cat(
+                [value[:, kv_start:kv_end] for _, _, kv_start, kv_end in chunk]
+            ).transpose(1, 2)
+            attention_mask = None
+            use_standard_causal = is_causal
+            if is_causal and q_length != kv_length:
+                query_indexes = torch.arange(q_length, device=query.device)[:, None]
+                key_indexes = torch.arange(kv_length, device=query.device)[None, :]
+                if causal_name == "BottomRight":
+                    attention_mask = key_indexes <= query_indexes + (kv_length - q_length)
+                elif causal_name in {None, "TopLeft"}:
+                    attention_mask = key_indexes <= query_indexes
+                else:
+                    raise ValueError(
+                        f"causal type {causal_name!r} requires equal query and KV lengths"
+                    )
+                use_standard_causal = False
+            item_output = scaled_dot_product_attention_batch_invariant(
+                q_item,
+                k_item,
+                v_item,
+                attn_mask=attention_mask,
+                is_causal=use_standard_causal,
+                scale=scale,
+                enable_gqa=q_item.shape[-3] != k_item.shape[-3],
+            ).transpose(1, 2)
+            for index, (q_start, q_end, _, _) in enumerate(chunk):
+                output[:, q_start:q_end] = item_output[index : index + 1]
+    return output
 
 
 @triton.jit

@@ -90,6 +90,10 @@ with set_batch_invariant_mode(True):
   (`dropout_p=0`) using independent batch-invariant BMM and Triton softmax
   reductions; causal, boolean/additive mask, and grouped-query paths are
   supported
+- `varlen_scaled_dot_product_attention_batch_invariant()` - packed
+  variable-length attention with cumulative sequence offsets, GQA, and
+  top-left/bottom-right causal alignment; equal geometries use memory-bounded
+  launches while retaining independent per-sequence reductions
 
 ### Convolution Operations
 - `torch.nn.functional.conv1d()` / `nn.Conv1d` - Regular 1-D convolution,
@@ -132,6 +136,7 @@ Only configurations that have been executed end to end are marked PASS.
 | InternVLA-A1.5 official PyTorch optimized action-only backend, public LIBERO weights and real inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | MolmoAct2 official PyTorch, public `allenai/MolmoAct2-LIBERO` weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | GR00T N1.7 official NVIDIA PyTorch, public `libero_10` weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| Cosmos 3 Nano Policy official NVIDIA PyTorch, public DROID weights and real inputs | bfloat16 network, float32 outputs | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -142,8 +147,8 @@ per-sample noise. Its deterministic inputs are synthetic, so the result is a
 learned-weight numerical inference regression rather than a policy-quality
 claim. The π0-FAST row uses LeRobot's maintained PyTorch implementation with
 real observations from the public LIBERO dataset. Stock inference changed the
-final action at B=3, 4, 5, and 7; the library was exact through B=64. Cosmos
-and the other planned model families are not yet marked supported.
+final action at B=3, 4, 5, and 7; the library was exact through B=64. Other
+planned model families are not marked supported until their checks have run.
 DreamZero is recorded as blocked under the single-H100 constraint:
 its released PyTorch checkpoint is 45.85 GB and its official inference path
 requires at least two GPUs.
@@ -175,6 +180,17 @@ repaired, an action-DiT `aten::addmm` is the next divergence. The generic
 invariant BMM and MM/addmm paths make all four flow steps and the final 16x7
 action exact through B=64.
 
+The Cosmos row uses NVIDIA's official Cosmos framework, complete public
+`Cosmos3-Nano-Policy-DROID` checkpoint, released Wan2.2 VAE, and real
+three-camera observations from `Cosmos3-DROID`. Stock inference switches from
+dense cuDNN attention at B=1 to packed variable-length CUTLASS attention at
+B>1, and repeats that switch in its cached text-KV path. The generic packed
+varlen-attention replacement makes all four UniPC flow steps, the 32x8 action,
+and the 48x9x33x40 world latent exact through B=64. The separately decoded
+33x528x640 RGB video is exact at B=2 after adding 64-bit large-tensor indexing
+to persistent BMM for the Wan2.2 Conv3D path. Three DROID targets also pass
+duplicate and unrelated B=2/B=4 checks.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -182,7 +198,8 @@ Raw evidence is in [`research/pi0`](research/pi0),
 upstream commits, baseline/fixed hashes, first-divergence diagnostics,
 multiple-input checks, iteration notes, and operator benchmarks. MolmoAct2 evidence is in
 [`research/molmoact2`](research/molmoact2), and GR00T N1.7 evidence is in
-[`research/groot_n17`](research/groot_n17). The earlier random-weight
+[`research/groot_n17`](research/groot_n17). Cosmos 3 Nano evidence is in
+[`research/cosmos3_nano`](research/cosmos3_nano). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -325,6 +342,33 @@ operator boundaries and four-step trace,
 `scripts/check_groot_n17_multiple_inputs.py` for the three-target regression,
 and `scripts/benchmark_groot_n17_ops.py` for the exact BMM/addmm benchmarks.
 
+For Cosmos 3 Nano, check out the pinned NVIDIA Cosmos framework and download
+the pinned policy, DROID data, and Wan2.2 VAE snapshots recorded in
+[`research/cosmos3_nano/checkpoint.txt`](research/cosmos3_nano/checkpoint.txt).
+Extract 64 synchronized frames from the wrist and two exterior video streams,
+add the official repository to `PYTHONPATH`, then run:
+
+```bash
+COSMOS3_NANO_CHECKPOINT=/path/to/Cosmos3-Nano-Policy-DROID \
+COSMOS3_DROID_SAMPLE_DIR=/path/to/cosmos3-droid-sample \
+HF_HOME=/path/to/huggingface-cache \
+PYTHONPATH="$PWD:/path/to/cosmos-framework" \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.cosmos3_nano_policy \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/cosmos3_nano/fixed.json
+```
+
+Set `COSMOS3_DECODE_VIDEO=1` and use B=1,2 to include the released VAE's
+decoded RGB output. `scripts/trace_cosmos3_nano_batch_invariance.py` records
+the stock, generic-operators-only, and fully repaired boundaries;
+`scripts/check_cosmos3_nano_multiple_inputs.py` runs the three-target check;
+and `scripts/benchmark_cosmos3_nano_ops.py` benchmarks both actual attention
+geometries. The adapter defaults to eager official inference because compiled
+graphs capture kernels before runtime dispatcher selection;
+`COSMOS3_TORCH_COMPILE=1` restores the upstream compiled serving switch.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -359,6 +403,12 @@ For GR00T N1.7 on PyTorch 2.9.0/CUDA 12.8, the invariant action-encoder BMM
 was 2.78×, 3.78×, and 1.80× slower at B=1, 2, and 8. The action-DiT addmm was
 2.86×, 3.53×, and 1.69× slower. See
 [`research/groot_n17/benchmarks.json`](research/groot_n17/benchmarks.json).
+
+For Cosmos 3 Nano on PyTorch 2.13.0/CUDA 13.0, invariant packed causal
+attention was 1.34–2.05× slower and dominant full attention was 5.22–6.75×
+slower across B=1, 2, and 8. The full path materializes scores but bounds each
+launch's score memory; complete inference still fits B=64 on the recorded
+H100. See [`research/cosmos3_nano/benchmarks.json`](research/cosmos3_nano/benchmarks.json).
 
 ## Attribution
 

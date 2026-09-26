@@ -15,6 +15,7 @@ from batch_invariant_ops import (
     matmul_persistent,
     scaled_dot_product_attention_batch_invariant,
     set_batch_invariant_mode,
+    varlen_scaled_dot_product_attention_batch_invariant,
 )
 
 pytestmark = pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA is required")
@@ -353,6 +354,162 @@ def test_mode_overrides_scaled_dot_product_attention() -> None:
         alone = F.scaled_dot_product_attention(query[:1], key[:1], value[:1])
         batched = F.scaled_dot_product_attention(query, key, value)
     _assert_first_sample_equal(alone, batched)
+
+
+def _packed_offsets(lengths: tuple[int, ...]) -> torch.Tensor:
+    offsets = [0]
+    for length in lengths:
+        offsets.append(offsets[-1] + length)
+    return torch.tensor(offsets, device="cuda", dtype=torch.int32)
+
+
+@pytest.mark.parametrize("causal_type", (None, "TopLeft", "BottomRight"))
+def test_varlen_sdpa_matches_independent_torch_calls(causal_type: str | None) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7350)
+    q_lengths = (5, 3, 7)
+    kv_lengths = (7, 4, 5)
+    query = torch.randn(
+        1,
+        sum(q_lengths),
+        4,
+        32,
+        device="cuda",
+        dtype=torch.bfloat16,
+        generator=generator,
+    )
+    key = torch.randn(
+        1,
+        sum(kv_lengths),
+        2,
+        32,
+        device="cuda",
+        dtype=torch.bfloat16,
+        generator=generator,
+    )
+    value = torch.randn(
+        1,
+        sum(kv_lengths),
+        2,
+        24,
+        device="cuda",
+        dtype=torch.bfloat16,
+        generator=generator,
+    )
+    q_offsets = _packed_offsets(q_lengths)
+    kv_offsets = _packed_offsets(kv_lengths)
+    actual = varlen_scaled_dot_product_attention_batch_invariant(
+        query,
+        key,
+        value,
+        q_offsets,
+        kv_offsets,
+        is_causal=causal_type is not None,
+        causal_type=causal_type,
+    )
+
+    expected_segments = []
+    for index, (q_length, kv_length) in enumerate(zip(q_lengths, kv_lengths)):
+        q_start, q_end = q_offsets[index : index + 2].tolist()
+        kv_start, kv_end = kv_offsets[index : index + 2].tolist()
+        q_item = query[:, q_start:q_end].transpose(1, 2)
+        k_item = key[:, kv_start:kv_end].transpose(1, 2)
+        v_item = value[:, kv_start:kv_end].transpose(1, 2)
+        mask = None
+        if causal_type is not None:
+            q_indexes = torch.arange(q_length, device="cuda")[:, None]
+            kv_indexes = torch.arange(kv_length, device="cuda")[None, :]
+            shift = kv_length - q_length if causal_type == "BottomRight" else 0
+            mask = kv_indexes <= q_indexes + shift
+        expected_segments.append(
+            F.scaled_dot_product_attention(
+                q_item, k_item, v_item, attn_mask=mask, enable_gqa=True
+            ).transpose(1, 2)
+        )
+    expected = torch.cat(expected_segments, dim=1)
+    torch.testing.assert_close(actual, expected, **TOLERANCES[torch.bfloat16])
+
+
+def test_varlen_sdpa_is_batch_invariant_for_duplicate_and_unrelated_packs() -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7375)
+    q_lengths = (33, 17, 33)
+    kv_lengths = (47, 23, 47)
+    query = torch.randn(
+        1,
+        sum(q_lengths),
+        8,
+        64,
+        device="cuda",
+        dtype=torch.bfloat16,
+        generator=generator,
+    )
+    key = torch.randn(
+        1,
+        sum(kv_lengths),
+        8,
+        64,
+        device="cuda",
+        dtype=torch.bfloat16,
+        generator=generator,
+    )
+    value = torch.randn_like(key)
+
+    alone = varlen_scaled_dot_product_attention_batch_invariant(
+        query[:, : q_lengths[0]],
+        key[:, : kv_lengths[0]],
+        value[:, : kv_lengths[0]],
+        _packed_offsets(q_lengths[:1]),
+        _packed_offsets(kv_lengths[:1]),
+        is_causal=True,
+        causal_type="BottomRight",
+    )
+    packed = varlen_scaled_dot_product_attention_batch_invariant(
+        query,
+        key,
+        value,
+        _packed_offsets(q_lengths),
+        _packed_offsets(kv_lengths),
+        is_causal=True,
+        causal_type="BottomRight",
+    )
+    assert torch.equal(alone, packed[:, : q_lengths[0]])
+
+
+def test_varlen_sdpa_leaves_uncovered_padding_rows_zero() -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7390)
+    query = torch.randn(
+        1,
+        11,
+        2,
+        16,
+        device="cuda",
+        dtype=torch.float16,
+        generator=generator,
+    )
+    key = torch.randn_like(query)
+    value = torch.randn_like(query)
+    output = varlen_scaled_dot_product_attention_batch_invariant(
+        query,
+        key,
+        value,
+        torch.tensor([0, 5, 9], device="cuda", dtype=torch.int32),
+        torch.tensor([0, 5, 9], device="cuda", dtype=torch.int32),
+    )
+    assert torch.count_nonzero(output[:, :9]) > 0
+    assert torch.count_nonzero(output[:, 9:]) == 0
+
+
+def test_varlen_sdpa_empty_kv_range_is_zero() -> None:
+    query = torch.randn(1, 2, 2, 16, device="cuda", dtype=torch.float16)
+    key = torch.empty(1, 0, 2, 16, device="cuda", dtype=torch.float16)
+    value = torch.empty_like(key)
+    output = varlen_scaled_dot_product_attention_batch_invariant(
+        query,
+        key,
+        value,
+        torch.tensor([0, 2], device="cuda", dtype=torch.int32),
+        torch.tensor([0, 0], device="cuda", dtype=torch.int32),
+    )
+    assert torch.count_nonzero(output) == 0
 
 
 def test_mode_context_is_exception_safe_and_reentrant() -> None:

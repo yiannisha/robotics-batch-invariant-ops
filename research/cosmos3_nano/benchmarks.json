@@ -1,0 +1,267 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.13.8",
+    "torch": "2.13.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92000,
+    "triton": "3.7.1"
+  },
+  "warmup": 1,
+  "repetitions": 3,
+  "cases": [
+    {
+      "operator": "cosmos3_nano_causal_varlen_attention",
+      "batch_size": 1,
+      "shape": {
+        "query": [
+          1,
+          96,
+          32,
+          128
+        ],
+        "key": [
+          1,
+          96,
+          8,
+          128
+        ],
+        "value": [
+          1,
+          96,
+          8,
+          128
+        ],
+        "logical_query_length": 96,
+        "logical_kv_length": 96,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": true,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.3399466673533122,
+        "peak_incremental_bytes": 3158016
+      },
+      "batch_invariant": {
+        "latency_ms": 0.4542400042215983,
+        "peak_incremental_bytes": 6300672
+      },
+      "latency_ratio": 1.3362096112255726,
+      "stock_samples_per_second": 2941.6378980432346,
+      "batch_invariant_samples_per_second": 2201.479373692846
+    },
+    {
+      "operator": "cosmos3_nano_full_varlen_attention",
+      "batch_size": 1,
+      "shape": {
+        "query": [
+          1,
+          3094,
+          32,
+          128
+        ],
+        "key": [
+          1,
+          3188,
+          8,
+          128
+        ],
+        "value": [
+          1,
+          3188,
+          8,
+          128
+        ],
+        "logical_query_length": 3094,
+        "logical_kv_length": 3188,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": false,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.5133119821548462,
+        "peak_incremental_bytes": 103320576
+      },
+      "batch_invariant": {
+        "latency_ms": 2.682005246480306,
+        "peak_incremental_bytes": 1429224448
+      },
+      "latency_ratio": 5.224902865546688,
+      "stock_samples_per_second": 1948.132977145932,
+      "batch_invariant_samples_per_second": 372.8553481811181
+    },
+    {
+      "operator": "cosmos3_nano_causal_varlen_attention",
+      "batch_size": 2,
+      "shape": {
+        "query": [
+          1,
+          192,
+          32,
+          128
+        ],
+        "key": [
+          1,
+          192,
+          8,
+          128
+        ],
+        "value": [
+          1,
+          192,
+          8,
+          128
+        ],
+        "logical_query_length": 96,
+        "logical_kv_length": 96,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": true,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.20449066162109375,
+        "peak_incremental_bytes": 6316032
+      },
+      "batch_invariant": {
+        "latency_ms": 0.35816534360249835,
+        "peak_incremental_bytes": 14164992
+      },
+      "latency_ratio": 1.7514997543807285,
+      "stock_samples_per_second": 9780.397716673508,
+      "batch_invariant_samples_per_second": 5584.013181966747
+    },
+    {
+      "operator": "cosmos3_nano_full_varlen_attention",
+      "batch_size": 2,
+      "shape": {
+        "query": [
+          1,
+          6188,
+          32,
+          128
+        ],
+        "key": [
+          1,
+          6376,
+          8,
+          128
+        ],
+        "value": [
+          1,
+          6376,
+          8,
+          128
+        ],
+        "logical_query_length": 3094,
+        "logical_kv_length": 3188,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": false,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.941269318262736,
+        "peak_incremental_bytes": 206640640
+      },
+      "batch_invariant": {
+        "latency_ms": 5.278506596883138,
+        "peak_incremental_bytes": 1505262592
+      },
+      "latency_ratio": 5.607860040126955,
+      "stock_samples_per_second": 2124.7903880382737,
+      "batch_invariant_samples_per_second": 378.89504603081554
+    },
+    {
+      "operator": "cosmos3_nano_causal_varlen_attention",
+      "batch_size": 8,
+      "shape": {
+        "query": [
+          1,
+          768,
+          32,
+          128
+        ],
+        "key": [
+          1,
+          768,
+          8,
+          128
+        ],
+        "value": [
+          1,
+          768,
+          8,
+          128
+        ],
+        "logical_query_length": 96,
+        "logical_kv_length": 96,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": true,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.2029973268508911,
+        "peak_incremental_bytes": 25264128
+      },
+      "batch_invariant": {
+        "latency_ms": 0.4164479970932007,
+        "peak_incremental_bytes": 56632320
+      },
+      "latency_ratio": 2.0514949805181266,
+      "stock_samples_per_second": 39409.38594662525,
+      "batch_invariant_samples_per_second": 19210.081584831365
+    },
+    {
+      "operator": "cosmos3_nano_full_varlen_attention",
+      "batch_size": 8,
+      "shape": {
+        "query": [
+          1,
+          24752,
+          32,
+          128
+        ],
+        "key": [
+          1,
+          25504,
+          8,
+          128
+        ],
+        "value": [
+          1,
+          25504,
+          8,
+          128
+        ],
+        "logical_query_length": 3094,
+        "logical_kv_length": 3188,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": false,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 3.706783930460612,
+        "peak_incremental_bytes": 826562560
+      },
+      "batch_invariant": {
+        "latency_ms": 25.039103190104168,
+        "peak_incremental_bytes": 1809415168
+      },
+      "latency_ratio": 6.754940039624258,
+      "stock_samples_per_second": 2158.20510450036,
+      "batch_invariant_samples_per_second": 319.50026082250906
+    }
+  ]
+}

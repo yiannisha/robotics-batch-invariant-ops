@@ -1,0 +1,2674 @@
+{
+  "model": "nvidia-cosmos3-nano-policy-droid-official-pytorch",
+  "comparison": "B=1 target versus first sample at unrelated B=2",
+  "root_cause": "After generic MM/BMM projection repairs, Cosmos still selects dense cuDNN attention at B=1 and packed variable-length CUTLASS attention at B>1; cached text-KV steps repeat the switch",
+  "runs": {
+    "stock": {
+      "attention_dispatch": {
+        "batch_1": {
+          "source": "two_way_attention",
+          "uses_varlen": false,
+          "packed_query_shape": [
+            1,
+            96,
+            32,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            96,
+            8,
+            128
+          ]
+        },
+        "batch_2": {
+          "source": "two_way_attention",
+          "uses_varlen": true,
+          "packed_query_shape": [
+            1,
+            191,
+            32,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            191,
+            8,
+            128
+          ]
+        },
+        "first_four_calls_batch_1": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              96,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              96,
+              8,
+              128
+            ],
+            "target_query_length": 96,
+            "target_key_length": 96
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3188,
+              8,
+              128
+            ],
+            "target_query_length": 3094,
+            "target_key_length": 3188
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              96,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              96,
+              8,
+              128
+            ],
+            "target_query_length": 96,
+            "target_key_length": 96
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3188,
+              8,
+              128
+            ],
+            "target_query_length": 3094,
+            "target_key_length": 3188
+          }
+        ],
+        "first_four_calls_batch_2": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              191,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              191,
+              8,
+              128
+            ],
+            "target_query_length": 95,
+            "target_key_length": 95
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6378,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3188
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              191,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              191,
+              8,
+              128
+            ],
+            "target_query_length": 95,
+            "target_key_length": 95
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6378,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3188
+          }
+        ]
+      },
+      "first_attention": {
+        "query": {
+          "reference_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "36086f6fe0b1622f9b4abf799d5f9426e8cb346973097e2e70dec2b4a394cd0d",
+          "candidate_hash": "36086f6fe0b1622f9b4abf799d5f9426e8cb346973097e2e70dec2b4a394cd0d",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            96,
+            32,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "key": {
+          "reference_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "86a7592922030f3bc4f793a02d4ecc3292070bc76031c34b3f22fc58c9a6e76f",
+          "candidate_hash": "fa09762af25beeaac2a0a11be01d9b28083d79a5ec1d2e72ec68f5ea36fe663a",
+          "differing_elements": 131,
+          "first_differing_index": [
+            0,
+            2,
+            1,
+            109
+          ],
+          "max_abs_difference": 0.03125,
+          "mean_abs_difference": 5.09651590618887e-06,
+          "reference_full_shape": [
+            1,
+            96,
+            8,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "value": {
+          "reference_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "7eec62099c789361234cc8b49b0d8dbfd06b8d36d6c8c906689a2389b6686670",
+          "candidate_hash": "2909389df49b494803b1e0173c31a9ebee6c411366c5d1720b30c96ff2c17436",
+          "differing_elements": 204,
+          "first_differing_index": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "max_abs_difference": 0.00048828125,
+          "mean_abs_difference": 2.484926220347461e-08,
+          "reference_full_shape": [
+            1,
+            96,
+            8,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "output": {
+          "reference_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "dc72f8e47b764ea67d43c0849fa516c7f32b38abf1c2452105fc11948c8587dc",
+          "candidate_hash": "68fe92e81515695fe71dfefa89ec3def5f5a40738af838eb511b7f7455ce2da5",
+          "differing_elements": 11602,
+          "first_differing_index": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "max_abs_difference": 0.0009765625,
+          "mean_abs_difference": 6.218929229362402e-07,
+          "reference_full_shape": [
+            1,
+            96,
+            32,
+            128
+          ],
+          "compared_sequence_length": 95
+        }
+      },
+      "flow_iterations": [
+        {
+          "label": "flow.input",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "411bb2ae002fa082401a3d50b4c867bc1f981c24b52034ae312cd03bcbedff62",
+          "candidate_hash": "411bb2ae002fa082401a3d50b4c867bc1f981c24b52034ae312cd03bcbedff62",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "411bb2ae002fa082401a3d50b4c867bc1f981c24b52034ae312cd03bcbedff62",
+          "candidate_hash": "411bb2ae002fa082401a3d50b4c867bc1f981c24b52034ae312cd03bcbedff62",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "18c2e36d0b3559dc2be020f87614014782366962880f1282c636730eb82b07b7",
+          "candidate_hash": "d68ab954d9fffe457a4c8a21f7d52bcaaf938abb36ae2b90fdc0f67efc084dd9",
+          "differing_elements": 470621,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.02638697624206543,
+          "mean_abs_difference": 0.0019517875043675303
+        },
+        {
+          "label": "flow.input",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "18c2e36d0b3559dc2be020f87614014782366962880f1282c636730eb82b07b7",
+          "candidate_hash": "d68ab954d9fffe457a4c8a21f7d52bcaaf938abb36ae2b90fdc0f67efc084dd9",
+          "differing_elements": 470621,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.02638697624206543,
+          "mean_abs_difference": 0.0019517875043675303
+        },
+        {
+          "label": "flow.input",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "3b083a1bb646a29aabbfc3c944daf6f6ad4bfea23f5f22978edc648b57a3347e",
+          "candidate_hash": "9e3033bec4476ad3dc42767782d27754daace46135d64093eb381a64579754ee",
+          "differing_elements": 504511,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.2389698326587677,
+          "mean_abs_difference": 0.010003529489040375
+        },
+        {
+          "label": "flow.input",
+          "call": 5,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "3b083a1bb646a29aabbfc3c944daf6f6ad4bfea23f5f22978edc648b57a3347e",
+          "candidate_hash": "9e3033bec4476ad3dc42767782d27754daace46135d64093eb381a64579754ee",
+          "differing_elements": 504511,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.2389698326587677,
+          "mean_abs_difference": 0.010003529489040375
+        },
+        {
+          "label": "flow.input",
+          "call": 6,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "824495f0c237e0859091d740d26fa2dee203f7a8ebe2aa1c64ff4f305857769e",
+          "candidate_hash": "36beb72a620a27176eda824477bd5326aa16496ba494a439d5e84e984e476ef1",
+          "differing_elements": 506906,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.8364251852035522,
+          "mean_abs_difference": 0.035734932869672775
+        },
+        {
+          "label": "flow.input",
+          "call": 7,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "824495f0c237e0859091d740d26fa2dee203f7a8ebe2aa1c64ff4f305857769e",
+          "candidate_hash": "36beb72a620a27176eda824477bd5326aa16496ba494a439d5e84e984e476ef1",
+          "differing_elements": 506906,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.8364251852035522,
+          "mean_abs_difference": 0.035734932869672775
+        },
+        {
+          "label": "flow.timestep",
+          "call": 0,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 1,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 2,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 3,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 4,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 5,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 6,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 7,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.velocity",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "1e410656e19ffbe2c2489ff9ccb302edb3804bf1ac132862f2657de0b354b79f",
+          "candidate_hash": "79ba27321374ab11526835a22e07254b32ad42aa7813624f464990e24c1516e6",
+          "differing_elements": 409014,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.12158203125,
+          "mean_abs_difference": 0.008315777406096458
+        },
+        {
+          "label": "flow.velocity",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "d1238eda13699b001868a2cd853c59b7ffecb91f609f6ef7ade025cf26b2a527",
+          "candidate_hash": "c640698798ccc7a36c05629feb90cc0cfc7ae5a2bc43cab35806c4f8425c09ac",
+          "differing_elements": 411174,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.197265625,
+          "mean_abs_difference": 0.008590146899223328
+        },
+        {
+          "label": "flow.velocity",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "761193ae3f222e8d700aa0b1710beb9fdd509a8bc5ad3bef1b9313e364802ea6",
+          "candidate_hash": "a290b18b48251fb33deb77891b5d84f28e75374a52cd128e1fdaf2e8bab0182b",
+          "differing_elements": 454077,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.7265625,
+          "mean_abs_difference": 0.025341074913740158
+        },
+        {
+          "label": "flow.velocity",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "6fae41577dd03b852dc7bea32737051512f50a726a817fa24f22a0b32a20f63a",
+          "candidate_hash": "dd364829ebe87fb922bafceca43614fcb13ba9ce74ed4c0d03d2b3550d0af638",
+          "differing_elements": 443958,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.34765625,
+          "mean_abs_difference": 0.015964625403285027
+        },
+        {
+          "label": "flow.velocity",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "efb72efad999001c39188e3b629c796db02fcf683d0d743a2e17a22e54943030",
+          "candidate_hash": "00b5a855016b33958b64e9a662574d7e67d685407d33ea6c979945ef781fea9f",
+          "differing_elements": 481115,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 2.13671875,
+          "mean_abs_difference": 0.07966965436935425
+        },
+        {
+          "label": "flow.velocity",
+          "call": 5,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "b29c519235e7557f3bf01ec5672c0f9970ef7c8d2341da4af2e51aa49150a3ed",
+          "candidate_hash": "0bb123e6edb3413dc4b3c14533e6704168b8079399ae3d2ef8b6e4c72494598e",
+          "differing_elements": 481137,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 2.1064453125,
+          "mean_abs_difference": 0.08031529188156128
+        },
+        {
+          "label": "flow.velocity",
+          "call": 6,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "e781e8dbb20a4adf67936728f29fc56d1e897ffb4ef8eca3a77dd422e366c552",
+          "candidate_hash": "2846e0d1117554edb6e016b08b222328392cb621d8379ceed92ca71a13882a04",
+          "differing_elements": 491090,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 4.213134765625,
+          "mean_abs_difference": 0.11092600971460342
+        },
+        {
+          "label": "flow.velocity",
+          "call": 7,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "f50f26eff5e9c6d888ad7b476497940b70060396272d8bf05ab6c927184dfbfa",
+          "candidate_hash": "52bc07ea561444898ffbea33f8d16c20e0a2ae0c0875a55796adbc7ea10188f6",
+          "differing_elements": 491171,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 4.41796875,
+          "mean_abs_difference": 0.11087936162948608
+        }
+      ],
+      "final_outputs": [
+        {
+          "path": "output.action",
+          "reference_shape": [
+            1,
+            32,
+            8
+          ],
+          "candidate_shape": [
+            1,
+            32,
+            8
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "differing_elements": 255,
+          "max_abs_difference": 0.11333823204040527,
+          "mean_abs_difference": 0.022292472422122955,
+          "first_differing_index": [
+            0,
+            0,
+            0
+          ],
+          "reference_hash": "f2f28ac1d16dbf7b2b5ab4486a79232327c731dde9b36b33649c82813960b75d",
+          "candidate_hash": "2f28ecf176189994b7535b4a7e61b5f9a93adaf3048e03c7a0ce5a29632a4619"
+        },
+        {
+          "path": "output.vision_latent",
+          "reference_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "candidate_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "differing_elements": 506866,
+          "max_abs_difference": 2.8412516117095947,
+          "mean_abs_difference": 0.09645377844572067,
+          "first_differing_index": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "reference_hash": "b91a7dc699b425d3d1f2a97b747c2c4a47e9a5b8ae7e86ebe22bda81b6fab87a",
+          "candidate_hash": "63fc8ed556bad41a1dd018a77f87dafd7a0df61224da0651ec1e29ce610ce01a"
+        }
+      ],
+      "first_attention_profile": {
+        "batch_1": {
+          "aten_operators": [
+            "aten::_cudnn_attention_forward",
+            "aten::_scaled_dot_product_cudnn_attention",
+            "aten::as_strided",
+            "aten::clone",
+            "aten::copy_",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::empty_strided",
+            "aten::expand",
+            "aten::flatten",
+            "aten::repeat_interleave",
+            "aten::transpose",
+            "aten::unsqueeze",
+            "aten::view"
+          ],
+          "cuda_kernels": [
+            "Memset (Device)",
+            "cudnn_generated_fort_native_sdpa_sm90_flash_fprop_wgmma_f16_knob_7_64x128x128_4x1x1_cga1x1x1_kernel0_0",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})"
+          ]
+        },
+        "batch_2": {
+          "aten_operators": [
+            "aten::as_strided",
+            "aten::clone",
+            "aten::copy_",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::expand",
+            "aten::fill_",
+            "aten::flatten",
+            "aten::repeat_interleave",
+            "aten::unsqueeze",
+            "aten::view",
+            "aten::zero_",
+            "aten::zeros"
+          ],
+          "cuda_kernels": [
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+            "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::array<char*, 1ul> >(int, at::native::FillFunctor<float>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+            "void cutlass::device_kernel_sm90<cutlass::fmha::kernel::FmhaKernelTmaWarpSpecialized<cute::tuple<int, int, cutlass::fmha::collective::VariableLength, cutlass::fmha::collective::VariableLength, int>, cutlass::fmha::collective::FmhaMainloopTmaWarpSpecializedSm90<cutlass::bfloat16_t, float, float, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cutlass::fmha::collective::CausalFusion>, cutlass::fmha::collective::FmhaFwdEpilogueSm90<cutlass::bfloat16_t, float, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, true>, cutlass::fmha::kernel::IndividualTileScheduler> >(cutlass::fmha::kernel::FmhaKernelTmaWarpSpecialized<cute::tuple<int, int, cutlass::fmha::collective::VariableLength, cutlass::fmha::collective::VariableLength, int>, cutlass::fmha::collective::FmhaMainloopTmaWarpSpecializedSm90<cutlass::bfloat16_t, float, float, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cutlass::fmha::collective::CausalFusion>, cutlass::fmha::collective::FmhaFwdEpilogueSm90<cutlass::bfloat16_t, float, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, true>, cutlass::fmha::kernel::IndividualTileScheduler>::Params)"
+          ]
+        }
+      }
+    },
+    "generic_operators_only": {
+      "attention_dispatch": {
+        "batch_1": {
+          "source": "two_way_attention",
+          "uses_varlen": false,
+          "packed_query_shape": [
+            1,
+            96,
+            32,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            96,
+            8,
+            128
+          ]
+        },
+        "batch_2": {
+          "source": "two_way_attention",
+          "uses_varlen": true,
+          "packed_query_shape": [
+            1,
+            191,
+            32,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            191,
+            8,
+            128
+          ]
+        },
+        "first_four_calls_batch_1": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              96,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              96,
+              8,
+              128
+            ],
+            "target_query_length": 96,
+            "target_key_length": 96
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3188,
+              8,
+              128
+            ],
+            "target_query_length": 3094,
+            "target_key_length": 3188
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              96,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              96,
+              8,
+              128
+            ],
+            "target_query_length": 96,
+            "target_key_length": 96
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3188,
+              8,
+              128
+            ],
+            "target_query_length": 3094,
+            "target_key_length": 3188
+          }
+        ],
+        "first_four_calls_batch_2": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              191,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              191,
+              8,
+              128
+            ],
+            "target_query_length": 95,
+            "target_key_length": 95
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6378,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3188
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              191,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              191,
+              8,
+              128
+            ],
+            "target_query_length": 95,
+            "target_key_length": 95
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6378,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3188
+          }
+        ]
+      },
+      "first_attention": {
+        "query": {
+          "reference_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "36086f6fe0b1622f9b4abf799d5f9426e8cb346973097e2e70dec2b4a394cd0d",
+          "candidate_hash": "36086f6fe0b1622f9b4abf799d5f9426e8cb346973097e2e70dec2b4a394cd0d",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            96,
+            32,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "key": {
+          "reference_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "fa09762af25beeaac2a0a11be01d9b28083d79a5ec1d2e72ec68f5ea36fe663a",
+          "candidate_hash": "fa09762af25beeaac2a0a11be01d9b28083d79a5ec1d2e72ec68f5ea36fe663a",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            96,
+            8,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "value": {
+          "reference_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "2909389df49b494803b1e0173c31a9ebee6c411366c5d1720b30c96ff2c17436",
+          "candidate_hash": "2909389df49b494803b1e0173c31a9ebee6c411366c5d1720b30c96ff2c17436",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            96,
+            8,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "output": {
+          "reference_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "82da8347f00cb116a08aa1447203f83f613f57c175a7b9cf6ec0727cd5f83b2c",
+          "candidate_hash": "68fe92e81515695fe71dfefa89ec3def5f5a40738af838eb511b7f7455ce2da5",
+          "differing_elements": 14,
+          "first_differing_index": [
+            0,
+            12,
+            15,
+            66
+          ],
+          "max_abs_difference": 0.000244140625,
+          "mean_abs_difference": 1.862645149230957e-09,
+          "reference_full_shape": [
+            1,
+            96,
+            32,
+            128
+          ],
+          "compared_sequence_length": 95
+        }
+      },
+      "flow_iterations": [
+        {
+          "label": "flow.input",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "e53c7cc4ec8f736405051ff1bde6ccf02f62daf097c01c8bddc1e55fbb48431a",
+          "candidate_hash": "e53c7cc4ec8f736405051ff1bde6ccf02f62daf097c01c8bddc1e55fbb48431a",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "e53c7cc4ec8f736405051ff1bde6ccf02f62daf097c01c8bddc1e55fbb48431a",
+          "candidate_hash": "e53c7cc4ec8f736405051ff1bde6ccf02f62daf097c01c8bddc1e55fbb48431a",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "d88d1388787b4cb0c4c1dd33f981e68382fb5808e5c7baf27446e8c6a374d14c",
+          "candidate_hash": "2a61e250269db68c3e3bbee733378881ed4d296133a8912b078fc79579191ab8",
+          "differing_elements": 467909,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.03078484535217285,
+          "mean_abs_difference": 0.0018613231368362904
+        },
+        {
+          "label": "flow.input",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "d88d1388787b4cb0c4c1dd33f981e68382fb5808e5c7baf27446e8c6a374d14c",
+          "candidate_hash": "2a61e250269db68c3e3bbee733378881ed4d296133a8912b078fc79579191ab8",
+          "differing_elements": 467909,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.03078484535217285,
+          "mean_abs_difference": 0.0018613231368362904
+        },
+        {
+          "label": "flow.input",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "2fa0b10e8299bb7451c65367eddcccd00fcd81426d8554ba0f27add7c791525d",
+          "candidate_hash": "2500703c328347ed5e964445436c94d48bd93686d179a2ece5dea02879be3506",
+          "differing_elements": 504051,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.12970072031021118,
+          "mean_abs_difference": 0.007578703574836254
+        },
+        {
+          "label": "flow.input",
+          "call": 5,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "2fa0b10e8299bb7451c65367eddcccd00fcd81426d8554ba0f27add7c791525d",
+          "candidate_hash": "2500703c328347ed5e964445436c94d48bd93686d179a2ece5dea02879be3506",
+          "differing_elements": 504051,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.12970072031021118,
+          "mean_abs_difference": 0.007578703574836254
+        },
+        {
+          "label": "flow.input",
+          "call": 6,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "2d13ee3871318cb23e570754a6690813416ffa2ecfb95fe45a9d528455fda408",
+          "candidate_hash": "0b8d427630fd2f549dafdddbd9a794f2fb4bd67299b9af4cddfdd714d0916f82",
+          "differing_elements": 506849,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.9371459484100342,
+          "mean_abs_difference": 0.03358352929353714
+        },
+        {
+          "label": "flow.input",
+          "call": 7,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "2d13ee3871318cb23e570754a6690813416ffa2ecfb95fe45a9d528455fda408",
+          "candidate_hash": "0b8d427630fd2f549dafdddbd9a794f2fb4bd67299b9af4cddfdd714d0916f82",
+          "differing_elements": 506849,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.9371459484100342,
+          "mean_abs_difference": 0.03358352929353714
+        },
+        {
+          "label": "flow.timestep",
+          "call": 0,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 1,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 2,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 3,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 4,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 5,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 6,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 7,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.velocity",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "f41cf1afbd5e5390b059b65a315d9f9f67e5f3173cf128b48a464fd78375bc45",
+          "candidate_hash": "fb3307a5f24b9b64738b284246ffab95f01edf803fa51978d87bdf132fd5aa32",
+          "differing_elements": 404695,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.12890625,
+          "mean_abs_difference": 0.007986596785485744
+        },
+        {
+          "label": "flow.velocity",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "fe13ea1d7129db74dc63c6ffbeeb34dbcf6a0019119c30dbb18d6cd8acd1bd10",
+          "candidate_hash": "53e146e01003fe3f26ff2d123517cdc9c78bffbfa5deaae17873854fc6e81ce0",
+          "differing_elements": 405194,
+          "first_differing_index": [
+            1321
+          ],
+          "max_abs_difference": 0.25,
+          "mean_abs_difference": 0.008073637261986732
+        },
+        {
+          "label": "flow.velocity",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "d0840a7631815e8bcc1d989de0df5b00da315a7bfde84c5a8ce4fa96c9ec8084",
+          "candidate_hash": "530fd3759610e9f053fda074473d60b5506c4367322cd68f566930c66e5c6f4f",
+          "differing_elements": 450716,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.4765625,
+          "mean_abs_difference": 0.02150396816432476
+        },
+        {
+          "label": "flow.velocity",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "c7aed000903c7fb58e9a2353c3e84bee91ef2db2976d4b7d0b58e6a3fc5d86d0",
+          "candidate_hash": "98c61ecf874214f3907158c763fd01cce37ca737ff28961a96f93f83a706a1b1",
+          "differing_elements": 448157,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.40625,
+          "mean_abs_difference": 0.0186707004904747
+        },
+        {
+          "label": "flow.velocity",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "fa9f6b16772e6cfcec78aa3a2406e0e2b9a6079aeeb0e2985e6cd0242d9c71f0",
+          "candidate_hash": "287dedddf7cb6b114257ea0eaee5eaf98c05c05a9027801610efedb10e9a7ac8",
+          "differing_elements": 478805,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 2.376953125,
+          "mean_abs_difference": 0.06743097305297852
+        },
+        {
+          "label": "flow.velocity",
+          "call": 5,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "aa9cd9612757284d8e8a62831a76dfbce88e611bd7e3528881d92014e5a5902e",
+          "candidate_hash": "90fb9331d2660da326e1d6306deaaa2548c8a71659775353c2f0a333e0d1ea12",
+          "differing_elements": 478776,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 2.228515625,
+          "mean_abs_difference": 0.07052101194858551
+        },
+        {
+          "label": "flow.velocity",
+          "call": 6,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "3d11060ee70b9c5ac267dfe5e61ed4e8d776ce362f63f599724735785d8c2ed3",
+          "candidate_hash": "b1856d41ea9c913b2fbaaeeb40b2886ecd7d7721c52fccb1c1cada6af962c776",
+          "differing_elements": 490026,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 3.56640625,
+          "mean_abs_difference": 0.09826451539993286
+        },
+        {
+          "label": "flow.velocity",
+          "call": 7,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "06a002e3481f78343f87da4ba6b5ca465ede47db96575787b19d5e04765b3321",
+          "candidate_hash": "a2ae4e59ac442b3777fbbad4273d62681bf5e77eaff6ac6aad86f1f34f9ba8b1",
+          "differing_elements": 490270,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 3.609375,
+          "mean_abs_difference": 0.09813623130321503
+        }
+      ],
+      "final_outputs": [
+        {
+          "path": "output.action",
+          "reference_shape": [
+            1,
+            32,
+            8
+          ],
+          "candidate_shape": [
+            1,
+            32,
+            8
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "differing_elements": 255,
+          "max_abs_difference": 0.07314443588256836,
+          "mean_abs_difference": 0.01728551648557186,
+          "first_differing_index": [
+            0,
+            0,
+            0
+          ],
+          "reference_hash": "54bb9238282aec63a7fc93bd371a9e1328e2b67525625c86c3527b3bd1667678",
+          "candidate_hash": "a9a9f82da062bb957600dcfcf643f1d584fe93cf53d72b2eb61e39049b29cf4b"
+        },
+        {
+          "path": "output.vision_latent",
+          "reference_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "candidate_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "differing_elements": 506849,
+          "max_abs_difference": 2.9464900493621826,
+          "mean_abs_difference": 0.08666646480560303,
+          "first_differing_index": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "reference_hash": "ed564510f5feb1f533df9d35a28a6053d8b678bb96a6c4d4ee75405a6dff2148",
+          "candidate_hash": "c74a01ef6928db571ef82c3ca2f16ad2ab58f15f9d8baee33e66d99213b2fa80"
+        }
+      ],
+      "first_attention_profile": {
+        "batch_1": {
+          "aten_operators": [
+            "aten::_cudnn_attention_forward",
+            "aten::_scaled_dot_product_cudnn_attention",
+            "aten::as_strided",
+            "aten::clone",
+            "aten::copy_",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::empty_strided",
+            "aten::expand",
+            "aten::flatten",
+            "aten::repeat_interleave",
+            "aten::transpose",
+            "aten::unsqueeze",
+            "aten::view"
+          ],
+          "cuda_kernels": [
+            "Memset (Device)",
+            "cudnn_generated_fort_native_sdpa_sm90_flash_fprop_wgmma_f16_knob_7_64x128x128_4x1x1_cga1x1x1_kernel0_0",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})"
+          ]
+        },
+        "batch_2": {
+          "aten_operators": [
+            "aten::as_strided",
+            "aten::clone",
+            "aten::copy_",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::expand",
+            "aten::fill_",
+            "aten::flatten",
+            "aten::repeat_interleave",
+            "aten::unsqueeze",
+            "aten::view",
+            "aten::zero_",
+            "aten::zeros"
+          ],
+          "cuda_kernels": [
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+            "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::array<char*, 1ul> >(int, at::native::FillFunctor<float>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+            "void cutlass::device_kernel_sm90<cutlass::fmha::kernel::FmhaKernelTmaWarpSpecialized<cute::tuple<int, int, cutlass::fmha::collective::VariableLength, cutlass::fmha::collective::VariableLength, int>, cutlass::fmha::collective::FmhaMainloopTmaWarpSpecializedSm90<cutlass::bfloat16_t, float, float, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cutlass::fmha::collective::CausalFusion>, cutlass::fmha::collective::FmhaFwdEpilogueSm90<cutlass::bfloat16_t, float, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, true>, cutlass::fmha::kernel::IndividualTileScheduler> >(cutlass::fmha::kernel::FmhaKernelTmaWarpSpecialized<cute::tuple<int, int, cutlass::fmha::collective::VariableLength, cutlass::fmha::collective::VariableLength, int>, cutlass::fmha::collective::FmhaMainloopTmaWarpSpecializedSm90<cutlass::bfloat16_t, float, float, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cutlass::fmha::collective::CausalFusion>, cutlass::fmha::collective::FmhaFwdEpilogueSm90<cutlass::bfloat16_t, float, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, true>, cutlass::fmha::kernel::IndividualTileScheduler>::Params)"
+          ]
+        }
+      }
+    },
+    "fixed": {
+      "attention_dispatch": {
+        "batch_1": {
+          "source": "two_way_attention",
+          "uses_varlen": true,
+          "packed_query_shape": [
+            1,
+            96,
+            32,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            96,
+            8,
+            128
+          ]
+        },
+        "batch_2": {
+          "source": "two_way_attention",
+          "uses_varlen": true,
+          "packed_query_shape": [
+            1,
+            191,
+            32,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            191,
+            8,
+            128
+          ]
+        },
+        "first_four_calls_batch_1": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              96,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              96,
+              8,
+              128
+            ],
+            "target_query_length": 95,
+            "target_key_length": 95
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3190,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3188
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              96,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              96,
+              8,
+              128
+            ],
+            "target_query_length": 95,
+            "target_key_length": 95
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3190,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3188
+          }
+        ],
+        "first_four_calls_batch_2": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              191,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              191,
+              8,
+              128
+            ],
+            "target_query_length": 95,
+            "target_key_length": 95
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6378,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3188
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              191,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              191,
+              8,
+              128
+            ],
+            "target_query_length": 95,
+            "target_key_length": 95
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              32,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6378,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3188
+          }
+        ]
+      },
+      "first_attention": {
+        "query": {
+          "reference_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "36086f6fe0b1622f9b4abf799d5f9426e8cb346973097e2e70dec2b4a394cd0d",
+          "candidate_hash": "36086f6fe0b1622f9b4abf799d5f9426e8cb346973097e2e70dec2b4a394cd0d",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "key": {
+          "reference_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "fa09762af25beeaac2a0a11be01d9b28083d79a5ec1d2e72ec68f5ea36fe663a",
+          "candidate_hash": "fa09762af25beeaac2a0a11be01d9b28083d79a5ec1d2e72ec68f5ea36fe663a",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "value": {
+          "reference_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "2909389df49b494803b1e0173c31a9ebee6c411366c5d1720b30c96ff2c17436",
+          "candidate_hash": "2909389df49b494803b1e0173c31a9ebee6c411366c5d1720b30c96ff2c17436",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            95,
+            8,
+            128
+          ],
+          "compared_sequence_length": 95
+        },
+        "output": {
+          "reference_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "704a27f000dc58c531c104157c8bb4303608426f5075572e74df5da094f3c676",
+          "candidate_hash": "704a27f000dc58c531c104157c8bb4303608426f5075572e74df5da094f3c676",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            95,
+            32,
+            128
+          ],
+          "compared_sequence_length": 95
+        }
+      },
+      "flow_iterations": [
+        {
+          "label": "flow.input",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "e53c7cc4ec8f736405051ff1bde6ccf02f62daf097c01c8bddc1e55fbb48431a",
+          "candidate_hash": "e53c7cc4ec8f736405051ff1bde6ccf02f62daf097c01c8bddc1e55fbb48431a",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "e53c7cc4ec8f736405051ff1bde6ccf02f62daf097c01c8bddc1e55fbb48431a",
+          "candidate_hash": "e53c7cc4ec8f736405051ff1bde6ccf02f62daf097c01c8bddc1e55fbb48431a",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "70043d24c017a85ce178d3e3c665b6bc5b82bf9f3ede0f04bf5f1c00db2c06d3",
+          "candidate_hash": "70043d24c017a85ce178d3e3c665b6bc5b82bf9f3ede0f04bf5f1c00db2c06d3",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "70043d24c017a85ce178d3e3c665b6bc5b82bf9f3ede0f04bf5f1c00db2c06d3",
+          "candidate_hash": "70043d24c017a85ce178d3e3c665b6bc5b82bf9f3ede0f04bf5f1c00db2c06d3",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "56a29a7d4314fea063056cde974067ee1b4dde1a3bf36276cf110bbad8c8e8c4",
+          "candidate_hash": "56a29a7d4314fea063056cde974067ee1b4dde1a3bf36276cf110bbad8c8e8c4",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 5,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "56a29a7d4314fea063056cde974067ee1b4dde1a3bf36276cf110bbad8c8e8c4",
+          "candidate_hash": "56a29a7d4314fea063056cde974067ee1b4dde1a3bf36276cf110bbad8c8e8c4",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 6,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "5cbbe6e3b9949c984779947e3303cb8c33a7eb7726f4d5491268655021a1e254",
+          "candidate_hash": "5cbbe6e3b9949c984779947e3303cb8c33a7eb7726f4d5491268655021a1e254",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 7,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "5cbbe6e3b9949c984779947e3303cb8c33a7eb7726f4d5491268655021a1e254",
+          "candidate_hash": "5cbbe6e3b9949c984779947e3303cb8c33a7eb7726f4d5491268655021a1e254",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.timestep",
+          "call": 0,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 1,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 2,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 3,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 4,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 5,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 6,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 7,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.velocity",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "148a273abd4bca550ca4a9cf15117a956608f7c7bf514c676541e662b9b319ba",
+          "candidate_hash": "148a273abd4bca550ca4a9cf15117a956608f7c7bf514c676541e662b9b319ba",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "21cfb59051224d82f2d79c2908321f5238af291522aa5c8f76a4bff9777f5b80",
+          "candidate_hash": "21cfb59051224d82f2d79c2908321f5238af291522aa5c8f76a4bff9777f5b80",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "98661b38275d1fb8246db671fa796e6e6a87c4dbdceb135d2475d2bcea8d95df",
+          "candidate_hash": "98661b38275d1fb8246db671fa796e6e6a87c4dbdceb135d2475d2bcea8d95df",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "8e98335d05b1714522589944bb0c1c33b4a54eed1f1a0c8eecefbced6683606b",
+          "candidate_hash": "8e98335d05b1714522589944bb0c1c33b4a54eed1f1a0c8eecefbced6683606b",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "7209bef9ee3a2999990cbc6513c19ba57b1f3f77c6d7e552fc06c971055a50cd",
+          "candidate_hash": "7209bef9ee3a2999990cbc6513c19ba57b1f3f77c6d7e552fc06c971055a50cd",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 5,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "b870f101b8b2e5f07a37a7c62e5e763276146d387822aff60535940bb5272ddf",
+          "candidate_hash": "b870f101b8b2e5f07a37a7c62e5e763276146d387822aff60535940bb5272ddf",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 6,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "45923c5335b5df2140d142357c840726902363011960200b459b23e1f99c9d31",
+          "candidate_hash": "45923c5335b5df2140d142357c840726902363011960200b459b23e1f99c9d31",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 7,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "9d6be2489fa2724d93e91c42526dc5838a972d13208247fc445fd7b70a6f071d",
+          "candidate_hash": "9d6be2489fa2724d93e91c42526dc5838a972d13208247fc445fd7b70a6f071d",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        }
+      ],
+      "final_outputs": [
+        {
+          "path": "output.action",
+          "reference_shape": [
+            1,
+            32,
+            8
+          ],
+          "candidate_shape": [
+            1,
+            32,
+            8
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "1a99952f3c32d81796f419a6ce6aba23f52eafe41401ff82b629264e358db257",
+          "candidate_hash": "1a99952f3c32d81796f419a6ce6aba23f52eafe41401ff82b629264e358db257"
+        },
+        {
+          "path": "output.vision_latent",
+          "reference_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "candidate_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "18047efe8d3ab22ac31dbee920256815af9b9becde5534bb7394f63e973bf295",
+          "candidate_hash": "18047efe8d3ab22ac31dbee920256815af9b9becde5534bb7394f63e973bf295"
+        }
+      ],
+      "first_attention_profile": {
+        "batch_1": {
+          "aten_operators": [
+            "aten::_reshape_alias",
+            "aten::_to_copy",
+            "aten::as_strided",
+            "aten::bitwise_not",
+            "aten::cat",
+            "aten::clone",
+            "aten::copy_",
+            "aten::detach",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::empty_strided",
+            "aten::expand",
+            "aten::fill_",
+            "aten::flatten",
+            "aten::masked_fill",
+            "aten::masked_fill_",
+            "aten::mul",
+            "aten::narrow",
+            "aten::ones",
+            "aten::repeat_interleave",
+            "aten::reshape",
+            "aten::resolve_conj",
+            "aten::resolve_neg",
+            "aten::slice",
+            "aten::to",
+            "aten::transpose",
+            "aten::tril",
+            "aten::unsqueeze",
+            "aten::view",
+            "aten::zero_",
+            "aten::zeros"
+          ],
+          "cuda_kernels": [
+            "Memcpy DtoD (Device -> Device)",
+            "Memcpy DtoH (Device -> Pageable)",
+            "_softmax_kernel",
+            "bmm_kernel_persistent",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1})",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+            "void at::native::triu_tril_kernel<bool, int, false, 8, false>(at::cuda::detail::TensorInfo<bool, int>, at::cuda::detail::TensorInfo<bool const, int>, long, long, int)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<bool>, std::array<char*, 1ul> >(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul> >(int, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul>)"
+          ]
+        },
+        "batch_2": {
+          "aten_operators": [
+            "aten::_to_copy",
+            "aten::_unsafe_view",
+            "aten::as_strided",
+            "aten::bitwise_not",
+            "aten::cat",
+            "aten::clone",
+            "aten::copy_",
+            "aten::detach",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::empty_strided",
+            "aten::expand",
+            "aten::fill_",
+            "aten::flatten",
+            "aten::masked_fill",
+            "aten::masked_fill_",
+            "aten::mul",
+            "aten::narrow",
+            "aten::ones",
+            "aten::repeat_interleave",
+            "aten::reshape",
+            "aten::resolve_conj",
+            "aten::resolve_neg",
+            "aten::slice",
+            "aten::to",
+            "aten::transpose",
+            "aten::tril",
+            "aten::unsqueeze",
+            "aten::view",
+            "aten::zero_",
+            "aten::zeros"
+          ],
+          "cuda_kernels": [
+            "Memcpy DtoD (Device -> Device)",
+            "Memcpy DtoH (Device -> Pageable)",
+            "_softmax_kernel",
+            "bmm_kernel_persistent",
+            "void at::native::(anonymous namespace)::CatArrayBatchedCopy_vectorized<at::native::(anonymous namespace)::OpaqueType<2u>, unsigned int, 1, 128, 1, 16, 8>(char*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<2u>, unsigned int, 128, 1>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1})",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+            "void at::native::triu_tril_kernel<bool, int, false, 8, false>(at::cuda::detail::TensorInfo<bool, int>, at::cuda::detail::TensorInfo<bool const, int>, long, long, int)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<bool>, std::array<char*, 1ul> >(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul> >(int, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul>)"
+          ]
+        }
+      }
+    }
+  }
+}
