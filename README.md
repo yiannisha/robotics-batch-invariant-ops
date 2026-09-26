@@ -156,6 +156,10 @@ planned model families are not marked supported until their checks have run.
 DreamZero is recorded as blocked under the single-H100 constraint:
 its released PyTorch checkpoint is 45.85 GB and its official inference path
 requires at least two GPUs.
+DeVA is recorded as access-blocked: its official PyTorch inference is
+single-GPU, but the public post-training checkpoint still requires gated
+Cosmos-Predict2 base assets unavailable in this environment. See
+[`research/deva/constraint_audit.md`](research/deva/constraint_audit.md).
 
 The InternVLA rows use the official A1.5 PyTorch repository and public policy
 and Qwen3.5-2B safetensors directly. Both upstream action paths run ten
