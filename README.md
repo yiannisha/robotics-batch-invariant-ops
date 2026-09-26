@@ -158,6 +158,7 @@ Only configurations that have been executed end to end are marked PASS.
 | OpenVLA-OFT official PyTorch, public LIBERO-Spatial checkpoint and real inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | DexVLA official PyTorch classes, closest public complete checkpoint and real inputs | bfloat16 network, float32 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33 (64 OOM) | FAIL | PASS |
 | LingBot-VLA 2.0 official PyTorch, official RoboTwin checkpoint and real three-camera inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| BAAI UniVLA official PyTorch LIBERO image policy, official weights and real inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33 (64 OOM) | PASS actions / FAIL logits | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -293,6 +294,17 @@ B=2/B=4 checks. The real three-camera fixture conforms to the official
 RoboTwin transform but is not claimed as a distribution-matched task-success
 evaluation.
 
+The BAAI UniVLA row uses the authors' official PyTorch repository, complete
+official 8.49B-parameter LIBERO image-policy checkpoint, official Emu3 vision
+tokenizer, bundled FAST action tokenizer, and real two-camera LIBERO inputs.
+The released decoded 10x7 actions happen to remain exact through every feasible
+batch, but the underlying greedy decision scores are not batch-invariant: the
+first cached decode's bias-free 184,622-way LM head changes 151 logits at B=2,
+with maximum BF16 difference 0.0625. The existing invariant `mm` replacement
+makes every captured logit, token, and final action exact through B=33; B=64
+OOMs. Three target frames pass all B=2/B=4 action checks in both stock and
+invariant modes. The separately released video-SFT checkpoint was not tested.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -308,7 +320,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/smolvla`](research/smolvla), and OpenVLA-OFT evidence is in
 [`research/openvla_oft`](research/openvla_oft). DexVLA evidence is in
 [`research/dexvla`](research/dexvla), and LingBot-VLA 2.0 evidence is in
-[`research/lingbot_vla2`](research/lingbot_vla2). The earlier random-weight
+[`research/lingbot_vla2`](research/lingbot_vla2). BAAI UniVLA evidence is in
+[`research/univla_baai`](research/univla_baai). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -581,6 +594,17 @@ comparison, staged trace, three-target regression, and operator benchmark are
 `scripts/check_lingbot_vla2_multiple_inputs.py`, and
 `scripts/benchmark_lingbot_vla2_ops.py`.
 
+For BAAI UniVLA, use the official source, LIBERO image-policy checkpoint,
+Emu3 vision tokenizer, and real LIBERO fixture revisions recorded under
+`research/univla_baai`. Set `UNIVLA_CHECKPOINT`,
+`UNIVLA_VISION_TOKENIZER`, `UNIVLA_SOURCE`, and `UNIVLA_SAMPLE_DIR`, then run
+the generic harness with adapter
+`scripts.model_invariance.adapters.univla_baai`. The cached-decode trace,
+three-target regression, and actual LM-head benchmark are
+`scripts/trace_univla_baai_batch_invariance.py`,
+`scripts/check_univla_baai_multiple_inputs.py`, and
+`scripts/benchmark_univla_baai.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -662,6 +686,11 @@ action-expert MM is 4.49x, 3.02x, and 1.15x slower; action-attention BMM is
 2.52x, 3.22x, and 2.67x slower; and the dense deterministic MoE fallback is
 8.22x, 8.31x, and 14.04x slower than the released atomic kernel. See
 [`research/lingbot_vla2/benchmarks.json`](research/lingbot_vla2/benchmarks.json).
+
+For BAAI UniVLA on PyTorch 2.8.0/CUDA 12.8, invariant MM on the checkpoint's
+actual 4,096x184,622 autoregressive LM head is 1.47x, 1.38x, and 1.40x slower
+than stock at B=1, 2, and 8, with identical incremental output allocation. See
+[`research/univla_baai/benchmarks.json`](research/univla_baai/benchmarks.json).
 
 ## Attribution
 

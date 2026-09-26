@@ -1,0 +1,96 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 50,
+  "repetitions": 1000,
+  "cases": [
+    {
+      "operator": "univla_autoregressive_lm_head_mm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          1,
+          4096
+        ],
+        "right": [
+          4096,
+          184622
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_weight": "lm_head.weight"
+      },
+      "stock": {
+        "latency_ms": 0.8133770141601563,
+        "peak_incremental_bytes": 739328
+      },
+      "batch_invariant": {
+        "latency_ms": 1.193153564453125,
+        "peak_incremental_bytes": 739328
+      },
+      "latency_ratio": 1.4669133054922912,
+      "stock_samples_per_second": 1229.4421683805992,
+      "batch_invariant_samples_per_second": 838.1150840867195
+    },
+    {
+      "operator": "univla_autoregressive_lm_head_mm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          2,
+          4096
+        ],
+        "right": [
+          4096,
+          184622
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_weight": "lm_head.weight"
+      },
+      "stock": {
+        "latency_ms": 0.872694580078125,
+        "peak_incremental_bytes": 1477632
+      },
+      "batch_invariant": {
+        "latency_ms": 1.207623291015625,
+        "peak_incremental_bytes": 1477632
+      },
+      "latency_ratio": 1.3837868580638106,
+      "stock_samples_per_second": 2291.7525164656768,
+      "batch_invariant_samples_per_second": 1656.1456001051263
+    },
+    {
+      "operator": "univla_autoregressive_lm_head_mm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          8,
+          4096
+        ],
+        "right": [
+          4096,
+          184622
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_weight": "lm_head.weight"
+      },
+      "stock": {
+        "latency_ms": 0.8606995849609375,
+        "peak_incremental_bytes": 5908480
+      },
+      "batch_invariant": {
+        "latency_ms": 1.2066065673828126,
+        "peak_incremental_bytes": 5908480
+      },
+      "latency_ratio": 1.4018904952040543,
+      "stock_samples_per_second": 9294.764561043767,
+      "batch_invariant_samples_per_second": 6630.164476356517
+    }
+  ]
+}
