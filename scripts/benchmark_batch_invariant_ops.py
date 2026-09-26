@@ -14,6 +14,8 @@ import triton
 from batch_invariant_ops import (
     bmm_persistent,
     conv2d_batch_invariant,
+    matmul_persistent,
+    mean_dim,
     scaled_dot_product_attention_batch_invariant,
 )
 
@@ -116,6 +118,62 @@ def main() -> None:
             )
         )
         del images, conv_weight, conv_bias
+
+        # LeRobot PI0-FAST Gemma layer-0 prefill MLP down projection. The
+        # sequence dimension is flattened into M by torch.nn.Linear, so M
+        # changes from 969 to B*969 when requests are batched.
+        mlp_activations = torch.randn(
+            batch_size * 969,
+            16_384,
+            device="cuda",
+            dtype=dtype,
+            generator=generator,
+        )
+        down_weight = torch.randn(
+            2048,
+            16_384,
+            device="cuda",
+            dtype=dtype,
+            generator=generator,
+        )
+        down_weight_t = down_weight.t()
+        cases.append(
+            run_case(
+                "pi0fast_mlp_down_mm",
+                {
+                    "left": list(mlp_activations.shape),
+                    "right": list(down_weight_t.shape),
+                    "dtype": str(dtype),
+                },
+                lambda: torch.mm(mlp_activations, down_weight_t),
+                lambda: matmul_persistent(mlp_activations, down_weight_t),
+                batch_size=batch_size,
+                warmup=args.warmup,
+                repetitions=args.repetitions,
+            )
+        )
+        del mlp_activations, down_weight, down_weight_t
+
+        rms_values = torch.randn(
+            batch_size,
+            1,
+            2048,
+            device="cuda",
+            dtype=dtype,
+            generator=generator,
+        )
+        cases.append(
+            run_case(
+                "pi0fast_rms_mean",
+                {"input": list(rms_values.shape), "dim": -1, "dtype": str(dtype)},
+                lambda: torch.mean(rms_values, dim=-1, keepdim=True),
+                lambda: mean_dim(rms_values, dim=-1, keepdim=True),
+                batch_size=batch_size,
+                warmup=args.warmup,
+                repetitions=args.repetitions,
+            )
+        )
+        del rms_values
 
         heads, queries, tokens, head_dim = 8, 4, 281, 256
         left = torch.randn(

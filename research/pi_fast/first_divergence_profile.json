@@ -1,0 +1,83 @@
+{
+  "model": "lerobot-pi0fast-libero-public-weights",
+  "operation": "aten::mm",
+  "module": "language_model.layers.0.mlp.down_proj",
+  "dtype": "torch.bfloat16",
+  "b1_shape": [
+    [
+      969,
+      16384
+    ],
+    [
+      16384,
+      2048
+    ]
+  ],
+  "b2_shape": [
+    [
+      1938,
+      16384
+    ],
+    [
+      16384,
+      2048
+    ]
+  ],
+  "input_target_comparison": [
+    {
+      "path": "output",
+      "reference_shape": [
+        1,
+        969,
+        16384
+      ],
+      "candidate_shape": [
+        1,
+        969,
+        16384
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "2bb00c6486ff76e5556f88014c44a52289c643a7ba1f595799b6c26d464da97e",
+      "candidate_hash": "2bb00c6486ff76e5556f88014c44a52289c643a7ba1f595799b6c26d464da97e"
+    }
+  ],
+  "output_target_comparison": [
+    {
+      "path": "output",
+      "reference_shape": [
+        1,
+        969,
+        2048
+      ],
+      "candidate_shape": [
+        1,
+        969,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "differing_elements": 12305,
+      "max_abs_difference": 0.5,
+      "mean_abs_difference": 6.718917575199157e-05,
+      "first_differing_index": [
+        0,
+        0,
+        68
+      ],
+      "reference_hash": "e0f8238045c363dad91012e7b0b0cda5c2d2e717d352b5a64e1ac3b6d8995045",
+      "candidate_hash": "f2124754c04467230d46115ff959014ea5aba82d1f98b615582d42c1b91773a8"
+    }
+  ],
+  "stock_cuda_kernels_b1": [
+    "nvjet_tst_128x248_64x4_2x1_v_bz_coopA_splitK_TNT",
+    "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)"
+  ],
+  "stock_cuda_kernels_b2": [
+    "nvjet_tst_128x248_64x4_2x1_v_bz_coopA_TNT"
+  ]
+}

@@ -1,0 +1,9 @@
+repository: https://github.com/huggingface/lerobot
+commit: e595b7902714ba51f91e47523f66f89c5181b649
+implementation: src/lerobot/policies/pi0_fast
+package_version: 0.6.2
+
+Physical Intelligence does not publish a runnable PyTorch π0-FAST policy in
+OpenPI. This experiment therefore uses LeRobot's maintained open-source
+PyTorch implementation, a direct port designed to load LeRobot's public
+π0-FAST checkpoints. No JAX model or checkpoint conversion is involved.

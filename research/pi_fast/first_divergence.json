@@ -1,0 +1,37 @@
+{
+  "comparison": "target LIBERO frame 0 at B=1 versus the same target at unrelated B=2",
+  "module": "language_model.layers.0.mlp.down_proj",
+  "operation": "aten::mm",
+  "dtype": "torch.bfloat16",
+  "last_exact_tensor": {
+    "name": "down_proj.input",
+    "b1_shape": [969, 16384],
+    "b2_flattened_shape": [1938, 16384],
+    "target_shape": [1, 969, 16384],
+    "differing_elements": 0,
+    "max_abs_difference": 0.0,
+    "reference_hash": "2bb00c6486ff76e5556f88014c44a52289c643a7ba1f595799b6c26d464da97e",
+    "candidate_hash": "2bb00c6486ff76e5556f88014c44a52289c643a7ba1f595799b6c26d464da97e"
+  },
+  "first_non_identical_tensor": {
+    "name": "down_proj.output",
+    "target_shape": [1, 969, 2048],
+    "differing_elements": 12305,
+    "max_abs_difference": 0.5,
+    "mean_abs_difference": 0.00006718917575199157,
+    "first_differing_index": [0, 0, 68],
+    "reference_hash": "e0f8238045c363dad91012e7b0b0cda5c2d2e717d352b5a64e1ac3b6d8995045",
+    "candidate_hash": "f2124754c04467230d46115ff959014ea5aba82d1f98b615582d42c1b91773a8"
+  },
+  "profiled_stock_kernels": {
+    "b1_m969": [
+      "nvjet_tst_128x248_64x4_2x1_v_bz_coopA_splitK_TNT",
+      "cublasLt::splitKreduce_kernel"
+    ],
+    "b2_m1938": [
+      "nvjet_tst_128x248_64x4_2x1_v_bz_coopA_TNT"
+    ]
+  },
+  "root_cause": "torch.nn.Linear flattens request and sequence dimensions into GEMM M. cuBLASLt chooses a split-K NVJet GEMM plus a separate reduction for M=969, but a non-split-K NVJet GEMM for M=1938. The reduction arithmetic for the unchanged target rows therefore depends on request batch size.",
+  "replacement": "fixed-configuration persistent Triton GEMM registered for aten::mm"
+}

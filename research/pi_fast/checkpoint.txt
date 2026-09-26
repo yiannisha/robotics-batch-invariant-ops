@@ -1,0 +1,27 @@
+model_repository: https://huggingface.co/lerobot/pi0fast-libero
+model_repository_commit: 840f4b503f4c09110421c33c810a85b6684fd658
+format: PyTorch safetensors
+weights_file: model.safetensors
+weights_size_bytes: 7729830688
+weights_sha256: f1f8236d44016a533daba7b8249756e84df047f46e20ca17d3fc34d8f2f691ba
+config_size_bytes: 2319
+config_sha256: 742bd4fed667274e2a497b8d5fff34b968e1349f1d43c7dca22ffc2df41d9944
+normalization_sha256: a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9
+
+text_tokenizer_repository: https://huggingface.co/leo009/paligemma-3b-pt-224
+text_tokenizer_commit: 39996beb6fb17c5d16a50d3ef8f7a96ad9d03986
+reason_for_mirror: the checkpoint-configured Google tokenizer repository is gated; this public mirror has the required 257152-token vocabulary
+
+action_tokenizer_repository: https://huggingface.co/jadechoghari/tokenizer-lib-mean
+action_tokenizer_commit: 79ae83e3cbd8786dcb84b628569f8d076ca8151e
+
+dataset_repository: https://huggingface.co/datasets/lerobot/libero
+dataset_commit: a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4
+episode_data_file: data/chunk-000/file-000.parquet
+episode_data_sha256: 71e4088ce5877ba3234d0cde284c403f449ed560a656a2626e72fc2c3399502d
+camera_0_video_sha256: 77d59b50e309e2099e562e70806603a1bdb66b893efcaecc2534b2c9fa3e02ae
+camera_1_video_sha256: ba95edeb5190528b45364d7c8e518b7f12afa8ded72108e19a8349aa3f0a7d58
+tasks_sha256: 80bbbcdf623b7447c0f187af8ea70aa3a5c0018aaf56adba1731aeddcf18f5ff
+
+The public PyTorch checkpoint is loaded directly. No JAX weights were
+downloaded, converted, or used.

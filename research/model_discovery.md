@@ -1,4 +1,4 @@
-# Model discovery audit — 2026-09-25
+# Model discovery audit — 2026-09-26
 
 This audit records public candidates; it is not a support table. A model moves
 to the README support table only after end-to-end execution.
@@ -6,11 +6,11 @@ to the README support table only after end-to-end execution.
 ## Tier 1 updates
 
 - **OpenPI:** the current official repository exposes π0 and π0.5 PyTorch
-  implementations. Its README still lists π0-FAST as unsupported by the
-  PyTorch path, so π0-FAST needs the JAX implementation or a separate PyTorch
-  implementation. Public base and robot-specific checkpoints are listed in
-  the repository. Next target: official π0.5-DROID or π0.5-LIBERO after JAX to
-  PyTorch conversion.
+  implementations but still lists π0-FAST as unsupported by that path. The
+  maintained LeRobot repository now includes a direct PyTorch `pi0_fast` port
+  and public `lerobot/pi0fast-libero` PyTorch weights. That implementation has
+  now been executed through B=64 and added to the support table. No JAX code or
+  checkpoint conversion is needed or in scope.
 - **DreamZero:** the official repository now publishes DreamZero-DROID and
   DreamZero-AgiBot checkpoints, local distributed inference, DiT caching, and
   reports approximately three-second inference on H100. This is runnable in

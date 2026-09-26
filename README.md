@@ -123,6 +123,7 @@ Only configurations that have been executed end to end are marked PASS.
 |---|---:|---:|---:|---:|
 | π0 pre-fix PyTorch reference, random weights and synthetic inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | π0.5 `pi-zero-pytorch` reference, public `lerobot/pi05_base` weights and controlled synthetic inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| π0-FAST LeRobot PyTorch, public `lerobot/pi0fast-libero` weights and real LIBERO inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -131,14 +132,18 @@ and loads the public 14.47 GB PyTorch safetensors checkpoint directly. It runs
 all 10 integration time points (18 midpoint ODE evaluations) with explicit
 per-sample noise. Its deterministic inputs are synthetic, so the result is a
 learned-weight numerical inference regression rather than a policy-quality
-claim. π0-FAST, DreamZero, InternVLA-A, MolmoAct, GR00T, Cosmos, and the other
-planned model families are not yet marked supported.
+claim. The π0-FAST row uses LeRobot's maintained PyTorch implementation with
+real observations from the public LIBERO dataset. Stock inference changed the
+final action at B=3, 4, 5, and 7; the library was exact through B=64. DreamZero,
+InternVLA-A, MolmoAct, GR00T, Cosmos, and the other planned model families are
+not yet marked supported.
 
-Raw evidence is in [`research/pi0`](research/pi0) and
-[`research/pi05`](research/pi05), including environments, upstream commits,
-baseline/fixed hashes, first-divergence diagnostics, iteration notes, and
-operator benchmarks. The earlier random-weight official OpenPI architecture
-experiment is retained separately in
+Raw evidence is in [`research/pi0`](research/pi0),
+[`research/pi05`](research/pi05), and
+[`research/pi_fast`](research/pi_fast), including environments, upstream
+commits, baseline/fixed hashes, first-divergence diagnostics, multiple-input
+checks, iteration notes, and operator benchmarks. The earlier random-weight
+official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row.
 
@@ -186,6 +191,31 @@ Omit `--batch-invariant-ops` and write to `baseline.json` for the stock CUDA
 comparison. The adapter copies tensors directly from safetensors into the
 model, so it does not create a second 14 GB converted checkpoint.
 
+For π0-FAST, check out the LeRobot commit and download the pinned public model,
+tokenizers, and LIBERO episode-zero files recorded in
+[`research/pi_fast/checkpoint.txt`](research/pi_fast/checkpoint.txt). Extract
+the first 64 frames from each camera video with ffmpeg into `frames/image_%03d.png`
+and `frames/image2_%03d.png`, then run:
+
+```bash
+mkdir -p /path/to/libero-episode-zero/frames
+ffmpeg -i /path/to/image/file-000.mp4 -frames:v 64 \
+  /path/to/libero-episode-zero/frames/image_%03d.png
+ffmpeg -i /path/to/image2/file-000.mp4 -frames:v 64 \
+  /path/to/libero-episode-zero/frames/image2_%03d.png
+
+LEROBOT_PI0FAST_CHECKPOINT=/path/to/pi0fast-libero \
+LEROBOT_PI0FAST_SAMPLE_DIR=/path/to/libero-episode-zero \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.lerobot_pi0fast \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/pi_fast/fixed.json
+```
+
+Use `scripts/trace_pi0fast_batch_invariance.py` for layer-boundary hashes and
+`scripts/check_pi0fast_multiple_inputs.py` for the three-target regression.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -200,6 +230,11 @@ patch Conv2d replacement was 3.53–12.02× slower across B=1, 8, and 32. The
 explicit SigLIP QK BMM replacement was 1.28–1.75× slower and its
 attention-value BMM was 1.35–2.75× slower. See
 [`research/pi05/benchmarks.json`](research/pi05/benchmarks.json).
+
+For π0-FAST on PyTorch 2.8.0/CUDA 12.8, the invariant layer-0 MLP down GEMM
+was 1.17–1.39× slower across B=1, 2, and 8. The invariant RMS mean took about
+0.030–0.036 ms versus 0.007–0.009 ms for stock. See
+[`research/pi_fast/benchmarks.json`](research/pi_fast/benchmarks.json).
 
 ## Attribution
 
