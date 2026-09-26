@@ -1,0 +1,51 @@
+{
+  "model": "wsa-base-official-pytorch-libero",
+  "seed": 0,
+  "official_equivalent": true,
+  "checks": [
+    {
+      "composition": "single",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "c668e6961c8f9421696ebbfb682cd939bb4a61ffc744cfb938c8d795e06b8979",
+      "candidate_hash": "c668e6961c8f9421696ebbfb682cd939bb4a61ffc744cfb938c8d795e06b8979"
+    },
+    {
+      "composition": "unrelated_b2",
+      "path": "output",
+      "reference_shape": [
+        2,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        2,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "6cc43f7a81df616752f6416977ed75a38265e575e3851c773851a1121a027dc2",
+      "candidate_hash": "6cc43f7a81df616752f6416977ed75a38265e575e3851c773851a1121a027dc2"
+    }
+  ]
+}

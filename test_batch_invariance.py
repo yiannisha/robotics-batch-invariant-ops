@@ -96,6 +96,31 @@ def test_linear_matches_torch(dtype: torch.dtype) -> None:
     )
 
 
+def test_openhelix_projector_linear_shape_is_batch_invariant() -> None:
+    generator = torch.Generator(device="cuda").manual_seed(2750)
+    inputs = torch.randn(
+        2,
+        256,
+        1024,
+        device="cuda",
+        dtype=torch.bfloat16,
+        generator=generator,
+    )
+    weight = torch.randn(
+        4096,
+        1024,
+        device="cuda",
+        dtype=torch.bfloat16,
+        generator=generator,
+    )
+    bias = torch.randn(4096, device="cuda", dtype=torch.bfloat16, generator=generator)
+
+    _assert_first_sample_equal(
+        linear_batch_invariant(inputs[:1], weight, bias),
+        linear_batch_invariant(inputs, weight, bias),
+    )
+
+
 @pytest.mark.parametrize("dtype", DTYPES)
 @pytest.mark.parametrize("batch_size", (2, 3, 5, 17))
 def test_bmm_is_batch_invariant(dtype: torch.dtype, batch_size: int) -> None:

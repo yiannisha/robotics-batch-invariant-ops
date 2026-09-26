@@ -106,6 +106,29 @@ to the README support table only after end-to-end execution.
   CLIP attention boundary; the model additionally exposed direct rank-3
   `aten::linear`, now covered by a generic invariant implementation. The full
   25-step action path is in the support table.
+- **WSA:** the official PyTorch WSA Base causal policy and complete public
+  LIBERO checkpoint have now been executed through B=64 with real inputs. The
+  checkpoint contains its full learned Qwen3-VL/action stack; no conversion is
+  involved. Stock fails every B above one. Generic rank-3 linear and fixed-tree
+  mean repairs make all ten flow steps and final actions exact, so it is now in
+  the support table.
+- **VITRA:** Microsoft publishes an official PyTorch implementation and public
+  3B checkpoint (`VITRA-VLA/VITRA-VLA-3B`, approximately 15.1 GB). Its stated
+  inference requirement fits one H100. Status: runnable candidate, not yet a
+  support claim.
+- **OpenDW / DW05:** Dexmal publishes native PyTorch world-action code and a
+  public RoboTwin checkpoint with both action and video components. The bundled
+  policy, text encoder, and VAE total approximately 26 GB. Status: runnable
+  candidate, not yet a support claim.
+- **OpenWAM:** the authors publish native PyTorch code and public checkpoints
+  for the 2026-09 world-action release. Status: runnable candidate, not yet a
+  support claim.
+- **G0.5:** official PyTorch source and a public model page exist, but the
+  checkpoint requires accepting a contact-information agreement unavailable
+  in this environment. Status: access-blocked until credentials are supplied.
+- **PoseVLA:** the public route advertises a JAX-to-PyTorch conversion script
+  rather than a native PyTorch release. It is out of scope under the explicit
+  PyTorch-only rule unless a native checkpoint is published.
 
 ## Primary sources
 
@@ -130,3 +153,8 @@ to the README support table only after end-to-end execution.
 - https://huggingface.co/robotics-diffusion-transformer/maniskill-model
 - https://github.com/microsoft/CogACT
 - https://github.com/OpenHelix-Team/OpenHelix
+- https://github.com/zaleni/WSA
+- https://github.com/microsoft/VITRA
+- https://github.com/dexmal/OpenDW
+- https://github.com/OpenWAM-Official/OpenWAM
+- https://huggingface.co/OpenGalaxea/G05

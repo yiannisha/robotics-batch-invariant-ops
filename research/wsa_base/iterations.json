@@ -1,0 +1,805 @@
+{
+  "model": "wsa-base-official-pytorch-libero",
+  "seed": 0,
+  "comparison": "target LIBERO frame 0 at B=1 versus unrelated B=2",
+  "stock_first_divergence": {
+    "module": "und_expert.layers.0.mlp.down_proj",
+    "operator": "aten::linear",
+    "input_shape": [
+      1,
+      246,
+      6144
+    ],
+    "weight_shape": [
+      2048,
+      6144
+    ],
+    "boundaries": {
+      "und.layer0.gate_proj": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          246,
+          6144
+        ],
+        "candidate_shape": [
+          1,
+          246,
+          6144
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "da784db0ee020a77231f3e3db24d24b56f6c2d998e378feb3e537f3e62437cd4",
+        "candidate_hash": "da784db0ee020a77231f3e3db24d24b56f6c2d998e378feb3e537f3e62437cd4"
+      },
+      "und.layer0.up_proj": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          246,
+          6144
+        ],
+        "candidate_shape": [
+          1,
+          246,
+          6144
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "e1d3540b8518565f6f4602dc7a3c0e3ffee92debd739ce3378b511ab66029092",
+        "candidate_hash": "e1d3540b8518565f6f4602dc7a3c0e3ffee92debd739ce3378b511ab66029092"
+      },
+      "und.layer0.down_proj.input": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          246,
+          6144
+        ],
+        "candidate_shape": [
+          1,
+          246,
+          6144
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "2e2878024bffc7995e97695f7122da70f34f6c8106505e8dd80f59ee22380c20",
+        "candidate_hash": "2e2878024bffc7995e97695f7122da70f34f6c8106505e8dd80f59ee22380c20"
+      },
+      "und.layer0.down_proj.output": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          246,
+          2048
+        ],
+        "candidate_shape": [
+          1,
+          246,
+          2048
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": false,
+        "differing_elements": 1500,
+        "max_abs_difference": 0.015625,
+        "mean_abs_difference": 1.1853970818265225e-06,
+        "first_differing_index": [
+          0,
+          0,
+          394
+        ],
+        "reference_hash": "e3942e7d451ceb4be62b22caf008a5d13652a3e864739de952312648a8b76c6d",
+        "candidate_hash": "564856b9646f48abcd9b54e4abd16cd08cfba97c197a1739b85e2fa9866148f1"
+      },
+      "final_action": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          10,
+          7
+        ],
+        "candidate_shape": [
+          1,
+          10,
+          7
+        ],
+        "dtype": "torch.float32",
+        "exact": false,
+        "differing_elements": 70,
+        "max_abs_difference": 0.0030884146690368652,
+        "mean_abs_difference": 0.0003863773017656058,
+        "first_differing_index": [
+          0,
+          0,
+          0
+        ],
+        "reference_hash": "c668e6961c8f9421696ebbfb682cd939bb4a61ffc744cfb938c8d795e06b8979",
+        "candidate_hash": "ca8a4c015f7c0143ed49089abf4543fea501efa55af3c08701189eb07836f128"
+      }
+    }
+  },
+  "next_divergence_after_linear_repair": {
+    "module": "act_expert.layers.0.post_attention_layernorm",
+    "operator": "aten::mean.dim",
+    "reduction_shape": [
+      1,
+      11,
+      1024
+    ],
+    "boundaries": {
+      "act.layer0.post_norm.input": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          11,
+          1024
+        ],
+        "candidate_shape": [
+          1,
+          11,
+          1024
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": true,
+        "differing_elements": 0,
+        "max_abs_difference": 0.0,
+        "mean_abs_difference": 0.0,
+        "first_differing_index": null,
+        "reference_hash": "323764edb0d550b555cc5934b474c62c062bf6d21fa4de2d35b88bda94372cdd",
+        "candidate_hash": "323764edb0d550b555cc5934b474c62c062bf6d21fa4de2d35b88bda94372cdd"
+      },
+      "act.layer0.post_norm.output": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          11,
+          1024
+        ],
+        "candidate_shape": [
+          1,
+          11,
+          1024
+        ],
+        "dtype": "torch.bfloat16",
+        "exact": false,
+        "differing_elements": 2,
+        "max_abs_difference": 0.00390625,
+        "mean_abs_difference": 3.901394904914923e-07,
+        "first_differing_index": [
+          0,
+          10,
+          766
+        ],
+        "reference_hash": "e934ac1fdc6d33545b57caf5e1e058b9151b328af62ae00cd02d0ef026702e66",
+        "candidate_hash": "16aa4d3bd2474821e605e8bd2eccdd11578f3a2037dbbf6649a118fbae3ac508"
+      },
+      "final_action": {
+        "path": "output",
+        "reference_shape": [
+          1,
+          10,
+          7
+        ],
+        "candidate_shape": [
+          1,
+          10,
+          7
+        ],
+        "dtype": "torch.float32",
+        "exact": false,
+        "differing_elements": 70,
+        "max_abs_difference": 0.001858830451965332,
+        "mean_abs_difference": 0.0003238944918848574,
+        "first_differing_index": [
+          0,
+          0,
+          0
+        ],
+        "reference_hash": "c550443594d30c54c5c607f0ecedd7324c727c1a637b833fc5a583b8ac442c05",
+        "candidate_hash": "342dffcae8b3fe30334196710776188f62fc5922c38125282245863d26384139"
+      }
+    }
+  },
+  "minimal_linear_mean_repair": {
+    "final_action": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "d56a8a15aa0810bd1756412b86151d321eada49eb2aa8a910372605240c7dabe",
+      "candidate_hash": "d56a8a15aa0810bd1756412b86151d321eada49eb2aa8a910372605240c7dabe"
+    }
+  },
+  "full_library_trace": {
+    "preprocess.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "ce2dc85c2e6f38d55937fb704522bf24810c72721ea8c2df7c27e156ea4c6f66",
+      "candidate_hash": "ce2dc85c2e6f38d55937fb704522bf24810c72721ea8c2df7c27e156ea4c6f66"
+    },
+    "input.noise": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "74af01448940ddd072f463455223597b1b07bf8d311423e3abc7589ad0ee61ee",
+      "candidate_hash": "74af01448940ddd072f463455223597b1b07bf8d311423e3abc7589ad0ee61ee"
+    },
+    "prefix.embeddings": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        246,
+        2048
+      ],
+      "candidate_shape": [
+        1,
+        246,
+        2048
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "930856871c75ee0772f8a1547094720096fdd95f88a0e624ba0856c241e5865f",
+      "candidate_hash": "930856871c75ee0772f8a1547094720096fdd95f88a0e624ba0856c241e5865f"
+    },
+    "middle.query_embeddings": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        432,
+        1024
+      ],
+      "candidate_shape": [
+        1,
+        432,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "3924a10aaa70031ae33a3ef63f2e143f6517ffe695e836f21a6f91b9ad8aa9b6",
+      "candidate_hash": "3924a10aaa70031ae33a3ef63f2e143f6517ffe695e836f21a6f91b9ad8aa9b6"
+    },
+    "flow.step_00.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "7d07bcb6694e0aa0dc0fbbc60d3c8587f7096833aca2984780d50ca1ba80bd85",
+      "candidate_hash": "7d07bcb6694e0aa0dc0fbbc60d3c8587f7096833aca2984780d50ca1ba80bd85"
+    },
+    "flow.step_00.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "4a51a7155e99a80058482d0170df99f9d6eb4cc372baf2b80a981e7b239061cf",
+      "candidate_hash": "4a51a7155e99a80058482d0170df99f9d6eb4cc372baf2b80a981e7b239061cf"
+    },
+    "flow.step_01.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "866b9e4de737cf5bacab8d897e5a3be8fd40e64fdcac2204386a8a21eb60ad38",
+      "candidate_hash": "866b9e4de737cf5bacab8d897e5a3be8fd40e64fdcac2204386a8a21eb60ad38"
+    },
+    "flow.step_01.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e0bcb622d776ad6912db91df6dd9ff8e95bdd0194297fa625d268d03c133bb45",
+      "candidate_hash": "e0bcb622d776ad6912db91df6dd9ff8e95bdd0194297fa625d268d03c133bb45"
+    },
+    "flow.step_02.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "778f8064c6ab0dff21f0877743b601c2ff9168ff8b6d3841acd1bd6ce9fe53f4",
+      "candidate_hash": "778f8064c6ab0dff21f0877743b601c2ff9168ff8b6d3841acd1bd6ce9fe53f4"
+    },
+    "flow.step_02.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "d9ac6780b9b9133244568de5fede3f06f5b35f2a30b2767d4e4efbceb8a462ca",
+      "candidate_hash": "d9ac6780b9b9133244568de5fede3f06f5b35f2a30b2767d4e4efbceb8a462ca"
+    },
+    "flow.step_03.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "3a6b9364154a4be609b2db5f8623901537c0d88bffa19da6e82e696a48c833ea",
+      "candidate_hash": "3a6b9364154a4be609b2db5f8623901537c0d88bffa19da6e82e696a48c833ea"
+    },
+    "flow.step_03.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e10f92ad01824e51aca0a1a5fe11f53fdcdd4b81a0c26b5753e3303537112d33",
+      "candidate_hash": "e10f92ad01824e51aca0a1a5fe11f53fdcdd4b81a0c26b5753e3303537112d33"
+    },
+    "flow.step_04.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "4ea72fd7f25a8a329666c3b7bc554c24fa73aa3301e9fc58924b1b4321b5368b",
+      "candidate_hash": "4ea72fd7f25a8a329666c3b7bc554c24fa73aa3301e9fc58924b1b4321b5368b"
+    },
+    "flow.step_04.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e2f7e9ddb389e809e43a6ee28ce37cda64b7705c6463da617693877076e8669e",
+      "candidate_hash": "e2f7e9ddb389e809e43a6ee28ce37cda64b7705c6463da617693877076e8669e"
+    },
+    "flow.step_05.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "465f5a2c27cf4247a8b2bd99fd109a3c011647a0843d4544203f343bf0002ff7",
+      "candidate_hash": "465f5a2c27cf4247a8b2bd99fd109a3c011647a0843d4544203f343bf0002ff7"
+    },
+    "flow.step_05.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "d9d0f64371b284ca0716d3cab6f1965943ec5d580037a5bcc1f7321e72ce8900",
+      "candidate_hash": "d9d0f64371b284ca0716d3cab6f1965943ec5d580037a5bcc1f7321e72ce8900"
+    },
+    "flow.step_06.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e17e2c346954372bcc6ea74427d42b92960009d120b98e28077875b82db76cba",
+      "candidate_hash": "e17e2c346954372bcc6ea74427d42b92960009d120b98e28077875b82db76cba"
+    },
+    "flow.step_06.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "a788967dd7e504de7c29581adccccb34026d41a275870bac81d078f00355994a",
+      "candidate_hash": "a788967dd7e504de7c29581adccccb34026d41a275870bac81d078f00355994a"
+    },
+    "flow.step_07.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "64d5663dfe2d46f00896b81725dd26bde98d26a653841bcac3d416bfe1006746",
+      "candidate_hash": "64d5663dfe2d46f00896b81725dd26bde98d26a653841bcac3d416bfe1006746"
+    },
+    "flow.step_07.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "211a02b4b5e11c9b204a89f11876c0d78c41b7269b3383525ecf6a205e3b4319",
+      "candidate_hash": "211a02b4b5e11c9b204a89f11876c0d78c41b7269b3383525ecf6a205e3b4319"
+    },
+    "flow.step_08.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "283ade589997eca1f1733920fcfb711b568a2d7f70a8f9be1dd5bd857b36235c",
+      "candidate_hash": "283ade589997eca1f1733920fcfb711b568a2d7f70a8f9be1dd5bd857b36235c"
+    },
+    "flow.step_08.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "fa6cc86f28a00c17ec79b5efee154955937a5dffd573c3210afeeb4db5b04002",
+      "candidate_hash": "fa6cc86f28a00c17ec79b5efee154955937a5dffd573c3210afeeb4db5b04002"
+    },
+    "flow.step_09.velocity": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "4ae51f5b17c76ad3969946b3afaa5fd6323ee83ac388faf11e76fd547507adcf",
+      "candidate_hash": "4ae51f5b17c76ad3969946b3afaa5fd6323ee83ac388faf11e76fd547507adcf"
+    },
+    "flow.step_09.state": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        32
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        32
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "806776f44a442faf25d0936e1139f9300d529dba449fabd54277689ccd036f11",
+      "candidate_hash": "806776f44a442faf25d0936e1139f9300d529dba449fabd54277689ccd036f11"
+    },
+    "actions.normalized": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "34f537360a430732ec928ff4aaf5bbd6c3fe7f3253abe03108afc02bae94c58b",
+      "candidate_hash": "34f537360a430732ec928ff4aaf5bbd6c3fe7f3253abe03108afc02bae94c58b"
+    },
+    "actions.unnormalized": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "2b33488a6ca90e7223dc21cc6cb75df66c54cb59aff2e2164123e0b51d2f5174",
+      "candidate_hash": "2b33488a6ca90e7223dc21cc6cb75df66c54cb59aff2e2164123e0b51d2f5174"
+    },
+    "final_action": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "2b33488a6ca90e7223dc21cc6cb75df66c54cb59aff2e2164123e0b51d2f5174",
+      "candidate_hash": "2b33488a6ca90e7223dc21cc6cb75df66c54cb59aff2e2164123e0b51d2f5174"
+    }
+  }
+}

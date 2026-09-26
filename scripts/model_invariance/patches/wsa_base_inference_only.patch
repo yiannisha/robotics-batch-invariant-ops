@@ -1,0 +1,50 @@
+diff --git a/src/lerobot/policies/WSA_Base/modeling_wsa_base.py b/src/lerobot/policies/WSA_Base/modeling_wsa_base.py
+index e0e028c..4d5a78b 100644
+--- a/src/lerobot/policies/WSA_Base/modeling_wsa_base.py
++++ b/src/lerobot/policies/WSA_Base/modeling_wsa_base.py
+@@ -427,12 +427,10 @@ class Qwen3VLWithExpertModel(
+         vlm_config_hf.vision_config.intermediate_size=4096
+         vlm_config_hf.vision_config.out_hidden_size=2048
+ 
+-        # self.und_expert = Qwen3VLForConditionalGeneration(config=vlm_config_hf)
+-        self.und_expert = Qwen3VLForConditionalGeneration.from_pretrained(
+-            qwen3_vl_pretrained_path,
+-            config=vlm_config_hf,
+-            ignore_mismatched_sizes=False
+-        )
++        # The released WSA checkpoint contains the complete Qwen3-VL backbone.
++        # Construct the architecture without downloading redundant base weights;
++        # ``WSABasePolicy.from_pretrained`` fills every learned tensor below.
++        self.und_expert = Qwen3VLForConditionalGeneration(config=vlm_config_hf)
+ 
+         gen_expert_config_hf = CONFIG_MAPPING["qwen3_vl_text"]()
+         gen_expert_config_hf.head_dim=action_expert_config.head_dim
+diff --git a/src/lerobot/policies/__init__.py b/src/lerobot/policies/__init__.py
+index 010c0cf..a56b3c6 100644
+--- a/src/lerobot/policies/__init__.py
++++ b/src/lerobot/policies/__init__.py
+@@ -12,22 +12,10 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-from .InternVLA_A1_3B.configuration_internvla_a1 import QwenA1Config as QwenA1Config
+-from .InternVLA_A1_2B.configuration_internvla_a1 import InternA1Config as InternA1Config
+-from .qwenaction.configuration_qwenaction import QwenActionConfig as QwenActionConfig
++# Keep the inference-only WSA environment independent of optional dependencies
++# used by the repository's other policy families.
+ from .WSA_Base.configuration_wsa_base import WSABaseConfig as WSABaseConfig
+-from .fastwam.configuration_fastwam import FastWAMConfig as FastWAMConfig
+-from .WSA_Large.configuration_wsa_large import WSALargeConfig as WSALargeConfig
+-from .pi0.configuration_pi0 import PI0Config as PI0Config
+-from .pi05.configuration_pi05 import PI05Config as PI05Config
+ 
+ __all__ = [
+-    "QwenA1Config", 
+-    "InternA1Config", 
+-    "QwenActionConfig",
+     "WSABaseConfig",
+-    "FastWAMConfig",
+-    "WSALargeConfig",
+-    "PI0Config",
+-    "PI05Config",
+ ]

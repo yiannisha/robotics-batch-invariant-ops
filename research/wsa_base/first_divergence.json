@@ -1,0 +1,28 @@
+{
+  "model": "wsa-base-official-pytorch-libero",
+  "comparison": "target LIBERO frame 0 at B=1 versus unrelated B=2",
+  "stock": {
+    "first_divergent_module": "und_expert.layers.0.mlp.down_proj",
+    "operator": "aten::linear",
+    "input_shape": [1, 246, 6144],
+    "weight_shape": [2048, 6144],
+    "input_exact": true,
+    "output_exact": false,
+    "output_differing_elements": 1500,
+    "output_max_abs_difference": 0.015625
+  },
+  "after_linear_repair": {
+    "next_divergent_module": "act_expert.layers.0.post_attention_layernorm",
+    "operator": "aten::mean.dim",
+    "reduction_shape": [1, 11, 1024],
+    "input_exact": true,
+    "output_exact": false,
+    "output_differing_elements": 2,
+    "output_max_abs_difference": 0.00390625
+  },
+  "after_linear_and_mean_repair": {
+    "final_action_exact": true,
+    "final_action_differing_elements": 0
+  },
+  "details": "iterations.json"
+}

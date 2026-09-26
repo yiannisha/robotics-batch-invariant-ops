@@ -147,6 +147,8 @@ rank-3 `torch.matmul` dispatches `aten::bmm`.
 ## Robotics model status
 
 Only configurations that have been executed end to end are marked PASS.
+Regenerate the evidence-backed console summary with
+`python scripts/summarize_model_results.py`.
 
 | Model configuration | Precision | Batch sizes | Baseline | With this library |
 |---|---:|---:|---:|---:|
@@ -171,6 +173,7 @@ Only configurations that have been executed end to end are marked PASS.
 | RDT-1B official PyTorch ManiSkill policy, official weights/task embedding and real image fixtures | bfloat16 network, float32 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | CogACT-Small official PyTorch, official checkpoint/example and released batch path | bfloat16 VLM, float32 DiT-S, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | OpenHelix official PyTorch CALVIN policy, official checkpoint and real CALVIN observations | bfloat16 planner, float32 diffusion policy/actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| WSA Base official PyTorch LIBERO policy, official checkpoint and real inputs | bfloat16 network, float32 flow/actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -365,6 +368,18 @@ rank-3 `aten::linear`. The new generic linear override makes the complete
 planner, policy encoder, all 25 diffusion steps, and final 19x7 absolute action
 exact through B=64. Three real CALVIN targets pass all B=2/B=4 checks.
 
+The WSA Base row uses the authors' official PyTorch source, complete public
+`zaleni/WSA-Base-LIBERO` safetensors, frozen Cosmos CI8x8 tokenizer, and real
+two-camera LIBERO observations. The checkpoint key audit accounts for every
+learned tensor; Qwen assets outside the checkpoint are metadata and processors
+only. Stock fails every B above one. The first boundary is the understanding
+expert's layer-0 MLP `aten::linear`; after linear repair, the action expert's
+layer-0 RMSNorm `aten::mean.dim` is next. The reusable linear and fixed-tree
+mean paths make all ten explicit-noise flow steps and the final 10x7 action
+exact through B=64. Three real targets pass duplicate and unrelated B=2/B=4
+checks, and the traced adapter matches the released sampler exactly at B=1 and
+unrelated B=2.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -385,7 +400,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/spatialvla`](research/spatialvla). RDT-1B evidence is in
 [`research/rdt_1b`](research/rdt_1b), and CogACT-Small evidence is in
 [`research/cogact_small`](research/cogact_small). OpenHelix evidence is in
-[`research/openhelix`](research/openhelix). The earlier random-weight
+[`research/openhelix`](research/openhelix), and WSA Base evidence is in
+[`research/wsa_base`](research/wsa_base). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -729,6 +745,33 @@ regression, and actual-projector benchmark are
 `scripts/check_openhelix_multiple_inputs.py`, and
 `scripts/benchmark_openhelix_ops.py`.
 
+For WSA Base, check out the pinned official source, apply
+`scripts/model_invariance/patches/wsa_base_inference_only.patch`, install
+Transformers 4.57.1, and apply the Qwen3-VL replacement bundled under the
+source's `transformers_replace` directory as instructed upstream. Download the
+pinned WSA checkpoint, Qwen metadata/processor files, Cosmos CI8x8 tokenizer,
+and public LIBERO fixture recorded under `research/wsa_base`, then run:
+
+```bash
+WSA_SOURCE=/path/to/WSA \
+WSA_CHECKPOINT=/path/to/WSA-Base-LIBERO \
+WSA_QWEN_METADATA=/path/to/Qwen3-VL-2B-Instruct-metadata \
+WSA_COSMOS_TOKENIZER=/path/to/Cosmos-Tokenizer-CI8x8 \
+WSA_SAMPLE_DIR=/path/to/libero-episode-zero \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.wsa_base_libero \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/wsa_base/fixed.json
+```
+
+The staged per-step trace, official-sampler equivalence check, three-target
+regression, and actual-shape operator benchmark are
+`scripts/trace_wsa_base_batch_invariance.py`,
+`scripts/check_wsa_base_official_equivalence.py`,
+`scripts/check_wsa_base_multiple_inputs.py`, and
+`scripts/benchmark_wsa_base_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -832,6 +875,17 @@ For CogACT-Small on the same environment, invariant DINO block-0 SDPA is
 3.17x, 8.87x, and 5.42x slower than stock at B=1, 2, and 8. Invariant Llama
 layer-0 MLP down-projection MM is 2.30x, 2.16x, and 1.36x slower. See
 [`research/cogact_small/benchmarks.json`](research/cogact_small/benchmarks.json).
+
+For OpenHelix on PyTorch 2.8.0/CUDA 12.8, invariant rank-3 linear on the
+actual multimodal projector is 2.96x, 2.51x, and 1.08x slower than stock at
+B=1, 2, and 8. See
+[`research/openhelix/benchmarks.json`](research/openhelix/benchmarks.json).
+
+For WSA Base in the same environment, invariant linear on the actual
+`[B,246,6144]` understanding-expert MLP input is 1.98x, 1.87x, and 1.41x
+slower than stock at B=1, 2, and 8. Its invariant action-expert RMS mean is
+3.67x, 3.58x, and 3.68x slower. See
+[`research/wsa_base/benchmarks.json`](research/wsa_base/benchmarks.json).
 
 ## Attribution
 

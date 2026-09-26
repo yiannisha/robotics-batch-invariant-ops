@@ -1,0 +1,9 @@
+repository: https://github.com/zaleni/WSA
+commit: bfee742c585d5ee85722e658978111934c926ca3
+implementation: official PyTorch WSA Base / TBot_SA1 LIBERO policy
+
+The inference-only compatibility patch is recorded at
+scripts/model_invariance/patches/wsa_base_inference_only.patch. It avoids eager
+imports of unrelated policy families and constructs Qwen3-VL from config before
+the complete released WSA safetensors overwrite every learned tensor. No JAX
+source, checkpoint, or conversion is used.
