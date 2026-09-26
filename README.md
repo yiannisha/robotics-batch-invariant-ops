@@ -149,6 +149,7 @@ Only configurations that have been executed end to end are marked PASS.
 | UVA official PyTorch action-only LIBERO-10, public checkpoint and real inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31 (duplicate) | FAIL | PASS |
 | UVA official PyTorch joint video/action LIBERO-10, decoded RGB output | float32 | 1, 2 | FAIL | PASS |
 | SmolVLA maintained LeRobot PyTorch, public LIBERO checkpoint and real inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| OpenVLA-OFT official PyTorch, public LIBERO-Spatial checkpoint and real inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -248,6 +249,15 @@ connector's `aten::mm`. With MM alone repaired, the state projection's
 `aten::addmm` is next. The generic MM/addmm paths make the complete 50x7 action
 chunk exact through B=64, and three target frames pass all B=2/B=4 checks.
 
+The OpenVLA-OFT row uses the authors' official PyTorch implementation,
+official bidirectional-attention Transformers fork, complete public
+LIBERO-Spatial checkpoint, and real two-camera observations. Stock fails every
+batch above one. Its first divergence is DINO block 0, where B=1 selects
+split-K flash SDPA and B=2 selects a different non-split flash kernel. With
+SDPA repaired, the wide continuous action-head `aten::addmm` is the next
+boundary. The existing generic SDPA and MM/addmm paths make the complete 8x7
+action chunk exact through B=64. Three target frames pass all B=2/B=4 checks.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -259,8 +269,9 @@ multiple-input checks, iteration notes, and operator benchmarks. MolmoAct2 evide
 [`research/cosmos3_nano`](research/cosmos3_nano), and Cosmos 3 Edge evidence
 is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/xvla`](research/xvla), UVA evidence is in
-[`research/uva`](research/uva), and SmolVLA evidence is in
-[`research/smolvla`](research/smolvla). The earlier random-weight
+[`research/uva`](research/uva), SmolVLA evidence is in
+[`research/smolvla`](research/smolvla), and OpenVLA-OFT evidence is in
+[`research/openvla_oft`](research/openvla_oft). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -502,6 +513,15 @@ three-target regression, and connector benchmark are
 `scripts/check_lerobot_smolvla_multiple_inputs.py`, and
 `scripts/benchmark_lerobot_smolvla_ops.py`.
 
+For OpenVLA-OFT, use the official LIBERO-Spatial checkpoint and pinned source
+commits under `research/openvla_oft`. Apply the PyTorch-inference-only import
+patch in `scripts/model_invariance/patches`, then run the generic harness with
+adapter `scripts.model_invariance.adapters.openvla_oft`. The corresponding
+staged trace, three-target regression, and operator benchmark are
+`scripts/trace_openvla_oft_batch_invariance.py`,
+`scripts/check_openvla_oft_multiple_inputs.py`, and
+`scripts/benchmark_openvla_oft_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -566,6 +586,11 @@ For SmolVLA on the same environment, the actual float32 modality-connector MM
 replacement is 22.68x, 15.25x, and 4.63x slower than stock at B=1, 2, and 8,
 respectively, with identical incremental output allocation. See
 [`research/smolvla/benchmarks.json`](research/smolvla/benchmarks.json).
+
+For OpenVLA-OFT on PyTorch 2.8.0/CUDA 12.8, invariant DINO block-0 SDPA is
+7.56x, 8.30x, and 2.91x slower than stock at B=1, 2, and 8. The invariant
+continuous action-head addmm is 4.25x, 4.41x, and 3.28x slower. See
+[`research/openvla_oft/benchmarks.json`](research/openvla_oft/benchmarks.json).
 
 ## Attribution
 

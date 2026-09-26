@@ -56,6 +56,14 @@ to the README support table only after end-to-end execution.
   `HuggingFaceVLA/smolvla_libero` checkpoint are runnable directly. The
   ten-step LIBERO action path has now been executed through B=64 and added to
   the support table.
+- **OpenVLA-OFT:** the authors' official PyTorch implementation and complete
+  public LIBERO-Spatial checkpoint are runnable on one H100. The dual-camera
+  continuous-action path has now been executed through B=64 and added to the
+  support table. The upstream batch-1-only output reshape is handled by a
+  semantics-preserving batched adapter; no JAX code or checkpoint conversion
+  is involved.
+- **DexVLA:** official PyTorch code and public weight collections exist. It is
+  the next named Tier-2 target after OpenVLA-OFT.
 - **DeVA:** official PyTorch code and post-training weights are public, but the
   checkpoint depends on separately gated Cosmos-Predict2 base assets that were
   unavailable in this environment. Status: access-blocked; see
@@ -78,5 +86,8 @@ to the README support table only after end-to-end execution.
 - https://github.com/2toinf/X-VLA
 - https://github.com/huggingface/lerobot
 - https://huggingface.co/HuggingFaceVLA/smolvla_libero
+- https://github.com/moojink/openvla-oft
+- https://huggingface.co/moojink/openvla-7b-oft-finetuned-libero-spatial
+- https://github.com/juruobenruo/DexVLA
 - https://github.com/Robbyant/lingbot-vla-v2
 - https://github.com/baaivision/UniVLA

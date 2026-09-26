@@ -1,0 +1,228 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 3,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "openvla_oft_dino_block0_sdpa",
+      "batch_size": 1,
+      "shape": {
+        "query": [
+          1,
+          16,
+          261,
+          64
+        ],
+        "key": [
+          1,
+          16,
+          261,
+          64
+        ],
+        "value": [
+          1,
+          16,
+          261,
+          64
+        ],
+        "dtype": "torch.bfloat16",
+        "causal": false
+      },
+      "stock": {
+        "latency_ms": 0.01800000071525574,
+        "peak_incremental_bytes": 3258880
+      },
+      "batch_invariant": {
+        "latency_ms": 0.1360383987426758,
+        "peak_incremental_bytes": 5429248
+      },
+      "latency_ratio": 7.557688518721983,
+      "stock_samples_per_second": 55555.5533479762,
+      "batch_invariant_samples_per_second": 7350.8657058773215
+    },
+    {
+      "operator": "openvla_oft_action_head_fc1_addmm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          8,
+          28672
+        ],
+        "right": [
+          28672,
+          4096
+        ],
+        "bias": [
+          4096
+        ],
+        "logical_input": [
+          1,
+          8,
+          28672
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.07877119779586791,
+        "peak_incremental_bytes": 1179648
+      },
+      "batch_invariant": {
+        "latency_ms": 0.33514559268951416,
+        "peak_incremental_bytes": 131072
+      },
+      "latency_ratio": 4.2546717844513315,
+      "stock_samples_per_second": 12694.995480346204,
+      "batch_invariant_samples_per_second": 2983.7778619587
+    },
+    {
+      "operator": "openvla_oft_dino_block0_sdpa",
+      "batch_size": 2,
+      "shape": {
+        "query": [
+          2,
+          16,
+          261,
+          64
+        ],
+        "key": [
+          2,
+          16,
+          261,
+          64
+        ],
+        "value": [
+          2,
+          16,
+          261,
+          64
+        ],
+        "dtype": "torch.bfloat16",
+        "causal": false
+      },
+      "stock": {
+        "latency_ms": 0.015478399395942689,
+        "peak_incremental_bytes": 2172928
+      },
+      "batch_invariant": {
+        "latency_ms": 0.1284608006477356,
+        "peak_incremental_bytes": 10858496
+      },
+      "latency_ratio": 8.299359472621484,
+      "stock_samples_per_second": 129212.32672961357,
+      "batch_invariant_samples_per_second": 15568.951695111939
+    },
+    {
+      "operator": "openvla_oft_action_head_fc1_addmm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          16,
+          28672
+        ],
+        "right": [
+          28672,
+          4096
+        ],
+        "bias": [
+          4096
+        ],
+        "logical_input": [
+          2,
+          8,
+          28672
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.07412800192832947,
+        "peak_incremental_bytes": 1310720
+      },
+      "batch_invariant": {
+        "latency_ms": 0.32679998874664307,
+        "peak_incremental_bytes": 262144
+      },
+      "latency_ratio": 4.408590279589744,
+      "stock_samples_per_second": 26980.35759730441,
+      "batch_invariant_samples_per_second": 6119.951251132178
+    },
+    {
+      "operator": "openvla_oft_dino_block0_sdpa",
+      "batch_size": 8,
+      "shape": {
+        "query": [
+          8,
+          16,
+          261,
+          64
+        ],
+        "key": [
+          8,
+          16,
+          261,
+          64
+        ],
+        "value": [
+          8,
+          16,
+          261,
+          64
+        ],
+        "dtype": "torch.bfloat16",
+        "causal": false
+      },
+      "stock": {
+        "latency_ms": 0.0663424015045166,
+        "peak_incremental_bytes": 8687104
+      },
+      "batch_invariant": {
+        "latency_ms": 0.1932639956474304,
+        "peak_incremental_bytes": 43430912
+      },
+      "latency_ratio": 2.91312933002995,
+      "stock_samples_per_second": 120586.53016133819,
+      "batch_invariant_samples_per_second": 41394.15607754649
+    },
+    {
+      "operator": "openvla_oft_action_head_fc1_addmm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          64,
+          28672
+        ],
+        "right": [
+          28672,
+          4096
+        ],
+        "bias": [
+          4096
+        ],
+        "logical_input": [
+          8,
+          8,
+          28672
+        ],
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.08620160222053527,
+        "peak_incremental_bytes": 2097152
+      },
+      "batch_invariant": {
+        "latency_ms": 0.28298559188842776,
+        "peak_incremental_bytes": 1048576
+      },
+      "latency_ratio": 3.282834478696196,
+      "stock_samples_per_second": 92805.69959167429,
+      "batch_invariant_samples_per_second": 28269.99052006205
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+Checkpoint: https://huggingface.co/moojink/openvla-7b-oft-finetuned-libero-spatial
+Revision: 6d0231af0e48c5985f1ff86908f4674b84bc049b
+Snapshot size: 15,939,161,953 bytes
+
+Model shards: 7,541,237,184 elements across 982 tensors
+model-00001-of-00004.safetensors SHA256: 2809bd7be9422315c5ecbe91eea612f5b02925f37e0051728ad45bc993c79251
+model-00002-of-00004.safetensors SHA256: a00a7c5f2b6586ccfc89c693a9c36f3552ff455ff2b1bfea3e92642e4cd2b6d3
+model-00003-of-00004.safetensors SHA256: a894b7230a08b471af55c57dd7385fd3b51fae2c4d9307a36a8017ef57abf22a
+model-00004-of-00004.safetensors SHA256: a877e3fece1feafb80f59f91585ce04379ee39e2bf9a25cb7b4acf237e896e60
+
+Action head: action_head--150000_checkpoint.pt
+Size: 302,242,674 bytes
+State: 151,117,831 elements across 16 tensors
+SHA256: 809858636cf0a65009dd567d2f4e116249442790f02b8fe31f24500ea6118908
+
+Proprio projector: proprio_projector--150000_checkpoint.pt
+Size: 67,275,256 bytes
+State: 16,818,176 elements across 4 tensors
+SHA256: 438d28e81e125166d0771762424aaf017de3a8daaebde06a5cb71157e62b3bf3
+
+The three learned components total 7,709,173,191 state elements across 1,002
+tensors and cover both vision towers, the 7B VLM, multimodal projector,
+continuous action head, and proprio projector.

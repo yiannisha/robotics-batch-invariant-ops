@@ -1,0 +1,26 @@
+diff --git a/prismatic/__init__.py b/prismatic/__init__.py
+index 8f39810..4249547 100644
+--- a/prismatic/__init__.py
++++ b/prismatic/__init__.py
+@@ -1 +1,5 @@
+-from .models import available_model_names, available_models, get_model_description, load
++"""OpenVLA-OFT package.
++
++Keep package initialization lightweight for PyTorch-only inference. Inference
++imports concrete submodules and does not need the TensorFlow RLDS stack.
++"""
+diff --git a/prismatic/training/__init__.py b/prismatic/training/__init__.py
+index 39a8c83..42b10b5 100644
+--- a/prismatic/training/__init__.py
++++ b/prismatic/training/__init__.py
+@@ -1,2 +1 @@
+-from .materialize import get_train_strategy
+-from .metrics import Metrics, VLAMetrics
++"""Training namespace (heavy training helpers intentionally stay lazy)."""
+diff --git a/prismatic/vla/__init__.py b/prismatic/vla/__init__.py
+index 3677e80..d3bf59d 100644
+--- a/prismatic/vla/__init__.py
++++ b/prismatic/vla/__init__.py
+@@ -1 +1 @@
+-from .materialize import get_vla_dataset_and_collator
++"""VLA inference namespace (training-data imports intentionally stay lazy)."""
