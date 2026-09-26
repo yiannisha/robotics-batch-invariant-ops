@@ -1,0 +1,309 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.13.8",
+    "torch": "2.13.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92000,
+    "triton": "3.7.1"
+  },
+  "warmup": 1,
+  "repetitions": 3,
+  "cases": [
+    {
+      "operator": "cosmos3_edge_causal_varlen_attention",
+      "batch_size": 1,
+      "shape": {
+        "query": [
+          1,
+          158,
+          16,
+          128
+        ],
+        "key": [
+          1,
+          158,
+          8,
+          128
+        ],
+        "logical_query_length": 158,
+        "logical_kv_length": 158,
+        "query_heads": 16,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": true,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.2839573423067729,
+        "peak_incremental_bytes": 2598912
+      },
+      "batch_invariant": {
+        "latency_ms": 0.4350293477376302,
+        "peak_incremental_bytes": 6153728
+      },
+      "latency_ratio": 1.5320235927114958,
+      "stock_samples_per_second": 3521.655724329366,
+      "batch_invariant_samples_per_second": 2298.6954907766553
+    },
+    {
+      "operator": "cosmos3_edge_full_varlen_attention",
+      "batch_size": 1,
+      "shape": {
+        "query": [
+          1,
+          3093,
+          16,
+          128
+        ],
+        "key": [
+          1,
+          3251,
+          8,
+          128
+        ],
+        "logical_query_length": 3093,
+        "logical_kv_length": 3251,
+        "query_heads": 16,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": false,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.3476159969965617,
+        "peak_incremental_bytes": 52168192
+      },
+      "batch_invariant": {
+        "latency_ms": 2.355466683705648,
+        "peak_incremental_bytes": 735163392
+      },
+      "latency_ratio": 6.776059514110756,
+      "stock_samples_per_second": 2876.7375743351968,
+      "batch_invariant_samples_per_second": 424.5443193561915
+    },
+    {
+      "operator": "cosmos3_wan_decoder_vector_norm",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          1024,
+          4,
+          132,
+          160
+        ],
+        "dim": 1,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.0904960036277771,
+        "peak_incremental_bytes": 173356032
+      },
+      "batch_invariant": {
+        "latency_ms": 0.13691733280817667,
+        "peak_incremental_bytes": 337920
+      },
+      "latency_ratio": 1.5129655158181026,
+      "stock_samples_per_second": 11050.211721095904,
+      "batch_invariant_samples_per_second": 7303.677186006944
+    },
+    {
+      "operator": "cosmos3_edge_causal_varlen_attention",
+      "batch_size": 2,
+      "shape": {
+        "query": [
+          1,
+          316,
+          16,
+          128
+        ],
+        "key": [
+          1,
+          316,
+          8,
+          128
+        ],
+        "logical_query_length": 158,
+        "logical_kv_length": 158,
+        "query_heads": 16,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": true,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.2118720014890035,
+        "peak_incremental_bytes": 5197824
+      },
+      "batch_invariant": {
+        "latency_ms": 0.37096532185872394,
+        "peak_incremental_bytes": 13575680
+      },
+      "latency_ratio": 1.7508935548427225,
+      "stock_samples_per_second": 9439.661616184823,
+      "batch_invariant_samples_per_second": 5391.339519227803
+    },
+    {
+      "operator": "cosmos3_edge_full_varlen_attention",
+      "batch_size": 2,
+      "shape": {
+        "query": [
+          1,
+          6186,
+          16,
+          128
+        ],
+        "key": [
+          1,
+          6502,
+          8,
+          128
+        ],
+        "logical_query_length": 3093,
+        "logical_kv_length": 3251,
+        "query_heads": 16,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": false,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.5239359935124716,
+        "peak_incremental_bytes": 104336384
+      },
+      "batch_invariant": {
+        "latency_ms": 2.9202346801757812,
+        "peak_incremental_bytes": 772172800
+      },
+      "latency_ratio": 5.573647766778728,
+      "stock_samples_per_second": 3817.2601706402766,
+      "batch_invariant_samples_per_second": 684.876463380543
+    },
+    {
+      "operator": "cosmos3_wan_decoder_vector_norm",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          1024,
+          4,
+          132,
+          160
+        ],
+        "dim": 1,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.12397866447766621,
+        "peak_incremental_bytes": 173696512
+      },
+      "batch_invariant": {
+        "latency_ms": 0.23166932662328085,
+        "peak_incremental_bytes": 675840
+      },
+      "latency_ratio": 1.8686225375900405,
+      "stock_samples_per_second": 16131.807907644337,
+      "batch_invariant_samples_per_second": 8632.99440263067
+    },
+    {
+      "operator": "cosmos3_edge_causal_varlen_attention",
+      "batch_size": 8,
+      "shape": {
+        "query": [
+          1,
+          1264,
+          16,
+          128
+        ],
+        "key": [
+          1,
+          1264,
+          8,
+          128
+        ],
+        "logical_query_length": 158,
+        "logical_kv_length": 158,
+        "query_heads": 16,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": true,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.20932267109553018,
+        "peak_incremental_bytes": 20790272
+      },
+      "batch_invariant": {
+        "latency_ms": 0.44620800018310547,
+        "peak_incremental_bytes": 54225408
+      },
+      "latency_ratio": 2.131675455161119,
+      "stock_samples_per_second": 38218.50714081983,
+      "batch_invariant_samples_per_second": 17928.858282946807
+    },
+    {
+      "operator": "cosmos3_edge_full_varlen_attention",
+      "batch_size": 8,
+      "shape": {
+        "query": [
+          1,
+          24744,
+          16,
+          128
+        ],
+        "key": [
+          1,
+          26008,
+          8,
+          128
+        ],
+        "logical_query_length": 3093,
+        "logical_kv_length": 3251,
+        "query_heads": 16,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "causal": false,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 1.8802132606506348,
+        "peak_incremental_bytes": 417344000
+      },
+      "batch_invariant": {
+        "latency_ms": 12.138496398925781,
+        "peak_incremental_bytes": 924613632
+      },
+      "latency_ratio": 6.455914684233925,
+      "stock_samples_per_second": 4254.83649510676,
+      "batch_invariant_samples_per_second": 659.060211173105
+    },
+    {
+      "operator": "cosmos3_wan_decoder_vector_norm",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          1024,
+          4,
+          132,
+          160
+        ],
+        "dim": 1,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.39790932337443036,
+        "peak_incremental_bytes": 2703360
+      },
+      "batch_invariant": {
+        "latency_ms": 0.8207360108693441,
+        "peak_incremental_bytes": 2703360
+      },
+      "latency_ratio": 2.062620709434939,
+      "stock_samples_per_second": 20105.083068063843,
+      "batch_invariant_samples_per_second": 9747.348592059705
+    }
+  ]
+}

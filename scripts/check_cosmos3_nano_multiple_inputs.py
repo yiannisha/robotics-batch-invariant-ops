@@ -1,4 +1,4 @@
-"""Check several real DROID targets through Cosmos 3 Nano Policy inference."""
+"""Check several real DROID targets through Cosmos 3 policy inference."""
 
 from __future__ import annotations
 

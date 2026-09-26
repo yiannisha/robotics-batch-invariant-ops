@@ -21,6 +21,7 @@ __all__ = [
     "conv3d_batch_invariant",
     "scaled_dot_product_attention_batch_invariant",
     "varlen_scaled_dot_product_attention_batch_invariant",
+    "linalg_vector_norm_batch_invariant",
     "softmax",
 ]
 
@@ -1311,6 +1312,121 @@ def mean_dim(
     return output
 
 
+@triton.jit
+def _vector_norm_kernel(
+    input_ptr,
+    output_ptr,
+    input_stride_m,
+    input_stride_n,
+    input_stride_k,
+    M,
+    reduction_size,
+    K,
+    BLOCK_SIZE: tl.constexpr,
+    OUTPUT_BLOCK_SIZE: tl.constexpr,
+):
+    """Euclidean norms with a fixed reduction tree per output vector."""
+    output_indexes = (
+        tl.program_id(0).to(tl.int64) * OUTPUT_BLOCK_SIZE
+        + tl.arange(0, OUTPUT_BLOCK_SIZE).to(tl.int64)
+    )
+    m_indexes = output_indexes // K
+    k_indexes = output_indexes % K
+    squared_sum = tl.zeros((OUTPUT_BLOCK_SIZE,), dtype=tl.float32)
+    for start in range(0, reduction_size, BLOCK_SIZE):
+        reduction_indexes = start + tl.arange(0, BLOCK_SIZE).to(tl.int64)
+        pointers = input_ptr + (
+            m_indexes[None, :] * input_stride_m
+            + reduction_indexes[:, None] * input_stride_n
+            + k_indexes[None, :] * input_stride_k
+        )
+        values = tl.load(
+            pointers,
+            mask=(reduction_indexes[:, None] < reduction_size)
+            & (output_indexes[None, :] < M * K),
+            other=0.0,
+        ).to(tl.float32)
+        squared_sum += tl.sum(values * values, axis=0)
+    tl.store(
+        output_ptr + output_indexes,
+        tl.sqrt(squared_sum),
+        mask=output_indexes < M * K,
+    )
+
+
+def linalg_vector_norm_batch_invariant(
+    input: torch.Tensor,
+    ord: float = 2,
+    dim: int | list[int] | tuple[int, ...] | None = None,
+    keepdim: bool = False,
+    *,
+    dtype: torch.dtype | None = None,
+) -> torch.Tensor:
+    """Batch-invariant Euclidean vector norm with fixed per-vector reductions.
+
+    Every output element uses a fixed Triton reduction tree independent of the
+    number of surrounding vectors (including batch size). Contiguous
+    single-dimension reductions preserve their layout; more general reductions
+    first use one canonical flattened layout.
+    """
+    assert input.is_cuda, "input must be a CUDA tensor"
+    assert input.is_floating_point(), "only real floating-point inputs are supported"
+    assert float(ord) == 2.0, f"only the Euclidean norm is supported, got ord={ord!r}"
+    if dtype is not None:
+        assert dtype in {
+            torch.float16,
+            torch.bfloat16,
+            torch.float32,
+            torch.float64,
+        }, f"unsupported dtype: {dtype}"
+        assert dtype != torch.float64, "float64 is not supported by the Triton kernel"
+        input = input.to(dtype)
+
+    if dim is None:
+        dimensions = tuple(range(input.ndim))
+    elif isinstance(dim, int):
+        dimensions = (dim,)
+    else:
+        dimensions = tuple(dim)
+    dimensions = tuple(dimension % input.ndim for dimension in dimensions)
+    assert len(set(dimensions)) == len(dimensions), "duplicate dimensions are not allowed"
+
+    retained_dimensions = tuple(d for d in range(input.ndim) if d not in dimensions)
+    retained_shape = tuple(input.shape[d] for d in retained_dimensions)
+    if len(dimensions) == 1 and input.is_contiguous():
+        dimension = dimensions[0]
+        M = math.prod(input.shape[:dimension])
+        reduction_size = input.shape[dimension]
+        K = math.prod(input.shape[dimension + 1 :])
+        kernel_input = input.reshape(M, reduction_size, K)
+    else:
+        reduction_size = math.prod(input.shape[d] for d in dimensions)
+        M = math.prod(retained_shape)
+        K = 1
+        kernel_input = input.permute(*retained_dimensions, *dimensions).contiguous().reshape(
+            M, reduction_size, K
+        )
+    output_count = M * K
+    output = torch.empty(output_count, device=input.device, dtype=input.dtype)
+    _vector_norm_kernel[(triton.cdiv(output_count, 8),)](
+        kernel_input,
+        output,
+        kernel_input.stride(0),
+        kernel_input.stride(1),
+        kernel_input.stride(2),
+        M,
+        reduction_size,
+        K,
+        BLOCK_SIZE=1024,
+        OUTPUT_BLOCK_SIZE=8,
+    )
+    output = output.reshape(retained_shape)
+    if keepdim:
+        for dimension in sorted(dimensions):
+            output = output.unsqueeze(dimension)
+    return output
+
+
 def mm_batch_invariant(a, b):
     return matmul_persistent(a, b)
 
@@ -1375,6 +1491,9 @@ def enable_batch_invariant_mode():
     )
     _batch_invariant_LIB.impl("aten::_log_softmax", _log_softmax_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::mean.dim", mean_batch_invariant, dispatch_key)
+    _batch_invariant_LIB.impl(
+        "aten::linalg_vector_norm", linalg_vector_norm_batch_invariant, dispatch_key
+    )
 
 
 def disable_batch_invariant_mode():

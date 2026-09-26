@@ -1,0 +1,2154 @@
+{
+  "model": "nvidia-cosmos3-edge-policy-droid-official-pytorch",
+  "comparison": "B=1 target versus first sample at unrelated B=2",
+  "root_cause": "After generic MM/BMM projection repairs, Cosmos still selects dense cuDNN attention at B=1 and packed variable-length CUTLASS attention at B>1; cached text-KV steps repeat the switch",
+  "runs": {
+    "stock": {
+      "attention_dispatch": {
+        "batch_1": {
+          "source": "two_way_attention",
+          "uses_varlen": false,
+          "packed_query_shape": [
+            1,
+            159,
+            16,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            159,
+            8,
+            128
+          ]
+        },
+        "batch_2": {
+          "source": "two_way_attention",
+          "uses_varlen": true,
+          "packed_query_shape": [
+            1,
+            317,
+            16,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            317,
+            8,
+            128
+          ]
+        },
+        "first_four_calls_batch_1": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              159,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              159,
+              8,
+              128
+            ],
+            "target_query_length": 159,
+            "target_key_length": 159
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3251,
+              8,
+              128
+            ],
+            "target_query_length": 3094,
+            "target_key_length": 3251
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              159,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              159,
+              8,
+              128
+            ],
+            "target_query_length": 159,
+            "target_key_length": 159
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3251,
+              8,
+              128
+            ],
+            "target_query_length": 3094,
+            "target_key_length": 3251
+          }
+        ],
+        "first_four_calls_batch_2": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              317,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              317,
+              8,
+              128
+            ],
+            "target_query_length": 158,
+            "target_key_length": 158
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6504,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3251
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              317,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              317,
+              8,
+              128
+            ],
+            "target_query_length": 158,
+            "target_key_length": 158
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6504,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3251
+          }
+        ]
+      },
+      "first_attention": {
+        "query": {
+          "reference_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "8902caf15e18e3569fcfb37395eb6947bae8dd9a7faab72f5e5d8545cf44bcb2",
+          "candidate_hash": "8902caf15e18e3569fcfb37395eb6947bae8dd9a7faab72f5e5d8545cf44bcb2",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            159,
+            16,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "key": {
+          "reference_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "4313717c07aac478fe036521fad42f22d9422341386446610927042885a1491f",
+          "candidate_hash": "4313717c07aac478fe036521fad42f22d9422341386446610927042885a1491f",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            159,
+            8,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "value": {
+          "reference_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "f7d5de7ab22112e75357cb7a4882e7ae3f8c46569c8466611a3ddd557e2fd0c2",
+          "candidate_hash": "f7d5de7ab22112e75357cb7a4882e7ae3f8c46569c8466611a3ddd557e2fd0c2",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            159,
+            8,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "output": {
+          "reference_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "853927bb5a2cf2f930f6533de3756af90dff54be74572846daad28f761f48cb2",
+          "candidate_hash": "49bf11f561d7bb05ae4f0fe5ab47f138bcfc2c3ff8448c1d75d198e97ef74c18",
+          "differing_elements": 5,
+          "first_differing_index": [
+            0,
+            67,
+            6,
+            57
+          ],
+          "max_abs_difference": 6.103515625e-05,
+          "mean_abs_difference": 6.130224661227146e-10,
+          "reference_full_shape": [
+            1,
+            159,
+            16,
+            128
+          ],
+          "compared_sequence_length": 158
+        }
+      },
+      "flow_iterations": [
+        {
+          "label": "flow.input",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "411bb2ae002fa082401a3d50b4c867bc1f981c24b52034ae312cd03bcbedff62",
+          "candidate_hash": "411bb2ae002fa082401a3d50b4c867bc1f981c24b52034ae312cd03bcbedff62",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "411bb2ae002fa082401a3d50b4c867bc1f981c24b52034ae312cd03bcbedff62",
+          "candidate_hash": "411bb2ae002fa082401a3d50b4c867bc1f981c24b52034ae312cd03bcbedff62",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "6c1eff37e40e9681c72c30717465b90b8c57c43b6cc443504f39ca63a4b849b9",
+          "candidate_hash": "ee9fd437a480b8517032d9980308c8001ebd928803c3f525f4c91999a842be11",
+          "differing_elements": 463607,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.02015671879053116,
+          "mean_abs_difference": 0.0016659604152664542
+        },
+        {
+          "label": "flow.input",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "400c317e65e125eeb99faf8d189811335453861cdc8347c78b513002f9015f6c",
+          "candidate_hash": "5c526d2952ed932c02cf12f577a8bcb50470b423898febcbc911e68256285218",
+          "differing_elements": 494917,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.030736804008483887,
+          "mean_abs_difference": 0.0016678738174960017
+        },
+        {
+          "label": "flow.input",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "3636ae74a1a803fd5e63506915a62a2d79adbb2336a758ec32ba582800469cff",
+          "candidate_hash": "bf24955fcd9dbb9be23bbe549a528b4d1259035e38529869d391aa85330f6f77",
+          "differing_elements": 503475,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.31474125385284424,
+          "mean_abs_difference": 0.006278763525187969
+        },
+        {
+          "label": "flow.timestep",
+          "call": 0,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 1,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 2,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 3,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 4,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.velocity",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "fc22c5307c28036541b9f6e116fab517cf0db9dfa4fd1eb677be852ebbe8c853",
+          "candidate_hash": "8bcf1db9334294d295eb59582b0ec57e8fa31993c4ec1db204cbc2c19c4a7565",
+          "differing_elements": 396235,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.091796875,
+          "mean_abs_difference": 0.007238922640681267
+        },
+        {
+          "label": "flow.velocity",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "239519074defaf927d834f8b9ff4ffdbbcacecb2a4359699f84313c754e7cbaf",
+          "candidate_hash": "cf3ae9809446072e223aa3446bf62fd627c6f608004480f5fe42a52b002d03dc",
+          "differing_elements": 392534,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.0703125,
+          "mean_abs_difference": 0.007020078599452972
+        },
+        {
+          "label": "flow.velocity",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "87c6365e6f8495459844bb12a2a4910cfaa3d1bd54f00d7dcb6cc6959ff065b2",
+          "candidate_hash": "4b0edaec68693a4df88bfb92810fd5b1a2039924e331c6d25e393e1f6126d9a9",
+          "differing_elements": 427026,
+          "first_differing_index": [
+            1321
+          ],
+          "max_abs_difference": 0.22265625,
+          "mean_abs_difference": 0.0111423684284091
+        },
+        {
+          "label": "flow.velocity",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "8b0ffcff4d1eb892a7d0d51f0933b00dbaa785ec8d20eb394ddc2c514816c5aa",
+          "candidate_hash": "3a11c46dc87e645300aaf9220b0833398ad435f0d258e95e3b7efff4f6ecba23",
+          "differing_elements": 443939,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.892578125,
+          "mean_abs_difference": 0.01755252666771412
+        },
+        {
+          "label": "flow.velocity",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "9184c5de8931d18a50f5a0e7f68400ebc29d0a83da194c2d109c6d0ac7447b33",
+          "candidate_hash": "925d6530be6ad32a88ae3d607efedcc380790a4965a6c8ee425de7792fc87309",
+          "differing_elements": 456163,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 2.3984375,
+          "mean_abs_difference": 0.023158052936196327
+        }
+      ],
+      "final_outputs": [
+        {
+          "path": "output.action",
+          "reference_shape": [
+            1,
+            32,
+            8
+          ],
+          "candidate_shape": [
+            1,
+            32,
+            8
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "differing_elements": 215,
+          "max_abs_difference": 0.03444719314575195,
+          "mean_abs_difference": 0.0032070039305835962,
+          "first_differing_index": [
+            0,
+            0,
+            0
+          ],
+          "reference_hash": "b1da7fa6b945e8db1d864b006ab12b7a29e9bc6664628b170daf16d0d7996fd6",
+          "candidate_hash": "60983e6f85f03f3924570fe091f42579a655381495ede3405500217eeb17f2b1"
+        },
+        {
+          "path": "output.vision_latent",
+          "reference_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "candidate_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "differing_elements": 505738,
+          "max_abs_difference": 1.5768204927444458,
+          "mean_abs_difference": 0.015872597694396973,
+          "first_differing_index": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "reference_hash": "ce5c2c9765f8a893ea31aa5958c85badf0e6a7e6db629eb53cf52c8b158310d5",
+          "candidate_hash": "13fbada65f7dd09c2de9ed7c12ee98d6b036a47968451692ed6a9691c42eb629"
+        }
+      ],
+      "first_attention_profile": {
+        "batch_1": {
+          "aten_operators": [
+            "aten::_cudnn_attention_forward",
+            "aten::_scaled_dot_product_cudnn_attention",
+            "aten::as_strided",
+            "aten::clone",
+            "aten::copy_",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::empty_strided",
+            "aten::expand",
+            "aten::flatten",
+            "aten::repeat_interleave",
+            "aten::transpose",
+            "aten::unsqueeze",
+            "aten::view"
+          ],
+          "cuda_kernels": [
+            "Memset (Device)",
+            "cudnn_generated_fort_native_sdpa_sm90_flash_fprop_wgmma_f16_knob_7_64x128x128_4x1x1_cga1x1x1_kernel0_0",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})"
+          ]
+        },
+        "batch_2": {
+          "aten_operators": [
+            "aten::as_strided",
+            "aten::clone",
+            "aten::copy_",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::expand",
+            "aten::fill_",
+            "aten::flatten",
+            "aten::repeat_interleave",
+            "aten::unsqueeze",
+            "aten::view",
+            "aten::zero_",
+            "aten::zeros"
+          ],
+          "cuda_kernels": [
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+            "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::array<char*, 1ul> >(int, at::native::FillFunctor<float>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+            "void cutlass::device_kernel_sm90<cutlass::fmha::kernel::FmhaKernelTmaWarpSpecialized<cute::tuple<int, int, cutlass::fmha::collective::VariableLength, cutlass::fmha::collective::VariableLength, int>, cutlass::fmha::collective::FmhaMainloopTmaWarpSpecializedSm90<cutlass::bfloat16_t, float, float, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cutlass::fmha::collective::CausalFusion>, cutlass::fmha::collective::FmhaFwdEpilogueSm90<cutlass::bfloat16_t, float, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, true>, cutlass::fmha::kernel::IndividualTileScheduler> >(cutlass::fmha::kernel::FmhaKernelTmaWarpSpecialized<cute::tuple<int, int, cutlass::fmha::collective::VariableLength, cutlass::fmha::collective::VariableLength, int>, cutlass::fmha::collective::FmhaMainloopTmaWarpSpecializedSm90<cutlass::bfloat16_t, float, float, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cutlass::fmha::collective::CausalFusion>, cutlass::fmha::collective::FmhaFwdEpilogueSm90<cutlass::bfloat16_t, float, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, true>, cutlass::fmha::kernel::IndividualTileScheduler>::Params)"
+          ]
+        }
+      }
+    },
+    "generic_operators_only": {
+      "attention_dispatch": {
+        "batch_1": {
+          "source": "two_way_attention",
+          "uses_varlen": false,
+          "packed_query_shape": [
+            1,
+            159,
+            16,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            159,
+            8,
+            128
+          ]
+        },
+        "batch_2": {
+          "source": "two_way_attention",
+          "uses_varlen": true,
+          "packed_query_shape": [
+            1,
+            317,
+            16,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            317,
+            8,
+            128
+          ]
+        },
+        "first_four_calls_batch_1": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              159,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              159,
+              8,
+              128
+            ],
+            "target_query_length": 159,
+            "target_key_length": 159
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3251,
+              8,
+              128
+            ],
+            "target_query_length": 3094,
+            "target_key_length": 3251
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              159,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              159,
+              8,
+              128
+            ],
+            "target_query_length": 159,
+            "target_key_length": 159
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": false,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3251,
+              8,
+              128
+            ],
+            "target_query_length": 3094,
+            "target_key_length": 3251
+          }
+        ],
+        "first_four_calls_batch_2": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              317,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              317,
+              8,
+              128
+            ],
+            "target_query_length": 158,
+            "target_key_length": 158
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6504,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3251
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              317,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              317,
+              8,
+              128
+            ],
+            "target_query_length": 158,
+            "target_key_length": 158
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6504,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3251
+          }
+        ]
+      },
+      "first_attention": {
+        "query": {
+          "reference_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "8902caf15e18e3569fcfb37395eb6947bae8dd9a7faab72f5e5d8545cf44bcb2",
+          "candidate_hash": "8902caf15e18e3569fcfb37395eb6947bae8dd9a7faab72f5e5d8545cf44bcb2",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            159,
+            16,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "key": {
+          "reference_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "4313717c07aac478fe036521fad42f22d9422341386446610927042885a1491f",
+          "candidate_hash": "4313717c07aac478fe036521fad42f22d9422341386446610927042885a1491f",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            159,
+            8,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "value": {
+          "reference_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "f7d5de7ab22112e75357cb7a4882e7ae3f8c46569c8466611a3ddd557e2fd0c2",
+          "candidate_hash": "f7d5de7ab22112e75357cb7a4882e7ae3f8c46569c8466611a3ddd557e2fd0c2",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            159,
+            8,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "output": {
+          "reference_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "853927bb5a2cf2f930f6533de3756af90dff54be74572846daad28f761f48cb2",
+          "candidate_hash": "49bf11f561d7bb05ae4f0fe5ab47f138bcfc2c3ff8448c1d75d198e97ef74c18",
+          "differing_elements": 5,
+          "first_differing_index": [
+            0,
+            67,
+            6,
+            57
+          ],
+          "max_abs_difference": 6.103515625e-05,
+          "mean_abs_difference": 6.130224661227146e-10,
+          "reference_full_shape": [
+            1,
+            159,
+            16,
+            128
+          ],
+          "compared_sequence_length": 158
+        }
+      },
+      "flow_iterations": [
+        {
+          "label": "flow.input",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "ea5513d15cdd9c30aa90098e9aef07752a3446a6c40c2496edac3592956e4bb8",
+          "candidate_hash": "ea5513d15cdd9c30aa90098e9aef07752a3446a6c40c2496edac3592956e4bb8",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "ea5513d15cdd9c30aa90098e9aef07752a3446a6c40c2496edac3592956e4bb8",
+          "candidate_hash": "ea5513d15cdd9c30aa90098e9aef07752a3446a6c40c2496edac3592956e4bb8",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "ceca736048bb98af236520a913d9080af8873d9c5a91878f01d194e36357c3aa",
+          "candidate_hash": "629686452aef1e9dbc9da97a2c0dcfbeaf30c994962f7d9d7e5621bcad49fbf4",
+          "differing_elements": 463478,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.019545912742614746,
+          "mean_abs_difference": 0.0016495600575581193
+        },
+        {
+          "label": "flow.input",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "9d48a25735f9624effc66295e8d24fc46391e5e08c442e9820a850b41a40115a",
+          "candidate_hash": "0a70f8cb8ed0cc0c61ced2f2603f5850b22992e7a6ecc49d5f563fe2ccf247ba",
+          "differing_elements": 494340,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.03945015370845795,
+          "mean_abs_difference": 0.0015386828454211354
+        },
+        {
+          "label": "flow.input",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "reference_hash": "844904a8b7b3d291578a193558f1ee8635574459be331ba10d23dcb74914408a",
+          "candidate_hash": "b3d375e9003333b3aabf160ed7467d466548ff89c940f042a71697f301af9ec1",
+          "differing_elements": 503157,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.1990284025669098,
+          "mean_abs_difference": 0.005456142593175173
+        },
+        {
+          "label": "flow.timestep",
+          "call": 0,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 1,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 2,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 3,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 4,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.velocity",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "50a2db603b5a07168425453b6bd5b0681b931bf354a08d4d5db52a8c069101a5",
+          "candidate_hash": "4b643721ee4b51d9ba473d03c1c09bbafb62bc951d8e1bd03303496616672904",
+          "differing_elements": 394370,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.078125,
+          "mean_abs_difference": 0.007099925074726343
+        },
+        {
+          "label": "flow.velocity",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "69f332a35ccb7ddf5caea58c07084d1db2838265723efa9b9cb0459e91ad09f9",
+          "candidate_hash": "3e9548bdd573aef5db389c4658d60dab2ff074b23496fdb2adfbfb3f6536d822",
+          "differing_elements": 394743,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.0703125,
+          "mean_abs_difference": 0.007151853758841753
+        },
+        {
+          "label": "flow.velocity",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "ce45be5d0feda304d48d6d5f8348957551a8e47b22bae91e4f622603289b1209",
+          "candidate_hash": "d1015612082d7aaeb8d776021e034dad89aa175ff81f432a851d113f80ce34fb",
+          "differing_elements": 423236,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.2734375,
+          "mean_abs_difference": 0.0102864820510149
+        },
+        {
+          "label": "flow.velocity",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "801fbc9d3a7da66169c0ca8de591a450c6db00415dbb1b9a0ff2508f608050a1",
+          "candidate_hash": "8ac4076256ee14e07b90c2f4f0c58372128670566b9e05f39dbce4b3299e36a9",
+          "differing_elements": 439627,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 0.564453125,
+          "mean_abs_difference": 0.015208921395242214
+        },
+        {
+          "label": "flow.velocity",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": false,
+          "reference_hash": "0749a47f5feb53632868664f05f5efa316fedef0bc2cf263a12c20b90046daeb",
+          "candidate_hash": "be27a24844d45f6712e73f7c3089f1593e2a739db9e77b862fa66c442c1264f0",
+          "differing_elements": 454916,
+          "first_differing_index": [
+            1320
+          ],
+          "max_abs_difference": 1.06640625,
+          "mean_abs_difference": 0.021346084773540497
+        }
+      ],
+      "final_outputs": [
+        {
+          "path": "output.action",
+          "reference_shape": [
+            1,
+            32,
+            8
+          ],
+          "candidate_shape": [
+            1,
+            32,
+            8
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "differing_elements": 211,
+          "max_abs_difference": 0.015625,
+          "mean_abs_difference": 0.0027563597541302443,
+          "first_differing_index": [
+            0,
+            0,
+            0
+          ],
+          "reference_hash": "9b748acc103895d69c9246450170b5c90860e25082d60922d51abc9f2d79fd0d",
+          "candidate_hash": "f4996eab00cbcfcbfa3aa482796f6b81b5dc1df5c29bde1e0706876aba7afb82"
+        },
+        {
+          "path": "output.vision_latent",
+          "reference_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "candidate_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "dtype": "torch.float32",
+          "exact": false,
+          "differing_elements": 505621,
+          "max_abs_difference": 0.7095268368721008,
+          "mean_abs_difference": 0.01455819420516491,
+          "first_differing_index": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "reference_hash": "36120a610594fa31aed56b4b1aaecc1c47f499b66cf44a5b03a4913e7dd000f4",
+          "candidate_hash": "ca617b4a684a32c10d704f56a429b3576a083b23e4489f1c8d33bd34ff453786"
+        }
+      ],
+      "first_attention_profile": {
+        "batch_1": {
+          "aten_operators": [
+            "aten::_cudnn_attention_forward",
+            "aten::_scaled_dot_product_cudnn_attention",
+            "aten::as_strided",
+            "aten::clone",
+            "aten::copy_",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::empty_strided",
+            "aten::expand",
+            "aten::flatten",
+            "aten::repeat_interleave",
+            "aten::transpose",
+            "aten::unsqueeze",
+            "aten::view"
+          ],
+          "cuda_kernels": [
+            "Memset (Device)",
+            "cudnn_generated_fort_native_sdpa_sm90_flash_fprop_wgmma_f16_knob_7_64x128x128_4x1x1_cga1x1x1_kernel0_0",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})"
+          ]
+        },
+        "batch_2": {
+          "aten_operators": [
+            "aten::as_strided",
+            "aten::clone",
+            "aten::copy_",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::expand",
+            "aten::fill_",
+            "aten::flatten",
+            "aten::repeat_interleave",
+            "aten::unsqueeze",
+            "aten::view",
+            "aten::zero_",
+            "aten::zeros"
+          ],
+          "cuda_kernels": [
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+            "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::array<char*, 1ul> >(int, at::native::FillFunctor<float>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+            "void cutlass::device_kernel_sm90<cutlass::fmha::kernel::FmhaKernelTmaWarpSpecialized<cute::tuple<int, int, cutlass::fmha::collective::VariableLength, cutlass::fmha::collective::VariableLength, int>, cutlass::fmha::collective::FmhaMainloopTmaWarpSpecializedSm90<cutlass::bfloat16_t, float, float, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cutlass::fmha::collective::CausalFusion>, cutlass::fmha::collective::FmhaFwdEpilogueSm90<cutlass::bfloat16_t, float, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, true>, cutlass::fmha::kernel::IndividualTileScheduler> >(cutlass::fmha::kernel::FmhaKernelTmaWarpSpecialized<cute::tuple<int, int, cutlass::fmha::collective::VariableLength, cutlass::fmha::collective::VariableLength, int>, cutlass::fmha::collective::FmhaMainloopTmaWarpSpecializedSm90<cutlass::bfloat16_t, float, float, cute::tuple<cute::C<128>, cute::C<128>, cute::C<128> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cute::tuple<int, cute::C<1>, cute::tuple<long, int> >, cutlass::fmha::collective::CausalFusion>, cutlass::fmha::collective::FmhaFwdEpilogueSm90<cutlass::bfloat16_t, float, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, true>, cutlass::fmha::kernel::IndividualTileScheduler>::Params)"
+          ]
+        }
+      }
+    },
+    "fixed": {
+      "attention_dispatch": {
+        "batch_1": {
+          "source": "two_way_attention",
+          "uses_varlen": true,
+          "packed_query_shape": [
+            1,
+            159,
+            16,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            159,
+            8,
+            128
+          ]
+        },
+        "batch_2": {
+          "source": "two_way_attention",
+          "uses_varlen": true,
+          "packed_query_shape": [
+            1,
+            317,
+            16,
+            128
+          ],
+          "packed_key_shape": [
+            1,
+            317,
+            8,
+            128
+          ]
+        },
+        "first_four_calls_batch_1": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              159,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              159,
+              8,
+              128
+            ],
+            "target_query_length": 158,
+            "target_key_length": 158
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3253,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3251
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              159,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              159,
+              8,
+              128
+            ],
+            "target_query_length": 158,
+            "target_key_length": 158
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              3094,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              3253,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3251
+          }
+        ],
+        "first_four_calls_batch_2": [
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              317,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              317,
+              8,
+              128
+            ],
+            "target_query_length": 158,
+            "target_key_length": 158
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6504,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3251
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": true,
+            "packed_query_shape": [
+              1,
+              317,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              317,
+              8,
+              128
+            ],
+            "target_query_length": 158,
+            "target_key_length": 158
+          },
+          {
+            "source": "two_way_attention",
+            "uses_varlen": true,
+            "is_causal": false,
+            "packed_query_shape": [
+              1,
+              6187,
+              16,
+              128
+            ],
+            "packed_key_shape": [
+              1,
+              6504,
+              8,
+              128
+            ],
+            "target_query_length": 3093,
+            "target_key_length": 3251
+          }
+        ]
+      },
+      "first_attention": {
+        "query": {
+          "reference_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "8902caf15e18e3569fcfb37395eb6947bae8dd9a7faab72f5e5d8545cf44bcb2",
+          "candidate_hash": "8902caf15e18e3569fcfb37395eb6947bae8dd9a7faab72f5e5d8545cf44bcb2",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "key": {
+          "reference_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "4313717c07aac478fe036521fad42f22d9422341386446610927042885a1491f",
+          "candidate_hash": "4313717c07aac478fe036521fad42f22d9422341386446610927042885a1491f",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "value": {
+          "reference_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "f7d5de7ab22112e75357cb7a4882e7ae3f8c46569c8466611a3ddd557e2fd0c2",
+          "candidate_hash": "f7d5de7ab22112e75357cb7a4882e7ae3f8c46569c8466611a3ddd557e2fd0c2",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            158,
+            8,
+            128
+          ],
+          "compared_sequence_length": 158
+        },
+        "output": {
+          "reference_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "candidate_full_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "054bdf4cdbd81e5e970df4fefc3cdec080f3690616f9908ea99bc40d9b381ea2",
+          "candidate_hash": "054bdf4cdbd81e5e970df4fefc3cdec080f3690616f9908ea99bc40d9b381ea2",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "reference_full_shape": [
+            1,
+            158,
+            16,
+            128
+          ],
+          "compared_sequence_length": 158
+        }
+      },
+      "flow_iterations": [
+        {
+          "label": "flow.input",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "ea5513d15cdd9c30aa90098e9aef07752a3446a6c40c2496edac3592956e4bb8",
+          "candidate_hash": "ea5513d15cdd9c30aa90098e9aef07752a3446a6c40c2496edac3592956e4bb8",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "ea5513d15cdd9c30aa90098e9aef07752a3446a6c40c2496edac3592956e4bb8",
+          "candidate_hash": "ea5513d15cdd9c30aa90098e9aef07752a3446a6c40c2496edac3592956e4bb8",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "aa5b1ad744adb3fe8ccc7289ea267d0ff6f9aa51c18425179a7180064ec36466",
+          "candidate_hash": "aa5b1ad744adb3fe8ccc7289ea267d0ff6f9aa51c18425179a7180064ec36466",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "db49d3713691914fc19a95e922a797e612de91709f9c81bb89f3aa2ff4f35a18",
+          "candidate_hash": "db49d3713691914fc19a95e922a797e612de91709f9c81bb89f3aa2ff4f35a18",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.input",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "reference_hash": "b14b21df1763664e1d95c5e7fba6fd128bb9655b6bebbda5ab48e6df3dce4718",
+          "candidate_hash": "b14b21df1763664e1d95c5e7fba6fd128bb9655b6bebbda5ab48e6df3dce4718",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.timestep",
+          "call": 0,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 1,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "candidate_hash": "7ba37aa08ed85296a0b46d6dcb2bddda7000ad1696d27998a16a1e752dc75096",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 2,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "candidate_hash": "243b15129e48a2e9fd78db9721c70c62b3d5675f235112e6d5321fd842e5e69a",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 3,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "candidate_hash": "bfa2b6857bf0e93fa0153ce5df97ef3c2c0a3e1f9ac5e83f1d802fc335ebc62e",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.timestep",
+          "call": 4,
+          "reference_shape": [
+            1,
+            1
+          ],
+          "candidate_full_shape": [
+            1,
+            1
+          ],
+          "dtype": "torch.int64",
+          "exact": true,
+          "reference_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "candidate_hash": "a50467e8524d3118dc9bb12908cfed8a8394b3594cc1dc41578fe25b1767e726",
+          "differing_elements": 0,
+          "first_differing_index": null
+        },
+        {
+          "label": "flow.velocity",
+          "call": 0,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "d2002cf07d953df734d107635779e1f7285e0452e20cd1d1bc1de46d74a9d327",
+          "candidate_hash": "d2002cf07d953df734d107635779e1f7285e0452e20cd1d1bc1de46d74a9d327",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 1,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "97ba58d84ba6ba33542017fdb4c9f2fd39f2c30d03330003c8e864a671277c40",
+          "candidate_hash": "97ba58d84ba6ba33542017fdb4c9f2fd39f2c30d03330003c8e864a671277c40",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 2,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "948db7b284b7cfe2147e5b111d14f83146835a0f9ec23c2171ffce2f66fed5c4",
+          "candidate_hash": "948db7b284b7cfe2147e5b111d14f83146835a0f9ec23c2171ffce2f66fed5c4",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 3,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "b044f02b5fff1e0948d53395208d16f82d15f1733cb714c11bc737adf77dc2fe",
+          "candidate_hash": "b044f02b5fff1e0948d53395208d16f82d15f1733cb714c11bc737adf77dc2fe",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        },
+        {
+          "label": "flow.velocity",
+          "call": 4,
+          "reference_shape": [
+            572352
+          ],
+          "candidate_full_shape": [
+            572352
+          ],
+          "dtype": "torch.bfloat16",
+          "exact": true,
+          "reference_hash": "daeed9d4777ea183378dc4e4f43c47a6ab8ea8beb9fbc6fd8b21654c5356b630",
+          "candidate_hash": "daeed9d4777ea183378dc4e4f43c47a6ab8ea8beb9fbc6fd8b21654c5356b630",
+          "differing_elements": 0,
+          "first_differing_index": null,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0
+        }
+      ],
+      "final_outputs": [
+        {
+          "path": "output.action",
+          "reference_shape": [
+            1,
+            32,
+            8
+          ],
+          "candidate_shape": [
+            1,
+            32,
+            8
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "b3eec91f1faafb351391fa37bf3ab6ddbada4e388dddb8f002df1b59cda4c539",
+          "candidate_hash": "b3eec91f1faafb351391fa37bf3ab6ddbada4e388dddb8f002df1b59cda4c539"
+        },
+        {
+          "path": "output.vision_latent",
+          "reference_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "candidate_shape": [
+            1,
+            48,
+            9,
+            33,
+            40
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "f9600031aa580038e76654404e08ca6893e6f65748f8cd22c76778d20dba234d",
+          "candidate_hash": "f9600031aa580038e76654404e08ca6893e6f65748f8cd22c76778d20dba234d"
+        }
+      ],
+      "first_attention_profile": {
+        "batch_1": {
+          "aten_operators": [
+            "aten::_reshape_alias",
+            "aten::_to_copy",
+            "aten::as_strided",
+            "aten::bitwise_not",
+            "aten::cat",
+            "aten::clone",
+            "aten::copy_",
+            "aten::detach",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::empty_strided",
+            "aten::expand",
+            "aten::fill_",
+            "aten::flatten",
+            "aten::masked_fill",
+            "aten::masked_fill_",
+            "aten::mul",
+            "aten::narrow",
+            "aten::ones",
+            "aten::repeat_interleave",
+            "aten::reshape",
+            "aten::resolve_conj",
+            "aten::resolve_neg",
+            "aten::slice",
+            "aten::to",
+            "aten::transpose",
+            "aten::tril",
+            "aten::unsqueeze",
+            "aten::view",
+            "aten::zero_",
+            "aten::zeros"
+          ],
+          "cuda_kernels": [
+            "Memcpy DtoD (Device -> Device)",
+            "Memcpy DtoH (Device -> Pageable)",
+            "_softmax_kernel",
+            "bmm_kernel_persistent",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1})",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+            "void at::native::triu_tril_kernel<bool, int, false, 8, false>(at::cuda::detail::TensorInfo<bool, int>, at::cuda::detail::TensorInfo<bool const, int>, long, long, int)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<bool>, std::array<char*, 1ul> >(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul> >(int, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul>)"
+          ]
+        },
+        "batch_2": {
+          "aten_operators": [
+            "aten::_to_copy",
+            "aten::_unsafe_view",
+            "aten::as_strided",
+            "aten::bitwise_not",
+            "aten::cat",
+            "aten::clone",
+            "aten::copy_",
+            "aten::detach",
+            "aten::empty",
+            "aten::empty_like",
+            "aten::empty_strided",
+            "aten::expand",
+            "aten::fill_",
+            "aten::flatten",
+            "aten::masked_fill",
+            "aten::masked_fill_",
+            "aten::mul",
+            "aten::narrow",
+            "aten::ones",
+            "aten::repeat_interleave",
+            "aten::reshape",
+            "aten::resolve_conj",
+            "aten::resolve_neg",
+            "aten::slice",
+            "aten::to",
+            "aten::transpose",
+            "aten::tril",
+            "aten::unsqueeze",
+            "aten::view",
+            "aten::zero_",
+            "aten::zeros"
+          ],
+          "cuda_kernels": [
+            "Memcpy DtoD (Device -> Device)",
+            "Memcpy DtoH (Device -> Pageable)",
+            "_softmax_kernel",
+            "bmm_kernel_persistent",
+            "void at::native::(anonymous namespace)::CatArrayBatchedCopy_vectorized<at::native::(anonymous namespace)::OpaqueType<2u>, unsigned int, 1, 128, 1, 16, 8>(char*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<2u>, unsigned int, 128, 1>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1})",
+            "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+            "void at::native::triu_tril_kernel<bool, int, false, 8, false>(at::cuda::detail::TensorInfo<bool, int>, at::cuda::detail::TensorInfo<bool const, int>, long, long, int)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<bool>, std::array<char*, 1ul> >(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+            "void at::native::vectorized_elementwise_kernel<8, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul> >(int, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul>)"
+          ]
+        }
+      }
+    }
+  }
+}

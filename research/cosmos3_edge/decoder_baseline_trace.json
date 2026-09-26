@@ -1,0 +1,68 @@
+{
+  "model": "nvidia-cosmos3-edge-policy-droid-official-pytorch",
+  "comparison": "identical latent at B=1 versus first sample at duplicate B=2",
+  "latent": {
+    "shape": [
+      1,
+      48,
+      9,
+      33,
+      40
+    ],
+    "dtype": "torch.float32",
+    "sha256": "ce604348bd9cf77227299f0516fefdb28ad58aa65a098e318a7204fea690e1f4"
+  },
+  "reference_output": {
+    "shape": [
+      1,
+      3,
+      33,
+      528,
+      640
+    ],
+    "dtype": "torch.float32",
+    "sha256": "f5ea898b68ee1cb0af3c14d89723f9c086b7f6cc83eacd4595610e7979260209"
+  },
+  "candidate_output_first_sample": {
+    "shape": [
+      1,
+      3,
+      33,
+      528,
+      640
+    ],
+    "dtype": "torch.float32",
+    "sha256": "18ac2b785370dd3944a72fbea7f5678f982d9194d3de240a32276b2a5a80720a"
+  },
+  "first_divergence": {
+    "module": "decoder.upsamples.2.upsamples.0.residual.0",
+    "module_type": "RMS_norm",
+    "call": 2,
+    "exact": false,
+    "reference": {
+      "shape": [
+        1,
+        1024,
+        4,
+        132,
+        160
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "5d9b006bc92301c680f5094dfd62d48360713b74d2c38a8fe6a2d9f06948d673"
+    },
+    "candidate": {
+      "shape": [
+        1,
+        1024,
+        4,
+        132,
+        160
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "707e80778cab40925bbf9efccae449b76308b5bcb510008bb21ba0edb565e77f"
+    }
+  },
+  "total_comparisons": 1169,
+  "exact_comparisons_before_first_divergence": 687,
+  "differing_comparisons": 328
+}

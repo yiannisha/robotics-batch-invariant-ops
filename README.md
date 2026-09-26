@@ -110,6 +110,9 @@ with set_batch_invariant_mode(True):
 
 ### Reduction Operations
 - `torch.mean()` - Mean computation along specified dimensions
+- `torch.linalg.vector_norm(..., ord=2)` - Euclidean vector norms with a fixed
+  reduction tree per output vector, including the `torch.nn.functional.normalize`
+  path used by RMS normalization
 
 The current kernels cover CUDA float32, float16, and bfloat16 paths exercised
 by the tests. Conv1D/2D/3D cover regular non-transposed convolution, including
@@ -137,6 +140,7 @@ Only configurations that have been executed end to end are marked PASS.
 | MolmoAct2 official PyTorch, public `allenai/MolmoAct2-LIBERO` weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | GR00T N1.7 official NVIDIA PyTorch, public `libero_10` weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | Cosmos 3 Nano Policy official NVIDIA PyTorch, public DROID weights and real inputs | bfloat16 network, float32 outputs | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| Cosmos 3 Edge Policy official NVIDIA PyTorch, public DROID weights and real inputs | bfloat16 network, float32 outputs | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -180,7 +184,7 @@ repaired, an action-DiT `aten::addmm` is the next divergence. The generic
 invariant BMM and MM/addmm paths make all four flow steps and the final 16x7
 action exact through B=64.
 
-The Cosmos row uses NVIDIA's official Cosmos framework, complete public
+The Cosmos Nano row uses NVIDIA's official Cosmos framework, complete public
 `Cosmos3-Nano-Policy-DROID` checkpoint, released Wan2.2 VAE, and real
 three-camera observations from `Cosmos3-DROID`. Stock inference switches from
 dense cuDNN attention at B=1 to packed variable-length CUTLASS attention at
@@ -191,6 +195,16 @@ and the 48x9x33x40 world latent exact through B=64. The separately decoded
 to persistent BMM for the Wan2.2 Conv3D path. Three DROID targets also pass
 duplicate and unrelated B=2/B=4 checks.
 
+The Cosmos Edge row uses the same official PyTorch serving path with the
+complete public `Cosmos3-Edge-Policy-DROID` checkpoint and its released JSON
+prompt plus `[960, 1001]` guidance-interval configuration. Its generation
+path has the same dense-versus-packed attention switch and is exact through
+B=64 after the reusable varlen repair. Exact latents exposed a later decoder
+boundary in `aten::linalg_vector_norm`: a Wan2.2 RMS-normalization call was the
+first of 1,169 traced decoder calls to differ. The new generic fixed-tree
+Euclidean vector norm makes the decoded 33x528x640 RGB video exact at B=2.
+Three real DROID targets pass duplicate and unrelated B=2/B=4 checks.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -199,7 +213,8 @@ upstream commits, baseline/fixed hashes, first-divergence diagnostics,
 multiple-input checks, iteration notes, and operator benchmarks. MolmoAct2 evidence is in
 [`research/molmoact2`](research/molmoact2), and GR00T N1.7 evidence is in
 [`research/groot_n17`](research/groot_n17). Cosmos 3 Nano evidence is in
-[`research/cosmos3_nano`](research/cosmos3_nano). The earlier random-weight
+[`research/cosmos3_nano`](research/cosmos3_nano), and Cosmos 3 Edge evidence
+is in [`research/cosmos3_edge`](research/cosmos3_edge). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -369,6 +384,27 @@ geometries. The adapter defaults to eager official inference because compiled
 graphs capture kernels before runtime dispatcher selection;
 `COSMOS3_TORCH_COMPILE=1` restores the upstream compiled serving switch.
 
+For Cosmos 3 Edge, use the same pinned framework, DROID fixture, and VAE, then
+download the Edge checkpoint recorded in
+[`research/cosmos3_edge/checkpoint.txt`](research/cosmos3_edge/checkpoint.txt):
+
+```bash
+COSMOS3_EDGE_CHECKPOINT=/path/to/Cosmos3-Edge-Policy-DROID \
+COSMOS3_DROID_SAMPLE_DIR=/path/to/cosmos3-droid-sample \
+HF_HOME=/path/to/huggingface-cache \
+PYTHONPATH="$PWD:/path/to/cosmos-framework" \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.cosmos3_edge_policy \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/cosmos3_edge/fixed.json
+```
+
+The generic Cosmos trace and multiple-input scripts accept the Edge adapter
+through `--adapter`. `scripts/trace_cosmos3_video_decoder.py` fingerprints the
+Wan decoder leaf calls, and `scripts/benchmark_cosmos3_edge_ops.py` benchmarks
+Edge's actual attention and vector-norm shapes.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -409,6 +445,12 @@ attention was 1.34–2.05× slower and dominant full attention was 5.22–6.75×
 slower across B=1, 2, and 8. The full path materializes scores but bounds each
 launch's score memory; complete inference still fits B=64 on the recorded
 H100. See [`research/cosmos3_nano/benchmarks.json`](research/cosmos3_nano/benchmarks.json).
+
+For Cosmos 3 Edge in the same environment, invariant causal attention was
+1.53–2.13× slower and full attention was 5.57–6.78× slower across B=1, 2, and
+8. The invariant Wan decoder vector norm was 1.51–2.06× slower, while avoiding
+stock's roughly 173 MB temporary allocation at B=1/B=2. See
+[`research/cosmos3_edge/benchmarks.json`](research/cosmos3_edge/benchmarks.json).
 
 ## Attribution
 

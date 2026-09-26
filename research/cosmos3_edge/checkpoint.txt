@@ -1,0 +1,18 @@
+model_repository: https://huggingface.co/nvidia/Cosmos3-Edge-Policy-DROID
+model_repository_commit: a7c7288f9b6ac1684e993007b0f9703dd26e58ef
+format: official PyTorch safetensors checkpoint
+local_snapshot_size: approximately 8.6 GB
+
+vae_repository: https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B
+vae_revision: 921dbaf3f1674a56f47e83fb80a34bac8a8f203e
+vae_file: Wan2.2_VAE.pth
+vae_use: official Cosmos vision tokenizer/decoder dependency
+
+dataset_repository: https://huggingface.co/datasets/nvidia/Cosmos3-DROID
+dataset_repository_commit: 5c11a20accb11497270a5247a7f1e66ad04c956c
+data_file: success/data/chunk-000/file-000.parquet
+task_file: success/meta/tasks.parquet
+input_fixture: first 64 synchronized frames from wrist, exterior1, and exterior2 cameras
+
+All model tensors come from NVIDIA's released Edge DROID policy checkpoint.
+Inputs are real observations from NVIDIA's released Cosmos3-DROID dataset.

@@ -33,9 +33,14 @@ from PIL import Image
 
 class Cosmos3NanoPolicyAdapter:
     name = "nvidia-cosmos3-nano-policy-droid-official-pytorch"
+    checkpoint_environment_variable = "COSMOS3_NANO_CHECKPOINT"
+    format_prompt_as_json: bool | None = None
+    guidance_interval: tuple[float, float] | None = None
 
     def __init__(self) -> None:
-        self.checkpoint = Path(os.environ.get("COSMOS3_NANO_CHECKPOINT", ""))
+        self.checkpoint = Path(
+            os.environ.get(self.checkpoint_environment_variable, "")
+        )
         self.sample_dir = Path(os.environ.get("COSMOS3_DROID_SAMPLE_DIR", ""))
         self.output_dir = Path(
             os.environ.get("COSMOS3_OUTPUT_DIR", "/tmp/cosmos3_batch_invariance")
@@ -205,6 +210,8 @@ class Cosmos3NanoPolicyAdapter:
             output_dir=self.output_dir,
             deterministic_seed=True,
             decode_video=self.decode_video,
+            format_prompt_as_json=self.format_prompt_as_json,
+            guidance_interval=self.guidance_interval,
         )
         self.service = ConfiguredRobolabPolicyService(args)
         return self.service

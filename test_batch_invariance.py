@@ -12,6 +12,7 @@ from batch_invariant_ops import (
     conv2d_batch_invariant,
     conv3d_batch_invariant,
     is_batch_invariant_mode_enabled,
+    linalg_vector_norm_batch_invariant,
     matmul_persistent,
     scaled_dot_product_attention_batch_invariant,
     set_batch_invariant_mode,
@@ -277,6 +278,42 @@ def test_mode_overrides_matmul_and_conv1d_conv2d_conv3d() -> None:
             F.conv3d(video[:1], video_weight, stride=(2, 16, 16)),
             F.conv3d(video, video_weight, stride=(2, 16, 16)),
         )
+
+
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("dimensions", ((1,), (1, 3), None))
+@pytest.mark.parametrize("keepdim", (False, True))
+def test_vector_norm_matches_torch(
+    dtype: torch.dtype, dimensions: tuple[int, ...] | None, keepdim: bool
+) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7050)
+    inputs = torch.randn(3, 17, 5, 11, device="cuda", dtype=dtype, generator=generator)
+
+    actual = linalg_vector_norm_batch_invariant(
+        inputs, dim=dimensions, keepdim=keepdim
+    )
+    expected = torch.linalg.vector_norm(inputs, dim=dimensions, keepdim=keepdim)
+    torch.testing.assert_close(actual, expected, **TOLERANCES[dtype])
+
+
+@pytest.mark.parametrize("composition", ("duplicate", "unrelated"))
+def test_rms_normalization_is_batch_invariant(composition: str) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(7075)
+    target = torch.randn(
+        1, 1024, 4, 33, 40, device="cuda", dtype=torch.bfloat16, generator=generator
+    )
+    if composition == "duplicate":
+        inputs = target.repeat(2, 1, 1, 1, 1)
+    else:
+        companion = torch.randn(
+            1, 1024, 4, 33, 40, device="cuda", dtype=torch.bfloat16, generator=generator
+        )
+        inputs = torch.cat((target, companion))
+
+    with set_batch_invariant_mode():
+        alone = F.normalize(target, dim=1)
+        batched = F.normalize(inputs, dim=1)
+    _assert_first_sample_equal(alone, batched)
 
 
 @pytest.mark.parametrize("dtype", DTYPES)
