@@ -100,8 +100,12 @@ to the README support table only after end-to-end execution.
   Stock fails every non-unit batch; invariant SDPA repairs DINO attention and
   invariant MM repairs the later Llama MLP boundary. All ten DDIM steps and
   final actions are exact after repair. It is now in the support table.
-- **OpenHelix:** official PyTorch code and public checkpoints exist, but its
-  CALVIN inference setup is more involved; it remains queued after CogACT.
+- **OpenHelix:** the official PyTorch planner and diffusion policy, complete
+  public `prompt_tuning_aux` checkpoint, and public CALVIN ABC observations
+  have now been executed through B=64. Existing BMM repair fixes the first
+  CLIP attention boundary; the model additionally exposed direct rank-3
+  `aten::linear`, now covered by a generic invariant implementation. The full
+  25-step action path is in the support table.
 
 ## Primary sources
 

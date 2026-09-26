@@ -1,0 +1,29 @@
+{
+  "model": "openhelix-official-pytorch-calvin",
+  "reference": "released DiffuserActorACTS.conditional_sample",
+  "candidate": "adapter explicit per-sample noise path",
+  "cuda_seed": 91000,
+  "diffusion_steps": 25,
+  "exact": true,
+  "comparison": {
+    "path": "output",
+    "reference_shape": [
+      1,
+      19,
+      10
+    ],
+    "candidate_shape": [
+      1,
+      19,
+      10
+    ],
+    "dtype": "torch.float32",
+    "exact": true,
+    "differing_elements": 0,
+    "max_abs_difference": 0.0,
+    "mean_abs_difference": 0.0,
+    "first_differing_index": null,
+    "reference_hash": "2d3da959f652b4df8f4af2826fe6207fb0510ce51af673ff24494baec0de0af7",
+    "candidate_hash": "2d3da959f652b4df8f4af2826fe6207fb0510ce51af673ff24494baec0de0af7"
+  }
+}

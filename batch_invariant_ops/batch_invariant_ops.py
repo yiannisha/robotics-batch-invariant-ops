@@ -1609,6 +1609,17 @@ def addmm_batch_invariant(bias, a, b):
     return matmul_persistent(a, b, bias=bias)
 
 
+def linear_batch_invariant(input, weight, bias=None):
+    """Batch-invariant ``aten::linear`` for arbitrary leading dimensions."""
+    assert input.ndim >= 1, "linear input must have at least one dimension"
+    assert weight.ndim == 2, "linear weight must be a matrix"
+    assert input.shape[-1] == weight.shape[-1], "Incompatible dimensions"
+    output_shape = (*input.shape[:-1], weight.shape[0])
+    flattened = input.reshape(-1, input.shape[-1])
+    output = matmul_persistent(flattened, weight.transpose(0, 1), bias=bias)
+    return output.reshape(output_shape)
+
+
 def bmm_batch_invariant(a, b):
     return bmm_persistent(a, b)
 
@@ -1661,6 +1672,7 @@ def enable_batch_invariant_mode():
     _batch_invariant_LIB = torch.library.Library("aten", "IMPL")
     _batch_invariant_LIB.impl("aten::mm", mm_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::addmm", addmm_batch_invariant, dispatch_key)
+    _batch_invariant_LIB.impl("aten::linear", linear_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::bmm", bmm_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl("aten::convolution", convolution_batch_invariant, dispatch_key)
     _batch_invariant_LIB.impl(

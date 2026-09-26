@@ -15,6 +15,7 @@ from batch_invariant_ops import (
     conv_transpose3d_batch_invariant,
     deterministic_token_choice_moe,
     is_batch_invariant_mode_enabled,
+    linear_batch_invariant,
     linalg_vector_norm_batch_invariant,
     matmul_persistent,
     scaled_dot_product_attention_batch_invariant,
@@ -59,6 +60,39 @@ def test_mm_matches_torch(dtype: torch.dtype) -> None:
 
     torch.testing.assert_close(
         matmul_persistent(left, right), torch.mm(left, right), **TOLERANCES[dtype]
+    )
+
+
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("batch_size", (2, 5, 17))
+def test_rank3_linear_is_batch_invariant(dtype: torch.dtype, batch_size: int) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(2500 + batch_size)
+    inputs = torch.randn(batch_size, 37, 257, device="cuda", dtype=dtype, generator=generator)
+    weight = torch.randn(91, 257, device="cuda", dtype=dtype, generator=generator)
+    bias = torch.randn(91, device="cuda", dtype=dtype, generator=generator)
+
+    _assert_first_sample_equal(
+        linear_batch_invariant(inputs[:1], weight, bias),
+        linear_batch_invariant(inputs, weight, bias),
+    )
+
+
+@pytest.mark.parametrize("dtype", DTYPES)
+def test_linear_matches_torch(dtype: torch.dtype) -> None:
+    generator = torch.Generator(device="cuda").manual_seed(2700)
+    inputs = torch.randn(3, 37, 257, device="cuda", dtype=dtype, generator=generator)
+    weight = torch.randn(91, 257, device="cuda", dtype=dtype, generator=generator)
+    bias = torch.randn(91, device="cuda", dtype=dtype, generator=generator)
+
+    tolerance = (
+        {"rtol": 2e-2, "atol": 1.5e-1}
+        if dtype == torch.bfloat16
+        else TOLERANCES[dtype]
+    )
+    torch.testing.assert_close(
+        linear_batch_invariant(inputs, weight, bias),
+        F.linear(inputs, weight, bias),
+        **tolerance,
     )
 
 
@@ -353,9 +387,16 @@ def test_mode_overrides_matmul_and_convolution_family() -> None:
     )
     image_latent = torch.randn(5, 8, 3, 3, device="cuda", generator=generator)
     image_transpose_weight = torch.randn(8, 6, 4, 4, device="cuda", generator=generator)
+    linear_input = torch.randn(5, 37, 257, device="cuda", generator=generator)
+    linear_weight = torch.randn(91, 257, device="cuda", generator=generator)
+    linear_bias = torch.randn(91, device="cuda", generator=generator)
 
     with set_batch_invariant_mode():
         _assert_first_sample_equal(query[:1] @ key[:1], query @ key)
+        _assert_first_sample_equal(
+            F.linear(linear_input[:1], linear_weight, linear_bias),
+            F.linear(linear_input, linear_weight, linear_bias),
+        )
         _assert_first_sample_equal(
             F.conv1d(signal[:1], signal_weight, padding=3, groups=8),
             F.conv1d(signal, signal_weight, padding=3, groups=8),

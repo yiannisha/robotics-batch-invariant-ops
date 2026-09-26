@@ -82,6 +82,9 @@ with set_batch_invariant_mode(True):
 ### Matrix Operations
 - `torch.mm()` - Matrix multiplication
 - `torch.addmm()` - Matrix multiplication with bias addition
+- `torch.nn.functional.linear()` / `nn.Linear` - Linear projection for
+  arbitrary leading dimensions, flattened onto the fixed-schedule matrix
+  multiplication path
 - `torch.bmm()` - Batch matrix multiplication, including rank-3 attention
   `torch.matmul()` calls that dispatch to `aten::bmm`
 
@@ -167,6 +170,7 @@ Only configurations that have been executed end to end are marked PASS.
 | SpatialVLA 4B official PyTorch, official pretrained checkpoint and real image inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | RDT-1B official PyTorch ManiSkill policy, official weights/task embedding and real image fixtures | bfloat16 network, float32 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | CogACT-Small official PyTorch, official checkpoint/example and released batch path | bfloat16 VLM, float32 DiT-S, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| OpenHelix official PyTorch CALVIN policy, official checkpoint and real CALVIN observations | bfloat16 planner, float32 diffusion policy/actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -348,6 +352,19 @@ MM/addmm make the complete 16x7 trajectory exact through B=64. Three image
 targets pass all B=2/B=4 checks. The checkpoint contains every learned vision,
 projector, Llama, and DiT-S tensor; construction uses no substitute weights.
 
+The OpenHelix row uses the authors' official PyTorch repository and complete
+public `prompt_tuning_aux` checkpoint: a BF16 LLaVA/LISA planner followed by
+the released FP32 DiffuserActor policy. Real observations come from the public
+CALVIN ABC dataset, including both cameras, depth, proprioception, and point
+clouds reconstructed with the released calibration. Its explicit-noise path is
+bitwise identical to the official 25-step `conditional_sample` method at B=1.
+Stock changes 114 of 133 final action values at B=2. The first divergence is
+CLIP block-0 attention's `aten::bmm`; after the existing operator repairs, the
+exact `[1,256,1024]` visual tensor first changes in the multimodal projector's
+rank-3 `aten::linear`. The new generic linear override makes the complete
+planner, policy encoder, all 25 diffusion steps, and final 19x7 absolute action
+exact through B=64. Three real CALVIN targets pass all B=2/B=4 checks.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -367,7 +384,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/univla_baai`](research/univla_baai), and SpatialVLA evidence is in
 [`research/spatialvla`](research/spatialvla). RDT-1B evidence is in
 [`research/rdt_1b`](research/rdt_1b), and CogACT-Small evidence is in
-[`research/cogact_small`](research/cogact_small). The earlier random-weight
+[`research/cogact_small`](research/cogact_small). OpenHelix evidence is in
+[`research/openhelix`](research/openhelix). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -683,6 +701,33 @@ trace, three-target regression, and actual-shape benchmark are
 `scripts/trace_cogact_small_batch_invariance.py`,
 `scripts/check_cogact_small_multiple_inputs.py`, and
 `scripts/benchmark_cogact_small_ops.py`.
+
+For OpenHelix, check out the pinned official source, apply
+`scripts/model_invariance/patches/openhelix_inference_compat.patch`, and
+download the pinned `OpenHelix/openhelix` `prompt_tuning_aux` checkpoint plus
+metadata-only LLaVA and CLIP construction assets recorded under
+`research/openhelix`. Provide at least three official-format CALVIN transition
+files, then run:
+
+```bash
+OPENHELIX_SOURCE=/path/to/OpenHelix \
+OPENHELIX_CHECKPOINT=/path/to/prompt_tuning_aux \
+OPENHELIX_BASE=/path/to/LLaVA-7B-Lightening-v1-1-metadata \
+OPENHELIX_VISION=/path/to/clip-vit-large-patch14-metadata \
+OPENHELIX_SAMPLE_DIR=/path/to/calvin-transitions \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.openhelix_calvin \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/openhelix/fixed.json
+```
+
+The first-divergence trace, official-sampler equivalence check, three-target
+regression, and actual-projector benchmark are
+`scripts/trace_openhelix_batch_invariance.py`,
+`scripts/check_openhelix_official_equivalence.py`,
+`scripts/check_openhelix_multiple_inputs.py`, and
+`scripts/benchmark_openhelix_ops.py`.
 
 ## Performance
 

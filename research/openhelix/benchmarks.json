@@ -1,0 +1,126 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 3,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "openhelix_mm_projector_rank3_linear",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          256,
+          1024
+        ],
+        "weight": [
+          4096,
+          1024
+        ],
+        "bias": [
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "model.mm_projector"
+      },
+      "stock": {
+        "latency_ms": 0.014643199741840363,
+        "peak_incremental_bytes": 6225920
+      },
+      "batch_invariant": {
+        "latency_ms": 0.04333760142326355,
+        "peak_incremental_bytes": 5177344
+      },
+      "latency_ratio": 2.959571827695145,
+      "stock_samples_per_second": 68291.08512005585,
+      "batch_invariant_samples_per_second": 23074.650353473455,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "openhelix_mm_projector_rank3_linear",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          256,
+          1024
+        ],
+        "weight": [
+          4096,
+          1024
+        ],
+        "bias": [
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "model.mm_projector"
+      },
+      "stock": {
+        "latency_ms": 0.023420800268650056,
+        "peak_incremental_bytes": 8388608
+      },
+      "batch_invariant": {
+        "latency_ms": 0.05889279842376709,
+        "peak_incremental_bytes": 9437184
+      },
+      "latency_ratio": 2.51455107204847,
+      "stock_samples_per_second": 85394.17855320267,
+      "batch_invariant_samples_per_second": 33960.00960268292,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 268177,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "openhelix_mm_projector_rank3_linear",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          256,
+          1024
+        ],
+        "weight": [
+          4096,
+          1024
+        ],
+        "bias": [
+          4096
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "model.mm_projector"
+      },
+      "stock": {
+        "latency_ms": 0.060969597101211546,
+        "peak_incremental_bytes": 33554432
+      },
+      "batch_invariant": {
+        "latency_ms": 0.065583997964859,
+        "peak_incremental_bytes": 37748736
+      },
+      "latency_ratio": 1.075683637141105,
+      "stock_samples_per_second": 131212.9385851072,
+      "batch_invariant_samples_per_second": 121980.97475372777,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 268177,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    }
+  ]
+}

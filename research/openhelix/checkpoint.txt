@@ -1,0 +1,36 @@
+OpenHelix/openhelix
+revision: 1a6fabbe148af045ed0710d007ed24c36fa83a53
+subdirectory: prompt_tuning_aux
+
+sha256  llava_ckpt_safetensors/model-00000.safetensors  size 2105645528
+7bc815c581781b9d864ff22fbfd87f84d45adda0b283609d42f5716f6b933ac7
+sha256  llava_ckpt_safetensors/model-00001.safetensors  size 2114018192
+6f015b79cea364ea356c0e11414e9dbe71f4736b2b5b8523119a34a087e0e758
+sha256  llava_ckpt_safetensors/model-00002.safetensors  size 2114034864
+2ec780a890f2554385765fe3f4beedeb6b953d7eaf6f3887ad1535e56976433f
+sha256  llava_ckpt_safetensors/model-00003.safetensors  size 2124504248
+6d552bc92746187c7d1614186e924dee8c3b456c06be03868da9d2ac07410128
+sha256  llava_ckpt_safetensors/model-00004.safetensors  size 2057395512
+247bc9b65065446a596a3c431077bdbe4126681821334c2019369aaa65f49620
+sha256  llava_ckpt_safetensors/model-00005.safetensors  size 2114018256
+4172759f8b2e57b1e0d3d8daaddea4b5489adfa546f07b4a7ce1b53db55f2e62
+sha256  llava_ckpt_safetensors/model-00006.safetensors  size 1504179160
+ee2df39c2fc516148d2d82e108f66c189f2cd769fb4e42cc333e6dca23d87810
+sha256  policy.pth  size 445004793
+c1d0b70dc11798c23180cde475afcdd14aa981b33a827367a89bc5e8a9c96638
+
+Construction-only metadata (no learned weights loaded):
+- mmaaz60/LLaVA-7B-Lightening-v1-1
+  revision 36c0964d3aa92d2a5c66fbc03ecb9bca5d67692e
+- openai/clip-vit-large-patch14
+  revision 32bd64288804d66eefd0ccbe215aa642df71cc41
+
+Public CALVIN fixtures:
+- KyujinL/CALVIN_ABC, revision
+  0874cd64f0df8dcc3a3534360ca448705e44e954
+- episode_0032068.npz
+  14280492791d135c65f31d363dd07156febcb9c678e3a00c26b9739b6a0aa25f
+- episode_0233391.npz
+  03541d5487f1275dfb65a4a563211e103a8af996940bf94567836896f3976b77
+- episode_0406866.npz
+  4576b10173910f6486eb0a4a18681d9c98e79c75c157f44f0e7092df5022f892
