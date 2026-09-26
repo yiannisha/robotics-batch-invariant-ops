@@ -150,6 +150,7 @@ Only configurations that have been executed end to end are marked PASS.
 | UVA official PyTorch joint video/action LIBERO-10, decoded RGB output | float32 | 1, 2 | FAIL | PASS |
 | SmolVLA maintained LeRobot PyTorch, public LIBERO checkpoint and real inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | OpenVLA-OFT official PyTorch, public LIBERO-Spatial checkpoint and real inputs | bfloat16 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| DexVLA official PyTorch classes, closest public complete checkpoint and real inputs | bfloat16 network, float32 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33 (64 OOM) | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -258,6 +259,18 @@ SDPA repaired, the wide continuous action-head `aten::addmm` is the next
 boundary. The existing generic SDPA and MM/addmm paths make the complete 8x7
 action chunk exact through B=64. Three target frames pass all B=2/B=4 checks.
 
+The DexVLA row uses the authors' official PyTorch classes with the closest
+public complete Qwen2-VLA plus ScaleDP checkpoint; the authors do not publish a
+complete end-to-end checkpoint, so that provenance limitation is explicit in
+the evidence. Real three-camera observations drive official greedy reasoning,
+FiLM conditioning, and ten DDIM steps with explicit per-example noise. Stock
+fails every completed batch above one and OOMs at B=7. Its first divergence is
+vision block-0 packed SDPA; with that repaired, ScaleDP's conditioning
+`aten::addmm` is next. In invariant mode, the adapter passes official Qwen2-VL
+`cu_seqlens` to the reusable varlen attention operator and trims each row's
+FiLM context at its own EOS. The complete 50x14 action is exact through B=33;
+B=64 OOMs. Three target frames pass all B=2/B=4 checks.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -271,7 +284,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/xvla`](research/xvla), UVA evidence is in
 [`research/uva`](research/uva), SmolVLA evidence is in
 [`research/smolvla`](research/smolvla), and OpenVLA-OFT evidence is in
-[`research/openvla_oft`](research/openvla_oft). The earlier random-weight
+[`research/openvla_oft`](research/openvla_oft). DexVLA evidence is in
+[`research/dexvla`](research/dexvla). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -522,6 +536,17 @@ staged trace, three-target regression, and operator benchmark are
 `scripts/check_openvla_oft_multiple_inputs.py`, and
 `scripts/benchmark_openvla_oft_ops.py`.
 
+For DexVLA, use the official source commit and community full-checkpoint
+revision recorded under `research/dexvla`, plus the official example HDF5
+episode. Set `DEXVLA_CHECKPOINT` and `DEXVLA_SAMPLE`, add the official source
+and `policy_heads` directory to `PYTHONPATH`, and run the generic harness with
+adapter `scripts.model_invariance.adapters.dexvla`. The official-equivalence,
+staged trace, three-target regression, and operator benchmark are
+`scripts/check_dexvla_official_equivalence.py`,
+`scripts/trace_dexvla_batch_invariance.py`,
+`scripts/check_dexvla_multiple_inputs.py`, and
+`scripts/benchmark_dexvla_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -591,6 +616,11 @@ For OpenVLA-OFT on PyTorch 2.8.0/CUDA 12.8, invariant DINO block-0 SDPA is
 7.56x, 8.30x, and 2.91x slower than stock at B=1, 2, and 8. The invariant
 continuous action-head addmm is 4.25x, 4.41x, and 3.28x slower. See
 [`research/openvla_oft/benchmarks.json`](research/openvla_oft/benchmarks.json).
+
+For DexVLA on the same environment, invariant segmented vision SDPA is 5.11x,
+5.39x, and 6.08x slower than stock at robot B=1, 2, and 8. The invariant
+ScaleDP conditioning addmm is 3.72x, 2.99x, and 2.85x slower. See
+[`research/dexvla/benchmarks.json`](research/dexvla/benchmarks.json).
 
 ## Attribution
 

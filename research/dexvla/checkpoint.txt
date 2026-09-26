@@ -1,0 +1,23 @@
+Complete community checkpoint used with the official DexVLA PyTorch classes
+repository: https://huggingface.co/kuromivv/DexVLA
+revision: f99bdd408e7dadf7ff1b960431c15781ce761b52
+path in repository: checkpoint-60000
+model tensor count: 1,081
+model element count: 3,412,385,806
+safetensors bytes: 6,824,771,612
+
+The DexVLA authors release official PyTorch code and ScaleDP stage weights but
+do not publish a complete end-to-end robot checkpoint. This is the closest
+public full checkpoint found. Its config2.json names the official
+Qwen2VLForConditionalGenerationForVLA architecture and ScaleDP policy config;
+the adapter maps its older DiT_H spelling to the official code's identical
+ScaleDP_H constructor. No weights are converted.
+
+Official example episode
+repository: https://huggingface.co/datasets/lesjie/dexvla_example_data
+revision: 5e7f53a
+file: episode_47.hdf5
+task: Cook rice.
+frames: 396
+cameras: cam_high, cam_left_wrist, cam_right_wrist
+

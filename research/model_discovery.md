@@ -62,8 +62,12 @@ to the README support table only after end-to-end execution.
   support table. The upstream batch-1-only output reshape is handled by a
   semantics-preserving batched adapter; no JAX code or checkpoint conversion
   is involved.
-- **DexVLA:** official PyTorch code and public weight collections exist. It is
-  the next named Tier-2 target after OpenVLA-OFT.
+- **DexVLA:** the official PyTorch classes have now been executed with the
+  closest public complete checkpoint and official three-camera example data.
+  Stock fails every completed batch above one; the repaired reasoning, FiLM,
+  and ten-step ScaleDP path is exact through B=33, with B=64 OOM. Because the
+  complete checkpoint is community-published rather than author-published,
+  that limitation is retained in the support row and evidence bundle.
 - **DeVA:** official PyTorch code and post-training weights are public, but the
   checkpoint depends on separately gated Cosmos-Predict2 base assets that were
   unavailable in this environment. Status: access-blocked; see

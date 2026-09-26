@@ -1,0 +1,22 @@
+{
+  "official_method": "Qwen2VLForConditionalGenerationForVLA.evaluate",
+  "noise_seed": 96000,
+  "noise_injection": "official torch.randn replaced with adapter explicit noise",
+  "normalized_actions": {
+    "shape": [
+      1,
+      50,
+      14
+    ],
+    "dtype": "torch.bfloat16",
+    "exact": true,
+    "differing_elements": 0,
+    "max_abs_difference": 0.0,
+    "reference_hash": "df80d01b778b66ccaa74f4920d19443817f033e43780dd5046186af7e0028e1a",
+    "candidate_hash": "df80d01b778b66ccaa74f4920d19443817f033e43780dd5046186af7e0028e1a"
+  },
+  "official_text": "The empty bottle belongs to rubbish, pick it into right rubbish bin.Next action:<|im_end|>",
+  "adapter_text": "The empty bottle belongs to rubbish, pick it into right rubbish bin.Next action:<|im_end|>",
+  "text_exact": true,
+  "exact": true
+}

@@ -1,0 +1,4 @@
+Official DexVLA PyTorch source
+repository: https://github.com/juruobenruo/DexVLA
+commit: fc21a822f4c774e242eb6f1ab4a235788de7aba9
+
