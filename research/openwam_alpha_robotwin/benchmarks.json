@@ -1,0 +1,273 @@
+{
+  "model": "openwam-alpha-robotwin-official-pytorch-joint-latent-action",
+  "module": "video_backbone.dit.head.head",
+  "operation": "aten::linear",
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "profile": {
+    "b1_shapes": {
+      "input": [
+        1,
+        360,
+        3072
+      ],
+      "flattened_input": [
+        360,
+        3072
+      ],
+      "weight": [
+        192,
+        3072
+      ],
+      "bias": [
+        192
+      ]
+    },
+    "b2_shapes": {
+      "input": [
+        2,
+        360,
+        3072
+      ],
+      "flattened_input": [
+        720,
+        3072
+      ],
+      "weight": [
+        192,
+        3072
+      ],
+      "bias": [
+        192
+      ]
+    },
+    "input_target_comparison": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        360,
+        3072
+      ],
+      "candidate_shape": [
+        1,
+        360,
+        3072
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "1f7d7b58a96a5ca0e3a89f217ca768e265c8959d80158d237f25861f0944d391",
+      "candidate_hash": "1f7d7b58a96a5ca0e3a89f217ca768e265c8959d80158d237f25861f0944d391"
+    },
+    "output_target_comparison": {
+      "path": "output",
+      "reference_shape": [
+        1,
+        360,
+        192
+      ],
+      "candidate_shape": [
+        1,
+        360,
+        192
+      ],
+      "dtype": "torch.bfloat16",
+      "exact": false,
+      "differing_elements": 118,
+      "max_abs_difference": 0.015625,
+      "mean_abs_difference": 1.388001805935346e-06,
+      "first_differing_index": [
+        0,
+        1,
+        71
+      ],
+      "reference_hash": "21a6336dc1ede606964c8ab5d1ca2c9ae37802d5ceb8ad2953f3cb97deae6ae3",
+      "candidate_hash": "85038ae2ca87b045b4aaf9210f0d5c231471366a9e788abe513d503ffafc1f80"
+    },
+    "stock_cuda_kernels_b1": [
+      "nvjet_tst_64x24_64x16_1x4_h_bz_splitK_bias_TNT",
+      "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, true, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)"
+    ],
+    "stock_cuda_kernels_b2": [
+      "nvjet_tst_64x24_64x16_1x4_h_bz_bias_TNT"
+    ]
+  },
+  "warmup": 3,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "openwam_video_dit_head_linear",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          360,
+          3072
+        ],
+        "flattened_input": [
+          360,
+          3072
+        ],
+        "weight": [
+          192,
+          3072
+        ],
+        "bias": [
+          192
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "video_backbone.dit.head.head"
+      },
+      "stock": {
+        "latency_ms": 0.018911999464035035,
+        "peak_incremental_bytes": 1325056
+      },
+      "batch_invariant": {
+        "latency_ms": 0.0491456001996994,
+        "peak_incremental_bytes": 276480
+      },
+      "latency_ratio": 2.5986464463030274,
+      "stock_samples_per_second": 52876.482039971546,
+      "batch_invariant_samples_per_second": 20347.701440954555,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "openwam_video_dit_head_linear",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          360,
+          3072
+        ],
+        "flattened_input": [
+          720,
+          3072
+        ],
+        "weight": [
+          192,
+          3072
+        ],
+        "bias": [
+          192
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "video_backbone.dit.head.head"
+      },
+      "stock": {
+        "latency_ms": 0.015500800311565399,
+        "peak_incremental_bytes": 1601536
+      },
+      "batch_invariant": {
+        "latency_ms": 0.04800640046596527,
+        "peak_incremental_bytes": 552960
+      },
+      "latency_ratio": 3.097027218017054,
+      "stock_samples_per_second": 129025.59608536906,
+      "batch_invariant_samples_per_second": 41661.1114473772,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 118,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "openwam_video_dit_head_linear",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          360,
+          3072
+        ],
+        "flattened_input": [
+          2880,
+          3072
+        ],
+        "weight": [
+          192,
+          3072
+        ],
+        "bias": [
+          192
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "video_backbone.dit.head.head"
+      },
+      "stock": {
+        "latency_ms": 0.015030400454998016,
+        "peak_incremental_bytes": 4194304
+      },
+      "batch_invariant": {
+        "latency_ms": 0.048163199424743654,
+        "peak_incremental_bytes": 3145728
+      },
+      "latency_ratio": 3.204385642880731,
+      "stock_samples_per_second": 532254.6145029544,
+      "batch_invariant_samples_per_second": 166101.9221221012,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 118,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "openwam_video_dit_head_linear",
+      "batch_size": 64,
+      "shape": {
+        "input": [
+          64,
+          360,
+          3072
+        ],
+        "flattened_input": [
+          23040,
+          3072
+        ],
+        "weight": [
+          192,
+          3072
+        ],
+        "bias": [
+          192
+        ],
+        "dtype": "torch.bfloat16",
+        "checkpoint_boundary": "video_backbone.dit.head.head"
+      },
+      "stock": {
+        "latency_ms": 0.07219520211219788,
+        "peak_incremental_bytes": 18743296
+      },
+      "batch_invariant": {
+        "latency_ms": 0.16338239908218383,
+        "peak_incremental_bytes": 17694720
+      },
+      "latency_ratio": 2.263064501547801,
+      "stock_samples_per_second": 886485.5021880569,
+      "batch_invariant_samples_per_second": 391719.06129133917,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 118,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    }
+  ]
+}

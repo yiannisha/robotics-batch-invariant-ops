@@ -1,0 +1,29 @@
+{
+  "model": "openwam-alpha-robotwin-official-pytorch-joint-latent-action",
+  "batch_size": 1,
+  "surface": "actions",
+  "official_equivalent": true,
+  "comparisons": [
+    {
+      "path": "output.actions",
+      "reference_shape": [
+        1,
+        32,
+        20
+      ],
+      "candidate_shape": [
+        1,
+        32,
+        20
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "6e60170e6983a0f972e12db56443c87a1fb8a1be57445a5b5c08ceec94ab67bf",
+      "candidate_hash": "6e60170e6983a0f972e12db56443c87a1fb8a1be57445a5b5c08ceec94ab67bf"
+    }
+  ]
+}

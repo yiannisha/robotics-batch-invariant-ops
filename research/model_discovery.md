@@ -38,10 +38,12 @@ to the README support table only after end-to-end execution.
   backbone. The investigation uses the exact public Qwen3-VL architecture and
   processor assets only for construction, then loads every model tensor from
   NVIDIA's checkpoint; no substitute weights or conversion are involved.
-- **Cosmos:** Cosmos 3 publishes Nano-Policy-DROID and Edge-Policy-DROID action
-  policies. The Edge server command is public; the documentation also exposes
-  WAM inference that returns both actions and future visual rollout. Nano is
-  the preferred first single-H100 target, followed by Edge if memory permits.
+- **Cosmos:** the official PyTorch Cosmos 3 Nano-Policy-DROID and
+  Edge-Policy-DROID checkpoints have both been executed through B=64 on one
+  H100, including joint actions/future latents and released-VAE RGB at B=2.
+  Reusable packed-variable-length attention repairs both policies; Edge also
+  exposed a decoder vector-norm reduction repaired generically. Both are in
+  the support table.
 
 ## Tier 2 and newly discovered candidates
 
@@ -124,9 +126,12 @@ to the README support table only after end-to-end execution.
   path is exact through B=64 after generic linear repair; its joint 9-frame
   video/action output is exact at B=2, including decoded RGB. It is now in the
   support table.
-- **OpenWAM:** the authors publish native PyTorch code and public checkpoints
-  for the 2026-09 world-action release. Status: runnable candidate, not yet a
-  support claim.
+- **OpenWAM:** the official native PyTorch dual-system implementation and
+  complete 24.81 GB `OpenWAM-Alpha-Sim-RoboTwin-Full` checkpoint have now been
+  executed through B=64. Stock fails every B above one. The first mismatch is
+  the Wan2.2 video head's BF16 `aten::linear`; invariant linear repairs both
+  20-D EEF actions and joint video latents, including decoded RGB at B=2. It is
+  now in the support table.
 - **G0.5:** official PyTorch source and a public model page exist, but the
   checkpoint requires accepting a contact-information agreement unavailable
   in this environment. Status: access-blocked until credentials are supplied.

@@ -177,6 +177,8 @@ Regenerate the evidence-backed console summary with
 | VITRA-VLA-3B official Microsoft PyTorch policy, complete official checkpoint and released real images | float32 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | OpenDW DW05 official PyTorch RoboTwin action policy, complete official checkpoint and real three-camera inputs | bfloat16 network, float32 actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | OpenDW DW05 official PyTorch joint video/action path, decoded 9-frame RGB output | bfloat16 network, float32 actions, uint8 video | 1, 2 | FAIL | PASS |
+| OpenWAM Alpha official PyTorch RoboTwin joint video/action policy, complete official checkpoint and real three-camera images | bfloat16 network, float32 actions/latent | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| OpenWAM Alpha official PyTorch released Wan2.2 decoded RGB output | bfloat16 network, uint8 video | 1, 2 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -395,6 +397,21 @@ action exact through B=64. All three released images pass duplicate and
 unrelated B=2/B=4 checks, and the explicit-noise adapter matches the released
 private inference path exactly at B=1 and unrelated B=2.
 
+The OpenDW rows use Dexmal's official native PyTorch source, complete public
+DW05 RoboTwin policy/text/VAE bundle, and real three-camera inputs. Stock
+fails every non-unit action batch; the first mismatch is the ActionDiT input
+`aten::linear`. Generic linear repair makes actions exact through B=64 and the
+joint 9-frame action/RGB path exact at B=2.
+
+The OpenWAM rows use the official native PyTorch dual-system source and the
+complete 12.407B-parameter Alpha RoboTwin checkpoint. Stock fails every B
+above one. The first mismatch is the Wan2.2 video head's BF16 `aten::linear`,
+where cuBLASLt switches from split-K at flattened M=360 to non-split-K at
+M=720. Generic linear repair makes 20-D EEF actions and future-video latents
+exact through B=64, and released-VAE uint8 video exact at B=2. Images and
+language are real; the fixture's incompatible 14-D joint qpos is replaced by
+a deterministic 20-D EEF state derived from checkpoint statistics.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -417,7 +434,9 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/cogact_small`](research/cogact_small). OpenHelix evidence is in
 [`research/openhelix`](research/openhelix), and WSA Base evidence is in
 [`research/wsa_base`](research/wsa_base). VITRA-VLA-3B evidence is in
-[`research/vitra_vla_3b`](research/vitra_vla_3b). The earlier random-weight
+[`research/vitra_vla_3b`](research/vitra_vla_3b), OpenDW evidence is in
+[`research/opendw_dw05`](research/opendw_dw05), and OpenWAM evidence is in
+[`research/openwam_alpha_robotwin`](research/openwam_alpha_robotwin). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -812,6 +831,43 @@ and actual FOV-projection benchmark are
 `scripts/check_vitra_vla_3b_multiple_inputs.py`, and
 `scripts/benchmark_vitra_vla_3b_ops.py`.
 
+For OpenDW DW05, check out the pinned official source, apply the optional
+inference-loading patch under `scripts/model_invariance/patches`, and download
+the pinned complete `Dexmal/DW05-Robotwin` bundle plus the public real
+three-camera fixture recorded under `research/opendw_dw05`. The action and
+joint adapters are `scripts.model_invariance.adapters.opendw_dw05` and
+`scripts.model_invariance.adapters.opendw_dw05_joint`. Their official-path
+equivalence checks, trace, multi-input check, and actual-shape benchmark are
+the `check_opendw_dw05_*`, `trace_opendw_dw05_batch_invariance.py`, and
+`benchmark_opendw_dw05_ops.py` scripts.
+
+For OpenWAM Alpha, check out the pinned official native PyTorch source and
+download the complete pinned `OpenWAM/OpenWAM-Alpha-Sim-RoboTwin-Full`
+checkpoint and public real three-camera fixture recorded under
+`research/openwam_alpha_robotwin`. Install the official OpenWAM Python
+dependencies in an isolated path, then run:
+
+```bash
+OPENWAM_SOURCE=/path/to/OpenWAM \
+OPENWAM_CHECKPOINT=/path/to/OpenWAM-Alpha-Sim-RoboTwin-Full \
+OPENWAM_SAMPLE=/path/to/episode_47.hdf5 \
+OPENWAM_PYDEPS=/path/to/openwam-python-dependencies \
+OPENWAM_NATIVE_DEPS=/path/to/openwam-native-dependencies \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.openwam_alpha_robotwin \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/openwam_alpha_robotwin/fixed.json
+```
+
+The released-path equivalence check, per-step/layer trace, three-target
+regression, released-VAE decoded-video check, and actual video-head benchmark
+are `scripts/check_openwam_alpha_robotwin_official_equivalence.py`,
+`scripts/trace_openwam_alpha_robotwin_batch_invariance.py`,
+`scripts/check_openwam_alpha_robotwin_multiple_inputs.py`,
+`scripts/check_openwam_alpha_robotwin_decoded_video.py`, and
+`scripts/benchmark_openwam_alpha_robotwin_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -938,6 +994,12 @@ For OpenDW DW05 in the same environment, invariant linear on the actual BF16
 than stock at B=1, 2, 8, and 64. Absolute latency is 0.039-0.047 ms and measured
 incremental memory is lower at every size. See
 [`research/opendw_dw05/benchmarks.json`](research/opendw_dw05/benchmarks.json).
+
+For OpenWAM Alpha in the same environment, invariant linear on the actual BF16
+`[B,360,3072]` Wan2.2 video-head input is 2.60x, 3.10x, 3.20x, and 2.26x
+slower than stock at B=1, 2, 8, and 64. Absolute latency is 0.048-0.163 ms and
+measured incremental memory is lower at every size. See
+[`research/openwam_alpha_robotwin/benchmarks.json`](research/openwam_alpha_robotwin/benchmarks.json).
 
 ## Attribution
 

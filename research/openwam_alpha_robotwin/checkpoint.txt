@@ -1,0 +1,9 @@
+Checkpoint: https://huggingface.co/OpenWAM/OpenWAM-Alpha-Sim-RoboTwin-Full
+Revision: 04b96af53eeeb111c64631f822efcbb82f4b186e
+checkpoint_step_118655.safetensors size: 24813767464 bytes
+checkpoint_step_118655.safetensors SHA-256: d07ff6f8cfb627ebf47313e65af38773fabcb3861d52fdc7c3bc5e7bee33f6fe
+config.yaml SHA-256: d69c342a2d7e67dbb44058b20bfd0b0e986e8885b9462f7c7e85f8658fb822b0
+normalization_stats.npy SHA-256: 3eb52f759ebd004feda2772925d587054f9c2f05e1b979c3ff8c94fdd40e5db5
+
+The official strict loader accepted all 2,089 tensors and 12,406,754,092
+learned elements with no missing or unexpected keys.
