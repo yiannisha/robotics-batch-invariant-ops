@@ -148,6 +148,7 @@ Only configurations that have been executed end to end are marked PASS.
 | X-VLA maintained LeRobot PyTorch, public `lerobot/xvla-libero` weights and real inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | UVA official PyTorch action-only LIBERO-10, public checkpoint and real inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31 (duplicate) | FAIL | PASS |
 | UVA official PyTorch joint video/action LIBERO-10, decoded RGB output | float32 | 1, 2 | FAIL | PASS |
+| SmolVLA maintained LeRobot PyTorch, public LIBERO checkpoint and real inputs | mixed float32/bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -238,6 +239,15 @@ joint-path check executes 100 controlled video-diffusion steps and verifies
 the 4x16x16x16 video latent, official VAE-decoded 4x256x256 RGB video, and
 8x10 action output at B=2.
 
+The SmolVLA row uses the maintained LeRobot PyTorch implementation and the
+complete public `HuggingFaceVLA/smolvla_libero` checkpoint. Real two-camera
+observations, 8D state, task text, released normalization, and explicit
+per-example flow noise drive the official ten-step sampler. Stock fails every
+batch above one; the first divergence is the bias-free SmolVLM modality
+connector's `aten::mm`. With MM alone repaired, the state projection's
+`aten::addmm` is next. The generic MM/addmm paths make the complete 50x7 action
+chunk exact through B=64, and three target frames pass all B=2/B=4 checks.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -248,8 +258,9 @@ multiple-input checks, iteration notes, and operator benchmarks. MolmoAct2 evide
 [`research/groot_n17`](research/groot_n17). Cosmos 3 Nano evidence is in
 [`research/cosmos3_nano`](research/cosmos3_nano), and Cosmos 3 Edge evidence
 is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
-[`research/xvla`](research/xvla), and UVA evidence is in
-[`research/uva`](research/uva). The earlier random-weight
+[`research/xvla`](research/xvla), UVA evidence is in
+[`research/uva`](research/uva), and SmolVLA evidence is in
+[`research/smolvla`](research/smolvla). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -482,6 +493,15 @@ trace, `scripts/check_uva_libero10_multiple_inputs.py` for the three-target
 regression, and `scripts/benchmark_uva_libero10_ops.py` for the actual learned
 temporal-upsample shape.
 
+For SmolVLA, use the official `HuggingFaceVLA/smolvla_libero` checkpoint and
+the pinned LeRobot commit recorded under `research/smolvla`, then run the
+generic harness with adapter
+`scripts.model_invariance.adapters.lerobot_smolvla`. The corresponding trace,
+three-target regression, and connector benchmark are
+`scripts/trace_lerobot_smolvla_batch_invariance.py`,
+`scripts/check_lerobot_smolvla_multiple_inputs.py`, and
+`scripts/benchmark_lerobot_smolvla_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -541,6 +561,11 @@ fixed-schedule implementation. Both paths happen to be exact at this shape
 through B=64, but the replacement supplies a batch-independent decomposition
 and lets the generic convolution dispatcher cover the full model. See
 [`research/uva/benchmarks.json`](research/uva/benchmarks.json).
+
+For SmolVLA on the same environment, the actual float32 modality-connector MM
+replacement is 22.68x, 15.25x, and 4.63x slower than stock at B=1, 2, and 8,
+respectively, with identical incremental output allocation. See
+[`research/smolvla/benchmarks.json`](research/smolvla/benchmarks.json).
 
 ## Attribution
 

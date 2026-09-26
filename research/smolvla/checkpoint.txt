@@ -1,0 +1,11 @@
+Checkpoint: https://huggingface.co/HuggingFaceVLA/smolvla_libero
+Revision: 6721902bc4d61e50a3bfdb11dfb4cb626f05d102
+File: model.safetensors
+Size: 1,218,047,032 bytes
+State elements: 604,934,176 across 788 tensors
+SHA256: 71d9563c8295284acba8fc2d5c19de000d6fe9ba58a406832af7ef3d221ed52f
+
+The safetensors file contains the complete SmolVLM, action expert, projections,
+and action head. The adapter constructs the checkpoint architecture without
+redundantly loading base VLM weights, then strictly loads every public tensor.
+

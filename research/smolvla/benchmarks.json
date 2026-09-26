@@ -1,0 +1,108 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.14.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92400,
+    "triton": "3.8.0"
+  },
+  "warmup": 3,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "smolvla_modality_connector_mm",
+      "batch_size": 1,
+      "shape": {
+        "left": [
+          64,
+          12288
+        ],
+        "right": [
+          12288,
+          960
+        ],
+        "logical_input": [
+          1,
+          64,
+          12288
+        ],
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.06017919778823853,
+        "peak_incremental_bytes": 491520
+      },
+      "batch_invariant": {
+        "latency_ms": 1.364688014984131,
+        "peak_incremental_bytes": 491520
+      },
+      "latency_ratio": 22.677072229946653,
+      "stock_samples_per_second": 16617.0377265388,
+      "batch_invariant_samples_per_second": 732.7682144344386
+    },
+    {
+      "operator": "smolvla_modality_connector_mm",
+      "batch_size": 2,
+      "shape": {
+        "left": [
+          128,
+          12288
+        ],
+        "right": [
+          12288,
+          960
+        ],
+        "logical_input": [
+          2,
+          64,
+          12288
+        ],
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.08950399756431579,
+        "peak_incremental_bytes": 983040
+      },
+      "batch_invariant": {
+        "latency_ms": 1.3652223587036132,
+        "peak_incremental_bytes": 983040
+      },
+      "latency_ratio": 15.253199810685457,
+      "stock_samples_per_second": 22345.370647415384,
+      "batch_invariant_samples_per_second": 1464.962822539149
+    },
+    {
+      "operator": "smolvla_modality_connector_mm",
+      "batch_size": 8,
+      "shape": {
+        "left": [
+          512,
+          12288
+        ],
+        "right": [
+          12288,
+          960
+        ],
+        "logical_input": [
+          8,
+          64,
+          12288
+        ],
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.29761600494384766,
+        "peak_incremental_bytes": 3932160
+      },
+      "batch_invariant": {
+        "latency_ms": 1.3783647537231445,
+        "peak_incremental_bytes": 3932160
+      },
+      "latency_ratio": 4.63135292063075,
+      "stock_samples_per_second": 26880.274807496964,
+      "batch_invariant_samples_per_second": 5803.978938369505
+    }
+  ]
+}

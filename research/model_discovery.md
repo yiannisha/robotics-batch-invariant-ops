@@ -46,12 +46,20 @@ to the README support table only after end-to-end execution.
 ## Tier 2 and newly discovered candidates
 
 - **UVA:** official PyTorch code and PushT, PushT-M, LIBERO10, and UMI
-  checkpoints are public. Both video and action outputs are in scope.
+  checkpoints are public. Its action-only path, joint video/action latent path,
+  and official RGB decoder have now been executed and added to the support
+  table.
 - **X-VLA:** official code exists and X-VLA is integrated into LeRobot with a
-  public `lerobot/xvla-libero` checkpoint.
-- **DeVA:** the July 2026 paper is discoverable, but no verified official public
-  inference repository or weights were found in this audit. Status: BLOCKED
-  pending a public release.
+  public `lerobot/xvla-libero` checkpoint. The maintained PyTorch path has now
+  been executed through B=64 and added to the support table.
+- **SmolVLA:** the maintained LeRobot PyTorch implementation and public
+  `HuggingFaceVLA/smolvla_libero` checkpoint are runnable directly. The
+  ten-step LIBERO action path has now been executed through B=64 and added to
+  the support table.
+- **DeVA:** official PyTorch code and post-training weights are public, but the
+  checkpoint depends on separately gated Cosmos-Predict2 base assets that were
+  unavailable in this environment. Status: access-blocked; see
+  `research/deva/constraint_audit.md`.
 - **LingBot-VLA 2.0:** newly released cross-embodiment 6B VLA with public code
   and weight collections; it meets the discovery criteria and should be added
   after the named Tier 1 models.
@@ -68,5 +76,7 @@ to the README support table only after end-to-end execution.
 - https://github.com/NVIDIA/cosmos-framework
 - https://github.com/ShuangLI59/unified_video_action
 - https://github.com/2toinf/X-VLA
+- https://github.com/huggingface/lerobot
+- https://huggingface.co/HuggingFaceVLA/smolvla_libero
 - https://github.com/Robbyant/lingbot-vla-v2
 - https://github.com/baaivision/UniVLA
