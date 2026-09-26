@@ -1,0 +1,7 @@
+repository: https://github.com/huggingface/lerobot
+commit: e595b7902714ba51f91e47523f66f89c5181b649
+implementation: src/lerobot/policies/xvla
+framework: PyTorch
+
+The checkout has an untracked `sample/` input fixture only. The upstream source
+files are unmodified. No JAX implementation, weights, or conversion is used.

@@ -641,41 +641,43 @@ def conv2d_batch_invariant(
 
     channels_per_group = input.shape[1] // groups
     outputs_per_group = weight.shape[0] // groups
-    flattened_weight = weight.reshape(weight.shape[0], -1)
-    outputs = []
-    for sample in input:
-        patches = F.unfold(
-            sample.unsqueeze(0),
-            kernel_size=kernel_size,
-            dilation=dilation,
-            padding=padding,
-            stride=stride,
-        ).squeeze(0)
-        group_outputs = [
-            matmul_persistent(
-                patches[
-                    group
-                    * channels_per_group
-                    * kernel_size[0]
-                    * kernel_size[1] : (group + 1)
-                    * channels_per_group
-                    * kernel_size[0]
-                    * kernel_size[1]
-                ].transpose(0, 1),
-                flattened_weight[
-                    group * outputs_per_group : (group + 1) * outputs_per_group
-                ].transpose(0, 1),
-                bias=(
-                    None
-                    if bias is None
-                    else bias[group * outputs_per_group : (group + 1) * outputs_per_group]
-                ),
-            ).transpose(0, 1)
-            for group in range(groups)
-        ]
-        output = torch.cat(group_outputs, dim=0)
-        outputs.append(output.reshape(1, weight.shape[0], output_height, output_width))
-    return torch.cat(outputs, dim=0)
+    kernel_volume = kernel_size[0] * kernel_size[1]
+    output_volume = output_height * output_width
+    patches = F.unfold(
+        input,
+        kernel_size=kernel_size,
+        dilation=dilation,
+        padding=padding,
+        stride=stride,
+    )
+    grouped_patches = (
+        patches.reshape(input.shape[0], groups, channels_per_group * kernel_volume, output_volume)
+        .permute(0, 1, 3, 2)
+        .reshape(
+            input.shape[0] * groups,
+            output_volume,
+            channels_per_group * kernel_volume,
+        )
+    )
+    grouped_weight = (
+        weight.reshape(groups, outputs_per_group, -1)
+        .transpose(1, 2)
+        .unsqueeze(0)
+        .expand(input.shape[0], -1, -1, -1)
+        .reshape(
+            input.shape[0] * groups,
+            channels_per_group * kernel_volume,
+            outputs_per_group,
+        )
+    )
+    output = bmm_persistent(grouped_patches, grouped_weight).reshape(
+        input.shape[0], groups, output_volume, outputs_per_group
+    )
+    if bias is not None:
+        output = output + bias.reshape(1, groups, 1, outputs_per_group)
+    return output.permute(0, 1, 3, 2).reshape(
+        input.shape[0], weight.shape[0], output_height, output_width
+    )
 
 
 def conv3d_batch_invariant(

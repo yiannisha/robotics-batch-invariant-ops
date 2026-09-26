@@ -99,7 +99,7 @@ with set_batch_invariant_mode(True):
 - `torch.nn.functional.conv1d()` / `nn.Conv1d` - Regular 1-D convolution,
   including a fixed-order Triton depthwise path used by Qwen3.5
 - `torch.nn.functional.conv2d()` / `nn.Conv2d` - Regular (non-transposed) 2-D
-  convolution, implemented as an independent unfold-and-GEMM for each sample
+  convolution using batch-independent grouped im2col/BMM
 - `torch.nn.functional.conv3d()` / `nn.Conv3d` - Regular 3-D convolution using
   batch-independent grouped im2col/BMM, including Qwen3.5-VL patch embedding
 
@@ -141,6 +141,7 @@ Only configurations that have been executed end to end are marked PASS.
 | GR00T N1.7 official NVIDIA PyTorch, public `libero_10` weights and real inputs | bfloat16 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | Cosmos 3 Nano Policy official NVIDIA PyTorch, public DROID weights and real inputs | bfloat16 network, float32 outputs | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | Cosmos 3 Edge Policy official NVIDIA PyTorch, public DROID weights and real inputs | bfloat16 network, float32 outputs | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| X-VLA maintained LeRobot PyTorch, public `lerobot/xvla-libero` weights and real inputs | float32 | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -209,6 +210,15 @@ first of 1,169 traced decoder calls to differ. The new generic fixed-tree
 Euclidean vector norm makes the decoded 33x528x640 RGB video exact at B=2.
 Three real DROID targets pass duplicate and unrelated B=2/B=4 checks.
 
+The X-VLA row uses LeRobot's maintained PyTorch policy, complete public LIBERO
+checkpoint, released processors, and real LIBERO observations. Stock fails
+every B above one. Its first divergence is Florence-2's stage-3 patch
+`aten::convolution`, where cuDNN switches both tiling and segment-K behavior.
+After convolution alone is repaired, the bias-free multimodal projector's
+`aten::mm` is the next boundary. The existing generic Conv2d and GEMM family
+make all ten flow steps and the official 30x7 trajectory exact through B=64.
+Three real targets pass duplicate and unrelated B=2/B=4 checks.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -218,7 +228,8 @@ multiple-input checks, iteration notes, and operator benchmarks. MolmoAct2 evide
 [`research/molmoact2`](research/molmoact2), and GR00T N1.7 evidence is in
 [`research/groot_n17`](research/groot_n17). Cosmos 3 Nano evidence is in
 [`research/cosmos3_nano`](research/cosmos3_nano), and Cosmos 3 Edge evidence
-is in [`research/cosmos3_edge`](research/cosmos3_edge). The earlier random-weight
+is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
+[`research/xvla`](research/xvla). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -409,6 +420,27 @@ through `--adapter`. `scripts/trace_cosmos3_video_decoder.py` fingerprints the
 Wan decoder leaf calls, and `scripts/benchmark_cosmos3_edge_ops.py` benchmarks
 Edge's actual attention and vector-norm shapes.
 
+For X-VLA, check out the pinned LeRobot commit and download the public policy
+and LIBERO episode-zero files recorded in
+[`research/xvla/checkpoint.txt`](research/xvla/checkpoint.txt). Extract the
+first 64 synchronized frames as for π0-FAST, then run:
+
+```bash
+LEROBOT_XVLA_CHECKPOINT=/path/to/xvla-libero \
+LEROBOT_XVLA_SAMPLE_DIR=/path/to/libero-episode-zero \
+PYTHONPATH="$PWD:/path/to/lerobot/src" \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.lerobot_xvla \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/xvla/fixed.json
+```
+
+Use `scripts/trace_lerobot_xvla_batch_invariance.py` for both staged operator
+boundaries, `scripts/check_lerobot_xvla_multiple_inputs.py` for the three-target
+regression, and `scripts/benchmark_lerobot_xvla_ops.py` for the exact Conv2d
+and projector-MM benchmarks.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -455,6 +487,12 @@ For Cosmos 3 Edge in the same environment, invariant causal attention was
 8. The invariant Wan decoder vector norm was 1.51–2.06× slower, while avoiding
 stock's roughly 173 MB temporary allocation at B=1/B=2. See
 [`research/cosmos3_edge/benchmarks.json`](research/cosmos3_edge/benchmarks.json).
+
+For X-VLA on PyTorch 2.14.0/CUDA 13.0, the optimized invariant Florence
+stage-3 Conv2d is 14.12x, 11.44x, and 12.70x slower than cuDNN at B=1, 2, and
+8, while reducing incremental memory at B=1/B=2. The invariant image-projector
+MM is 7.93x, 5.95x, and 2.44x slower. See
+[`research/xvla/benchmarks.json`](research/xvla/benchmarks.json).
 
 ## Attribution
 

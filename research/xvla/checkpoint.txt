@@ -1,0 +1,17 @@
+model_repository: https://huggingface.co/lerobot/xvla-libero
+model_repository_commit: 12e8783e996944f5c97e490d37d4c145484ed70a
+format: official PyTorch safetensors checkpoint
+weights_file: model.safetensors
+weights_size_bytes: 3519073692
+weights_sha256: 2a0e29448111df56b9485cb1f964db799205794c49baeda48ef960589ce649ab
+
+dataset_repository: https://huggingface.co/datasets/lerobot/libero
+dataset_commit: a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4
+episode_data_file: data/chunk-000/file-000.parquet
+episode_data_sha256: 71e4088ce5877ba3234d0cde284c403f449ed560a656a2626e72fc2c3399502d
+camera_0_video_sha256: 77d59b50e309e2099e562e70806603a1bdb66b893efcaecc2534b2c9fa3e02ae
+camera_1_video_sha256: ba95edeb5190528b45364d7c8e518b7f12afa8ded72108e19a8349aa3f0a7d58
+tasks_sha256: 80bbbcdf623b7447c0f187af8ea70aa3a5c0018aaf56adba1731aeddcf18f5ff
+
+The released model and preprocessing assets are loaded directly. Inputs are
+the first 64 synchronized frames and states from public LIBERO episode zero.
