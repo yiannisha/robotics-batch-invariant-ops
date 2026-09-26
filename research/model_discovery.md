@@ -112,10 +112,12 @@ to the README support table only after end-to-end execution.
   involved. Stock fails every B above one. Generic rank-3 linear and fixed-tree
   mean repairs make all ten flow steps and final actions exact, so it is now in
   the support table.
-- **VITRA:** Microsoft publishes an official PyTorch implementation and public
-  3B checkpoint (`VITRA-VLA/VITRA-VLA-3B`, approximately 15.1 GB). Its stated
-  inference requirement fits one H100. Status: runnable candidate, not yet a
-  support claim.
+- **VITRA:** Microsoft's official native PyTorch implementation and complete
+  public 3B checkpoint (`VITRA-VLA/VITRA-VLA-3B`, 15.07 GB) have now been
+  executed through B=64 using all three released real images. Stock fails
+  every B above one; the first boundary is the FP32 FOV encoder's second
+  `aten::linear`. The existing fixed-schedule linear repair makes the VLM, all
+  ten DDIM states, and final action exact. It is now in the support table.
 - **OpenDW / DW05:** Dexmal publishes native PyTorch world-action code and a
   public RoboTwin checkpoint with both action and video components. The bundled
   policy, text encoder, and VAE total approximately 26 GB. Status: runnable

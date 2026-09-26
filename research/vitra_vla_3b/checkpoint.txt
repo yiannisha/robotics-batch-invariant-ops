@@ -1,0 +1,26 @@
+Checkpoint repository: https://huggingface.co/VITRA-VLA/VITRA-VLA-3B
+Pinned revision: 54f9d3299811ddbb74d237432b301917013fee52
+Checkpoint file: checkpoints/vitra-vla-3b.pt
+Size: 15,067,578,877 bytes
+SHA-256: 7f57dfd4451d68f41accab8a06bb388d6fdc2cce87ee8b31fafa7c8f01d83796
+
+Config SHA-256: 4d7c0e1756077dc3d1e47ae9039587259aed070e0efa7159acab857ed2b8d416
+Statistics SHA-256: 04415205064bc68f854bef4b37927f0bd616e9c84fe91a987ea9d96581c0d0d7
+
+Strict state-dict audit:
+- saved keys: 899
+- constructed model keys: 899
+- saved tensor elements: 3,766,775,472
+- missing keys: 0
+- unexpected keys: 0
+- shape mismatches: 0
+- checkpoint dtype: float32
+
+PaliGemma2 metadata/processor source:
+https://huggingface.co/mlx-community/paligemma2-3b-mix-224-bf16
+Pinned revision: 8fb53512c2b0a5e2625a3f330d891eb576729c9d
+
+Only config, tokenizer, and processor metadata were used from that public
+mirror. No MLX tensors and no substitute PaliGemma learned weights were loaded.
+Every learned backbone, vision, FOV, cognition-token, and action-DiT tensor
+came from the official VITRA checkpoint above.

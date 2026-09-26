@@ -1,0 +1,45 @@
+diff --git a/vitra/models/vla_builder.py b/vitra/models/vla_builder.py
+index b182124..34c3843 100644
+--- a/vitra/models/vla_builder.py
++++ b/vitra/models/vla_builder.py
+@@ -65,8 +65,12 @@ def load_model(configs):
+ 
+ def load_vla_checkpoint(model, checkpoint_path):
+     print(f"Loading checkpoint from {checkpoint_path}")
+-    checkpoint = torch.load(checkpoint_path, map_location="cpu")
++    checkpoint = torch.load(
++        checkpoint_path, map_location="cpu", mmap=True, weights_only=True
++    )
+     with torch.no_grad():
+-        missing_keys, unexpected_keys = model.load_state_dict(checkpoint, strict=True)
++        missing_keys, unexpected_keys = model.load_state_dict(
++            checkpoint, strict=True, assign=True
++        )
+     print("Checkpoint loaded")
+     return model
+diff --git a/vitra/models/vlm_builder.py b/vitra/models/vlm_builder.py
+index a8c4960..72bc376 100644
+--- a/vitra/models/vlm_builder.py
++++ b/vitra/models/vlm_builder.py
+@@ -8,15 +8,13 @@ def build_vlm(vlm_config):
+     model_name = vlm_config.get("name")
+     model_type = vlm_config.get("type", "AutoModel")
+     if model_name == "paligemma":
+-        from transformers import PaliGemmaProcessor, PaliGemmaForConditionalGeneration
++        from transformers import PaliGemmaConfig, PaliGemmaProcessor, PaliGemmaForConditionalGeneration
+ 
+-        model = PaliGemmaForConditionalGeneration.from_pretrained(
+-            model_path,
+-            torch_dtype=torch.float32,
+-            device_map="cpu",
+-            # attn_implementation="eager",
+-            # revision="bfloat16",
+-        )
++        # The released VITRA checkpoint contains every learned PaliGemma
++        # parameter. Construct the architecture from local metadata so that
++        # inference does not require access to Google's gated base weights.
++        config = PaliGemmaConfig.from_pretrained(model_path)
++        model = PaliGemmaForConditionalGeneration(config)
+         processor = PaliGemmaProcessor.from_pretrained(model_path)
+     else:
+         raise NotImplementedError(f"Model {model_name} not implemented")

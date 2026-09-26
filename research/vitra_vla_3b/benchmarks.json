@@ -1,0 +1,159 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 3,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "vitra_fov_encoder_projector_2_linear",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          2304
+        ],
+        "weight": [
+          2304,
+          2304
+        ],
+        "bias": [
+          2304
+        ],
+        "dtype": "torch.float32",
+        "checkpoint_boundary": "fov_encoder.projector.2"
+      },
+      "stock": {
+        "latency_ms": 0.011215999722480774,
+        "peak_incremental_bytes": 1067008
+      },
+      "batch_invariant": {
+        "latency_ms": 0.5177631855010987,
+        "peak_incremental_bytes": 18432
+      },
+      "latency_ratio": 46.162909977906004,
+      "stock_samples_per_second": 89158.34742717151,
+      "batch_invariant_samples_per_second": 1931.3849033746685,
+      "batch_invariance": {
+        "stock_exact": true,
+        "stock_differing_elements": 0,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "vitra_fov_encoder_projector_2_linear",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          2304
+        ],
+        "weight": [
+          2304,
+          2304
+        ],
+        "bias": [
+          2304
+        ],
+        "dtype": "torch.float32",
+        "checkpoint_boundary": "fov_encoder.projector.2"
+      },
+      "stock": {
+        "latency_ms": 0.013849599659442902,
+        "peak_incremental_bytes": 1085440
+      },
+      "batch_invariant": {
+        "latency_ms": 0.5049312114715576,
+        "peak_incremental_bytes": 36864
+      },
+      "latency_ratio": 36.458181022386924,
+      "stock_samples_per_second": 144408.50632360083,
+      "batch_invariant_samples_per_second": 3960.935578078557,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 1169,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "vitra_fov_encoder_projector_2_linear",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          2304
+        ],
+        "weight": [
+          2304,
+          2304
+        ],
+        "bias": [
+          2304
+        ],
+        "dtype": "torch.float32",
+        "checkpoint_boundary": "fov_encoder.projector.2"
+      },
+      "stock": {
+        "latency_ms": 0.022569599747657775,
+        "peak_incremental_bytes": 1196032
+      },
+      "batch_invariant": {
+        "latency_ms": 0.5034815788269043,
+        "peak_incremental_bytes": 147456
+      },
+      "latency_ratio": 22.30795337339354,
+      "stock_samples_per_second": 354459.0993834626,
+      "batch_invariant_samples_per_second": 15889.359882122679,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 1169,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    },
+    {
+      "operator": "vitra_fov_encoder_projector_2_linear",
+      "batch_size": 64,
+      "shape": {
+        "input": [
+          64,
+          2304
+        ],
+        "weight": [
+          2304,
+          2304
+        ],
+        "bias": [
+          2304
+        ],
+        "dtype": "torch.float32",
+        "checkpoint_boundary": "fov_encoder.projector.2"
+      },
+      "stock": {
+        "latency_ms": 0.07145919799804687,
+        "peak_incremental_bytes": 2228224
+      },
+      "batch_invariant": {
+        "latency_ms": 0.49919681549072265,
+        "peak_incremental_bytes": 1179648
+      },
+      "latency_ratio": 6.985760118723509,
+      "stock_samples_per_second": 895615.9849673831,
+      "batch_invariant_samples_per_second": 128205.94605974486,
+      "batch_invariance": {
+        "stock_exact": false,
+        "stock_differing_elements": 1894,
+        "batch_invariant_exact": true,
+        "batch_invariant_differing_elements": 0
+      }
+    }
+  ]
+}

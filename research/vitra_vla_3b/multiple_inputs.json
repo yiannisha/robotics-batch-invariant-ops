@@ -1,0 +1,296 @@
+{
+  "model": "vitra-vla-3b-official-pytorch",
+  "seed": 0,
+  "targets": "all three real public images released with VITRA",
+  "all_exact": true,
+  "checks": [
+    {
+      "target_index": 0,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "7587a077f8c0bac5c1475a71b4c8d1502d9aee476bf1592dfaeb3aad9f2f4bac",
+      "candidate_hash": "7587a077f8c0bac5c1475a71b4c8d1502d9aee476bf1592dfaeb3aad9f2f4bac"
+    },
+    {
+      "target_index": 0,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "7587a077f8c0bac5c1475a71b4c8d1502d9aee476bf1592dfaeb3aad9f2f4bac",
+      "candidate_hash": "7587a077f8c0bac5c1475a71b4c8d1502d9aee476bf1592dfaeb3aad9f2f4bac"
+    },
+    {
+      "target_index": 0,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "7587a077f8c0bac5c1475a71b4c8d1502d9aee476bf1592dfaeb3aad9f2f4bac",
+      "candidate_hash": "7587a077f8c0bac5c1475a71b4c8d1502d9aee476bf1592dfaeb3aad9f2f4bac"
+    },
+    {
+      "target_index": 0,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "7587a077f8c0bac5c1475a71b4c8d1502d9aee476bf1592dfaeb3aad9f2f4bac",
+      "candidate_hash": "7587a077f8c0bac5c1475a71b4c8d1502d9aee476bf1592dfaeb3aad9f2f4bac"
+    },
+    {
+      "target_index": 1,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "9e33936138e0bdf84d34bf743d71ccb989d8071ea9201cc0d17be074f292deaf",
+      "candidate_hash": "9e33936138e0bdf84d34bf743d71ccb989d8071ea9201cc0d17be074f292deaf"
+    },
+    {
+      "target_index": 1,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "9e33936138e0bdf84d34bf743d71ccb989d8071ea9201cc0d17be074f292deaf",
+      "candidate_hash": "9e33936138e0bdf84d34bf743d71ccb989d8071ea9201cc0d17be074f292deaf"
+    },
+    {
+      "target_index": 1,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "9e33936138e0bdf84d34bf743d71ccb989d8071ea9201cc0d17be074f292deaf",
+      "candidate_hash": "9e33936138e0bdf84d34bf743d71ccb989d8071ea9201cc0d17be074f292deaf"
+    },
+    {
+      "target_index": 1,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "9e33936138e0bdf84d34bf743d71ccb989d8071ea9201cc0d17be074f292deaf",
+      "candidate_hash": "9e33936138e0bdf84d34bf743d71ccb989d8071ea9201cc0d17be074f292deaf"
+    },
+    {
+      "target_index": 2,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "f99a839883438731339db035f0c690086d3955aaf254d436b4b5d2ef6edc7a37",
+      "candidate_hash": "f99a839883438731339db035f0c690086d3955aaf254d436b4b5d2ef6edc7a37"
+    },
+    {
+      "target_index": 2,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "f99a839883438731339db035f0c690086d3955aaf254d436b4b5d2ef6edc7a37",
+      "candidate_hash": "f99a839883438731339db035f0c690086d3955aaf254d436b4b5d2ef6edc7a37"
+    },
+    {
+      "target_index": 2,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "f99a839883438731339db035f0c690086d3955aaf254d436b4b5d2ef6edc7a37",
+      "candidate_hash": "f99a839883438731339db035f0c690086d3955aaf254d436b4b5d2ef6edc7a37"
+    },
+    {
+      "target_index": 2,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "f99a839883438731339db035f0c690086d3955aaf254d436b4b5d2ef6edc7a37",
+      "candidate_hash": "f99a839883438731339db035f0c690086d3955aaf254d436b4b5d2ef6edc7a37"
+    }
+  ]
+}

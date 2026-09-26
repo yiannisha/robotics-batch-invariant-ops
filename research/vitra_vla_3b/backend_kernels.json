@@ -1,0 +1,14 @@
+{
+  "operator": "fov_encoder.projector.2 / aten::linear",
+  "dtype": "torch.float32",
+  "input_width": 2304,
+  "output_width": 2304,
+  "profiler": "torch.profiler CPU+CUDA after warmup",
+  "cuda_kernels": {
+    "B1": "internal::gemvx::kernel (cuBLAS GEMV)",
+    "B2": "gemmSN_TN_kernel<float,128,16,2,4,2,2,true> (cuBLAS small-N GEMM)",
+    "B8": "gemmSN_TN_kernel<float,128,16,2,4,8,9,false> (cuBLAS small-N GEMM)",
+    "B64": "cutlass_80_simt_sgemm_64x64_8x5_tn_align1 (cuBLASLt/CUTLASS SGEMM)"
+  },
+  "interpretation": "Changing B changes the vendor GEMM family and reduction/tiling schedule for the same target row. The fixed-schedule linear implementation keeps the target arithmetic decomposition independent of B."
+}

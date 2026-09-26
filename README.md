@@ -174,6 +174,7 @@ Regenerate the evidence-backed console summary with
 | CogACT-Small official PyTorch, official checkpoint/example and released batch path | bfloat16 VLM, float32 DiT-S, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | OpenHelix official PyTorch CALVIN policy, official checkpoint and real CALVIN observations | bfloat16 planner, float32 diffusion policy/actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | WSA Base official PyTorch LIBERO policy, official checkpoint and real inputs | bfloat16 network, float32 flow/actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
+| VITRA-VLA-3B official Microsoft PyTorch policy, complete official checkpoint and released real images | float32 network, float64 unnormalized actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -380,6 +381,18 @@ exact through B=64. Three real targets pass duplicate and unrelated B=2/B=4
 checks, and the traced adapter matches the released sampler exactly at B=1 and
 unrelated B=2.
 
+The VITRA row uses Microsoft's official native PyTorch source, complete public
+15.07 GB `VITRA-VLA-3B` checkpoint, released processor/statistics, and all
+three real example images. A strict audit matches every one of the 899 saved
+tensors to the constructed model; PaliGemma assets outside that checkpoint are
+metadata only. Stock fails every B above one. The first divergence is the
+second FP32 FOV projection's `aten::linear`: CUDA switches from GEMV at B=1 to
+small-N GEMM at B=2 and later to CUTLASS SGEMM. The existing fixed-schedule
+linear path makes the complete VLM, all ten DDIM states, and the final 16x102
+action exact through B=64. All three released images pass duplicate and
+unrelated B=2/B=4 checks, and the explicit-noise adapter matches the released
+private inference path exactly at B=1 and unrelated B=2.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -401,7 +414,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/rdt_1b`](research/rdt_1b), and CogACT-Small evidence is in
 [`research/cogact_small`](research/cogact_small). OpenHelix evidence is in
 [`research/openhelix`](research/openhelix), and WSA Base evidence is in
-[`research/wsa_base`](research/wsa_base). The earlier random-weight
+[`research/wsa_base`](research/wsa_base). VITRA-VLA-3B evidence is in
+[`research/vitra_vla_3b`](research/vitra_vla_3b). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -772,6 +786,30 @@ regression, and actual-shape operator benchmark are
 `scripts/check_wsa_base_multiple_inputs.py`, and
 `scripts/benchmark_wsa_base_ops.py`.
 
+For VITRA-VLA-3B, check out the pinned official Microsoft source, apply
+`scripts/model_invariance/patches/vitra_vla_3b_inference_only.patch`, and use
+Transformers 4.47.1. Download the pinned official VITRA checkpoint and local
+PaliGemma2 config/tokenizer/processor metadata recorded under
+`research/vitra_vla_3b`, then run:
+
+```bash
+VITRA_SOURCE=/path/to/VITRA \
+VITRA_CHECKPOINT=/path/to/VITRA-VLA-3B \
+VITRA_PALIGEMMA_METADATA=/path/to/paligemma2-3b-mix-224-metadata \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.vitra_vla_3b \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/vitra_vla_3b/fixed.json
+```
+
+The staged DDIM trace, released-path equivalence check, three-image regression,
+and actual FOV-projection benchmark are
+`scripts/trace_vitra_vla_3b_batch_invariance.py`,
+`scripts/check_vitra_vla_3b_official_equivalence.py`,
+`scripts/check_vitra_vla_3b_multiple_inputs.py`, and
+`scripts/benchmark_vitra_vla_3b_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -886,6 +924,12 @@ For WSA Base in the same environment, invariant linear on the actual
 slower than stock at B=1, 2, and 8. Its invariant action-expert RMS mean is
 3.67x, 3.58x, and 3.68x slower. See
 [`research/wsa_base/benchmarks.json`](research/wsa_base/benchmarks.json).
+
+For VITRA-VLA-3B in the same environment, invariant linear on the actual
+FP32 `[B,2304]` FOV projection is 46.16x, 36.46x, 22.31x, and 6.99x slower
+than stock at B=1, 2, 8, and 64, respectively. Its absolute latency is about
+0.5 ms and the projection runs once per policy call. See
+[`research/vitra_vla_3b/benchmarks.json`](research/vitra_vla_3b/benchmarks.json).
 
 ## Attribution
 

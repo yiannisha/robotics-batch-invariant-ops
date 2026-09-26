@@ -1,0 +1,12 @@
+Model: VITRA-VLA-3B
+Upstream repository: https://github.com/microsoft/VITRA
+Commit: b35517202b39d32a753fdd42014b2cc3c41fab58
+Implementation: official native PyTorch
+
+The inference-only patch used for this investigation is recorded at:
+scripts/model_invariance/patches/vitra_vla_3b_inference_only.patch
+
+The patch constructs PaliGemma2 from local config metadata because Google's
+base repository is gated, then strictly assigns all learned tensors from the
+complete official VITRA checkpoint. It also uses mmap/weights_only checkpoint
+loading. It does not convert weights or change model arithmetic.

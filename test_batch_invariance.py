@@ -121,6 +121,24 @@ def test_openhelix_projector_linear_shape_is_batch_invariant() -> None:
     )
 
 
+def test_vitra_fov_projection_linear_shape_is_batch_invariant() -> None:
+    generator = torch.Generator(device="cuda").manual_seed(2775)
+    inputs = torch.randn(2, 2304, device="cuda", dtype=torch.float32, generator=generator)
+    weight = torch.randn(
+        2304,
+        2304,
+        device="cuda",
+        dtype=torch.float32,
+        generator=generator,
+    )
+    bias = torch.randn(2304, device="cuda", dtype=torch.float32, generator=generator)
+
+    _assert_first_sample_equal(
+        linear_batch_invariant(inputs[:1], weight, bias),
+        linear_batch_invariant(inputs, weight, bias),
+    )
+
+
 @pytest.mark.parametrize("dtype", DTYPES)
 @pytest.mark.parametrize("batch_size", (2, 3, 5, 17))
 def test_bmm_is_batch_invariant(dtype: torch.dtype, batch_size: int) -> None:

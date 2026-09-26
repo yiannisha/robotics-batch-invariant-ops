@@ -1,0 +1,51 @@
+{
+  "model": "vitra-vla-3b-official-pytorch",
+  "seed": 0,
+  "official_equivalent": true,
+  "checks": [
+    {
+      "composition": "single",
+      "path": "output",
+      "reference_shape": [
+        1,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        1,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "864d76ee9186613c542190caf9d3ec1e77728032abe4ef134e724ee0620aa0b9",
+      "candidate_hash": "864d76ee9186613c542190caf9d3ec1e77728032abe4ef134e724ee0620aa0b9"
+    },
+    {
+      "composition": "unrelated_b2",
+      "path": "output",
+      "reference_shape": [
+        2,
+        16,
+        102
+      ],
+      "candidate_shape": [
+        2,
+        16,
+        102
+      ],
+      "dtype": "torch.float64",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "2b673cb27d1e351da3fc110af90f27fd78b26c8d0e1df871f0081a97c07ed212",
+      "candidate_hash": "2b673cb27d1e351da3fc110af90f27fd78b26c8d0e1df871f0081a97c07ed212"
+    }
+  ]
+}
