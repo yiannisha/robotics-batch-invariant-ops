@@ -1,0 +1,10 @@
+repository: https://github.com/XiaomiRobotics/Xiaomi-Robotics-1
+commit: 0dd7aef8dc87296246aae812a1f59ccb708e5546
+implementation: official native PyTorch/Transformers Xiaomi-Robotics-1 RoboCasa policy
+
+No JAX source, checkpoint conversion, or reimplementation is used. The
+checkpoint's own trusted remote PyTorch model and processor modules are loaded
+directly. The investigation selects their eager attention backend so every
+executed operation remains visible to PyTorch operator dispatch; the released
+model code implements this backend alongside its recommended FlashAttention 2
+deployment setting.

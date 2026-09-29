@@ -1,0 +1,89 @@
+{
+  "model": "xiaomi-robotics-1-robocasa-official-pytorch",
+  "seed": 0,
+  "comparison": "released seeded forward versus explicit per-sample noise",
+  "official_equivalent": true,
+  "checks": [
+    {
+      "frame_index": 0,
+      "exact": true,
+      "tensors": [
+        {
+          "path": "output.actions",
+          "reference_shape": [
+            1,
+            10,
+            7
+          ],
+          "candidate_shape": [
+            1,
+            10,
+            7
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "beb335eded661e9005946a32de4c89aebbad253520345258b06fa83394034513",
+          "candidate_hash": "beb335eded661e9005946a32de4c89aebbad253520345258b06fa83394034513"
+        }
+      ]
+    },
+    {
+      "frame_index": 1,
+      "exact": true,
+      "tensors": [
+        {
+          "path": "output.actions",
+          "reference_shape": [
+            1,
+            10,
+            7
+          ],
+          "candidate_shape": [
+            1,
+            10,
+            7
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "790c8cbcd60640d8617bdcbd0a45b3b07c80f43b978315523671fca2723e7d30",
+          "candidate_hash": "790c8cbcd60640d8617bdcbd0a45b3b07c80f43b978315523671fca2723e7d30"
+        }
+      ]
+    },
+    {
+      "frame_index": 2,
+      "exact": true,
+      "tensors": [
+        {
+          "path": "output.actions",
+          "reference_shape": [
+            1,
+            10,
+            7
+          ],
+          "candidate_shape": [
+            1,
+            10,
+            7
+          ],
+          "dtype": "torch.float32",
+          "exact": true,
+          "differing_elements": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "first_differing_index": null,
+          "reference_hash": "8e875a611b82fe32e0df97a357cb8e6e07d7fb7f3a0b277f347e1548f521f3fe",
+          "candidate_hash": "8e875a611b82fe32e0df97a357cb8e6e07d7fb7f3a0b277f347e1548f521f3fe"
+        }
+      ]
+    }
+  ]
+}

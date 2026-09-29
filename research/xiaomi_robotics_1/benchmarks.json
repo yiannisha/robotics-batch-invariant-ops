@@ -1,0 +1,259 @@
+{
+  "environment": {
+    "gpu": "NVIDIA H100 NVL",
+    "gpu_memory_bytes": 99949674496,
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "triton": "3.4.0"
+  },
+  "warmup": 3,
+  "repetitions": 10,
+  "cases": [
+    {
+      "operator": "xiaomi_qwen_layer0_mlp_down_linear",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          259,
+          9728
+        ],
+        "weight": [
+          2560,
+          9728
+        ],
+        "bias": null,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.04007999897003174,
+        "peak_incremental_bytes": 2868224
+      },
+      "batch_invariant": {
+        "latency_ms": 0.11969920396804809,
+        "peak_incremental_bytes": 2868224
+      },
+      "latency_ratio": 2.986507161777836,
+      "stock_samples_per_second": 24950.100441562165,
+      "batch_invariant_samples_per_second": 8354.274438340752,
+      "batch_invariance": {
+        "stock_exact": true,
+        "batch_invariant_exact": true
+      }
+    },
+    {
+      "operator": "xiaomi_dit_layer7_rmsnorm_mean",
+      "batch_size": 1,
+      "shape": {
+        "input": [
+          1,
+          12,
+          1024
+        ],
+        "dimension": -1,
+        "keepdim": true,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.006627199798822403,
+        "peak_incremental_bytes": 1024
+      },
+      "batch_invariant": {
+        "latency_ms": 0.02687999904155731,
+        "peak_incremental_bytes": 1024
+      },
+      "latency_ratio": 4.0560115671076735,
+      "stock_samples_per_second": 150893.2928471074,
+      "batch_invariant_samples_per_second": 37202.38227888212,
+      "batch_invariance": {
+        "stock_exact": true,
+        "batch_invariant_exact": true
+      }
+    },
+    {
+      "operator": "xiaomi_qwen_layer0_mlp_down_linear",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          259,
+          9728
+        ],
+        "weight": [
+          2560,
+          9728
+        ],
+        "bias": null,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.06351680159568787,
+        "peak_incremental_bytes": 5520384
+      },
+      "batch_invariant": {
+        "latency_ms": 0.13490560054779052,
+        "peak_incremental_bytes": 5520384
+      },
+      "latency_ratio": 2.1239356699117735,
+      "stock_samples_per_second": 31487.731588420836,
+      "batch_invariant_samples_per_second": 14825.181400022728,
+      "batch_invariance": {
+        "stock_exact": false,
+        "batch_invariant_exact": true
+      }
+    },
+    {
+      "operator": "xiaomi_dit_layer7_rmsnorm_mean",
+      "batch_size": 2,
+      "shape": {
+        "input": [
+          2,
+          12,
+          1024
+        ],
+        "dimension": -1,
+        "keepdim": true,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.006390400230884552,
+        "peak_incremental_bytes": 1024
+      },
+      "batch_invariant": {
+        "latency_ms": 0.0271232008934021,
+        "peak_incremental_bytes": 1024
+      },
+      "latency_ratio": 4.244366536279956,
+      "stock_samples_per_second": 312969.4428737153,
+      "batch_invariant_samples_per_second": 73737.60965235168,
+      "batch_invariance": {
+        "stock_exact": false,
+        "batch_invariant_exact": true
+      }
+    },
+    {
+      "operator": "xiaomi_qwen_layer0_mlp_down_linear",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          259,
+          9728
+        ],
+        "weight": [
+          2560,
+          9728
+        ],
+        "bias": null,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 0.19888319969177246,
+        "peak_incremental_bytes": 21217280
+      },
+      "batch_invariant": {
+        "latency_ms": 0.3371072053909302,
+        "peak_incremental_bytes": 21217280
+      },
+      "latency_ratio": 1.6950009146744227,
+      "stock_samples_per_second": 40224.61430828916,
+      "batch_invariant_samples_per_second": 23731.32306894096,
+      "batch_invariance": {
+        "stock_exact": false,
+        "batch_invariant_exact": true
+      }
+    },
+    {
+      "operator": "xiaomi_dit_layer7_rmsnorm_mean",
+      "batch_size": 8,
+      "shape": {
+        "input": [
+          8,
+          12,
+          1024
+        ],
+        "dimension": -1,
+        "keepdim": true,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.00621119998395443,
+        "peak_incremental_bytes": 1024
+      },
+      "batch_invariant": {
+        "latency_ms": 0.0267551988363266,
+        "peak_incremental_bytes": 1024
+      },
+      "latency_ratio": 4.307573239542128,
+      "stock_samples_per_second": 1287995.8817405056,
+      "batch_invariant_samples_per_second": 299007.3087828479,
+      "batch_invariance": {
+        "stock_exact": false,
+        "batch_invariant_exact": true
+      }
+    },
+    {
+      "operator": "xiaomi_qwen_layer0_mlp_down_linear",
+      "batch_size": 64,
+      "shape": {
+        "input": [
+          64,
+          259,
+          9728
+        ],
+        "weight": [
+          2560,
+          9728
+        ],
+        "bias": null,
+        "dtype": "torch.bfloat16"
+      },
+      "stock": {
+        "latency_ms": 1.635113525390625,
+        "peak_incremental_bytes": 169738240
+      },
+      "batch_invariant": {
+        "latency_ms": 2.284556770324707,
+        "peak_incremental_bytes": 169738240
+      },
+      "latency_ratio": 1.3971854154768437,
+      "stock_samples_per_second": 39141.013150576524,
+      "batch_invariant_samples_per_second": 28014.18674787565,
+      "batch_invariance": {
+        "stock_exact": false,
+        "batch_invariant_exact": true
+      }
+    },
+    {
+      "operator": "xiaomi_dit_layer7_rmsnorm_mean",
+      "batch_size": 64,
+      "shape": {
+        "input": [
+          64,
+          12,
+          1024
+        ],
+        "dimension": -1,
+        "keepdim": true,
+        "dtype": "torch.float32"
+      },
+      "stock": {
+        "latency_ms": 0.008912000060081481,
+        "peak_incremental_bytes": 6144
+      },
+      "batch_invariant": {
+        "latency_ms": 0.026019200682640076,
+        "peak_incremental_bytes": 6144
+      },
+      "latency_ratio": 2.9195691772024275,
+      "stock_samples_per_second": 7181328.49736705,
+      "batch_invariant_samples_per_second": 2459721.9868748924,
+      "batch_invariance": {
+        "stock_exact": false,
+        "batch_invariant_exact": true
+      }
+    }
+  ]
+}

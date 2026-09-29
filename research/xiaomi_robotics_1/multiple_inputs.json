@@ -1,0 +1,296 @@
+{
+  "model": "xiaomi-robotics-1-robocasa-official-pytorch",
+  "seed": 0,
+  "targets": "three real public RoboCasa simulator observations",
+  "all_exact": true,
+  "checks": [
+    {
+      "target_index": 0,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "c72b0150e31f040a51aa17c37d04cb76ff812b24d5bd2882230f28e04eccf40f",
+      "candidate_hash": "c72b0150e31f040a51aa17c37d04cb76ff812b24d5bd2882230f28e04eccf40f"
+    },
+    {
+      "target_index": 0,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "c72b0150e31f040a51aa17c37d04cb76ff812b24d5bd2882230f28e04eccf40f",
+      "candidate_hash": "c72b0150e31f040a51aa17c37d04cb76ff812b24d5bd2882230f28e04eccf40f"
+    },
+    {
+      "target_index": 0,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "c72b0150e31f040a51aa17c37d04cb76ff812b24d5bd2882230f28e04eccf40f",
+      "candidate_hash": "c72b0150e31f040a51aa17c37d04cb76ff812b24d5bd2882230f28e04eccf40f"
+    },
+    {
+      "target_index": 0,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "c72b0150e31f040a51aa17c37d04cb76ff812b24d5bd2882230f28e04eccf40f",
+      "candidate_hash": "c72b0150e31f040a51aa17c37d04cb76ff812b24d5bd2882230f28e04eccf40f"
+    },
+    {
+      "target_index": 17,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e8ef847ae6099256e520d0c2fbcce2183680ddcedd804d2b2ee31b1256a04f6d",
+      "candidate_hash": "e8ef847ae6099256e520d0c2fbcce2183680ddcedd804d2b2ee31b1256a04f6d"
+    },
+    {
+      "target_index": 17,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e8ef847ae6099256e520d0c2fbcce2183680ddcedd804d2b2ee31b1256a04f6d",
+      "candidate_hash": "e8ef847ae6099256e520d0c2fbcce2183680ddcedd804d2b2ee31b1256a04f6d"
+    },
+    {
+      "target_index": 17,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e8ef847ae6099256e520d0c2fbcce2183680ddcedd804d2b2ee31b1256a04f6d",
+      "candidate_hash": "e8ef847ae6099256e520d0c2fbcce2183680ddcedd804d2b2ee31b1256a04f6d"
+    },
+    {
+      "target_index": 17,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "e8ef847ae6099256e520d0c2fbcce2183680ddcedd804d2b2ee31b1256a04f6d",
+      "candidate_hash": "e8ef847ae6099256e520d0c2fbcce2183680ddcedd804d2b2ee31b1256a04f6d"
+    },
+    {
+      "target_index": 42,
+      "batch_size": 2,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "f5a3a3e8c6f0225a2c063320094187a887c5547de825b49ef41b985cb65af291",
+      "candidate_hash": "f5a3a3e8c6f0225a2c063320094187a887c5547de825b49ef41b985cb65af291"
+    },
+    {
+      "target_index": 42,
+      "batch_size": 2,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "f5a3a3e8c6f0225a2c063320094187a887c5547de825b49ef41b985cb65af291",
+      "candidate_hash": "f5a3a3e8c6f0225a2c063320094187a887c5547de825b49ef41b985cb65af291"
+    },
+    {
+      "target_index": 42,
+      "batch_size": 4,
+      "composition": "duplicate",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "f5a3a3e8c6f0225a2c063320094187a887c5547de825b49ef41b985cb65af291",
+      "candidate_hash": "f5a3a3e8c6f0225a2c063320094187a887c5547de825b49ef41b985cb65af291"
+    },
+    {
+      "target_index": 42,
+      "batch_size": 4,
+      "composition": "unrelated",
+      "path": "output",
+      "reference_shape": [
+        1,
+        10,
+        7
+      ],
+      "candidate_shape": [
+        1,
+        10,
+        7
+      ],
+      "dtype": "torch.float32",
+      "exact": true,
+      "differing_elements": 0,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "first_differing_index": null,
+      "reference_hash": "f5a3a3e8c6f0225a2c063320094187a887c5547de825b49ef41b985cb65af291",
+      "candidate_hash": "f5a3a3e8c6f0225a2c063320094187a887c5547de825b49ef41b985cb65af291"
+    }
+  ]
+}

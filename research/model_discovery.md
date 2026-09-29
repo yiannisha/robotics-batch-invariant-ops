@@ -132,6 +132,12 @@ to the README support table only after end-to-end execution.
   the Wan2.2 video head's BF16 `aten::linear`; invariant linear repairs both
   20-D EEF actions and joint video latents, including decoded RGB at B=2. It is
   now in the support table.
+- **Xiaomi-Robotics-1:** Xiaomi's official native PyTorch repository and
+  complete public `Xiaomi-Robotics-1-RoboCasa` checkpoint have now been
+  executed through B=64 with real three-camera RoboCasa observations. Stock
+  fails every B above one. Generic invariant linear and fixed-tree mean repair
+  the Qwen3-VL backbone, all five action-DiT flow steps, and decoded actions.
+  It is now in the support table; no JAX source or conversion is involved.
 - **G0.5:** official PyTorch source and a public model page exist, but the
   checkpoint requires accepting a contact-information agreement unavailable
   in this environment. Status: access-blocked until credentials are supplied.
@@ -166,4 +172,6 @@ to the README support table only after end-to-end execution.
 - https://github.com/microsoft/VITRA
 - https://github.com/dexmal/OpenDW
 - https://github.com/OpenWAM-Official/OpenWAM
+- https://github.com/XiaomiRobotics/Xiaomi-Robotics-1
+- https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa
 - https://huggingface.co/OpenGalaxea/G05

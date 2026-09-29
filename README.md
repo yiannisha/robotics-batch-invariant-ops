@@ -179,6 +179,7 @@ Regenerate the evidence-backed console summary with
 | OpenDW DW05 official PyTorch joint video/action path, decoded 9-frame RGB output | bfloat16 network, float32 actions, uint8 video | 1, 2 | FAIL | PASS |
 | OpenWAM Alpha official PyTorch RoboTwin joint video/action policy, complete official checkpoint and real three-camera images | bfloat16 network, float32 actions/latent | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 | OpenWAM Alpha official PyTorch released Wan2.2 decoded RGB output | bfloat16 network, uint8 video | 1, 2 | FAIL | PASS |
+| Xiaomi-Robotics-1 official PyTorch RoboCasa policy, checkpoint-bundled eager backend, complete official checkpoint and real three-camera observations | bfloat16 network/noise, float32 decoded actions | 1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, 33, 64 | FAIL | PASS |
 
 The π0 entry is a numerical regression of the public companion investigation.
 The π0.5 row uses the PyTorch implementation vendored by
@@ -412,6 +413,15 @@ exact through B=64, and released-VAE uint8 video exact at B=2. Images and
 language are real; the fixture's incompatible 14-D joint qpos is replaced by
 a deterministic 20-D EEF state derived from checkpoint statistics.
 
+The Xiaomi-Robotics-1 row uses Xiaomi's official checkpoint-bundled PyTorch
+Qwen3-VL/action-DiT eager implementation and complete public RoboCasa checkpoint.
+Stock fails every B above one. The first mismatch is Qwen layer 0's BF16 MLP
+down-projection; after invariant linear repair, the next mismatch is an action
+DiT RMSNorm mean during flow step 2. Generic linear and fixed-tree mean repairs
+make all five flow steps and the decoded 10x7 action exact through B=64. The
+adapter matches the released seeded B=1 path exactly on three real RoboCasa
+observations.
+
 Raw evidence is in [`research/pi0`](research/pi0),
 [`research/pi05`](research/pi05), and
 [`research/pi_fast`](research/pi_fast), and
@@ -436,7 +446,8 @@ is in [`research/cosmos3_edge`](research/cosmos3_edge). X-VLA evidence is in
 [`research/wsa_base`](research/wsa_base). VITRA-VLA-3B evidence is in
 [`research/vitra_vla_3b`](research/vitra_vla_3b), OpenDW evidence is in
 [`research/opendw_dw05`](research/opendw_dw05), and OpenWAM evidence is in
-[`research/openwam_alpha_robotwin`](research/openwam_alpha_robotwin). The earlier random-weight
+[`research/openwam_alpha_robotwin`](research/openwam_alpha_robotwin). Xiaomi-Robotics-1
+evidence is in [`research/xiaomi_robotics_1`](research/xiaomi_robotics_1). The earlier random-weight
 official OpenPI architecture experiment is retained separately in
 [`research/pi05_openpi_architecture`](research/pi05_openpi_architecture) and is
 not the basis of the π0.5 support row. The DreamZero constraint audit is in
@@ -868,6 +879,28 @@ are `scripts/check_openwam_alpha_robotwin_official_equivalence.py`,
 `scripts/check_openwam_alpha_robotwin_decoded_video.py`, and
 `scripts/benchmark_openwam_alpha_robotwin_ops.py`.
 
+For Xiaomi-Robotics-1, download the pinned complete
+`XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa` checkpoint and the public real
+three-camera RoboCasa fixture recorded under `research/xiaomi_robotics_1`, then
+run:
+
+```bash
+XR1_CHECKPOINT=/path/to/Xiaomi-Robotics-1-RoboCasa \
+XR1_SAMPLE=/path/to/episode_000000.parquet \
+python scripts/check_model_batch_invariance.py \
+  --adapter scripts.model_invariance.adapters.xiaomi_robotics_1_robocasa \
+  --batch-sizes 1,2,3,4,5,7,8,9,15,16,17,31,32,33,64 \
+  --batch-invariant-ops \
+  --output research/xiaomi_robotics_1/fixed.json
+```
+
+The released-path equivalence check, staged VLM/DiT trace, three-target
+regression, and actual-shape operator benchmark are
+`scripts/check_xiaomi_robotics_1_official_equivalence.py`,
+`scripts/trace_xiaomi_robotics_1_batch_invariance.py`,
+`scripts/check_xiaomi_robotics_1_multiple_inputs.py`, and
+`scripts/benchmark_xiaomi_robotics_1_ops.py`.
+
 ## Performance
 
 Batch invariance changes the arithmetic decomposition and can be slower than
@@ -1000,6 +1033,12 @@ For OpenWAM Alpha in the same environment, invariant linear on the actual BF16
 slower than stock at B=1, 2, 8, and 64. Absolute latency is 0.048-0.163 ms and
 measured incremental memory is lower at every size. See
 [`research/openwam_alpha_robotwin/benchmarks.json`](research/openwam_alpha_robotwin/benchmarks.json).
+
+For Xiaomi-Robotics-1 in the same environment, invariant linear on the actual
+BF16 `[B,259,9728]` Qwen MLP input is 2.99x, 2.12x, 1.70x, and 1.40x stock at
+B=1, 2, 8, and 64. The invariant FP32 RMS mean is 2.92-4.31x stock but remains
+about 0.027 ms. See
+[`research/xiaomi_robotics_1/benchmarks.json`](research/xiaomi_robotics_1/benchmarks.json).
 
 ## Attribution
 

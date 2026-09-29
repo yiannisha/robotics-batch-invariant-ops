@@ -1,0 +1,25 @@
+model_repository: https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-1-RoboCasa
+model_repository_commit: 82b7c2210c1a39fca4a87e681cffbbed134ccde0
+format: native PyTorch safetensors
+weights_total_size_bytes: 10106433336
+saved_tensor_keys: 1120
+saved_tensor_elements: 5053149696
+model-00001-of-00003.safetensors_size_bytes: 4990499880
+model-00001-of-00003.safetensors_sha256: ae78351b0612ab4d9b22bb8f9e05e22f8ea444ee6a8e27c284bc78531848fc40
+model-00002-of-00003.safetensors_size_bytes: 4999627848
+model-00002-of-00003.safetensors_sha256: c71009db51ea59a376085bc8940d79708dccbcff41ac79ba955b87c733147619
+model-00003-of-00003.safetensors_size_bytes: 116305608
+model-00003-of-00003.safetensors_sha256: cb67483e9e0b9ddf98c66961fc1ee38d73084cc5f2c065166db382d20b6a8197
+config_sha256: 73a00f2dab6fb727942ec2256d78ec964332bc9a7a098e75ba580ab06040d1f0
+preprocessor_config_sha256: cf2a1df1f3d4351fac24d0e5d057dc4d762f028349c543c1ac726395b098ca8f
+modeling_mibot_sha256: 214effa075d42f1f938984afcac3b17fa16c08f726c5bf7049b5bd82cd26a4a2
+processing_mibot_sha256: 45c618e4d852d4948cec32f56fc55fb24548d4a15855e2ae2d7313db4b4d3389
+
+dataset_repository: https://huggingface.co/datasets/daixianjie/robocasa_mg_lerobot
+dataset_commit: 1f57c08d41d503c7a2c645c4181bae4a6d6ab997
+episode_data_file: data/chunk-000/episode_000000.parquet
+episode_data_sha256: be7c62d79ff789c930cf399784b721213468520ba00b3cdb2a832eec9008305f
+
+The key audit found no unexpected tensors. The only state-dict key absent from
+the shards is `vlm.lm_head.weight`, the tied alias of the saved Qwen token
+embedding. All 5,053,149,696 unique learned elements are loaded.
