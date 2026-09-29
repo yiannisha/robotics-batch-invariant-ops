@@ -29,9 +29,7 @@ def main() -> None:
     dtype = torch.float32
     generator = torch.Generator(device="cuda").manual_seed(92_500)
     batch_sizes = tuple(int(value) for value in args.batch_sizes.split(","))
-    weight = torch.randn(
-        1_024, 1_024, 4, 1, 1, device="cuda", dtype=dtype, generator=generator
-    )
+    weight = torch.randn(1_024, 1_024, 4, 1, 1, device="cuda", dtype=dtype, generator=generator)
     bias = torch.randn(1_024, device="cuda", dtype=dtype, generator=generator)
     all_features = torch.randn(
         max(batch_sizes),
@@ -71,9 +69,7 @@ def main() -> None:
                 "groups": 1,
                 "dtype": str(dtype),
             },
-            lambda: torch.nn.functional.conv_transpose3d(
-                features, weight, bias, stride=(4, 1, 1)
-            ),
+            lambda: torch.nn.functional.conv_transpose3d(features, weight, bias, stride=(4, 1, 1)),
             lambda: conv_transpose3d_batch_invariant(
                 features,
                 weight,
@@ -107,9 +103,7 @@ def main() -> None:
             "stock_exact": torch.equal(stock_reference, stock_candidate[:1]),
             "stock_differing_elements": int((stock_reference != stock_candidate[:1]).sum()),
             "stock_max_abs_difference": float(stock_difference.max()),
-            "batch_invariant_exact": torch.equal(
-                invariant_reference, invariant_candidate[:1]
-            ),
+            "batch_invariant_exact": torch.equal(invariant_reference, invariant_candidate[:1]),
             "batch_invariant_differing_elements": int(
                 (invariant_reference != invariant_candidate[:1]).sum()
             ),

@@ -896,9 +896,7 @@ def conv_transpose3d_batch_invariant(
         f"stride == kernel_size, got stride={stride}, kernel_size={kernel_size}"
     )
     assert padding == (0, 0, 0), f"padding is not supported, got {padding}"
-    assert output_padding == (0, 0, 0), (
-        f"output_padding is not supported, got {output_padding}"
-    )
+    assert output_padding == (0, 0, 0), f"output_padding is not supported, got {output_padding}"
     assert dilation == (1, 1, 1), f"dilation is not supported, got {dilation}"
 
     output_channels_per_group = weight.shape[1]
@@ -937,9 +935,7 @@ def conv_transpose3d_batch_invariant(
         *kernel_size,
     )
     if bias is not None:
-        output = output + bias.reshape(
-            1, groups, 1, 1, 1, output_channels_per_group, 1, 1, 1
-        )
+        output = output + bias.reshape(1, groups, 1, 1, 1, output_channels_per_group, 1, 1, 1)
     return output.permute(0, 1, 5, 2, 6, 3, 7, 4, 8).reshape(
         input.shape[0], output_channels, *output_shape
     )
@@ -1500,10 +1496,9 @@ def _vector_norm_kernel(
     OUTPUT_BLOCK_SIZE: tl.constexpr,
 ):
     """Euclidean norms with a fixed reduction tree per output vector."""
-    output_indexes = (
-        tl.program_id(0).to(tl.int64) * OUTPUT_BLOCK_SIZE
-        + tl.arange(0, OUTPUT_BLOCK_SIZE).to(tl.int64)
-    )
+    output_indexes = tl.program_id(0).to(tl.int64) * OUTPUT_BLOCK_SIZE + tl.arange(
+        0, OUTPUT_BLOCK_SIZE
+    ).to(tl.int64)
     m_indexes = output_indexes // K
     k_indexes = output_indexes % K
     squared_sum = tl.zeros((OUTPUT_BLOCK_SIZE,), dtype=tl.float32)
@@ -1516,8 +1511,7 @@ def _vector_norm_kernel(
         )
         values = tl.load(
             pointers,
-            mask=(reduction_indexes[:, None] < reduction_size)
-            & (output_indexes[None, :] < M * K),
+            mask=(reduction_indexes[:, None] < reduction_size) & (output_indexes[None, :] < M * K),
             other=0.0,
         ).to(tl.float32)
         squared_sum += tl.sum(values * values, axis=0)
@@ -1577,8 +1571,10 @@ def linalg_vector_norm_batch_invariant(
         reduction_size = math.prod(input.shape[d] for d in dimensions)
         M = math.prod(retained_shape)
         K = 1
-        kernel_input = input.permute(*retained_dimensions, *dimensions).contiguous().reshape(
-            M, reduction_size, K
+        kernel_input = (
+            input.permute(*retained_dimensions, *dimensions)
+            .contiguous()
+            .reshape(M, reduction_size, K)
         )
     output_count = M * K
     output = torch.empty(output_count, device=input.device, dtype=input.dtype)

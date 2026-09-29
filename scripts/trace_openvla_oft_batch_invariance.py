@@ -61,9 +61,7 @@ def _comparison(reference: torch.Tensor, candidate: torch.Tensor) -> dict[str, A
         locations = torch.nonzero(different, as_tuple=False)
         result["differing_elements"] = int(different.sum().item())
         result["first_differing_index"] = (
-            [int(index) for index in locations[0].tolist()]
-            if locations.numel()
-            else None
+            [int(index) for index in locations[0].tolist()] if locations.numel() else None
         )
         if reference.is_floating_point():
             absolute = (reference.float() - candidate.float()).abs()
@@ -160,7 +158,9 @@ def _first_difference(records):
 def _profile_module(module: torch.nn.Module, values: list[torch.Tensor]):
     reports = []
     for value in values:
-        value = value.to(device=next(module.parameters()).device, dtype=next(module.parameters()).dtype)
+        value = value.to(
+            device=next(module.parameters()).device, dtype=next(module.parameters()).dtype
+        )
         with torch.inference_mode():
             module(value)
             torch.cuda.synchronize()
@@ -197,12 +197,8 @@ def _run_stage(adapter, policy, examples, implementations, seed):
     for operator, implementation in implementations:
         library.impl(operator, implementation, "CUDA")
     try:
-        b1, output_b1, _ = _run(
-            adapter, policy, examples, 1, invariant=False, seed=seed
-        )
-        b2, output_b2, _ = _run(
-            adapter, policy, examples, 2, invariant=False, seed=seed
-        )
+        b1, output_b1, _ = _run(adapter, policy, examples, 1, invariant=False, seed=seed)
+        b2, output_b2, _ = _run(adapter, policy, examples, 2, invariant=False, seed=seed)
     finally:
         library._destroy()
     return _compare(b1, b2, output_b1, output_b2)
@@ -210,9 +206,7 @@ def _run_stage(adapter, policy, examples, implementations, seed):
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--adapter", default="scripts.model_invariance.adapters.openvla_oft"
-    )
+    parser.add_argument("--adapter", default="scripts.model_invariance.adapters.openvla_oft")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
@@ -281,9 +275,7 @@ def main() -> None:
         )
     finally:
         attention_library._destroy()
-    attention_only = _compare(
-        attention_b1, attention_b2, attention_output_b1, attention_output_b2
-    )
+    attention_only = _compare(attention_b1, attention_b2, attention_output_b1, attention_output_b2)
     attention_gemm = _run_stage(
         adapter,
         policy,
@@ -347,14 +339,10 @@ def main() -> None:
         "first_stock_difference": first_stock,
         "first_after_convolution_difference": _first_difference(convolution_only),
         "first_after_convolution_gemm_difference": _first_difference(convolution_gemm),
-        "first_after_convolution_gemm_bmm_difference": _first_difference(
-            convolution_gemm_bmm
-        ),
+        "first_after_convolution_gemm_bmm_difference": _first_difference(convolution_gemm_bmm),
         "first_after_attention_difference": _first_difference(attention_only),
         "first_after_attention_gemm_difference": _first_difference(attention_gemm),
-        "first_after_attention_gemm_bmm_difference": _first_difference(
-            attention_gemm_bmm
-        ),
+        "first_after_attention_gemm_bmm_difference": _first_difference(attention_gemm_bmm),
         "first_fixed_difference": _first_difference(fixed),
         "stock_trace": stock,
         "convolution_only_trace": convolution_only,

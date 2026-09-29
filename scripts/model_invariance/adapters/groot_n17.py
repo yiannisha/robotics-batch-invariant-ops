@@ -108,9 +108,7 @@ class GrootN17Adapter:
         ):
             for filename in filenames:
                 if not (root / filename).is_file():
-                    raise FileNotFoundError(
-                        f"missing required fixture: {root / filename}"
-                    )
+                    raise FileNotFoundError(f"missing required fixture: {root / filename}")
 
     def load_model(self):
         self._validate_paths()
@@ -121,9 +119,7 @@ class GrootN17Adapter:
         from gr00t.model.gr00t_n1d7.processing_gr00t_n1d7 import Gr00tN1d7Processor
         from transformers import Qwen3VLConfig, Qwen3VLProcessor
 
-        backbone_config = Qwen3VLConfig.from_pretrained(
-            self.processor_path, local_files_only=True
-        )
+        backbone_config = Qwen3VLConfig.from_pretrained(self.processor_path, local_files_only=True)
         original_model_loader = inspect.getattr_static(
             backbone_module.Qwen3VLForConditionalGeneration, "from_pretrained"
         )
@@ -143,9 +139,7 @@ class GrootN17Adapter:
             ).eval()
 
         def build_public_processor(_model_name, _loading_kwargs):
-            return Qwen3VLProcessor.from_pretrained(
-                self.processor_path, local_files_only=True
-            )
+            return Qwen3VLProcessor.from_pretrained(self.processor_path, local_files_only=True)
 
         backbone_module.Qwen3VLForConditionalGeneration.from_pretrained = classmethod(
             construct_backbone_without_base_weights
@@ -161,9 +155,7 @@ class GrootN17Adapter:
                 },
             )
         finally:
-            backbone_module.Qwen3VLForConditionalGeneration.from_pretrained = (
-                original_model_loader
-            )
+            backbone_module.Qwen3VLForConditionalGeneration.from_pretrained = original_model_loader
             processing_module.build_processor = original_processor_builder
 
         # Match NVIDIA's Gr00tPolicy inference path exactly.
@@ -180,9 +172,7 @@ class GrootN17Adapter:
         return model
 
     def _load_image(self, filename: str) -> np.ndarray:
-        return np.array(
-            Image.open(self.sample_dir / filename).convert("RGB"), copy=True
-        )
+        return np.array(Image.open(self.sample_dir / filename).convert("RGB"), copy=True)
 
     def load_example_inputs(self, count: int):
         if self.processor is None or self.collate_fn is None or self.embodiment is None:
@@ -208,26 +198,19 @@ class GrootN17Adapter:
             image_number = frame_index + 1
             raw_state = np.asarray(state_rows[frame_index], dtype=np.float32)
             states = {
-                key: raw_state[state_slice][None]
-                for key, state_slice in STATE_SLICES.items()
+                key: raw_state[state_slice][None] for key, state_slice in STATE_SLICES.items()
             }
             step = VLAStepData(
                 images={
-                    "image": self._load_image(f"frames/image_{image_number:03d}.png")[
-                        None
-                    ],
-                    "wrist_image": self._load_image(
-                        f"frames/image2_{image_number:03d}.png"
-                    )[None],
+                    "image": self._load_image(f"frames/image_{image_number:03d}.png")[None],
+                    "wrist_image": self._load_image(f"frames/image2_{image_number:03d}.png")[None],
                 },
                 states=states,
                 actions={},
                 text=TASK,
                 embodiment=self.embodiment,
             )
-            processed = self.processor(
-                [{"type": MessageType.EPISODE_STEP.value, "content": step}]
-            )
+            processed = self.processor([{"type": MessageType.EPISODE_STEP.value, "content": step}])
             generator = torch.Generator(device="cpu").manual_seed(71_000 + frame_index)
             noise = torch.randn(40, 132, generator=generator, dtype=self.dtype)
             examples.append({"processed": processed, "states": states, "noise": noise})
@@ -280,9 +263,9 @@ class GrootN17Adapter:
                 position_ids = torch.arange(
                     action_features.shape[1], dtype=torch.long, device=actions.device
                 )
-                action_features = action_features + head.position_embedding(
-                    position_ids
-                ).unsqueeze(0)
+                action_features = action_features + head.position_embedding(position_ids).unsqueeze(
+                    0
+                )
             state_action = torch.cat((state_features, action_features), dim=1)
             if head.config.use_alternate_vl_dit:
                 model_output = head.model(
@@ -309,9 +292,7 @@ class GrootN17Adapter:
         decoded = self.processor.decode_action(
             normalized.float().cpu().numpy(), self.embodiment, batch["states"]
         )
-        actions = np.concatenate([decoded[key] for key in ACTION_KEYS], axis=-1).astype(
-            np.float32
-        )
+        actions = np.concatenate([decoded[key] for key in ACTION_KEYS], axis=-1).astype(np.float32)
         # Match the official LIBERO environment wrapper: [0, 1] -> [-1, 1],
         # binarize, then invert the gripper sign.
         actions[..., -1] = -np.sign(2.0 * actions[..., -1] - 1.0)

@@ -72,9 +72,7 @@ class LeRobotSmolVLAAdapter:
         # The policy safetensors are complete. Construct the exact architecture
         # without first loading a redundant base VLM, then strictly load them.
         config.load_vlm_weights = False
-        policy = SmolVLAPolicy.from_pretrained(
-            self.checkpoint, config=config, strict=True
-        )
+        policy = SmolVLAPolicy.from_pretrained(self.checkpoint, config=config, strict=True)
         self.config = policy.config
         self.preprocessor, self.postprocessor = make_pre_post_processors(
             self.config,
@@ -142,8 +140,7 @@ class LeRobotSmolVLAAdapter:
                 {
                     key: value.detach().cpu()
                     for key, value in processed.items()
-                    if isinstance(value, torch.Tensor)
-                    and key.startswith("observation.")
+                    if isinstance(value, torch.Tensor) and key.startswith("observation.")
                 }
                 | {"noise": noise}
             )

@@ -60,9 +60,7 @@ def _comparison(reference: torch.Tensor, candidate: torch.Tensor) -> dict[str, A
         locations = torch.nonzero(different, as_tuple=False)
         result["differing_elements"] = int(different.sum().item())
         result["first_differing_index"] = (
-            [int(index) for index in locations[0].tolist()]
-            if locations.numel()
-            else None
+            [int(index) for index in locations[0].tolist()] if locations.numel() else None
         )
         if reference.is_floating_point():
             absolute = (reference.float() - candidate.float()).abs()
@@ -90,29 +88,17 @@ def _register(model, captures: dict[str, list[torch.Tensor]]):
 
     visual = backbone.model.visual
     handles.append(
-        visual.patch_embed.proj.register_forward_pre_hook(
-            input_hook("vision.patch_conv.input")
-        )
+        visual.patch_embed.proj.register_forward_pre_hook(input_hook("vision.patch_conv.input"))
     )
     handles.append(
-        visual.patch_embed.proj.register_forward_hook(
-            output_hook("vision.patch_conv.output")
-        )
+        visual.patch_embed.proj.register_forward_hook(output_hook("vision.patch_conv.output"))
     )
     handles.append(
-        visual.blocks[0].attn.qkv.register_forward_hook(
-            output_hook("vision.block0.qkv.output")
-        )
+        visual.blocks[0].attn.qkv.register_forward_hook(output_hook("vision.block0.qkv.output"))
     )
-    handles.append(
-        visual.blocks[0].register_forward_hook(output_hook("vision.block0.output"))
-    )
-    handles.append(
-        visual.blocks[-1].register_forward_hook(output_hook("vision.block23.output"))
-    )
-    handles.append(
-        visual.merger.register_forward_hook(output_hook("vision.merger.output"))
-    )
+    handles.append(visual.blocks[0].register_forward_hook(output_hook("vision.block0.output")))
+    handles.append(visual.blocks[-1].register_forward_hook(output_hook("vision.block23.output")))
+    handles.append(visual.merger.register_forward_hook(output_hook("vision.merger.output")))
     handles.append(
         backbone.model.language_model.layers[0].register_forward_hook(
             output_hook("language.block0.output")
@@ -123,68 +109,40 @@ def _register(model, captures: dict[str, list[torch.Tensor]]):
             output_hook("language.block15.output")
         )
     )
-    handles.append(
-        head.vl_self_attention.register_forward_hook(output_hook("action.vl_projector"))
-    )
-    handles.append(
-        head.state_encoder.register_forward_hook(output_hook("action.state_encoder"))
-    )
+    handles.append(head.vl_self_attention.register_forward_hook(output_hook("action.vl_projector")))
+    handles.append(head.state_encoder.register_forward_hook(output_hook("action.state_encoder")))
     for name in ("W1", "W2", "W3"):
         module = getattr(head.action_encoder, name)
         handles.append(
-            module.register_forward_pre_hook(
-                input_hook(f"flow.action_encoder.{name}.input")
-            )
+            module.register_forward_pre_hook(input_hook(f"flow.action_encoder.{name}.input"))
         )
         handles.append(
-            module.register_forward_hook(
-                output_hook(f"flow.action_encoder.{name}.output")
-            )
+            module.register_forward_hook(output_hook(f"flow.action_encoder.{name}.output"))
         )
     block0 = head.model.transformer_blocks[0]
+    handles.append(block0.register_forward_pre_hook(input_hook("action.dit.block0.input")))
+    handles.append(block0.norm1.register_forward_hook(output_hook("action.dit.block0.norm1")))
     handles.append(
-        block0.register_forward_pre_hook(input_hook("action.dit.block0.input"))
+        block0.attn1.to_q.register_forward_pre_hook(input_hook("action.dit.block0.q.input"))
     )
     handles.append(
-        block0.norm1.register_forward_hook(output_hook("action.dit.block0.norm1"))
+        block0.attn1.to_q.register_forward_hook(output_hook("action.dit.block0.q.output"))
     )
     handles.append(
-        block0.attn1.to_q.register_forward_pre_hook(
-            input_hook("action.dit.block0.q.input")
-        )
+        block0.attn1.to_k.register_forward_hook(output_hook("action.dit.block0.k.output"))
     )
     handles.append(
-        block0.attn1.to_q.register_forward_hook(
-            output_hook("action.dit.block0.q.output")
-        )
+        block0.attn1.to_k.register_forward_pre_hook(input_hook("action.dit.block0.k.input"))
     )
     handles.append(
-        block0.attn1.to_k.register_forward_hook(
-            output_hook("action.dit.block0.k.output")
-        )
+        block0.attn1.to_v.register_forward_hook(output_hook("action.dit.block0.v.output"))
     )
-    handles.append(
-        block0.attn1.to_k.register_forward_pre_hook(
-            input_hook("action.dit.block0.k.input")
-        )
-    )
-    handles.append(
-        block0.attn1.to_v.register_forward_hook(
-            output_hook("action.dit.block0.v.output")
-        )
-    )
-    handles.append(
-        block0.attn1.register_forward_hook(output_hook("action.dit.block0.attention"))
-    )
+    handles.append(block0.attn1.register_forward_hook(output_hook("action.dit.block0.attention")))
     handles.append(block0.register_forward_hook(output_hook("action.dit.block0")))
     handles.append(
-        head.model.transformer_blocks[-1].register_forward_hook(
-            output_hook("action.dit.block31")
-        )
+        head.model.transformer_blocks[-1].register_forward_hook(output_hook("action.dit.block31"))
     )
-    handles.append(
-        head.action_decoder.register_forward_hook(output_hook("flow.velocity"))
-    )
+    handles.append(head.action_decoder.register_forward_hook(output_hook("flow.velocity")))
     return handles, head.action_encoder.W2
 
 
@@ -193,9 +151,7 @@ def _run(adapter, model, examples, batch_size: int, *, invariant: bool, seed: in
     handles, frontier = _register(model, captures)
     batch = _compose_batch(adapter, examples[:batch_size])
     captures["preprocess.input_ids"].append(batch["inputs"]["input_ids"].detach().cpu())
-    captures["preprocess.pixel_values"].append(
-        batch["inputs"]["pixel_values"].detach().cpu()
-    )
+    captures["preprocess.pixel_values"].append(batch["inputs"]["pixel_values"].detach().cpu())
     captures["flow.initial_noise"].append(batch["noise"].detach().cpu())
     seed_everything(seed)
     context = set_batch_invariant_mode() if invariant else torch.no_grad()
@@ -236,15 +192,11 @@ def _profile_frontier(module, values: list[torch.Tensor], category_id: int):
     reports = []
     for value in values:
         value = value.to(device=module.W.device)
-        ids = torch.full(
-            (value.shape[0],), category_id, dtype=torch.int32, device=module.W.device
-        )
+        ids = torch.full((value.shape[0],), category_id, dtype=torch.int32, device=module.W.device)
         with torch.inference_mode():
             module(value, ids)
             torch.cuda.synchronize()
-            with profile(
-                activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA]
-            ) as result:
+            with profile(activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA]) as result:
                 module(value, ids)
                 torch.cuda.synchronize()
         reports.append(
@@ -278,9 +230,7 @@ def _profile_linear(module, values: list[torch.Tensor]):
         with torch.inference_mode():
             module(value)
             torch.cuda.synchronize()
-            with profile(
-                activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA]
-            ) as result:
+            with profile(activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA]) as result:
                 module(value)
                 torch.cuda.synchronize()
         reports.append(
@@ -309,9 +259,7 @@ def _profile_linear(module, values: list[torch.Tensor]):
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--adapter", default="scripts.model_invariance.adapters.groot_n17"
-    )
+    parser.add_argument("--adapter", default="scripts.model_invariance.adapters.groot_n17")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
@@ -325,9 +273,7 @@ def main() -> None:
     stock_b2, stock_output_b2, _ = _run(
         adapter, model, examples, 2, invariant=False, seed=args.seed
     )
-    category_id = int(
-        adapter.compose_batch(examples[:1])["inputs"]["embodiment_id"].item()
-    )
+    category_id = int(adapter.compose_batch(examples[:1])["inputs"]["embodiment_id"].item())
     profile_report = _profile_frontier(
         frontier,
         [
@@ -362,12 +308,8 @@ def main() -> None:
         ],
     )
 
-    fixed_b1, fixed_output_b1, _ = _run(
-        adapter, model, examples, 1, invariant=True, seed=args.seed
-    )
-    fixed_b2, fixed_output_b2, _ = _run(
-        adapter, model, examples, 2, invariant=True, seed=args.seed
-    )
+    fixed_b1, fixed_output_b1, _ = _run(adapter, model, examples, 1, invariant=True, seed=args.seed)
+    fixed_b2, fixed_output_b2, _ = _run(adapter, model, examples, 2, invariant=True, seed=args.seed)
     stock = _compare_captures(stock_b1, stock_b2, stock_output_b1, stock_output_b2)
     bmm_only = _compare_captures(bmm_b1, bmm_b2, bmm_output_b1, bmm_output_b2)
     fixed = _compare_captures(fixed_b1, fixed_b2, fixed_output_b1, fixed_output_b2)
@@ -378,14 +320,12 @@ def main() -> None:
     first_stock_difference = next(
         record
         for record in stock
-        if record.get("label") == "flow.action_encoder.W2.output"
-        and record.get("call") == 0
+        if record.get("label") == "flow.action_encoder.W2.output" and record.get("call") == 0
     )
     first_after_bmm_difference = next(
         record
         for record in bmm_only
-        if record.get("label") == "action.dit.block0.k.output"
-        and record.get("call") == 0
+        if record.get("label") == "action.dit.block0.k.output" and record.get("call") == 0
     )
     report = {
         "model": adapter.name,

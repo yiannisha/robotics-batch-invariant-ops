@@ -2,5 +2,4 @@
 
 from .openpi_common import OpenPiAdapter
 
-
 adapter = OpenPiAdapter(pi05=True)

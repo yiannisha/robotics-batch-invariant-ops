@@ -341,14 +341,12 @@ class UVALibero10Adapter:
         action = action[:, : policy.n_action_steps]
         if not self.include_video_output:
             return action
-        video_latent = rearrange(
-            video_latent, "(b t) c h w -> b t c h w", b=images.shape[0]
-        )
+        video_latent = rearrange(video_latent, "(b t) c h w -> b t c h w", b=images.shape[0])
         decoded = policy.vae_model.decode(
             rearrange(video_latent, "b t c h w -> (b t) c h w") / 0.2325
         )
         decoded = decoded.clamp(-1, 1)
-        video = (1 + rearrange(decoded, "(b t) c h w -> b t h w c", b=images.shape[0]))
+        video = 1 + rearrange(decoded, "(b t) c h w -> b t h w c", b=images.shape[0])
         video = (video * 127.5).to(torch.uint8)
         return {"actions": action, "video": video, "video_latent": video_latent}
 

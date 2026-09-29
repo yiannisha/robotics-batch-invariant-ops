@@ -28,7 +28,6 @@ from safetensors import safe_open
 from scipy.fftpack import idct
 from transformers import AutoProcessor, AutoTokenizer
 
-
 TEXT_TOKENIZER = "leo009/paligemma-3b-pt-224"
 TEXT_TOKENIZER_REVISION = "39996beb6fb17c5d16a50d3ef8f7a96ad9d03986"
 ACTION_TOKENIZER_REVISION = "79ae83e3cbd8786dcb84b628569f8d076ca8151e"
@@ -83,17 +82,13 @@ class LeRobotPi0FastAdapter:
 
         self.text_tokenizer = AutoTokenizer.from_pretrained(
             os.environ.get("PI0FAST_TEXT_TOKENIZER", TEXT_TOKENIZER),
-            revision=os.environ.get(
-                "PI0FAST_TEXT_TOKENIZER_REVISION", TEXT_TOKENIZER_REVISION
-            ),
+            revision=os.environ.get("PI0FAST_TEXT_TOKENIZER_REVISION", TEXT_TOKENIZER_REVISION),
             add_eos_token=True,
             add_bos_token=False,
         )
         self.action_tokenizer = AutoProcessor.from_pretrained(
             self.config.action_tokenizer_name,
-            revision=os.environ.get(
-                "PI0FAST_ACTION_TOKENIZER_REVISION", ACTION_TOKENIZER_REVISION
-            ),
+            revision=os.environ.get("PI0FAST_ACTION_TOKENIZER_REVISION", ACTION_TOKENIZER_REVISION),
             trust_remote_code=True,
         )
 
@@ -115,8 +110,7 @@ class LeRobotPi0FastAdapter:
             # LeRobot's standard loader ties the language embedding to the LM
             # head by cloning this checkpoint tensor.
             embedding_key = (
-                "paligemma_with_expert.paligemma.model.language_model."
-                "embed_tokens.weight"
+                "paligemma_with_expert.paligemma.model.language_model." "embed_tokens.weight"
             )
             lm_head_key = "paligemma_with_expert.paligemma.lm_head.weight"
             state[embedding_key].copy_(weights.get_tensor(f"model.{lm_head_key}"))
@@ -211,7 +205,10 @@ class LeRobotPi0FastAdapter:
         delimiter_id = self.text_tokenizer.convert_tokens_to_ids("|")
         decoded = []
         for sequence in generated_tokens.detach().cpu().tolist():
-            if self.config.validate_action_token_prefix and sequence[: len(prefix_ids)] != prefix_ids:
+            if (
+                self.config.validate_action_token_prefix
+                and sequence[: len(prefix_ids)] != prefix_ids
+            ):
                 raise RuntimeError("generated sequence does not start with the Action prefix")
             sequence = sequence[len(prefix_ids) :]
             if delimiter_id in sequence:
@@ -230,9 +227,7 @@ class LeRobotPi0FastAdapter:
                 self.config.n_action_steps,
                 self.config.output_features["action"].shape[0],
             )
-            decoded.append(
-                idct(coefficients / self.action_tokenizer.scale, axis=0, norm="ortho")
-            )
+            decoded.append(idct(coefficients / self.action_tokenizer.scale, axis=0, norm="ortho"))
         actions = torch.tensor(np.stack(decoded), dtype=torch.float32)
         return actions * self.action_std + self.action_mean
 

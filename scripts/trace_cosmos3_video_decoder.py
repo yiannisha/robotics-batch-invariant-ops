@@ -80,9 +80,7 @@ def main() -> None:
         latent = generated["vision_latent"]
         tokenizer = service.model.tokenizer_vision_gen
         decoder = tokenizer.model.model
-        reference, reference_output = _capture_decode(
-            decoder, service.model.decode, latent
-        )
+        reference, reference_output = _capture_decode(decoder, service.model.decode, latent)
         candidate, candidate_output = _capture_decode(
             decoder, service.model.decode, latent.repeat(2, 1, 1, 1, 1), reference
         )

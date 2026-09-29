@@ -1,6 +1,15 @@
-# Batch Invariant Ops
+# Robotics Batch-Invariant Ops
 
-A companion library release to https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/. This library contains some batch-invariant kernels as well as an example of achieving deterministic vLLM inference.
+Reusable Triton/PyTorch operators for bitwise batch-invariant inference, plus
+end-to-end validation on modern robotics foundation models. The repository
+contains the operator library, a reusable investigation harness, model-specific
+PyTorch adapters, pinned reproduction metadata, and the generated evidence for
+each supported model.
+
+This work extends Thinking Machines Lab's
+[batch-invariant inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/)
+kernels and the methodology from
+[Batch-Invariant VLAs](https://yiannisha.dev/blog/batch-invariant-vlas).
 
 ## Overview
 
@@ -15,8 +24,14 @@ schedule for B=32. Floating-point reduction then produces different bits.
 ## Installation
 
 ```bash
+git clone https://github.com/yiannisha/robotics-batch-invariant-ops.git
+cd robotics-batch-invariant-ops
 pip install -e .
 ```
+
+The kernels require an NVIDIA CUDA GPU, PyTorch, and Triton. Model-level
+reproductions additionally require the upstream PyTorch model repositories,
+checkpoints, and fixtures pinned in the corresponding `research/` directory.
 
 ## Quick Start
 
@@ -40,7 +55,7 @@ import torch
 from batch_invariant_ops import set_batch_invariant_mode
 torch.set_default_device('cuda')
 
-# Just to get the logging out of the way haha
+# Initialize the operator registrations once before the comparison.
 with set_batch_invariant_mode(True):
     pass
 
@@ -75,7 +90,9 @@ with set_batch_invariant_mode(True):
 ```
 
 ## Deterministic Inference in vLLM
-`deterministic_vllm_inference.py` shows an proof of concept of validating that vLLM can be made deterministic with a minor upstream PR to use this library. Without the upstream PR, we see that out of 1000 random length 100 completions we see 18 unique samples. After the upstream PR, there is only one unique sample.
+
+`deterministic_vllm_inference.py` is the original proof of concept for
+validating deterministic vLLM inference with a small upstream integration.
 
 ## Supported Operations
 
@@ -460,6 +477,13 @@ Run the operator regression suite and the focused stock-kernel demonstration:
 ```bash
 python -m pytest -q
 python scripts/check_conv2d_bmm_batch_invariance.py --require-standard-difference
+```
+
+The operator suite is CUDA-only. The investigation-harness unit tests also run
+without a GPU:
+
+```bash
+python -m pytest -q test_investigation_harness.py
 ```
 
 The reusable model harness accepts an adapter module and tests repeatability,

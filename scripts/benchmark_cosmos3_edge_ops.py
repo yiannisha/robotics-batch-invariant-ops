@@ -22,9 +22,7 @@ from scripts.benchmark_batch_invariant_ops import run_case
 
 
 def _offsets(batch_size: int, length: int) -> torch.Tensor:
-    return torch.arange(
-        0, (batch_size + 1) * length, length, device="cuda", dtype=torch.int32
-    )
+    return torch.arange(0, (batch_size + 1) * length, length, device="cuda", dtype=torch.int32)
 
 
 def main() -> None:
@@ -126,9 +124,7 @@ def main() -> None:
                 "cosmos3_wan_decoder_vector_norm",
                 {"input": list(decoder_values.shape), "dim": 1, "dtype": str(dtype)},
                 lambda: torch.linalg.vector_norm(decoder_values, dim=1, keepdim=True),
-                lambda: linalg_vector_norm_batch_invariant(
-                    decoder_values, dim=1, keepdim=True
-                ),
+                lambda: linalg_vector_norm_batch_invariant(decoder_values, dim=1, keepdim=True),
                 batch_size=batch_size,
                 warmup=args.warmup,
                 repetitions=args.repetitions,

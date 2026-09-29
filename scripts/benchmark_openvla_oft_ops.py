@@ -29,9 +29,7 @@ def main() -> None:
     dtype = torch.bfloat16
     generator = torch.Generator(device="cuda").manual_seed(95_500)
     cases = []
-    action_weight = torch.randn(
-        28_672, 4_096, device="cuda", dtype=dtype, generator=generator
-    )
+    action_weight = torch.randn(28_672, 4_096, device="cuda", dtype=dtype, generator=generator)
     action_bias = torch.randn(4_096, device="cuda", dtype=dtype, generator=generator)
     for batch_size in (int(value) for value in args.batch_sizes.split(",")):
         query = torch.randn(
@@ -55,12 +53,8 @@ def main() -> None:
                     "dtype": str(dtype),
                     "causal": False,
                 },
-                lambda: torch.nn.functional.scaled_dot_product_attention(
-                    query, key, value
-                ),
-                lambda: scaled_dot_product_attention_batch_invariant(
-                    query, key, value
-                ),
+                lambda: torch.nn.functional.scaled_dot_product_attention(query, key, value),
+                lambda: scaled_dot_product_attention_batch_invariant(query, key, value),
                 batch_size=batch_size,
                 warmup=args.warmup,
                 repetitions=args.repetitions,
@@ -86,9 +80,7 @@ def main() -> None:
                     "dtype": str(dtype),
                 },
                 lambda: torch.addmm(action_bias, activations, action_weight),
-                lambda: matmul_persistent(
-                    activations, action_weight, bias=action_bias
-                ),
+                lambda: matmul_persistent(activations, action_weight, bias=action_bias),
                 batch_size=batch_size,
                 warmup=args.warmup,
                 repetitions=args.repetitions,

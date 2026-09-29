@@ -36,9 +36,7 @@ class PiZeroPi05ReferenceAdapter:
 
     def _validate_paths(self) -> None:
         if not (self.source / "pi_zero_pytorch/pi_zero.py").is_file():
-            raise FileNotFoundError(
-                "set PIZERO_PYTORCH_SOURCE to the pi-zero-pytorch checkout"
-            )
+            raise FileNotFoundError("set PIZERO_PYTORCH_SOURCE to the pi-zero-pytorch checkout")
         for filename in ("config.json", "model.safetensors"):
             if not (self.checkpoint / filename).is_file():
                 raise FileNotFoundError(
@@ -98,18 +96,14 @@ class PiZeroPi05ReferenceAdapter:
             examples.append(
                 {
                     # pi-zero-pytorch accepts multiple views as [C, F, H, W].
-                    "images": torch.rand(
-                        3, 3, 224, 224, generator=generator, dtype=torch.float32
-                    )
+                    "images": torch.rand(3, 3, 224, 224, generator=generator, dtype=torch.float32)
                     * 2
                     - 1,
                     "token_ids": torch.randint(
                         1, 32_000, (token_length,), generator=generator, dtype=torch.long
                     ),
                     "joint_state": torch.randn(state_dim, generator=generator),
-                    "noise": torch.randn(
-                        trajectory_length, action_dim, generator=generator
-                    ),
+                    "noise": torch.randn(trajectory_length, action_dim, generator=generator),
                 }
             )
         return examples
@@ -120,7 +114,9 @@ class PiZeroPi05ReferenceAdapter:
         original_randn = torch.randn
 
         def controlled_randn(*args, **kwargs):
-            requested_shape = tuple(args[0]) if len(args) == 1 and isinstance(args[0], tuple) else tuple(args)
+            requested_shape = (
+                tuple(args[0]) if len(args) == 1 and isinstance(args[0], tuple) else tuple(args)
+            )
             if requested_shape == tuple(explicit_noise.shape):
                 return explicit_noise
             return original_randn(*args, **kwargs)

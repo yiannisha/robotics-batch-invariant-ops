@@ -22,7 +22,7 @@ from .batch_invariant_ops import (
 )
 from .moe import deterministic_token_choice_moe
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     "set_batch_invariant_mode",

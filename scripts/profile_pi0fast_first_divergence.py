@@ -23,9 +23,9 @@ from scripts.model_invariance.harness import (
 
 
 def _capture_prefill_down_input(adapter, model, examples, batch_size: int, seed: int):
-    down_projection = (
-        model.paligemma_with_expert.paligemma.model.language_model.layers[0].mlp.down_proj
-    )
+    down_projection = model.paligemma_with_expert.paligemma.model.language_model.layers[
+        0
+    ].mlp.down_proj
     captured = []
 
     def hook(_module, inputs):

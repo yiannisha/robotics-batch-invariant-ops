@@ -25,9 +25,7 @@ from scripts.model_invariance.harness import (
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--adapter", default="scripts.model_invariance.adapters.groot_n17"
-    )
+    parser.add_argument("--adapter", default="scripts.model_invariance.adapters.groot_n17")
     parser.add_argument("--target-frames", default="0,10,20")
     parser.add_argument("--batch-sizes", default="2,4")
     parser.add_argument("--seed", type=int, default=0)
@@ -55,9 +53,7 @@ def main() -> None:
                 os.environ["GROOT_N17_TARGET_FRAME"] = str(target_frame)
                 examples = list(adapter.load_example_inputs(max(batch_sizes)))
                 target = examples[0]
-                reference = _run_once(
-                    adapter, model, _compose_batch(adapter, [target]), args.seed
-                )
+                reference = _run_once(adapter, model, _compose_batch(adapter, [target]), args.seed)
                 for composition in ("duplicate", "unrelated"):
                     for batch_size in batch_sizes:
                         samples = (

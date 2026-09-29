@@ -169,14 +169,10 @@ def _register_hooks(model: torch.nn.Module, captures: dict[str, list[torch.Tenso
         )
     )
     handles.append(
-        first_language_layer.mlp.register_forward_hook(
-            capture_output("language.layer0.mlp.output")
-        )
+        first_language_layer.mlp.register_forward_hook(capture_output("language.layer0.mlp.output"))
     )
     handles.append(
-        first_language_layer.register_forward_hook(
-            capture_output("language.layer0.output")
-        )
+        first_language_layer.register_forward_hook(capture_output("language.layer0.output"))
     )
     handles.append(lm_head.register_forward_hook(capture_output("lm_head.output")))
     return handles, first_conv_name

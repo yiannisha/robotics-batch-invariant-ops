@@ -30,9 +30,7 @@ def main() -> None:
     generator = torch.Generator(device="cuda").manual_seed(71_700)
     cases = []
     for batch_size in (int(value) for value in args.batch_sizes.split(",")):
-        values = torch.randn(
-            batch_size, 40, 3_072, device="cuda", dtype=dtype, generator=generator
-        )
+        values = torch.randn(batch_size, 40, 3_072, device="cuda", dtype=dtype, generator=generator)
         weights = torch.randn(
             batch_size, 3_072, 1_536, device="cuda", dtype=dtype, generator=generator
         )
@@ -67,9 +65,7 @@ def main() -> None:
             dtype=dtype,
             generator=generator,
         )
-        linear_bias = torch.randn(
-            1_536, device="cuda", dtype=dtype, generator=generator
-        )
+        linear_bias = torch.randn(1_536, device="cuda", dtype=dtype, generator=generator)
         cases.append(
             run_case(
                 "groot_n17_action_dit_cross_attention_k_addmm",

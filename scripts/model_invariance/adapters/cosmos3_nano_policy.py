@@ -38,9 +38,7 @@ class Cosmos3NanoPolicyAdapter:
     guidance_interval: tuple[float, float] | None = None
 
     def __init__(self) -> None:
-        self.checkpoint = Path(
-            os.environ.get(self.checkpoint_environment_variable, "")
-        )
+        self.checkpoint = Path(os.environ.get(self.checkpoint_environment_variable, ""))
         self.sample_dir = Path(os.environ.get("COSMOS3_DROID_SAMPLE_DIR", ""))
         self.output_dir = Path(
             os.environ.get("COSMOS3_OUTPUT_DIR", "/tmp/cosmos3_batch_invariance")

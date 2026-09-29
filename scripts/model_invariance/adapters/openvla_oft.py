@@ -85,10 +85,7 @@ class OpenVLAOFTAdapter:
     @staticmethod
     def _component_state(path: Path) -> dict[str, torch.Tensor]:
         state = torch.load(path, map_location="cpu", weights_only=True)
-        return {
-            key.removeprefix("module."): value
-            for key, value in state.items()
-        }
+        return {key.removeprefix("module."): value for key, value in state.items()}
 
     def load_model(self):
         self._validate_paths()
@@ -105,12 +102,10 @@ class OpenVLAOFTAdapter:
         )
         vla.vision_backbone.set_num_images_in_input(2)
         vla.to(self.device).eval()
-        self.processor = AutoProcessor.from_pretrained(
-            self.checkpoint, trust_remote_code=True
-        )
-        self.stats = json.loads(
-            (self.checkpoint / "dataset_statistics.json").read_text()
-        )["libero_spatial_no_noops"]
+        self.processor = AutoProcessor.from_pretrained(self.checkpoint, trust_remote_code=True)
+        self.stats = json.loads((self.checkpoint / "dataset_statistics.json").read_text())[
+            "libero_spatial_no_noops"
+        ]
         vla.norm_stats = {"libero_spatial_no_noops": self.stats}
 
         action_head = L1RegressionActionHead(
@@ -120,13 +115,11 @@ class OpenVLAOFTAdapter:
             self._component_state(self.checkpoint / "action_head--150000_checkpoint.pt"),
             strict=True,
         )
-        proprio_projector = ProprioProjector(
-            llm_dim=vla.llm_dim, proprio_dim=8
-        ).to(device=self.device, dtype=torch.bfloat16)
+        proprio_projector = ProprioProjector(llm_dim=vla.llm_dim, proprio_dim=8).to(
+            device=self.device, dtype=torch.bfloat16
+        )
         proprio_projector.load_state_dict(
-            self._component_state(
-                self.checkpoint / "proprio_projector--150000_checkpoint.pt"
-            ),
+            self._component_state(self.checkpoint / "proprio_projector--150000_checkpoint.pt"),
             strict=True,
         )
         return _Policy(vla, action_head, proprio_projector).eval()
@@ -140,28 +133,18 @@ class OpenVLAOFTAdapter:
         array = np.array(image.convert("RGB"), copy=True)
         value = torch.from_numpy(array).permute(2, 0, 1).unsqueeze(0).float().div(255)
         scale = math.sqrt(0.9)
-        theta = torch.tensor(
-            [[[scale, 0.0, 0.0], [0.0, scale, 0.0]]], dtype=torch.float32
-        )
+        theta = torch.tensor([[[scale, 0.0, 0.0], [0.0, scale, 0.0]]], dtype=torch.float32)
         grid = F.affine_grid(theta, value.shape, align_corners=True)
         cropped = F.grid_sample(
             value, grid, mode="bilinear", padding_mode="border", align_corners=True
         )
-        result = (
-            cropped.squeeze(0)
-            .mul(255)
-            .round()
-            .clamp(0, 255)
-            .byte()
-            .permute(1, 2, 0)
-            .numpy()
-        )
+        result = cropped.squeeze(0).mul(255).round().clamp(0, 255).byte().permute(1, 2, 0).numpy()
         return Image.fromarray(result, mode="RGB")
 
     def _processed_image(self, camera: str, frame_number: int) -> Image.Image:
-        image = Image.open(
-            self.sample_dir / "frames" / f"{camera}_{frame_number:03d}.png"
-        ).convert("RGB")
+        image = Image.open(self.sample_dir / "frames" / f"{camera}_{frame_number:03d}.png").convert(
+            "RGB"
+        )
         return self._center_crop(image)
 
     def load_example_inputs(self, count: int):
@@ -193,12 +176,8 @@ class OpenVLAOFTAdapter:
             row = rows[frame_index]
             task = tasks[int(row["task_index"])]
             prompt = f"In: What action should the robot take to {task.lower()}?\nOut:"
-            primary = self.processor(
-                prompt, self._processed_image("image", frame_index + 1)
-            )
-            wrist = self.processor(
-                prompt, self._processed_image("image2", frame_index + 1)
-            )
+            primary = self.processor(prompt, self._processed_image("image", frame_index + 1))
+            wrist = self.processor(prompt, self._processed_image("image2", frame_index + 1))
             if not torch.equal(primary["input_ids"], wrist["input_ids"]):
                 raise RuntimeError("primary and wrist prompt tokenization differs")
             state = np.asarray(row["observation.state"])
@@ -221,10 +200,7 @@ class OpenVLAOFTAdapter:
 
     @staticmethod
     def compose_batch(samples):
-        return {
-            key: torch.cat([sample[key] for sample in samples], dim=0)
-            for key in samples[0]
-        }
+        return {key: torch.cat([sample[key] for sample in samples], dim=0) for key in samples[0]}
 
     def run_model(self, policy: _Policy, batch):
         from prismatic.vla.constants import IGNORE_INDEX
@@ -236,9 +212,7 @@ class OpenVLAOFTAdapter:
         batch_size = input_ids.shape[0]
 
         if not torch.all(input_ids[:, -1] == 29871):
-            input_ids = torch.cat(
-                [input_ids, torch.full_like(input_ids[:, :1], 29871)], dim=1
-            )
+            input_ids = torch.cat([input_ids, torch.full_like(input_ids[:, :1], 29871)], dim=1)
             attention_mask = torch.cat(
                 [attention_mask, torch.ones_like(attention_mask[:, :1])], dim=1
             )
@@ -255,9 +229,7 @@ class OpenVLAOFTAdapter:
         )
         self._trace("input.embeddings", input_embeddings)
 
-        projected = policy.vla._process_vision_features(
-            pixel_values, language_embeddings, False
-        )
+        projected = policy.vla._process_vision_features(pixel_values, language_embeddings, False)
         self._trace("vision.projected", projected)
         projected = policy.vla._process_proprio_features(
             projected, proprio, policy.proprio_projector
@@ -290,9 +262,7 @@ class OpenVLAOFTAdapter:
             :,
         ]
         self._trace("actions.hidden", action_hidden)
-        normalized = policy.action_head.predict_action(action_hidden).reshape(
-            batch_size, 8, 7
-        )
+        normalized = policy.action_head.predict_action(action_hidden).reshape(batch_size, 8, 7)
         self._trace("actions.normalized", normalized)
 
         normalized_numpy = normalized.detach().float().cpu().numpy()

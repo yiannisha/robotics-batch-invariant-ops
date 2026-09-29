@@ -191,9 +191,7 @@ def _profile_module(module: torch.nn.Module, values: list[torch.Tensor]):
             {
                 "module": type(module).__name__,
                 "input_shape": list(value.shape),
-                "weight_shape": (
-                    list(module.weight.shape) if hasattr(module, "weight") else None
-                ),
+                "weight_shape": (list(module.weight.shape) if hasattr(module, "weight") else None),
                 "aten_operators": sorted(
                     {
                         event.name
@@ -292,12 +290,8 @@ def main() -> None:
         (*gemm_implementations, ("aten::convolution", _stock_transposed_convolution)),
         args.seed,
     )
-    fixed_b1, fixed_output_b1, _ = _run(
-        adapter, model, examples, 1, invariant=True, seed=args.seed
-    )
-    fixed_b2, fixed_output_b2, _ = _run(
-        adapter, model, examples, 2, invariant=True, seed=args.seed
-    )
+    fixed_b1, fixed_output_b1, _ = _run(adapter, model, examples, 1, invariant=True, seed=args.seed)
+    fixed_b2, fixed_output_b2, _ = _run(adapter, model, examples, 2, invariant=True, seed=args.seed)
     fixed = _compare(fixed_b1, fixed_b2, fixed_output_b1, fixed_output_b2)
 
     first_stock = _first_difference(stock)
@@ -317,9 +311,7 @@ def main() -> None:
         "comparison": "B=1 target versus first sample at unrelated B=2",
         "first_stock_difference": first_stock,
         "first_after_gemm_difference": _first_difference(gemm),
-        "first_after_gemm_regular_convolution_difference": _first_difference(
-            gemm_regular_conv
-        ),
+        "first_after_gemm_regular_convolution_difference": _first_difference(gemm_regular_conv),
         "stock_trace": stock,
         "gemm_only_trace": gemm,
         "gemm_regular_convolution_trace": gemm_regular_conv,

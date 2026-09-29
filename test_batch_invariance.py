@@ -84,11 +84,7 @@ def test_linear_matches_torch(dtype: torch.dtype) -> None:
     weight = torch.randn(91, 257, device="cuda", dtype=dtype, generator=generator)
     bias = torch.randn(91, device="cuda", dtype=dtype, generator=generator)
 
-    tolerance = (
-        {"rtol": 2e-2, "atol": 1.5e-1}
-        if dtype == torch.bfloat16
-        else TOLERANCES[dtype]
-    )
+    tolerance = {"rtol": 2e-2, "atol": 1.5e-1} if dtype == torch.bfloat16 else TOLERANCES[dtype]
     torch.testing.assert_close(
         linear_batch_invariant(inputs, weight, bias),
         F.linear(inputs, weight, bias),
@@ -336,9 +332,7 @@ def test_qwen_patch_conv3d_is_batch_invariant(dtype: torch.dtype, batch_size: in
 
 @pytest.mark.parametrize("dtype", DTYPES)
 @pytest.mark.parametrize("groups", (1, 2))
-def test_nonoverlapping_conv_transpose3d_matches_torch(
-    dtype: torch.dtype, groups: int
-) -> None:
+def test_nonoverlapping_conv_transpose3d_matches_torch(dtype: torch.dtype, groups: int) -> None:
     generator = torch.Generator(device="cuda").manual_seed(6750 + groups)
     inputs = torch.randn(2, 4, 2, 3, 3, device="cuda", dtype=dtype, generator=generator)
     weight = torch.randn(4, 6 // groups, 2, 2, 2, device="cuda", dtype=dtype, generator=generator)
@@ -359,9 +353,7 @@ def test_nonoverlapping_conv_transpose3d_matches_torch(
 
 @pytest.mark.parametrize("dtype", DTYPES)
 @pytest.mark.parametrize("groups", (1, 2))
-def test_nonoverlapping_conv_transpose2d_matches_torch(
-    dtype: torch.dtype, groups: int
-) -> None:
+def test_nonoverlapping_conv_transpose2d_matches_torch(dtype: torch.dtype, groups: int) -> None:
     generator = torch.Generator(device="cuda").manual_seed(6725 + groups)
     inputs = torch.randn(2, 4, 3, 3, device="cuda", dtype=dtype, generator=generator)
     weight = torch.randn(4, 6 // groups, 2, 2, device="cuda", dtype=dtype, generator=generator)
@@ -402,9 +394,7 @@ def test_nonoverlapping_conv_transpose3d_is_batch_invariant(
     dtype: torch.dtype, batch_size: int
 ) -> None:
     generator = torch.Generator(device="cuda").manual_seed(6800 + batch_size)
-    inputs = torch.randn(
-        batch_size, 8, 2, 3, 3, device="cuda", dtype=dtype, generator=generator
-    )
+    inputs = torch.randn(batch_size, 8, 2, 3, 3, device="cuda", dtype=dtype, generator=generator)
     weight = torch.randn(8, 6, 4, 1, 1, device="cuda", dtype=dtype, generator=generator)
     bias = torch.randn(6, device="cuda", dtype=dtype, generator=generator)
     args = (weight, bias, (4, 1, 1), (0, 0, 0), (1, 1, 1), (0, 0, 0), 1)
@@ -425,9 +415,7 @@ def test_mode_overrides_matmul_and_convolution_family() -> None:
     video = torch.randn(5, 3, 2, 16, 16, device="cuda", generator=generator)
     video_weight = torch.randn(8, 3, 2, 16, 16, device="cuda", generator=generator)
     latent = torch.randn(5, 8, 2, 3, 3, device="cuda", generator=generator)
-    transpose_weight = torch.randn(
-        8, 6, 4, 1, 1, device="cuda", generator=generator
-    )
+    transpose_weight = torch.randn(8, 6, 4, 1, 1, device="cuda", generator=generator)
     image_latent = torch.randn(5, 8, 3, 3, device="cuda", generator=generator)
     image_transpose_weight = torch.randn(8, 6, 4, 4, device="cuda", generator=generator)
     linear_input = torch.randn(5, 37, 257, device="cuda", generator=generator)
@@ -464,13 +452,9 @@ def test_mode_overrides_matmul_and_convolution_family() -> None:
 @pytest.mark.parametrize("dtype", DTYPES)
 @pytest.mark.parametrize("batch_size", (2, 5, 17))
 @pytest.mark.parametrize("dim", (-1, 1))
-def test_mode_overrides_torch_softmax(
-    dtype: torch.dtype, batch_size: int, dim: int
-) -> None:
+def test_mode_overrides_torch_softmax(dtype: torch.dtype, batch_size: int, dim: int) -> None:
     generator = torch.Generator(device="cuda").manual_seed(7025 + batch_size)
-    inputs = torch.randn(
-        batch_size, 7, 145, device="cuda", dtype=dtype, generator=generator
-    )
+    inputs = torch.randn(batch_size, 7, 145, device="cuda", dtype=dtype, generator=generator)
     with set_batch_invariant_mode():
         _assert_first_sample_equal(
             torch.softmax(inputs[:1], dim=dim), torch.softmax(inputs, dim=dim)
@@ -488,9 +472,7 @@ def test_mode_softmax_and_log_softmax_match_torch(dtype: torch.dtype, dim: int) 
         actual_softmax = torch.softmax(inputs, dim=dim)
         actual_log_softmax = torch.log_softmax(inputs, dim=dim)
     torch.testing.assert_close(actual_softmax, expected_softmax, **TOLERANCES[dtype])
-    torch.testing.assert_close(
-        actual_log_softmax, expected_log_softmax, **TOLERANCES[dtype]
-    )
+    torch.testing.assert_close(actual_log_softmax, expected_log_softmax, **TOLERANCES[dtype])
 
 
 @pytest.mark.parametrize("dtype", DTYPES)
@@ -502,9 +484,7 @@ def test_vector_norm_matches_torch(
     generator = torch.Generator(device="cuda").manual_seed(7050)
     inputs = torch.randn(3, 17, 5, 11, device="cuda", dtype=dtype, generator=generator)
 
-    actual = linalg_vector_norm_batch_invariant(
-        inputs, dim=dimensions, keepdim=keepdim
-    )
+    actual = linalg_vector_norm_batch_invariant(inputs, dim=dimensions, keepdim=keepdim)
     expected = torch.linalg.vector_norm(inputs, dim=dimensions, keepdim=keepdim)
     torch.testing.assert_close(actual, expected, **TOLERANCES[dtype])
 
@@ -795,9 +775,7 @@ def test_deterministic_token_choice_moe_is_batch_invariant() -> None:
     selected = torch.randint(0, 7, (11, 4), device="cuda", generator=generator)
     routing = torch.rand(11, 4, device="cuda", generator=generator)
 
-    alone = deterministic_token_choice_moe(
-        hidden[:1], routing[:1], selected[:1], gate, up, down
-    )
+    alone = deterministic_token_choice_moe(hidden[:1], routing[:1], selected[:1], gate, up, down)
     together = deterministic_token_choice_moe(hidden, routing, selected, gate, up, down)
     assert torch.equal(alone, together[:1])
 

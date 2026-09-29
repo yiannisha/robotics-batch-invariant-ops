@@ -4,16 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "batch-invariant-ops"
-version = "0.1.0"
-description = "Triton-based batch-invariant operations for PyTorch"
-authors = [
-    {name = "Horace", email = "horace@example.com"}
-]
+version = "0.2.0"
+description = "Triton/PyTorch operators for batch-invariant robotics inference"
+readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.10"
 dependencies = [
     "torch",
     "triton"
 ]
+keywords = ["cuda", "determinism", "pytorch", "robotics", "triton", "vla"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -29,9 +29,13 @@ classifiers = [
 dev = [
     "pytest",
     "black",
-    "isort",
-    "flake8"
+    "isort"
 ]
+
+[project.urls]
+Homepage = "https://github.com/yiannisha/robotics-batch-invariant-ops"
+Repository = "https://github.com/yiannisha/robotics-batch-invariant-ops.git"
+Issues = "https://github.com/yiannisha/robotics-batch-invariant-ops/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]

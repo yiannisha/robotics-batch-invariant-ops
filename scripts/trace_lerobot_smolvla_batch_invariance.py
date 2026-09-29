@@ -278,15 +278,9 @@ def main() -> None:
         ("aten::addmm", addmm_batch_invariant),
         ("aten::bmm", bmm_batch_invariant),
     )
-    convolution_gemm = _run_stage(
-        adapter, model, examples, conv_gemm_implementations, args.seed
-    )
-    fixed_b1, fixed_output_b1, _ = _run(
-        adapter, model, examples, 1, invariant=True, seed=args.seed
-    )
-    fixed_b2, fixed_output_b2, _ = _run(
-        adapter, model, examples, 2, invariant=True, seed=args.seed
-    )
+    convolution_gemm = _run_stage(adapter, model, examples, conv_gemm_implementations, args.seed)
+    fixed_b1, fixed_output_b1, _ = _run(adapter, model, examples, 1, invariant=True, seed=args.seed)
+    fixed_b2, fixed_output_b2, _ = _run(adapter, model, examples, 2, invariant=True, seed=args.seed)
     fixed = _compare(fixed_b1, fixed_b2, fixed_output_b1, fixed_output_b2)
 
     first_stock = _first_difference(stock)
