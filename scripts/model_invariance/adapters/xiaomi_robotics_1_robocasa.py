@@ -9,25 +9,55 @@ retains the unmodified released path for the B=1 equivalence check.
 from __future__ import annotations
 
 import io
+import json
 import os
 from pathlib import Path
 from typing import Any
 
 import pyarrow.parquet as pq
+import numpy as np
 import torch
+import torch.nn.functional as F
 from PIL import Image
+
+
+BASE_SEED = 20261015
 
 
 class XiaomiRobotics1RoboCasaAdapter:
     name = "xiaomi-robotics-1-robocasa-official-pytorch"
     robot_type = "robocasa_mg"
     instruction = "pick the mug from the counter and place it under the coffee machine dispenser"
+    causal_ablation_inapplicable_operations = {
+        "explicit_sdpa": {
+            "reason": (
+                "The pinned eager policy trace executes explicit matrix attention and does "
+                "not dispatch aten::scaled_dot_product_attention."
+            ),
+            "evidence_path": (
+                "/workspace/robotics-batch-invariant-ops/results/cross_model/"
+                "xiaomi_robotics_1/full/operator/aten_trace_B8.json"
+            ),
+        }
+    }
 
     def __init__(self) -> None:
-        self.checkpoint = Path(os.environ.get("XR1_CHECKPOINT", ""))
-        self.sample = Path(os.environ.get("XR1_SAMPLE", ""))
+        root = Path(__file__).resolve().parents[3]
+        self.checkpoint = Path(os.environ.get(
+            "XR1_CHECKPOINT", "/workspace/assets/xiaomi_robotics_1/checkpoint"
+        ))
+        self.sample = Path(os.environ.get(
+            "XR1_SAMPLE",
+            "/workspace/assets/xiaomi_robotics_1/sample/data/chunk-000/episode_000000.parquet",
+        ))
+        self.replay_manifest_path = Path(os.environ.get(
+            "XR1_REPLAY_MANIFEST",
+            str(root / "results/cross_model/xiaomi_robotics_1/full/replay_manifest.json"),
+        ))
         self.device = torch.device("cuda")
         self.processor: Any | None = None
+        self.replay_manifest: dict[str, Any] | None = None
+        self.replay_noise: np.ndarray | None = None
         self.trace_callback = None
 
     def _trace(self, label: str, value: torch.Tensor) -> None:
@@ -74,7 +104,10 @@ class XiaomiRobotics1RoboCasaAdapter:
         # invoking the released processor.
         return Image.open(io.BytesIO(value["bytes"])).convert("RGB").resize((256, 256))
 
-    def _messages(self, images: list[Image.Image]) -> list[dict[str, Any]]:
+    def _messages(
+        self, images: list[Image.Image], instruction: str | None = None
+    ) -> list[dict[str, Any]]:
+        instruction = instruction or self.instruction
         return [
             {
                 "role": "user",
@@ -90,7 +123,7 @@ class XiaomiRobotics1RoboCasaAdapter:
                     {
                         "type": "text",
                         "text": (
-                            "\nGenerate robot actions for the task:\n" f"{self.instruction} /no_cot"
+                            "\nGenerate robot actions for the task:\n" f"{instruction} /no_cot"
                         ),
                     },
                 ],
@@ -98,9 +131,84 @@ class XiaomiRobotics1RoboCasaAdapter:
             {"role": "assistant", "content": [{"type": "text", "text": "<cot></cot>"}]},
         ]
 
+    @staticmethod
+    def _path_image(path: Path) -> Image.Image:
+        return Image.open(path).convert("RGB").resize((256, 256))
+
+    def execution_configuration(self) -> dict[str, Any]:
+        return {
+            "camera_features": ["image_left", "image_right", "wrist_image"],
+            "source_image_shape_hwc": [128, 128, 3],
+            "policy_image_shape_hwc": [256, 256, 3],
+            "real_state_dim": 25,
+            "padded_state_dim": 60,
+            "canonical_language_tokens": 260,
+            "flow_steps": 5,
+            "action_chunk_size": 10,
+            "model_action_dim": 60,
+            "robot_output_dim": 7,
+            "robot_type": self.robot_type,
+        }
+
+    def _load_replay_metadata(self) -> None:
+        if self.replay_manifest is not None:
+            return
+        if not self.replay_manifest_path.is_file():
+            raise FileNotFoundError(self.replay_manifest_path)
+        manifest = json.loads(self.replay_manifest_path.read_text())
+        if (
+            manifest.get("model_id") != "xiaomi_robotics_1"
+            or len(manifest.get("observations", [])) != 1000
+            or manifest.get("noise_shape") != [1000, 3, 10, 60]
+        ):
+            raise ValueError("Xiaomi replay manifest does not describe the frozen campaign")
+        noise_path = Path(manifest["noise_file"])
+        if not noise_path.is_absolute():
+            noise_path = self.replay_manifest_path.parent / noise_path
+        self.replay_manifest = manifest
+        self.replay_noise = np.load(noise_path, mmap_mode="r", allow_pickle=False)
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        if self.processor is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        self._load_replay_metadata()
+        assert self.replay_manifest is not None and self.replay_noise is not None
+        if not 0 <= replay_index < len(self.replay_manifest["observations"]):
+            raise IndexError(replay_index)
+        if noise_id not in (0, 1, 2):
+            raise IndexError(noise_id)
+        row = self.replay_manifest["observations"][replay_index]
+        if row.get("replay_index") != replay_index:
+            raise ValueError("Xiaomi replay indices are not one-to-one")
+        fixture = Path(self.replay_manifest["fixture_root"])
+        images = [self._path_image(fixture / row["images"][key]) for key in (
+            "image_left", "image_right", "wrist_image"
+        )]
+        real_state = torch.tensor(row["state"], dtype=torch.float32)
+        if tuple(real_state.shape) != (25,):
+            raise ValueError("Xiaomi frozen real state is not 25-D")
+        state = torch.zeros(1, 1, 60, dtype=torch.float32)
+        state[0, 0, :25] = real_state
+        data = self.processor.apply_chat_template(
+            self._messages(images, row["task"]),
+            tokenize=True,
+            return_dict=True,
+            return_tensors="pt",
+            state=state,
+            robot_type=self.robot_type,
+        )
+        example = {key: value.detach().cpu() for key, value in data.items()}
+        example["noise"] = torch.from_numpy(
+            np.array(self.replay_noise[replay_index, noise_id], copy=True)
+        ).to(torch.bfloat16)
+        example["seed"] = BASE_SEED + replay_index * 3 + noise_id
+        return example
+
     def load_example_inputs(self, count: int):
         if self.processor is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+        if self.replay_manifest_path.is_file():
+            return [self.load_replay_input(index, 0) for index in range(count)]
         table = pq.read_table(self.sample)
         if count > table.num_rows:
             raise ValueError(f"RoboCasa fixture contains only {table.num_rows} frames")
@@ -141,20 +249,48 @@ class XiaomiRobotics1RoboCasaAdapter:
             examples.append(example)
         return examples
 
-    @staticmethod
-    def compose_batch(samples):
+    def _compose(self, samples, canonical_language: bool):
         # Qwen packs vision patches/images across the request, while textual,
         # proprioceptive, and action tensors retain an ordinary batch axis.
         output = {}
+        language_length = 260 if canonical_language else max(
+            sample["input_ids"].shape[1] for sample in samples
+        )
         for key in samples[0]:
             values = [sample[key] for sample in samples]
             if key == "noise":
                 output[key] = torch.stack(values)
             elif key == "seed":
                 output[key] = values
+            elif key in {"input_ids", "attention_mask"}:
+                pad_value = (
+                    int(self.processor.tokenizer.pad_token_id or 0)
+                    if key == "input_ids" else 0
+                )
+                padded = [
+                    F.pad(value, (0, language_length - value.shape[1]), value=pad_value)
+                    for value in values
+                ]
+                output[key] = torch.cat(padded, dim=0)
             else:
                 output[key] = torch.cat(values, dim=0)
         return output
+
+    def compose_batch(self, samples):
+        from batch_invariant_ops import is_batch_invariant_mode_enabled
+
+        return self._compose(samples, canonical_language=is_batch_invariant_mode_enabled())
+
+    def compose_fixed_batch(self, samples):
+        return self._compose(samples, canonical_language=True)
+
+    @staticmethod
+    def fixed_batch_shape_metadata(batch):
+        return {
+            "language_padding": "canonical_right",
+            "language_tokens": int(batch["input_ids"].shape[1]),
+            "canonical_length": 260,
+        }
 
     def _to_device(self, batch):
         return {
@@ -219,6 +355,8 @@ class XiaomiRobotics1RoboCasaAdapter:
             )
             self._trace(f"dit.step{step}.velocity", velocity)
             sample = sample + velocity * (1.0 / num_steps)
+            self._trace(f"flow.step_{step:02d}.prediction", velocity)
+            self._trace(f"flow.step_{step:02d}.state", sample)
 
         self._trace("dit.normalized_actions", sample)
         decoded = self.processor.decode_action(sample, robot_type=self.robot_type)

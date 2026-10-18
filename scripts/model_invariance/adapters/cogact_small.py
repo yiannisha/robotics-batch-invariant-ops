@@ -11,6 +11,9 @@ Required environment variables:
     inference-only construction patch applied.
 ``COGACT_SAMPLE_DIR``
     Public LIBERO frame fixture used for unrelated real-image companions.
+``COGACT_LLAMA_METADATA``
+    Pinned local Llama-2 config/tokenizer mirror used only to construct the
+    empty language backbone before loading every learned tensor from CogACT.
 
 The target follows the official Azure inference example: its bundled
 ``scripts/aml/test_image.png``, prompt ``move sponge near apple``, RT-1 action
@@ -20,6 +23,8 @@ noise is represented as an explicit per-sample input.
 
 from __future__ import annotations
 
+import hashlib
+import json
 import os
 import sys
 from dataclasses import dataclass
@@ -31,10 +36,19 @@ import torch
 from PIL import Image
 from torch.nn.utils.rnn import pad_sequence
 
+from batch_invariant_ops import is_batch_invariant_mode_enabled
+
 PROMPT = "move sponge near apple"
 UNNORM_KEY = "fractal20220817_data"
 CFG_SCALE = 1.5
 DDIM_STEPS = 10
+CANONICAL_LANGUAGE_TOKENS = 27
+
+
+class _CogACTBatch(dict):
+    def __init__(self, values, *, fixed_language: bool):
+        super().__init__(values)
+        self.fixed_language = fixed_language
 
 
 @dataclass
@@ -55,8 +69,16 @@ class CogACTSmallAdapter:
         self.source = Path(os.environ.get("COGACT_SOURCE", ""))
         self.openvla_source = Path(os.environ.get("COGACT_OPENVLA_SOURCE", ""))
         self.sample_dir = Path(os.environ.get("COGACT_SAMPLE_DIR", ""))
+        self.llama_metadata = Path(os.environ.get("COGACT_LLAMA_METADATA", ""))
+        self.replay_manifest_path = Path(os.environ.get(
+            "COGACT_REPLAY_MANIFEST",
+            str(Path(__file__).resolve().parents[3]
+                / "results/cross_model/cogact_small/full/replay_manifest.json"),
+        ))
         self.device = torch.device("cuda")
         self.trace_callback = None
+        self.replay_manifest = None
+        self.replay_noise = None
 
     def _trace(self, label: str, value: torch.Tensor) -> None:
         if self.trace_callback is not None:
@@ -71,6 +93,9 @@ class CogACTSmallAdapter:
             self.source / "vla" / "cogactvla.py",
             self.source / "scripts" / "aml" / "test_image.png",
             self.openvla_source / "prismatic" / "models" / "vlms" / "prismatic.py",
+            self.llama_metadata / "config.json",
+            self.llama_metadata / "tokenizer.model",
+            self.llama_metadata / "tokenizer_config.json",
         ):
             if not path.is_file():
                 raise FileNotFoundError(f"required CogACT artifact is missing: {path}")
@@ -91,15 +116,44 @@ class CogACTSmallAdapter:
                 sys.path.remove(path)
             sys.path.insert(0, path)
 
+        from prismatic.models.backbones.llm.llama2 import LLAMA2_MODELS
         from prismatic.models.vlms.prismatic import PrismaticVLM
+        from transformers.modeling_utils import no_init_weights
+        from transformers.models.llama.modeling_llama import LlamaForCausalLM
         from vla import load_vla
 
-        model = load_vla(
-            checkpoint_file,
-            load_for_training=False,
-            action_model_type="DiT-S",
-            future_action_window_size=15,
-        )
+        # Keep construction fully pinned and offline.  The CogACT checkpoint
+        # supplies all learned Llama tensors; this directory contains only the
+        # architecture and tokenizer metadata needed by AutoConfig/Tokenizer.
+        LLAMA2_MODELS["llama2-7b-pure"]["hf_hub_path"] = str(self.llama_metadata)
+
+        # Construct the empty Llama directly in the deployment BF16 dtype.
+        # Every learned tensor is replaced by the strict CogACT checkpoint;
+        # this has the same rounding result as load-FP32-then-convert while
+        # avoiding a transient ~14 GB allocation under the shared cgroup.
+        had_local_descriptor = "_from_config" in LlamaForCausalLM.__dict__
+        local_descriptor = LlamaForCausalLM.__dict__.get("_from_config")
+        original_from_config = LlamaForCausalLM._from_config
+
+        @classmethod
+        def bf16_from_config(cls, config, **kwargs):
+            kwargs["torch_dtype"] = torch.bfloat16
+            with no_init_weights():
+                return original_from_config(config, **kwargs)
+
+        LlamaForCausalLM._from_config = bf16_from_config
+        try:
+            model = load_vla(
+                checkpoint_file,
+                load_for_training=False,
+                action_model_type="DiT-S",
+                future_action_window_size=15,
+            )
+        finally:
+            if had_local_descriptor:
+                LlamaForCausalLM._from_config = local_descriptor
+            else:
+                delattr(LlamaForCausalLM, "_from_config")
         # This is the authors' documented deployment configuration: the VLM
         # runs in BF16 while the small diffusion action head remains FP32.
         model.vlm = model.vlm.to(torch.bfloat16)
@@ -132,14 +186,74 @@ class CogACTSmallAdapter:
         return examples
 
     @staticmethod
-    def compose_batch(samples):
+    def _sha256_bytes(value: np.ndarray) -> str:
+        return hashlib.sha256(np.ascontiguousarray(value).tobytes()).hexdigest()
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(self.replay_manifest_path.read_text())
+            self.replay_noise = np.load(self.replay_manifest["noise_file"], mmap_mode="r")
+            if self.replay_noise.shape != (1000, 3, 16, 7):
+                raise ValueError("CogACT replay noise shape differs")
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows) or noise_id not in (0, 1, 2):
+            raise IndexError((replay_index, noise_id))
+        row = rows[replay_index]
+        if row["replay_index"] != replay_index or len(row["request_ids"]) != 3:
+            raise ValueError("CogACT replay identity differs")
+        raw_noise = np.array(self.replay_noise[replay_index, noise_id], copy=True)
+        if self._sha256_bytes(raw_noise) != row["noise"][noise_id]["sha256"]:
+            raise ValueError("CogACT request-local noise changed")
+        relative = row["images"]["observation"]
+        image_path = Path(self.replay_manifest["fixture_root"]) / relative
+        if not image_path.is_file():
+            raise FileNotFoundError(image_path)
+        with Image.open(image_path) as handle:
+            image = handle.convert("RGB").copy()
         return {
+            "image": image,
+            "instruction": row["instruction"],
+            "noise": torch.from_numpy(raw_noise).unsqueeze(0),
+        }
+
+    @staticmethod
+    def compose_batch(samples):
+        return _CogACTBatch({
             "images": [sample["image"] for sample in samples],
             "instructions": [sample["instruction"] for sample in samples],
             "noise": torch.cat([sample["noise"] for sample in samples], dim=0),
+        }, fixed_language=is_batch_invariant_mode_enabled())
+
+    @staticmethod
+    def compose_fixed_batch(samples):
+        return _CogACTBatch({
+            "images": [sample["image"] for sample in samples],
+            "instructions": [sample["instruction"] for sample in samples],
+            "noise": torch.cat([sample["noise"] for sample in samples], dim=0),
+        }, fixed_language=True)
+
+    @staticmethod
+    def execution_configuration() -> dict[str, Any]:
+        return {
+            "native_language_padding": "longest_in_batch_right",
+            "invariant_language_padding": "canonical_right",
+            "canonical_language_tokens": CANONICAL_LANGUAGE_TOKENS,
+            "prompt_builder": "PurePromptBuilder",
+            "cfg_scale": CFG_SCALE,
+            "ddim_steps": DDIM_STEPS,
         }
 
-    def _cognition_features(self, policy: _Policy, images, instructions):
+    @staticmethod
+    def fixed_batch_shape_metadata(batch):
+        return {
+            "language_padding": "canonical_right",
+            "language_tokens": CANONICAL_LANGUAGE_TOKENS,
+            "canonical_length": CANONICAL_LANGUAGE_TOKENS,
+        }
+
+    def _cognition_features(
+        self, policy: _Policy, images, instructions, *, fixed_language: bool,
+    ):
         model = policy.model
         image_transform = model.vlm.vision_backbone.image_transform
         tokenizer = model.vlm.llm_backbone.tokenizer
@@ -158,9 +272,23 @@ class CogACTSmallAdapter:
             input_ids.append(token_ids)
             pixel_values.append(image_transform(image))
 
-        input_ids = pad_sequence(input_ids, batch_first=True, padding_value=tokenizer.pad_token_id)[
-            :, : tokenizer.model_max_length
-        ].to(self.device)
+        maximum = max(value.shape[0] for value in input_ids)
+        if maximum > CANONICAL_LANGUAGE_TOKENS:
+            raise ValueError(
+                f"CogACT real prompt has {maximum} tokens, exceeding canonical "
+                f"length {CANONICAL_LANGUAGE_TOKENS}"
+            )
+        input_ids = pad_sequence(
+            input_ids, batch_first=True, padding_value=tokenizer.pad_token_id
+        )[:, : tokenizer.model_max_length]
+        if fixed_language and input_ids.shape[1] < CANONICAL_LANGUAGE_TOKENS:
+            padded = torch.full(
+                (input_ids.shape[0], CANONICAL_LANGUAGE_TOKENS),
+                tokenizer.pad_token_id, dtype=input_ids.dtype,
+            )
+            padded[:, : input_ids.shape[1]] = input_ids
+            input_ids = padded
+        input_ids = input_ids.to(self.device)
         attention_mask = input_ids.ne(tokenizer.pad_token_id)
         if isinstance(pixel_values[0], torch.Tensor):
             pixels = torch.stack(pixel_values).to(self.device)
@@ -207,7 +335,10 @@ class CogACTSmallAdapter:
 
     def run_model(self, policy: _Policy, batch):
         model = policy.model
-        cognition = self._cognition_features(policy, batch["images"], batch["instructions"])
+        cognition = self._cognition_features(
+            policy, batch["images"], batch["instructions"],
+            fixed_language=batch.fixed_language,
+        )
         action_dtype = next(model.action_model.net.parameters()).dtype
         cognition = cognition.unsqueeze(1).to(action_dtype)
         batch_size = cognition.shape[0]

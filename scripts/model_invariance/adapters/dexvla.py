@@ -21,6 +21,7 @@ import json
 import os
 import pickle
 import types
+import contextlib
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -45,11 +46,23 @@ class DexVLAAdapter:
     camera_names = ("cam_high", "cam_left_wrist", "cam_right_wrist")
 
     def __init__(self) -> None:
-        self.checkpoint = Path(os.environ.get("DEXVLA_CHECKPOINT", ""))
-        self.sample = Path(os.environ.get("DEXVLA_SAMPLE", ""))
+        root = Path(__file__).resolve().parents[3]
+        self.checkpoint = Path(os.environ.get(
+            "DEXVLA_CHECKPOINT", "/workspace/assets/dexvla/repo/checkpoint-60000"
+        ))
+        self.sample = Path(os.environ.get(
+            "DEXVLA_SAMPLE", "/workspace/assets/dexvla/sample/episode_47.hdf5"
+        ))
+        self.replay_manifest_path = Path(os.environ.get(
+            "DEXVLA_REPLAY_MANIFEST",
+            str(root / "results/cross_model/dexvla/full/replay_manifest.json"),
+        ))
         self.device = torch.device("cuda")
         self.stats: dict[str, np.ndarray] | None = None
         self.processor: Any | None = None
+        self.replay_manifest: dict[str, Any] | None = None
+        self.replay_noise: np.ndarray | None = None
+        self._force_varlen_attention = False
         self.trace_callback = None
 
     def _trace(self, label: str, value: torch.Tensor) -> None:
@@ -72,8 +85,7 @@ class DexVLAAdapter:
         if not self.sample.is_file():
             raise FileNotFoundError("set DEXVLA_SAMPLE to an official HDF5 episode")
 
-    @staticmethod
-    def _install_packed_vision_attention_bridge(model: torch.nn.Module) -> None:
+    def _install_packed_vision_attention_bridge(self, model: torch.nn.Module) -> None:
         """Preserve Qwen's packed-image boundaries in invariant mode.
 
         Official Qwen2-VL SDPA concatenates every image along the sequence
@@ -90,6 +102,7 @@ class DexVLAAdapter:
         )
         from qwen2_vla.models.modeling_qwen2_vla import apply_rotary_pos_emb_vision
 
+        adapter = self
         for attention in (block.attn for block in model.visual.blocks):
             official_forward = attention.forward
 
@@ -101,7 +114,8 @@ class DexVLAAdapter:
                 *,
                 _official_forward=official_forward,
             ):
-                if not is_batch_invariant_mode_enabled():
+                if (not is_batch_invariant_mode_enabled()
+                        and not adapter._force_varlen_attention):
                     return _official_forward(
                         hidden_states,
                         cu_seqlens=cu_seqlens,
@@ -127,9 +141,64 @@ class DexVLAAdapter:
 
             attention.forward = types.MethodType(forward, attention)
 
+    @contextlib.contextmanager
+    def causal_ablation_context(self, mode: str):
+        previous = self._force_varlen_attention
+        self._force_varlen_attention = mode == "operators_plus_patch_projection"
+        try:
+            yield
+        finally:
+            self._force_varlen_attention = previous
+
     def load_model(self):
         self._validate_paths()
+        # DexVLA pins diffusers 0.11.1, whose package initializer still
+        # imports ``cached_download``.  Modern Transformers requires a newer
+        # huggingface_hub release where that name was removed.  Inference here
+        # uses only local scheduler classes, so retain the legacy import name
+        # as a compatibility alias without changing either pinned package.
+        import huggingface_hub
+
+        if not hasattr(huggingface_hub, "cached_download"):
+            huggingface_hub.cached_download = huggingface_hub.hf_hub_download
+        # The repository imports its training module from qwen2_vla.__init__
+        # even for inference.  Transformers moved this constant out of
+        # trainer.py; expose the current canonical object at the legacy path.
+        import transformers.pytorch_utils
+        import transformers.trainer
+        import transformers.utils
+        import transformers.image_utils
+
+        if not hasattr(transformers.trainer, "ALL_LAYERNORM_LAYERS"):
+            transformers.trainer.ALL_LAYERNORM_LAYERS = (
+                transformers.pytorch_utils.ALL_LAYERNORM_LAYERS
+            )
+        if not hasattr(transformers.utils, "is_torch_tpu_available"):
+            transformers.utils.is_torch_tpu_available = (
+                transformers.utils.is_torch_xla_available
+            )
+        if not hasattr(transformers.image_utils, "VideoInput"):
+            import transformers.video_utils
+
+            transformers.image_utils.VideoInput = transformers.video_utils.VideoInput
         from diffusers.schedulers.scheduling_ddim import DDIMScheduler
+
+        # Upstream qwen2_vla.__init__ eagerly imports its training-only
+        # trainer, which is not needed for policy inference and targets an old
+        # Transformers API.  Register the repository directory as a namespace
+        # package so the released model/config/processor submodules can load
+        # directly without executing that unrelated trainer import.
+        import importlib.util
+        import sys
+
+        if "qwen2_vla" not in sys.modules:
+            qwen_spec = importlib.util.find_spec("qwen2_vla")
+            if qwen_spec is None or not qwen_spec.submodule_search_locations:
+                raise ImportError("could not locate the DexVLA qwen2_vla package")
+            qwen_package = types.ModuleType("qwen2_vla")
+            qwen_package.__path__ = list(qwen_spec.submodule_search_locations)
+            qwen_package.__package__ = "qwen2_vla"
+            sys.modules["qwen2_vla"] = qwen_package
 
         import policy_heads  # noqa: F401 - registers the ScaleDP config/model
         from qwen2_vla.models.configuration_qwen2_vla import Qwen2VLAConfig
@@ -170,9 +239,99 @@ class DexVLAAdapter:
             self.stats = pickle.load(handle)
         return _Policy(model.eval(), processor)
 
+    def execution_configuration(self) -> dict[str, Any]:
+        return {
+            "camera_names": list(self.camera_names),
+            "image_shape_hwc": [480, 640, 3],
+            "state_dim": 14,
+            "reasoning_generation": "greedy_max_new_tokens_256",
+            "diffusion_steps": 10,
+            "action_chunk_size": 50,
+            "action_dim": 14,
+            "source_limit_observations": 396,
+        }
+
+    def _load_replay_metadata(self) -> None:
+        if self.replay_manifest is not None:
+            return
+        if not self.replay_manifest_path.is_file():
+            raise FileNotFoundError(self.replay_manifest_path)
+        manifest = json.loads(self.replay_manifest_path.read_text())
+        if (manifest.get("model_id") != "dexvla"
+                or len(manifest.get("observations", [])) != 396
+                or manifest.get("noise_shape") != [396, 3, 50, 14]):
+            raise ValueError("DexVLA replay manifest does not describe the frozen source limit")
+        source = Path(manifest["source_root"]) / manifest["source_file"]
+        if source.resolve() != self.sample.resolve():
+            raise ValueError("DEXVLA_SAMPLE differs from the frozen replay source")
+        noise_path = Path(manifest["noise_file"])
+        if not noise_path.is_absolute():
+            noise_path = self.replay_manifest_path.parent / noise_path
+        self.replay_manifest = manifest
+        self.replay_noise = np.load(noise_path, mmap_mode="r", allow_pickle=False)
+
+    def _processed_frame(self, frame_index: int) -> dict[str, torch.Tensor]:
+        if self.stats is None or self.processor is None:
+            raise RuntimeError("load_model must be called before loading replay inputs")
+        self._load_replay_metadata()
+        row = self.replay_manifest["observations"][frame_index]
+        if row.get("replay_index") != frame_index or row.get("source_frame_index") != frame_index:
+            raise ValueError("DexVLA replay index is not a one-to-one source-frame mapping")
+        with h5py.File(self.sample, "r") as episode:
+            images = [
+                torch.from_numpy(np.array(
+                    episode[f"observations/images/{camera}"][frame_index], copy=True
+                ))
+                for camera in self.camera_names
+            ]
+            raw_state = np.array(episode["observations/qpos"][frame_index], copy=True)
+        if not np.array_equal(raw_state, np.asarray(row["state"], dtype=np.float32)):
+            raise ValueError("DexVLA HDF5 state differs from the frozen replay row")
+        messages = [{
+            "role": "user",
+            "content": [
+                {"type": "image", "image": None},
+                {"type": "image", "image": None},
+                {"type": "image", "image": None},
+                {"type": "text", "text": row["task"]},
+            ],
+        }]
+        text = self.processor.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
+        processed = self.processor(
+            text=text,
+            images=images,
+            videos=None,
+            padding=True,
+            return_tensors="pt",
+        )
+        state = (raw_state - self.stats["qpos_mean"]) / self.stats["qpos_std"]
+        return {
+            "input_ids": processed["input_ids"],
+            "attention_mask": processed["attention_mask"],
+            "pixel_values": processed["pixel_values"],
+            "image_grid_thw": processed["image_grid_thw"],
+            "states": torch.from_numpy(state).unsqueeze(0),
+        }
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        self._load_replay_metadata()
+        if not 0 <= replay_index < len(self.replay_manifest["observations"]):
+            raise IndexError(replay_index)
+        if noise_id not in (0, 1, 2):
+            raise IndexError(noise_id)
+        processed = self._processed_frame(replay_index)
+        processed["noise"] = torch.from_numpy(
+            np.array(self.replay_noise[replay_index, noise_id], copy=True)
+        ).unsqueeze(0)
+        return processed
+
     def load_example_inputs(self, count: int):
         if self.stats is None or self.processor is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+        if self.replay_manifest_path.is_file():
+            return [self.load_replay_input(index, 0) for index in range(count)]
         with h5py.File(self.sample, "r") as episode:
             frame_count = episode["observations/qpos"].shape[0]
             if count > frame_count:
@@ -333,12 +492,14 @@ class DexVLAAdapter:
                 states=states,
             )
             self._trace(f"diffusion.step_{index:02d}.prediction", noise_prediction)
+            self._trace(f"flow.step_{index:02d}.prediction", noise_prediction)
             actions = scheduler.step(
                 model_output=noise_prediction,
                 timestep=timestep,
                 sample=actions,
             ).prev_sample
             self._trace(f"diffusion.step_{index:02d}.state", actions)
+            self._trace(f"flow.step_{index:02d}.state", actions)
         self._trace("actions.normalized", actions)
 
         normalized = actions.detach().float().cpu().numpy()

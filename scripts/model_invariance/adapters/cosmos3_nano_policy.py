@@ -22,6 +22,7 @@ before this library's dispatcher context is selected; set
 from __future__ import annotations
 
 import os
+import types
 from pathlib import Path
 from typing import Any
 
@@ -80,6 +81,7 @@ class Cosmos3NanoPolicyAdapter:
             varlen_scaled_dot_product_attention_batch_invariant,
         )
         from cosmos_framework.model.generator.mot import attention as attention_module
+        from cosmos_framework.model.generator.mot import domain_aware_linear as domain_linear_module
         from cosmos_framework.model.generator.mot import (
             inference_text_kv_memory as text_kv_module,
         )
@@ -93,6 +95,50 @@ class Cosmos3NanoPolicyAdapter:
                 is_batch_invariant_mode_enabled()
                 and os.environ.get("_COSMOS3_DISABLE_ATTENTION_REPAIR", "0") != "1"
             )
+
+        original_domain_linear_forward = domain_linear_module.DomainAwareLinear.forward
+        if not getattr(original_domain_linear_forward, "_batch_invariant_cosmos3", False):
+
+            adapter_instance = self
+
+            def domain_linear_forward_independent_of_batch(layer, x, domain_id):
+                # The public grouped_mm fast path is outside the patched MM/BMM
+                # dispatcher and changes algorithms with the packed token count.
+                # Invoke the released grouped projection on one request's
+                # action-token chunk at a time, preserving its exact B=1
+                # arithmetic while making the row count batch-independent.
+                if attention_repair_enabled() and x.numel() != 0:
+                    if x.dim() == 3:
+                        return torch.cat(
+                            [
+                                original_domain_linear_forward(
+                                    layer, x[index : index + 1], domain_id[index : index + 1]
+                                )
+                                for index in range(x.shape[0])
+                            ],
+                            dim=0,
+                        )
+                    net = adapter_instance.service.model.net
+                    chunk_size = int(adapter_instance.service.cfg.action_chunk_size)
+                    if layer is net.action2llm:
+                        chunk_size += 1  # one state-conditioning token
+                    if x.shape[0] % chunk_size != 0:
+                        return original_domain_linear_forward(layer, x, domain_id)
+                    return torch.cat(
+                        [
+                            original_domain_linear_forward(
+                                layer,
+                                x[start : start + chunk_size],
+                                domain_id[start : start + chunk_size],
+                            )
+                            for start in range(0, x.shape[0], chunk_size)
+                        ],
+                        dim=0,
+                    )
+                return original_domain_linear_forward(layer, x, domain_id)
+
+            domain_linear_forward_independent_of_batch._batch_invariant_cosmos3 = True
+            domain_linear_module.DomainAwareLinear.forward = domain_linear_forward_independent_of_batch
 
         # Stock Cosmos deliberately selects dense attention for B=1 and packed
         # varlen attention for B>1.  Keep the stock branch in the baseline, but
@@ -212,6 +258,22 @@ class Cosmos3NanoPolicyAdapter:
             guidance_interval=self.guidance_interval,
         )
         self.service = ConfiguredRobolabPolicyService(args)
+        original_can_reuse_text_kv = self.service.model._can_reuse_inference_text_kv
+
+        def can_reuse_text_kv_independent_of_batch(_model, *method_args, **method_kwargs):
+            # Upstream enables the request-local text K/V cache only when B=1,
+            # even though its cache implementation carries multi-sample varlen
+            # metadata.  Enable that same released B1 path at every batch size
+            # in invariant mode so both batching invariance and singleton
+            # fidelity are preserved; retain the released gate otherwise.
+            if attention_repair_enabled():
+                return True
+            return original_can_reuse_text_kv(*method_args, **method_kwargs)
+
+        self.service.model._can_reuse_inference_text_kv = types.MethodType(
+            can_reuse_text_kv_independent_of_batch,
+            self.service.model,
+        )
         return self.service
 
     def _image(self, camera: str, frame_number: int) -> np.ndarray:

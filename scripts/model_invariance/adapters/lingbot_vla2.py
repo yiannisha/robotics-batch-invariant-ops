@@ -18,7 +18,10 @@ preserved.
 
 from __future__ import annotations
 
+import contextlib
+import json
 import os
+import types
 from pathlib import Path
 from typing import Any
 
@@ -38,13 +41,41 @@ class LingBotVLA2Adapter:
         "state",
         "image_grid_thw",
     )
+    causal_ablation_inapplicable_operations = {
+        "explicit_sdpa": {
+            "reason": (
+                "The released action/VLM joint path implements eager attention with "
+                "torch.einsum and never dispatches aten::scaled_dot_product_attention."
+            ),
+            "evidence_path": (
+                "/workspace/models/lingbot-vla-v2/lingbotvla/models/vla/"
+                "lingbot_vla/utils.py"
+            ),
+        }
+    }
 
     def __init__(self) -> None:
-        self.checkpoint = Path(os.environ.get("LINGBOT_VLA2_CHECKPOINT", ""))
-        self.sample = Path(os.environ.get("LINGBOT_VLA2_SAMPLE", ""))
+        root = Path(__file__).resolve().parents[3]
+        self.checkpoint = Path(os.environ.get(
+            "LINGBOT_VLA2_CHECKPOINT",
+            "/workspace/assets/lingbot_vla2/checkpoints/global_step_50000/hf_ckpt",
+        ))
+        self.sample = Path(os.environ.get(
+            "LINGBOT_VLA2_SAMPLE", "/workspace/assets/dexvla/sample/episode_47.hdf5"
+        ))
+        self.replay_manifest_path = Path(os.environ.get(
+            "LINGBOT_VLA2_REPLAY_MANIFEST",
+            str(root / "results/cross_model/lingbot_vla2/full/replay_manifest.json"),
+        ))
         self.device = torch.device("cuda")
         self.server: Any | None = None
+        self.replay_manifest: dict[str, Any] | None = None
+        self.replay_noise: np.ndarray | None = None
         self.trace_callback = None
+
+    def _trace(self, label: str, value: torch.Tensor) -> None:
+        if self.trace_callback is not None:
+            self.trace_callback(label, value)
 
     def _validate_paths(self) -> None:
         if not self.checkpoint.is_dir():
@@ -68,22 +99,99 @@ class LingBotVLA2Adapter:
 
     def load_model(self):
         self._validate_paths()
+        import deploy
         from deploy.lingbot_vla_v2_policy import LingbotVLAv2Server
 
         self._install_deterministic_moe()
-        self.server = LingbotVLAv2Server(
-            path_to_pi_model=str(self.checkpoint),
-            chunk_ret=True,
-            use_bf16=False,
-            use_fp32=True,
-            use_compile=False,
-        )
-        self.server.reset("robotwin")
+        source_root = Path(deploy.__file__).resolve().parent.parent
+        # The released server resolves its robot configuration from the
+        # process working directory.  Scope that assumption to construction
+        # and reset so the campaign can be launched from this repository.
+        with contextlib.chdir(source_root):
+            self.server = LingbotVLAv2Server(
+                path_to_pi_model=str(self.checkpoint),
+                chunk_ret=True,
+                use_bf16=False,
+                use_fp32=True,
+                use_compile=False,
+            )
+            self.server.reset("robotwin")
         return self.server.vla.model.eval()
+
+    def execution_configuration(self) -> dict[str, Any]:
+        return {
+            "camera_names": list(self.camera_names),
+            "image_shape_hwc": [480, 640, 3],
+            "state_dim": 14,
+            "flow_steps": 10,
+            "action_chunk_size": 50,
+            "model_action_dim": 55,
+            "source_limit_observations": 396,
+            "precision": "float32",
+            "deterministic_moe": "deterministic_token_choice_moe",
+        }
+
+    def _load_replay_metadata(self) -> None:
+        if self.replay_manifest is not None:
+            return
+        if not self.replay_manifest_path.is_file():
+            raise FileNotFoundError(self.replay_manifest_path)
+        manifest = json.loads(self.replay_manifest_path.read_text())
+        if (
+            manifest.get("model_id") != "lingbot_vla2"
+            or len(manifest.get("observations", [])) != 396
+            or manifest.get("noise_shape") != [396, 3, 50, 55]
+        ):
+            raise ValueError("LingBot replay manifest does not describe the frozen source limit")
+        source = Path(manifest["source_root"]) / manifest["source_file"]
+        if source.resolve() != self.sample.resolve():
+            raise ValueError("LINGBOT_VLA2_SAMPLE differs from the frozen replay source")
+        noise_path = Path(manifest["noise_file"])
+        if not noise_path.is_absolute():
+            noise_path = self.replay_manifest_path.parent / noise_path
+        self.replay_manifest = manifest
+        self.replay_noise = np.load(noise_path, mmap_mode="r", allow_pickle=False)
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        if self.server is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        self._load_replay_metadata()
+        assert self.replay_manifest is not None and self.replay_noise is not None
+        if not 0 <= replay_index < len(self.replay_manifest["observations"]):
+            raise IndexError(replay_index)
+        if noise_id not in (0, 1, 2):
+            raise IndexError(noise_id)
+        row = self.replay_manifest["observations"][replay_index]
+        if (
+            row.get("replay_index") != replay_index
+            or row.get("source_frame_index") != replay_index
+        ):
+            raise ValueError("LingBot replay index is not a one-to-one source-frame mapping")
+        with h5py.File(self.sample, "r") as episode:
+            raw_state = np.array(episode["observations/qpos"][replay_index], copy=True)
+            observation: dict[str, Any] = {
+                "task": row["task"],
+                "observation.state": raw_state,
+            }
+            for camera_name in self.camera_names:
+                observation[f"observation.images.{camera_name}"] = np.array(
+                    episode[f"observations/images/{camera_name}"][replay_index], copy=True
+                )
+        if not np.array_equal(raw_state, np.asarray(row["state"], dtype=np.float32)):
+            raise ValueError("LingBot HDF5 state differs from the frozen replay row")
+        transformed = self.server._prepare_model_input(observation)
+        return {
+            **{key: transformed[key] for key in self.model_keys},
+            "noise": torch.from_numpy(
+                np.array(self.replay_noise[replay_index, noise_id], copy=True)
+            ),
+        }
 
     def load_example_inputs(self, count: int):
         if self.server is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+        if self.replay_manifest_path.is_file():
+            return [self.load_replay_input(index, 0) for index in range(count)]
         with h5py.File(self.sample, "r") as episode:
             frame_count = episode["observations/qpos"].shape[0]
             if count > frame_count:
@@ -148,7 +256,32 @@ class LingBotVLA2Adapter:
             # Official sample_actions updates x_t in place.
             "noise": batch["noise"].to(self.device).clone(),
         }
-        output = model.sample_actions(**inputs)
+        original_predict_velocity = None
+        if self.trace_callback is not None:
+            original_predict_velocity = model.predict_velocity
+            adapter = self
+            step = 0
+
+            def traced_predict_velocity(_model, *args, **kwargs):
+                nonlocal step
+                velocity = original_predict_velocity(*args, **kwargs)
+                state = args[3]
+                dt = torch.tensor(
+                    -1.0 / _model.config.num_steps,
+                    dtype=state.dtype,
+                    device=state.device,
+                )
+                adapter._trace(f"flow.step_{step:02d}.prediction", velocity)
+                adapter._trace(f"flow.step_{step:02d}.state", state + dt * velocity)
+                step += 1
+                return velocity
+
+            model.predict_velocity = types.MethodType(traced_predict_velocity, model)
+        try:
+            output = model.sample_actions(**inputs)
+        finally:
+            if original_predict_velocity is not None:
+                model.predict_velocity = original_predict_velocity
         return output.to(dtype=torch.float32, device="cpu")
 
     @staticmethod

@@ -191,6 +191,12 @@ def _compose_batch(adapter: ModelAdapter, samples: Sequence[Any]) -> Any:
     return compose(samples)
 
 
+def _compose_fixed_batch(adapter: ModelAdapter, samples: Sequence[Any]) -> Any:
+    """Compose the native fixed-padded serving shape, including model-specific tokens."""
+    compose = getattr(adapter, "compose_fixed_batch", None)
+    return compose(samples) if compose is not None else _compose_batch(adapter, samples)
+
+
 def _reset_model(adapter: ModelAdapter, model: Any) -> None:
     reset = getattr(adapter, "reset_model", None)
     if reset is not None:

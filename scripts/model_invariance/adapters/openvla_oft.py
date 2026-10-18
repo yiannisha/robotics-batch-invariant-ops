@@ -19,6 +19,7 @@ import json
 import math
 import os
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -48,9 +49,14 @@ class OpenVLAOFTAdapter:
     def __init__(self) -> None:
         self.checkpoint = Path(os.environ.get("OPENVLA_OFT_CHECKPOINT", ""))
         self.sample_dir = Path(os.environ.get("OPENVLA_OFT_SAMPLE_DIR", ""))
+        self.replay_manifest_path = Path(
+            os.environ.get("OPENVLA_OFT_REPLAY_MANIFEST", str(self.sample_dir / "replay_manifest.json"))
+        )
         self.device = torch.device("cuda")
         self.processor = None
         self.stats: dict[str, Any] | None = None
+        self.replay_manifest: dict[str, Any] | None = None
+        self.canonical_prompt_length: int | None = None
         self.trace_callback = None
 
     def _trace(self, label: str, value: torch.Tensor) -> None:
@@ -69,6 +75,8 @@ class OpenVLAOFTAdapter:
                 raise FileNotFoundError(
                     f"set OPENVLA_OFT_CHECKPOINT to a snapshot containing {filename}"
                 )
+        if self.replay_manifest_path.is_file():
+            return
         for filename in (
             "frames/image_001.png",
             "frames/image_064.png",
@@ -103,6 +111,14 @@ class OpenVLAOFTAdapter:
         vla.vision_backbone.set_num_images_in_input(2)
         vla.to(self.device).eval()
         self.processor = AutoProcessor.from_pretrained(self.checkpoint, trust_remote_code=True)
+        if self.replay_manifest_path.is_file():
+            self.replay_manifest = json.loads(self.replay_manifest_path.read_text())
+            tasks = {row["task"] for row in self.replay_manifest["observations"]}
+            self.canonical_prompt_length = max(
+                len(self.processor.tokenizer(
+                    f"In: What action should the robot take to {task.lower()}?\nOut:"
+                )["input_ids"]) for task in tasks
+            )
         self.stats = json.loads((self.checkpoint / "dataset_statistics.json").read_text())[
             "libero_spatial_no_noops"
         ]
@@ -150,6 +166,8 @@ class OpenVLAOFTAdapter:
     def load_example_inputs(self, count: int):
         if self.processor is None or self.stats is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+        if self.replay_manifest_path.is_file():
+            return [self.load_replay_input(index) for index in range(count)]
         if count > 64:
             raise ValueError("the reproducible LIBERO fixture contains 64 frames")
 
@@ -198,9 +216,79 @@ class OpenVLAOFTAdapter:
             )
         return examples
 
-    @staticmethod
-    def compose_batch(samples):
-        return {key: torch.cat([sample[key] for sample in samples], dim=0) for key in samples[0]}
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        """Load a pinned real LIBERO observation for deterministic OFT inference."""
+        if self.processor is None or self.stats is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        if noise_id != 0:
+            raise IndexError("OpenVLA-OFT action-head inference has no request-local noise")
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(self.replay_manifest_path.read_text())
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows):
+            raise IndexError(replay_index)
+        return self._processed_replay_observation(replay_index)
+
+    @lru_cache(maxsize=32)
+    def _processed_replay_observation(self, replay_index: int):
+        row = self.replay_manifest["observations"][replay_index]
+        root = Path(self.replay_manifest["fixture_root"])
+        prompt = f"In: What action should the robot take to {row['task'].lower()}?\nOut:"
+        primary_image = self._center_crop(Image.open(root / row["images"]["image"]).convert("RGB"))
+        wrist_image = self._center_crop(Image.open(root / row["images"]["image2"]).convert("RGB"))
+        primary = self.processor(prompt, primary_image)
+        wrist = self.processor(prompt, wrist_image)
+        if not torch.equal(primary["input_ids"], wrist["input_ids"]):
+            raise RuntimeError("primary and wrist prompt tokenization differs")
+        low = np.asarray(self.stats["proprio"]["q01"])
+        high = np.asarray(self.stats["proprio"]["q99"])
+        state = np.asarray(row["state"])
+        state = np.clip(2 * (state - low) / (high - low + 1e-8) - 1, a_min=-1.0, a_max=1.0)
+        return {
+            "input_ids": primary["input_ids"],
+            "attention_mask": primary["attention_mask"],
+            "pixel_values": torch.cat([primary["pixel_values"], wrist["pixel_values"]], dim=1),
+            "proprio": torch.tensor(state, dtype=torch.float32).unsqueeze(0),
+        }
+
+    def compose_batch(self, samples, *, fixed_prompt: bool = False):
+        from batch_invariant_ops import is_batch_invariant_mode_enabled
+
+        lengths = [sample["input_ids"].shape[1] for sample in samples]
+        fixed = fixed_prompt or is_batch_invariant_mode_enabled()
+        if fixed and self.canonical_prompt_length is None:
+            raise RuntimeError("fixed OFT padding requires the pinned replay task set")
+        length = self.canonical_prompt_length if fixed else max(lengths)
+        if any(value > length for value in lengths):
+            raise ValueError("OFT prompt exceeds the pinned canonical task length")
+        result = {}
+        for key in samples[0]:
+            values = [sample[key] for sample in samples]
+            if key in ("input_ids", "attention_mask"):
+                pad = self.processor.tokenizer.pad_token_id if key == "input_ids" else 0
+                values = [F.pad(value, (0, length - value.shape[1]), value=pad) for value in values]
+            result[key] = torch.cat(values, dim=0)
+        return result
+
+    def compose_fixed_batch(self, samples):
+        return self.compose_batch(samples, fixed_prompt=True)
+
+    def fixed_batch_shape_metadata(self, batch):
+        return {
+            "language_padding": "canonical_right",
+            "language_tokens": batch["input_ids"].shape[1],
+            "canonical_length": self.canonical_prompt_length,
+        }
+
+    def execution_configuration(self):
+        if self.processor is None:
+            raise RuntimeError("load_model must be called before execution_configuration")
+        return {
+            "native_language_padding": "longest_in_batch_right",
+            "invariant_language_padding": "canonical_right",
+            "language_max_length": self.canonical_prompt_length,
+            "language_pad_token_id": self.processor.tokenizer.pad_token_id,
+        }
 
     def run_model(self, policy: _Policy, batch):
         from prismatic.vla.constants import IGNORE_INDEX

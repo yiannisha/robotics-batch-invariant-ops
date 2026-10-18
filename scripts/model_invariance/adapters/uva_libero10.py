@@ -16,7 +16,10 @@ numerical batch dependence.
 
 from __future__ import annotations
 
+import io
+import json
 import os
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -36,12 +39,26 @@ class UVALibero10Adapter:
     def __init__(self) -> None:
         self.checkpoint = Path(os.environ.get("UVA_LIBERO_CHECKPOINT", ""))
         self.sample_dir = Path(os.environ.get("UVA_LIBERO_SAMPLE_DIR", ""))
+        self.context_inventory_path = Path(os.environ.get(
+            "UVA_CONTEXT_INVENTORY",
+            str(Path(__file__).resolve().parents[3]
+                / "results/cross_model/uva/full/context_source_inventory.json"),
+        ))
+        self.replay_manifest_path = Path(os.environ.get(
+            "UVA_REPLAY_MANIFEST",
+            str(Path(__file__).resolve().parents[3]
+                / "results/cross_model/uva/full/replay_manifest.json"),
+        ))
         self.device = torch.device("cuda")
         self.config = None
         self.num_diffusion_steps = None
         self.num_video_diffusion_steps = None
         self.task_mode = "policy_model"
         self.include_video_output = False
+        self.input_images_normalized = False
+        self.context_inventory = None
+        self.replay_manifest = None
+        self.replay_noise = None
         self.trace_callback = None
 
     def _trace(self, label: str, value: torch.Tensor) -> None:
@@ -51,6 +68,10 @@ class UVALibero10Adapter:
     def _validate_paths(self) -> None:
         if not self.checkpoint.is_file():
             raise FileNotFoundError("set UVA_LIBERO_CHECKPOINT to the official libero10.ckpt")
+        if self.replay_manifest_path.is_file():
+            if not self.context_inventory_path.is_file():
+                raise FileNotFoundError("the frozen UVA replay lacks its real-context inventory")
+            return
         for filename in (
             "frames/image_001.png",
             "frames/image_064.png",
@@ -87,7 +108,13 @@ class UVALibero10Adapter:
             "text_model.text_model.embeddings.position_ids",
             "text_model.vision_model.embeddings.position_ids",
         }
-        if incompatible.missing_keys or set(incompatible.unexpected_keys) != allowed_unexpected:
+        # Transformers 4.28 (the released UVA environment) registers CLIP's
+        # deterministic position-id buffers and therefore loads strictly.
+        # Newer Transformers releases regenerate those two buffers instead;
+        # retain that already-audited compatibility path for the numerical
+        # campaign, but reject every other mismatch.
+        unexpected = set(incompatible.unexpected_keys)
+        if incompatible.missing_keys or unexpected not in (set(), allowed_unexpected):
             raise RuntimeError(f"unexpected UVA checkpoint incompatibility: {incompatible}")
         self.config = config
         self.num_diffusion_steps = policy.model.diffactloss.gen_diffusion.num_timesteps
@@ -109,9 +136,38 @@ class UVALibero10Adapter:
             frames.append(torch.from_numpy(array).permute(2, 0, 1))
         return torch.stack(frames)
 
+    @lru_cache(maxsize=2)
+    def _real_image_column(self, relative_parquet: str):
+        inventory = self.context_inventory
+        path = Path(inventory["source_root"]) / relative_parquet
+        return pq.read_table(path, columns=["observation.images.image"]).column(0).to_pylist()
+
+    def load_real_context(self, replay_index: int) -> torch.Tensor:
+        """Decode one actual 16-frame context from the pinned source rows."""
+        if self.context_inventory is None:
+            self.context_inventory = json.loads(self.context_inventory_path.read_text())
+        windows = self.context_inventory["windows"]
+        if not 0 <= replay_index < len(windows):
+            raise IndexError(replay_index)
+        window = windows[replay_index]
+        if window["replay_index"] != replay_index:
+            raise RuntimeError("UVA context inventory order differs from replay indices")
+        column = self._real_image_column(window["source_parquet"])
+        start = window["source_row_start"]
+        if start < 0 or start + 16 > len(column):
+            raise RuntimeError("UVA 16-frame context exceeds source parquet")
+        frames = []
+        for record in column[start : start + 16]:
+            with Image.open(io.BytesIO(record["bytes"])) as image:
+                array = np.array(image.convert("RGB"), copy=True)
+            frames.append(torch.from_numpy(array).permute(2, 0, 1))
+        return torch.stack(frames)
+
     def load_example_inputs(self, count: int):
         if self.config is None or self.num_diffusion_steps is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+        if self.replay_manifest_path.is_file():
+            return [self.load_replay_input(index) for index in range(count)]
         if count > 64:
             raise ValueError("the reproducible LIBERO fixture contains 64 contexts")
 
@@ -164,6 +220,40 @@ class UVALibero10Adapter:
                     generator=generator,
                 )
         return examples
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        """Load one real UVA context with its frozen per-request stochastic tensors."""
+        if self.config is None or self.num_diffusion_steps is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(self.replay_manifest_path.read_text())
+            self.replay_noise = np.load(self.replay_manifest["noise_file"], mmap_mode="r")
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows) or not 0 <= noise_id < 3:
+            raise IndexError((replay_index, noise_id))
+        row = rows[replay_index]
+        if row["replay_index"] != replay_index or row["noise"][noise_id]["noise_id"] != noise_id:
+            raise RuntimeError("UVA replay request identity differs from frozen index")
+        if self.replay_noise.shape[:2] != (1000, 3):
+            raise RuntimeError("UVA replay noise has another request shape")
+        flat = self.replay_noise[replay_index, noise_id]
+        result = {
+            "images": self.load_real_context(replay_index).unsqueeze(0),
+            **self._tokenize(row["task"]),
+            "context_index": torch.tensor([[replay_index]], dtype=torch.int64),
+        }
+        for name, specification in self.replay_manifest["noise_layout"].items():
+            shape = tuple(specification["shape"])
+            start = specification["offset"]
+            width = int(np.prod(shape))
+            result[name] = torch.from_numpy(
+                np.array(flat[start : start + width], copy=True).reshape((1, *shape))
+            )
+        if self.include_video_output and not {
+            "video_initial_noise", "video_step_noise"
+        }.issubset(result):
+            raise RuntimeError("UVA joint path needs its own stored video-diffusion noises")
+        return result
 
     def _tokenize(self, task: str) -> dict[str, torch.Tensor]:
         policy_tokenizer = getattr(self, "_policy_tokenizer", None)
@@ -270,7 +360,12 @@ class UVALibero10Adapter:
             unnormalize_future_action,
         )
 
-        images = batch["images"].to(self.device, dtype=torch.float32).div(255)
+        images = batch["images"].to(self.device, dtype=torch.float32)
+        if self.input_images_normalized:
+            if images.numel() and (images.min() < 0 or images.max() > 1):
+                raise ValueError("normalized UVA images must remain in [0, 1]")
+        else:
+            images = images.div(255)
         self._trace("preprocess.images", images)
         text_inputs = {
             "input_ids": batch["input_ids"].to(self.device),

@@ -17,6 +17,7 @@ tokenizer mirror while keeping LeRobot's model implementation and checkpoint.
 
 from __future__ import annotations
 
+import json
 import os
 from pathlib import Path
 
@@ -39,12 +40,18 @@ class LeRobotPi0FastAdapter:
     def __init__(self) -> None:
         self.checkpoint = Path(os.environ.get("LEROBOT_PI0FAST_CHECKPOINT", ""))
         self.sample_dir = Path(os.environ.get("LEROBOT_PI0FAST_SAMPLE_DIR", ""))
+        self.replay_manifest_path = Path(
+            os.environ.get("PI0FAST_REPLAY_MANIFEST", str(self.sample_dir / "replay_manifest.json"))
+        )
         self.device = torch.device("cuda")
         self.config = None
         self.text_tokenizer = None
         self.action_tokenizer = None
         self.action_mean = None
         self.action_std = None
+        self.replay_manifest = None
+        self.replay_state_stats = None
+        self.trace_callback = None
 
     def _validate_paths(self) -> None:
         for filename in (
@@ -57,6 +64,8 @@ class LeRobotPi0FastAdapter:
                 raise FileNotFoundError(
                     f"set LEROBOT_PI0FAST_CHECKPOINT to a snapshot containing {filename}"
                 )
+        if self.replay_manifest_path.is_file():
+            return
         for filename in (
             "frames/image_001.png",
             "frames/image_064.png",
@@ -87,7 +96,7 @@ class LeRobotPi0FastAdapter:
             add_bos_token=False,
         )
         self.action_tokenizer = AutoProcessor.from_pretrained(
-            self.config.action_tokenizer_name,
+            os.environ.get("PI0FAST_ACTION_TOKENIZER", self.config.action_tokenizer_name),
             revision=os.environ.get("PI0FAST_ACTION_TOKENIZER_REVISION", ACTION_TOKENIZER_REVISION),
             trust_remote_code=True,
         )
@@ -156,6 +165,8 @@ class LeRobotPi0FastAdapter:
     def load_example_inputs(self, count: int):
         if self.config is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+        if self.replay_manifest_path.is_file():
+            return [self.load_replay_input(index) for index in range(count)]
 
         if count > 64:
             raise ValueError("the reproducible LIBERO fixture contains 64 frames")
@@ -199,20 +210,89 @@ class LeRobotPi0FastAdapter:
             )
         return examples
 
-    def _decode_actions(self, generated_tokens: torch.Tensor) -> torch.Tensor:
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        """Load one real LIBERO replay request for deterministic decoding."""
+        if self.config is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        if noise_id != 0:
+            raise ValueError("Pi0-FAST greedy action decoding has no flow-noise index")
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(
+                self.replay_manifest_path.read_text()
+            )
+            with safe_open(
+                self.checkpoint / "policy_preprocessor_step_2_normalizer_processor.safetensors",
+                framework="pt", device="cpu",
+            ) as statistics:
+                self.replay_state_stats = (
+                    statistics.get_tensor("observation.state.mean"),
+                    statistics.get_tensor("observation.state.std"),
+                )
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows):
+            raise IndexError(replay_index)
+        row = rows[replay_index]
+        first = self._load_image(row["images"]["image"])
+        second = self._load_image(row["images"]["image2"])
+        state_mean, state_std = self.replay_state_stats
+        raw_state = torch.tensor(row["state"], dtype=torch.float32)
+        state = (raw_state - state_mean) / (state_std + 1e-8)
+        tokens, token_mask = self._tokenize_prompt(row["task"], state.numpy())
+        return {
+            "images": torch.stack((first, second, torch.zeros_like(first))),
+            "image_masks": torch.tensor((True, True, False)),
+            "tokens": tokens,
+            "token_mask": token_mask,
+        }
+
+    def _decode_actions(
+        self, generated_tokens: torch.Tensor
+    ) -> tuple[torch.Tensor, torch.Tensor]:
         assert self.text_tokenizer is not None and self.action_tokenizer is not None
         prefix_ids = self.text_tokenizer.encode("Action: ", add_special_tokens=False)
-        delimiter_id = self.text_tokenizer.convert_tokens_to_ids("|")
+        prefix_tokens = self.text_tokenizer.convert_ids_to_tokens(prefix_ids)
         decoded = []
+        valid_prefix = []
         for sequence in generated_tokens.detach().cpu().tolist():
-            if (
-                self.config.validate_action_token_prefix
-                and sequence[: len(prefix_ids)] != prefix_ids
-            ):
-                raise RuntimeError("generated sequence does not start with the Action prefix")
-            sequence = sequence[len(prefix_ids) :]
-            if delimiter_id in sequence:
-                sequence = sequence[: sequence.index(delimiter_id)]
+            # Match PI0FastPolicy.decode_actions_with_fast exactly.  The
+            # official validity check is on the first two token *strings*
+            # ("Action", ":"), while removal uses the normally generated
+            # three-token sequence ("Action", ":", whitespace).  Some valid
+            # greedy batches omit the whitespace token; rejecting those here
+            # made the replay adapter stricter than the official evaluator.
+            token_sequence = self.text_tokenizer.convert_ids_to_tokens(sequence)
+            valid = (
+                len(token_sequence) >= 2
+                and token_sequence[0] == "Action"
+                and token_sequence[1] == ":"
+            )
+            valid_prefix.append(valid)
+            if self.config.validate_action_token_prefix and not valid:
+                # The official evaluator asserts here and therefore produces
+                # no robot action.  Retain that categorical behavioral failure
+                # as a Boolean output and use NaNs only as a shape-preserving
+                # unavailable-action sentinel for numerical aggregation.
+                decoded.append(np.full(
+                    (
+                        self.config.n_action_steps,
+                        self.config.output_features["action"].shape[0],
+                    ),
+                    np.nan,
+                    dtype=np.float32,
+                ))
+                continue
+            if "|" in token_sequence:
+                token_sequence = token_sequence[: token_sequence.index("|")]
+            index = 0
+            while index <= len(token_sequence) - len(prefix_tokens):
+                if token_sequence[index : index + len(prefix_tokens)] == prefix_tokens:
+                    token_sequence = (
+                        token_sequence[:index]
+                        + token_sequence[index + len(prefix_tokens) :]
+                    )
+                else:
+                    index += 1
+            sequence = self.text_tokenizer.convert_tokens_to_ids(token_sequence)
             action_ids = [
                 self.text_tokenizer.vocab_size - 1 - self.config.fast_skip_tokens - token
                 for token in sequence
@@ -229,7 +309,8 @@ class LeRobotPi0FastAdapter:
             )
             decoded.append(idct(coefficients / self.action_tokenizer.scale, axis=0, norm="ortho"))
         actions = torch.tensor(np.stack(decoded), dtype=torch.float32)
-        return actions * self.action_std + self.action_mean
+        actions = actions * self.action_std + self.action_mean
+        return actions, torch.tensor(valid_prefix, dtype=torch.bool)
 
     def run_model(self, model, batch):
         images = batch["images"].to(self.device)
@@ -246,16 +327,34 @@ class LeRobotPi0FastAdapter:
             max_decoding_steps=int(os.environ.get("PI0FAST_MAX_DECODING_STEPS", "256")),
             temperature=0.0,
         )
+        if self.trace_callback is not None:
+            # Greedy FAST decoding returns fixed-width storage with zero-filled
+            # columns after the batch-wide end marker.  Record every token step
+            # that was actually generated; this preserves the complete
+            # autoregressive chronology without pretending the trailing storage
+            # slots were model iterations.
+            nonzero_columns = torch.any(generated_tokens != 0, dim=0)
+            generated_steps = int(torch.nonzero(nonzero_columns, as_tuple=False)[-1].item()) + 1
+            for step in range(generated_steps):
+                self.trace_callback(
+                    f"flow.step_{step:03d}.prediction",
+                    generated_tokens[:, step : step + 1],
+                )
+        actions, decode_valid = self._decode_actions(generated_tokens)
         return {
             "action_tokens": generated_tokens,
-            "actions": self._decode_actions(generated_tokens).to(self.device),
+            "actions": actions.to(self.device),
+            "official_decode_valid": decode_valid.to(self.device),
         }
 
     def extract_robot_output(self, output):
         # Tokens after the first end marker are padding/ignored by the FAST
         # decoder. A companion sample can keep the batch-wide decode loop alive
         # after x0 has finished, so those raw storage slots are not robot output.
-        return output["actions"]
+        return {
+            "actions": output["actions"],
+            "official_decode_valid": output["official_decode_valid"],
+        }
 
 
 adapter = LeRobotPi0FastAdapter()

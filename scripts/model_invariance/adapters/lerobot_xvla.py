@@ -16,7 +16,9 @@ shape cannot be confused with numerical batch dependence.
 
 from __future__ import annotations
 
+import json
 import os
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -32,10 +34,20 @@ class LeRobotXVLAAdapter:
     def __init__(self) -> None:
         self.checkpoint = Path(os.environ.get("LEROBOT_XVLA_CHECKPOINT", ""))
         self.sample_dir = Path(os.environ.get("LEROBOT_XVLA_SAMPLE_DIR", ""))
+        self.replay_manifest_path = Path(
+            os.environ.get("XVLA_REPLAY_MANIFEST", str(self.sample_dir / "replay_manifest.json"))
+        )
         self.device = torch.device("cuda")
         self.config = None
         self.preprocessor = None
         self.libero_postprocessor = None
+        self.replay_manifest = None
+        self.replay_noise = None
+        self.trace_callback = None
+
+    def _trace(self, label: str, value: torch.Tensor) -> None:
+        if self.trace_callback is not None:
+            self.trace_callback(label, value)
 
     def _validate_paths(self) -> None:
         for filename in (
@@ -48,6 +60,8 @@ class LeRobotXVLAAdapter:
                 raise FileNotFoundError(
                     f"set LEROBOT_XVLA_CHECKPOINT to a snapshot containing {filename}"
                 )
+        if self.replay_manifest_path.is_file():
+            return
         for filename in (
             "frames/image_001.png",
             "frames/image_064.png",
@@ -90,6 +104,8 @@ class LeRobotXVLAAdapter:
     def load_example_inputs(self, count: int):
         if self.config is None or self.preprocessor is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+        if self.replay_manifest_path.is_file():
+            return [self.load_replay_input(index) for index in range(count)]
         if count > 64:
             raise ValueError("the reproducible LIBERO fixture contains 64 frames")
 
@@ -142,6 +158,47 @@ class LeRobotXVLAAdapter:
             )
         return examples
 
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        """Load one frozen LIBERO observation and checkpoint-shaped flow noise."""
+        if self.config is None or self.preprocessor is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(self.replay_manifest_path.read_text())
+            self.replay_noise = np.load(self.replay_manifest["noise_file"], mmap_mode="r")
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows) or not 0 <= noise_id < 3:
+            raise IndexError((replay_index, noise_id))
+        return self._processed_replay_observation(replay_index) | {
+            "noise": torch.from_numpy(
+                np.array(self.replay_noise[replay_index, noise_id : noise_id + 1], copy=True)
+            )
+        }
+
+    @lru_cache(maxsize=32)
+    def _processed_replay_observation(self, replay_index: int):
+        row = self.replay_manifest["observations"][replay_index]
+        images = {
+            "observation.images.image": self._image_path(self.sample_dir / row["images"]["image"]),
+            "observation.images.image2": self._image_path(self.sample_dir / row["images"]["image2"]),
+        }
+        processed = self.preprocessor(
+            images | {
+                "observation.state": torch.tensor(row["state"], dtype=torch.float32),
+                "task": row["task"],
+            }
+        )
+        return {
+            key: value.cpu()
+            for key, value in processed.items()
+            if isinstance(value, torch.Tensor)
+            and (key.startswith("observation.") or key == "domain_id")
+        }
+
+    @staticmethod
+    def _image_path(path: Path) -> torch.Tensor:
+        array = np.array(Image.open(path).convert("RGB"), copy=True)
+        return torch.from_numpy(array).permute(2, 0, 1).float().div(255)
+
     @staticmethod
     def compose_batch(samples):
         return {key: torch.cat([sample[key] for sample in samples], dim=0) for key in samples[0]}
@@ -166,9 +223,11 @@ class LeRobotXVLAAdapter:
         )
 
         initial_noise = batch["noise"].to(self.device, dtype=target_dtype)
+        self._trace("input.noise", initial_noise)
         action = torch.zeros_like(initial_noise)
         steps = int(self.config.num_denoising_steps)
         for step in range(steps, 0, -1):
+            flow_index = steps - step
             timestep = torch.full(
                 (initial_noise.shape[0],),
                 step / steps,
@@ -178,6 +237,7 @@ class LeRobotXVLAAdapter:
             noisy_action = initial_noise * timestep[:, None, None] + action * (
                 1 - timestep[:, None, None]
             )
+            self._trace(f"flow.step_{flow_index:02d}.noisy_action", noisy_action)
             proprio, noisy_action = model.action_space.preprocess(inputs["proprio"], noisy_action)
             action = model.transformer(
                 domain_id=inputs["domain_id"],
@@ -186,12 +246,15 @@ class LeRobotXVLAAdapter:
                 t=timestep,
                 **encoded,
             )
+            self._trace(f"flow.step_{flow_index:02d}.prediction", action)
         action = model.action_space.postprocess(action)
+        self._trace("actions.pre_libero_postprocess", action)
 
         flattened = action.reshape(-1, action.shape[-1])
         processed = self.libero_postprocessor({TransitionKey.ACTION: flattened})[
             TransitionKey.ACTION
         ]
+        self._trace("actions.libero_postprocessed", processed.reshape(action.shape[0], action.shape[1], -1))
         return processed.reshape(action.shape[0], action.shape[1], -1).to(self.device)
 
     @staticmethod

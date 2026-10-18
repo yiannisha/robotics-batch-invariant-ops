@@ -25,6 +25,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -44,12 +45,17 @@ class WSABaseLiberoAdapter:
         self.qwen_metadata = Path(os.environ.get("WSA_QWEN_METADATA", ""))
         self.cosmos_tokenizer = Path(os.environ.get("WSA_COSMOS_TOKENIZER", ""))
         self.sample_dir = Path(os.environ.get("WSA_SAMPLE_DIR", ""))
+        self.replay_manifest_path = Path(
+            os.environ.get("WSA_REPLAY_MANIFEST", str(self.sample_dir / "replay_manifest.json"))
+        )
         self.device = torch.device("cuda")
         self.processor = None
         self.resize = None
         self.state_stats: dict[str, np.ndarray] | None = None
         self.action_stats: dict[str, np.ndarray] | None = None
         self.trace_callback = None
+        self.replay_manifest = None
+        self.replay_noise = None
 
     def _trace(self, label: str, value: torch.Tensor) -> None:
         if self.trace_callback is not None:
@@ -67,13 +73,16 @@ class WSABaseLiberoAdapter:
             self.qwen_metadata / "tokenizer.json",
             self.cosmos_tokenizer / "encoder.jit",
             self.cosmos_tokenizer / "decoder.jit",
-            self.sample_dir / "frames/image_001.png",
-            self.sample_dir / "frames/image_064.png",
-            self.sample_dir / "frames/image2_001.png",
-            self.sample_dir / "frames/image2_064.png",
-            self.sample_dir / "data/chunk-000/file-000.parquet",
-            self.sample_dir / "tasks.parquet",
         )
+        if not self.replay_manifest_path.is_file():
+            required += (
+                self.sample_dir / "frames/image_001.png",
+                self.sample_dir / "frames/image_064.png",
+                self.sample_dir / "frames/image2_001.png",
+                self.sample_dir / "frames/image2_064.png",
+                self.sample_dir / "data/chunk-000/file-000.parquet",
+                self.sample_dir / "tasks.parquet",
+            )
         missing = [path for path in required if not path.is_file()]
         if missing:
             raise FileNotFoundError(f"missing WSA artifacts: {missing}")
@@ -159,6 +168,47 @@ class WSABaseLiberoAdapter:
             copy=True,
         )
         return torch.from_numpy(array).permute(2, 0, 1).float().div(255)
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        if self.processor is None or self.resize is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(self.replay_manifest_path.read_text())
+            self.replay_noise = np.load(self.replay_manifest["noise_file"], mmap_mode="r")
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows) or not 0 <= noise_id < 3:
+            raise IndexError((replay_index, noise_id))
+        noise = torch.from_numpy(np.array(self.replay_noise[replay_index, noise_id], copy=True))
+        return self._processed_replay_observation(replay_index) | {"noise": noise}
+
+    @lru_cache(maxsize=32)
+    def _processed_replay_observation(self, replay_index: int):
+        from lerobot.utils.constants import OBS_IMAGES, OBS_STATE
+
+        row = self.replay_manifest["observations"][replay_index]
+
+        def image(relative_path):
+            array = np.array(Image.open(self.sample_dir / relative_path).convert("RGB"), copy=True)
+            return torch.from_numpy(array).permute(2, 0, 1).float().div(255)
+
+        primary = image(row["images"]["image"])
+        wrist = image(row["images"]["image2"])
+        sample = {
+            f"{OBS_IMAGES}.image0": torch.stack([primary, primary]),
+            f"{OBS_IMAGES}.image1": torch.stack([wrist, wrist]),
+            f"{OBS_IMAGES}.image2": torch.zeros(2, *primary.shape),
+            OBS_STATE: torch.tensor(row["state"], dtype=torch.float32),
+            "task": row["task"],
+        }
+        sample = self.resize(sample)
+        sample[f"{OBS_IMAGES}.image0_mask"] = torch.tensor(True)
+        sample[f"{OBS_IMAGES}.image1_mask"] = torch.tensor(True)
+        sample[f"{OBS_IMAGES}.image2_mask"] = torch.tensor(False)
+        sample = self.processor(sample)
+        mean = torch.from_numpy(self.state_stats["mean"])
+        std = torch.from_numpy(self.state_stats["std"])
+        sample[OBS_STATE] = (sample[OBS_STATE] - mean) / (std + 1e-6)
+        return {key: value.detach().cpu() for key, value in sample.items() if isinstance(value, torch.Tensor)}
 
     def load_example_inputs(self, count: int):
         if self.processor is None or self.resize is None:

@@ -30,13 +30,18 @@ from __future__ import annotations
 
 import inspect
 import os
+import json
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 import pyarrow.parquet as pq
 import torch
+import torch.nn.functional as F
 from PIL import Image
+
+from batch_invariant_ops import is_batch_invariant_mode_enabled
 
 TASK = "put the white mug on the left plate and put the yellow and white mug on the right plate"
 STATE_SLICES = {
@@ -68,11 +73,23 @@ class GrootN17Adapter:
         self.checkpoint = Path(os.environ.get("GROOT_N17_CHECKPOINT", ""))
         self.processor_path = Path(os.environ.get("GROOT_N17_PROCESSOR", ""))
         self.sample_dir = Path(os.environ.get("GROOT_N17_SAMPLE_DIR", ""))
+        self.replay_manifest_path = Path(
+            os.environ.get("GROOT_N17_REPLAY_MANIFEST", str(self.sample_dir / "replay_manifest.json"))
+        )
         self.device = torch.device("cuda")
         self.dtype = torch.bfloat16
         self.processor = None
         self.collate_fn = None
         self.embodiment = None
+        self.replay_manifest = None
+        self.replay_noise = None
+        self.canonical_prompt_padding = os.environ.get("GROOT_N17_DISABLE_CANONICAL_PROMPT_PADDING") != "1"
+        self.canonical_prompt_length = 156
+        self.trace_callback = None
+
+    def _trace(self, label: str, value: torch.Tensor) -> None:
+        if self.trace_callback is not None:
+            self.trace_callback(label, value)
 
     def _validate_paths(self) -> None:
         for root, filenames in (
@@ -95,20 +112,18 @@ class GrootN17Adapter:
                     "video_preprocessor_config.json",
                 ),
             ),
-            (
-                self.sample_dir,
-                (
-                    "frames/image_001.png",
-                    "frames/image_064.png",
-                    "frames/image2_001.png",
-                    "frames/image2_064.png",
-                    "data/chunk-000/file-000.parquet",
-                ),
-            ),
         ):
             for filename in filenames:
                 if not (root / filename).is_file():
                     raise FileNotFoundError(f"missing required fixture: {root / filename}")
+        if not self.replay_manifest_path.is_file():
+            for filename in (
+                "frames/image_001.png", "frames/image_064.png",
+                "frames/image2_001.png", "frames/image2_064.png",
+                "data/chunk-000/file-000.parquet",
+            ):
+                if not (self.sample_dir / filename).is_file():
+                    raise FileNotFoundError(f"missing required fixture: {self.sample_dir / filename}")
 
     def load_model(self):
         self._validate_paths()
@@ -139,7 +154,16 @@ class GrootN17Adapter:
             ).eval()
 
         def build_public_processor(_model_name, _loading_kwargs):
-            return Qwen3VLProcessor.from_pretrained(self.processor_path, local_files_only=True)
+            processor = Qwen3VLProcessor.from_pretrained(
+                self.processor_path, local_files_only=True
+            )
+            # Transformers 4.57 does not promote the tokenizer_config.json
+            # chat template onto Qwen3VLProcessor when no standalone
+            # chat_template.jinja is present. The pinned tokenizer metadata
+            # already contains the exact template expected by NVIDIA.
+            if processor.chat_template is None:
+                processor.chat_template = processor.tokenizer.chat_template
+            return processor
 
         backbone_module.Qwen3VLForConditionalGeneration.from_pretrained = classmethod(
             construct_backbone_without_base_weights
@@ -166,6 +190,10 @@ class GrootN17Adapter:
             local_files_only=True,
             transformers_loading_kwargs={"local_files_only": True},
         )
+        if self.processor.processor.chat_template is None:
+            self.processor.processor.chat_template = (
+                self.processor.processor.tokenizer.chat_template
+            )
         self.processor.eval()
         self.collate_fn = self.processor.collator
         self.embodiment = EmbodimentTag.LIBERO_PANDA
@@ -173,6 +201,38 @@ class GrootN17Adapter:
 
     def _load_image(self, filename: str) -> np.ndarray:
         return np.array(Image.open(self.sample_dir / filename).convert("RGB"), copy=True)
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        if self.processor is None or self.collate_fn is None or self.embodiment is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(self.replay_manifest_path.read_text())
+            self.replay_noise = np.load(self.replay_manifest["noise_file"], mmap_mode="r")
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows) or not 0 <= noise_id < 3:
+            raise IndexError((replay_index, noise_id))
+        noise = torch.from_numpy(np.array(self.replay_noise[replay_index, noise_id], copy=True)).to(self.dtype)
+        return self._processed_replay_observation(replay_index) | {"noise": noise}
+
+    @lru_cache(maxsize=32)
+    def _processed_replay_observation(self, replay_index: int):
+        from gr00t.data.types import MessageType, VLAStepData
+
+        row = self.replay_manifest["observations"][replay_index]
+        raw_state = np.asarray(row["state"], dtype=np.float32)
+        states = {key: raw_state[state_slice][None] for key, state_slice in STATE_SLICES.items()}
+        step = VLAStepData(
+            images={
+                "image": self._load_image(row["images"]["image"])[None],
+                "wrist_image": self._load_image(row["images"]["image2"])[None],
+            },
+            states=states,
+            actions={},
+            text=row["task"],
+            embodiment=self.embodiment,
+        )
+        processed = self.processor([{"type": MessageType.EPISODE_STEP.value, "content": step}])
+        return {"processed": processed, "states": states}
 
     def load_example_inputs(self, count: int):
         if self.processor is None or self.collate_fn is None or self.embodiment is None:
@@ -216,10 +276,20 @@ class GrootN17Adapter:
             examples.append({"processed": processed, "states": states, "noise": noise})
         return examples
 
-    def compose_batch(self, samples):
+    def compose_batch(self, samples, *, fixed_prompt: bool = False):
         if self.collate_fn is None:
             raise RuntimeError("load_model must initialize the collator")
         collated = self.collate_fn([sample["processed"] for sample in samples])
+        if fixed_prompt or self.canonical_prompt_padding and is_batch_invariant_mode_enabled():
+            language = collated["inputs"]
+            current_length = language["input_ids"].shape[1]
+            if current_length > self.canonical_prompt_length:
+                raise ValueError("frozen GR00T prompt exceeds the audited canonical length")
+            extra = self.canonical_prompt_length - current_length
+            language["input_ids"] = F.pad(
+                language["input_ids"], (extra, 0), value=self.processor.processor.tokenizer.pad_token_id
+            )
+            language["attention_mask"] = F.pad(language["attention_mask"], (extra, 0), value=0)
         states = {
             key: np.stack([sample["states"][key] for sample in samples], axis=0)
             for key in STATE_SLICES
@@ -228,6 +298,25 @@ class GrootN17Adapter:
             "inputs": _floating_to_bfloat16(collated["inputs"]),
             "states": states,
             "noise": torch.stack([sample["noise"] for sample in samples], dim=0),
+        }
+
+    def compose_fixed_batch(self, samples):
+        return self.compose_batch(samples, fixed_prompt=True)
+
+    def fixed_batch_shape_metadata(self, batch):
+        return {
+            "language_padding": "fixed_left",
+            "language_tokens": batch["inputs"]["input_ids"].shape[1],
+            "canonical_length": self.canonical_prompt_length,
+        }
+
+    def execution_configuration(self):
+        return {
+            "native_language_padding": "longest_left",
+            "invariant_language_padding": (
+                f"fixed_left_{self.canonical_prompt_length}" if self.canonical_prompt_padding else "longest_left"
+            ),
+            "language_pad_token_id": self.processor.processor.tokenizer.pad_token_id,
         }
 
     @staticmethod
@@ -250,9 +339,11 @@ class GrootN17Adapter:
         state_features = features.state_features
         embodiment_id = action_inputs.embodiment_id
         actions = noise.to(device=vl_embeds.device, dtype=vl_embeds.dtype)
+        self._trace("input.noise", actions)
         dt = 1.0 / head.num_inference_timesteps
 
         for step in range(head.num_inference_timesteps):
+            self._trace(f"flow.step_{step:02d}.state", actions)
             continuous_time = step / float(head.num_inference_timesteps)
             timestep = int(continuous_time * head.num_timestep_buckets)
             timesteps = torch.full(
@@ -282,7 +373,9 @@ class GrootN17Adapter:
                     timestep=timesteps,
                 )
             velocity = head.action_decoder(model_output, embodiment_id)
+            self._trace(f"flow.step_{step:02d}.velocity", velocity[:, -head.action_horizon :])
             actions = actions + dt * velocity[:, -head.action_horizon :]
+            self._trace(f"flow.step_{step:02d}.updated", actions)
         return actions
 
     def run_model(self, model, batch):
@@ -296,6 +389,7 @@ class GrootN17Adapter:
         # Match the official LIBERO environment wrapper: [0, 1] -> [-1, 1],
         # binarize, then invert the gripper sign.
         actions[..., -1] = -np.sign(2.0 * actions[..., -1] - 1.0)
+        self._trace("actions.returned", torch.from_numpy(actions).to(self.device))
         return torch.from_numpy(actions).to(self.device)
 
     @staticmethod

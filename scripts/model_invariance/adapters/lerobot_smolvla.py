@@ -12,6 +12,8 @@ Required environment variables:
 from __future__ import annotations
 
 import os
+import json
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -32,12 +34,23 @@ class LeRobotSmolVLAAdapter:
         self.preprocessor = None
         self.postprocessor = None
         self.trace_callback = None
+        self.replay_manifest = None
+        self.replay_noise = None
+        self.language_pad_token_id = None
+        # The official native path retains longest-in-batch padding. The
+        # repaired invariant path uses a fixed masked language extent so its
+        # attention shape does not depend on unrelated task prompt lengths.
+        self.canonical_prompt_padding = os.environ.get("SMOLVLA_DISABLE_CANONICAL_PROMPT_PADDING") != "1"
 
     def _trace(self, label: str, value: torch.Tensor) -> None:
         if self.trace_callback is not None:
             self.trace_callback(label, value)
 
     def _validate_paths(self) -> None:
+        if (self.sample_dir / "replay_manifest.json").is_file():
+            if not (self.sample_dir / "initial_action_noise.npy").is_file():
+                raise FileNotFoundError("full replay fixture lacks stored initial-action noise")
+            return
         for filename in (
             "config.json",
             "model.safetensors",
@@ -79,6 +92,9 @@ class LeRobotSmolVLAAdapter:
             pretrained_path=self.checkpoint,
             preprocessor_overrides={"device_processor": {"device": "cpu"}},
         )
+        self.language_pad_token_id = policy.model.vlm_with_expert.processor.tokenizer.pad_token_id
+        if self.language_pad_token_id is None:
+            raise ValueError("the pinned SmolVLA tokenizer has no language pad token")
         policy.to(self.device).eval()
         return policy
 
@@ -91,9 +107,57 @@ class LeRobotSmolVLAAdapter:
         )
         return torch.from_numpy(array).permute(2, 0, 1).float().div(255)
 
+    @staticmethod
+    def _image_path(path: Path) -> torch.Tensor:
+        array = np.array(Image.open(path).convert("RGB"), copy=True)
+        return torch.from_numpy(array).permute(2, 0, 1).float().div(255)
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        """Load one frozen request lazily; never materialize all 1,000 images."""
+        if self.config is None or self.preprocessor is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(
+                (self.sample_dir / "replay_manifest.json").read_text()
+            )
+            self.replay_noise = np.load(
+                self.sample_dir / self.replay_manifest["noise_file"], mmap_mode="r"
+            )
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows) or not 0 <= noise_id < 3:
+            raise IndexError((replay_index, noise_id))
+        return self._processed_replay_observation(replay_index) | {
+            "noise": torch.from_numpy(
+                np.array(self.replay_noise[replay_index, noise_id : noise_id + 1], copy=True)
+            )
+        }
+
+    @lru_cache(maxsize=32)
+    def _processed_replay_observation(self, replay_index: int):
+        row = self.replay_manifest["observations"][replay_index]
+        processed = self.preprocessor(
+            {
+                "observation.images.image": self._image_path(
+                    self.sample_dir / row["images"]["image"]
+                ),
+                "observation.images.image2": self._image_path(
+                    self.sample_dir / row["images"]["image2"]
+                ),
+                "observation.state": torch.tensor(row["state"], dtype=torch.float32),
+                "task": row["task"],
+            }
+        )
+        return {
+            key: value.detach().cpu()
+            for key, value in processed.items()
+            if isinstance(value, torch.Tensor) and key.startswith("observation.")
+        }
+
     def load_example_inputs(self, count: int):
         if self.config is None or self.preprocessor is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+        if (self.sample_dir / "replay_manifest.json").is_file():
+            return [self.load_replay_input(index) for index in range(count)]
         if count > 64:
             raise ValueError("the reproducible LIBERO fixture contains 64 frames")
 
@@ -146,9 +210,55 @@ class LeRobotSmolVLAAdapter:
             )
         return examples
 
-    @staticmethod
-    def compose_batch(samples):
-        return {key: torch.cat([sample[key] for sample in samples], dim=0) for key in samples[0]}
+    def compose_batch(self, samples, *, fixed_prompt: bool = False):
+        from batch_invariant_ops import is_batch_invariant_mode_enabled
+        from lerobot.utils.constants import OBS_LANGUAGE_ATTENTION_MASK, OBS_LANGUAGE_TOKENS
+
+        # The official processor uses right-padding to the longest prompt in
+        # each batch. A singleton preprocessed request has no padding, so
+        # unrelated LIBERO tasks must be padded when composed here.
+        max_tokens = (
+            self.config.tokenizer_max_length
+            if fixed_prompt or self.canonical_prompt_padding and is_batch_invariant_mode_enabled() else
+            max(sample[OBS_LANGUAGE_TOKENS].shape[1] for sample in samples)
+        )
+        if any(sample[OBS_LANGUAGE_TOKENS].shape[1] > max_tokens for sample in samples):
+            raise ValueError("preprocessed prompt exceeds the selected pad length")
+        result = {}
+        for key in samples[0]:
+            values = [sample[key] for sample in samples]
+            if key in (OBS_LANGUAGE_TOKENS, OBS_LANGUAGE_ATTENTION_MASK):
+                pad_value = self.language_pad_token_id if key == OBS_LANGUAGE_TOKENS else 0
+                values = [
+                    torch.nn.functional.pad(value, (0, max_tokens - value.shape[1]), value=pad_value)
+                    for value in values
+                ]
+            result[key] = torch.cat(values, dim=0)
+        return result
+
+    def compose_fixed_batch(self, samples):
+        return self.compose_batch(samples, fixed_prompt=True)
+
+    def fixed_batch_shape_metadata(self, batch):
+        from lerobot.utils.constants import OBS_LANGUAGE_TOKENS
+
+        return {
+            "language_padding": "max_length_right",
+            "language_tokens": batch[OBS_LANGUAGE_TOKENS].shape[1],
+            "canonical_length": self.config.tokenizer_max_length,
+        }
+
+    def execution_configuration(self):
+        if self.config is None:
+            raise RuntimeError("load_model must be called before execution_configuration")
+        return {
+            "native_language_padding": self.config.pad_language_to,
+            "invariant_language_padding": (
+                "max_length" if self.canonical_prompt_padding else self.config.pad_language_to
+            ),
+            "language_max_length": self.config.tokenizer_max_length,
+            "language_pad_token_id": self.language_pad_token_id,
+        }
 
     @staticmethod
     def reset_model(policy) -> None:

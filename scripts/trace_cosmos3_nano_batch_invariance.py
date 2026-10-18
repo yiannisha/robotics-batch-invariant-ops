@@ -102,6 +102,8 @@ def _run(
     }
     attention_capture: dict[str, Any] = {}
     attention_metadata: list[dict[str, Any]] = []
+    attention_calls: list[dict[str, Any]] = []
+    flow_state = {"call": -1, "active": None}
     profiler_report: dict[str, Any] = {}
     original_get_velocity = service.model._get_velocity
     original_attention = attention_module.attention
@@ -112,7 +114,12 @@ def _run(
         timestep = kwargs["timestep"]
         captures["flow.input"].append(noise[0].detach().contiguous().cpu())
         captures["flow.timestep"].append(timestep[:1].detach().contiguous().cpu())
-        result = original_get_velocity(*args, **kwargs)
+        flow_state["call"] += 1
+        flow_state["active"] = flow_state["call"]
+        try:
+            result = original_get_velocity(*args, **kwargs)
+        finally:
+            flow_state["active"] = None
         captures["flow.velocity"].append(result[0].detach().contiguous().cpu())
         return result
 
@@ -134,6 +141,17 @@ def _run(
                         "target_key_length": kv_length,
                     }
                 )
+            call_record = {
+                "source": source,
+                "flow_call": flow_state["active"],
+                "query_shape": list(query.shape),
+                "key_shape": list(key.shape),
+                "target_query_length": q_length,
+                "target_key_length": kv_length,
+                "query_hash": _hash(query[:, :q_length]),
+                "key_hash": _hash(key[:, :kv_length]),
+                "value_hash": _hash(value[:, :kv_length]),
+            }
             first = not attention_capture
             if first:
                 attention_capture.update(
@@ -152,8 +170,13 @@ def _run(
                     torch.cuda.synchronize()
                 profiler_report.update(_profile_summary(result))
                 attention_capture["output"] = output[:, :q_length].detach().contiguous().cpu()
+                call_record["output_hash"] = _hash(output[:, :q_length])
+                attention_calls.append(call_record)
                 return output
-            return original(query, key, value, **kwargs)
+            output = original(query, key, value, **kwargs)
+            call_record["output_hash"] = _hash(output[:, :q_length])
+            attention_calls.append(call_record)
+            return output
 
         return call
 
@@ -178,7 +201,7 @@ def _run(
             os.environ.pop("_COSMOS3_DISABLE_ATTENTION_REPAIR", None)
         else:
             os.environ["_COSMOS3_DISABLE_ATTENTION_REPAIR"] = previous_disable
-    return captures, attention_capture, attention_metadata, output, profiler_report
+    return captures, attention_capture, attention_metadata, output, profiler_report, attention_calls
 
 
 def _capture_comparisons(reference, candidate):
@@ -210,26 +233,74 @@ def _output_comparisons(reference, candidate):
     return [asdict(item) for item in compare_outputs(reference, _first_sample(candidate))]
 
 
+def _attention_call_scan(reference, candidate):
+    fields = ("query_hash", "key_hash", "value_hash", "output_hash")
+    for flow_call in range(5):
+        left_calls = [item for item in reference if item["flow_call"] == flow_call]
+        right_calls = [item for item in candidate if item["flow_call"] == flow_call]
+        for index, (left, right) in enumerate(zip(left_calls, right_calls)):
+            differing = [field for field in fields if left[field] != right[field]]
+            if differing:
+                return {
+                    "flow_call": flow_call,
+                    "index_within_flow_call": index,
+                    "reference": left,
+                    "candidate": right,
+                    "differing_fields": differing,
+                }
+        if len(left_calls) != len(right_calls):
+            return {
+                "flow_call": flow_call,
+                "call_count_mismatch": [len(left_calls), len(right_calls)],
+            }
+    return None
+
+
+def _attention_call_counts(calls):
+    result = {}
+    for item in calls:
+        key = "pre_flow" if item["flow_call"] is None else str(item["flow_call"])
+        bucket = result.setdefault(key, {"total": 0, "sources": {}})
+        bucket["total"] += 1
+        bucket["sources"][item["source"]] = bucket["sources"].get(item["source"], 0) + 1
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--adapter", default="scripts.model_invariance.adapters.cosmos3_nano_policy"
     )
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--candidate-batch-size", type=int, default=2)
+    parser.add_argument(
+        "--modes",
+        default="stock,generic_operators_only,fixed",
+        help="Comma-separated subset of stock,generic_operators_only,fixed",
+    )
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
+
+    if args.candidate_batch_size < 2:
+        parser.error("--candidate-batch-size must be at least 2")
+    selected_modes = {item.strip() for item in args.modes.split(",") if item.strip()}
+    valid_modes = {"stock", "generic_operators_only", "fixed"}
+    if not selected_modes or not selected_modes <= valid_modes:
+        parser.error(f"--modes must be a comma-separated subset of {sorted(valid_modes)}")
 
     adapter = importlib.import_module(args.adapter).adapter
     service = adapter.load_model()
     if hasattr(service, "eval"):
         service.eval()
-    examples = list(adapter.load_example_inputs(2))
+    examples = list(adapter.load_example_inputs(args.candidate_batch_size))
     runs = {}
     for mode, invariant, disable_attention_repair in (
         ("stock", False, False),
         ("generic_operators_only", True, True),
         ("fixed", True, False),
     ):
+        if mode not in selected_modes:
+            continue
         b1 = _run(
             adapter,
             service,
@@ -239,11 +310,11 @@ def main() -> None:
             disable_attention_repair=disable_attention_repair,
             seed=args.seed,
         )
-        b2 = _run(
+        candidate = _run(
             adapter,
             service,
             examples,
-            2,
+            args.candidate_batch_size,
             invariant=invariant,
             disable_attention_repair=disable_attention_repair,
             seed=args.seed,
@@ -257,21 +328,34 @@ def main() -> None:
                 },
                 "batch_2": {
                     key: value
-                    for key, value in b2[1].items()
+                    for key, value in candidate[1].items()
                     if not isinstance(value, torch.Tensor)
                 },
                 "first_four_calls_batch_1": b1[2],
-                "first_four_calls_batch_2": b2[2],
+                "first_four_calls_candidate_batch": candidate[2],
             },
-            "first_attention": _attention_comparisons(b1[1], b2[1]),
-            "flow_iterations": _capture_comparisons(b1[0], b2[0]),
-            "final_outputs": _output_comparisons(b1[3], b2[3]),
-            "first_attention_profile": {"batch_1": b1[4], "batch_2": b2[4]},
+            "first_attention": _attention_comparisons(b1[1], candidate[1]),
+            "attention_call_scan": {
+                "reference_calls": len(b1[5]),
+                "candidate_calls": len(candidate[5]),
+                "reference_counts": _attention_call_counts(b1[5]),
+                "candidate_counts": _attention_call_counts(candidate[5]),
+                "first_divergent_call": _attention_call_scan(b1[5], candidate[5]),
+            },
+            "flow_iterations": _capture_comparisons(b1[0], candidate[0]),
+            "final_outputs": _output_comparisons(b1[3], candidate[3]),
+            "first_attention_profile": {
+                "batch_1": b1[4],
+                "candidate_batch": candidate[4],
+            },
         }
 
     report = {
         "model": adapter.name,
-        "comparison": "B=1 target versus first sample at unrelated B=2",
+        "comparison": (
+            "B=1 target versus first sample at unrelated "
+            f"B={args.candidate_batch_size}"
+        ),
         "root_cause": (
             "After generic MM/BMM projection repairs, Cosmos still selects dense "
             "cuDNN attention at B=1 and packed variable-length CUTLASS attention "

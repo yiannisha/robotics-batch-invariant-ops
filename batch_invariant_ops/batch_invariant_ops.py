@@ -404,31 +404,43 @@ def bmm_persistent(a: torch.Tensor, b: torch.Tensor):
         * triton.cdiv(n, configs[a.dtype]["BLOCK_SIZE_N"]),
     )
 
-    bmm_kernel_persistent[grid](
-        a,
-        b,
-        c,
-        m,
-        n,
-        k,
-        a.stride(0),
-        a.stride(1),
-        a.stride(2),
-        b.stride(0),
-        b.stride(1),
-        b.stride(2),
-        c.stride(0),
-        c.stride(1),
-        c.stride(2),
-        NUM_SMS=num_sms,
-        BATCH_TILE_SLOTS=batch_tile_slots,
-        A_LARGE=a.numel() > 2**31,
-        B_LARGE=b.numel() > 2**31,
-        C_LARGE=c.numel() > 2**31,
-        INPUT_PRECISION="ieee",
-        **configs[a.dtype],
-    )
-    return c
+    config = configs[a.dtype]
+    last_resource_error = None
+    for num_stages in range(config["num_stages"], 0, -1):
+        try:
+            bmm_kernel_persistent[grid](
+                a,
+                b,
+                c,
+                m,
+                n,
+                k,
+                a.stride(0),
+                a.stride(1),
+                a.stride(2),
+                b.stride(0),
+                b.stride(1),
+                b.stride(2),
+                c.stride(0),
+                c.stride(1),
+                c.stride(2),
+                NUM_SMS=num_sms,
+                BATCH_TILE_SLOTS=batch_tile_slots,
+                A_LARGE=a.numel() > 2**31,
+                B_LARGE=b.numel() > 2**31,
+                C_LARGE=c.numel() > 2**31,
+                INPUT_PRECISION="ieee",
+                **{**config, "num_stages": num_stages},
+            )
+            return c
+        except triton.runtime.errors.OutOfResources as error:
+            # Some Blackwell workstation parts expose less opt-in shared memory
+            # per block than H100.  Pipeline staging changes resource use, not
+            # the per-output reduction schedule, so retry the same invariant
+            # kernel with fewer stages instead of failing model integration.
+            last_resource_error = error
+    assert last_resource_error is not None
+    raise last_resource_error
 
 
 @triton.jit

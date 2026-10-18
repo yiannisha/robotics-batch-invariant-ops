@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import os
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
@@ -27,12 +28,33 @@ import torch
 import torch.nn.functional as F
 from PIL import Image
 
+from batch_invariant_ops import is_batch_invariant_mode_enabled
+
+
+class _TracedActionGraph:
+    """Observe optimized graph inputs/outputs without changing its kernels."""
+
+    def __init__(self, graph, buffers, adapter):
+        self.graph = graph
+        self.buffers = buffers
+        self.adapter = adapter
+
+    def replay(self):
+        step = self.adapter._trace_step
+        self.adapter._trace(f"flow.step_{step:02d}.state", self.buffers["x_t"])
+        self.graph.replay()
+        self.adapter._trace(f"flow.step_{step:02d}.velocity", self.buffers["output"])
+        self.adapter._trace_step += 1
+
 
 class InternVLAA15Adapter:
     def __init__(self) -> None:
         self.checkpoint = Path(os.environ.get("INTERNVLA_A15_CHECKPOINT", ""))
         self.qwen = Path(os.environ.get("INTERNVLA_A15_QWEN", ""))
         self.sample_dir = Path(os.environ.get("INTERNVLA_A15_SAMPLE_DIR", ""))
+        self.replay_manifest_path = Path(
+            os.environ.get("INTERNVLA_A15_REPLAY_MANIFEST", str(self.sample_dir / "replay_manifest.json"))
+        )
         self.backend = os.environ.get("INTERNVLA_A15_BACKEND", "standard")
         self.device = torch.device("cuda")
         self.config = None
@@ -43,6 +65,15 @@ class InternVLAA15Adapter:
         self.action_std = None
         self.action_low = None
         self.action_high = None
+        self.replay_manifest = None
+        self.replay_noise = None
+        self.trace_callback = None
+        self._trace_step = 0
+        self._graph_mode = None
+
+    def _trace(self, label: str, value: torch.Tensor) -> None:
+        if self.trace_callback is not None:
+            self.trace_callback(label, value)
 
     @property
     def name(self) -> str:
@@ -60,20 +91,18 @@ class InternVLAA15Adapter:
                     "preprocessor_config.json",
                 ),
             ),
-            (
-                self.sample_dir,
-                (
-                    "frames/image_001.png",
-                    "frames/image_064.png",
-                    "frames/image2_001.png",
-                    "frames/image2_064.png",
-                    "data/chunk-000/file-000.parquet",
-                ),
-            ),
         ):
             for filename in filenames:
                 if not (root / filename).is_file():
                     raise FileNotFoundError(f"missing required fixture: {root / filename}")
+        if not self.replay_manifest_path.is_file():
+            for filename in (
+                "frames/image_001.png", "frames/image_064.png",
+                "frames/image2_001.png", "frames/image2_064.png",
+                "data/chunk-000/file-000.parquet",
+            ):
+                if not (self.sample_dir / filename).is_file():
+                    raise FileNotFoundError(f"missing required fixture: {self.sample_dir / filename}")
 
     def load_model(self):
         self._validate_paths()
@@ -131,6 +160,45 @@ class InternVLAA15Adapter:
         image = Image.open(self.sample_dir / filename).convert("RGB")
         array = np.array(image, copy=True)
         return torch.from_numpy(array).permute(2, 0, 1).float().div(255)
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        if self.config is None or self.processor is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        if self.replay_manifest is None:
+            self.replay_manifest = json.loads(self.replay_manifest_path.read_text())
+            self.replay_noise = np.load(self.replay_manifest["noise_file"], mmap_mode="r")
+        rows = self.replay_manifest["observations"]
+        if not 0 <= replay_index < len(rows) or not 0 <= noise_id < 3:
+            raise IndexError((replay_index, noise_id))
+        noise = torch.from_numpy(np.array(self.replay_noise[replay_index, noise_id], copy=True))
+        return self._processed_replay_observation(replay_index) | {"noise": noise}
+
+    @lru_cache(maxsize=32)
+    def _processed_replay_observation(self, replay_index: int):
+        row = self.replay_manifest["observations"][replay_index]
+        first = self._load_image(row["images"]["image"])
+        second = self._load_image(row["images"]["image2"])
+        raw_state = torch.tensor(row["state"], dtype=torch.float32)
+        state = (raw_state - self.state_mean) / self.state_std.clamp_min(1e-6)
+        processed = self.processor({
+            "observation.images.image0": first,
+            "observation.images.image0_mask": True,
+            "observation.images.image1": second,
+            "observation.images.image1_mask": True,
+            "observation.images.image2": torch.zeros_like(first),
+            "observation.images.image2_mask": False,
+            "observation.state": state,
+            "task": row["task"],
+        })
+        prompt_length = 650
+        return {
+            "pixel_values": processed["observation.pixel_values"],
+            "image_grid_thw": processed["observation.image_grid_thw"],
+            "input_ids": self._pad_1d(processed["observation.input_ids"], prompt_length, 0),
+            "attention_mask": self._pad_1d(processed["observation.attention_mask"], prompt_length, False),
+            "fast_token_mask": self._pad_1d(processed["observation.fast_token_mask"], prompt_length, False),
+            "state": state,
+        }
 
     @staticmethod
     def _pad_1d(tensor: torch.Tensor, length: int, value: int | bool) -> torch.Tensor:
@@ -200,28 +268,83 @@ class InternVLAA15Adapter:
 
     def reset_model(self, model) -> None:
         core = model.model
-        if hasattr(core, "_graphs"):
+        mode = is_batch_invariant_mode_enabled()
+        if hasattr(core, "_graphs") and mode != self._graph_mode:
+            torch.cuda.synchronize()
             core._graphs.clear()
             core._static_buffers.clear()
+            self._graph_mode = mode
 
     def run_model(self, model, batch):
         inputs = {key: value.to(self.device) for key, value in batch.items()}
-        with torch.amp.autocast(device_type="cuda", dtype=torch.bfloat16):
-            normalized_actions = model.model.sample_actions(
-                inputs["pixel_values"],
-                inputs["image_grid_thw"],
-                inputs["input_ids"],
-                inputs["attention_mask"],
-                inputs["state"],
-                fast_token_mask=inputs["fast_token_mask"],
-                noise=inputs["noise"],
-                num_steps=self.config.num_inference_steps,
-            )
+        core = model.model
+        if self.backend == "optimized":
+            # The pinned upstream cache gives an illegal access on a
+            # B1 -> B2 -> B1 replay and nonfinite actions when a graph is
+            # reused at the same size. Keep its optimized graph kernels,
+            # but capture anew for each complete policy call.
+            torch.cuda.synchronize()
+            core._graphs.clear()
+            core._static_buffers.clear()
+        self._trace_step = 0
+        original_step = original_capture = None
+        if self.trace_callback is not None:
+            self._trace("input.noise", inputs["noise"])
+            if self.backend == "standard":
+                original_step = core.denoise_step
+
+                def traced_step(*args, **kwargs):
+                    step = self._trace_step
+                    self._trace(f"flow.step_{step:02d}.state", args[4])
+                    velocity = original_step(*args, **kwargs)
+                    self._trace(f"flow.step_{step:02d}.velocity", velocity)
+                    self._trace_step += 1
+                    return velocity
+
+                core.denoise_step = traced_step
+            else:
+                original_capture = core._capture_graph
+
+                def traced_capture(*args, **kwargs):
+                    result = original_capture(*args, **kwargs)
+                    for key, graph in list(core._graphs.items()):
+                        if not isinstance(graph, _TracedActionGraph):
+                            core._graphs[key] = _TracedActionGraph(graph, core._static_buffers[key], self)
+                    return result
+
+                core._capture_graph = traced_capture
+                for key, graph in list(core._graphs.items()):
+                    if not isinstance(graph, _TracedActionGraph):
+                        core._graphs[key] = _TracedActionGraph(graph, core._static_buffers[key], self)
+        try:
+            with torch.amp.autocast(device_type="cuda", dtype=torch.bfloat16):
+                normalized_actions = core.sample_actions(
+                    inputs["pixel_values"],
+                    inputs["image_grid_thw"],
+                    inputs["input_ids"],
+                    inputs["attention_mask"],
+                    inputs["state"],
+                    fast_token_mask=inputs["fast_token_mask"],
+                    noise=inputs["noise"],
+                    num_steps=self.config.num_inference_steps,
+                )
+        finally:
+            if original_step is not None:
+                core.denoise_step = original_step
+            if original_capture is not None:
+                core._capture_graph = original_capture
         action_dim = self.action_mean.numel()
         actions = normalized_actions[..., :action_dim].float().cpu()
         actions = actions * self.action_std + self.action_mean
         actions = torch.maximum(torch.minimum(actions, self.action_high), self.action_low)
+        self._trace("actions.returned", actions.to(self.device))
         return actions.to(self.device)
+
+    def execution_configuration(self):
+        return (
+            {"backend": "optimized", "optimized_graph_cache_policy": "recapture_per_policy_call"}
+            if self.backend == "optimized" else None
+        )
 
     def extract_robot_output(self, output):
         return output

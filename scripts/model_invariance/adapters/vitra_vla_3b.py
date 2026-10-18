@@ -27,21 +27,49 @@ from typing import Any
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 from PIL import Image
 
 INSTRUCTION = "Left hand: None. Right hand: Pick up the picture of Michael Jackson."
+CANONICAL_LANGUAGE_TOKENS = 276
+EXPECTED_XHAND_HUMAN_MAPPING = (
+    (10, 8, 1),
+    (11, 14, 1),
+    (12, 17, 1),
+    (13, 23, 1),
+    (16, 26, 1),
+    (17, 32, 1),
+    (14, 35, 1),
+    (15, 41, 1),
+    (7, 43, -1),
+    (6, 44, 1),
+    (8, 46, -1),
+    (9, 7, 1),
+)
 
 
 class VitraVLA3BAdapter:
     name = "vitra-vla-3b-official-pytorch"
 
     def __init__(self) -> None:
-        self.source = Path(os.environ.get("VITRA_SOURCE", ""))
-        self.checkpoint = Path(os.environ.get("VITRA_CHECKPOINT", ""))
-        self.paligemma_metadata = Path(os.environ.get("VITRA_PALIGEMMA_METADATA", ""))
+        root = Path(__file__).resolve().parents[3]
+        self.source = Path(os.environ.get("VITRA_SOURCE", "/workspace/models/vitra"))
+        self.checkpoint = Path(os.environ.get(
+            "VITRA_CHECKPOINT", "/workspace/assets/vitra/checkpoint"
+        ))
+        self.paligemma_metadata = Path(os.environ.get(
+            "VITRA_PALIGEMMA_METADATA", "/workspace/assets/vitra/paligemma_metadata"
+        ))
+        self.replay_manifest_path = Path(os.environ.get(
+            "VITRA_REPLAY_MANIFEST",
+            str(root / "results/cross_model/vitra_vla_3b/full/replay_manifest.json"),
+        ))
         self.device = torch.device("cuda")
         self.processor = None
         self.normalizer = None
+        self.replay_manifest: dict[str, Any] | None = None
+        self.replay_noise: np.ndarray | None = None
+        self.xhand_human_mapping = EXPECTED_XHAND_HUMAN_MAPPING
         self.trace_callback = None
 
     def _trace(self, label: str, value: torch.Tensor) -> None:
@@ -77,7 +105,13 @@ class VitraVLA3BAdapter:
         self._add_source_path()
 
         from vitra.models import load_model
+        from vitra.datasets.robot_dataset import XHAND_HUMAN_MAPPING
         from vitra.utils.data_utils import load_normalizer
+
+        official_mapping = tuple(tuple(value) for value in XHAND_HUMAN_MAPPING)
+        if official_mapping != EXPECTED_XHAND_HUMAN_MAPPING:
+            raise RuntimeError("official VITRA XHand-to-human mapping changed")
+        self.xhand_human_mapping = official_mapping
 
         config = json.loads((self.checkpoint / "configs/config.json").read_text())
         config["vlm"]["pretrained_model_name_or_path"] = str(self.paligemma_metadata)
@@ -91,6 +125,23 @@ class VitraVLA3BAdapter:
         self.processor = model.processor
         self.normalizer = load_normalizer(config)
         return model
+
+    def execution_configuration(self) -> dict[str, Any]:
+        return {
+            "source": "microsoft/VITRA-TeleData",
+            "source_episodes": 50,
+            "source_image_shape_hwc": [720, 1280, 3],
+            "model_image_shape_hwc": [224, 398, 3],
+            "real_xhand_state_dim": 18,
+            "human_statistics_state_dim": 122,
+            "padded_model_state_dim": 212,
+            "canonical_language_tokens": CANONICAL_LANGUAGE_TOKENS,
+            "ddim_steps": 10,
+            "action_chunk_size": 16,
+            "model_action_dim": 192,
+            "robot_output_dim": 102,
+            "precision": "float32",
+        }
 
     @staticmethod
     def _pad_state(normalized_state: np.ndarray) -> tuple[torch.Tensor, torch.Tensor]:
@@ -112,9 +163,92 @@ class VitraVLA3BAdapter:
         mask[:, 51:102] = True
         return mask
 
+    def _load_replay_metadata(self) -> None:
+        if self.replay_manifest is not None:
+            return
+        if not self.replay_manifest_path.is_file():
+            raise FileNotFoundError(self.replay_manifest_path)
+        manifest = json.loads(self.replay_manifest_path.read_text())
+        if (
+            manifest.get("model_id") != "vitra_vla_3b"
+            or len(manifest.get("observations", [])) != 1000
+            or manifest.get("noise_shape") != [1000, 3, 16, 192]
+            or manifest.get("unique_physical_observations") != 1000
+        ):
+            raise ValueError("VITRA replay manifest does not describe the frozen campaign")
+        noise_path = Path(manifest["noise_file"])
+        if not noise_path.is_absolute():
+            noise_path = self.replay_manifest_path.parent / noise_path
+        self.replay_manifest = manifest
+        self.replay_noise = np.load(noise_path, mmap_mode="r", allow_pickle=False)
+
+    def _raw_human_state(self, xhand_state: np.ndarray) -> np.ndarray:
+        if self.normalizer is None:
+            raise RuntimeError("VITRA normalizer is not loaded")
+        if xhand_state.shape != (18,):
+            raise ValueError("VITRA replay XHand state is not 18-D")
+        if self.normalizer.state_mean.shape != (122,):
+            raise ValueError("VITRA base checkpoint statistics are not 122-D")
+        right_hand = np.zeros(51, dtype=np.float32)
+        right_hand[:6] = xhand_state[:6]
+        for source, destination, sign in self.xhand_human_mapping:
+            right_hand[destination] = sign * xhand_state[source]
+        # Human checkpoint statistics use [left 51, left beta 10,
+        # right 51, right beta 10].  Shape parameters are unavailable and are
+        # ignored by the model-side hand mask/padding operation.
+        raw = np.zeros(122, dtype=np.float32)
+        raw[61:112] = right_hand
+        return raw
+
+    def load_replay_input(self, replay_index: int, noise_id: int = 0):
+        if self.processor is None or self.normalizer is None:
+            raise RuntimeError("load_model must be called before load_replay_input")
+        self._load_replay_metadata()
+        assert self.replay_manifest is not None and self.replay_noise is not None
+        if not 0 <= replay_index < len(self.replay_manifest["observations"]):
+            raise IndexError(replay_index)
+        if noise_id not in (0, 1, 2):
+            raise IndexError(noise_id)
+        row = self.replay_manifest["observations"][replay_index]
+        if row.get("replay_index") != replay_index:
+            raise ValueError("VITRA replay indices are not one-to-one")
+
+        fixture_root = Path(self.replay_manifest["fixture_root"])
+        image = Image.open(fixture_root / row["image"]).convert("RGB")
+        processed = self.processor(
+            text="<image>" + row["prompt"],
+            images=image,
+            return_tensors="pt",
+        )
+        xhand_state = np.asarray(row["xhand_state"], dtype=np.float32)
+        raw_human_state = self._raw_human_state(xhand_state)
+        normalized_state = self.normalizer.normalize_state(raw_human_state)
+        state, state_mask = self._pad_state(normalized_state)
+        intrinsics = np.asarray(row["camera_intrinsics"], dtype=np.float64)
+        height, width = row["source_image_shape_hwc"][:2]
+        fov = np.asarray([
+            2 * np.arctan(width / (2 * intrinsics[0, 0])),
+            2 * np.arctan(height / (2 * intrinsics[1, 1])),
+        ], dtype=np.float32)
+        return {
+            "pixel_values": processed["pixel_values"][0],
+            "input_ids": processed["input_ids"][0],
+            "attention_mask": processed["attention_mask"][0].bool(),
+            "state": state,
+            "state_mask": state_mask,
+            "action_mask": self._action_mask(),
+            "fov": torch.from_numpy(fov),
+            "noise": torch.from_numpy(
+                np.array(self.replay_noise[replay_index, noise_id], copy=True)
+            ),
+        }
+
     def load_example_inputs(self, count: int):
         if self.processor is None or self.normalizer is None:
             raise RuntimeError("load_model must be called before load_example_inputs")
+
+        if self.replay_manifest_path.is_file():
+            return [self.load_replay_input(index, 0) for index in range(count)]
 
         from vitra.utils.data_utils import resize_short_side_to_target
 
@@ -149,6 +283,7 @@ class VitraVLA3BAdapter:
                 {
                     "pixel_values": processed["pixel_values"][0],
                     "input_ids": processed["input_ids"][0],
+                    "attention_mask": processed["attention_mask"][0].bool(),
                     "state": state.clone(),
                     "state_mask": state_mask.clone(),
                     "action_mask": action_mask.clone(),
@@ -158,9 +293,48 @@ class VitraVLA3BAdapter:
             )
         return examples
 
+    def _compose(self, samples, canonical_language: bool):
+        language_length = (
+            CANONICAL_LANGUAGE_TOKENS
+            if canonical_language
+            else max(sample["input_ids"].shape[0] for sample in samples)
+        )
+        output = {}
+        for key in samples[0]:
+            values = [sample[key] for sample in samples]
+            if key in {"input_ids", "attention_mask"}:
+                if any(value.shape[0] > language_length for value in values):
+                    raise ValueError("VITRA prompt exceeds canonical language length")
+                pad_value = (
+                    int(self.processor.tokenizer.pad_token_id or 0)
+                    if key == "input_ids"
+                    else 0
+                )
+                values = [
+                    F.pad(value, (0, language_length - value.shape[0]), value=pad_value)
+                    for value in values
+                ]
+            output[key] = torch.stack(values, dim=0)
+        return output
+
+    def compose_batch(self, samples):
+        from batch_invariant_ops import is_batch_invariant_mode_enabled
+
+        return self._compose(
+            samples,
+            canonical_language=is_batch_invariant_mode_enabled(),
+        )
+
+    def compose_fixed_batch(self, samples):
+        return self._compose(samples, canonical_language=True)
+
     @staticmethod
-    def compose_batch(samples):
-        return {key: torch.stack([sample[key] for sample in samples], dim=0) for key in samples[0]}
+    def fixed_batch_shape_metadata(batch):
+        return {
+            "language_padding": "canonical_right",
+            "language_tokens": int(batch["input_ids"].shape[1]),
+            "canonical_length": CANONICAL_LANGUAGE_TOKENS,
+        }
 
     def _sample_actions(self, model, action_features, batch):
         policy = model.act_model
@@ -217,7 +391,7 @@ class VitraVLA3BAdapter:
 
     def run_model(self, model, batch):
         batch = {key: value.to(self.device) for key, value in batch.items()}
-        attention_mask = torch.ones_like(batch["input_ids"], dtype=torch.bool)
+        attention_mask = batch["attention_mask"]
         self._trace("preprocess.pixel_values", batch["pixel_values"])
         self._trace("preprocess.input_ids", batch["input_ids"])
         self._trace("preprocess.state", batch["state"])
@@ -242,7 +416,7 @@ class VitraVLA3BAdapter:
         """Run the released private inference path with controlled DDIM noise."""
 
         batch = {key: value.to(self.device) for key, value in batch.items()}
-        attention_mask = torch.ones_like(batch["input_ids"], dtype=torch.bool)
+        attention_mask = batch["attention_mask"]
         hidden, hidden_mask = model.prepare_vlm_features(
             batch["pixel_values"],
             batch["input_ids"],
