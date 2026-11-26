@@ -1074,3 +1074,16 @@ The Conv2D/BMM investigation and π0 tracing methodology build on
 companion repository. π0 and π0.5 are from Physical Intelligence; these
 regressions use the cited open PyTorch implementations and exact commits
 recorded in the research files.
+
+## Experiment archive and current goal
+
+The [four-model stability archive](results/four_model/README.md) contains accepted
+results, audit evidence, figures and explicitly labeled historical/partial runs.
+The [campaign log](FOUR_MODEL_CAMPAIGN.md) records completed and unfinished stages.
+The current priority is [finishing the LingBot-VLA2 experiments](LINGBOT_EXPERIMENT_GOAL.md),
+with singleton-versus-batched stability as the primary endpoint. The full campaign
+is incomplete, and the original external scratch corpus is not included in Git.
+
+[DreamZero preliminary research](research/dreamzero/preliminary_results.md) is a
+separate historical archive; it is not a completed WAM campaign or part of the
+current LingBot scope.
