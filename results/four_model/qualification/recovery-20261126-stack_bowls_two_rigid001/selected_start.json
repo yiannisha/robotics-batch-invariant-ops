@@ -1,0 +1,33 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "002_bowl/base3",
+        "{B}": "002_bowl/base3",
+        "{a}": "right",
+        "{b}": "left"
+      }
+    },
+    "instruction": "Grab the small smooth brown-rimmed bowl, then set the smooth bowl with glossy finish on top.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/stack_bowls_two_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "91081c3b966287474e8677abff1fcbcf1316419458d95222741c117d1896d30f",
+      "physics_sha256": "7cb6a46f35b96fde59512a63333c7ff7bb8a99079ae73eba8d9a73e63280de1c",
+      "rng_sha256": "da94263115759cf7fcc2d4a664b8ed39c540149af7c84a3b47ee6a387fc92581",
+      "task_state_sha256": "318f9134fe2341683b222e706acc4c2feb07782c40c9a786114625127377384c",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 900,
+        "eval_success": false,
+        "instruction": "Grab the small smooth brown-rimmed bowl, then set the smooth bowl with glossy finish on top."
+      }
+    }
+  }
+}
