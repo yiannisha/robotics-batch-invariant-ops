@@ -1,0 +1,33 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "red block",
+        "{B}": "green block",
+        "{a}": "left",
+        "{b}": "right"
+      }
+    },
+    "instruction": "Grab red block, place it at the center, then stack green block on red block.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/stack_blocks_two_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "4a183800cf324988f458234bac310f1906cd734a3e835fc58ea20c31d852eff8",
+      "physics_sha256": "c326cadc7a6a9d9cb9124e8f952e81d3d80b171964a57340b451256d654bfcfb",
+      "rng_sha256": "08004a5842f46cc456df0c5dcccc1fb1cd85fee520b14754a4e5155e6db41b48",
+      "task_state_sha256": "0083b6978555ac79885df98b7f4a97e40471162d1eb4b35e1d4371be569e346d",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 800,
+        "eval_success": false,
+        "instruction": "Grab red block, place it at the center, then stack green block on red block."
+      }
+    }
+  }
+}

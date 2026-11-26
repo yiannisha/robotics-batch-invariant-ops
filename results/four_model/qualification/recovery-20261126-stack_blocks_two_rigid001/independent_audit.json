@@ -1,0 +1,22 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "stack_blocks_two",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 800,
+  "raw_frames_verified": 2403,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 2403,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "task_action_records_verified": 0,
+  "action_source_sha256": {},
+  "rigid_body_state_frames_verified": 2403,
+  "entity_references_bound_to_physics": 0,
+  "render_only_entity_records_verified": 0,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "85f510c0d49eca17dfed84d5d18c56ccec9e29baf23b36f766f488651be526a2",
+  "auditor_sha256": "6db49e8104b3a98047279b2ea6e2533167961840f99792692d0962ad52e07e7c"
+}
