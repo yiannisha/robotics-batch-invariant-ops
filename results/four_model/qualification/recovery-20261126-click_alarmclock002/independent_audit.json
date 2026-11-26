@@ -1,0 +1,19 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "click_alarmclock",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 400,
+  "raw_frames_verified": 1203,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1203,
+  "task_owned_callback_records_verified": 1203,
+  "callback_source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/_base_task.py": "448f7152b65cb9102217cf5463aa821d72810ca56f63d5a797ec7bd43e23e101"
+  },
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "177f8c598ac18c5040017f4256890cae198cb30c2d692d3c3ffb37c04fb5ce59",
+  "auditor_sha256": "4016c8d3a355d0b61524c7164c9b5e56f7bd2635b2a81a10485511bd4ca9b8ba"
+}
