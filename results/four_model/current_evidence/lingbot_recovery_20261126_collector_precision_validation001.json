@@ -1,0 +1,22 @@
+{
+  "status": "corrected_corpus_precision_guards_regression_tested",
+  "verified_utc": "2026-11-26T21:31:46.580553+00:00",
+  "tests": {
+    "count": 14,
+    "result": "passed",
+    "modules": [
+      "scripts.test_lingbot_corpus_precision",
+      "scripts.test_lingbot_campaign_collection",
+      "scripts.test_lingbot_expert_filter",
+      "scripts.test_lingbot_paired_protocol"
+    ]
+  },
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/collect_lingbot_robotwin_campaign_replay_v3.py": "c9b6d8044992ce58653c6490dd62673130a33338a883ff9a4738135227b75987",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_campaign_corpus_v2.py": "3cd1ef1c0762259d3ab0000557b098c88bee99025b07adfc5e966c4748207b9d",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_lingbot_corpus_precision.py": "d1a9d82c626f611b04bec6646f1f57e053def103cc1b63876a72bcbf8ad1d0d8"
+  },
+  "scope": "Constructor precision re-enable and before/after inference guards tested using mocks; this does not qualify actual GPU batching or certify a complete corpus.",
+  "legacy_sources_unchanged": true,
+  "full_campaign_complete": false
+}
