@@ -232,7 +232,7 @@ def main() -> None:
         if len(companion_indexes) != args.candidate_batch_size - 1:
             raise ValueError("frozen companion schedule is too short")
         companions = [rows[index] for index in companion_indexes]
-        if any(row["episode_id"] == target["episode_id"] for row in companions):
+        if any((row["task"], row["episode_id"]) == (target["task"], target["episode_id"]) for row in companions):
             raise ValueError("trace requires companions from unrelated episodes")
         examples = [adapter.load_replay_input(args.target_replay_index, args.noise_id)]
         examples.extend(adapter.load_replay_input(index, args.noise_id) for index in companion_indexes)

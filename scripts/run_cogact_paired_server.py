@@ -16,7 +16,6 @@ from PIL import Image
 from transforms3d.euler import euler2axangle
 
 from batch_invariant_ops import set_batch_invariant_mode
-from evaluation.LIBERO.policy_server.tools.websocket_policy_server import WebsocketPolicyServer
 
 
 CONDITIONS = {
@@ -182,6 +181,8 @@ class PairedCogACTBackend:
 
 
 def main() -> None:
+    from evaluation.LIBERO.policy_server.tools.websocket_policy_server import WebsocketPolicyServer
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--condition", choices=tuple(CONDITIONS), required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)

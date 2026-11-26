@@ -39,6 +39,42 @@ def digest(path: Path) -> str:
     return value.hexdigest()
 
 
+def record_runtime_provenance(args, adapter, manifest_hash):
+    """Bind new/resumed raw records to the actual loaded source and device."""
+    prefixes = ("batch_invariant_ops", "scripts.model_invariance", "scripts.verify_pi05",
+                "scripts.run_rdt_paired_server", "scripts.run_cogact_paired_server",
+                "lerobot", "prismatic.models", "vla", "models.rdt", "models.multimodal_encoder",
+                "lingbotvla.models.vla")
+    paths = {Path(__file__).resolve()}
+    for name, module in list(sys.modules.items()):
+        path = getattr(module, "__file__", None)
+        if path and name.startswith(prefixes) and Path(path).is_file():
+            paths.add(Path(path).resolve())
+    properties = torch.cuda.get_device_properties(torch.cuda.current_device())
+    record = {
+        "schema_version": 1, "adapter": args.adapter,
+        "replay_manifest_sha256": manifest_hash,
+        "execution_configuration": adapter.execution_configuration() if hasattr(adapter, "execution_configuration") else None,
+        "source_sha256": {str(path): digest(path) for path in sorted(paths)},
+        "torch": torch.__version__, "cuda": torch.version.cuda,
+        "gpu": properties.name, "gpu_uuid": str(getattr(properties, "uuid", "unavailable")),
+        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
+        "tf32_matmul": torch.backends.cuda.matmul.allow_tf32,
+        "tf32_cudnn": torch.backends.cudnn.allow_tf32,
+        "split": args.split, "batch_sizes": list(args.batch_sizes), "modes": list(args.modes),
+        "numerical_freeze": str(args.freeze) if getattr(args, "freeze", None) else None,
+    }
+    path = Path(str(args.output) + ".runtime.json")
+    if path.exists():
+        if json.loads(path.read_text()) != record:
+            raise ValueError("resume runtime/source/device identity differs")
+    else:
+        if args.output.exists():
+            raise ValueError("existing raw records lack runtime provenance; preserve them separately")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(record, indent=2) + "\n")
+
+
 def metrics(reference, candidate) -> dict:
     reference_tensors = _flatten_tensors(reference)
     candidate_tensors = _flatten_tensors(candidate)
@@ -53,10 +89,19 @@ def metrics(reference, candidate) -> dict:
         candidate_tensor = candidate_tensors[name]
         if reference_tensor.shape != candidate_tensor.shape:
             raise ValueError(f"shape mismatch for {name}")
+        if reference_tensor.dtype != candidate_tensor.dtype:
+            raise ValueError(f"dtype mismatch for {name}")
+        # Numeric equality after FP64 conversion loses signed-zero differences
+        # and can merge distinct int64 values. The experimental contract is bits.
+        reference_bytes = reference_tensor.detach().contiguous().reshape(-1).view(torch.uint8)
+        candidate_bytes = candidate_tensor.detach().contiguous().reshape(-1).view(torch.uint8)
+        same_bits = reference_bytes.eq(candidate_bytes).reshape(
+            -1, reference_tensor.element_size()
+        ).all(dim=-1).reshape(reference_tensor.shape)
         left = reference_tensor.detach().to(torch.float64)
         right = candidate_tensor.detach().to(torch.float64)
-        same = torch.eq(left, right)
         finite = torch.isfinite(left) & torch.isfinite(right)
+        same = same_bits & finite
         delta = torch.where(finite, right - left, torch.zeros_like(right))
         absolute = delta.abs()
         n = left.numel()
@@ -67,7 +112,10 @@ def metrics(reference, candidate) -> dict:
         max_abs = float(absolute.max().item()) if n else 0.0
         per_tensor[name] = {
             "shape": list(left.shape),
-            "exact": bool(torch.equal(left, right)),
+            "dtype": str(reference_tensor.dtype),
+            "exact": bool(same.all().item()),
+            "reference_sha256": hashlib.sha256(reference_bytes.cpu().numpy().tobytes()).hexdigest(),
+            "candidate_sha256": hashlib.sha256(candidate_bytes.cpu().numpy().tobytes()).hexdigest(),
             "unequal_element_count": bad,
             "max_absolute_error": max_abs,
             "rmse": math.sqrt(squared / max(n - not_finite, 1)),
@@ -151,6 +199,30 @@ def unrelated_companion_rows(observations, target_row, target_location, count):
     if len(chosen) != count:
         raise ValueError(f"need {count} unrelated companion episodes, found {len(chosen)}")
     return chosen
+
+
+def split_local_companion_rows(observations, target_row, target_location, count):
+    """Keep all companion inputs in the target split and outside its episode.
+
+    Prefer one observation from each distinct episode. If a split has fewer
+    episodes than batch slots, fill with distinct observations of those other
+    episodes. This preserves episode-level holdout without pretending that all
+    companions necessarily come from mutually distinct episodes.
+    """
+    eligible = [row for row in observations
+                if row["split"] == target_row["split"]
+                and (row["task"], row["episode_id"]) != (target_row["task"], target_row["episode_id"])]
+    episodes = {(row["task"], row["episode_id"]) for row in eligible}
+    if count < 1 or len(eligible) < count:
+        raise ValueError("insufficient split-local unrelated observations")
+    chosen = unrelated_companion_rows(eligible, target_row, target_location, min(count, len(episodes)))
+    used = {row["replay_index"] for row in chosen}
+    remaining = sorted((row for row in eligible if row["replay_index"] not in used),
+                       key=lambda row: (row["observation_index"], row["task"], row["episode_id"]))
+    if remaining:
+        offset = target_location % len(remaining)
+        remaining = remaining[offset:] + remaining[:offset]
+    return chosen + remaining[:count-len(chosen)]
 
 
 def arrangements(target, target_id, companions, companion_ids, sizes):
@@ -240,6 +312,8 @@ def main() -> None:
     parser.add_argument("--batch-sizes", type=int, nargs="+", default=(1, 2, 4, 8))
     parser.add_argument("--limit-requests", type=int)
     parser.add_argument("--verbose-arrangements", action="store_true")
+    parser.add_argument("--fail-on-invariant-violation", action="store_true",
+                        help="retain the failing complete request block, then stop before further collection")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--seed", type=int, default=0)
     args = parser.parse_args()
@@ -270,6 +344,7 @@ def main() -> None:
     manifest = json.loads(args.manifest.read_text())
     companion_schedule = manifest.get("companion_schedule") or {}
     supported_schedules = {
+        "split_local_unrelated_observations_v1",
         "unrelated_episode_heads_v1",
         "distinct_source_observations_v1",
     }
@@ -323,6 +398,7 @@ def main() -> None:
     )
     if args.freeze and freeze.get("adapter_execution_configuration") != adapter_execution_configuration:
         raise ValueError("held-out adapter execution configuration differs from the numerical freeze")
+    record_runtime_provenance(args, adapter, manifest_hash)
     for prior_path in (args.output, args.fidelity_output):
         if prior_path is None or not prior_path.is_file():
             continue
@@ -355,7 +431,10 @@ def main() -> None:
                     raise ValueError(f"invalid source-limited companion schedule for {target_id}")
                 companion_rows = [observations[index] for index in companion_indexes]
             else:
-                companion_rows = unrelated_companion_rows(
+                selector = (split_local_companion_rows
+                            if companion_schedule["version"] == "split_local_unrelated_observations_v1"
+                            else unrelated_companion_rows)
+                companion_rows = selector(
                     observations, row, target_location, max(args.batch_sizes) - 1
                 )
                 if row.get("companion_replay_indices", [])[: len(companion_rows)] != [
@@ -453,6 +532,13 @@ def main() -> None:
                         done.add(key)
                         done_counts[(target_id, implementation)] += 1
             append_many(args.output, pending_records)
+            if args.fail_on_invariant_violation and any(
+                item["implementation"] == "batch_invariant" and (
+                    not item["output"]["exact"] or item["output"]["nonfinite_count"]
+                    or any(not value["exact"] or value["nonfinite_count"] for value in item["flow_steps"].values())
+                ) for item in pending_records
+            ):
+                raise RuntimeError(f"invariant diagnostic/heldout violation retained for {target_id}")
             if args.fidelity_output and {"native", "batch_invariant"} <= set(singleton_outputs) and target_id not in fidelity_done:
                 append_many(
                     args.fidelity_output,

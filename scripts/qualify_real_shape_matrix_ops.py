@@ -26,18 +26,35 @@ from batch_invariant_ops import (
     conv_transpose3d_batch_invariant,
     matmul_persistent, mean_dim, softmax as softmax_batch_invariant,
     scaled_dot_product_attention_batch_invariant,
+    set_batch_invariant_mode,
 )
 from batch_invariant_ops.batch_invariant_ops import addmm_batch_invariant
 from scripts.run_model_replay_invariance import metrics
 
 
 def make_operands(config: dict, batch_size: int, seed: int):
+    dtype_name = config.get("dtype", "float32").removeprefix("torch.")
+    if dtype_name not in ("float32", "bfloat16", "float16"):
+        raise ValueError(f"unsupported operator dtype: {dtype_name}")
+    dtype = getattr(torch, dtype_name)
     generator = torch.Generator(device="cuda").manual_seed(seed)
     layout = config["layout"]
+    if config["operation"] == "matmul":
+        def operand(which):
+            shape = list(config[f"source_{which}_shape"])
+            shape[0] = batch_size
+            stride = tuple(config[f"source_{which}_stride_b1" if batch_size == 1 else f"source_{which}_stride_b8"])
+            if any(s < 0 for s in stride):raise ValueError("negative source stride unsupported")
+            # Fill physical storage once. Direct writes through a zero-stride
+            # expanded view would overlap and would not model broadcasting.
+            storage_size = 1 + sum((n-1)*s for n,s in zip(shape,stride))
+            storage = torch.randn(storage_size,device="cuda",dtype=dtype,generator=generator)
+            return storage.as_strided(shape,stride)
+        return operand("left"),operand("right"),None
     if config["operation"] in ("mean", "softmax"):
         left = torch.randn(
             batch_size * config["m_per_request"], *config["input_per_unit"],
-            device="cuda", dtype=torch.float32, generator=generator,
+            device="cuda", dtype=dtype, generator=generator,
         )
         return left, None, None
     if config["operation"] == "sdpa":
@@ -51,7 +68,7 @@ def make_operands(config: dict, batch_size: int, seed: int):
         key_stride = tuple(config.get("source_k_stride", config.get("source_qkv_stride")))
         value_stride = tuple(config.get("source_v_stride", config.get("source_qkv_stride")))
         def source_strided(shape, stride):
-            operand = torch.empty_strided(shape, stride, device="cuda", dtype=torch.float32)
+            operand = torch.empty_strided(shape, stride, device="cuda", dtype=dtype)
             operand.normal_(generator=generator)
             return operand
         query = source_strided((outer, query_heads, query_length, head_dim), query_stride)
@@ -64,14 +81,14 @@ def make_operands(config: dict, batch_size: int, seed: int):
         input_shape = config.get("input_per_unit", config.get("input_per_image"))
         left = torch.randn(
             batch_size * config["m_per_request"], *input_shape,
-            device="cuda", dtype=torch.float32, generator=generator,
+            device="cuda", dtype=dtype, generator=generator,
         )
         if layout == "channels_last":
             left = left.contiguous(memory_format=torch.channels_last)
         elif layout == "channels_last_3d":
             left = left.contiguous(memory_format=torch.channels_last_3d)
         right = torch.randn(
-            *config["weight_shape"], device="cuda", dtype=torch.float32,
+            *config["weight_shape"], device="cuda", dtype=dtype,
             generator=generator,
         )
         output_channels = (
@@ -80,7 +97,7 @@ def make_operands(config: dict, batch_size: int, seed: int):
             config["weight_shape"][0]
         )
         bias = (
-            torch.randn(output_channels, device="cuda", dtype=torch.float32, generator=generator)
+            torch.randn(output_channels, device="cuda", dtype=dtype, generator=generator)
             if config.get("has_bias", True) else None
         )
         return left, right, bias
@@ -88,13 +105,13 @@ def make_operands(config: dict, batch_size: int, seed: int):
         heads = batch_size * config["m_per_request"]
         m, k, n = config["m"], config["k"], config["n"]
         if layout == "left_strided":
-            left = torch.randn(heads, m, k * 2, device="cuda", dtype=torch.float32, generator=generator)[..., ::2]
+            left = torch.randn(heads, m, k * 2, device="cuda", dtype=dtype, generator=generator)[..., ::2]
         else:
-            left = torch.randn(heads, m, k, device="cuda", dtype=torch.float32, generator=generator)
+            left = torch.randn(heads, m, k, device="cuda", dtype=dtype, generator=generator)
         if layout == "right_transposed":
-            right = torch.randn(heads, n, k, device="cuda", dtype=torch.float32, generator=generator).transpose(1, 2)
+            right = torch.randn(heads, n, k, device="cuda", dtype=dtype, generator=generator).transpose(1, 2)
         else:
-            right = torch.randn(heads, k, n, device="cuda", dtype=torch.float32, generator=generator)
+            right = torch.randn(heads, k, n, device="cuda", dtype=dtype, generator=generator)
         return left, right, None
     per_request_m = config["m_per_request"]
     k = config["k"]
@@ -102,27 +119,32 @@ def make_operands(config: dict, batch_size: int, seed: int):
     if layout == "left_strided":
         left_storage = torch.randn(
             batch_size * per_request_m, k * 2,
-            device="cuda", dtype=torch.float32, generator=generator,
+            device="cuda", dtype=dtype, generator=generator,
         )
         left = left_storage[:, ::2]
     else:
         left = torch.randn(
             batch_size * per_request_m, k,
-            device="cuda", dtype=torch.float32, generator=generator,
+            device="cuda", dtype=dtype, generator=generator,
         )
     if layout == "right_transposed":
-        right_storage = torch.randn(n, k, device="cuda", dtype=torch.float32, generator=generator)
+        right_storage = torch.randn(n, k, device="cuda", dtype=dtype, generator=generator)
         right = right_storage.t()
     else:
-        right = torch.randn(k, n, device="cuda", dtype=torch.float32, generator=generator)
+        right = torch.randn(k, n, device="cuda", dtype=dtype, generator=generator)
     bias = (
-        torch.randn(n, device="cuda", dtype=torch.float32, generator=generator)
+        torch.randn(n, device="cuda", dtype=dtype, generator=generator)
         if config["operation"] == "addmm" else None
     )
     return left, right, bias
 
 
 def call(operation: str, left, right, bias, *, invariant: bool, config: dict):
+    if operation == "matmul":
+        # Exercise the same ATen composite and its mm/bmm dispatch as the
+        # complete policy, including source broadcast/reshape decisions.
+        with torch.inference_mode(), set_batch_invariant_mode(invariant):
+            return torch.matmul(left,right)
     if operation == "mean":
         return (
             mean_dim(left, config["dim"], keepdim=config["keepdim"])
@@ -130,9 +152,10 @@ def call(operation: str, left, right, bias, *, invariant: bool, config: dict):
             torch.mean(left, dim=config["dim"], keepdim=config["keepdim"])
         )
     if operation == "softmax":
+        output_dtype = getattr(torch, config["output_dtype"].removeprefix("torch.")) if config.get("output_dtype") else None
         return (
-            softmax_batch_invariant(left, dim=config["dim"])
-            if invariant else torch.softmax(left, dim=config["dim"])
+            softmax_batch_invariant(left, dim=config["dim"], dtype=output_dtype)
+            if invariant else torch.softmax(left, dim=config["dim"], dtype=output_dtype)
         )
     if operation == "sdpa":
         function = scaled_dot_product_attention_batch_invariant if invariant else F.scaled_dot_product_attention
@@ -183,6 +206,9 @@ def call(operation: str, left, right, bias, *, invariant: bool, config: dict):
 
 def explicit_per_matrix_reference(operation: str, left, right, bias, config: dict):
     """Execute each independent request/image/head at its singleton shape."""
+    if operation == "matmul":
+        with torch.inference_mode():
+            return torch.cat([torch.matmul(left[i:i+1],right[i:i+1]) for i in range(left.shape[0])],dim=0)
     if operation == "mean":
         rows = config["m_per_request"]
         return torch.cat([
@@ -194,8 +220,9 @@ def explicit_per_matrix_reference(operation: str, left, right, bias, config: dic
         ], dim=0)
     if operation == "softmax":
         rows = config["m_per_request"]
+        output_dtype = getattr(torch, config["output_dtype"].removeprefix("torch.")) if config.get("output_dtype") else None
         return torch.cat([
-            torch.softmax(left[index : index + rows], dim=config["dim"])
+            torch.softmax(left[index : index + rows], dim=config["dim"], dtype=output_dtype)
             for index in range(0, left.shape[0], rows)
         ], dim=0)
     if operation == "sdpa":
@@ -275,7 +302,7 @@ def time_call(function) -> float:
     return start.elapsed_time(end) / 1000
 
 
-def profile_dispatch(operation: str, left, right, bias, config: dict) -> dict:
+def profile_dispatch(operation: str, left, right, bias, config: dict, _attempt: int = 0) -> dict:
     with torch.profiler.profile(
         activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA]
     ) as trace:
@@ -297,8 +324,13 @@ def profile_dispatch(operation: str, left, right, bias, config: dict) -> dict:
         if getattr(getattr(event, "device_type", None), "name", "") == "CUDA"
     })
     if not cuda_kernels:
+        # CUPTI can return an empty device trace despite a completed CUDA
+        # execution. Retry capture, never substitute expected kernel names or
+        # accept CPU-only profiling evidence. Bound retries and retain count.
+        if _attempt < 2:
+            return profile_dispatch(operation, left, right, bias, config, _attempt + 1)
         raise RuntimeError("profiler did not capture a native or invariant CUDA kernel")
-    return {"aten_events": aten_events, "cuda_kernels": cuda_kernels}
+    return {"aten_events": aten_events, "cuda_kernels": cuda_kernels, "capture_attempt": _attempt + 1}
 
 
 def completed(path: Path, configuration_hash: str) -> set[tuple]:
@@ -322,6 +354,7 @@ def main() -> None:
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--batch-sizes", type=int, nargs="+", default=(1, 2, 4, 8, 16, 31, 32, 33, 64))
     parser.add_argument("--configuration-ids", nargs="+", help="run only these IDs while retaining the full manifest hash")
+    parser.add_argument("--arrangement-keys", nargs="+", help="run selected ID|Bsize|position keys in isolated profiler processes")
     parser.add_argument("--seeds", type=int, default=100)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--resume", action="store_true")
@@ -333,7 +366,22 @@ def main() -> None:
     if args.output.exists() and not args.resume:
         raise FileExistsError(args.output)
     configuration_hash = hashlib.sha256(args.config.read_bytes()).hexdigest()
-    configurations = json.loads(args.config.read_text())["configurations"]
+    manifest = json.loads(args.config.read_text())
+    precision = manifest.get("adapter_execution_configuration", {}).get("tf32")
+    if precision is not None:
+        if not isinstance(precision, bool):raise ValueError("TF32 configuration must be boolean")
+        torch.backends.cuda.matmul.allow_tf32 = precision
+        torch.backends.cudnn.allow_tf32 = precision
+        torch.backends.cudnn.benchmark = False
+    runtime_identity = {
+        "tf32_matmul": torch.backends.cuda.matmul.allow_tf32,
+        "tf32_cudnn": torch.backends.cudnn.allow_tf32,
+        "cudnn_benchmark": torch.backends.cudnn.benchmark,
+        "torch": torch.__version__, "gpu": torch.cuda.get_device_name(),
+        "gpu_uuid": str(getattr(torch.cuda.get_device_properties(torch.cuda.current_device()), "uuid", "unavailable")),
+        "qualifier_source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    }
+    configurations = manifest["configurations"]
     if not configurations:
         raise ValueError("empty operator configuration file")
     if args.configuration_ids:
@@ -343,10 +391,19 @@ def main() -> None:
             raise ValueError(f"unknown operator configuration IDs: {sorted(unknown_ids)}")
         configurations = [config for config in configurations if config["id"] in args.configuration_ids]
     done = completed(args.output, configuration_hash)
+    if args.arrangement_keys:
+        valid = {
+            f"{config['id']}|B{size}|{position}"
+            for config in configurations
+            for size in config.get("batch_sizes", args.batch_sizes)
+            for position in (("first",) if size == 1 else ("first", "last"))
+        }
+        if set(args.arrangement_keys) - valid:
+            raise ValueError("unknown operator arrangement key")
     for config in configurations:
-        if config["operation"] not in ("mm", "addmm", "bmm", "conv1d", "conv2d", "conv3d", "conv_transpose2d", "conv_transpose3d", "mean", "softmax", "sdpa"):
+        if config["operation"] not in ("mm", "addmm", "bmm", "matmul", "conv1d", "conv2d", "conv3d", "conv_transpose2d", "conv_transpose3d", "mean", "softmax", "sdpa"):
             raise ValueError(config["operation"])
-        if config["layout"] not in ("contiguous", "left_strided", "right_transposed", "channels_last", "channels_last_3d", "qkv_permuted", "qkv_source_strided"):
+        if config["layout"] not in ("contiguous", "left_strided", "right_transposed", "channels_last", "channels_last_3d", "qkv_permuted", "qkv_source_strided", "source_strided_matmul"):
             raise ValueError(config["layout"])
         if (config["operation"] == "sdpa") != (config["layout"] in ("qkv_permuted", "qkv_source_strided")):
             raise ValueError("SDPA requires an observed Q/K/V stride layout")
@@ -370,6 +427,8 @@ def main() -> None:
             positions = ("first",) if batch_size == 1 else ("first", "last")
             for target_position in positions:
                 configuration_key = f"{config['id']}|B{batch_size}|{target_position}"
+                if args.arrangement_keys and configuration_key not in args.arrangement_keys:
+                    continue
                 for seed_index in range(args.seeds):
                     key = (configuration_key, seed_index)
                     if key in done:
@@ -379,7 +438,7 @@ def main() -> None:
                     start_row = 0 if target_position == "first" else (batch_size - 1) * config["m_per_request"]
                     target_left = left[start_row : start_row + config["m_per_request"]]
                     operation = config["operation"]
-                    target_right = right[start_row : start_row + config["m_per_request"]] if operation in ("bmm", "sdpa") else right
+                    target_right = right[start_row : start_row + config["m_per_request"]] if operation in ("bmm", "sdpa", "matmul") else right
                     target_bias = bias[start_row : start_row + config["m_per_request"]] if operation == "sdpa" else bias
                     native_singleton = call(operation, target_left, target_right, target_bias, invariant=False, config=config)
                     native_batched = call(operation, left, right, bias, invariant=False, config=config)
@@ -400,7 +459,7 @@ def main() -> None:
                             operation, target_left.double(),
                             target_right.double() if target_right is not None else None,
                             target_bias.double() if target_bias is not None else None,
-                            invariant=False, config=config,
+                            invariant=False, config={**config, "output_dtype": "float64"} if operation == "softmax" else config,
                         )
                         reference = {
                             "native": metrics(double_output, native_singleton.double()),
@@ -411,6 +470,7 @@ def main() -> None:
                         if seed_index == 0 else None
                     )
                     record = {
+                        **runtime_identity,
                         "schema_version": 1,
                         "configuration_sha256": configuration_hash,
                         "operator_configuration": configuration_key,

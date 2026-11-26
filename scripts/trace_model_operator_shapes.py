@@ -28,17 +28,33 @@ from batch_invariant_ops import set_batch_invariant_mode
 SELECTED = {
     "aten::mm", "aten::addmm", "aten::bmm", "aten::convolution",
     "aten::_softmax", "aten::mean", "aten::scaled_dot_product_attention",
+    "aten::linear", "aten::matmul", "aten::conv2d", "aten::softmax",
 }
 
 
 def describe(value):
     if isinstance(value, torch.Tensor):
-        return {
+        result = {
             "shape": list(value.shape), "stride": list(value.stride()),
             "dtype": str(value.dtype), "device": value.device.type,
         }
+        if value.dtype == torch.bool:
+            compact = value
+            if value.numel() > 4096:
+                # Record broadcast masks without repeating a zero-stride
+                # dimension thousands of times. Keep original shape/strides.
+                selection = tuple(slice(0, 1) if stride == 0 else slice(None)
+                                  for stride in value.stride())
+                compact = value[selection]
+            if compact.numel() <= 4096:
+                result["values"] = compact.detach().cpu().tolist()
+                if compact.shape != value.shape:
+                    result["values_shape"] = list(compact.shape)
+        return result
     if isinstance(value, (list, tuple)):
         return [describe(item) for item in value]
+    if isinstance(value, dict):
+        return {str(key): describe(item) for key, item in value.items()}
     if isinstance(value, (str, int, float, bool)) or value is None:
         return value
     return str(value)
@@ -131,10 +147,12 @@ def main() -> None:
         "replay_manifest_sha256": hashlib.sha256(args.manifest.read_bytes()).hexdigest() if args.manifest else None,
         "gpu": torch.cuda.get_device_name(),
         "torch": torch.__version__,
+        "driver_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "operations": [dict(json.loads(key), count=count) for key, count in sorted(recorder.records.items())],
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
+    Path(str(args.output) + '.driver.py').write_bytes(Path(__file__).read_bytes())
     print(json.dumps({"operations": len(report["operations"]), "calls": sum(recorder.records.values())}))
 
 

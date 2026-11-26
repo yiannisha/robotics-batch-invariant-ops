@@ -16,7 +16,6 @@ import torch
 from PIL import Image
 
 from batch_invariant_ops import set_batch_invariant_mode
-from evaluation.LIBERO.policy_server.tools.websocket_policy_server import WebsocketPolicyServer
 from scripts.model_invariance.adapters.rdt_maniskill import RDTManiSkillAdapter
 
 
@@ -78,6 +77,7 @@ class PairedRDTBackend:
     def __init__(
         self, adapter: RDTManiSkillAdapter, policy: Any, *, condition: str,
         checkpoint: Path, language: dict[str, torch.Tensor], artifacts: list[dict[str, str]],
+        fixed_language_tokens: int | None = None, maximum_batch: int | None = None,
     ) -> None:
         self.adapter = adapter
         self.policy = policy
@@ -87,6 +87,13 @@ class PairedRDTBackend:
         self.language = language
         self.artifacts = artifacts
         self.canonical_language_tokens = max(value.shape[1] for value in language.values())
+        if fixed_language_tokens is not None and fixed_language_tokens < self.canonical_language_tokens:
+            raise ValueError("fixed language extent cannot truncate a released task embedding")
+        self.fixed_language_tokens = fixed_language_tokens
+        if maximum_batch is not None:
+            if maximum_batch < 1:
+                raise ValueError("maximum batch must be positive")
+            self.maximum_batch = maximum_batch
 
     def metadata(self) -> dict[str, Any]:
         return {
@@ -98,6 +105,7 @@ class PairedRDTBackend:
             "diffusion_steps": 5, "noise_shape": [64, 128],
             "language_padding": "fixed_right_30" if self.repaired else "longest_in_batch_right",
             "canonical_language_tokens": self.canonical_language_tokens,
+            "explicit_fixed_language_tokens": self.fixed_language_tokens,
             "image_history": 2, "num_cameras": 3, "action_chunk_size": 64,
             "executed_action_stride": 4, "action_dim": 8,
             "control_mode": "pd_joint_pos", "control_frequency": 25,
@@ -142,9 +150,9 @@ class PairedRDTBackend:
         task_names = [example.get("task_name") for example in examples]
         if any(name not in self.language for name in task_names):
             raise ValueError(f"RDT request has task outside pinned suite: {task_names}")
-        token_count = self.canonical_language_tokens if self.repaired else max(
+        token_count = self.fixed_language_tokens or (self.canonical_language_tokens if self.repaired else max(
             self.language[name].shape[1] for name in task_names
-        )
+        ))
         language = torch.zeros(len(examples), token_count, 4096, dtype=torch.bfloat16)
         language_mask = torch.zeros(len(examples), token_count, dtype=torch.bool)
         state = torch.zeros(len(examples), 1, 128, dtype=torch.bfloat16)
@@ -178,6 +186,8 @@ class PairedRDTBackend:
 
 
 def main() -> None:
+    from evaluation.LIBERO.policy_server.tools.websocket_policy_server import WebsocketPolicyServer
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--condition", choices=tuple(CONDITIONS), required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)

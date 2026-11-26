@@ -278,6 +278,28 @@ EXPECTED_EXECUTION_CONFIG = {
         "chunk_size": 50,
         "max_action_dim": 32,
     },
+    "pi05_libero": {
+        "checkpoint_revision": "7152f13e34c6c115d808aea0e5d08aca74eac14b",
+        "suite": "libero_10", "language_padding": "max_length_right",
+        "language_tokens": 200, "sampler": "unchanged_official_predict_action_chunk",
+        "flow_steps": 10, "chunk_size": 50, "max_action_dim": 32,
+        "robot_action_dim": 7, "normalization": "checkpoint_mean_std",
+        "precision": "bfloat16", "tf32": False, "execution": "eager",
+    },
+    "rdt_maniskill_exact": {
+        "checkpoint_revision": "9622afab2b7ce2312a6cf1febc526928589b77eb", "suite": "maniskill_five",
+        "language_padding": "fixed_right_in_both_modes", "language_tokens": 30, "image_history": 2,
+        "camera_slots": 3, "vision_encoding": "genuinely_batched_six_slots_per_request", "diffusion_steps": 5,
+        "chunk_size": 64, "precision": "bfloat16", "tf32": False, "control_frequency": 25,
+        "action_dim": 8, "noise_dim": 128, "sampler": "official_maniskill_wrapper_equivalent_DPM_solver", "execution": "eager",
+    },
+    "cogact_simpler_exact": {
+        "checkpoint_revision": "ca302a300542393a0b06e291465076a7d9105c23", "suite": "simpler_google_four",
+        "language_padding": "fixed_right_in_both_primary_modes", "language_tokens": 64,
+        "precision": "vlm_bfloat16_diffusion_float32", "tf32": False, "chunk_size": 16, "action_dim": 7,
+        "diffusion_steps": 10, "cfg_scale": 1.5, "execution": "eager",
+        "released_default_fidelity": "separate_longest_padding_singleton_measurement_required",
+    },
     "internvla_a15_standard": None,
     "smolvla": {
         "native_language_padding": "longest", "invariant_language_padding": "max_length",
@@ -394,12 +416,15 @@ EXPECTED_EXECUTION_CONFIG = {
     },
 }
 EXPECTED_FIXED_LANGUAGE_SHAPE = {
+    "rdt_maniskill_exact": {"language_padding": "fixed_right_in_both_modes", "language_tokens": 30, "canonical_length": 30},
+    "cogact_simpler_exact": {"language_padding": "fixed_right_in_both_primary_modes", "language_tokens": 64, "canonical_length": 64},
     "molmoact2": {
         "language_padding": "max_length_right",
         "language_tokens": 497,
         "canonical_length": 497,
     },
     "pi05": {"language_padding": "max_length_right", "language_tokens": 200, "canonical_length": 200},
+    "pi05_libero": {"language_padding": "max_length_right", "language_tokens": 200, "canonical_length": 200},
     "smolvla": {"language_padding": "max_length_right", "language_tokens": 48, "canonical_length": 48},
     "groot_n17": {"language_padding": "fixed_left", "language_tokens": 156, "canonical_length": 156},
     "openvla_oft": {"language_padding": "canonical_right", "language_tokens": 37, "canonical_length": 37},
