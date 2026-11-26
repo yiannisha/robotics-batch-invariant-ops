@@ -117,3 +117,23 @@ source episodes supply future numerical inputs and are not paired stability
 trials. The 2,500-start paired campaign has not begun. Missing historical raw
 exposure identities remain unresolved; prospective collection alone does not
 prove held-out freshness against the previous campaign.
+
+### Rigid-body coverage correction
+
+Inspection of the dump-bin task exposed direct SAPIEN Entity references. It also
+showed that the legacy physics helper's optional `get_velocity` calls do not
+capture rigid-body velocities on Entity objects in the installed SAPIEN version.
+The retained legacy replay reports establish exactness for their recorded fields;
+they do **not** qualify the stronger rigid-body state contract required before
+primary paired acceptance. Prior task counts must be read with this limitation.
+
+`probe_robotwin_exact_initialization_v3.py` explicitly captures dynamic-component
+linear/angular velocities, sleeping state, mass/inertia, damping, gravity,
+kinematic state/target, locked axes and solver settings. Task recorder v4 binds
+Entity references to scene actor indices and poses; auditor v4 requires the new
+physics schema and verifies these bindings. Twenty-seven focused/regression tests
+and an actual CPU SAPIEN API smoke passed. Full replay requalification remains
+pending; no stronger task acceptance is claimed from tests or the smoke alone.
+The first v4 helper variant used the wrong sleeping-property API and its launched
+attempt was stopped and retained. The corrected immutable variant is
+`rigid_source_v4_002`, currently running `dump_bin_bigbin_rigid004`.

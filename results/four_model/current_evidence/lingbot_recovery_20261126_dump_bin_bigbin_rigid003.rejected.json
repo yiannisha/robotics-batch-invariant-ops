@@ -1,0 +1,8 @@
+{
+  "status": "rejected_incomplete_instrumentation_attempt",
+  "reason": "SDK smoke found is_sleeping is a bool property; launched before failed smoke result was checked",
+  "terminated_owned_process_group": true,
+  "model_evaluated": false,
+  "acceptance": false,
+  "observed_utc": "2026-11-26T22:43:11.047405+00:00"
+}

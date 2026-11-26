@@ -1,0 +1,2 @@
+{"request": {"op": "expert", "task": "dump_bin_bigbin", "seed": 100000, "test_num": 100, "instruction_type": "unseen"}, "response": {"ok": false, "error": "Objects is unstable in seed(100000), unstable objects: garbage", "error_type": "UnStableError"}}
+{"request": {"op": "expert", "task": "dump_bin_bigbin", "seed": 100001, "test_num": 100, "instruction_type": "unseen"}, "response": {"ok": false, "error": "Uncovered task state at task.sphere_lst[0]: sapien.pysapien.Entity", "error_type": "TypeError"}}

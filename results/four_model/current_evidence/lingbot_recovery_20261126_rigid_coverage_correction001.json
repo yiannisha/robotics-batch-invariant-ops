@@ -1,0 +1,14 @@
+{
+  "status": "legacy_physics_coverage_gap_identified_stronger_requalification_pending",
+  "observed_utc": "2026-11-26T22:44:12.757291+00:00",
+  "legacy_helper": "scripts/probe_robotwin_exact_initialization.py",
+  "gap": "Entity lacks get_velocity/get_angular_velocity; legacy optional calls omitted dynamic rigid-body velocities",
+  "legacy_reports_remain_valid_only_for_recorded_fields": true,
+  "legacy_qualified_union": "lingbot_recovery_20261126_qualified_union012.json",
+  "stronger_qualified_task_count": 0,
+  "primary_paired_acceptance_requires_stronger_qualification": true,
+  "source_corpus_tensor_reconstruction_not_invalidated": true,
+  "tests_passed": 27,
+  "sdk_smoke": "rigid_capture_sdk_smoke002.json",
+  "full_model_campaign_complete": false
+}

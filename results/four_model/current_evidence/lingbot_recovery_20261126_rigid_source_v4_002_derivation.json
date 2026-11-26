@@ -1,0 +1,14 @@
+{
+  "scope": "expanded rigid-body state; corrected sleeping-property API",
+  "parent": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/rigid_source_v4_001",
+  "helper_sha256": {
+    "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "robotwin_exact_worker.py": "adfe27fc2aa283725ca31881dfe693b5f4dc4a0e74551722a6ac7b28286369a4",
+    "robotwin_task_state.py": "9dd3575ed34b46e799d933bb39d918bcdc9b556a724d3579b8dbb4d138981617",
+    "probe_robotwin_exact_initialization.py": "b34c214f69eb26282de3d5ae9086196b4e832c4a1e5f50b9d28aa5ad14586412",
+    "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+    "audit_robotwin_benchmark_replay.py": "f3debfceb00ae1c527a52b5dba215418451d753436abf8a1c3e98571497b0b7f"
+  },
+  "sdk_smoke_sha256": "2a794514fc10bb034c2acdf0c42be1ce685a0db674527301336d12ef7c927a4e",
+  "prior_replay_reports_do_not_establish_rigid_velocity_coverage": true
+}
