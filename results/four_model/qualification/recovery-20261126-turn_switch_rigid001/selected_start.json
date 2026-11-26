@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "056_switch/base2",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Activate the switch at the lightweight plastic switch angled edges",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/turn_switch_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "05354b67a19f5a5b746f9a7234211987f3255bb4b391fd81f8f61dcb7e452566",
+      "physics_sha256": "c328ff6db8142b82ea5b6144f27204bc75df945fba2bdf753cd2245a74cd5769",
+      "rng_sha256": "48212f52c573a57fa84a2d62c089026d8ac4a5722d9de6f7e91c5506fb1acc04",
+      "task_state_sha256": "1092f4a45e3d81e8e725848c8ce3900de189464de99c036641edab695ecf30e1",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Activate the switch at the lightweight plastic switch angled edges"
+      }
+    }
+  }
+}
