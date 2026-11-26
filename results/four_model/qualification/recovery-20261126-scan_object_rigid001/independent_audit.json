@@ -1,0 +1,21 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "scan_object",
+  "seed": 100006,
+  "repeats": 3,
+  "controls_per_repeat": 500,
+  "raw_frames_verified": 1503,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1503,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "task_action_records_verified": 0,
+  "action_source_sha256": {},
+  "rigid_body_state_frames_verified": 1503,
+  "entity_references_bound_to_physics": 0,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "d6c4e0344a272b8b0cd2657bae46d2427bda2696cf732e1220189584856fbd02",
+  "auditor_sha256": "f3debfceb00ae1c527a52b5dba215418451d753436abf8a1c3e98571497b0b7f"
+}

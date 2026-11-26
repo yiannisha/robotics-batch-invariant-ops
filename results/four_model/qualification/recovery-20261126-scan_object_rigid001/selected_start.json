@@ -1,0 +1,33 @@
+{
+  "seed": 100006,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "112_tea-box/base2",
+        "{B}": "024_scanner/base0",
+        "{a}": "left",
+        "{b}": "right"
+      }
+    },
+    "instruction": "Grab the handheld scanner, then pick up the small tea-box, and use the handheld scanner to scan the small tea-box.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/scan_object/frames/frame-000000.pt",
+      "observation_sha256": "f9145277222b6f85a82c20f362b59ae6eb2c2d359164864da3c38bfd1d899e7e",
+      "physics_sha256": "d6e5cdfe30d9fa0fa5f931231758cf5ee437776488ffa38947fb1571426d895d",
+      "rng_sha256": "9a531010e2baf024fd49b21ef51b48423770b6627c8be2b1389dd62b8e5c8260",
+      "task_state_sha256": "56ac25d54a0903fb7c779b1871ca8040b82970f33dd6136cf7e6f4553ad2b071",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 500,
+        "eval_success": false,
+        "instruction": "Grab the handheld scanner, then pick up the small tea-box, and use the handheld scanner to scan the small tea-box."
+      }
+    }
+  }
+}
