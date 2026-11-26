@@ -1,0 +1,31 @@
+{
+  "seed": 100001,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "001_bottle/base13",
+        "{a}": "right"
+      }
+    },
+    "instruction": "Pick up the plastic soda bottle from the table head-up.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/benchmark_replay_adjust_bottle001/frames/frame-000000.pt",
+      "observation_sha256": "46427b6cd6517472e8842966f512df0f1925dc0ca74776c761a2b01730c0b725",
+      "physics_sha256": "43daa8391f796446eae698b5ffeb807f68d5a08b8da7a801d564ea355da0e7ce",
+      "rng_sha256": "eaf8683cd83a24010084710d18872dc0d6599e2e49aaa4d2a15689ffbb4a7bdb",
+      "task_state_sha256": "a8c490d425be5d2d22029ac42354b4d8e40aa3598a4ae38d5b97ae76e1549b70",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Pick up the plastic soda bottle from the table head-up."
+      }
+    }
+  }
+}

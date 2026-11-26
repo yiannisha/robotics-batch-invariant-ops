@@ -1,0 +1,30 @@
+{
+  "status": "accepted_one_task_full_fixed_action_requalification",
+  "verified_utc": "2026-11-26T21:22:28.174056+00:00",
+  "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/benchmark_replay_adjust_bottle001",
+  "audit": {
+    "status": "complete_fixed_action_replay_independently_verified",
+    "task": "adjust_bottle",
+    "seed": 100001,
+    "repeats": 3,
+    "controls_per_repeat": 400,
+    "raw_frames_verified": 1203,
+    "initial_state_and_full_trajectories_exact": true,
+    "cpu_and_cuda_rng_verified": true,
+    "source_defined_task_state_frames_verified": 1203,
+    "model_evaluated": false,
+    "full_50_task_qualification_complete": false,
+    "raw_replays_sha256": "dee19c78c51e80be408d03ef2862ebfec22831668bf3cf694f1f087deeef6ca9",
+    "auditor_sha256": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0"
+  },
+  "independent_audit_sha256": "3d8cc54f44c491d58e04e4358a50fe3194f4de613cb631932b0e348801c1eb4f",
+  "archived_reports": {
+    "robotics-batch-invariant-ops/results/four_model/qualification/recovery-20261126-adjust_bottle001/expert_seeds.jsonl": "2e8fcb17a0ab8a1bc62243a5c570a4f81e8659e045b281cd1c22fceda2a589f7",
+    "robotics-batch-invariant-ops/results/four_model/qualification/recovery-20261126-adjust_bottle001/runtime.json": "33ee75dc1b1891adbca07eb4ac3b54bef03a71ebeb26ce22baf70901f4640701",
+    "robotics-batch-invariant-ops/results/four_model/qualification/recovery-20261126-adjust_bottle001/summary.json": "9af77c931a98abc9026740403f9eab514d8621ffb0845c0921abdfbe217119b9",
+    "robotics-batch-invariant-ops/results/four_model/qualification/recovery-20261126-adjust_bottle001/independent_audit.json": "3d8cc54f44c491d58e04e4358a50fe3194f4de613cb631932b0e348801c1eb4f",
+    "robotics-batch-invariant-ops/results/four_model/qualification/recovery-20261126-adjust_bottle001/selected_start.json": "256e31132cab06e885e1d57d6f8aee987170f99e2ffd6b5d3ad76a7cd3b631d4"
+  },
+  "scope": "One task only: first expert-eligible released seed100001, three complete 400-step model-free replays. All-task reset qualification and paired model inference remain unfinished.",
+  "full_campaign_complete": false
+}

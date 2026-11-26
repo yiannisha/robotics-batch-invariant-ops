@@ -1,0 +1,25 @@
+{
+  "status": "launched_full_50_task_reset_requalification",
+  "pid": 2460614,
+  "start_ticks": "50431580",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/qualify_lingbot_robotwin_reset_roster.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--task-roster",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/robotwin_reset_qualification_union.json",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001",
+    "--reuse-adjust-bottle",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/benchmark_replay_adjust_bottle001"
+  ],
+  "driver_sha256": "630bd6feb1526a3d449b5ea133de2955029c784efd322526d7caea80aefcf0cc",
+  "gpu_uuid": "GPU-17594d78-b021-bba8-5fcd-7e09d2bdf8f9",
+  "scope": "Frozen helpers; all failures retained; no model evaluated; queued execution is not qualification acceptance.",
+  "full_campaign_complete": false
+}

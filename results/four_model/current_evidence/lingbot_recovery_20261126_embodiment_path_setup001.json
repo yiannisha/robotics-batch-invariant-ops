@@ -1,0 +1,44 @@
+{
+  "status": "official_embodiment_template_expansion_verified",
+  "script_sha256": "d7a32079dd533195051134c5780b2641f29837409104ad6f570a6c2546b134e0",
+  "records": [
+    {
+      "template": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/aloha-agilex/curobo_left_tmp.yml",
+      "template_sha256": "5860346baf83c74da3dfacbc548f3165fe6caba5797fd28da158a618576556c8",
+      "generated": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/aloha-agilex/curobo_left.yml",
+      "generated_sha256": "6f8e5bf1377432441380b333e13d0c7c2b7bddd042a8a97e5e9ed235c1ed3d77"
+    },
+    {
+      "template": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/aloha-agilex/curobo_right_tmp.yml",
+      "template_sha256": "bebc418e0bb02cc70a4cb124b9cda6c4c12ce27c5bdbf1b4153654d781fb62f8",
+      "generated": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/aloha-agilex/curobo_right.yml",
+      "generated_sha256": "1c8652d577f2c92c3f0cd96e65149b2f4f95c4f68f6e3e7cd2de4aa21003fd6b"
+    },
+    {
+      "template": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/franka-panda/curobo_tmp.yml",
+      "template_sha256": "954a08c411707bb830ce091c7eb784a6886c08d0f5f911de4189fba81c61a974",
+      "generated": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/franka-panda/curobo.yml",
+      "generated_sha256": "c107222500a3a8718a80475d85a74bf74e81e5d4419f3bf88b1aac3b60fcd00d"
+    },
+    {
+      "template": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/ur5-wsg/curobo_tmp.yml",
+      "template_sha256": "2f98812ce08900f7101306c01b242c6fb7346556302c77105b1d4cb676798358",
+      "generated": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/ur5-wsg/curobo.yml",
+      "generated_sha256": "0b02bcb4dbfe476888f65d27b327a249e95a95eb3bcb954d57e65be396a2db92"
+    },
+    {
+      "template": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/piper/curobo_tmp.yml",
+      "template_sha256": "f03d6270672b6060452dc4616508202a7dd7238ab2d99bc6a56b9c6887a33130",
+      "generated": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/piper/curobo.yml",
+      "generated_sha256": "c57eb956f21fef3353e272e4b7bcc025a87ab12006f2122ba60e5c423d2709e9"
+    },
+    {
+      "template": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/ARX-X5/curobo_tmp.yml",
+      "template_sha256": "07c7faf92f6c9c7e3b7c370cb4487494d236935910cf6d89333f89f0b56c0ddb",
+      "generated": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments/ARX-X5/curobo.yml",
+      "generated_sha256": "c0a2b4259f53d8c32976610a22bc3d50a46e3262938589cf06b5001daf184c29"
+    }
+  ],
+  "scope": "Only the official asset-root placeholder substitution; no planner numeric parameters changed.",
+  "full_campaign_complete": false
+}

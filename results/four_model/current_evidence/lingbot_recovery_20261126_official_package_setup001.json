@@ -1,0 +1,34 @@
+{
+  "status": "official_robotwin_package_setup_restored",
+  "source_install_script": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/script/_install.sh",
+  "source_install_script_sha256": "34bf2e47427f4b89962c5744894f17c9ad216ac95d4f2978c18563b808e1835f",
+  "patches": [
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/lib/python3.10/site-packages/sapien/wrapper/urdf_loader.py",
+      "before_sha256": "eabba86fe7d244ce8d469010f96914010a8883ea5835c86a8bc58be310510683",
+      "after_sha256": "13aad693f05663472a4f1b59ea34fb313db6ee2f1416fce19ad4830cfa588059",
+      "changes": [
+        [
+          "open(urdf_file, \"r\")",
+          "open(urdf_file, \"r\", encoding=\"utf-8\")"
+        ],
+        [
+          "open(srdf_file, \"r\")",
+          "open(srdf_file, \"r\", encoding=\"utf-8\")"
+        ]
+      ]
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/lib/python3.10/site-packages/mplib/planner.py",
+      "before_sha256": "785f77233baf4159f3327b664fae2507572c189223a6075f42546c1133ddfa0e",
+      "after_sha256": "23c51d083ce1892e5fbd0e1473df432d1c33609e50bfac8bdf9e8bfcf6c2cf3c",
+      "changes": [
+        [
+          "if np.linalg.norm(delta_twist) < 1e-4 or collide or not within_joint_limit:",
+          "if np.linalg.norm(delta_twist) < 1e-4 or not within_joint_limit:"
+        ]
+      ]
+    }
+  ],
+  "scope": "Released setup-script compatibility patches, applied before simulator qualification. No simulator measurement is yet accepted."
+}

@@ -39,7 +39,7 @@ same-condition repeats before accepting simulator evidence.
 - [ ] Recover pinned checkpoint, source, simulator/runtime and raw evidence. Inventory
   current mounts and GPUs; the November 13 storage and GPU observations are historical.
   The original scratch campaign directory is absent on the November 26 host.
-- [ ] Resolve retained-data storage without discarding provenance. Reassess and
+- [x] Resolve retained-data storage without discarding provenance. Reassess and
   document capacity against the full prescribed study; preserve the earlier 1.5 TB
   prelaunch reserve until an evidence-backed replacement is qualified.
 - [ ] Restore or requalify exact reset, fixed-action and repeat controls on the pinned
@@ -84,3 +84,10 @@ metadata-only Qwen assets at the pinned revision. Acquisition does not qualify
 inference or simulation. Separate Python 3.12 inference and Python 3.10 simulator
 environments are being rebuilt. Reset, runtime and numerical checks must precede
 new paired result acceptance. No new trajectory or success result is claimed.
+
+New-host simulator progress: Curobo v0.7.8 is built for SM120, official
+post-install package changes and embodiment path expansion are recorded, and
+`adjust_bottle` passed independent three-repeat complete replay qualification
+(400 controls/repeat, 1,203 frames). Initial RGB and physics hashes match the
+archived pilot. The complete 50-task reset roster is running with frozen helper
+sources; full-roster coverage and paired inference are not yet accepted.

@@ -1,0 +1,17 @@
+{
+  "status": "pinned_curobo_built_for_sm120",
+  "verified_utc": "2026-11-26T21:18:10.412877+00:00",
+  "commit": "d64c4b005459db10c5dd867d8b30a87d5bda9bdb",
+  "version": "0.7.8",
+  "torch_cuda_arch_list": "12.0",
+  "cuda_home": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/toolchains/cuda-12.8.1",
+  "build_log_sha256": "18bf5523a1577fc51ba028145f13c274c67d2ccb5e55bb2128491c242ac23252",
+  "extensions": {
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/curobo/src/curobo/curobolib/lbfgs_step_cu.cpython-310-x86_64-linux-gnu.so": "d4bb672d814bfa5d90aa9df92cce49550a82e8c2c02e6f2b6a19fe5ab28a2d30",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/curobo/src/curobo/curobolib/kinematics_fused_cu.cpython-310-x86_64-linux-gnu.so": "9a25f4224be17960762e6011dc499549bc0dc3fa60cca2609c3f5619b9e004b4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/curobo/src/curobo/curobolib/line_search_cu.cpython-310-x86_64-linux-gnu.so": "40dee01e7f4b10dfaa0b63e229b538d0320d0b9ceeeecc6f9ba81efe99e93379",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/curobo/src/curobo/curobolib/tensor_step_cu.cpython-310-x86_64-linux-gnu.so": "8ff1a4839218ff92a8631ae24fe0a1a6ab9940b8c0e103eb22dc32298734600b",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/curobo/src/curobo/curobolib/geom_cu.cpython-310-x86_64-linux-gnu.so": "1c89ae645f38885a7c1bbe48c205e44553d4ca060570203b4868406401948526"
+  },
+  "full_campaign_complete": false
+}

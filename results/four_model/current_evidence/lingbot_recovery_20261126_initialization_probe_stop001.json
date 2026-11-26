@@ -1,0 +1,8 @@
+{
+  "status": "pre_measurement_dependency_failure",
+  "output": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/initialization_probe001",
+  "reason": "Pinned RoboTwin imports CuroboPlanner; Curobo was absent from the recovered simulator environment.",
+  "any_simulator_trajectory_measured": false,
+  "resolution_in_progress": "Build official Curobo v0.7.8 for SM120 using recovered CUDA 12.8.1 development components.",
+  "full_campaign_complete": false
+}

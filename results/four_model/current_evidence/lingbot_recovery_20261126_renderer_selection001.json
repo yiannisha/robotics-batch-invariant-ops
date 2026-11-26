@@ -1,0 +1,18 @@
+{
+  "status": "cuda_vulkan_device_correspondence_verified",
+  "verified_utc": "2026-11-26T21:12:22.259426+00:00",
+  "cuda_visible_devices": "GPU-17594d78-b021-bba8-5fcd-7e09d2bdf8f9",
+  "sapien_default_render_device": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "cuda_id": 0,
+    "pci_string": "0000:0b:00.0"
+  },
+  "nvidia_smi_correspondence": {
+    "index": 3,
+    "uuid": "GPU-17594d78-b021-bba8-5fcd-7e09d2bdf8f9",
+    "pci_bus_id": "00000000:0B:00.0"
+  },
+  "vulkan_icd": "/usr/share/vulkan/icd.d/nvidia_icd.json",
+  "scope": "Observed renderer device selection only. Simulator reset/trajectory repeatability is not established.",
+  "full_campaign_complete": false
+}
