@@ -1,0 +1,40 @@
+{
+  "status": "explicit_resume_after_terminal_collector_and_audited_sealed_episodes",
+  "verified_utc": "2026-11-26T21:40:38.030825+00:00",
+  "pid": 2882319,
+  "start_ticks": "50546176",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/lingbot/bin/python",
+    "-m",
+    "scripts.collect_lingbot_robotwin_campaign_replay_v3",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/lingbot-vla2",
+    "--checkpoint",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/lingbot_vla2/checkpoints/global_step_50000/hf_ckpt",
+    "--qwen-metadata",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/lingbot_qwen_metadata",
+    "--robotwin-source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--robotwin-python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--qualification-union",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/native_source_v3_resume002_qualification.json",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/replay/native_source_v3_001",
+    "--resume"
+  ],
+  "prior_collector_handle_terminal": true,
+  "prior_completed_episodes": 4,
+  "bound_progress_audit_sha256": "aa3f6b8752238857b873d0af495cd790b524051eecba8aaee050802e0ec070b2",
+  "qualification_snapshot_sha256": "dccf416552576295e07efd9c3a2c150567b16b7a8729212d071c6b9f60bea172",
+  "qualified_tasks": [
+    "lift_pot",
+    "hanging_mug",
+    "stack_bowls_three",
+    "scan_object"
+  ],
+  "source_pins_reverified": true,
+  "no_unfinished_episode_directories": true,
+  "scope": "Continue the same fixed 200-episode corpus for newly qualified tasks; no full corpus or batching-stability acceptance.",
+  "full_campaign_complete": false
+}

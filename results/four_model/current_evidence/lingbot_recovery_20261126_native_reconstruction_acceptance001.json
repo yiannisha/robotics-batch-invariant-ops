@@ -1,0 +1,13 @@
+{
+  "status": "partial_native_input_and_action_reconstruction_verified",
+  "verified_utc": "2026-11-26T21:42:59.072229+00:00",
+  "completed_native_episodes": 4,
+  "prescribed_native_episodes": 200,
+  "raw_frames_verified": 418,
+  "model_calls_rebuilt": 11,
+  "selected_inputs_rebuilt": 20,
+  "corrected_precision_records_verified": true,
+  "progress_audit_sha256": "aa3f6b8752238857b873d0af495cd790b524051eecba8aaee050802e0ec070b2",
+  "scope": "Official transforms, normalized-to-physical action mapping, command replay, and stored precision records for the four sealed lift_pot source episodes. Neural outputs are retained producer measurements; no batching comparison or held-out freshness is certified.",
+  "full_campaign_complete": false
+}

@@ -1,0 +1,41 @@
+{
+  "status": "historical_content_address_metadata_screen_only",
+  "observed_utc": "2026-11-26T21:38:08.262790+00:00",
+  "old_corpus_audit_sha256": "24d67091b45b1987e0410993a3daac57404f32c712bc4fff8581b2a8037ed267",
+  "legacy_content_hash_auditor_source_matches": true,
+  "old_raw_categories": {
+    "frames": 49398,
+    "requests": 1077,
+    "outputs": 1077,
+    "selected_requests": 1000
+  },
+  "old_selected_content_addresses": 1000,
+  "old_noisy_request_content_addresses": 1077,
+  "new_selected_rows_examined": 20,
+  "historical_selected_matches": [
+    {
+      "replay_index": 0,
+      "task": "lift_pot",
+      "split": "diagnostic",
+      "request_file": "selected_requests/6d294286a66bd948290a3477099627678109504afc236df3d53c780b50b1f1ec.pt.gz"
+    },
+    {
+      "replay_index": 2,
+      "task": "lift_pot",
+      "split": "diagnostic",
+      "request_file": "selected_requests/c7ee4c42ccdfc0ce8795d7cfab255dd97eb8a7a32a947634aec18dc9994bc219.pt.gz"
+    }
+  ],
+  "new_request_files_examined": 11,
+  "historical_noisy_request_matches": [
+    "468f3a9d3799808873ec20ff8ef5abdaaf431ce56d8c9ed102140a1267b2390e.pt.gz",
+    "fe5d4815abd917bd5085933c5416d6919a28129d7830cab028feeefe9517fb16.pt.gz",
+    "409d0d7d662cc274e8b634bb82317ae4ffaf628f0512146049bf933c6aa2b6a1.pt.gz",
+    "35d4ceeef2ba6cf99dea395a98da6ff60480e0eb97c12668d64eeefe07ec1423.pt.gz"
+  ],
+  "scope": "Direct equality of retained historical and current content addresses. Selected-request addresses omit noise and support conservative exclusion. Noisy-request addresses cannot be treated as prepared-input identities by stripping noise from a hash.",
+  "missing_history": [
+    "Original retained-request tensor bank and complete prior exposure identity index are absent at their archived paths; final all-history freshness is not established by this screen."
+  ],
+  "full_campaign_complete": false
+}
