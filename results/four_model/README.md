@@ -35,6 +35,12 @@ independent rederivation of the underlying tensor errors.
 
 ## Recovery limitations, checked 2026-11-26
 
+`results/ARCHIVE_SHA256SUMS` covers every retained result file present when the
+archive was packaged, including this index. Check it from the
+repository root with `sha256sum --quiet -c results/ARCHIVE_SHA256SUMS`. Result
+attributes preserve original bytes rather than normalizing CSV or patch endings.
+The manifest is an archival integrity check, not scientific acceptance of each file.
+
 This Git archive retains the files present in the worktree. The original
 `/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign` directory is absent
 on the current host. References to that directory or `/vastdisk` are historical
