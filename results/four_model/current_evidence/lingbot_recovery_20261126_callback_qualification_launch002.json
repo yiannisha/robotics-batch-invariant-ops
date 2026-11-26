@@ -1,0 +1,46 @@
+{
+  "status": "launched_isolated_callback_capture_requalification",
+  "pid": 3085041,
+  "start_ticks": "50602674",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/callback_source_v2_001/qualify_robotwin_benchmark_replay.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/click_bell_callback002",
+    "--task",
+    "click_bell",
+    "--seed-start",
+    "100000",
+    "--repeats",
+    "3",
+    "--capture-source-task-state"
+  ],
+  "derivation": {
+    "purpose": "Source-bound capture and independent verification of task-owned callback selection; no model/task dynamics changed.",
+    "baseline_sha256": {
+      "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+      "robotwin_exact_worker.py": "c9cc3439945bee945312e32ed0de2e26aae99176e595e45fded6232afde9dcd4",
+      "robotwin_task_state.py": "d713e96a631a090ea0b3bdae7723d5ffc615aeadbd5d6b6a4abf02beca85465a",
+      "probe_robotwin_exact_initialization.py": "6503ee27d8aba7afd304fa612229c0973914c104e1af0883f12e03ca5fe978c1",
+      "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+      "audit_robotwin_benchmark_replay.py": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0"
+    },
+    "variant_sha256": {
+      "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+      "robotwin_exact_worker.py": "c9cc3439945bee945312e32ed0de2e26aae99176e595e45fded6232afde9dcd4",
+      "robotwin_task_state.py": "a126df02fb0f75f94a517d6f2ab36ba076476cdf9cb1b11e9dadc3c12f579e9b",
+      "probe_robotwin_exact_initialization.py": "6503ee27d8aba7afd304fa612229c0973914c104e1af0883f12e03ca5fe978c1",
+      "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+      "audit_robotwin_benchmark_replay.py": "4016c8d3a355d0b61524c7164c9b5e56f7bd2635b2a81a10485511bd4ca9b8ba"
+    },
+    "capture_tests": 13
+  },
+  "previous_failure_retained": true,
+  "full_campaign_complete": false
+}

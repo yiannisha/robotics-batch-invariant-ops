@@ -1,0 +1,14 @@
+{
+  "status": "callback_capture_and_cabinet_initialization_contracts_tested",
+  "verified_utc": "2026-11-26T22:01:04.004047+00:00",
+  "tests_passed": 15,
+  "scope": "Stable task-owned method identity, rejection of foreign/closure callbacks, independent source-AST checks and cold cabinet pre-motion initialization. Cabinet GPU replay is still pending.",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/robotwin_task_state_v2.py": "a126df02fb0f75f94a517d6f2ab36ba076476cdf9cb1b11e9dadc3c12f579e9b",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_robotwin_benchmark_replay_v2.py": "4016c8d3a355d0b61524c7164c9b5e56f7bd2635b2a81a10485511bd4ca9b8ba",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/robotwin_exact_worker_v2.py": "adfe27fc2aa283725ca31881dfe693b5f4dc4a0e74551722a6ac7b28286369a4",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_robotwin_task_callbacks.py": "b220bdd9d92830e1057bd886923036bf56f83b20f8e8e359e9b2ad078c95ef80",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_robotwin_cabinet_initialization.py": "d4c1d9f1e616cf2912144fe83eab1ec2afd97ee48d52b9ad5ea1d9748438d08b"
+  },
+  "full_campaign_complete": false
+}

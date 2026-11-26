@@ -1,0 +1,40 @@
+{
+  "status": "launched_isolated_cabinet_initialization_requalification",
+  "pid": 3278581,
+  "start_ticks": "50653022",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/cabinet_source_v2_001/qualify_robotwin_benchmark_replay.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/cabinet_initialization003",
+    "--task",
+    "put_object_cabinet",
+    "--seed-start",
+    "100000",
+    "--repeats",
+    "3",
+    "--capture-source-task-state"
+  ],
+  "derivation": {
+    "purpose": "Restore only put_object_cabinet arm_tag and origin_z from upstream pre-motion initialization; use verified task-owned callback capture/audit.",
+    "upstream_task_source": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/put_object_cabinet.py",
+    "upstream_task_source_sha256": "1de25dd513b4ad29e158440eefb28fb050be95d557c7df1b87578168ff35a7b2",
+    "variant_sha256": {
+      "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+      "robotwin_exact_worker.py": "adfe27fc2aa283725ca31881dfe693b5f4dc4a0e74551722a6ac7b28286369a4",
+      "robotwin_task_state.py": "a126df02fb0f75f94a517d6f2ab36ba076476cdf9cb1b11e9dadc3c12f579e9b",
+      "probe_robotwin_exact_initialization.py": "6503ee27d8aba7afd304fa612229c0973914c104e1af0883f12e03ca5fe978c1",
+      "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+      "audit_robotwin_benchmark_replay.py": "4016c8d3a355d0b61524c7164c9b5e56f7bd2635b2a81a10485511bd4ca9b8ba"
+    },
+    "tests_passed": 15,
+    "previous_failure_retained": true
+  },
+  "full_campaign_complete": false
+}
