@@ -1,0 +1,17 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "put_bottles_dustbin",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 1700,
+  "raw_frames_verified": 5103,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 5103,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "7622b8ea36f66b7e47399141afa60f8ed37069e8b2cda9297ac851d1e773768a",
+  "auditor_sha256": "4016c8d3a355d0b61524c7164c9b5e56f7bd2635b2a81a10485511bd4ca9b8ba"
+}

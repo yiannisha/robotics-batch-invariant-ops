@@ -1,0 +1,13 @@
+{
+  "scope": "versioned Action-aware state capture; policy and task dynamics unchanged",
+  "parent": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/cabinet_source_v2_001",
+  "helper_sha256": {
+    "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "robotwin_exact_worker.py": "adfe27fc2aa283725ca31881dfe693b5f4dc4a0e74551722a6ac7b28286369a4",
+    "robotwin_task_state.py": "e8cccb531c7fa5da2ee7031d14075b788c1a32b299d4ffce250fdeeb991a309e",
+    "probe_robotwin_exact_initialization.py": "6503ee27d8aba7afd304fa612229c0973914c104e1af0883f12e03ca5fe978c1",
+    "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+    "audit_robotwin_benchmark_replay.py": "47abe0ea09479bc11344e9386bbffb40f55b7a79369fe15b4cab50685567187a"
+  },
+  "released_action_source_sha256": "7bf69e226b98ae7f5b21a523f722271530885cf4778873900f3564003a9b591d"
+}
