@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "001_bottle/base3",
+        "{a}": "right"
+      }
+    },
+    "instruction": "Shake the bottle with printed label after picking it with the right arm.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/shake_bottle_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "c84cde38fb67c459d5ec478112d8c10d02122a0466836d0af95842429a0c4670",
+      "physics_sha256": "88f35e7a4f021f399ccf2fc0e8745563d35c810016b34ba5e03564496eb5038a",
+      "rng_sha256": "8c4b725b2efd37a5a7f21f56a8243c9c77fae2f8bd452c5c591d2e8ee52f2121",
+      "task_state_sha256": "ca5f844f47b15ab22d752ca0a01369df827e77ace8632e6395c0c49845b87e92",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 700,
+        "eval_success": false,
+        "instruction": "Shake the bottle with printed label after picking it with the right arm."
+      }
+    }
+  }
+}
