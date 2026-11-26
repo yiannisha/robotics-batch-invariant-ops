@@ -195,3 +195,11 @@ running in `task_roster_visual_v5_002`, reusing those 12 byte-bound reports with
 rewriting their audits. Fifty-nine relevant tests pass. Source collection's
 current segment finished normally at 44/200 episodes, and independent snapshot
 audit 006 is running. Those 44 episodes are not all accepted merely by collection.
+
+Append-only source collection resumed as `native_source_v3_resume004` while the
+independent auditor reads its immutable 44-episode snapshot. The old collector
+was terminal; sealed episode hashes, producer/source pins and the 12-task proof
+snapshot were rechecked before launch. All 44 sealed episode payloads remained
+unchanged after launch. This removes an intermediate scheduling wait, not an
+acceptance check: the complete 200-episode corpus must still pass independent
+audit before numerical qualification/primary paired acceptance.

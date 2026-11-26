@@ -1,0 +1,28 @@
+{
+  "status": "resume_preflight_verified_pending_segment_audit",
+  "observed_utc": "2026-11-26T23:36:55.960911+00:00",
+  "prior_collector_pid": 3804242,
+  "prior_collector_start_ticks": "50798548",
+  "prior_handle_absent": true,
+  "completed_episodes": 44,
+  "manifest_sha256": "640092ee6e831ca6e04b2e587efe5e18fe363217f0a925fca5839dd0c9dcfc87",
+  "qualification_snapshot": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/native_source_v3_resume004_qualification.json",
+  "qualification_snapshot_sha256": "3c501175f56ebfa1629d3b9717ec05fcb570eab0c9b9a65d33147b5db8d51212",
+  "qualified_tasks": [
+    "lift_pot",
+    "dump_bin_bigbin",
+    "turn_switch",
+    "hanging_mug",
+    "stack_bowls_three",
+    "stamp_seal",
+    "scan_object",
+    "stack_bowls_two",
+    "handover_block",
+    "click_bell",
+    "stack_blocks_two",
+    "put_object_cabinet"
+  ],
+  "source_pins_reverified": true,
+  "no_unfinished_episode_directories": true,
+  "not_launched": true
+}
