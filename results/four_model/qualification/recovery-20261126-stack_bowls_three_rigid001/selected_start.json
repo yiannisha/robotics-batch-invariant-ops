@@ -1,0 +1,30 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "002_bowl/base3"
+      }
+    },
+    "instruction": "Stack the small smooth brown-rimmed bowl by placing smallest on top.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/stack_bowls_three/frames/frame-000000.pt",
+      "observation_sha256": "e2b9999f4b581a5567ed32f265ad069604691b6787b8e3f042216e62f844a437",
+      "physics_sha256": "a10f64b9ee407446d2fe4714bbb38dcacffef041aecddf1b4edd1880857cc323",
+      "rng_sha256": "ce94d2ac7c80923e0a809ec2e39f7577018b7dc257dc34e6839b6d3ab189b975",
+      "task_state_sha256": "f21b534c66ce5a7ebf9bfb96079b9ed33388d4ddeb3e23c9a856dd529c010f85",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 1200,
+        "eval_success": false,
+        "instruction": "Stack the small smooth brown-rimmed bowl by placing smallest on top."
+      }
+    }
+  }
+}

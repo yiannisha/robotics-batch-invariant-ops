@@ -165,3 +165,8 @@ frozen. Fifty-one relevant tests and a SAPIEN check with a render system passed.
 The CPU-only visual smoke lacked a render system and was rejected. The failed
 stamp attempt remains retained; `stamp_seal_visual002` is running and is not yet
 accepted. The paired runner/auditor also validates this visual state extension.
+
+`rigid_qualified_union004` accepts six tasks after adding `stack_bowls_three`
+and the repaired `stamp_seal`. The stamp report independently verifies all
+1,203 rigid-state frames and 1,203 render-only Entity records across three
+400-control replays. This is reset/replay evidence, not a paired model result.

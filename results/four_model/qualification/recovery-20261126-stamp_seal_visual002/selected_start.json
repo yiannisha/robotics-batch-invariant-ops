@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "100_seal/base4",
+        "{B}": "Brown",
+        "{a}": "right"
+      }
+    },
+    "instruction": "Stamp Brown using the small carved seal",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/stamp_seal_visual002/frames/frame-000000.pt",
+      "observation_sha256": "363b57222ebc67a1dd69dbb165a7dc1a887487a6f01cec310b63aa31d31b1cad",
+      "physics_sha256": "67d134acbddf9e4d18c0807aec82792dabf25fef38a1801b1a349123ef48a543",
+      "rng_sha256": "025be775e0e0935e938da156bc206a7e0ee492e8a2e7db1e30af64b99877900c",
+      "task_state_sha256": "7b68c9074e71e16366f8a2128592d5f4057c225e5ca8574bd22458388b1071b8",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Stamp Brown using the small carved seal"
+      }
+    }
+  }
+}

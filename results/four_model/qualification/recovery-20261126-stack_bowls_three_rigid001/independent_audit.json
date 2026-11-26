@@ -1,0 +1,21 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "stack_bowls_three",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 1200,
+  "raw_frames_verified": 3603,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 3603,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "task_action_records_verified": 0,
+  "action_source_sha256": {},
+  "rigid_body_state_frames_verified": 3603,
+  "entity_references_bound_to_physics": 0,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "3e1c91d102bc0bbfef3d7cac9e8f87058b18151eeef45159d1f8938181cfb714",
+  "auditor_sha256": "f3debfceb00ae1c527a52b5dba215418451d753436abf8a1c3e98571497b0b7f"
+}
