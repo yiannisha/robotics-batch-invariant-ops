@@ -1,0 +1,14 @@
+{
+  "status": "partial_corrected_native_corpus_reconstruction_independently_verified",
+  "observed_utc": "2026-11-26T23:46:51.499902+00:00",
+  "audit_sha256": "bfb802eeacd8788c049ab4f2f022d78d7fa47d5c0004ee1425279428a6aa8a65",
+  "manifest_snapshot_sha256": "640092ee6e831ca6e04b2e587efe5e18fe363217f0a925fca5839dd0c9dcfc87",
+  "completed_native_episodes": 44,
+  "raw_frames_verified": 14479,
+  "model_calls_rebuilt": 311,
+  "selected_inputs_rebuilt": 220,
+  "raw_file_digests_rechecked": 15321,
+  "full_corpus_complete": false,
+  "paired_stability_measured": false,
+  "heldout_freshness_accepted": false
+}
