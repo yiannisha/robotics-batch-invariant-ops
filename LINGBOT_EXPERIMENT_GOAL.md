@@ -100,10 +100,19 @@ and `open_microwave`. The microwave qualification includes three complete
 its task-owned callback explicitly. Failed attempts remain retained, and the
 cabinet initialization repair is still awaiting replay acceptance.
 
-Corrected, per-call TF32-off native source collection has recorded 13 of the
-prescribed 200 episodes at this checkpoint. Twelve episodes have independently
-verified reconstruction evidence: 5,389 raw frames, 113 policy calls and 60
-selected inputs, with corrected precision records verified. These
+The subsequent `qualified_union007` record binds 12 accepted tasks, adding
+`stack_blocks_three`, `put_object_cabinet`, `place_shoe`, and `beat_block_hammer`.
+The cabinet initialization repair passed three complete 700-control replays
+and independent verification of 2,103 raw frames; the earlier failed attempt
+remains retained.
+
+Corrected, per-call TF32-off native source collection has recorded 16 of the
+prescribed 200 episodes at this checkpoint. All 16 have independently verified
+reconstruction evidence: 6,010 raw frames, 127 policy calls and 80 selected
+inputs, with corrected precision records verified (`progress_audit004`).
+Collection resumed with the sealed 11-task qualification snapshot after source
+and raw-file hashes were rechecked; the later hammer task awaits the next resume.
+These
 source episodes supply future numerical inputs and are not paired stability
 trials. The 2,500-start paired campaign has not begun. Missing historical raw
 exposure identities remain unresolved; prospective collection alone does not

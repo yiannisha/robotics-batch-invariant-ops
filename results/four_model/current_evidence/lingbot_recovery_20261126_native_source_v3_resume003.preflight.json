@@ -1,0 +1,27 @@
+{
+  "status": "preflight_verified_pending_full_segment_audit",
+  "verified_utc": "2026-11-26T22:17:02.777831+00:00",
+  "prior_pid": 2882319,
+  "prior_start_ticks": 50546176,
+  "prior_handle_absent": true,
+  "completed_episodes": 16,
+  "manifest_sha256": "49319614d3bf4b6ade337cd719c2c301f1d59c64552676629463e76e8369bff3",
+  "qualification_snapshot": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/native_source_v3_resume003_qualification.json",
+  "qualification_snapshot_sha256": "d3353a3766bb149ebdb4492c596457e2d6894d42ecf5657736a57a4adc61e10b",
+  "qualified_tasks": [
+    "lift_pot",
+    "hanging_mug",
+    "stack_bowls_three",
+    "scan_object",
+    "handover_block",
+    "adjust_bottle",
+    "click_bell",
+    "open_microwave",
+    "stack_blocks_three",
+    "put_object_cabinet",
+    "place_shoe"
+  ],
+  "source_pins_reverified": true,
+  "no_unfinished_episode_directories": true,
+  "not_launched": true
+}
