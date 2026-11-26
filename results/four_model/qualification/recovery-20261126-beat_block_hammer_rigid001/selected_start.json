@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "020_hammer/base0",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Grab the hammer with black handle and beat the block.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/beat_block_hammer/frames/frame-000000.pt",
+      "observation_sha256": "ab8c5788be5704ad39bd354c8bfdef03d2e7a8dc7f8364643fd44a40e3a54984",
+      "physics_sha256": "62841d926d810d833f9e042c94d555e5449fb9738067d73a75f4fbcd6d55e604",
+      "rng_sha256": "ffe94af484b84b20a8a48abf369d4357add8ee03901cee8b6585ccf09de2f196",
+      "task_state_sha256": "264fe266afbcd4efce7b954478d36fd00488fdb149d436fc30cc601ff2da8bf5",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Grab the hammer with black handle and beat the block."
+      }
+    }
+  }
+}
