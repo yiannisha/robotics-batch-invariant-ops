@@ -61,7 +61,8 @@ def main():
             records.append(dict(path=str(path),sha256=sha(path),condition=key[0],policy_call=key[1],prepared_input_identity=identity))
     counts={e['condition']:sum(fingerprint(c['model_inputs']) in known for c in e['calls']) for e in episodes}
     report=dict(status='historical_pilot_request_tensors_independently_matched_to_archived_signatures',
-        historical_pilot_sha256=pilot_sha,recovered_request_files=len(records),unique_tensor_requests=len(known),
+        historical_pilot_sha256=pilot_sha,recovered_request_files=len({r['path'] for r in records}),
+        reconstructed_call_records=len(records),unique_tensor_requests=len(known),
         covered_historical_call_occurrences=sum(counts.values()),historical_call_occurrences=len(old),coverage_by_condition=counts,
         complete_this_pilot_input_coverage=sum(counts.values())==len(old),request_files=records,raw_files_sha256=bindings,
         auditor_sha256=sha(Path(__file__)),complete_historical_exposure_coverage=False)

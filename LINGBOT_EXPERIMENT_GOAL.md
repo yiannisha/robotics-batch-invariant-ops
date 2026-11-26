@@ -170,3 +170,19 @@ accepted. The paired runner/auditor also validates this visual state extension.
 and the repaired `stamp_seal`. The stamp report independently verifies all
 1,203 rigid-state frames and 1,203 render-only Entity records across three
 400-control replays. This is reset/replay evidence, not a paired model result.
+
+`rigid_qualified_union006` adds `scan_object` and `stack_bowls_two`, bringing the
+stronger accepted count to eight tasks. The corrected source-corpus snapshot
+audit 005 verifies 29 completed episodes, 10,001 raw frames, 213 policy calls and
+142 selected inputs. Collection continues toward 200 episodes; paired stability
+has not been measured on this recovered runtime.
+
+Model-free reconstruction recovered six distinct historical pilot requests,
+independently matching every tensor's dtype, shape and byte SHA-256 to the
+archived evidence. These cover all 24 calls in `lingbot-closed-loop-pilot-001`;
+raw request files and independent audits are retained in
+`historical_recovery/20261126-pilot001`. Other historical categories, including
+the 1,172 source-corpus request records, remain unresolved. This partial history
+recovery is not a final freshness seal and does not gate the primary paired
+launch. Numerical qualification, full reset coverage and the full input corpus
+still precede that launch; ancillary timing does not.
