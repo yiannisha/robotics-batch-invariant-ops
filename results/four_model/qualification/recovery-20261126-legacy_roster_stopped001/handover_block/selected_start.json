@@ -1,0 +1,28 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {}
+    },
+    "instruction": "Grab the red block using the left arm.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/handover_block/frames/frame-000000.pt",
+      "observation_sha256": "78b7fb9399f85c3235700fb3314bb0e988341d1768fbe3adb2af04143757a76f",
+      "physics_sha256": "3104d41eacd0ecc80ffad8dda4a1ee740f14249d7ffdc7cd86b720a741d63d61",
+      "rng_sha256": "4782e286ec429535e3e66ed5dd4c964d40844f2bbda7539a6d103b4dd49b1be1",
+      "task_state_sha256": "edab612ffd580c5f035ee0ff616d719d10c703ab73e2d0a9f9454fdbddc43a58",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 800,
+        "eval_success": false,
+        "instruction": "Grab the red block using the left arm."
+      }
+    }
+  }
+}

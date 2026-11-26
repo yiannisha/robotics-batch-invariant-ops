@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "041_shoe/base5",
+        "{a}": "right"
+      }
+    },
+    "instruction": "Grab the brown footwear with smooth texture and set it on the mat",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/place_shoe/frames/frame-000000.pt",
+      "observation_sha256": "a5581fad8e1a4dfe38dadc9d88ceb14644b62c295b8697f24a06480865266af6",
+      "physics_sha256": "38159fb987702482f2b975675a7e56be0c27158bd65e02e08eddb159f378cbba",
+      "rng_sha256": "6f497088342502848a48ef62ad41c0edde8021515c4d85c523032fc0894f77f7",
+      "task_state_sha256": "19451eb9e42bd42484395ff6c98f8c62388ba108a4427a8b8adfdf4d9312e6e9",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 500,
+        "eval_success": false,
+        "instruction": "Grab the brown footwear with smooth texture and set it on the mat"
+      }
+    }
+  }
+}

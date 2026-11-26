@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "018_microphone/base5",
+        "{a}": "right",
+        "{b}": "left"
+      }
+    },
+    "instruction": "Pick up the black and white plastic microphone and hand it over",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/handover_mic/frames/frame-000000.pt",
+      "observation_sha256": "703c66ec2db84cd7ede46c1e295882800f09b8f3ebd982291349cc02a7031d22",
+      "physics_sha256": "ba698ac5e0fd4bf6ee1df8cbfc98f059ace70493aeba2f638e6b20350cfe190b",
+      "rng_sha256": "654586d27f6a144b8608326623d7e9288675d629fe4e544a160c89c7fc3a71ac",
+      "task_state_sha256": "3068957868c3a18404970d3d8e2671e8841a3cffbbe91a33d12d1a863da4e48b",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 600,
+        "eval_success": false,
+        "instruction": "Pick up the black and white plastic microphone and hand it over"
+      }
+    }
+  }
+}

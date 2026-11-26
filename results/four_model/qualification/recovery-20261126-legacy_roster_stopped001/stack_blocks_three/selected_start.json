@@ -1,0 +1,35 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "red block",
+        "{B}": "green block",
+        "{C}": "blue block",
+        "{a}": "left",
+        "{b}": "right",
+        "{c}": "left"
+      }
+    },
+    "instruction": "Move red block, green block, and blue block to the center, then stack blue block on green block, and green block on red block.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/stack_blocks_three/frames/frame-000000.pt",
+      "observation_sha256": "18c92ef51e1cc08eebb65c40746d7638d94ceeb572f5e466e388d941e2c8a2ad",
+      "physics_sha256": "8ef1b68d623734d0e6a9896b3121748571a55b007e9069ed9da5dca471676ed1",
+      "rng_sha256": "01d261957b7d31997ea7e559b2128d9c6ff5a6954664789824ff9647843c36bc",
+      "task_state_sha256": "8c7020c24c199d558968350bbc5e5a08ebc3833ce1738b9a9e4570262d624f40",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 1200,
+        "eval_success": false,
+        "instruction": "Move red block, green block, and blue block to the center, then stack blue block on green block, and green block on red block."
+      }
+    }
+  }
+}

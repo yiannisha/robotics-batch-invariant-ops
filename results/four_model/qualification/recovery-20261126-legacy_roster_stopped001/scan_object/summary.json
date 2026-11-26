@@ -1,0 +1,9 @@
+{
+  "scope": "released_seed_fixed_action_complete_replay_qualification",
+  "seed": 100002,
+  "repeats": 3,
+  "complete_fixed_action_replays_exact": true,
+  "cpu_cuda_rng_included": true,
+  "model_evaluated": false,
+  "paired_success_rate_campaign_complete": false
+}

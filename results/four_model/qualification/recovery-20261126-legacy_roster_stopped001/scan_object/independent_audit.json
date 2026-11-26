@@ -1,0 +1,15 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "scan_object",
+  "seed": 100002,
+  "repeats": 3,
+  "controls_per_repeat": 500,
+  "raw_frames_verified": 1503,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1503,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "b9e8bb0eaf913f94bfe2e6462cf28f33b79e0457b1e0ab4c8b7463e7ec338a7a",
+  "auditor_sha256": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0"
+}

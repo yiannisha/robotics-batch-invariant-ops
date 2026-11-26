@@ -1,0 +1,33 @@
+{
+  "seed": 100002,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "112_tea-box/base2",
+        "{B}": "024_scanner/base4",
+        "{a}": "right",
+        "{b}": "left"
+      }
+    },
+    "instruction": "Take the trigger scanner, pick the black tea-box with golden details, and use the scanner to perform the scan.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/scan_object/frames/frame-000000.pt",
+      "observation_sha256": "08a2691816024c49e38cd16b8141ba05144215884c79f7500afbc9994d16a5c5",
+      "physics_sha256": "b92228906424455e97fbe5a174dfb3897efa443757f724d5450920b1cd36ea90",
+      "rng_sha256": "3fc4e9248b6da5f3aaba3061c546b522ceebb06d078c5b3c202b1900846b7581",
+      "task_state_sha256": "7062ccc0123b98cfaceae68f82a8e36f3483282a34cf7e788812b1b13105c11b",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 500,
+        "eval_success": false,
+        "instruction": "Take the trigger scanner, pick the black tea-box with golden details, and use the scanner to perform the scan."
+      }
+    }
+  }
+}

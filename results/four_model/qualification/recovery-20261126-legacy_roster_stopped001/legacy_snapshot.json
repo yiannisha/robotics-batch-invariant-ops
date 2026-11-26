@@ -1,0 +1,247 @@
+{
+  "status": "running_model_free_reset_roster",
+  "current_task": "move_pillbottle_pad",
+  "prescribed_tasks": [
+    "lift_pot",
+    "hanging_mug",
+    "stack_bowls_three",
+    "scan_object",
+    "handover_block",
+    "click_bell",
+    "put_object_cabinet",
+    "open_microwave",
+    "stack_blocks_three",
+    "place_shoe",
+    "adjust_bottle",
+    "beat_block_hammer",
+    "blocks_ranking_rgb",
+    "blocks_ranking_size",
+    "click_alarmclock",
+    "dump_bin_bigbin",
+    "grab_roller",
+    "handover_mic",
+    "move_can_pot",
+    "move_pillbottle_pad",
+    "move_playingcard_away",
+    "place_cans_plasticbox",
+    "place_container_plate",
+    "place_dual_shoes",
+    "place_empty_cup",
+    "place_fan",
+    "place_mouse_pad",
+    "place_object_basket",
+    "place_object_scale",
+    "place_object_stand",
+    "place_phone_stand",
+    "move_stapler_pad",
+    "open_laptop",
+    "pick_diverse_bottles",
+    "pick_dual_bottles",
+    "place_a2b_left",
+    "place_a2b_right",
+    "place_bread_basket",
+    "place_bread_skillet",
+    "place_burger_fries",
+    "place_can_basket",
+    "press_stapler",
+    "rotate_qrcode",
+    "shake_bottle_horizontally",
+    "shake_bottle",
+    "stack_blocks_two",
+    "stack_bowls_two",
+    "stamp_seal",
+    "turn_switch",
+    "put_bottles_dustbin"
+  ],
+  "qualified_tasks": {
+    "lift_pot": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/lift_pot",
+      "independent_audit_sha256": "69e714d02c08185769371108816e16b4a1c6222c1ccd8cf9c5bd869de4acb05a",
+      "raw_replays_sha256": "40cba0ed6d6b00b0e8fcc8f406f01b32bc94d0fa3b20ba0234d55af82b5f488b",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400
+    },
+    "hanging_mug": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/hanging_mug",
+      "independent_audit_sha256": "5edf08c1aa455a30e47d0c4f51b9233263fd3495f70379c5be031598d9a7d5bd",
+      "raw_replays_sha256": "ac97d92a00e35c23b8b9d9a1e12c37fe47ccdcb95b8f02f05354fead9ed04b9a",
+      "seed": 100000,
+      "raw_frames_verified": 2703,
+      "controls_per_repeat": 900
+    },
+    "stack_bowls_three": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/stack_bowls_three",
+      "independent_audit_sha256": "849014e5eb147671a1d0c584716660a426b7aa2dc0465a08a2a54ae21b2e0e60",
+      "raw_replays_sha256": "c39246bb6450fc54485769477e2f5f66c3a02b8692c3d907ae22f968f1f6f389",
+      "seed": 100000,
+      "raw_frames_verified": 3603,
+      "controls_per_repeat": 1200
+    },
+    "scan_object": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/scan_object",
+      "independent_audit_sha256": "d70ee1a2e0b56de3eba2e4588426ea644c7327e78758e701c6f725d225394df1",
+      "raw_replays_sha256": "b9e8bb0eaf913f94bfe2e6462cf28f33b79e0457b1e0ab4c8b7463e7ec338a7a",
+      "seed": 100002,
+      "raw_frames_verified": 1503,
+      "controls_per_repeat": 500
+    },
+    "handover_block": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/handover_block",
+      "independent_audit_sha256": "a0e720327981b873d165379ca4135e26fad68bd684de69e70e46005859a5448f",
+      "raw_replays_sha256": "65966100c0bfe234e3c2c153aebc2fb226859f16a76b6de5941024259cbd9fd7",
+      "seed": 100000,
+      "raw_frames_verified": 2403,
+      "controls_per_repeat": 800
+    },
+    "open_microwave": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/open_microwave",
+      "independent_audit_sha256": "28d5e6c8098ec3065feb6df431609f1793e66458aac3b2f061a233dcd2dbc1b4",
+      "raw_replays_sha256": "51d54fa32dab8084e869f9ed68a79d6fe1cbfc6015de30db05499c04054dd8a0",
+      "seed": 100000,
+      "raw_frames_verified": 4503,
+      "controls_per_repeat": 1500
+    },
+    "stack_blocks_three": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/stack_blocks_three",
+      "independent_audit_sha256": "cef9b2cfc59c379644daabd9b823daf8ab731aa162086e159873dbf6946bf80b",
+      "raw_replays_sha256": "d1603c973802fa47051cece8e0bfa925f871babc836aedcdc973bb9b7875bfc7",
+      "seed": 100000,
+      "raw_frames_verified": 3603,
+      "controls_per_repeat": 1200
+    },
+    "place_shoe": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/place_shoe",
+      "independent_audit_sha256": "b4fda954bc1f1a87f354c0d5883c827bd2ad286d60b7580e3c382213ebeb0419",
+      "raw_replays_sha256": "70da5c3dd4dbfea7bb74c0ca4fc8a522f0c853cbbbdcb3003f5c4576553c25ac",
+      "seed": 100000,
+      "raw_frames_verified": 1503,
+      "controls_per_repeat": 500
+    },
+    "adjust_bottle": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/benchmark_replay_adjust_bottle001",
+      "independent_audit_sha256": "3d8cc54f44c491d58e04e4358a50fe3194f4de613cb631932b0e348801c1eb4f",
+      "raw_replays_sha256": "dee19c78c51e80be408d03ef2862ebfec22831668bf3cf694f1f087deeef6ca9",
+      "seed": 100001,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400
+    },
+    "beat_block_hammer": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/beat_block_hammer",
+      "independent_audit_sha256": "9c103538585ab44c1315d73dced96d47cbc414e756b4254db73cc0a4c548ba8b",
+      "raw_replays_sha256": "c13a3140a6d88d268d4d008d2f29edc4ad5610404d9f6048451fdecf8b807138",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400
+    },
+    "blocks_ranking_rgb": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/blocks_ranking_rgb",
+      "independent_audit_sha256": "2ce1bca35b2019837a35f6461d6d5eed4f4b7a430a02fe263b3ab7f645f1be78",
+      "raw_replays_sha256": "3e3eabd94e0b90a5d53ec3ec7caad461fb59b4332551a61981d22d30b81ad799",
+      "seed": 100000,
+      "raw_frames_verified": 3603,
+      "controls_per_repeat": 1200
+    },
+    "blocks_ranking_size": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/blocks_ranking_size",
+      "independent_audit_sha256": "d068829f6381ad1a91d878e86055768800c17eb986f16f426494d896e0ecebd0",
+      "raw_replays_sha256": "ede43aed6ca4d111722e31daa588aaf4def8ccb4278e32a385b8c23e52adbf7e",
+      "seed": 100000,
+      "raw_frames_verified": 3603,
+      "controls_per_repeat": 1200
+    },
+    "grab_roller": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/grab_roller",
+      "independent_audit_sha256": "ef02d0d0aa02f867e9dfc87c657b41cdee708930214dc6e0327bdb8a8bae8ab8",
+      "raw_replays_sha256": "7780d716eaacbdc45edd354d6040407e0d8ef29a9b0e993b147be678f6a8f304",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400
+    },
+    "handover_mic": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/handover_mic",
+      "independent_audit_sha256": "cc2d5130dd437ae76aea90bfb6f01d7152a53d8d45e1e1a8b68fe4f4255ef632",
+      "raw_replays_sha256": "ad411b74d1d981489b0889576bb63cedf1f69c7ca2a60f0de9da756a185d15c7",
+      "seed": 100000,
+      "raw_frames_verified": 1803,
+      "controls_per_repeat": 600
+    },
+    "move_can_pot": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/move_can_pot",
+      "independent_audit_sha256": "f23f181ffa2a1af8c147968a8c37a31e4ec7c7387e80629a5df01eb1cb5dbe9f",
+      "raw_replays_sha256": "6920c8de7dfb70073cd72c5b5708d4b5e22f2847d3601adee011cb7fe7d9e92d",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400
+    }
+  },
+  "qualified_task_count": 15,
+  "failed_tasks": {
+    "click_bell": {
+      "error": "CalledProcessError(1, ['/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_robotwin_benchmark_replay.py', '--source', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin', '--python', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python', '--source-episodes', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl', '--output', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/click_bell', '--task', 'click_bell', '--seed-start', '100000', '--repeats', '3', '--capture-source-task-state'])",
+      "retained_directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/click_bell"
+    },
+    "put_object_cabinet": {
+      "error": "CalledProcessError(1, ['/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_robotwin_benchmark_replay.py', '--source', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin', '--python', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python', '--source-episodes', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl', '--output', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/put_object_cabinet', '--task', 'put_object_cabinet', '--seed-start', '100000', '--repeats', '3', '--capture-source-task-state'])",
+      "retained_directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/put_object_cabinet"
+    },
+    "click_alarmclock": {
+      "error": "CalledProcessError(1, ['/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_robotwin_benchmark_replay.py', '--source', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin', '--python', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python', '--source-episodes', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl', '--output', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/click_alarmclock', '--task', 'click_alarmclock', '--seed-start', '100000', '--repeats', '3', '--capture-source-task-state'])",
+      "retained_directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/click_alarmclock"
+    },
+    "dump_bin_bigbin": {
+      "error": "CalledProcessError(1, ['/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_robotwin_benchmark_replay.py', '--source', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin', '--python', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python', '--source-episodes', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl', '--output', '/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/dump_bin_bigbin', '--task', 'dump_bin_bigbin', '--seed-start', '100000', '--repeats', '3', '--capture-source-task-state'])",
+      "retained_directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/dump_bin_bigbin"
+    }
+  },
+  "missing_tasks": [
+    "click_bell",
+    "put_object_cabinet",
+    "click_alarmclock",
+    "dump_bin_bigbin",
+    "move_pillbottle_pad",
+    "move_playingcard_away",
+    "place_cans_plasticbox",
+    "place_container_plate",
+    "place_dual_shoes",
+    "place_empty_cup",
+    "place_fan",
+    "place_mouse_pad",
+    "place_object_basket",
+    "place_object_scale",
+    "place_object_stand",
+    "place_phone_stand",
+    "move_stapler_pad",
+    "open_laptop",
+    "pick_diverse_bottles",
+    "pick_dual_bottles",
+    "place_a2b_left",
+    "place_a2b_right",
+    "place_bread_basket",
+    "place_bread_skillet",
+    "place_burger_fries",
+    "place_can_basket",
+    "press_stapler",
+    "rotate_qrcode",
+    "shake_bottle_horizontally",
+    "shake_bottle",
+    "stack_blocks_two",
+    "stack_bowls_two",
+    "stamp_seal",
+    "turn_switch",
+    "put_bottles_dustbin"
+  ],
+  "full_released_roster_qualified": false,
+  "helper_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/robotwin_exact_worker.py": "c9cc3439945bee945312e32ed0de2e26aae99176e595e45fded6232afde9dcd4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/robotwin_task_state.py": "d713e96a631a090ea0b3bdae7723d5ffc615aeadbd5d6b6a4abf02beca85465a",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/probe_robotwin_exact_initialization.py": "6503ee27d8aba7afd304fa612229c0973914c104e1af0883f12e03ca5fe978c1",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/audit_robotwin_benchmark_replay.py": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0"
+  },
+  "source_episode_sha256": "83b0d3ad35bc9df2c2c9fb9d647998194b1678e0c52dd0ad77b1cad7f5181e31",
+  "scope": "Three full fixed-action replays per task; model-free reset qualification.",
+  "model_evaluated": false,
+  "full_model_campaign_complete": false
+}

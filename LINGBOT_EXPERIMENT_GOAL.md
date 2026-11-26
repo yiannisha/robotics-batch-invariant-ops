@@ -144,3 +144,8 @@ bound episode auditor now require the stronger qualification report and check
 the rigid-body schema and Entity bindings on every retained frame. Forty-seven
 relevant tests pass, including rejection of legacy and partial attestations.
 At this checkpoint no task has completed the stronger independent replay audit.
+The superseded legacy roster job was stopped with all outputs retained; its
+terminal receipt and 15 completed legacy reports are archived under
+`qualification/recovery-20261126-legacy_roster_stopped001`. The source collector
+and both stronger replay jobs continue. No old physics acceptance is promoted
+to the stronger contract.

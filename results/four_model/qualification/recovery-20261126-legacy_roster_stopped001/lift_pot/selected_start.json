@@ -1,0 +1,30 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "060_kitchenpot/base0"
+      }
+    },
+    "instruction": "Hold the gray kitchenpot with rounded edges firmly and lift it",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/lift_pot/frames/frame-000000.pt",
+      "observation_sha256": "828ef218771e2f6c23b2cdd6036cd919e25d59bca9eb608e758d449fbe1f526c",
+      "physics_sha256": "b24378fadfefd4dee42286aaeab6225c68b1babbbb56b704dd16a7c086546b24",
+      "rng_sha256": "48212f52c573a57fa84a2d62c089026d8ac4a5722d9de6f7e91c5506fb1acc04",
+      "task_state_sha256": "9475c854f40ac10eb7701057b60adcca7bcd4138be888dc82a3c35ee89f3d35b",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Hold the gray kitchenpot with rounded edges firmly and lift it"
+      }
+    }
+  }
+}

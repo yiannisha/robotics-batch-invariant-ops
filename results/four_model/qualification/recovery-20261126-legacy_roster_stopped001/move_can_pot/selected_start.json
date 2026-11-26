@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "060_kitchenpot/base2",
+        "{B}": "105_sauce-can/base4",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Pick up the metal body sauce can and move it near the kitchenpot for stovetop boiling",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/move_can_pot/frames/frame-000000.pt",
+      "observation_sha256": "a60102dd7a287daa9b473b509a5abf5c18993c9f01c0c5cbd91c1b7fcba1ebbc",
+      "physics_sha256": "2ce7517d0e63f1d28c4726daa44d552d101ace46efe6563effc8c1a2e62eaf92",
+      "rng_sha256": "ef5e08a82941153539ef6da5a2611734b9e75d0e67065b8206407cb148ad9720",
+      "task_state_sha256": "11bba6c04bd19c61e9747a92d2589e1e3c09aa233478bb8a10f499b87c9502d4",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Pick up the metal body sauce can and move it near the kitchenpot for stovetop boiling"
+      }
+    }
+  }
+}

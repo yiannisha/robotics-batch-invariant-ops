@@ -1,0 +1,30 @@
+{
+  "status": "legacy_pose_only_roster_stopped_after_capture_contract_superseded",
+  "observed_utc": "2026-11-26T22:48:45.884223+00:00",
+  "terminated_owned_processes": [
+    {
+      "pid": 148415,
+      "start_ticks": "50940815",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_robotwin_benchmark_replay.py --source /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin --python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python --source-episodes /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl --output /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/move_pillbottle_pad --task move_pillbottle_pad --seed-start 100000 --repeats 3 --capture-source-task-state "
+    },
+    {
+      "pid": 148519,
+      "start_ticks": "50940821",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/robotwin_exact_worker.py --source /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin --output /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/move_pillbottle_pad/frames --capture-cuda-rng --capture-source-task-state "
+    },
+    {
+      "pid": 2460614,
+      "start_ticks": "50431580",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python /home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/qualify_lingbot_robotwin_reset_roster.py --source /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin --python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python --source-episodes /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl --task-roster /home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/robotwin_reset_qualification_union.json --output /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001 --reuse-adjust-bottle /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/benchmark_replay_adjust_bottle001 "
+    }
+  ],
+  "last_task": "move_pillbottle_pad",
+  "completed_legacy_reports": 15,
+  "snapshot": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/task_roster001_stopped_snapshot.json",
+  "snapshot_sha256": "91dbff5bad8b0fb4530d3b6e28f6f2fe163010a67ef9044d55ef2811855deff3",
+  "retained_directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001",
+  "no_raw_data_removed": true,
+  "stronger_roster_pid": 132236,
+  "source_collector_pid": 3804242,
+  "full_model_campaign_complete": false
+}
