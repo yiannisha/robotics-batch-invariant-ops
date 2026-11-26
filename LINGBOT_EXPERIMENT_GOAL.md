@@ -149,3 +149,9 @@ terminal receipt and 15 completed legacy reports are archived under
 `qualification/recovery-20261126-legacy_roster_stopped001`. The source collector
 and both stronger replay jobs continue. No old physics acceptance is promoted
 to the stronger contract.
+
+The first stronger merged union (`rigid_qualified_union001`) now accepts two
+tasks: `lift_pot` and `dump_bin_bigbin`. The dump-bin report verifies 1,803 full
+rigid-state frames across three 600-control replays, 3,606 Action records and
+9,015 Entity-to-physics bindings. The stronger all-task roster continues; these
+two task reports do not establish full-roster or paired model completion.

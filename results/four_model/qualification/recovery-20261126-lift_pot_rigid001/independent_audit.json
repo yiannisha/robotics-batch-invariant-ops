@@ -1,0 +1,21 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "lift_pot",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 400,
+  "raw_frames_verified": 1203,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1203,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "task_action_records_verified": 0,
+  "action_source_sha256": {},
+  "rigid_body_state_frames_verified": 1203,
+  "entity_references_bound_to_physics": 0,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "6d7b4a8e69c936c74e2e3bacd4906574acd85c85ef66a6c0b13d0aa2a5c1866b",
+  "auditor_sha256": "f3debfceb00ae1c527a52b5dba215418451d753436abf8a1c3e98571497b0b7f"
+}
