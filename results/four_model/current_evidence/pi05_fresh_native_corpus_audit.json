@@ -1,0 +1,421 @@
+{
+  "status": "complete_corpus_independently_verified",
+  "source_manifest_sha256": "4793fb44bf4882349dde8fea76ab4c5e452258513227ec8e2b0a22bbb8fa5fb6",
+  "raw_frames_verified": 29228,
+  "native_source_inputs_rebuilt": 632,
+  "heldout_prepared_input_disjointness_pending": true,
+  "episodes": 100,
+  "observations": 1000,
+  "request_noise_pairs": 3000,
+  "splits": {
+    "diagnostic": 200,
+    "heldout": 800
+  },
+  "exact_reconstructed_preprocessed_inputs": 1000,
+  "all_raw_rgb_state_and_noise_hashes_verified": true,
+  "source_episodes": [
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-00/episode.json",
+      "sha256": "765e02aa3d66c795ab7b5b5c689590dac65cb9d16d392abd190ba3834952567a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-01/episode.json",
+      "sha256": "5cd5b5a2776451c44d22dacbcdff670cc4632a576f37708386bb7edd2bf30667"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-02/episode.json",
+      "sha256": "f4827fbb0b53246fba9a6ae7b65050503eeaafb0497bbb8b43074952a5fdc678"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-03/episode.json",
+      "sha256": "c7c73fb6e11084f502b8aa5a5fc080ebb17fc3e655d0db0cfa35856b23263515"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-04/episode.json",
+      "sha256": "c284785070ff864a1977e430f036c276f5e04ea663b8b9a61fc3b7aa12fc04f7"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-05/episode.json",
+      "sha256": "c555d1ac5fe554cf707a5bc9e63e0499dbcd663e8c61559e519489546d9cf678"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-06/episode.json",
+      "sha256": "5765f7a61bbd6ed6b6f7acf161c2f79c7e6e303b2f31a347f03697bb5dabac9e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-07/episode.json",
+      "sha256": "17ba8cd24b95da9e68349d0e5b61104d4728aa3671d175f6f623c3c6df8b2038"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-08/episode.json",
+      "sha256": "2d40a8cd68e35cd4d02e7004fc0df96c21c99b651d9dd028d788243144304ab4"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-00/episode-09/episode.json",
+      "sha256": "993d4175407f619089a232df5456822ea22e9f407306e4ecb6f046a75c8622c5"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-00/episode.json",
+      "sha256": "3c5541ce507be1aa76ac9bf0006f73cbe49782aff8b452a7d4a7b9798043773e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-01/episode.json",
+      "sha256": "b2dbe7b7ce6054196a68fb6f5cef1c37e0befa8196c514b308ca61dbd61c6b82"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-02/episode.json",
+      "sha256": "7bc026ad62ace25955a5323d17497faef977fd33570b2b827fb80a62f39fab48"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-03/episode.json",
+      "sha256": "449bbf4cf66a8dc5389bcedec739bae2a00265d6206bc9acbe469eb2ae1032ba"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-04/episode.json",
+      "sha256": "2431d54a8ecdd9501924d4d5b32037a39130c90f123d5ab99c8d4c7c352f8c98"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-05/episode.json",
+      "sha256": "a4719f6b4ccfdf98c28f6de792fb27da777805d134d32c471e35e14102a7989f"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-06/episode.json",
+      "sha256": "d6672d1030c7b9a1cf34b3bf137e77ffacc9d8464561d24aa8d59d697e971e28"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-07/episode.json",
+      "sha256": "60d793c7586c131b77e508aedd066ef42225dd9e9f78b40bacef67e95939ac6c"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-08/episode.json",
+      "sha256": "551488a3ab11b89422db5787b042ea32d45b1f78525ccd1ab4f9ea4d99d08323"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-01/episode-09/episode.json",
+      "sha256": "0cff93e11cb5b1c9834f069d0e7ed21581ec4cc39acac77fd2c9a8a27909c421"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-00/episode.json",
+      "sha256": "525acf668e7fe3bfa26101d22c7a6bbd2a3db574caf3d7c42a25e2dd34f32a5c"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-01/episode.json",
+      "sha256": "4820f731175da174405c59567fe18856a67dcdcaca7fd5e0c832729b3cea8ec9"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-02/episode.json",
+      "sha256": "930168561ad74afaf08d91b00ec6f8bed1941d42c120df5df74918e687c5808a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-03/episode.json",
+      "sha256": "777a6a3acd141dbb8d9f366d26bf35a931966af84721b7b53d6824966f360e8f"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-04/episode.json",
+      "sha256": "d0f525e76e316a18a314bb3dcef20b273b3c826815b7057fe1db5b5a8258d196"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-05/episode.json",
+      "sha256": "9102ed46de11354e55a3ca4b3489269d1e13c14bc7011e23f732a2518588f5e3"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-06/episode.json",
+      "sha256": "21e204ee854a6fe528540a246e259bc8032aa0434b1f82d95adf9b39644493a2"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-07/episode.json",
+      "sha256": "657c0a8ad5b952f20377d369ab8407d362c5cb60c18ce460cdab2212721f0ce2"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-08/episode.json",
+      "sha256": "90928e0d77ad156974f6ed0d29b780914bc439aa858679393e25cf576d76832b"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-02/episode-09/episode.json",
+      "sha256": "65c55697cf33da3f77b4cfc67dd53d3a3896edb7b5cebde62e0abbe8e701e551"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-00/episode.json",
+      "sha256": "bb213a35646214c5d54e3e3e95c18e920cc1b7b58902f51ba7105d9c7ced022b"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-01/episode.json",
+      "sha256": "65778918a3c0d856be5fb48161f031053d876bb75ca38d51648fdccd0f1b2d7e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-02/episode.json",
+      "sha256": "7c003a6678840e1fe74ba7e6977147a93ad93511c9a84ba214976ff207a7128e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-03/episode.json",
+      "sha256": "5e5c185488139f4ec1a1f0488d55133c52fdf6cc76baa3575763729803a9ab38"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-04/episode.json",
+      "sha256": "010c42d3366b9eac7c8ea8fc66f096f5c3dcf3c8821950731155f896bc776b6a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-05/episode.json",
+      "sha256": "03fbaa6fae1deb6c529795375cda7052053df22f720a28c84361b76a0763f884"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-06/episode.json",
+      "sha256": "03e07c09a25c2fbb744a6936605a8eaa5de3117ad2d19a2b4e2d28dc6e05856b"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-07/episode.json",
+      "sha256": "a39cff6469b3929e46b27fabe47a5be4c696db65ad46d010aa738c5850d0970a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-08/episode.json",
+      "sha256": "92e6a23bb6594225142e9e861b792e155827d75699e4f7569f73cb6a41493f82"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-03/episode-09/episode.json",
+      "sha256": "602185f1a2f3c7c791e14f9e1beb626ee3da0303812f273e093f8865d1019be5"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-00/episode.json",
+      "sha256": "8952828fb23963c6d54bbcb7caa48f5bf8bf146d740cef7c09981e4bdcf434b4"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-01/episode.json",
+      "sha256": "ddb4017357fc5d8b298d5cad679d2c3b4ff4522ef45548a960e70f673d95fcba"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-02/episode.json",
+      "sha256": "9625a606520b01ddc20745a0e6ed6d0f3fb7e02cf27f2d1d1a8044ffbdc85936"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-03/episode.json",
+      "sha256": "5948defde05910b8922a7486a5e4e7fd48645f35111a598e8830f7a372bb85cb"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-04/episode.json",
+      "sha256": "9fbf0aefb28c4bc2e5fd21e65e8f99eee1942d6832eed23a1875901aa97601ad"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-05/episode.json",
+      "sha256": "a1104a7721eb97b001aac5e44f49bf93db5ed41cff7ac37e2120474151cb86ed"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-06/episode.json",
+      "sha256": "ad99c2be4f43bb1a166a847045861746fdb1262b1ca8cfca659952344f1d6816"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-07/episode.json",
+      "sha256": "1df956c6b36f8e7fd2b34e6c7efd5a9a65f3f8e3139504d93b89bddbadb5c9c4"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-08/episode.json",
+      "sha256": "994b315007b8f48be324683adee587e3dc4c11d383c4db47f48434875541d7e9"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-04/episode-09/episode.json",
+      "sha256": "96f97615e11daec85f16aea7eb009fe582867a798d6131e3f2d9928ac461d139"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-00/episode.json",
+      "sha256": "28ff967053dae4366eb35c919e837b8956a3809f887df2d1031556cb8b62412a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-01/episode.json",
+      "sha256": "86c43d66b95da578baa8b44e111091169c0555a9e57c1203b69e299bf75740e3"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-02/episode.json",
+      "sha256": "c5753470ad3aad684b58f4489912b4a738bfd3899985ff93f419710da9fa4a6e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-03/episode.json",
+      "sha256": "a12077418af3125e20a482257df9d2370b93ac5243fbedcf12317648cf7735fa"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-04/episode.json",
+      "sha256": "bf8d0b82b03680b7e2012afa03c0394e2fa6846a3bf6a1833a342ac62140f9f5"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-05/episode.json",
+      "sha256": "9b0b6b9e87a089d82d80a5eb90e118cdf577703489ba3ca4be89c3194d61cb4b"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-06/episode.json",
+      "sha256": "cce6040ee3f1aacea99486886c0ab33d9a7e87e310f509ea418bab07e4a9a6e4"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-07/episode.json",
+      "sha256": "a894d0ed1d9a4eee95004faefa7069b9748d5b4252f883bc6a6e24c86bdf3eb7"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-08/episode.json",
+      "sha256": "23efca72ae53672c059e14be0ca98661101220b53b29d8b515c6ccfceed3b43c"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-05/episode-09/episode.json",
+      "sha256": "e857c7ff5f700e7039a5216b5725d67269c3de39d47de93b25f46dfd4bf681ea"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-00/episode.json",
+      "sha256": "f960fb913e15cf8efda2763e423e8c4e99eee44eaea9d4b0c0bf88edf3a25da9"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-01/episode.json",
+      "sha256": "bd30e01732726e13905d5afdb41def39909e4d44e73806e99a0457c9b2bc0abb"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-02/episode.json",
+      "sha256": "2be0cf915d02f52a83a06d46c12a611a513565c20f719bd6aaf7e81365b7a500"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-03/episode.json",
+      "sha256": "bb84c60ea066e70d4c4b7e69ed05a05aaef09ce2e24afc0f4d1bb2b80c90fa9a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-04/episode.json",
+      "sha256": "116a8984afab5f10fd254757811edce0fc6ac5d9872b58ca9c83c3dbab6d2730"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-05/episode.json",
+      "sha256": "94b77876bb3f17d651f7ebc11041311a5de56ab3bf4e79b012fa38abe2c1f2f7"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-06/episode.json",
+      "sha256": "59d2d38c19bd3a55dc7e7ce4c11f274e928e2e4fd3e7675530f5538fa6848bfc"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-07/episode.json",
+      "sha256": "2473124aa9510a9f40f7295b8bec901f0471b45c6f6275f5ed3012850eab6867"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-08/episode.json",
+      "sha256": "5307cc9b7751e6afdd72ce6c2eb27556c528f48a95dd0ecda6eebc8eba45e06a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-06/episode-09/episode.json",
+      "sha256": "cb413b7a267efffd5e713dbbc1c5e039e6826f39517c0086e945482738af84d4"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-00/episode.json",
+      "sha256": "2f62d37187cf23b84e324bb539a595b1881956f902dd34489cfdcc18f0aea112"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-01/episode.json",
+      "sha256": "934fae5b19b3dbce1dac991db49894d0cd425a418863e394ceb06af32665ce5c"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-02/episode.json",
+      "sha256": "358cd2fa0a1db371779f1c00a4f25dfdcd7d0dffa9929006831d369442ec2ea2"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-03/episode.json",
+      "sha256": "2f43a682c4508c9a9a21833f102424cf4bcd4c7696d0f8586e227ddf537d5ef5"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-04/episode.json",
+      "sha256": "035dd4d47e6170ee0a6864b5ff0e7ba1560170bd7264fdd2a4bbf41be6798377"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-05/episode.json",
+      "sha256": "ab11ad35aac23d0133930c6aab8a34915da134a83373a89aa6ce9d7a97153b6c"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-06/episode.json",
+      "sha256": "1eaef951ccea339088630f03379abe1bf1b49a694c8621d35674a2c3cc019a61"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-07/episode.json",
+      "sha256": "6606b9a8c9a075591a064aded8891d45fbd9e6788a2437d3c72cfdb4b9c43835"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-08/episode.json",
+      "sha256": "3c0c18f9e13aab0d36fd670fd16d81c2a2e511fda513f7699ac31cf1fd6e7ded"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-07/episode-09/episode.json",
+      "sha256": "a87872471dbeff304b7d45ff815d38e1d2b9ff1a1e0ef54b1ef1fd577ad4aeea"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-00/episode.json",
+      "sha256": "80103419c225e201791c79b2fa19c4115a811d40d8efb082cf2bd8ae8331af90"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-01/episode.json",
+      "sha256": "86de54e29b31f951c161e40924b7f6ba929375dbb6dcc34caf5945e7cef68c46"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-02/episode.json",
+      "sha256": "33b0fa71209cdb6730f96ddb89ba1b4d5c804e63dd2f9e74eeacb3cc6799e312"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-03/episode.json",
+      "sha256": "37e52d1c8553e4a209b2191004cfc1fd22f8a26c5cef5857ab9937dc747bad91"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-04/episode.json",
+      "sha256": "af00f4bacabcaf967dc828fe9967336b8ec50727a1582189b7947f6bb7b493da"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-05/episode.json",
+      "sha256": "d16957261aec30c66340e8d6cb74d4ac87ce2d456120dbc0d0618c7fc10622d1"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-06/episode.json",
+      "sha256": "48c062c9f64e2beefa65b9f364292bb82859430eb870c042b1f23053aa138d9c"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-07/episode.json",
+      "sha256": "04094627c63b31700bbb5377345d39d1452d079b7534b0ee080f7b71721e13e2"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-08/episode.json",
+      "sha256": "88c2f9820a7f0359710776018beb37912246850b7adba45c60efd13834bff11b"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-08/episode-09/episode.json",
+      "sha256": "d14834a5c00204038430c7a58662b583e323f8f89dd70cd96c6dcfd33d460086"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-00/episode.json",
+      "sha256": "e0f105169146689a81452252207073854bbacb467a5c3148dd8c3881b5228750"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-01/episode.json",
+      "sha256": "f8d5fc9c3a2c3182f94ec1b9f034330cfb1aee552e6869c3ce8f0d9eac7f51ba"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-02/episode.json",
+      "sha256": "2a265acf451f8a72347f3d483fb27f54e7e9e6401b8c081072280a9184b684e7"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-03/episode.json",
+      "sha256": "b5ed430933f22330bd3660dcb15b0e30ebd4c575615c4ce27345696553cf8cef"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-04/episode.json",
+      "sha256": "66ea0d70e2014264341b17b66e7d64a80377cf4999816c370e5a4fbe9b946fa8"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-05/episode.json",
+      "sha256": "943f1faa825ead665a339e7de43dc63165e45ab4ea5d5dca4569589e259eed14"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-06/episode.json",
+      "sha256": "b005a589f99cbf694c4d168590cae77cea163779760cd8be4f1311ddbb92040f"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-07/episode.json",
+      "sha256": "228b4df1a0ee76ba3a4bc3f1c63fb6d7bcabd8c7310e4bb35d018d1e237ec0e4"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-08/episode.json",
+      "sha256": "5c80bdf964e23b53b17f6a6666e92eba144dec0b34151bc6ee8f56bb43007fca"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/task-09/episode-09/episode.json",
+      "sha256": "6fcb3ccba5a52c13548b6285c47a584815e0b065b89902ffb47e8ba5b6897e25"
+    }
+  ],
+  "auditor_sha256": "bf402dbc5edb082b2c7e4911afce8dced7fd387ce531fd70817a3c5c47f6303f",
+  "numerical_inference_qualified": false,
+  "closed_loop_complete": false
+}

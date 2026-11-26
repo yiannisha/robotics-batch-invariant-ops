@@ -1,0 +1,82 @@
+{
+  "scope": "snapshot_real_input_numerical_probe",
+  "model": "cogact_small",
+  "observations": [
+    {
+      "task": "pick_can",
+      "snapshot": {
+        "sim_state_sha256": "3597f4b0276641e941ea2218c43b14fcc47434a2e43fbf72b5a9b44692c9686d",
+        "observation_sha256": "176b55593c3e278c6cfc1234d0497f5c077a51a1a9d0277a809900f63225e9ad"
+      },
+      "restore_checks": {
+        "sim_state": true,
+        "agent_state": true,
+        "task_state": true,
+        "elapsed_steps": true,
+        "main_rng": true,
+        "episode_rng": true,
+        "numpy_rng": true,
+        "python_rng": true,
+        "observation": true,
+        "instruction": true
+      },
+      "observation_sha256": "ef9e2d6d758fab63e50138090edd1252ed080b5c1faa35fdf6116672a8ee1c26",
+      "instruction": "pick coke can"
+    },
+    {
+      "task": "move_near",
+      "snapshot": {
+        "sim_state_sha256": "b3eeae9f743fd0839eb16202121ae216306e96caa309144cb6f1cedeb0fe4722",
+        "observation_sha256": "0f212d8b1100c4ec99d969bc40825f2c551ddd590c380be8db7f5ea814931c27"
+      },
+      "restore_checks": {
+        "sim_state": true,
+        "agent_state": true,
+        "task_state": true,
+        "elapsed_steps": true,
+        "main_rng": true,
+        "episode_rng": true,
+        "numpy_rng": true,
+        "python_rng": true,
+        "observation": true,
+        "instruction": true
+      },
+      "observation_sha256": "206bbf43354c8f313bad32747d3561de6f14e108a9e44e55ed7e6094b3eda242",
+      "instruction": "move blue plastic bottle near pepsi can"
+    },
+    {
+      "task": "open_drawer",
+      "snapshot": {
+        "sim_state_sha256": "74375b66901ef96f8d2227115448bc87f72a8d9f673e46b8b56d0689c7bd05da",
+        "observation_sha256": "de1d90f58967511472bc372c691b0fe9f7109dfd07fe965943bab83c4019d0b0"
+      },
+      "restore_checks": {
+        "sim_state": true,
+        "agent_state": true,
+        "task_state": true,
+        "elapsed_steps": true,
+        "main_rng": true,
+        "episode_rng": true,
+        "numpy_rng": true,
+        "python_rng": true,
+        "observation": true,
+        "instruction": true
+      },
+      "observation_sha256": "c9a5f91cedbe83d127eb7a7aff5006778fb617b45afe55fd2f2e7ce2dd623b02",
+      "instruction": "open bottom drawer"
+    }
+  ],
+  "canonical_language_tokens": 26,
+  "execution_configuration": {
+    "native_language_padding": "longest_in_batch_right",
+    "invariant_language_padding": "canonical_right",
+    "canonical_language_tokens": 26,
+    "prompt_builder": "PurePromptBuilder",
+    "cfg_scale": 1.5,
+    "ddim_steps": 10
+  },
+  "adapter_sha256": "c072c41ce01562fe553261c454587281e0f3f7f3b453de87301c194e06384728",
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "success_rate_campaign_complete": false
+}

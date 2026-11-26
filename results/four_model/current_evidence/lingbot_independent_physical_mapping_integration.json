@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "source_episodes_sha256": "de88ec10a3454e8fcfb13a6cf957849c0ac8d1dd7391d8efe6de7241363e7e1a",
+  "physical_action_shape": [
+    50,
+    14
+  ],
+  "corrupted_mapping_rejected": true,
+  "neural_inference": false,
+  "scope": "One retained pilot call; full new paired auditor integration remains pending"
+}

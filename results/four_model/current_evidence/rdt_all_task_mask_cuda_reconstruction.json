@@ -1,0 +1,128 @@
+{
+  "status": "actual_cuda_source_mask_shape_stride_and_bytes_reconstruction_passed",
+  "configuration_sha256": "117ec328c44f4a395ceb9038c293b0a364c64b64408865a7827bc209bc5ceb54",
+  "checked": [
+    {
+      "configuration": "rdt_source_language_mask_valid25",
+      "batch_size": 1
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid25",
+      "batch_size": 2
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid25",
+      "batch_size": 8
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid25",
+      "batch_size": 33
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid25",
+      "batch_size": 64
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid20",
+      "batch_size": 1
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid20",
+      "batch_size": 2
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid20",
+      "batch_size": 8
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid20",
+      "batch_size": 33
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid20",
+      "batch_size": 64
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid30",
+      "batch_size": 1
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid30",
+      "batch_size": 2
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid30",
+      "batch_size": 8
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid30",
+      "batch_size": 33
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid30",
+      "batch_size": 64
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid24",
+      "batch_size": 1
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid24",
+      "batch_size": 2
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid24",
+      "batch_size": 8
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid24",
+      "batch_size": 33
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid24",
+      "batch_size": 64
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid18",
+      "batch_size": 1
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid18",
+      "batch_size": 2
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid18",
+      "batch_size": 8
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid18",
+      "batch_size": 33
+    },
+    {
+      "configuration": "rdt_source_language_mask_valid18",
+      "batch_size": 64
+    },
+    {
+      "configuration": "rdt_source_language_mask_mixed_all_tasks",
+      "batch_size": 1
+    },
+    {
+      "configuration": "rdt_source_language_mask_mixed_all_tasks",
+      "batch_size": 2
+    },
+    {
+      "configuration": "rdt_source_language_mask_mixed_all_tasks",
+      "batch_size": 8
+    },
+    {
+      "configuration": "rdt_source_language_mask_mixed_all_tasks",
+      "batch_size": 33
+    },
+    {
+      "configuration": "rdt_source_language_mask_mixed_all_tasks",
+      "batch_size": 64
+    }
+  ],
+  "neural_inference_performed": false,
+  "full_operator_qualification_complete": false
+}

@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-11-11T04:13:12.997852+00:00",
+  "status": "causal_stability_after_accepted_heldout_downstream_queued",
+  "jobs": {
+    "audit": {
+      "pid": 1947739,
+      "start_ticks": "439164528",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-heldout-causal-independent-audit-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-heldout-causal-independent-audit-003.py",
+      "launcher_sha256": "cb8e0a4cfdb1395b7021bf57aee7d8c581454e2fb0b226e4d232fc6fb080ab22"
+    },
+    "local": {
+      "pid": 1947740,
+      "start_ticks": "439164528",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-heldout-causal-local-leaf-replay-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-heldout-causal-local-leaf-replay-003.py",
+      "launcher_sha256": "be4987a148873f6e486c8ee971b50085db5a81fa0365642fd6777af86f80547b"
+    },
+    "figures": {
+      "pid": 1947741,
+      "start_ticks": "439164528",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-heldout-causal-flow-figures-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-heldout-causal-flow-figures-003.py",
+      "launcher_sha256": "02a85087160deb496ffecc023c71ad1fa498880bf2ca0c0a806aaba8df2c184a"
+    }
+  },
+  "performance_isolation_acceptance_remains_pending": true,
+  "actual_local_replay_complete": false,
+  "full_campaign_complete": false
+}

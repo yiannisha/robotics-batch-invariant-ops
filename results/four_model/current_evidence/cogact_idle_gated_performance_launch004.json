@@ -1,0 +1,21 @@
+{
+  "status": "waiting_for_300_consecutive_idle_seconds_before_unchanged_protocol",
+  "pid": 1830913,
+  "start_ticks": "455519838",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-isolated-performance-004.py",
+  "launcher_sha256": "792de4347838aecdf23391f2dc0298063e7276699ce2933500c9c8e20ddc80b7",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_frozen_benchmark.py": "f624b7832aed9216fdde23613d08828b58fa5b1f1280eabf3f73842e8ba6c302",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/gpu_isolation.py": "d391f37c593865153f9ff142fa6a140a38b7bcc9f3f1b874d210b6c497e50055",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_model_policy.py": "14dcda93629c64d69f0d9c37afced87a11ab0993c220efa0e288446fbae171c8",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_model_serving.py": "e5deb610f75f3c7343d1594f9bef88a84f29e41943f7c3a61b3145cd25c2ce4f",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_model_request_queue.py": "579eb0c61fc8472bbd11a84559b3fb0668ad39def09f543e923a890ce14a22f9",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/harness.py": "399c331fc42298636b335d19d8296057c2aeb520826744d039d509f3d7a8237f",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/moe.py": "065865169d1ea65257ccfeebd40b6c63db40fee254ff11d299c87130796cbb77",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/cogact_simpler_exact.py": "79fd820654a47d6ae819cb91be7d779a1a46cac5013e4e7cb81aefb8d2f96f7f"
+  },
+  "reason": "GPU4 observed without foreign compute allocation after prior attempt003 rejection; new single attempt retains 300s idle gate and strict whole-run foreign-process observer. No automatic retry.",
+  "full_campaign_complete": false
+}

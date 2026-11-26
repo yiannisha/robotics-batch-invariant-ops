@@ -1,0 +1,33 @@
+{
+  "status": "idle_gate_passed_policy_measurement_launched",
+  "observed_utc": "2026-11-13T01:44:44.231568+00:00",
+  "idle_gate": {
+    "status": "waiting_for_300_consecutive_idle_seconds",
+    "observed_gpu": {
+      "gpu_uuid": "GPU-94757602-37c3-0344-da17-6ac647c8325b",
+      "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "driver_version": "580.173.02",
+      "memory_used": "130 MiB",
+      "gpu_utilization": "0 %",
+      "temperature": "28 C",
+      "sm_clock": "180 MHz",
+      "processes": [],
+      "observed_at_utc": "2026-11-13T01:44:10.753764+00:00"
+    },
+    "idle_seconds": 304.4917857637629
+  },
+  "wrapper": {
+    "pid": 1954766,
+    "start_ticks": "455550305"
+  },
+  "children": [
+    {
+      "pid": 1955208,
+      "state": "R",
+      "start_ticks": "455551948",
+      "cmd": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python -m scripts.benchmark_model_policy --adapter scripts.model_invariance.adapters.cogact_simpler_exact --replay-manifest /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/replay_manifest.json --replay-indices 750,250,500,0,760,260,510,10,770,270,520,20,780,280,530,30,790,290,540,40,751,251,501,1,761,261,511,11,771,271,521,21,781,281,531,31,791,291,541,41,752,252,502,2,762,262,512,12,772,272,522,22,782,282,532,32,792,292,542,42,753,253,503,3 --output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_004/policy.jsonl --full-campaign --batch-sizes 1,2,8,64 "
+    }
+  ],
+  "accepted_measurements": false,
+  "full_campaign_complete": false
+}

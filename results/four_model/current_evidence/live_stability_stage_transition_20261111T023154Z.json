@@ -1,0 +1,44 @@
+{
+  "observed_utc": "2026-11-11T02:31:54.222539+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 24905699,
+      "completed_pairs": 1233,
+      "total_pairs": 2400,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-seal-heldout-001.log"
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 14279179,
+      "completed_pairs": 2228,
+      "total_pairs": 2400,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-seal-heldout-001.log"
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 47821,
+      "completed_pairs": 1,
+      "total_pairs": 600,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-requalification-002.log"
+    }
+  ],
+  "lingbot_actual_runtime_precision": {
+    "tf32_matmul": false,
+    "tf32_cudnn": false
+  },
+  "accepted_paired_starts": 950,
+  "new_results_independently_accepted": false,
+  "full_campaign_complete": false,
+  "primary_endpoint": "singleton versus batched action and trajectory stability"
+}

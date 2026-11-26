@@ -1,0 +1,21 @@
+{
+  "status": "full_cohort_extractor_prepared_focused_controls_passed",
+  "timestamp_utc": "2026-11-09T15:26:15.163852+00:00",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_lingbot_full_paired_stability.py": "52fa67b3568923e2da590562743f1204109107deb9ce5b72e8d047887eabd62f",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_lingbot_full_stability.py": "c0f3e0660b806e5aeae6cfc56065a3f24f33b8b4603c62bea9d2ce51f28d1a51",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_lingbot_dual_arm_drift.py": "f86b37440f93e5964b0d834ed9c8c08cbeb3771305080b46c71eaffae92098fb"
+  },
+  "test_command": "envs/lingbot/bin/python -m unittest scripts.test_lingbot_full_stability scripts.test_lingbot_dual_arm_drift",
+  "focused_tests_passed": 10,
+  "full_cohort_integration_executed": false,
+  "actual_full_cohort_magnitude_results": false,
+  "scope": "Full2500start/20000episode gate; separate arm translation/rotation; 14-dimensional physical action components; identical-input/indexed-noise comparisons; common horizons only. B1-only starts explicitly unobserved for numerical batch errors.",
+  "remaining": [
+    "Independent full-cohort magnitude verifier with episode-byte binding to the full paired proof",
+    "Real full-cohort extraction and raw-frame recount after paired completion",
+    "Task-specific dual-arm summaries and paired-start uncertainty",
+    "Integration into final acceptance evidence"
+  ],
+  "full_campaign_complete": false
+}

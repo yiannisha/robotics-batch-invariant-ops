@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-11-09T18:20:34.200569+00:00",
+  "event": "versioned_full_extraction_passed_original_drawer_failure_point",
+  "extracted_start_count": 52,
+  "drawer_task": "open_drawer",
+  "drawer_initialization": 0,
+  "coordinate_frame": "robot_base",
+  "independent_magnitude_audit_pending": true,
+  "accepted_magnitude_starts_unchanged": 827,
+  "full_campaign_complete": false
+}

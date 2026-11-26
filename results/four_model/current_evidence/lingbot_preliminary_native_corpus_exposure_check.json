@@ -1,0 +1,85 @@
+{
+  "status": "preliminary_full_native_corpus_signature_exposure_check",
+  "observed_utc": "2026-11-09T13:08:52.950764+00:00",
+  "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/replay_manifest.json",
+  "manifest_sha256": "59c26c4a5d854834fdad3139ea9b3519a7783586471e86cf601e643b71a8d779",
+  "native_episodes": 200,
+  "native_calls": 1077,
+  "exposed_unique_prepared_inputs": 1173,
+  "heldout_rows": 800,
+  "heldout_unique_prepared_inputs": 800,
+  "heldout_collision_rows": 13,
+  "collisions": [
+    {
+      "task": "put_object_cabinet",
+      "seed": 200000,
+      "frame_index": 100
+    },
+    {
+      "task": "put_object_cabinet",
+      "seed": 200000,
+      "frame_index": 200
+    },
+    {
+      "task": "put_object_cabinet",
+      "seed": 200000,
+      "frame_index": 300
+    },
+    {
+      "task": "put_object_cabinet",
+      "seed": 200006,
+      "frame_index": 100
+    },
+    {
+      "task": "put_object_cabinet",
+      "seed": 200006,
+      "frame_index": 200
+    },
+    {
+      "task": "put_object_cabinet",
+      "seed": 200006,
+      "frame_index": 300
+    },
+    {
+      "task": "handover_mic",
+      "seed": 200000,
+      "frame_index": 200
+    },
+    {
+      "task": "move_pillbottle_pad",
+      "seed": 200000,
+      "frame_index": 150
+    },
+    {
+      "task": "move_pillbottle_pad",
+      "seed": 200003,
+      "frame_index": 100
+    },
+    {
+      "task": "place_can_basket",
+      "seed": 200002,
+      "frame_index": 100
+    },
+    {
+      "task": "place_can_basket",
+      "seed": 200002,
+      "frame_index": 200
+    },
+    {
+      "task": "place_can_basket",
+      "seed": 200002,
+      "frame_index": 300
+    },
+    {
+      "task": "rotate_qrcode",
+      "seed": 200001,
+      "frame_index": 100
+    }
+  ],
+  "final_seal": false,
+  "limitations": [
+    "Uses independently retained tensor signatures rather than rereading every tensor file.",
+    "Does not yet include earlier pilot/legacy replay or future paired-model exposures.",
+    "Noise excluded from identity; no held-out acceptance or freeze inferred."
+  ]
+}

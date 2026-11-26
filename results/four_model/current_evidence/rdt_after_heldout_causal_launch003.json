@@ -1,0 +1,24 @@
+{
+  "verified_at_utc": "2026-11-12T10:41:31.211488+00:00",
+  "jobs": [
+    {
+      "pid": 556095,
+      "start_ticks": 450131128,
+      "state": "S",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-after-heldout-causal-ablation-003.py",
+      "sha256": "5d3dad88fae8c75567cd91011b87605ab49b6386abc87f389b3f37985862eb46",
+      "status": "running_full_six_mode_diagnostic_ablation"
+    },
+    {
+      "pid": 566487,
+      "start_ticks": 450133428,
+      "state": "S",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-after-heldout-causal-independent-audit-003.py",
+      "sha256": "e6f2cb3c08d14a340cf86b10c0ce9a1ff452fee2e4c1d545f663ee7fd47036cd",
+      "status": "waiting_for_live_full_causal_ablation_pipeline"
+    }
+  ],
+  "numerical_plan_changed": false,
+  "performance_isolation_pending": true,
+  "full_model_campaign_complete": false
+}

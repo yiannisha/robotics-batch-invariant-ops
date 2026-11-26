@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-11-11T02:37:12.625300+00:00",
+  "status": "corrected_causal_wrapper_and_contract_auditor_prepared",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v4.py": "0382dea945a3c42fff996c1900c8e22ce67efed426910d0088ddd0047aef34d6",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_exact_model_causal_ablation_v4.py": "fa982fa6e8d6c09fe49bcbe4d1b674525b15848eca2b6f2f32fce9527f61405c"
+  },
+  "numerical_driver_unchanged": "scripts.run_model_causal_ablation_v3",
+  "actual_corrected_trace_required_before_plan_finalization": true,
+  "actual_causal_measurements_complete": false,
+  "full_campaign_complete": false
+}

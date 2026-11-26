@@ -1,0 +1,190 @@
+{
+  "status": "paired_rollouts_independently_audited_provisional_pending_numerical_QA",
+  "candidate_lock_sha256": "224a0bae3c5fd37b50ef8941f4f162d46abba8e5f4fe3b6a2271a9ab20113fc2",
+  "completed_paired_starts": 12,
+  "prescribed_paired_starts": 500,
+  "episodes": 96,
+  "by_task": {
+    "0": {
+      "paired_starts": 5,
+      "successes": {
+        "native_singleton": 4,
+        "native_dynamic": 4,
+        "patched_singleton": 4,
+        "patched_dynamic": 4
+      },
+      "unique_initial_physics_states": 5,
+      "success_rate": {
+        "native_singleton": 0.8,
+        "native_dynamic": 0.8,
+        "patched_singleton": 0.8,
+        "patched_dynamic": 0.8
+      },
+      "BI_minus_native_singleton_percentage_points": 0.0,
+      "BI_minus_native_dynamic_percentage_points": 0.0
+    },
+    "2": {
+      "paired_starts": 7,
+      "successes": {
+        "native_singleton": 7,
+        "native_dynamic": 7,
+        "patched_singleton": 7,
+        "patched_dynamic": 7
+      },
+      "unique_initial_physics_states": 7,
+      "success_rate": {
+        "native_singleton": 1.0,
+        "native_dynamic": 1.0,
+        "patched_singleton": 1.0,
+        "patched_dynamic": 1.0
+      },
+      "BI_minus_native_singleton_percentage_points": 0.0,
+      "BI_minus_native_dynamic_percentage_points": 0.0
+    }
+  },
+  "raw_inputs_and_noise_reconstructed": true,
+  "reconstructed_policy_calls": 580,
+  "all_completed_blocks_pass_reset_AA_and_invariant_trajectory_checks": true,
+  "cohort_rollouts_complete": false,
+  "renderer_offscreen_samples": 0,
+  "renderer_protocol_changed": true,
+  "default_renderer_results_must_not_be_pooled": true,
+  "raw_frames_verified": 26852,
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "blocks": [
+    {
+      "task": 0,
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 1,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 2,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 3,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 4,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 2,
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 2,
+      "initialization": 1,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 2,
+      "initialization": 2,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 2,
+      "initialization": 3,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 2,
+      "initialization": 4,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 2,
+      "initialization": 5,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 2,
+      "initialization": 6,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    }
+  ],
+  "auditor_sha256": "075f76793d09f37185a6f8035f04d80225913938400bb64ed74b84662e82ccd9"
+}

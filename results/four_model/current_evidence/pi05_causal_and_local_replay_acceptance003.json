@@ -1,0 +1,79 @@
+{
+  "observed_utc": "2026-11-10T15:43:03.214923+00:00",
+  "causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/causal_003/independent_contract_audit.json",
+  "causal_audit_sha256": "5500e6a69dbb76aa64a908b78d0658a313064cf81bfe3f4d5fa3dfe2dba6d1e2",
+  "measurement_records": 3600,
+  "request_noise_pairs": 600,
+  "mode_rows": [
+    {
+      "mode": "existing_invariant_ops",
+      "requests": 600,
+      "nonexact_outputs": 0,
+      "any_recorded_boundary_divergence": 0,
+      "maximum_output_error": 0.0,
+      "first_recorded_boundaries": {}
+    },
+    {
+      "mode": "explicit_per_matrix_reference",
+      "requests": 600,
+      "nonexact_outputs": 0,
+      "any_recorded_boundary_divergence": 0,
+      "maximum_output_error": 0.0,
+      "first_recorded_boundaries": {}
+    },
+    {
+      "mode": "full_invariant",
+      "requests": 600,
+      "nonexact_outputs": 0,
+      "any_recorded_boundary_divergence": 0,
+      "maximum_output_error": 0.0,
+      "first_recorded_boundaries": {}
+    },
+    {
+      "mode": "native",
+      "requests": 600,
+      "nonexact_outputs": 600,
+      "any_recorded_boundary_divergence": 600,
+      "maximum_output_error": 1.9756749272346497,
+      "first_recorded_boundaries": {
+        "flow.step_00.velocity": 600
+      }
+    },
+    {
+      "mode": "native_deterministic",
+      "requests": 600,
+      "nonexact_outputs": 600,
+      "any_recorded_boundary_divergence": 600,
+      "maximum_output_error": 1.9905034303665161,
+      "first_recorded_boundaries": {
+        "flow.step_00.velocity": 600
+      }
+    },
+    {
+      "mode": "operators_plus_patch_projection",
+      "requests": 600,
+      "nonexact_outputs": 0,
+      "any_recorded_boundary_divergence": 0,
+      "maximum_output_error": 0.0,
+      "first_recorded_boundaries": {}
+    }
+  ],
+  "local_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/local_leaf_attribution_003/independent_local_replay.json",
+  "local_audit_sha256": "933e900503b4f6774747158dd6747ac14809b13aad9244f766de98c68e6710a8",
+  "captured_artifacts_rehashed": 4,
+  "same_operand_repair_demonstrated": true,
+  "earlier_unresolved_leaf_count": 1,
+  "globally_first_operator_attribution_complete": false,
+  "figure_table_groups_verified": 1200,
+  "figure_visual_inspection_complete": true,
+  "figure_visual_scope": "Both velocity/state pages reviewed; six-mode legend and descriptive median/p95 explanation are on velocity page, state page uses shared colors.",
+  "figure_artifact_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_causal_flow_stability_003/independent_table_audit.json": "3b74426eae9c73b74d224e565c9e355b3dd47db21c232f158c1517efa84cf67c",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_causal_flow_stability_003/state_page01.png": "143401f9a0e2b6c15ee10827eee1843ae0886742404eeae13db5fdcd358b803e",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_causal_flow_stability_003/velocity_page01.pdf": "683e02ef52aa8ea8583beb62d9391255dc82a8e9f983063ef5aa7927f27fda93",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_causal_flow_stability_003/state_page01.pdf": "a3c704f9482960221f37e105d1982ca7d988ceb3ef8d7009d5cc0cc564bebe31",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_causal_flow_stability_003/plotted_table.json": "843a4e2da6b85106424d33fcf084c6e0f23787698cc70012ab8f9bf1fd7eb693",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_causal_flow_stability_003/velocity_page01.png": "933b787d9f9a2193a85828ebb89440ae1dffc5ee1751e78ac8ba6177258f52db"
+  },
+  "full_campaign_complete": false
+}

@@ -1,0 +1,92 @@
+{
+  "status": "fixed_action_replay_verified",
+  "scope": "fixed_action_simulator_replay_only",
+  "model_evaluated": false,
+  "blocks": [
+    {
+      "task": "pick_can",
+      "initialization": 0,
+      "repeats": 3,
+      "steps": 80,
+      "exact": true
+    },
+    {
+      "task": "pick_can",
+      "initialization": 1,
+      "repeats": 3,
+      "steps": 80,
+      "exact": true
+    },
+    {
+      "task": "pick_can",
+      "initialization": 2,
+      "repeats": 3,
+      "steps": 80,
+      "exact": true
+    },
+    {
+      "task": "move_near",
+      "initialization": 0,
+      "repeats": 3,
+      "steps": 80,
+      "exact": true
+    },
+    {
+      "task": "move_near",
+      "initialization": 1,
+      "repeats": 3,
+      "steps": 80,
+      "exact": true
+    },
+    {
+      "task": "move_near",
+      "initialization": 2,
+      "repeats": 3,
+      "steps": 80,
+      "exact": true
+    },
+    {
+      "task": "open_drawer",
+      "initialization": 0,
+      "repeats": 3,
+      "steps": 113,
+      "exact": true
+    },
+    {
+      "task": "open_drawer",
+      "initialization": 1,
+      "repeats": 3,
+      "steps": 113,
+      "exact": true
+    },
+    {
+      "task": "open_drawer",
+      "initialization": 2,
+      "repeats": 3,
+      "steps": 113,
+      "exact": true
+    },
+    {
+      "task": "close_drawer",
+      "initialization": 0,
+      "repeats": 3,
+      "steps": 113,
+      "exact": true
+    },
+    {
+      "task": "close_drawer",
+      "initialization": 1,
+      "repeats": 3,
+      "steps": 113,
+      "exact": true
+    },
+    {
+      "task": "close_drawer",
+      "initialization": 2,
+      "repeats": 3,
+      "steps": 113,
+      "exact": true
+    }
+  ],
+  "replays_sha256": "6234814773e4ada8a16b56eef1617846e64eca16d72a84cef593c9f4f0aaa2b2"
+}

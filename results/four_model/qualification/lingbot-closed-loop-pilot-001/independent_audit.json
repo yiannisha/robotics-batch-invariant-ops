@@ -1,0 +1,23 @@
+{
+  "status": "pilot_raw_evidence_independently_verified",
+  "scope": "complete_episode_pilot",
+  "episodes": 8,
+  "all_AA_exact": true,
+  "invariant_batching_exact": true,
+  "raw_frames_rehashed": true,
+  "request_noise_regenerated": true,
+  "native_first_action_divergence": 50,
+  "success": {
+    "native_singleton": true,
+    "native_dynamic": true,
+    "patched_singleton": true,
+    "patched_dynamic": true,
+    "native_singleton_repeat": true,
+    "native_dynamic_repeat": true,
+    "patched_singleton_repeat": true,
+    "patched_dynamic_repeat": true
+  },
+  "episode_bytes_sha256": "83b0d3ad35bc9df2c2c9fb9d647998194b1678e0c52dd0ad77b1cad7f5181e31",
+  "auditor_sha256": "56eefee70d090e0adb7869f0f281b2e6b3e7375a947932452f652355f12364aa",
+  "paired_success_rate_campaign_complete": false
+}

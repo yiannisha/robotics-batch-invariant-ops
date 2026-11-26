@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-09T17:44:56.893689+00:00",
+  "passed_controls": [
+    "tcp_pose",
+    "eef_pos",
+    "invalid_pose_controls_rejected",
+    "pick_can_initial_terminal_raw_pose_agreement",
+    "move_near_initial_terminal_raw_pose_agreement",
+    "open_drawer_initial_terminal_raw_pose_agreement",
+    "close_drawer_initial_terminal_raw_pose_agreement"
+  ],
+  "sources": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_paired_stability_v2.py": "42d0e3a724f923ae6f00bc30028055875409a0e0f1c42a56047b38277f388140",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_paired_stability_metrics_v2.py": "066dcfd3aa63470cde75d473c848d93d0a5fa7eaa10d49f77c6c5bf1d423e751"
+  },
+  "scope": "Pose decoding only, not full magnitude acceptance. Drawer uses recorded robot-base EEF xyz/wxyz; other tasks retain world TCP.",
+  "full_campaign_complete": false
+}

@@ -1,0 +1,102 @@
+{
+  "status": "reported_subset_stability_metrics_independently_verified",
+  "report_sha256": "336e913cc15762406bbb3d1c2924b3e81da8e6b1620acdeb145712f943cce7ab",
+  "reporting_source_sha256": "f0f2bca7f6d6b2873fce32392303089a6b2c41a67931baab6adb5bd108125a35",
+  "auditor_sha256": "81ba88c4ee0de3b3b0224f7f810b5df9475981044d839ff27331312c6d36cb89",
+  "raw_frame_files_verified": 7182,
+  "fixed_input_nonsingleton_pairs_verified": 1109,
+  "paired_starts_verified": [
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 0
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 1
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 2
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 3
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 4
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 5
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 6
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 7
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 8
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 9
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 10
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 11
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 12
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 13
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 14
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 15
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 16
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 17
+    }
+  ],
+  "angular_formula_crosscheck_absolute_tolerance_rad": 1e-07,
+  "full_four_model_campaign_complete": false
+}

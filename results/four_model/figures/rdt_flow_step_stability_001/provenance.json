@@ -1,0 +1,27 @@
+{
+  "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/rdt_flow_step_stability_001.json",
+  "report_sha256": "345540f6eab63e4b5ac93c80f8229518d64744592d546e63721a0578c7afc1d2",
+  "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/rdt_flow_step_stability_001_independent_audit.json",
+  "audit_sha256": "9f0022af0705507992b63e1dd17e7316fde29e593124a08e7ff0677ea20d8cf1",
+  "plotter_sha256": "ab2fa07cba50ab1d90f4ec195e28a8982e67a3919d686bea522367001907cf06",
+  "batch_size": 8,
+  "matplotlib_version": "3.11.2",
+  "artifacts": [
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/rdt_flow_step_stability_001/prediction_B8.png",
+      "sha256": "5bc9f90f1af0ca00fd8995871401ea019470beb2e2233b07c39cf2ad893a22ce"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/rdt_flow_step_stability_001/prediction_B8.pdf",
+      "sha256": "6da648b30b3db93366af247995f8d5555a84e299fbb59ed6401ad17324ffbbc1"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/rdt_flow_step_stability_001/sample_B8.png",
+      "sha256": "a09c80ef9c09975253e56d7e5d1fa53e7a56b9605f6e541ced59150df4b07f00"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/rdt_flow_step_stability_001/sample_B8.pdf",
+      "sha256": "e9fd53ce3743b525b819cf94c0f5401d887aa309cf0b0090e4d59351b70aa4a6"
+    }
+  ]
+}

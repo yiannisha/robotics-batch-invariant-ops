@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-11-11T02:27:37.907562+00:00",
+  "status": "standalone_operator_precision_records_recounted",
+  "groups": [
+    {
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_measurements.jsonl",
+      "count": 40800,
+      "sha256": "6e8d6837194bdf5029e439b8163365a40fcbfdb5ebf9daa298956940f6eb6f53",
+      "audit_sha256": "39077d190ac6e538c98c3edb57d478211e1942c1a00d4ef003d191a211c558ea",
+      "all_recorded_tf32_flags_false": true
+    },
+    {
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_reduction_measurements.jsonl",
+      "count": 10200,
+      "sha256": "2c026a425529adcc242227bfdbca6162523ae1b33933baf65d7373c346caff99",
+      "audit_sha256": "1a9e6463fcbffc5617cc55576f0e9c6641cf09027d158bd28a86ac273b583496",
+      "all_recorded_tf32_flags_false": true
+    },
+    {
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_remaining_measurements.jsonl",
+      "count": 5100,
+      "sha256": "cfc604284e6fbfeeec14de239f12148a863388050bd056faacd6e5a717c24cdd",
+      "audit_sha256": "4b4572b085ab75d5ea6d44fb4658b61a9502f0baba837fc7d2589970e49e0097",
+      "all_recorded_tf32_flags_false": true
+    }
+  ],
+  "scope": "Standalone arithmetic only; corrected actual-model trace pattern reconciliation remains required.",
+  "corrected_model_operator_qualification_complete": false,
+  "full_campaign_complete": false
+}

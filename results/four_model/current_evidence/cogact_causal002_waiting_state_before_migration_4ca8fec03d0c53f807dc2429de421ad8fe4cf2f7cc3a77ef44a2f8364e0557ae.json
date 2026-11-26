@@ -1,0 +1,24 @@
+{
+  "status": "waiting_for_live_independent_performance_audit",
+  "model": "cogact",
+  "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+  "pid": 3928885,
+  "ticks": "425310909",
+  "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_002/cogact.json",
+  "plan_sha256": "4d66377892918f7090cbe0a2c1f296dda12ee4ce618ca439a86f359730501d19",
+  "wrapper": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v2.py",
+  "wrapper_sha256": "b23447df73977452d9a8dde98d47b1e88ef441b6b0984bae538735ec8c77127a",
+  "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python",
+  "env": {
+    "COGACT_CHECKPOINT": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/cogact_small",
+    "COGACT_SOURCE": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/cogact",
+    "COGACT_OPENVLA_SOURCE": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/cogact-openvla",
+    "COGACT_LLAMA_METADATA": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/llama_metadata",
+    "COGACT_SIMPLER_EXACT_MANIFEST": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/replay_manifest.json",
+    "CUDA_VISIBLE_DEVICES": "GPU-94757602-37c3-0344-da17-6ac647c8325b",
+    "OMP_NUM_THREADS": "8",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_002/measurements.jsonl",
+  "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-001.json"
+}

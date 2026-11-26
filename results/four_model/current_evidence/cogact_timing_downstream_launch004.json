@@ -1,0 +1,69 @@
+{
+  "status": "queued_after_independent_performance_audit004",
+  "launches": [
+    {
+      "kind": "operator",
+      "pid": 1857380,
+      "start_ticks": "455525711",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-audit-isolated-operator-performance-004.py",
+      "sha256": "bf1ff4960faf140365d85a68643a5c80df017034d082e9c5691b42c3748f67cf",
+      "configuration": {
+        "model": "cogact",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python",
+        "audit_python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python",
+        "dependency_pid": 1840208,
+        "dependency_start_ticks": "455522270",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-004.json",
+        "causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_003/independent_contract_audit.json",
+        "freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/numerical_freeze.json",
+        "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/replay_manifest.json",
+        "gpu_uuid": "GPU-94757602-37c3-0344-da17-6ac647c8325b",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/operator_performance_plans_002/cogact.json",
+        "output_dir": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/isolated_operator_performance_002",
+        "source_sha256": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/build_operator_performance_plans.py": "3bc090a84a0de8e0231891c96eb93691a5dba295f0963fd5f560967d73b36487",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/operator_performance_operands.py": "5108d3b6d6b1751989e0b779de09f78d6890c1d11794ef012c52d1511f7c5c57",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_qualified_operator_cases.py": "d10f018637f0e5333642f0d70c1da6148120d0d6207a1fe0100ab0bfb756ab96",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_operator_benchmark.py": "6b61a7ca1372c2ff5ea85cb578b8aaa4355c859471633b632cb24c7b41c67873",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_isolated_operator_performance.py": "4bbeffed25c4bf1297ec514ae5df9a705fa36b75c3bf03339a2e341e63307aba",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/gpu_isolation.py": "d391f37c593865153f9ff142fa6a140a38b7bcc9f3f1b874d210b6c497e50055",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_frozen_benchmark.py": "f624b7832aed9216fdde23613d08828b58fa5b1f1280eabf3f73842e8ba6c302",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/operator_performance_plans_002/cogact.json": "7256458dbb6a15f5d48e678b287be17e419d48508e889592dd33b0808b2c2b35",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_qualified_operator_cases_v2.py": "dcf221d24323ee5600b4cef4d5218e7f4fd9ca08353ff9ba61f531ac965aab4f",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_operator_benchmark_v2.py": "ea10148f5ffd827e508a5083348f734bf904029c21f33d509314aff535798605",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_isolated_operator_performance_v2.py": "b7471e1163869199cb33d13dc132719c08e2838999803f415f6b7a0f000c3ef6",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_operator_timing_event_setup.py": "53d111c5d9ec83491efc058ce55c935b5ac32cdbf4369b2549bb4a3c815a431c",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_isolated_operator_performance_audit_v2.py": "6c009377190d49dc7fd815c33b6a2a825e9603729202bd0a91d46432491d64e0",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_local_replay_acceptance003.json": "d7b426c22577984182c814f4fb3f2545d05966753766aa431627395eb859a584"
+        }
+      }
+    },
+    {
+      "kind": "figures",
+      "pid": 1857381,
+      "start_ticks": "455525711",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-audit-serving-stability-figures-004.py",
+      "sha256": "2fe7dc88b5264d4cf5bb1ad8f3d20bf3a736a113db8bb7ad2b36846816f19a19",
+      "configuration": {
+        "model": "cogact",
+        "model_id": "cogact_simpler_exact",
+        "dependency_pid": 1840208,
+        "dependency_start_ticks": "455522270",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-004.json",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python",
+        "raw": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_004/queue.jsonl",
+        "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_004/independent_performance_audit.json",
+        "output_dir": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_serving_stability_tradeoff_004",
+        "source_sha256": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_serving_stability_tradeoff.py": "46fbe0d68ca90519146f5e4e8ceb4641a5b4e2e82c260375bf7ba2b0a72f9c22",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_serving_tradeoff_table.py": "8e08934d7f3808fd8546485b1694223e55db0da50a561eed2908b01510ab4d11"
+        }
+      }
+    }
+  ],
+  "full_campaign_complete": false
+}

@@ -1,0 +1,253 @@
+{
+  "status": "selected_source_operator_measurements_independently_verified",
+  "configuration_sha256": "9c748905928b0093c991a26b230670068d795c50a855382458663b51c496c77c",
+  "raw_records": 3400,
+  "raw_records_sha256": "b287c5ce3b06ee32c4f4b52a3b54e7685e40995717ec2f6889794439ccfdd4d4",
+  "auditor_sha256": "7f079c44ec7c5fa080556e942a6a50055c939aa825484ee8c68c04389d5cefa5",
+  "arrangements": [
+    {
+      "arrangement": "rdt_source_patch_conv384|B16|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B16|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B1|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B2|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B2|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B31|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.75
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B31|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B32|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B32|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.75
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B33|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.75
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B33|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B4|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B4|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B64|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.75
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B64|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B8|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "arrangement": "rdt_source_patch_conv384|B8|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.75
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B16|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B16|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 3.0517578125e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B1|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B2|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B2|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.52587890625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B31|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B31|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 3.0517578125e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B32|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B32|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B33|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B33|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 3.0517578125e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B4|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B4|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B64|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B64|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B8|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    },
+    {
+      "arrangement": "rdt_source_pooling_softmax_bf16|B8|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 6.103515625e-05
+    }
+  ],
+  "completed_arrangements": 34,
+  "prescribed_arrangements": 34,
+  "all_selected_arrangements_complete": true,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true,
+  "scope": "Remaining source patch convolution group6 and BF16 pooling softmax group96; shared timing unqualified."
+}

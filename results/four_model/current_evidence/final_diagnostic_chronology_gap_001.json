@@ -1,0 +1,57 @@
+{
+  "observed_at": "2026-11-09T17:58:19.515632+00:00",
+  "status": "final_diagnostic_chronology_gate_outstanding",
+  "requirement": "FOUR_MODEL_CAMPAIGN.md acceptance4 and6: diagnostic ablations/local attribution and freeze after all diagnostic gates.",
+  "models": [
+    {
+      "model": "pi05",
+      "phase_freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/numerical_freeze.json",
+      "phase_freeze_exists": true,
+      "causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/causal_002/independent_contract_audit.json",
+      "causal_audit_exists": false,
+      "local_replay_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/local_leaf_attribution_001/independent_local_replay.json",
+      "local_replay_audit_exists": false,
+      "final_diagnostic_chronology_proven": false,
+      "phase_freeze_sha256": "2c7827b60cfd78ad3390de06a4e9a196e4b009395a97d4bf1a4a2f881b6546e5",
+      "phase_frozen_at_utc": "2026-11-09T10:14:19.361846+00:00",
+      "causal_proof_bound_in_phase_freeze": false
+    },
+    {
+      "model": "rdt",
+      "phase_freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/numerical_freeze.json",
+      "phase_freeze_exists": true,
+      "causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/causal_002/independent_contract_audit.json",
+      "causal_audit_exists": false,
+      "local_replay_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/local_leaf_attribution_001/independent_local_replay.json",
+      "local_replay_audit_exists": false,
+      "final_diagnostic_chronology_proven": false,
+      "phase_freeze_sha256": "426f83df968a3a7f0374dd7fcedd176acba99a916aeed690aefa5fe538b4be84",
+      "phase_frozen_at_utc": "2026-11-09T16:35:53.409255+00:00",
+      "causal_proof_bound_in_phase_freeze": false
+    },
+    {
+      "model": "cogact",
+      "phase_freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/numerical_freeze.json",
+      "phase_freeze_exists": false,
+      "causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_002/independent_contract_audit.json",
+      "causal_audit_exists": false,
+      "local_replay_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/local_leaf_attribution_001/independent_local_replay.json",
+      "local_replay_audit_exists": false,
+      "final_diagnostic_chronology_proven": false
+    },
+    {
+      "model": "lingbot",
+      "phase_freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full_fresh_candidates_v1/numerical_freeze.json",
+      "phase_freeze_exists": false,
+      "causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/causal_002/independent_contract_audit.json",
+      "causal_audit_exists": false,
+      "local_replay_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/local_leaf_attribution_001/independent_local_replay.json",
+      "local_replay_audit_exists": false,
+      "final_diagnostic_chronology_proven": false
+    }
+  ],
+  "required_closure": "After actual causal/local diagnostic acceptance, verify an appropriately ordered final numerical freeze and heldout evaluation, including source/checkpoint identities and heldout exposure qualification. Existing phase results cannot retroactively prove earlier completion of missing diagnostics.",
+  "phase_evidence_preserved": true,
+  "current_live_runs_changed": false,
+  "full_campaign_complete": false
+}

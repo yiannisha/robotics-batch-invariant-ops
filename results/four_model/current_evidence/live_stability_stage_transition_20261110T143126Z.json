@@ -1,0 +1,49 @@
+{
+  "observed_utc": "2026-11-10T14:31:26.000746+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "pi05_policy",
+      "pid": 3490608,
+      "start_ticks": 433636942,
+      "state": "R",
+      "cpu_ticks": 598743,
+      "cpu_ticks_advanced": 22554
+    },
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 16083578,
+      "completed_pairs": 797,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 46129
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 9374989,
+      "completed_pairs": 444,
+      "parent_status": "running_full_model_diagnostic",
+      "cpu_ticks_advanced": 23319
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 6042450,
+      "completed_pairs": 883,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 38637
+    }
+  ],
+  "pi05_performance_status": "running",
+  "accepted_magnitude_starts": 950,
+  "full_campaign_complete": false,
+  "pi05_policy_records_bytes": 6088885,
+  "previous_observation": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/live_stability_stage_transition_20261110T142740Z.json"
+}

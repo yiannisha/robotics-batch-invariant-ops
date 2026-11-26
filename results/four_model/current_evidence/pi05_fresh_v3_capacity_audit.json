@@ -1,0 +1,18 @@
+{
+  "status": "full_policy_capacity_independently_verified",
+  "complete": true,
+  "records": 24,
+  "feasible": {
+    "native|B16": true,
+    "batch_invariant|B16": true,
+    "native|B32": true,
+    "batch_invariant|B32": true
+  },
+  "raw_records_sha256": "77d2e42209e39c569511af27d8eeb91d45ac902b6fae62030a4808ab3deb3190",
+  "runtime_sha256": "a8dedba3d9ea009a3a808fa7e1ed1b19c3948dd2d5e446e90c8f99617dd8edb6",
+  "diagnostic_runtime_sha256": "d8fbfc688ee18269979218af2bc81e618451486d4242e8b1c2bb626ac145144b",
+  "execution_configuration_matches_diagnostic": true,
+  "all_runtime_sources_rehashed": true,
+  "timing_qualified": false,
+  "complete_four_model_campaign": false
+}

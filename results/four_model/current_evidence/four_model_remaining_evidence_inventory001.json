@@ -1,0 +1,132 @@
+{
+  "pi05": {
+    "heldout": {
+      "evidence_missing_at_inspected_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero_exact/full_fresh_split_v3/heldout_fresh004/independent_heldout_audit.json"
+    },
+    "causal_local": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05_causal_and_local_replay_acceptance003.json",
+      "sha256": "483b928433ff183102f850ae12ba8d38736d871dcc1bcf064a2a84924ac85c63",
+      "reported_status": null,
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "policy_serving": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05_serving_stability_acceptance001.json",
+      "sha256": "88044d93885a4b70ab5f6ed97386bf68b7e27040b44b0b80e8bbf150bb5c01b0",
+      "reported_status": "independently_recounted_and_visually_reviewed",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "operator_timing": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05_operator_performance_acceptance002.json",
+      "sha256": "0359e184e2fd366ba963bf148172a9d168f42793cea8a4bdd25e7c59126f6ba1",
+      "reported_status": null,
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    }
+  },
+  "rdt": {
+    "heldout": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt_complete_heldout_acceptance001.json",
+      "sha256": "f618f2992d0598cc58b64f01b39c6462df038ba7363998d0ca3bfc661ce69c12",
+      "reported_status": null,
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "causal": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt_causal_contract_acceptance003.json",
+      "sha256": "01119cc57c4f46d1dafc5ad96c624e827863c60431cbd1279e84641afcb29e00",
+      "reported_status": null,
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "local": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt_local_replay_acceptance003.json",
+      "sha256": "d0ff3013eb9794df6f4c821d560e2fcab823ea1a3a2ddee01068925068d9e662",
+      "reported_status": null,
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "policy_serving": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt_idle_gated_performance_launch002.json",
+      "sha256": "586d0eaf1fb6e7da10c89c497b7755b989eb7699eaa487b46d0871e0d30e88a9",
+      "reported_status": null,
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "operator_timing": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt_operator_timing_launch004.json",
+      "sha256": "976ccab44f5cbe5de9c43d5ec4492fbcb76034f6a2757a623b07f910ed8ff813",
+      "reported_status": null,
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    }
+  },
+  "cogact": {
+    "heldout": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_complete_heldout_acceptance001.json",
+      "sha256": "38a13b328cd9a509b9d06fb7b85628f4472f47c29aed1eb4aec7b56668d628d8",
+      "reported_status": "complete_cogact_heldout_stability_promoted_after_hash_reverification",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "causal": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_causal_contract_acceptance003.json",
+      "sha256": "22c8fc262e96a37d7dc9ff1aff2d3bb6063e1fe678b80816d618ede485bcbf65",
+      "reported_status": "complete_cogact_causal_measurement_contracts_and_figure_review_verified",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "local": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_local_replay_acceptance003.json",
+      "sha256": "d7b426c22577984182c814f4fb3f2545d05966753766aa431627395eb859a584",
+      "reported_status": "cogact_captured_local_replay_verified_with_cross_implementation_operand_limit",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "same_operand_intervention": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_same_native_operand_intervention_acceptance001.json",
+      "sha256": "690c19e20428ee81df6edab8ebf7112b2da516569194875e06233e05f6cb8e34",
+      "reported_status": "cogact_same_native_operand_local_intervention_verified",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "policy_serving": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_performance_isolation_rejection004.json",
+      "sha256": "7287aeeeefbd3c2b8ffc5651cf1aa422791230f1bce55c155f36bfa9b1dee2ec",
+      "reported_status": "rejected_foreign_gpu_activity_no_accepted_timing",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    }
+  },
+  "lingbot": {
+    "diagnostic": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_corrected_precision_diagnostic_acceptance001.json",
+      "sha256": "fcb134cf4b42b3c6752c2dc6cfe4930f2840a657f3b35bbab7f6abb45452b69b",
+      "reported_status": "accepted_corrected_precision_diagnostic_and_descriptive_recounts",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "operator_qualification": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_corrected_precision_operator_acceptance003.json",
+      "sha256": "781a25567f23e647ada95523a28d13ce48b647deb4149098bf4cda47e8526132",
+      "reported_status": "accepted_corrected_precision_traced_operator_qualification",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "flow_figures": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_corrected_precision_flow_visual_acceptance003.json",
+      "sha256": "453d07a63abb4fdeeec92f44321845f1747074a966e6a6e27e71fe210d2849e1",
+      "reported_status": "reviewed_corrected_precision_B8_flow_figures",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "operator_plan": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_corrected_operator_timing_plan003.json",
+      "sha256": "31a483b89b98d9a9f8ec0bbb1bb652548264288e65fc25bdb323e5a9fecc0dca",
+      "reported_status": "built_corrected_operator_timing_plan_execution_pending",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    },
+    "storage_assessment": {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_paired_storage_layout_assessment001.json",
+      "sha256": "2dc9c7d207020bc7ee1650b50b606df7fefac4e8921813d0d680a6ee186ddbbe",
+      "reported_status": "storage_layout_assessed_no_relaunch",
+      "scope": "Evidence reference only; queued/planned/rejected states do not prove completion."
+    }
+  },
+  "remaining": {
+    "lingbot": "Paired trajectory study, final exposure check, numerical freeze, fresh heldout, causal/local diagnostics, isolated performance and timing remain incomplete. Full paired launch lacks required storage.",
+    "rdt": "Policy/serving and operator timing await GPU2 isolation; live queue observed with foreign graphics process.",
+    "cogact": "Policy/serving and operator timing incomplete after four foreign-activity rejections; stable GPU access needed.",
+    "attribution": "Global earliest-operator attribution remains unproven where local audits report unresolved earlier leaves; same-operand counterfactual evidence has local scope.",
+    "final_acceptance": "No full four-model completion audit passes or is claimed."
+  },
+  "verified_utc": "2026-11-13T01:49:57.527015+00:00",
+  "status": "incomplete_resource_and_qualification_dependencies",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "full_campaign_complete": false
+}

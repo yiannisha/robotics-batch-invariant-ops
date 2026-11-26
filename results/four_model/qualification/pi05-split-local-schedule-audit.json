@@ -1,0 +1,27 @@
+{
+  "status": "complete_corpus_independently_verified",
+  "scope": "split_local_schedule_revision_over_verified_raw_corpus",
+  "parent_manifest_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/replay_manifest.json",
+  "parent_manifest_sha256": "9b6088f5a18bc0d67510db3e477ecc3ea54e6f9cb78bb8dce04488ac6818a4b9",
+  "parent_corpus_audit_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-libero-001/corpus_audit.json",
+  "parent_corpus_audit_sha256": "d34483900d26d22f156e60387f414c84ac0220aeef0ec2e1e8cdd12b14223377",
+  "input_noise_episode_fingerprint": "5144752a0b7473c669739e7343cf99d48bb947257ad0c1a4d92c1587a21917cc",
+  "all_input_noise_episode_fields_unchanged": true,
+  "all_companions_same_split": true,
+  "all_companions_outside_target_episode": true,
+  "companion_distinct_episode_coverage": [
+    {
+      "split": "diagnostic",
+      "distinct_episodes": 19,
+      "observations": 200
+    },
+    {
+      "split": "heldout",
+      "distinct_episodes": 31,
+      "observations": 800
+    }
+  ],
+  "interpretation": "Diagnostic B32 uses19 distinct non-target episodes and31 distinct observations. Heldout B32 uses31 distinct non-target episodes.",
+  "paired_success_rate_campaign_complete": false,
+  "auditor_sha256": "633533e390a40c6b7af9855fd5737dd331f146c7f1dfa053761904e9bc7c43ba"
+}

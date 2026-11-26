@@ -1,0 +1,26 @@
+{
+  "status": "source_matrix_measurements_independently_verified",
+  "configuration_sha256": "f6c1f251c5fc703f5b8e1c9a1ec7d76e321310428d2a6828963cb3b85cc6f153",
+  "raw_records": 200,
+  "raw_records_sha256": "66a15af10a9cdd71eeae9d8c1d3a0e990c60147d9739a12092b0286a76327b9c",
+  "auditor_sha256": "a195feadcc3847aa95bb4118b7990c243facdc93cbf3339025b5f2e7cf1db366",
+  "arrangements": [
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 56
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    }
+  ],
+  "completed_arrangements": 2,
+  "prescribed_arrangements": 68,
+  "all_selected_arrangements_complete": false,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

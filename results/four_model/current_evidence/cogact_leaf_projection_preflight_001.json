@@ -1,0 +1,26 @@
+{
+  "status": "generic_leaf_projection_cfg_counterexample_verified",
+  "scope": "Synthetic CPU projection control grounded in actual CogACT conditional/unconditional concatenation. Not a model inference or new stability measurement.",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/cogact_small.py": "c072c41ce01562fe553261c454587281e0f3f7f3b453de87301c194e06384728",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_model_first_divergence.py": "e2386d4e2f7117e75dd64d138880f7bc04848e5e6f9a6c18937affdf2e193e6e"
+  },
+  "singleton_block_order": [
+    "conditional_target",
+    "unconditional_target"
+  ],
+  "B2_block_order": [
+    "conditional_target",
+    "conditional_companion",
+    "unconditional_target",
+    "unconditional_companion"
+  ],
+  "generic_first_slice_reports_false_difference": true,
+  "explicit_request_indices": [
+    0,
+    2
+  ],
+  "explicit_request_projection_exact": true,
+  "consequence": "Do not accept arbitrary flattened/CFG leaf scans as operator-level attribution without source-backed request projection. Existing denoising diagnostics and audited paired magnitudes are unchanged.",
+  "operator_attribution_complete": false
+}

@@ -1,0 +1,20 @@
+{
+  "status": "reviewed_corrected_precision_B8_flow_figures",
+  "verified_utc": "2026-11-13T01:33:51.844133+00:00",
+  "bindings": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_flow_step_stability_precision003.json": "700bc8e56b4ce6d4a97d6402d00fb8ca49e4f42992b2a9e4752bb6872e25d4cb",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_flow_step_stability_precision003_independent_audit.json": "2bf3648a2e3aa1d219fae361287cc98e4c1ad0d055d2570131f36f970553c4ff",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_flow_step_stability.py": "ab2fa07cba50ab1d90f4ec195e28a8982e67a3919d686bea522367001907cf06",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/lingbot_flow_step_stability_precision003/prediction_B8.png": "f67dd36b6d0671a1c2edec18e6434d12a87c596755200ce8b67c6bf56f1af927",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/lingbot_flow_step_stability_precision003/prediction_B8.pdf": "f90a6fb21446694740485248604b2afd95bc8844384075eaca786ed248f64304",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/lingbot_flow_step_stability_precision003/state_B8.png": "c6166e36a9a19bc52fcb59f3ffb97adeb3936cc8561805a0699a55fc5a9e8c37",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/lingbot_flow_step_stability_precision003/state_B8.pdf": "c277a7eb603817acdeec87e30c60d35407137242ec8f5d936110fc9cf63ad0e2"
+  },
+  "visually_reviewed": [
+    "prediction_B8.png",
+    "state_B8.png"
+  ],
+  "observations": "50 task panels, ten denoising steps; native median/p95 shows nonzero batch deviation, invariant median/p95 at zero; legend and descriptive-not-confidence-interval footer present. Per-task axes differ. Tall PNG overview; PDF available for detailed reading.",
+  "scope": "Descriptive B8 fixed-identical-input distributions, not closed-loop trajectory acceptance or causal attribution.",
+  "full_campaign_complete": false
+}

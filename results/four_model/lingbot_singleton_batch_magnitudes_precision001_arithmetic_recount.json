@@ -1,0 +1,8 @@
+{
+  "status": "aggregate_arithmetic_recounted_with_decimal",
+  "report_sha256": "9cce7199fd87d5584ade4738c0b37f051bf57cb1d40328a2d2d0368fca1178ee",
+  "raw_sha256": "c46d72a2e4084361fe2df7cd9f6bb22c1647fb1baa7cc62c00ecbc389397d849",
+  "verified_groups": 1020,
+  "scope": "Separate streaming decimal arithmetic and request-identity recount of producer-measured metrics; not independent tensor-error rederivation.",
+  "full_campaign_complete": false
+}

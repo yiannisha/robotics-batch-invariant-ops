@@ -1,0 +1,27 @@
+{
+  "status": "six_request_scaled_reduction_cases_independently_verified",
+  "observed_utc": "2026-11-09T13:46:39.878992+00:00",
+  "measurements": 10200,
+  "arrangements": 102,
+  "source_patterns": 6,
+  "counts": {
+    "mean": {
+      "batched_comparisons": 6400,
+      "native_nonexact": 0,
+      "invariant_nonexact": 0,
+      "native_max_absolute_error": 0.0
+    },
+    "softmax": {
+      "batched_comparisons": 3200,
+      "native_nonexact": 0,
+      "invariant_nonexact": 0,
+      "native_max_absolute_error": 0.0
+    }
+  },
+  "independent_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_reduction_independent_audit.json",
+  "independent_audit_sha256": "1a9e6463fcbffc5617cc55576f0e9c6641cf09027d158bd28a86ac273b583496",
+  "raw_records_sha256": "2c026a425529adcc242227bfdbca6162523ae1b33933baf65d7373c346caff99",
+  "full_operator_qualification_complete": false,
+  "performance_qualified": false,
+  "scope": "Source-shape synthetic operator operands; full-model/trajectory acceptance separate."
+}

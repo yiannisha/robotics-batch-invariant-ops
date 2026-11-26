@@ -1,0 +1,103 @@
+{
+  "runtime": {
+    "scope": "fixed_controls_render_and_derived_state_diagnostic",
+    "task": 2,
+    "initialization": 0,
+    "repeats": 3,
+    "forward_before_observe": false,
+    "source_episode_sha256": "cb996b899f90dfcd529bcc0dff5918620eb59a5120165751a540ef89a0b3e6ec",
+    "runner_sha256": "584edd48889bc0fb630a8a567287d3104c5c6407a9f718eb4491f86a1ce6e869",
+    "model_evaluated": false
+  },
+  "repeats": [
+    {
+      "repeat": 0,
+      "first_repeat_difference": null,
+      "difference_detail": [],
+      "original_observation_mismatches": [
+        59,
+        85
+      ],
+      "original_physics_mismatches": []
+    },
+    {
+      "repeat": 1,
+      "first_repeat_difference": 85,
+      "difference_detail": [
+        {
+          "field": "raw.observation.pixels.image2",
+          "dtype": "uint8",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "changed_elements": 3,
+          "max_absolute_error": 1.0,
+          "first_indices": [
+            [
+              78,
+              241,
+              0
+            ],
+            [
+              78,
+              241,
+              1
+            ],
+            [
+              78,
+              241,
+              2
+            ]
+          ]
+        }
+      ],
+      "original_observation_mismatches": [
+        59,
+        89
+      ],
+      "original_physics_mismatches": []
+    },
+    {
+      "repeat": 2,
+      "first_repeat_difference": 85,
+      "difference_detail": [
+        {
+          "field": "raw.observation.pixels.image2",
+          "dtype": "uint8",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "changed_elements": 3,
+          "max_absolute_error": 1.0,
+          "first_indices": [
+            [
+              78,
+              241,
+              0
+            ],
+            [
+              78,
+              241,
+              1
+            ],
+            [
+              78,
+              241,
+              2
+            ]
+          ]
+        }
+      ],
+      "original_observation_mismatches": [
+        59,
+        89
+      ],
+      "original_physics_mismatches": []
+    }
+  ],
+  "all_raw_repeats_exact": false
+}

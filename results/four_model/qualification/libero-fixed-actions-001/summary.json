@@ -1,0 +1,69 @@
+{
+  "status": "fixed_action_replay_verified",
+  "model_evaluated": false,
+  "blocks": [
+    {
+      "task": 0,
+      "initialization": 0,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    },
+    {
+      "task": 0,
+      "initialization": 1,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    },
+    {
+      "task": 0,
+      "initialization": 2,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    },
+    {
+      "task": 1,
+      "initialization": 0,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    },
+    {
+      "task": 1,
+      "initialization": 1,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    },
+    {
+      "task": 1,
+      "initialization": 2,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    },
+    {
+      "task": 2,
+      "initialization": 0,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    },
+    {
+      "task": 2,
+      "initialization": 1,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    },
+    {
+      "task": 2,
+      "initialization": 2,
+      "repeats": 3,
+      "steps": 520,
+      "exact": true
+    }
+  ]
+}

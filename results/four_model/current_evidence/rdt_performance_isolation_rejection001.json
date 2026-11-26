@@ -1,0 +1,41 @@
+{
+  "verified_at_utc": "2026-11-12T10:40:27.383104+00:00",
+  "classification": "performance_launch_rejected_before_measurement",
+  "isolation_report": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/isolated_performance_001/policy_isolation.json",
+  "isolation_report_sha256": "c29552e115d5bf9a0cea29f01cdd160c992fb42e2225560a67a73fc145ac2e25",
+  "report": {
+    "status": "initial_gpu_busy",
+    "accepted": false,
+    "gpu_uuid": "GPU-8e8d81cd-96dc-69ec-4078-3dc7acc88762",
+    "freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/numerical_freeze.json",
+    "freeze_sha256": "426f83df968a3a7f0374dd7fcedd176acba99a916aeed690aefa5fe538b4be84",
+    "benchmark": "policy",
+    "poll_interval_seconds": 1.0,
+    "isolation_scope": "Compute/graphics process inventory sampled before, during and after execution; not an exclusive hardware reservation",
+    "observations": [
+      {
+        "gpu_uuid": "GPU-8e8d81cd-96dc-69ec-4078-3dc7acc88762",
+        "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "driver_version": "580.173.02",
+        "memory_used": "627 MiB",
+        "gpu_utilization": "0 %",
+        "temperature": "49 C",
+        "sm_clock": "180 MHz",
+        "processes": [
+          {
+            "pid": 608566,
+            "type": "G",
+            "used_memory": "617 MiB"
+          }
+        ],
+        "observed_at_utc": "2026-11-12T10:39:22.920414+00:00"
+      }
+    ],
+    "wrapper_source_sha256": "f624b7832aed9216fdde23613d08828b58fa5b1f1280eabf3f73842e8ba6c302",
+    "isolation_source_sha256": "d391f37c593865153f9ff142fa6a140a38b7bcc9f3f1b874d210b6c497e50055"
+  },
+  "timing_samples_created": false,
+  "heldout_stability_acceptance_unchanged": true,
+  "next_action": "Reschedule numerical causal attribution from accepted heldout evidence independently of performance; retain strict timing isolation.",
+  "full_model_campaign_complete": false
+}

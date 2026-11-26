@@ -1,0 +1,54 @@
+{
+  "observed_utc": "2026-11-10T18:20:14.463283+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 18883239,
+      "completed_pairs": 935,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 14367
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 10763846,
+      "completed_pairs": 457,
+      "parent_status": "running_full_model_diagnostic",
+      "cpu_ticks_advanced": 7341
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 8502985,
+      "completed_pairs": 1255,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 14570
+    }
+  ],
+  "pi05_performance_status": "complete_isolated_four_model_performance_independently_verified",
+  "accepted_magnitude_starts": 950,
+  "full_campaign_complete": false,
+  "pi05_policy_records_bytes": 6119398,
+  "previous_observation": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/live_stability_stage_transition_20261110T181903Z.json",
+  "pi05_policy_isolation_status": "completed",
+  "pi05_policy_isolation_sha256": "22aa313ce5c6265f4d8d3d67999e7266873a468625ce8051296553097fbcfccd",
+  "pi05_current_benchmark": null,
+  "lingbot_diagnostic_bytes": 19257151,
+  "pi05_serving_isolation_status": "completed",
+  "pi05_serving_isolation_sha256": "498ed62dcbdc65ced0cab9d8ffc7f5fd4abf721624e19a281bdac9870096c241",
+  "pi05_performance_audit_sha256": "6e9027ea92073b440593ffdef5f3657d9f9d02246c448ab00b39b04cecc58507",
+  "pi05_causal_status": "complete_six_mode_causal_measurement_contracts_verified",
+  "pi05_causal_measurement_records": 3600,
+  "pi05_causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/causal_003/independent_contract_audit.json",
+  "pi05_causal_audit_sha256": "5500e6a69dbb76aa64a908b78d0658a313064cf81bfe3f4d5fa3dfe2dba6d1e2",
+  "pi05_local_replay_status": "captured_four_condition_leaf_outputs_independently_replayed",
+  "pi05_operator_timing_status": "complete_operator_timing_records_independently_recounted"
+}

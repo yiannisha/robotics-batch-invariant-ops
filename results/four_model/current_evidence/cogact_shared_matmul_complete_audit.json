@@ -1,0 +1,116 @@
+{
+  "status": "shared_source_matmul_measurements_independently_verified",
+  "configuration_sha256": "149658ba21c92ca0c652b923ecb21b1cd1345db82ccd72df9e1e8eaea8a6783d",
+  "raw_records": 1700,
+  "raw_records_sha256": "4a1e92e7b66fbebe8175ea623dd9e3885f12d461472d85cc20bb96b039b5287d",
+  "auditor_sha256": "1680de11d0214a107b0b6150759cc6f90e7ec0637155f2155d5e4bfbd59457c6",
+  "arrangements": [
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_shared_rotary_outer_product|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    }
+  ],
+  "completed_arrangements": 17,
+  "prescribed_arrangements": 17,
+  "all_selected_arrangements_complete": true,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

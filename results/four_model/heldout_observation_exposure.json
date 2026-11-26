@@ -1,0 +1,42 @@
+{
+  "status": "old_numerical_heldout_observation_partition_exposed_before_freeze",
+  "model": "rdt",
+  "candidate_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/replay_manifest.json",
+  "candidate_manifest_sha256": "ec7d55f15b737789583bfbd26fb8504e29d36828ba275e27327f8967bfee5a01",
+  "candidate_heldout_request_ids": [
+    "maniskill/PegInsertionSide-v1/4/observation-0/noise-0",
+    "maniskill/PegInsertionSide-v1/4/observation-0/noise-1",
+    "maniskill/PegInsertionSide-v1/4/observation-0/noise-2"
+  ],
+  "candidate_corpus_request_sha256": "3c09268fb5113bb6bb9ef0dac5ac72f8067c4897544250b37c2fe0fb7c178c7e",
+  "paired_episode": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/rdt_maniskill_locked_v1/blocks/PegInsertionSide-v1/start-04/patched_singleton.json.gz",
+  "paired_episode_sha256": "219aadf8d29e17f0be2474f207f110efc712afa532f8b8df24f1f7da9c2f5c9d",
+  "paired_candidate_lock_sha256": "fcbf88f25a7387a6dc6abb1f70beaaff3586599221bed2c6bfa18d26cfc351c1",
+  "paired_condition": "patched_singleton",
+  "paired_raw_request": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/rdt_maniskill_locked_v1/requests/39df5a37e613a6f15783902a5170411a49a53a76cebb982f9384a0394eafebde.pt.gz",
+  "paired_raw_request_content_sha256": "39df5a37e613a6f15783902a5170411a49a53a76cebb982f9384a0394eafebde",
+  "identical_observation_input_fields": {
+    "task_name": {
+      "candidate_sha256": "857a462bf54c3572b5bd3cd0ea8076c0307886f4f84aa15cd6a850dadd03339e",
+      "paired_sha256": "857a462bf54c3572b5bd3cd0ea8076c0307886f4f84aa15cd6a850dadd03339e"
+    },
+    "history_valid": {
+      "candidate_sha256": "b3755f0a93d8be8827198a5dad7c834e5a42bd1e40850ae7f1c959985ebfbd1b",
+      "paired_sha256": "b3755f0a93d8be8827198a5dad7c834e5a42bd1e40850ae7f1c959985ebfbd1b"
+    },
+    "image_history": {
+      "candidate_sha256": "c12d8ba77d673ed801c937a6b5330c6723a8ac4d66c7b36d7d20aab058d2110e",
+      "paired_sha256": "c12d8ba77d673ed801c937a6b5330c6723a8ac4d66c7b36d7d20aab058d2110e"
+    },
+    "proprio": {
+      "candidate_sha256": "463dc3f9f2f5c20b1e4a5f4858086bc89fd6fcef88f645ac6dd8d4ccc9261f52",
+      "paired_sha256": "463dc3f9f2f5c20b1e4a5f4858086bc89fd6fcef88f645ac6dd8d4ccc9261f52"
+    }
+  },
+  "paired_noise_sha256": "bb6fb527baf74df84c37d83b7bb3139ee4dfdc92a40d2b57f4fccc21729663db",
+  "paired_noise_matches_any_candidate_request_noise": false,
+  "scope": "Observation inputs reused; indexed noise differs. No claim that original observation/noise tuples were evaluated.",
+  "required_remedy": "Before final heldout acceptance, use a fresh observation-disjoint corpus and independently verify disjointness from all diagnostic and pre-freeze paired model requests. Preserve the old candidate split as exposed exploratory evidence.",
+  "paired_stability_evidence_invalidated": false,
+  "full_campaign_complete": false
+}

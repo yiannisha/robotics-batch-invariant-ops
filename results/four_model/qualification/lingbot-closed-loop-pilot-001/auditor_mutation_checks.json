@@ -1,0 +1,22 @@
+{
+  "missing_episode": {
+    "rejected": true,
+    "diagnostic": "ValueError: Missing, duplicate or foreign condition"
+  },
+  "changed_initial_physics": {
+    "rejected": true,
+    "diagnostic": "ValueError: Canonical reset/frame cardinality differs"
+  },
+  "condition_noise": {
+    "rejected": true,
+    "diagnostic": "ValueError: Noise is not request-indexed"
+  },
+  "changed_executed_control": {
+    "rejected": true,
+    "diagnostic": "ValueError: Executed controls do not match released chunk prefix"
+  },
+  "changed_outcome": {
+    "rejected": true,
+    "diagnostic": "ValueError: Outcome differs from simulator record"
+  }
+}

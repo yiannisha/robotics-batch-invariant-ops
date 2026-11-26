@@ -1,0 +1,28 @@
+{
+  "status": "source_linear_measured_arrangements_independently_verified",
+  "raw_records": 200,
+  "raw_records_sha256": "5f04f1d6af210a869aa839a665f9dc1d415acab20f9d709a8153a7aa9e135cbd",
+  "configuration_sha256": "f0e21c8bfbb27080ee42aa88318f016c0875414e51f6e63a86fbbf91e0a2d438",
+  "auditor_sha256": "90bdc802d03bb95289c3f101c57421b9a3a3667b04c807825a37df8500ca4965",
+  "arrangements": [
+    {
+      "key": "cogact_source_linear_axis0_010bb057fc82dbbc|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "cogact_source_linear_axis0_010bb057fc82dbbc|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    }
+  ],
+  "all_linear_arrangements_complete": false,
+  "prescribed_arrangements": 408,
+  "completed_arrangements": 2,
+  "full_operator_qualification_complete": false,
+  "shared_gpu_timing_not_qualified": true
+}

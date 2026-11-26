@@ -1,0 +1,31 @@
+{
+  "status": "complete_no_msaa_observable_replay_independently_verified",
+  "tasks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "initializations": 3,
+  "repeats": 3,
+  "regression_repeats": 5,
+  "episodes": 100,
+  "raw_frames_verified": 50545,
+  "unique_raw_frames_verified": 16359,
+  "executed_controls_verified": 50445,
+  "all_observable_state_and_rgb_repeats_exact": true,
+  "retained_failing_control_physics_unchanged": true,
+  "offscreen_samples": 0,
+  "renderer_protocol_changed": true,
+  "default_renderer_study_results_must_not_be_pooled": true,
+  "model_evaluated": false,
+  "paired_success_rate_campaign_complete": false,
+  "raw_replays_sha256": "90db9da76b37a0914dd9b074474041433b2db5af02b0d7374eaff1c2e26cc146",
+  "auditor_sha256": "7ba00dd67596b4a0fdf069935bd4e79cd8799f3e25f0456c2f6f7e385b3d89c5"
+}

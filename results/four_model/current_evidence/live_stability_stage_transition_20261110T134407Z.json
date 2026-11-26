@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-11-10T13:44:07.061139+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "pi05_policy",
+      "pid": 3490608,
+      "start_ticks": 433636942,
+      "state": "R",
+      "cpu_ticks": 314863,
+      "cpu_ticks_advanced": 6468
+    },
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 15501726,
+      "completed_pairs": 768,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 13649
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 9075815,
+      "completed_pairs": 430,
+      "parent_status": "running_full_model_diagnostic",
+      "cpu_ticks_advanced": 6927
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 5581605,
+      "completed_pairs": 823,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 13488
+    }
+  ],
+  "pi05_performance_status": "running",
+  "accepted_magnitude_starts": 950,
+  "full_campaign_complete": false,
+  "pi05_policy_records_bytes": 4201780
+}

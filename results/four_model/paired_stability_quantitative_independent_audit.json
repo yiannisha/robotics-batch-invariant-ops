@@ -1,0 +1,137 @@
+{
+  "status": "reported_subset_stability_metrics_independently_verified",
+  "report_sha256": "a5f9695a23a1396fa04d63dca4a7181ddb1d978a86f133c1a600951fc1a1aa92",
+  "reporting_source_sha256": "f0f2bca7f6d6b2873fce32392303089a6b2c41a67931baab6adb5bd108125a35",
+  "auditor_sha256": "81ba88c4ee0de3b3b0224f7f810b5df9475981044d839ff27331312c6d36cb89",
+  "raw_frame_files_verified": 21766,
+  "fixed_input_nonsingleton_pairs_verified": 415,
+  "paired_starts_verified": [
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 6
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 0
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 1
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 2
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 3
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 4
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 5
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 6
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 7
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 8
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 9
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 0
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 1
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 2
+    }
+  ],
+  "angular_formula_crosscheck_absolute_tolerance_rad": 1e-07,
+  "full_four_model_campaign_complete": false
+}

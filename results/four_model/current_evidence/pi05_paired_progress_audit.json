@@ -1,0 +1,362 @@
+{
+  "status": "paired_rollouts_independently_audited_provisional_pending_numerical_QA",
+  "candidate_lock_sha256": "ab564e2fde598b1c661c82411bb98bfdd3acf06850f3484096218000c6911b98",
+  "completed_paired_starts": 28,
+  "prescribed_paired_starts": 500,
+  "episodes": 224,
+  "by_task": {
+    "0": {
+      "paired_starts": 27,
+      "successes": {
+        "native_singleton": 18,
+        "native_dynamic": 17,
+        "patched_singleton": 18,
+        "patched_dynamic": 18
+      },
+      "unique_initial_physics_states": 27,
+      "success_rate": {
+        "native_singleton": 0.6666666666666666,
+        "native_dynamic": 0.6296296296296297,
+        "patched_singleton": 0.6666666666666666,
+        "patched_dynamic": 0.6666666666666666
+      },
+      "BI_minus_native_singleton_percentage_points": 0.0,
+      "BI_minus_native_dynamic_percentage_points": 3.7037037037037037
+    },
+    "1": {
+      "paired_starts": 1,
+      "successes": {
+        "native_singleton": 1,
+        "native_dynamic": 1,
+        "patched_singleton": 1,
+        "patched_dynamic": 1
+      },
+      "unique_initial_physics_states": 1,
+      "success_rate": {
+        "native_singleton": 1.0,
+        "native_dynamic": 1.0,
+        "patched_singleton": 1.0,
+        "patched_dynamic": 1.0
+      },
+      "BI_minus_native_singleton_percentage_points": 0.0,
+      "BI_minus_native_dynamic_percentage_points": 0.0
+    }
+  },
+  "raw_inputs_and_noise_reconstructed": true,
+  "reconstructed_policy_calls": 1684,
+  "all_completed_blocks_pass_reset_AA_and_invariant_trajectory_checks": true,
+  "cohort_rollouts_complete": false,
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "blocks": [
+    {
+      "task": 0,
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 1,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 2,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 3,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 4,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 5,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 6,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 7,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 8,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 9,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 10,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 11,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 12,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 13,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 14,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 15,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 16,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 17,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 18,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 19,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 20,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 21,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 22,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 23,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 24,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 25,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 26,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    }
+  ],
+  "auditor_sha256": "b632d293d8c2617bdfbe261b663b17cef830e8527a28bc14d5b35cb08eb021d7"
+}

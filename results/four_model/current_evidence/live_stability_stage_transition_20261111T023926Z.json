@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-11-11T02:39:26.517062+00:00",
+  "classification": "progress",
+  "change": "Corrected local captured-operator replay queued with unchanged predeclared diagnostic case",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "completed_pairs": 1238
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "completed_pairs": 2245
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "completed_pairs": 4
+    },
+    {
+      "model": "lingbot_local_waiter",
+      "pid": 3702763,
+      "start_ticks": 438600537,
+      "state": "S",
+      "completed_pairs": null
+    }
+  ],
+  "full_campaign_complete": false
+}

@@ -1,0 +1,12 @@
+{
+  "status": "singleton_fidelity_aggregate_arithmetic_independently_recounted",
+  "model_id": "lingbot_robotwin_exact",
+  "report_sha256": "c3747bf72b35a7e17ec4d017aa6df6303c424a51e528e4dbf846cab8a7b589fe",
+  "raw_sha256": "a4f846431d371ad72a8ab71ec77f3e8a187f272ef71d7c150b6b69aef770da95",
+  "diagnostic_audit_sha256": "4024b671054d77ee1b26aed9551b5503fd13fb1db05a4f762bf0d9bbbfc1647f",
+  "auditor_sha256": "51e8c40f3aa99f31ce818e07fea672162778819ee8d527177bde94c7edac19d1",
+  "comparisons": 600,
+  "tasks": 50,
+  "scope": "Recount of producer-measured normalized B1 implementation differences. Not independent tensor-error rederivation or batching stability.",
+  "full_campaign_complete": false
+}

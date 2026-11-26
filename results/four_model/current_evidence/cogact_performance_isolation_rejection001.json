@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-11-11T03:53:42.283787+00:00",
+  "status": "rejected_partial_performance_foreign_gpu_activity",
+  "accepted": false,
+  "heldout_stability_acceptance_unchanged": true,
+  "artifact_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_001/policy.jsonl": "3568deb35af87efbd731165227ce738427178d1fecfa9ba93ee36236e388f37c",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_001/policy_isolation.json": "ace596beb7f08f044f92090ecf3446c192673586356b60f7a98b24cbb351cf7a",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_001/policy.log": "65855dcc310a6ffad830fd836af2ae66961d028b77de05470e7ce62c62c98d7a"
+  },
+  "full_campaign_complete": false
+}

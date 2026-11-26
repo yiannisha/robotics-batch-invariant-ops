@@ -1,0 +1,73 @@
+{
+  "verified_at_utc": "2026-11-12T11:31:48.543838+00:00",
+  "audit_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/local_leaf_attribution_003/independent_local_replay.json",
+  "audit_sha256": "6df9b95b8540ba08cb1d6901df967cb4d2b57779f7c1c82fa9dd871954e9a57b",
+  "captured_artifacts_and_source_bindings_verified": true,
+  "audit": {
+    "status": "captured_four_condition_leaf_outputs_independently_replayed",
+    "trace_report_sha256": "3470e0eacba6d8b837c83fa7a7078dba365c6d914b7213eedfcb61d56ec5e644",
+    "manifest_sha256": "ec7d55f15b737789583bfbd26fb8504e29d36828ba275e27327f8967bfee5a01",
+    "captured_artifact_sha256": {
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/local_leaf_attribution_003/trace.json.operators/batch_invariant_batched.pt": "b79063be12a847404996de98d89957714de889f16d673940992a9f388dc83db0",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/local_leaf_attribution_003/trace.json.operators/batch_invariant_singleton.pt": "082e30693f68eec8ab2861720af98c83d84b198d807c927981ff7ed080f2426b",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/local_leaf_attribution_003/trace.json.operators/native_batched.pt": "56528e8d4e2aa6f80eaa8719ae4d215b44cadbe423a07c55df95fcf7aae16fc7",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/local_leaf_attribution_003/trace.json.operators/native_singleton.pt": "2b3dd8212520bbc1f33a1dd2111398c4b3732b00b75f1e2a5e85a4a27394a9c1"
+    },
+    "local_replays": {
+      "native_singleton": {
+        "status": "captured_leaf_output_reproduced_twice",
+        "operator": "linear",
+        "output_sha256": "8b12837e0618a13c2b9f19714125dfbd581703b172caf9bd7deca7d01519b9be",
+        "repeats_exact": true,
+        "pointer_alignment_verified": true,
+        "globally_first_operator_attribution_complete": false
+      },
+      "native_batched": {
+        "status": "captured_leaf_output_reproduced_twice",
+        "operator": "linear",
+        "output_sha256": "8e47507113227409cfa89781e7811f782d0dc0864a8050cfbc353d1281653166",
+        "repeats_exact": true,
+        "pointer_alignment_verified": true,
+        "globally_first_operator_attribution_complete": false
+      },
+      "batch_invariant_singleton": {
+        "status": "captured_leaf_output_reproduced_twice",
+        "operator": "linear",
+        "output_sha256": "87f780a1a363a7d03662a924c6f00c92b86fd70da325485cc1bcad3d4f448b4b",
+        "repeats_exact": true,
+        "pointer_alignment_verified": true,
+        "globally_first_operator_attribution_complete": false
+      },
+      "batch_invariant_batched": {
+        "status": "captured_leaf_output_reproduced_twice",
+        "operator": "linear",
+        "output_sha256": "79e628a373c78a22b5976f9564cf6cfd88cad1ba18c13c683b064e6c9d5f61fd",
+        "repeats_exact": true,
+        "pointer_alignment_verified": true,
+        "globally_first_operator_attribution_complete": false
+      }
+    },
+    "comparisons": {
+      "native": {
+        "target_input_comparable": true,
+        "target_input_exact": true,
+        "target_output_exact": false
+      },
+      "batch_invariant": {
+        "target_input_comparable": true,
+        "target_input_exact": true,
+        "target_output_exact": true
+      }
+    },
+    "same_operands_across_implementations": true,
+    "native_leaf_batch_dependence_demonstrated": true,
+    "invariant_leaf_bitwise_stability_demonstrated": true,
+    "same_operand_repair_demonstrated": true,
+    "earlier_unresolved_leaf_count": 1,
+    "scope": "Supported first comparable leaf, not globally first operator",
+    "globally_first_operator_attribution_complete": false,
+    "auditor_sha256": "fde40b5e8de1dece6685f7dcd1f78a00d756724ff7ac5836c26ffa45356ef037",
+    "full_campaign_complete": false
+  },
+  "full_campaign_complete": false
+}

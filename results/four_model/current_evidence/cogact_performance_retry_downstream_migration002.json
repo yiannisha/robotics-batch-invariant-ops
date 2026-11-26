@@ -1,0 +1,52 @@
+{
+  "observed_utc": "2026-11-11T03:54:43.741244+00:00",
+  "status": "failed_predecessor_downstream_jobs_requeued_after_fresh_isolated_performance",
+  "jobs": {
+    "causal": {
+      "pid": 1443755,
+      "start_ticks": "439053602",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-retry-performance-causal-ablation-003.py",
+      "launcher_sha256": "020d34d9bf04803f964ce4487711bc807e7aa256dcf485b2f63802f92247de38",
+      "predecessor": "performance"
+    },
+    "causal_audit": {
+      "pid": 1443756,
+      "start_ticks": "439053602",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-retry-causal-independent-audit-003.py",
+      "launcher_sha256": "4b2e0deae703503c9e3b6f05b72c96ba3adbc66f2c630dcc572a2aa318bbd903",
+      "predecessor": "causal"
+    },
+    "local": {
+      "pid": 1443757,
+      "start_ticks": "439053602",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-retry-causal-local-leaf-replay-003.py",
+      "launcher_sha256": "bf0390cc5d3e9e540aaf2edee22c74b0948aec61d514611b3b912c5d2a8c554e",
+      "predecessor": "causal_audit"
+    },
+    "figures": {
+      "pid": 1443758,
+      "start_ticks": "439053602",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-retry-causal-flow-figures-003.py",
+      "launcher_sha256": "f7372472ab59cc80186a3e161a1bd93524f0a0084c1b0748b8bc71a7220a3c86",
+      "predecessor": "causal_audit"
+    },
+    "operator": {
+      "pid": 1443759,
+      "start_ticks": "439053602",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-retry-local-isolated-operator-performance-003.py",
+      "launcher_sha256": "9d937884bb7f5c82781db0250119ac136c7b1e47668610a3b8a5e7f3f563d5d8",
+      "predecessor": "local"
+    },
+    "serving_figures": {
+      "pid": 1443760,
+      "start_ticks": "439053603",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-retry-performance-serving-stability-figures-002.py",
+      "launcher_sha256": "5d433b7f763475b65adbecbb38f8e41af4fd6a69d9288319ee2a6c297a4362b2",
+      "predecessor": "performance"
+    }
+  },
+  "numerical_sources_unchanged": true,
+  "prior_jobs_confirmed_missing": true,
+  "actual_downstream_measurements_complete": false,
+  "full_campaign_complete": false
+}

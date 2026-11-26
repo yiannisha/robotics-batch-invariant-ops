@@ -1,0 +1,16 @@
+{
+  "status": "paired_start_bootstrap_independently_recounted",
+  "report_sha256": "3ff9a4e9dbb995b1269a5958cbd9f310cd75fda804ad9fd5c4ef39f12a62df01",
+  "source_hashes": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500.json": "311d7cf6ddd81f0684d20dbbbac038f874c1510c4c734e1af5516ccba206e81b",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500_independent_audit.json": "3314a478f2db0f447a9e8ba2b4b4f9b54e6ce99d59a60f1589056b4b458b03b7",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500_bootstrap_draws_001.npz": "65b4d99d39f3471d71473e2bad4fbcdbb4ad46acbffdb1b482c415862020349b"
+  },
+  "auditor_sha256": "03241879d73fb35320e25bc75b9f338c14aac715fae5b63a0cdbd22e826cfded",
+  "verified_tasks": 10,
+  "verified_starts": 500,
+  "verified_estimates": 120,
+  "resamples": 20000,
+  "scope": "Paired-start percentile intervals for retained audited cohorts; no population guarantee",
+  "full_campaign_complete": false
+}

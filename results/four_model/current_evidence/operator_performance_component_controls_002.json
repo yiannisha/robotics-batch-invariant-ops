@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-11-09T19:09:18.766938+00:00",
+  "status": "operator_component_metadata_and_cpu_controls_passed",
+  "unit_tests_passed": 19,
+  "case_inventory": {
+    "pi05": {
+      "source_cases": 58,
+      "variants": 62,
+      "timing_slots": 710
+    },
+    "rdt": {
+      "source_cases": 70,
+      "variants": 82,
+      "timing_slots": 950
+    },
+    "cogact": {
+      "source_cases": 64,
+      "variants": 80,
+      "timing_slots": 930
+    },
+    "lingbot": {
+      "source_cases": 66,
+      "variants": 66,
+      "timing_slots": 680
+    }
+  },
+  "attention_component_layouts_crosschecked": 32,
+  "scope": "Metadata-only Torch meta-device layout checks; PV random generation mocked to metadata allocation. No GPU timings or numerical GPU integration accepted.",
+  "actual_gpu_timings_accepted": false,
+  "full_campaign_complete": false,
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/build_operator_performance_plans.py": "3bc090a84a0de8e0231891c96eb93691a5dba295f0963fd5f560967d73b36487",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/operator_performance_operands.py": "5108d3b6d6b1751989e0b779de09f78d6890c1d11794ef012c52d1511f7c5c57",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_qualified_operator_cases.py": "d10f018637f0e5333642f0d70c1da6148120d0d6207a1fe0100ab0bfb756ab96",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_operator_benchmark.py": "6b61a7ca1372c2ff5ea85cb578b8aaa4355c859471633b632cb24c7b41c67873",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_isolated_operator_performance.py": "4bbeffed25c4bf1297ec514ae5df9a705fa36b75c3bf03339a2e341e63307aba",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_operator_performance_operands.py": "be7e151bd6d27daa17e388d71b1a6331ff87b635a2ae3d643d87073c6eda6ebf",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_isolated_operator_performance_audit.py": "957ae656d7351783f000ef341fe78780e9987274e1945fe25011386a3b551f29"
+  }
+}

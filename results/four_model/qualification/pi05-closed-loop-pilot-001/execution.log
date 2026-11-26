@@ -1,0 +1,28 @@
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+WARNING:robosuite_logs:No private macro file found!
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+WARNING:robosuite_logs:It is recommended to use a private macro file
+[robosuite WARNING] To setup, run: python /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+WARNING:robosuite_logs:To setup, run: python /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/lib/python3.12/site-packages/torch/library.py:381: UserWarning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::mm(Tensor self, Tensor mat2) -> Tensor
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: CUDA
+  previous kernel: registered at /pytorch/aten/src/ATen/LegacyBatchingRegistrations.cpp:1079
+       new kernel: registered at /dev/null:1715 (Triggered internally at /pytorch/aten/src/ATen/core/dispatch/OperatorEntry.cpp:218.)
+  self.m.impl(
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Local assets not found. Downloading from HuggingFace Hub...
+Assets already downloaded at /home/hadjiyiannis_3_gmail_com/.cache/libero/assets
+FINISHED task=0 initialization=0 native_singleton: success=False, steps=520
+FINISHED task=0 initialization=0 native_dynamic: success=False, steps=520
+FINISHED task=0 initialization=0 patched_singleton: success=False, steps=520
+FINISHED task=0 initialization=0 patched_dynamic: success=False, steps=520
+FINISHED task=0 initialization=0 native_singleton_repeat: success=False, steps=520
+FINISHED task=0 initialization=0 native_dynamic_repeat: success=False, steps=520
+FINISHED task=0 initialization=0 patched_singleton_repeat: success=False, steps=520
+FINISHED task=0 initialization=0 patched_dynamic_repeat: success=False, steps=520
+QUALIFIED block 0/0

@@ -1,0 +1,40 @@
+{
+  "status": "paired_bootstrap_exactly_matches_original_pizero_function",
+  "reference_source": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/batch-invariant-pizero-exp/open-pi-zero/experiments/analyze_simpler.py",
+  "reference_sha256": "811011f7282af49109c1651f6fa9112dfcb4f3715f08ed969b95c986ab02e41a",
+  "comparisons": [
+    {
+      "task": "0",
+      "comparison": "patched_singleton_minus_native_singleton"
+    },
+    {
+      "task": "0",
+      "comparison": "patched_dynamic_minus_native_dynamic"
+    },
+    {
+      "task": "0",
+      "comparison": "native_dynamic_minus_native_singleton"
+    },
+    {
+      "task": "0",
+      "comparison": "patched_dynamic_minus_patched_singleton"
+    },
+    {
+      "task": "1",
+      "comparison": "patched_singleton_minus_native_singleton"
+    },
+    {
+      "task": "1",
+      "comparison": "patched_dynamic_minus_native_dynamic"
+    },
+    {
+      "task": "1",
+      "comparison": "native_dynamic_minus_native_singleton"
+    },
+    {
+      "task": "1",
+      "comparison": "patched_dynamic_minus_patched_singleton"
+    }
+  ],
+  "source_statistics_sha256": "bf4dd805ea65d802bcc368cb7bae2655cecb72cb0d236e75e1ab6f2f36e4faf8"
+}

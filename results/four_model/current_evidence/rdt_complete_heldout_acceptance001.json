@@ -1,0 +1,37 @@
+{
+  "classification": "completed_heldout_stability_milestone",
+  "verified_at_utc": "2026-11-12T10:39:44.976286+00:00",
+  "audit_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/independent_heldout_audit.json",
+  "audit_sha256": "57579db72aab7af1c2f0225ce9c60daaeddfa4bb780dd3359c1815c89aa2d609",
+  "input_sha256_verified": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/audited_manifest.json": true,
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/numerical_freeze.json": true,
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/prepared_input_disjointness_final.json": true,
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/invariance.jsonl.gz": true,
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/singleton_fidelity.jsonl.gz": true,
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/invariance.jsonl.gz.runtime.json": true
+  },
+  "auditor_sha256_verified": true,
+  "audit": {
+    "status": "complete_four_model_heldout_independently_verified",
+    "model_id": "rdt_maniskill_exact",
+    "input_sha256": {
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/audited_manifest.json": "f7f4fa9bd71741407334f337b5dba09415647f9ad3edf76e73404669db56a277",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/numerical_freeze.json": "426f83df968a3a7f0374dd7fcedd176acba99a916aeed690aefa5fe538b4be84",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/prepared_input_disjointness_final.json": "b1ed3bd6bc424b606b10aaddcb042098b56c7406973a74e42fc4e591c0492ef7",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/invariance.jsonl.gz": "db6ec191932fe0a277da998e4b8b46969b1d66b030f11197f2cf509a5ea24a9f",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/singleton_fidelity.jsonl.gz": "a0730727e61c4b85c2b19879dd7a38e58c123d2f33b4f0e02ef748fd68e9505a",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/invariance.jsonl.gz.runtime.json": "b4a930c27437c8063fb2039042e16f3d80f43544f27b20428d95dc150f5f3c33"
+    },
+    "request_noise_pairs": 2400,
+    "implementation_groups": 4800,
+    "arrangement_records": 187200,
+    "native_nonexact_arrangements": 88800,
+    "invariant_output_and_all_recorded_stages_exact": true,
+    "singleton_fidelity_records": 2400,
+    "singleton_fidelity_nonexact_records": 2400,
+    "auditor_sha256": "125661e72a69e16341be84b42ed6faa166568814091a86d36363578178a0d307",
+    "full_model_campaign_complete": false
+  },
+  "full_model_campaign_complete": false
+}

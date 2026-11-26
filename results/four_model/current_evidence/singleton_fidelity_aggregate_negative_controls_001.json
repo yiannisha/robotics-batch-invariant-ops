@@ -1,0 +1,25 @@
+{
+  "controls": [
+    {
+      "case": "altered_pooled_mse",
+      "rejected": true,
+      "reason": "ValueError: Fidelity aggregate differs: pooled_normalized_mse"
+    },
+    {
+      "case": "altered_task_p95",
+      "rejected": true,
+      "reason": "ValueError: Fidelity aggregate differs: p95_normalized_comparison_rmse"
+    },
+    {
+      "case": "missing_task",
+      "rejected": true,
+      "reason": "ValueError: Missing/duplicate fidelity task"
+    },
+    {
+      "case": "altered_physical_exact_count",
+      "rejected": true,
+      "reason": "ValueError: Fidelity aggregate differs: physical_output_nonexact"
+    }
+  ],
+  "auditor_sha256": "51e8c40f3aa99f31ce818e07fea672162778819ee8d527177bde94c7edac19d1"
+}

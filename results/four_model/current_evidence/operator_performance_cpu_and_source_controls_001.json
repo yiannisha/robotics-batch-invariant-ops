@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-11-09T19:02:01.755126+00:00",
+  "status": "operator_performance_cpu_and_source_link_controls_passed",
+  "unit_tests_passed": 16,
+  "actual_source_mask_cases_reconstructed_bitwise": 4,
+  "additional_controls": [
+    "pi05_actual_plan_evidence_links_to_phase_freeze",
+    "pi05_unbound_source_rejected",
+    "rdt_actual_plan_evidence_links_to_phase_freeze",
+    "rdt_unbound_source_rejected"
+  ],
+  "freeze_source_link_scope": "Actual PI/RDT metadata/source links; expensive asset rehash helper mocked for this focused test. This is not fresh numerical-freeze acceptance.",
+  "actual_gpu_timings_accepted": false,
+  "remaining": "Queue isolated runs and independent audits after existing GPU work; actual GPU integration remains pending.",
+  "full_campaign_complete": false,
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_qualified_operator_cases.py": "aae4af7c13fa79aedc3893e0d0784a48c6bcb01bf5b96ef0a4c4c59d1944755a",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/operator_performance_operands.py": "4f84b21408db0c8bc0ba8a9ecd5a1bb9df100689f41b886b4e122ef86a5958a3",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_operator_benchmark.py": "6b61a7ca1372c2ff5ea85cb578b8aaa4355c859471633b632cb24c7b41c67873",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_isolated_operator_performance.py": "8b6d92b4a49998c9be5b8a8dc90bf0e3b132d162c65118d333375bd569e08ef5",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_operator_performance_operands.py": "9e9bf7d4085a5c6c8546e391cd67e3caa148ac60d499d434560051cd720b6da1",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_isolated_operator_performance_audit.py": "af087839c10d5a9c3b40632be512ff321f89931d54be39e2b5d7731994ad5c16"
+  }
+}

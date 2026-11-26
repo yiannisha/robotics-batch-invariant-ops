@@ -1,0 +1,975 @@
+{
+  "status": "paired_rollouts_independently_audited_provisional_pending_numerical_QA",
+  "completed_paired_starts": 39,
+  "prescribed_paired_starts": 200,
+  "episodes": 468,
+  "by_task": {
+    "pick_can": {
+      "paired_starts": 39,
+      "successes": {
+        "native_singleton": 39,
+        "native_dynamic": 38,
+        "patched_singleton": 39,
+        "patched_dynamic": 39,
+        "released_native_singleton": 38,
+        "released_native_dynamic": 38
+      },
+      "success_rate": {
+        "native_singleton": 1.0,
+        "native_dynamic": 0.9743589743589743,
+        "patched_singleton": 1.0,
+        "patched_dynamic": 1.0,
+        "released_native_singleton": 0.9743589743589743,
+        "released_native_dynamic": 0.9743589743589743
+      }
+    }
+  },
+  "blocks": [
+    {
+      "task": "pick_can",
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 1,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 2,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 3,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 4,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 5,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 6,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 7,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 8,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 9,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 10,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 11,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 12,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": false,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": false,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 13,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 14,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 15,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 16,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 17,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 18,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": false
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 19,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 20,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 21,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 22,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 23,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 24,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 25,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 26,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 27,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 28,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 29,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 30,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 31,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 32,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 33,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 34,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 35,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 36,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 37,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 38,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    }
+  ],
+  "reconstructed_policy_calls": 37440,
+  "raw_frames_verified": 37908,
+  "all_completed_blocks_pass_reset_AA_and_invariant_trajectory_checks": true,
+  "controlled_primary_fixed64": true,
+  "released_native_supplements_separate": true,
+  "cohort_rollouts_complete": false,
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "candidate_lock_sha256": "51f480eba2e274081347b5d3c184ad6ef5fdba5f2e38edf4985d46af559a8b91",
+  "auditor_sha256": "ea832a5280bfbe9369d91e3f21c39a57aa0dddae1532a6f5d57ca6689d241ffb"
+}

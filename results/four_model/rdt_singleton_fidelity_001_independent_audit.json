@@ -1,0 +1,12 @@
+{
+  "status": "singleton_fidelity_aggregate_arithmetic_independently_recounted",
+  "model_id": "rdt_maniskill_exact",
+  "report_sha256": "5ec3d0f738189646f2ddbed5cdf56200b84ac25f8eba4213a80f50014d29d023",
+  "raw_sha256": "2b9751ae324b56e13137bc67bca6f10300dba8ef71470d1e400dacf528149519",
+  "diagnostic_audit_sha256": "f0b001f8952ee4f08ed43a951f337b5c6bb79556ca177994b13031def16e1754",
+  "auditor_sha256": "51e8c40f3aa99f31ce818e07fea672162778819ee8d527177bde94c7edac19d1",
+  "comparisons": 600,
+  "tasks": 5,
+  "scope": "Recount of producer-measured normalized B1 implementation differences. Not independent tensor-error rederivation or batching stability.",
+  "full_campaign_complete": false
+}

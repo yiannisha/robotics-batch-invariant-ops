@@ -1,0 +1,58 @@
+{
+  "observed_utc": "2026-11-11T04:04:03.256092+00:00",
+  "status": "idle_gated_performance_downstream_chain_queued",
+  "jobs": {
+    "performance": {
+      "pid": 1716604,
+      "start_ticks": "439109553",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-003.py",
+      "launcher_sha256": "0f342689df7fa3fc919b21821bb5873e57afeb05fa968e344f040cb8cf643df1"
+    },
+    "causal": {
+      "pid": 1716608,
+      "start_ticks": "439109553",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-performance-causal-ablation-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-performance-causal-ablation-003.py",
+      "launcher_sha256": "52506372fc3c818c8ad6db15eaca21f59b71dcd5d06cb813b1865a1b595cd37d"
+    },
+    "causal_audit": {
+      "pid": 1716609,
+      "start_ticks": "439109553",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-causal-independent-audit-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-causal-independent-audit-003.py",
+      "launcher_sha256": "08584368182aa1975656f5b0744f390f1da35f6a94ee5958426075ef07019028"
+    },
+    "local": {
+      "pid": 1716610,
+      "start_ticks": "439109554",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-causal-local-leaf-replay-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-causal-local-leaf-replay-003.py",
+      "launcher_sha256": "9a5963f162f444e8e8e26a6620d11e5aeb432a0f2f515db4b51cca31f8a0e41d"
+    },
+    "figures": {
+      "pid": 1716611,
+      "start_ticks": "439109554",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-causal-flow-figures-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-causal-flow-figures-003.py",
+      "launcher_sha256": "1f88463368ad1db025a02bc935bab849f70c850ae74e59e7c691d22d0d8d576f"
+    },
+    "operator": {
+      "pid": 1716612,
+      "start_ticks": "439109554",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-local-isolated-operator-performance-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-local-isolated-operator-performance-003.py",
+      "launcher_sha256": "75bdf2ee2431380f287d160c10821e830f1d089a1fab3425fa5c107ff30e824c"
+    },
+    "serving_figures": {
+      "pid": 1716613,
+      "start_ticks": "439109554",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-performance-serving-stability-figures-003.json",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-performance-serving-stability-figures-003.py",
+      "launcher_sha256": "d89e80b7ec21c5d807caefc20a908949c38685b2c6a722f2e6fc980fe9e3e684"
+    }
+  },
+  "numerical_sources_and_experiment_plans_unchanged": true,
+  "actual_downstream_measurements_complete": false,
+  "full_campaign_complete": false
+}

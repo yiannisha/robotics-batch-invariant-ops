@@ -1,0 +1,16 @@
+{
+  "scope": "Mask serialization/provenance only, not operator qualification",
+  "checks": [
+    {
+      "batch_size": 1,
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "lossless_additive_masks_verified": 1
+    },
+    {
+      "batch_size": 8,
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "lossless_additive_masks_verified": 1
+    }
+  ],
+  "full_operator_qualification_complete": false
+}

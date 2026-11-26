@@ -1,0 +1,27 @@
+{
+  "status": "storage_layout_assessed_no_relaunch",
+  "observed_utc": "2026-11-13T01:35:53.747127+00:00",
+  "volumes": {
+    "/vastdisk": {
+      "available_bytes": 1322616156160,
+      "device": 2305
+    },
+    "/scratch": {
+      "available_bytes": 967429079040,
+      "device": 2304
+    }
+  },
+  "required_prelaunch_reserve_bytes": 1500000000000,
+  "source_hashes": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_lingbot_robotwin_paired_study_v2.py": "7fb557fe1dfa69b768aacba99284abedfb74a2c8c0799cfe18c3bf86ecac6e05",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/collect_lingbot_robotwin_campaign_replay_v2.py": "875bbb0db1b65678f260702859e662e6e237d278e2c76c8c2f76b36562659d5f",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_paired_study_v2.py": "b76c4f7e5c1eadfc0c0b00654be07da03007f2313d216b4c6f7aa7aae0b8af5c"
+  },
+  "findings": [
+    "Raw frames and requests are already gzip-compressed and content-addressed; do not assume a fresh compression pass yields enough space.",
+    "Runner retains frames and requests in separate categories; its transient worker frame must resolve within output.",
+    "Independent audit requires resolved retained file parent to equal resolved category directory. Category symlinks may support split-volume retention but capacity allocation and retention-path checks need qualification before relaunch.",
+    "No retained file was moved or deleted; no numerical or trajectory protocol changed."
+  ],
+  "full_campaign_complete": false
+}

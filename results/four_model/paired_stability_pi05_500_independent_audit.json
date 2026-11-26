@@ -1,0 +1,2512 @@
+{
+  "status": "reported_subset_stability_metrics_independently_verified",
+  "report_sha256": "311d7cf6ddd81f0684d20dbbbac038f874c1510c4c734e1af5516ccba206e81b",
+  "reporting_source_sha256": "f0f2bca7f6d6b2873fce32392303089a6b2c41a67931baab6adb5bd108125a35",
+  "auditor_sha256": "81ba88c4ee0de3b3b0224f7f810b5df9475981044d839ff27331312c6d36cb89",
+  "raw_frame_files_verified": 416178,
+  "fixed_input_nonsingleton_pairs_verified": 2620,
+  "paired_starts_verified": [
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 0,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 1,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 2,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 3,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 4,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 5,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 6,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 7,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 8,
+      "initialization": 49
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 0
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 1
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 2
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 3
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 4
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 5
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 6
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 7
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 8
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 9
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 10
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 11
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 12
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 13
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 14
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 15
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 16
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 17
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 18
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 19
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 20
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 21
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 22
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 23
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 24
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 25
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 26
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 27
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 28
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 29
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 30
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 31
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 32
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 33
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 34
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 35
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 36
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 37
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 38
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 39
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 40
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 41
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 42
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 43
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 44
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 45
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 46
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 47
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 48
+    },
+    {
+      "model": "pi05",
+      "task": 9,
+      "initialization": 49
+    }
+  ],
+  "angular_formula_crosscheck_absolute_tolerance_rad": 1e-07,
+  "full_four_model_campaign_complete": false
+}

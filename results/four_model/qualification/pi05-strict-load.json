@@ -1,0 +1,76 @@
+{
+  "status": "all_tensors_loaded_and_verified",
+  "checkpoint": {
+    "model": "pi05_libero",
+    "repository": "lerobot/pi05_libero_finetuned_v044",
+    "revision": "7152f13e34c6c115d808aea0e5d08aca74eac14b",
+    "status": "checkpoint_acquired_and_hashed",
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 4390,
+        "sha256": "b1ba487d27f8dfdb873e4bab1856aaecfd4b297035a829942eeda43691c71f71",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "path": "config.json",
+        "bytes": 2170,
+        "sha256": "2f6d4b96b032593e1de65b391ee7252a70227bff398ef1b94658fea17818142f",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "path": "model.safetensors",
+        "bytes": 7473096344,
+        "sha256": "877b3ec1130548b69af7f8aeef3ec9d3fc7738040f0b9beb490857ec970997ae",
+        "upstream_lfs_sha256": "877b3ec1130548b69af7f8aeef3ec9d3fc7738040f0b9beb490857ec970997ae"
+      },
+      {
+        "path": "policy_postprocessor.json",
+        "bytes": 660,
+        "sha256": "37d719a6584600988e6c343306d2eaee0575109f235ad500313577f73e47e8a1",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "path": "policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+        "bytes": 7668,
+        "sha256": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9",
+        "upstream_lfs_sha256": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9"
+      },
+      {
+        "path": "policy_preprocessor.json",
+        "bytes": 1903,
+        "sha256": "3d669ffc18d0364536735d8203076dcc69d3a6523aa5956ccaada3f9e1e6b748",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "path": "policy_preprocessor_step_2_normalizer_processor.safetensors",
+        "bytes": 7668,
+        "sha256": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9",
+        "upstream_lfs_sha256": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9"
+      },
+      {
+        "path": "train_config.json",
+        "bytes": 5621,
+        "sha256": "199518b79faeaef0877e9a1eb5f2df6884902476a7d4491c7f865142c3fe90fd",
+        "upstream_lfs_sha256": null
+      }
+    ],
+    "inference_qualified": false,
+    "closed_loop_qualified": false
+  },
+  "torch": "2.8.0+cu128",
+  "transformers": "4.53.3",
+  "lerobot": "0.4.4",
+  "tensor_count": 813,
+  "source_elements": 3616757520,
+  "strict": true,
+  "all_tensors_exact_after_declared_dtype_conversion": true,
+  "verified_tied_aliases": {
+    "model.paligemma_with_expert.paligemma.model.language_model.embed_tokens.weight": "model.paligemma_with_expert.paligemma.lm_head.weight"
+  },
+  "compile_model": false,
+  "dtype": "bfloat16",
+  "config": "PI05Config(n_obs_steps=1, input_features={'observation.images.image': PolicyFeature(type=<FeatureType.VISUAL: 'VISUAL'>, shape=(3, 256, 256)), 'observation.images.image2': PolicyFeature(type=<FeatureType.VISUAL: 'VISUAL'>, shape=(3, 256, 256)), 'observation.state': PolicyFeature(type=<FeatureType.STATE: 'STATE'>, shape=(8,)), 'observation.images.empty_camera_0': PolicyFeature(type=<FeatureType.VISUAL: 'VISUAL'>, shape=(3, 224, 224))}, output_features={'action': PolicyFeature(type=<FeatureType.ACTION: 'ACTION'>, shape=(7,))}, device='cpu', use_amp=False, use_peft=False, push_to_hub=True, repo_id='pepijn223/pi05_libero_31_9_non_q', private=None, tags=None, license=None, pretrained_path=PosixPath('lerobot/pi05_libero'), paligemma_variant='gemma_2b', action_expert_variant='gemma_300m', dtype='bfloat16', chunk_size=50, n_action_steps=50, max_state_dim=32, max_action_dim=32, num_inference_steps=10, time_sampling_beta_alpha=1.5, time_sampling_beta_beta=1.0, time_sampling_scale=0.999, time_sampling_offset=0.001, min_period=0.004, max_period=4.0, rtc_config=None, image_resolution=(224, 224), empty_cameras=1, tokenizer_max_length=200, normalization_mapping={'ACTION': <NormalizationMode.MEAN_STD: 'MEAN_STD'>, 'STATE': <NormalizationMode.MEAN_STD: 'MEAN_STD'>, 'VISUAL': <NormalizationMode.IDENTITY: 'IDENTITY'>}, gradient_checkpointing=False, compile_model=False, compile_mode='max-autotune', freeze_vision_encoder=False, train_expert_only=False, optimizer_lr=2.5e-05, optimizer_betas=(0.9, 0.95), optimizer_eps=1e-08, optimizer_weight_decay=0.01, optimizer_grad_clip_norm=1.0, scheduler_warmup_steps=1000, scheduler_decay_steps=6000, scheduler_decay_lr=2.5e-06)",
+  "numerical_inference_qualified": false,
+  "closed_loop_qualified": false
+}

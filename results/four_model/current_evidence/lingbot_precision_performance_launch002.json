@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-11-11T02:35:51.381262+00:00",
+  "performance_pid": 3624982,
+  "performance_start_ticks": "438580366",
+  "audit_pid": 3624985,
+  "audit_start_ticks": "438580367",
+  "source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-isolated-performance-002.py": "a25a6805f451949da3eb91c83f92876ba5ed68b61d062080905a8368fe74820b",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-independent-performance-audit-002.py": "8aa795c0c7bf44b022c71f704cfb00d42a0d3b122c712d12d94577a435862982",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_four_model_isolated_performance_v2.py": "88982066db30be1265b2cbd62c2112fa5dd6a976c7ac573a5f0a3287c01c787c"
+  },
+  "actual_performance_complete": false,
+  "full_campaign_complete": false
+}

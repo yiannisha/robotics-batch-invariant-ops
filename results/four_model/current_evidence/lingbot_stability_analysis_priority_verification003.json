@@ -1,0 +1,6 @@
+{
+  "launch_proof_sha256": "cc19466d09f9539eaea3a465a298b356c66609680d4ca727b8eaab89e2f570eb",
+  "all_four_launchers_live_waiting": true,
+  "source_ast_changes_limited_to_declared_schedule_and_cpu_visibility": true,
+  "measurement_or_acceptance_results_claimed": false
+}

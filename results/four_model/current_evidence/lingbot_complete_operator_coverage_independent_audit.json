@@ -1,0 +1,54 @@
+{
+  "status": "source_operator_inventory_reconciled",
+  "source_patterns_b1": 33,
+  "source_patterns_b8": 33,
+  "source_traces": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/actual_trace_B1_native.json": "a956992baa7b51e4feba0bbe01ca4b8b7b7d24a4021d98aab88b48c58b4d683a",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/actual_trace_B8_native.json": "5d2769c70c2d7927985d4f4b54e7b8d2355e118872c322965025efc951dc6e27"
+  },
+  "components": [
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_cases_v2.json",
+      "configuration_sha256": "8aa78528bbe9adc89f808ee9d6f414649810faee17ea11471570fd454cfad429",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_measurements.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_independent_audit.json",
+      "audit_sha256": "39077d190ac6e538c98c3edb57d478211e1942c1a00d4ef003d191a211c558ea",
+      "independently_verified_records": 40800,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 24,
+      "source_patterns_b8": 24
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_reduction_cases.json",
+      "configuration_sha256": "70aadfa2114a1bb12f5221c5ee42335049be3abe69546bc14d216828ff1bc41e",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_reduction_measurements.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_reduction_independent_audit.json",
+      "audit_sha256": "1a9e6463fcbffc5617cc55576f0e9c6641cf09027d158bd28a86ac273b583496",
+      "independently_verified_records": 10200,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 6,
+      "source_patterns_b8": 6
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_remaining_cases.json",
+      "configuration_sha256": "ac86eca5a93eb9aeba92bdf19a2c5520b7bb402942052c80dc1a5f7f198f2fe8",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_remaining_measurements.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_remaining_independent_audit.json",
+      "audit_sha256": "4b4572b085ab75d5ea6d44fb4658b61a9502f0baba837fc7d2589970e49e0097",
+      "independently_verified_records": 5100,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 3,
+      "source_patterns_b8": 3
+    }
+  ],
+  "missing_patterns": {
+    "1": [],
+    "8": []
+  },
+  "all_source_patterns_mapped": true,
+  "all_component_measurements_complete": true,
+  "full_traced_operator_qualification_complete": true,
+  "scope": "Observed high-level source shapes/strides and captured mask variants; full-model numerical/fidelity/heldout QA remain separate.",
+  "performance_qualified": false,
+  "auditor_sha256": "74b7e38ceeda59f0f1de5eac89eea6bdacc8aca6a95fd7437ce35b6f2dcfdcb2"
+}

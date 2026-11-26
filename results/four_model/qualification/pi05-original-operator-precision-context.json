@@ -1,0 +1,7 @@
+{
+  "tf32_matmul": false,
+  "tf32_cudnn": true,
+  "cudnn_benchmark": false,
+  "NVIDIA_TF32_OVERRIDE": null,
+  "scope": "Fresh process under the unchanged original qualifier imports; explains why the F32 convolution native baseline must be repeated with model TF32False."
+}

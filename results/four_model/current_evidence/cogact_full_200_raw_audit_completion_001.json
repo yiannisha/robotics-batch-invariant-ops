@@ -1,0 +1,20 @@
+{
+  "status": "paired_rollouts_independently_audited_provisional_pending_numerical_QA",
+  "completed_paired_starts": 200,
+  "prescribed_paired_starts": 200,
+  "episodes": 2400,
+  "reconstructed_policy_calls": 231600,
+  "raw_frames_verified": 234000,
+  "all_completed_blocks_pass_reset_AA_and_invariant_trajectory_checks": true,
+  "cohort_rollouts_complete": true,
+  "numerical_qa_acceptance_pending": true,
+  "observed_utc": "2026-11-10T03:47:31.901825+00:00",
+  "proof": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_complete_audit.json",
+  "proof_sha256": "0b6353184b0f705f2c40f42859ad00d07bcc95c75b159e5d28328c8351146249",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "accepted_magnitude_cohort_changed": false,
+  "native_identical_input_first_action_divergence_counts": {
+    "1": 200
+  },
+  "native_all_divergent_inputs_identical": true
+}

@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-11-11T18:24:59.395357+00:00",
+  "classification": "versioned_plan_builder_preparation_not_measurements",
+  "old_source": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/build_operator_performance_plans.py",
+  "old_sha256": "3bc090a84a0de8e0231891c96eb93691a5dba295f0963fd5f560967d73b36487",
+  "new_source": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/build_operator_performance_plans_v2.py",
+  "new_sha256": "bb6dfcf8e56d95655fa7d188b062b2eadf710754e6b09f68e180e6301b1285b8",
+  "mask_binding_helpers_ast_identical": true,
+  "actual_corrected_traces_available": false,
+  "actual_plan_created": false,
+  "timing_launched": false,
+  "full_campaign_complete": false
+}

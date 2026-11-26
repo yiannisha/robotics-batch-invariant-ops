@@ -1,0 +1,22 @@
+{
+  "observed_utc": "2026-11-10T15:13:36.420939+00:00",
+  "status": "independently_recounted_and_visually_reviewed",
+  "artifacts_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_serving_stability_tradeoff_001/independent_table_audit.json": "c66479188f4c37f6d571a8c972e737ebc17d96e578176d085f197a381e13d445",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_serving_stability_tradeoff_001/serving_tradeoff.pdf": "cb96bbbe9336c9d13c44fa743c6672d03b81161cbbb06fab73938bc782e2766e",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_serving_stability_tradeoff_001/serving_tradeoff.png": "de2ca986fe87556a3c08c831f8d4f3a7e88d626dfcaf171bf77d298a2b9d3b0d",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_serving_stability_tradeoff_001/serving_tradeoff.json": "afd0bac9ec47e6e213da5dc3847804742bc52f3cb71dc78cbd8ee5d2a26c1331",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_serving_stability_tradeoff_001/serving_tradeoff.csv": "1bf658876afdcdb176978f396446aa8f919208759e5c72f1969eb283a979820f"
+  },
+  "visual_inspection_complete": true,
+  "visual_checks": [
+    "All four configurations and load labels visible",
+    "Logarithmic p95 axis and throughput axis legible",
+    "Exactness markers and distinct B8 padding reference clearly explained"
+  ],
+  "native_dynamic_nonexact_requests": 746,
+  "invariant_dynamic_nonexact_requests": 0,
+  "requests_per_configuration": 1000,
+  "unique_fixtures": 8,
+  "full_campaign_complete": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "captured_additive_mask_byte_reconstruction_passed",
+  "batches": [
+    1,
+    2,
+    8,
+    33,
+    64
+  ],
+  "source_sha256": "4a2cda1996dc7d3b386ba3a3f08eceff62a2770ecab6792c9557fffd6bc085d6",
+  "last_request_singleton_mask_exact": true,
+  "neural_inference_performed": false
+}

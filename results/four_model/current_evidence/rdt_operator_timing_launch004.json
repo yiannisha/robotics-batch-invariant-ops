@@ -1,0 +1,9 @@
+{
+  "pid": 3539982,
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-after-performance-isolated-operator-performance-004.py",
+  "sha256": "1ebb2a73e7a995f904dce9c57c2f2e7ce4ad7e60341a3e141bf46bdb0e238ac5",
+  "dependency_pid": 1791898,
+  "dependency_start_ticks": "450444333",
+  "timing_protocol_changed": false,
+  "full_campaign_complete": false
+}

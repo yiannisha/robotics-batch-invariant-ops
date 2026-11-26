@@ -1,0 +1,46 @@
+{
+  "timestamp_utc": "2026-11-09T23:13:28.564941+00:00",
+  "classification": "verified_wait",
+  "processes": [
+    {
+      "pid": 1942407,
+      "expected_start_ticks": 424051173,
+      "identity_matches": true,
+      "state": "R",
+      "cpu_ticks": 5067116,
+      "rchar": 24226884248
+    },
+    {
+      "pid": 675019,
+      "expected_start_ticks": 426340577,
+      "identity_matches": true,
+      "state": "R",
+      "cpu_ticks": 4851080,
+      "rchar": 14040451811
+    },
+    {
+      "pid": 4055960,
+      "expected_start_ticks": 425339189,
+      "identity_matches": true,
+      "state": "R",
+      "cpu_ticks": 3553038,
+      "rchar": 127373260173
+    },
+    {
+      "pid": 2383779,
+      "expected_start_ticks": 428397247,
+      "identity_matches": true,
+      "state": "R",
+      "cpu_ticks": 525170,
+      "rchar": 310903247415
+    }
+  ],
+  "completed_request_noise_pairs": {
+    "pi05-post-seal-heldout-001": 1171,
+    "rdt-post-seal-heldout-001": 240,
+    "lingbot-post-operators-full-diagnostic-001": 149
+  },
+  "cogact_full_raw_audit_report_exists": false,
+  "acceptance_changed": false,
+  "primary_endpoint": "singleton_vs_batched_stability"
+}

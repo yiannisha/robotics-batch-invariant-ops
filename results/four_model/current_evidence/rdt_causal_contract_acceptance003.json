@@ -1,0 +1,76 @@
+{
+  "verified_at_utc": "2026-11-12T11:30:49.874603+00:00",
+  "audit_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/causal_003/independent_contract_audit.json",
+  "audit_sha256": "155eb51bd241e769e7928daeb706ebce2ae855b1dd4a898fb430a0e5e41ffd46",
+  "all_file_bindings_verified": true,
+  "audit": {
+    "status": "complete_six_mode_causal_measurement_contracts_verified",
+    "model": "rdt",
+    "measurement_records": 3600,
+    "request_noise_pairs": 600,
+    "rows": [
+      {
+        "mode": "existing_invariant_ops",
+        "requests": 600,
+        "nonexact_outputs": 0,
+        "any_recorded_boundary_divergence": 0,
+        "maximum_output_error": 0.0,
+        "first_recorded_boundaries": {}
+      },
+      {
+        "mode": "explicit_per_matrix_reference",
+        "requests": 600,
+        "nonexact_outputs": 0,
+        "any_recorded_boundary_divergence": 0,
+        "maximum_output_error": 0.0,
+        "first_recorded_boundaries": {}
+      },
+      {
+        "mode": "full_invariant",
+        "requests": 600,
+        "nonexact_outputs": 0,
+        "any_recorded_boundary_divergence": 0,
+        "maximum_output_error": 0.0,
+        "first_recorded_boundaries": {}
+      },
+      {
+        "mode": "native",
+        "requests": 600,
+        "nonexact_outputs": 600,
+        "any_recorded_boundary_divergence": 600,
+        "maximum_output_error": 0.048828125,
+        "first_recorded_boundaries": {
+          "flow.step_00.prediction": 600
+        }
+      },
+      {
+        "mode": "native_deterministic",
+        "requests": 600,
+        "nonexact_outputs": 600,
+        "any_recorded_boundary_divergence": 600,
+        "maximum_output_error": 0.048828125,
+        "first_recorded_boundaries": {
+          "flow.step_00.prediction": 600
+        }
+      },
+      {
+        "mode": "operators_plus_patch_projection",
+        "requests": 600,
+        "nonexact_outputs": 0,
+        "any_recorded_boundary_divergence": 0,
+        "maximum_output_error": 0.0,
+        "first_recorded_boundaries": {}
+      }
+    ],
+    "raw_sha256": "31506f0e5933b578d1e45f1eab5e336ec54c13d045a79a279c59213285b9fc7d",
+    "provenance_sha256": "c99ea9ea1b11edfc9bc482502078cc73b33413bd73aa613c87564ec4b0e03c7d",
+    "plan_sha256": "2fc76ec743c718a46bd0df4a1722319298aeb227ccd4ba6d845c1f7d024e185e",
+    "diagnostic_acceptance_sha256": "f0b001f8952ee4f08ed43a951f337b5c6bb79556ca177994b13031def16e1754",
+    "auditor_sha256": "3fbd23f0c68812d9535476a42362d5a5276afcefbce5c0b704350e1d6461916a",
+    "scope": "Retained measurement contract, byte fingerprints, intervention coverage and first recorded boundary",
+    "tensor_errors_independently_rederived": false,
+    "local_operator_reexecution_verified": false,
+    "full_campaign_complete": false
+  },
+  "full_campaign_complete": false
+}

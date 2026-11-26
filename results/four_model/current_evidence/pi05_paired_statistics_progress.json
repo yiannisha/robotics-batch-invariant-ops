@@ -1,0 +1,165 @@
+{
+  "status": "provisional_task_specific_paired_statistics",
+  "completed_paired_starts": 72,
+  "prescribed_paired_starts": 500,
+  "by_task": {
+    "0": {
+      "paired_starts": 47,
+      "unit": "paired_task_initialization",
+      "repeats_counted_as_trials": false,
+      "successes": {
+        "native_singleton": 33,
+        "native_dynamic": 33,
+        "patched_singleton": 32,
+        "patched_dynamic": 32
+      },
+      "success_rate": {
+        "native_singleton": 0.7021276595744681,
+        "native_dynamic": 0.7021276595744681,
+        "patched_singleton": 0.6808510638297872,
+        "patched_dynamic": 0.6808510638297872
+      },
+      "comparisons": {
+        "patched_singleton_minus_native_singleton": {
+          "estimate_percentage_points": -2.127659574468085,
+          "paired_bootstrap_ci95_percentage_points": [
+            -10.638297872340425,
+            6.382978723404255
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 2,
+          "reference_only_successes": 3,
+          "both_successes": 30,
+          "both_failures": 12,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_native_dynamic": {
+          "estimate_percentage_points": -2.127659574468085,
+          "paired_bootstrap_ci95_percentage_points": [
+            -10.638297872340425,
+            6.382978723404255
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 2,
+          "reference_only_successes": 3,
+          "both_successes": 30,
+          "both_failures": 12,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "native_dynamic_minus_native_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            -6.382978723404255,
+            6.382978723404255
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 1,
+          "reference_only_successes": 1,
+          "both_successes": 32,
+          "both_failures": 13,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_patched_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 32,
+          "both_failures": 15,
+          "exact_two_sided_mcnemar_p": 1.0
+        }
+      }
+    },
+    "1": {
+      "paired_starts": 25,
+      "unit": "paired_task_initialization",
+      "repeats_counted_as_trials": false,
+      "successes": {
+        "native_singleton": 24,
+        "native_dynamic": 25,
+        "patched_singleton": 24,
+        "patched_dynamic": 24
+      },
+      "success_rate": {
+        "native_singleton": 0.96,
+        "native_dynamic": 1.0,
+        "patched_singleton": 0.96,
+        "patched_dynamic": 0.96
+      },
+      "comparisons": {
+        "patched_singleton_minus_native_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250402,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 24,
+          "both_failures": 1,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_native_dynamic": {
+          "estimate_percentage_points": -4.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            -12.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250402,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 1,
+          "both_successes": 24,
+          "both_failures": 0,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "native_dynamic_minus_native_singleton": {
+          "estimate_percentage_points": 4.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            12.0
+          ],
+          "bootstrap_seed": 20250402,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 1,
+          "reference_only_successes": 0,
+          "both_successes": 24,
+          "both_failures": 0,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_patched_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250402,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 24,
+          "both_failures": 1,
+          "exact_two_sided_mcnemar_p": 1.0
+        }
+      }
+    }
+  },
+  "bootstrap_method": "pi_zero_analyze_simpler_percentile_paired_episode_bootstrap",
+  "bootstrap_limitations": "Empirical paired resampling cannot represent discordance types absent from the observed sample; small samples require caution.",
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "source_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/pi05_libero_locked_v1/independent_progress_audit.json",
+  "source_audit_sha256": "58064f86852196857db5fa8a82a1eca4b0815caa1886cb4909694d8134662622",
+  "source_audit_snapshot": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/pi05_libero_locked_v1/audit_snapshots/58064f86852196857db5fa8a82a1eca4b0815caa1886cb4909694d8134662622.json",
+  "statistics_source_sha256": "89bd67dd1bb6c1e36eb981557e0858f33ad949445715e59017318e94781b6289"
+}

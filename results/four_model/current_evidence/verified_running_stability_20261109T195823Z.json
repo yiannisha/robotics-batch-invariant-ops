@@ -1,0 +1,75 @@
+{
+  "timestamp_utc": "20261109T195823Z",
+  "observation_seconds": 40,
+  "before": {
+    "1942407": {
+      "state": "R",
+      "start_ticks": "424051173",
+      "cpu_ticks": 3794220,
+      "io": "rchar: 22198300790\nwchar: 36359901\nsyscr: 64233\nsyscw: 2673\nread_bytes: 7331840\nwrite_bytes: 47083520\ncancelled_write_bytes: 4096\n"
+    },
+    "675019": {
+      "state": "R",
+      "start_ticks": "426340577",
+      "cpu_ticks": 2458384,
+      "io": "rchar: 13549045285\nwchar: 3308498\nsyscr: 18173\nsyscw: 408\nread_bytes: 2318336\nwrite_bytes: 4763648\ncancelled_write_bytes: 4096\n"
+    },
+    "4055960": {
+      "state": "R",
+      "start_ticks": "425339189",
+      "cpu_ticks": 2330980,
+      "io": "rchar: 97731014567\nwchar: 4769045\nsyscr: 1209993\nsyscw: 366\nread_bytes: 16384\nwrite_bytes: 6017024\ncancelled_write_bytes: 4096\n"
+    },
+    "2770000": {
+      "state": "S",
+      "start_ticks": "421141328",
+      "cpu_ticks": 10202977,
+      "io": "rchar: 195403165149\nwchar: 107495136991\nsyscr: 45918971\nsyscw: 236917\nread_bytes: 280256512\nwrite_bytes: 107784015872\ncancelled_write_bytes: 251637760\n"
+    },
+    "1162887": {
+      "state": "R",
+      "start_ticks": "427280828",
+      "cpu_ticks": 270539,
+      "io": "rchar: 242230095813\nwchar: 3976\nsyscr: 4317582\nsyscw: 64\nread_bytes: 0\nwrite_bytes: 266240\ncancelled_write_bytes: 0\n"
+    }
+  },
+  "after": {
+    "1942407": {
+      "state": "R",
+      "start_ticks": "424051173",
+      "cpu_ticks": 3798547,
+      "io": "rchar: 22198300790\nwchar: 36401374\nsyscr: 64233\nsyscw: 2676\nread_bytes: 7331840\nwrite_bytes: 47140864\ncancelled_write_bytes: 4096\n"
+    },
+    "675019": {
+      "state": "R",
+      "start_ticks": "426340577",
+      "cpu_ticks": 2466097,
+      "io": "rchar: 13549045285\nwchar: 3308498\nsyscr: 18173\nsyscw: 408\nread_bytes: 2318336\nwrite_bytes: 4763648\ncancelled_write_bytes: 4096\n"
+    },
+    "4055960": {
+      "state": "R",
+      "start_ticks": "425339189",
+      "cpu_ticks": 2335024,
+      "io": "rchar: 97731014567\nwchar: 4769045\nsyscr: 1209993\nsyscw: 366\nread_bytes: 16384\nwrite_bytes: 6017024\ncancelled_write_bytes: 4096\n"
+    },
+    "2770000": {
+      "state": "S",
+      "start_ticks": "421141328",
+      "cpu_ticks": 10209545,
+      "io": "rchar: 195510024694\nwchar: 107680206550\nsyscr: 45940766\nsyscw: 237240\nread_bytes: 280256512\nwrite_bytes: 107969564672\ncancelled_write_bytes: 251973632\n"
+    },
+    "1162887": {
+      "state": "R",
+      "start_ticks": "427280828",
+      "cpu_ticks": 274518,
+      "io": "rchar: 245977033812\nwchar: 4040\nsyscr: 4381647\nsyscw: 65\nread_bytes: 0\nwrite_bytes: 270336\ncancelled_write_bytes: 0\n"
+    }
+  },
+  "log_tails": {
+    "pi05-post-seal-heldout-001": "noise pairs\ncompleted heldout 874 request-noise pairs\ncompleted heldout 875 request-noise pairs\ncompleted heldout 876 request-noise pairs\ncompleted heldout 877 request-noise pairs\n",
+    "rdt-post-seal-heldout-001": "noise pairs\ncompleted heldout 119 request-noise pairs\ncompleted heldout 120 request-noise pairs\ncompleted heldout 121 request-noise pairs\ncompleted heldout 122 request-noise pairs\n",
+    "lingbot-post-operators-full-diagnostic-001": "enoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\ncompleted diagnostic 105 request-noise pairs\n",
+    "cogact-v6-stability-and-bootstrap-001": "act/open_drawer/12: raw drift and normalized errors\nverified cogact/open_drawer/13: raw drift and normalized errors\nverified cogact/open_drawer/14: raw drift and normalized errors\n"
+  },
+  "full_campaign_complete": false
+}

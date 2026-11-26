@@ -1,0 +1,60 @@
+{
+  "timestamp_utc": "20261109T195159Z",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "live_processes": [
+    {
+      "stage": "pi05_heldout",
+      "pid": 1942407,
+      "start_ticks": "424051173",
+      "process_state": "R",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python -m scripts.run_model_replay_invariance --manifest /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/audited_manifest.json --freeze /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/numerical_freeze.json --split heldout --adapter scripts.model_invariance.adapters.pi05_libero_exact --output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/heldout_fresh004/invariance.jsonl.gz --fidelity-output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/heldout_fresh004/singleton_fidelity.jsonl.gz --batch-sizes 1 2 4 8 16 32 --fail-on-invariant-violation ",
+      "io": "rchar: 22141157594\nwchar: 35987306\nsyscr: 63927\nsyscw: 2646\nread_bytes: 7331840\nwrite_bytes: 46604288\ncancelled_write_bytes: 4096\n"
+    },
+    {
+      "stage": "rdt_heldout",
+      "pid": 675019,
+      "start_ticks": "426340577",
+      "process_state": "R",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/bin/python -m scripts.run_model_replay_invariance --manifest /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/audited_manifest.json --freeze /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/numerical_freeze.json --split heldout --adapter scripts.model_invariance.adapters.rdt_maniskill_exact --output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/invariance.jsonl.gz --fidelity-output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/singleton_fidelity.jsonl.gz --batch-sizes 1 2 4 8 16 32 --fail-on-invariant-violation ",
+      "io": "rchar: 13533283065\nwchar: 3202193\nsyscr: 18117\nsyscw: 396\nread_bytes: 2318336\nwrite_bytes: 4608000\ncancelled_write_bytes: 4096\n"
+    },
+    {
+      "stage": "lingbot_diagnostic",
+      "pid": 4055960,
+      "start_ticks": "425339189",
+      "process_state": "R",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/lingbot/bin/python -m scripts.run_model_replay_invariance --adapter scripts.model_invariance.adapters.lingbot_robotwin_exact --manifest /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/replay_manifest.json --split diagnostic --batch-sizes 1 2 4 8 16 32 --output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/diagnostic/invariance.jsonl.gz --fidelity-output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/diagnostic/singleton_fidelity.jsonl.gz --fail-on-invariant-violation ",
+      "io": "rchar: 97053102417\nwchar: 4724202\nsyscr: 1198727\nsyscw: 363\nread_bytes: 16384\nwrite_bytes: 5963776\ncancelled_write_bytes: 4096\n"
+    },
+    {
+      "stage": "cogact_paired",
+      "pid": 2770000,
+      "start_ticks": "421141328",
+      "process_state": "S",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python -m scripts.run_cogact_simpler_paired_study --checkpoint /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/cogact_small --source /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/cogact --openvla-source /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/cogact-openvla --llama-metadata /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/llama_metadata --manifest /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/replay_manifest.json --qa-runtime /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/diagnostic/invariance.jsonl.gz.runtime.json --qa-records /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/diagnostic/invariance.jsonl.gz --reset-audit /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/cogact-full-observable-state-replay-007/independent_audit.json --pizero-project /home/hadjiyiannis_3_gmail_com/batch-invariance-research/batch-invariant-pizero-exp/open-pi-zero --simpler-root /home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/SimplerEnv --simpler-python /home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/.venv-simpler/bin/python --vulkan-icd /usr/share/vulkan/icd.d/nvidia_icd.json --simulator-gpu-uuid GPU-f391c6f3-68e5-d0f7-7d47-edae147c7882 --output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1 ",
+      "io": "rchar: 194222607960\nwchar: 106975605757\nsyscr: 45677669\nsyscw: 235544\nread_bytes: 280256512\nwrite_bytes: 107263770624\ncancelled_write_bytes: 248762368\n"
+    },
+    {
+      "stage": "cogact_independent_magnitude_audit",
+      "pid": 1162887,
+      "start_ticks": "427280828",
+      "process_state": "R",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python -m scripts.audit_paired_stability_metrics_v2 --report /home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v6.json --output /home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v6_independent_audit.json ",
+      "io": "rchar: 210105519432\nwchar: 3594\nsyscr: 3759934\nsyscw: 58\nread_bytes: 0\nwrite_bytes: 241664\ncancelled_write_bytes: 0\n"
+    }
+  ],
+  "serving_figure_synthetic_tests": {
+    "command": "envs/pi05/bin/python -m unittest scripts.test_serving_tradeoff_figures",
+    "passed": 8,
+    "elapsed_seconds": 6.669,
+    "actual_model_serving_results_accepted": false,
+    "source_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_serving_stability_tradeoff.py": "46fbe0d68ca90519146f5e4e8ceb4641a5b4e2e82c260375bf7ba2b0a72f9c22",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_serving_tradeoff_table.py": "8e08934d7f3808fd8546485b1694223e55db0da50a561eed2908b01510ab4d11",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_serving_tradeoff_figures.py": "0d92e75ecc12e14f0b160b2600b5bdf7e72e8dbb09441fab7c4328277fde3651"
+    }
+  },
+  "accepted_magnitude_starts": 827,
+  "expanded_cogact_magnitudes_pending_independent_audit": true,
+  "full_campaign_complete": false
+}

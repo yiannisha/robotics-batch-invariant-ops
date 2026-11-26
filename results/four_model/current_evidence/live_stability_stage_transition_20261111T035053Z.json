@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-11-11T03:50:53.011538+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 25873527,
+      "completed_pairs": 1281,
+      "total_pairs": 2400
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 536874,
+      "completed_pairs": 15,
+      "total_pairs": 600
+    },
+    {
+      "model": "cogact",
+      "pid": 1334028,
+      "start_ticks": 439025933,
+      "state": "R",
+      "cpu_ticks": 9453,
+      "stage": "isolated_policy_performance",
+      "raw_timing_records": 537,
+      "performance_accepted": false,
+      "heldout_accepted": true
+    }
+  ],
+  "full_campaign_complete": false
+}

@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "model": "cogact",
+  "pid": 2387225,
+  "ticks": "425850933",
+  "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-causal-ablation-002.json",
+  "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+  "auditor": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_exact_model_causal_ablation.py",
+  "auditor_sha256": "038e828d6bdb002e862814086c6726cc0b3be87aadb2f1524f7dadb38f799540",
+  "raw": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_002/measurements.jsonl",
+  "diagnostic_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/diagnostic/independent_diagnostic_audit.json",
+  "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_002/independent_contract_audit.json",
+  "error": "RuntimeError('Producer did not complete all causal measurements')"
+}

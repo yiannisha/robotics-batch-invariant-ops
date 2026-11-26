@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-11-10T15:11:48.423929+00:00",
+  "jobs": [
+    {
+      "model": "rdt",
+      "old_pid": 2385624,
+      "old_start_ticks": 425850817,
+      "old_state_archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt_causal002_waiting_state_before_migration_add32e96760e96ffb93727311de8660368948c81fd7b05d3c6185648662b3b95.json",
+      "new_pid": 2774681,
+      "new_job": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-performance-causal-ablation-003.py",
+      "new_plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_003/rdt.json",
+      "numerical_sources_changed": false,
+      "measurement_started": false
+    },
+    {
+      "model": "cogact",
+      "old_pid": 2387225,
+      "old_start_ticks": 425850933,
+      "old_state_archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_causal002_waiting_state_before_migration_4ca8fec03d0c53f807dc2429de421ad8fe4cf2f7cc3a77ef44a2f8364e0557ae.json",
+      "new_pid": 2774682,
+      "new_job": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-causal-ablation-003.py",
+      "new_plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_003/cogact.json",
+      "numerical_sources_changed": false,
+      "measurement_started": false
+    },
+    {
+      "model": "lingbot",
+      "old_pid": 2389130,
+      "old_start_ticks": 425851049,
+      "old_state_archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_causal002_waiting_state_before_migration_36669b50f4ccf79c43324f9873488c90e5196b9eddb9c453e08532ca97b39338.json",
+      "new_pid": 2774684,
+      "new_job": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-performance-causal-ablation-003.py",
+      "new_plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_003/lingbot.json",
+      "numerical_sources_changed": false,
+      "measurement_started": false
+    }
+  ],
+  "full_campaign_complete": false
+}

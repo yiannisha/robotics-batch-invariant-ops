@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-11-11T16:53:38.296640+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 35450818,
+      "completed_pairs": 1755,
+      "total_pairs": 2400
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 5362627,
+      "completed_pairs": 131,
+      "total_pairs": 600
+    }
+  ],
+  "full_campaign_complete": false
+}

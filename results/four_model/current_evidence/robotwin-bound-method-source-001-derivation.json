@@ -1,0 +1,19 @@
+{
+  "purpose": "Isolated strict recording of task-bound callback selection; original live roster source remains unchanged",
+  "original_source_sha256": {
+    "robotwin_task_state.py": "d713e96a631a090ea0b3bdae7723d5ffc615aeadbd5d6b6a4abf02beca85465a",
+    "robotwin_exact_worker.py": "c9cc3439945bee945312e32ed0de2e26aae99176e595e45fded6232afde9dcd4",
+    "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "audit_robotwin_benchmark_replay.py": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0",
+    "probe_robotwin_exact_initialization.py": "6503ee27d8aba7afd304fa612229c0973914c104e1af0883f12e03ca5fe978c1",
+    "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4"
+  },
+  "variant_source_sha256": {
+    "robotwin_task_state.py": "a76da2aa2dd760102e9d6c74c8046b3c43f2f754f32ee28a653214f67e4565da",
+    "robotwin_exact_worker.py": "c9cc3439945bee945312e32ed0de2e26aae99176e595e45fded6232afde9dcd4",
+    "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "audit_robotwin_benchmark_replay.py": "f6dc25181b6a8be05195d9af9705d33fa5dcd092764039302b3a94a425ac1308",
+    "probe_robotwin_exact_initialization.py": "6503ee27d8aba7afd304fa612229c0973914c104e1af0883f12e03ca5fe978c1",
+    "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4"
+  }
+}

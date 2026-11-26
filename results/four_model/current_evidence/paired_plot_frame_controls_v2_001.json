@@ -1,0 +1,14 @@
+{
+  "source_sha256": "20c4fd27369938aa2a8bcd90decbc3ad04c8680c054ead5e770880126f477e1c",
+  "controls_passed": 5,
+  "controls": [
+    "correct_task_frames",
+    "missing_frame_rejected",
+    "wrong_drawer_frame_rejected",
+    "mixed_task_frames_rejected",
+    "missing_start_rejected"
+  ],
+  "input_report_sha256": "2d17e24ef590a0ec517fa1bea5c15564fcf86ca32f7b495fe7011a342afd6450",
+  "expanded_magnitude_acceptance": false,
+  "full_campaign_complete": false
+}

@@ -1,0 +1,11 @@
+{
+  "verified_at_utc": "2026-11-12T10:41:56.080515+00:00",
+  "pid": 576866,
+  "start_ticks": 450136014,
+  "state": "S",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-after-heldout-local-leaf-replay-003.py",
+  "launcher_sha256": "87d2ebfcd4ea50b079b1f779a07a7fdd23c38cd3e9a5e49713106f82d2ba95f2",
+  "status": "waiting_for_live_complete_causal_audit",
+  "predeclared_case_changed": false,
+  "full_model_campaign_complete": false
+}

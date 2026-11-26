@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-09T18:43:44.336443+00:00",
+  "status": "operator_timing_plan_source_and_mask_preflight_passed",
+  "case_counts": {
+    "pi05": 58,
+    "rdt": 70,
+    "cogact": 64,
+    "lingbot": 66
+  },
+  "passed_controls": [
+    "pi05_complete_plan_case_roster_matches_trace_bytes",
+    "rdt_complete_plan_case_roster_matches_trace_bytes",
+    "cogact_complete_plan_case_roster_matches_trace_bytes",
+    "lingbot_complete_plan_case_roster_matches_trace_bytes",
+    "bad_mask_encoding_rejected",
+    "bad_mask_hash_rejected",
+    "missing_same_request_mask_source_rejected",
+    "foreign_request_mask_derivation_rejected",
+    "disagreeing_matching_request_masks_rejected"
+  ],
+  "builder_sha256": "7eb8b42dccd0e264dd21100ce9288c0b00d0d82e7529db5cfa37b8d3dc43bacb",
+  "actual_operator_timings_accepted": false,
+  "remaining": "Implement isolated timed execution preserving these operands and independent raw timing/capacity audit; queue behind existing GPU work.",
+  "full_campaign_complete": false
+}

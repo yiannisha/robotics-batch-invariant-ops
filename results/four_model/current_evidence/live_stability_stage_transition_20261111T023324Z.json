@@ -1,0 +1,40 @@
+{
+  "observed_utc": "2026-11-11T02:33:24.987190+00:00",
+  "classification": "progress",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 24924246,
+      "completed_pairs": 1234
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 14298054,
+      "completed_pairs": 2232
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 57497,
+      "completed_pairs": 2
+    },
+    {
+      "model": "lingbot_inventory_auditor",
+      "pid": 3550876,
+      "start_ticks": 438564511,
+      "state": "S",
+      "cpu_ticks": 1,
+      "completed_pairs": null
+    }
+  ],
+  "change": "Corrected precision operator inventory audit queued after source traces; original sources and evidence preserved.",
+  "full_campaign_complete": false
+}

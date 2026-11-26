@@ -1,0 +1,101 @@
+{
+  "as_of_utc": "2026-11-09T00:32:16.960185+00:00",
+  "scope": "native_corpus_preparation_only_not_paired_BI_success_rate_study",
+  "models": {
+    "pi05_libero": {
+      "successes": 87,
+      "episodes": 100,
+      "by_task": {
+        "0": {
+          "successes": 7,
+          "episodes": 10
+        },
+        "1": {
+          "successes": 10,
+          "episodes": 10
+        },
+        "2": {
+          "successes": 9,
+          "episodes": 10
+        },
+        "3": {
+          "successes": 7,
+          "episodes": 10
+        },
+        "4": {
+          "successes": 10,
+          "episodes": 10
+        },
+        "5": {
+          "successes": 10,
+          "episodes": 10
+        },
+        "6": {
+          "successes": 9,
+          "episodes": 10
+        },
+        "7": {
+          "successes": 9,
+          "episodes": 10
+        },
+        "8": {
+          "successes": 7,
+          "episodes": 10
+        },
+        "9": {
+          "successes": 9,
+          "episodes": 10
+        }
+      }
+    },
+    "rdt_maniskill": {
+      "successes": 54,
+      "episodes": 100,
+      "by_task": {
+        "PegInsertionSide-v1": {
+          "successes": 4,
+          "episodes": 20
+        },
+        "PickCube-v1": {
+          "successes": 15,
+          "episodes": 20
+        },
+        "StackCube-v1": {
+          "successes": 15,
+          "episodes": 20
+        },
+        "PlugCharger-v1": {
+          "successes": 0,
+          "episodes": 20
+        },
+        "PushCube-v1": {
+          "successes": 20,
+          "episodes": 20
+        }
+      }
+    },
+    "cogact_simpler": {
+      "successes": 73,
+      "episodes": 100,
+      "by_task": {
+        "pick_can": {
+          "successes": 25,
+          "episodes": 25
+        },
+        "move_near": {
+          "successes": 22,
+          "episodes": 25
+        },
+        "open_drawer": {
+          "successes": 15,
+          "episodes": 25
+        },
+        "close_drawer": {
+          "successes": 11,
+          "episodes": 25
+        }
+      },
+      "runtime_caveat": "Controlled fixed64 token padding; these are not released-default serving success rates."
+    }
+  }
+}

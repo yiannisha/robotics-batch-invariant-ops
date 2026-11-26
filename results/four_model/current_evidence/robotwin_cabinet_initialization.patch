@@ -1,0 +1,15 @@
+--- worker_before.py
++++ worker_after.py
+@@ -58,6 +58,12 @@
+         random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
+         env = getattr(importlib.import_module('envs.'+task), task)()
+         env.setup_demo(now_ep_num=0, seed=seed, is_test=True, **dict(config, task_name=task))
++        if task=='put_object_cabinet':
++            # Match the upstream expert's pre-motion task initialization. A
++            # fresh task instance cannot inherit these fields from play_once.
++            from envs.utils import ArmTag
++            env.arm_tag=ArmTag('right' if env.object.get_pose().p[0]>0 else 'left')
++            env.origin_z=env.object.get_pose().p[2]
+ 
+     def capture():
+         nonlocal sequence

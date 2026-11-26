@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-11-09T17:28:42.642289+00:00",
+  "event": "cogact_expanded_v5_raw_audit_completed",
+  "proof": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_progress_audit_expanded_v5.json",
+  "proof_sha256": "80c406bec8be2120bf3cf1329b094250ac37278677d9115dd846453abc11f1ae",
+  "raw_frames_verified": 131400,
+  "reconstructed_policy_calls": 129900,
+  "reset_repeat_invariant_checks_passed": true,
+  "magnitude_extraction_status": "extracting_expanded_v5_stability_magnitudes",
+  "accepted_magnitude_starts_unchanged": 827,
+  "full_campaign_complete": false
+}

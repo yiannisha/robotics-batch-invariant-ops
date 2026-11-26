@@ -1,0 +1,64 @@
+{
+  "timestamp_utc": "20261109T195356Z",
+  "observation_seconds": 10,
+  "processes": [
+    {
+      "pid": 1942407,
+      "start_ticks": "424051173",
+      "state": "R",
+      "cpu_ticks": 3769681,
+      "read_bytes": 7331840,
+      "rchar": 22160205326,
+      "cpu_ticks_delta": 1105,
+      "read_bytes_delta": 0,
+      "rchar_delta": 0
+    },
+    {
+      "pid": 675019,
+      "start_ticks": "426340577",
+      "state": "R",
+      "cpu_ticks": 2413038,
+      "read_bytes": 2318336,
+      "rchar": 13533283065,
+      "cpu_ticks_delta": 1884,
+      "read_bytes_delta": 0,
+      "rchar_delta": 0
+    },
+    {
+      "pid": 4055960,
+      "start_ticks": "425339189",
+      "state": "R",
+      "cpu_ticks": 2307823,
+      "read_bytes": 16384,
+      "rchar": 97731014567,
+      "cpu_ticks_delta": 1026,
+      "read_bytes_delta": 0,
+      "rchar_delta": 0
+    },
+    {
+      "pid": 2770000,
+      "start_ticks": "421141328",
+      "state": "S",
+      "cpu_ticks": 10169686,
+      "read_bytes": 280256512,
+      "rchar": 194650067255,
+      "cpu_ticks_delta": 936,
+      "read_bytes_delta": 0,
+      "rchar_delta": 106865774
+    },
+    {
+      "pid": 1162887,
+      "start_ticks": "427280828",
+      "state": "R",
+      "cpu_ticks": 247881,
+      "read_bytes": 0,
+      "rchar": 220985698876,
+      "cpu_ticks_delta": 1000,
+      "read_bytes_delta": 0,
+      "rchar_delta": 940189721
+    }
+  ],
+  "cogact_completed_blocks": 177,
+  "cogact_planned_blocks": 200,
+  "full_campaign_complete": false
+}

@@ -1,0 +1,138 @@
+{
+  "classification": "verified_wait",
+  "scope": "Actual process presence only; does not accept numerical results",
+  "processes": [
+    {
+      "pid": 3216922,
+      "state": "S",
+      "start_ticks": 438501475,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-independent-audit-002.py "
+    },
+    {
+      "pid": 3237331,
+      "state": "S",
+      "start_ticks": 438505690,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-B64-capacity-002.py "
+    },
+    {
+      "pid": 3269006,
+      "state": "S",
+      "start_ticks": 438514720,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-full-paired-002.py "
+    },
+    {
+      "pid": 3334864,
+      "state": "S",
+      "start_ticks": 438526319,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-operator-traces-002.py "
+    },
+    {
+      "pid": 3550876,
+      "state": "S",
+      "start_ticks": 438564511,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-operator-inventory-audit-002.py "
+    },
+    {
+      "pid": 3601175,
+      "state": "S",
+      "start_ticks": 438575093,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-freeze-heldout-002.py "
+    },
+    {
+      "pid": 3624982,
+      "state": "S",
+      "start_ticks": 438580366,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-isolated-performance-002.py "
+    },
+    {
+      "pid": 3624985,
+      "state": "S",
+      "start_ticks": 438580367,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-independent-performance-audit-002.py "
+    },
+    {
+      "pid": 3669759,
+      "state": "S",
+      "start_ticks": 438593139,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-causal-ablation-004.py "
+    },
+    {
+      "pid": 3702763,
+      "state": "S",
+      "start_ticks": 438600537,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-local-leaf-replay-004.py "
+    },
+    {
+      "pid": 4002043,
+      "state": "S",
+      "start_ticks": 438672219,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-causal-flow-figures-004.py "
+    },
+    {
+      "pid": 384401,
+      "state": "S",
+      "start_ticks": 438804150,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-bound-paired-magnitudes-002.py "
+    },
+    {
+      "pid": 3304863,
+      "state": "S",
+      "start_ticks": 439476790,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-002.py "
+    },
+    {
+      "pid": 3304864,
+      "state": "S",
+      "start_ticks": 439476810,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-independent-audit-002.py "
+    },
+    {
+      "pid": 3304865,
+      "state": "S",
+      "start_ticks": 439476831,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-arm-bootstrap-002.py "
+    },
+    {
+      "pid": 3602929,
+      "state": "S",
+      "start_ticks": 425242932,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-heldout-isolated-performance-001.py "
+    },
+    {
+      "pid": 3928883,
+      "state": "S",
+      "start_ticks": 425310908,
+      "command": "python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-performance-independent-audit-001.py "
+    },
+    {
+      "pid": 2774681,
+      "state": "S",
+      "start_ticks": 434476070,
+      "command": "/usr/bin/python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-performance-causal-ablation-003.py "
+    },
+    {
+      "pid": 2798495,
+      "state": "S",
+      "start_ticks": 434482505,
+      "command": "/usr/bin/python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-independent-audit-003.py "
+    },
+    {
+      "pid": 2798609,
+      "state": "S",
+      "start_ticks": 434482509,
+      "command": "/usr/bin/python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-local-leaf-replay-003.py "
+    },
+    {
+      "pid": 2798611,
+      "state": "S",
+      "start_ticks": 434482512,
+      "command": "/usr/bin/python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-flow-figures-003.py "
+    },
+    {
+      "pid": 2798630,
+      "state": "S",
+      "start_ticks": 434482516,
+      "command": "/usr/bin/python3 /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-local-isolated-operator-performance-003.py "
+    }
+  ]
+}

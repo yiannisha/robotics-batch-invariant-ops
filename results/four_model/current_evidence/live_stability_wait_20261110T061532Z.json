@@ -1,0 +1,58 @@
+{
+  "observed_utc": "2026-11-10T06:15:32.467290+00:00",
+  "classification": "verified_wait",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "workers": [
+    {
+      "model": "pi05",
+      "pid": 1942407,
+      "start_ticks": 424051173,
+      "state": "R",
+      "cpu_ticks": 7813065,
+      "cpu_ticks_advanced": 6635,
+      "completed_pairs": 1805,
+      "prescribed_pairs": 2400
+    },
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 10014583,
+      "cpu_ticks_advanced": 12450,
+      "completed_pairs": 496,
+      "prescribed_pairs": 2400
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 6233108,
+      "cpu_ticks_advanced": 6498,
+      "completed_pairs": 286,
+      "prescribed_pairs": 600
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 762370,
+      "cpu_ticks_advanced": 9836,
+      "completed_pairs": 95,
+      "prescribed_pairs": 2400
+    },
+    {
+      "model": "cogact_magnitude_audit",
+      "pid": 4147802,
+      "start_ticks": 430782334,
+      "state": "R",
+      "cpu_ticks": 476167,
+      "cpu_ticks_advanced": 6120,
+      "latest_log_line": "verified cogact/open_drawer/2: raw drift and normalized errors"
+    }
+  ],
+  "accepted_magnitude_starts": 875,
+  "full_campaign_complete": false
+}

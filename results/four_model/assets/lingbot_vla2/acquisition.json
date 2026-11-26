@@ -1,0 +1,118 @@
+{
+  "model": "lingbot_vla2",
+  "repository": "robbyant/lingbot-vla-v2-6b-robotwin",
+  "revision": "0451855729ec904f970600e0aec8b84661423afe",
+  "status": "checkpoint_acquired_and_hashed",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2752,
+      "sha256": "84ec8fe628b300bea967e5d5d90be042c16ad69cfc8bccf2bf7ed7eec84c660a",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/added_tokens.json",
+      "bytes": 707,
+      "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/chat_template.jinja",
+      "bytes": 5292,
+      "sha256": "3636d0f0bd6bef02654cdffdc447b79cb2cef8ab02cc75267345946291a489e4",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/config.json",
+      "bytes": 31,
+      "sha256": "7c1fddcf59379627bfafda7b5923092f370fa28f15d2132ee305a037335dfb80",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/model-00001-of-00006.safetensors",
+      "bytes": 4947507248,
+      "sha256": "514801684e0f23aaa4bb64a4fd81e420b97e094331499852d5f2cc567750b360",
+      "upstream_lfs_sha256": "514801684e0f23aaa4bb64a4fd81e420b97e094331499852d5f2cc567750b360"
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/model-00002-of-00006.safetensors",
+      "bytes": 4944315304,
+      "sha256": "e7b00cf59b21c2f5e9f76f7687ba423c6fe24bfa9fa8e313ef346bb081e73c9f",
+      "upstream_lfs_sha256": "e7b00cf59b21c2f5e9f76f7687ba423c6fe24bfa9fa8e313ef346bb081e73c9f"
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/model-00003-of-00006.safetensors",
+      "bytes": 4944315360,
+      "sha256": "ace74f6d5214059b6387b5728c570a452d51b5950dd9904fe29607dbfa41447b",
+      "upstream_lfs_sha256": "ace74f6d5214059b6387b5728c570a452d51b5950dd9904fe29607dbfa41447b"
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/model-00004-of-00006.safetensors",
+      "bytes": 4992858968,
+      "sha256": "1f1cb6b4099e264b202eae0244f3730e1ced910c0b34355fff2a719993d0cbe5",
+      "upstream_lfs_sha256": "1f1cb6b4099e264b202eae0244f3730e1ced910c0b34355fff2a719993d0cbe5"
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/model-00005-of-00006.safetensors",
+      "bytes": 4963062048,
+      "sha256": "1316d6fe054253650dc65bae416ae6cf9afa283aad82a9712b02b0dd7029394b",
+      "upstream_lfs_sha256": "1316d6fe054253650dc65bae416ae6cf9afa283aad82a9712b02b0dd7029394b"
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/model-00006-of-00006.safetensors",
+      "bytes": 711830844,
+      "sha256": "0e1dfc6a23c43f3c387276e2389799867dfa90dc9727bb8e21250c73bfe7dd23",
+      "upstream_lfs_sha256": "0e1dfc6a23c43f3c387276e2389799867dfa90dc9727bb8e21250c73bfe7dd23"
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/model.safetensors.index.json",
+      "bytes": 207389,
+      "sha256": "661b9d29dc14b73adfe233d2d989517f92e561f77424a7d2097a5d735c90b57f",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/preprocessor_config.json",
+      "bytes": 782,
+      "sha256": "93585062a80db5e8ca038efc7726a3e6411d9db948472d81d63c6303993be8c5",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/special_tokens_map.json",
+      "bytes": 613,
+      "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/tokenizer.json",
+      "bytes": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "upstream_lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/tokenizer_config.json",
+      "bytes": 5472,
+      "sha256": "cf43a5bf1a49ee69ecced02f419b169e72559034dcf15af47cf775bd253830f0",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/video_preprocessor_config.json",
+      "bytes": 817,
+      "sha256": "59c5c9eb52182eb14c06ffb10ca9effd29adce5f238a95de23ca14a38dbd2cb1",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/global_step_50000/hf_ckpt/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "lingbotvla_cli.yaml",
+      "bytes": 6263,
+      "sha256": "f710ebe4c85d56e7a9628c824ba7985800955710f620a12d5b9d9394710a0fe2",
+      "upstream_lfs_sha256": null
+    }
+  ],
+  "inference_qualified": false,
+  "closed_loop_qualified": false
+}

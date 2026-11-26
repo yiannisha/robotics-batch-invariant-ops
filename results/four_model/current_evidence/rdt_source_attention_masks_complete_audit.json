@@ -1,0 +1,626 @@
+{
+  "status": "source_attention_measurements_independently_verified",
+  "configuration_sha256": "117ec328c44f4a395ceb9038c293b0a364c64b64408865a7827bc209bc5ceb54",
+  "raw_records": 10200,
+  "raw_records_sha256": "85b3d66b4c4b3948c4180317e5d2c1d20a80db5592e9951e699fd9e64c8f72de",
+  "auditor_sha256": "33eaccc8bbe967d0f806bda94e61e38f26cef35584437b2518b91e6fb6cb228a",
+  "arrangements": [
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_mixed_all_tasks|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid18|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid20|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid24|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid30|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    }
+  ],
+  "completed_arrangements": 102,
+  "prescribed_arrangements": 102,
+  "all_selected_arrangements_complete": true,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

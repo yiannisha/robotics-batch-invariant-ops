@@ -1,0 +1,8 @@
+{
+  "scope": "real_input_numerical_integration_probe",
+  "comparisons": 72,
+  "native_failures": 30,
+  "invariant_failures": 0,
+  "same_condition_b1_repeats_exact": true,
+  "success_rate_campaign_complete": false
+}

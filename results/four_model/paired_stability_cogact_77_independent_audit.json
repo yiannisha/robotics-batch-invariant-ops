@@ -1,0 +1,397 @@
+{
+  "status": "reported_subset_stability_metrics_independently_verified",
+  "report_sha256": "ee15265d1d59885086f6d010173b9d7d347fc187c260a24eef0f549a63ef7ef8",
+  "reporting_source_sha256": "f0f2bca7f6d6b2873fce32392303089a6b2c41a67931baab6adb5bd108125a35",
+  "auditor_sha256": "81ba88c4ee0de3b3b0224f7f810b5df9475981044d839ff27331312c6d36cb89",
+  "raw_frame_files_verified": 30723,
+  "fixed_input_nonsingleton_pairs_verified": 4756,
+  "paired_starts_verified": [
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 0
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 1
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 2
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 3
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 4
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 5
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 6
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 7
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 8
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 9
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 10
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 11
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 12
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 13
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 14
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 15
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 16
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 17
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 18
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 19
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 20
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 21
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 22
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 23
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 24
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 25
+    },
+    {
+      "model": "cogact",
+      "task": "move_near",
+      "initialization": 26
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 0
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 1
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 2
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 3
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 4
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 5
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 6
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 7
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 8
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 9
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 10
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 11
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 12
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 13
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 14
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 15
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 16
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 17
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 18
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 19
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 20
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 21
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 22
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 23
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 24
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 25
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 26
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 27
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 28
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 29
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 30
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 31
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 32
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 33
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 34
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 35
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 36
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 37
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 38
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 39
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 40
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 41
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 42
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 43
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 44
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 45
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 46
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 47
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 48
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "initialization": 49
+    }
+  ],
+  "angular_formula_crosscheck_absolute_tolerance_rad": 1e-07,
+  "full_four_model_campaign_complete": false
+}

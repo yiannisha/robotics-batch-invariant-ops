@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-11-11T03:12:27.869155+00:00",
+  "status": "corrected_paired_byte_binding_and_magnitude_auditors_prepared",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_paired_study_bound_v2.py": "da7e36b18caefe5462198ed66631120852f085f341312c8b6366a6a00afb3caf",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_full_stability_v2.py": "e63a289496a27cafec37b927bea8f7638c4bbe3a3652450c06852c65a10a2c5e"
+  },
+  "actual_paired_reconstruction_complete": false,
+  "actual_magnitude_report_accepted": false,
+  "full_campaign_complete": false
+}

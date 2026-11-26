@@ -1,0 +1,15 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "put_object_cabinet",
+  "seed": 100026,
+  "repeats": 3,
+  "controls_per_repeat": 700,
+  "raw_frames_verified": 2103,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 2103,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "aebb701c5fbc356fb4fab79e668f5c9387bf2b57ba44320a08c1709b36cf9759",
+  "auditor_sha256": "f6dc25181b6a8be05195d9af9705d33fa5dcd092764039302b3a94a425ac1308"
+}

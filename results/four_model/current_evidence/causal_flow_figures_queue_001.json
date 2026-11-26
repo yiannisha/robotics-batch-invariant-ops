@@ -1,0 +1,83 @@
+{
+  "observed_at": "2026-11-09T17:52:47.563941+00:00",
+  "launched": [
+    {
+      "name": "pi05-post-causal-flow-figures-001",
+      "pid": 2910193,
+      "start_ticks": "426801984",
+      "script_sha256": "541264efbabe8bc526f00bf8267a894765fb86bd8311dd6d46b15f1a3885fed9",
+      "model": "pi05",
+      "dependency_pid": 2492914,
+      "dependency_start_ticks": "425873605",
+      "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-independent-audit-001.json",
+      "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+      "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python",
+      "raw": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/causal_002/measurements.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/causal_002/independent_contract_audit.json",
+      "output_dir": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_causal_flow_stability_001",
+      "source_sha256": {
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_causal_flow_stability.py": "40157fa9cba2466d8e7d47069ef71caa55c41abb5d15addafa02bb7b7e1bd7d6",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_causal_flow_figure_table.py": "456ba33b3df068a162e3863fe4b34cad4262e0542604f1d6e1c2a45345732d16"
+      }
+    },
+    {
+      "name": "rdt-post-causal-flow-figures-001",
+      "pid": 2910196,
+      "start_ticks": "426801984",
+      "script_sha256": "7d9216573da3e22726204c930e4d43d7740101e01de29b11a6d3dfedc4f8f28a",
+      "model": "rdt",
+      "dependency_pid": 2494565,
+      "dependency_start_ticks": "425873721",
+      "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-independent-audit-001.json",
+      "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+      "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python",
+      "raw": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/causal_002/measurements.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/causal_002/independent_contract_audit.json",
+      "output_dir": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/rdt_causal_flow_stability_001",
+      "source_sha256": {
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_causal_flow_stability.py": "40157fa9cba2466d8e7d47069ef71caa55c41abb5d15addafa02bb7b7e1bd7d6",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_causal_flow_figure_table.py": "456ba33b3df068a162e3863fe4b34cad4262e0542604f1d6e1c2a45345732d16"
+      }
+    },
+    {
+      "name": "cogact-post-causal-flow-figures-001",
+      "pid": 2910198,
+      "start_ticks": "426801985",
+      "script_sha256": "427b7ebe5f8e62b109cb364c051fe1b43b9beeef1ab9cad31b55e308dc7bec2e",
+      "model": "cogact",
+      "dependency_pid": 2496258,
+      "dependency_start_ticks": "425873837",
+      "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-independent-audit-001.json",
+      "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+      "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python",
+      "raw": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_002/measurements.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_002/independent_contract_audit.json",
+      "output_dir": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_001",
+      "source_sha256": {
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_causal_flow_stability.py": "40157fa9cba2466d8e7d47069ef71caa55c41abb5d15addafa02bb7b7e1bd7d6",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_causal_flow_figure_table.py": "456ba33b3df068a162e3863fe4b34cad4262e0542604f1d6e1c2a45345732d16"
+      }
+    },
+    {
+      "name": "lingbot-post-causal-flow-figures-001",
+      "pid": 2910200,
+      "start_ticks": "426801985",
+      "script_sha256": "22584bb9809b2a48c5cb4ee9cf4c52c310e9a1e93b606ecc8f5b30f3ce512078",
+      "model": "lingbot",
+      "dependency_pid": 2795548,
+      "dependency_start_ticks": "425935802",
+      "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-independent-audit-002.json",
+      "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+      "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python",
+      "raw": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/causal_002/measurements.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/causal_002/independent_contract_audit.json",
+      "output_dir": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/lingbot_causal_flow_stability_001",
+      "source_sha256": {
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_causal_flow_stability.py": "40157fa9cba2466d8e7d47069ef71caa55c41abb5d15addafa02bb7b7e1bd7d6",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_causal_flow_figure_table.py": "456ba33b3df068a162e3863fe4b34cad4262e0542604f1d6e1c2a45345732d16"
+      }
+    }
+  ],
+  "actual_model_figures_accepted": false,
+  "full_campaign_complete": false
+}

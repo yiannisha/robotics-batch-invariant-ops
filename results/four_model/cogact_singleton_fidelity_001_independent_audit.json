@@ -1,0 +1,12 @@
+{
+  "status": "singleton_fidelity_aggregate_arithmetic_independently_recounted",
+  "model_id": "cogact_simpler_exact",
+  "report_sha256": "f73d8d335a50bff8c8df9aa130feed6c63b651b989c33229acc45890a0d02faf",
+  "raw_sha256": "f8c2745c67fcc1f676d335e4bd48cda023ab26a9501dcb55a3530635ea0faada",
+  "diagnostic_audit_sha256": "eb0cf076073f0c7f38282be9cc034d70dcc4a369a65d28f4bd2d20b8eee310c2",
+  "auditor_sha256": "51e8c40f3aa99f31ce818e07fea672162778819ee8d527177bde94c7edac19d1",
+  "comparisons": 600,
+  "tasks": 4,
+  "scope": "Recount of producer-measured normalized B1 implementation differences. Not independent tensor-error rederivation or batching stability.",
+  "full_campaign_complete": false
+}

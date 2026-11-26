@@ -1,0 +1,134 @@
+{
+  "status": "selected_source_operator_measurements_independently_verified",
+  "configuration_sha256": "ef160b280b2a822c4fa3c3e79073a2487fee004bd4a114008c26875f0a147cd5",
+  "raw_records": 1700,
+  "raw_records_sha256": "b9a3e75df6351eaa7e449b41c650b32201e0940b228baa2e179e641b1d13dca3",
+  "auditor_sha256": "4bdfc25fec150bbf417f22eee60ea7cd6b6edd879638c34f713778da1c4d37fe",
+  "arrangements": [
+    {
+      "arrangement": "rdt_source_vision_head_mean|B16|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B16|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B1|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B2|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B2|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B31|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B31|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B32|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B32|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B33|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B33|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B4|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B4|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B64|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B64|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B8|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    },
+    {
+      "arrangement": "rdt_source_vision_head_mean|B8|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0078125
+    }
+  ],
+  "completed_arrangements": 17,
+  "prescribed_arrangements": 17,
+  "all_selected_arrangements_complete": true,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true,
+  "scope": "RDT actual BF16 vision head mean only; additional operator qualification remains. Shared timing unqualified."
+}

@@ -1,0 +1,110 @@
+{
+  "status": "source_operator_inventory_reconciled",
+  "source_patterns_b1": 34,
+  "source_patterns_b8": 36,
+  "source_traces": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a"
+  },
+  "components": [
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_linear_layouts_v1.json",
+      "configuration_sha256": "5dbfb656a68ebb8741f0a40b6cfff0f06bf33ecc27391bbfade220f692abfd73",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_linear_layouts_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_linear_layouts_complete_audit.json",
+      "audit_sha256": "08d2b0ef0486cb1c748cc2f366b14ba28c4bce6b7e764be0477ad5e13a125faf",
+      "independently_verified_records": 42500,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 23,
+      "source_patterns_b8": 25
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_matrix_layouts_v1.json",
+      "configuration_sha256": "f6c1f251c5fc703f5b8e1c9a1ec7d76e321310428d2a6828963cb3b85cc6f153",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_matrix_layouts_v2.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_matrix_complete_audit.json",
+      "audit_sha256": "8b5295da7d926b4542d7564ffe52e8212ac0d8febd978ad5e8f04e60a6281f8a",
+      "independently_verified_records": 6800,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 4,
+      "source_patterns_b8": 4
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_mean_v2.json",
+      "configuration_sha256": "ef160b280b2a822c4fa3c3e79073a2487fee004bd4a114008c26875f0a147cd5",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_mean_v2.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_mean_audit.json",
+      "audit_sha256": "c5d0ebca730a8efc340fe8539be3d49c314c09667d6cafe36016e0d190dd9d49",
+      "independently_verified_records": 1700,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 1,
+      "source_patterns_b8": 1
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_v2.json",
+      "configuration_sha256": "38b74e0d39efd8270aade746882b4911a83b193498f78b2e4433555a027a1d46",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_v2.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_audit_v2.json",
+      "audit_sha256": "7553520e104043a01364809712e2d40428d2dc67ecdfc503d51ed81f8bbd48aa",
+      "independently_verified_records": 700,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 1,
+      "source_patterns_b8": 1
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_v1.json",
+      "configuration_sha256": "5db55987fc174f2da5b05758e50cc12728a86561d360311f68336a6a8f99c68d",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_audit.json",
+      "audit_sha256": "d82c843a9a7467f68f4c82d1acf1aa257ce7a906c3cad5f0f46fd5bccc6ef4b4",
+      "independently_verified_records": 1000,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 1,
+      "source_patterns_b8": 1
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_unmasked_full_heads_v1.json",
+      "configuration_sha256": "62ad82450d7e92969a4034aab8a2243bf04410a06279a83fc54675fbf6ed4043",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_unmasked_full_heads_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_unmasked_full_heads_complete_audit.json",
+      "audit_sha256": "53a3e477663e912eb5dbd778b3d04dfd1ae6d05ede47b3a1dca2f3fff9fdcca6",
+      "independently_verified_records": 3400,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 2,
+      "source_patterns_b8": 2
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_masks_v1.json",
+      "configuration_sha256": "117ec328c44f4a395ceb9038c293b0a364c64b64408865a7827bc209bc5ceb54",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_masks_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_masks_complete_audit.json",
+      "audit_sha256": "1b31fbe742ccf86b9e5e079e95e568161c0d936729f6e4c38fc04387390902bb",
+      "independently_verified_records": 10200,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 1,
+      "source_patterns_b8": 1
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_conv_pool_softmax_v1.json",
+      "configuration_sha256": "9c748905928b0093c991a26b230670068d795c50a855382458663b51c496c77c",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_conv_pool_softmax_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_conv_pool_softmax_complete_audit.json",
+      "audit_sha256": "fe570935ce24260273b71ffa4d5ad3ef654c7c059638c2a6eefc1972bdba9359",
+      "independently_verified_records": 3400,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 2,
+      "source_patterns_b8": 2
+    }
+  ],
+  "missing_patterns": {
+    "1": [],
+    "8": []
+  },
+  "all_source_patterns_mapped": true,
+  "all_component_measurements_complete": true,
+  "full_traced_operator_qualification_complete": true,
+  "all_five_task_and_mixed_mask_measurements_complete": true,
+  "scope": "Observed high-level source shapes/strides and captured mask variants; full-model numerical/fidelity/heldout QA remain separate.",
+  "performance_qualified": false,
+  "auditor_sha256": "beb0e1a80b5c56cdc36b7c5b45039d5d9b5e8d9f66f7d8421b4ecfef3d7c7d87"
+}

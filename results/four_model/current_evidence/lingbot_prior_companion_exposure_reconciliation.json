@@ -1,0 +1,28 @@
+{
+  "status": "prior_pilot_and_current_capacity_trace_companions_reconciled",
+  "pilots": [
+    {
+      "pilot": "lingbot-closed-loop-pilot-001",
+      "companion_files_sha256": {
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/lingbot-real-inputs-002/requests.pt": "acd214f807cd24a0340d165875bbcff84aac6cbcac6aedefd25eed4d055bb301"
+      },
+      "calls_checked": 24,
+      "maximum_companion_index": 2,
+      "all_companions_already_in_exposure_screen": true
+    },
+    {
+      "pilot": "lingbot-official-seed-pilot-002",
+      "companion_files_sha256": {
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/lingbot-real-inputs-002/requests.pt": "acd214f807cd24a0340d165875bbcff84aac6cbcac6aedefd25eed4d055bb301"
+      },
+      "calls_checked": 24,
+      "maximum_companion_index": 2,
+      "all_companions_already_in_exposure_screen": true
+    }
+  ],
+  "capacity_request_slots_checked": 576,
+  "trace_request_slots_checked": 18,
+  "all_current_capacity_and_trace_inputs_diagnostic_only": true,
+  "final_seal": false,
+  "future_paired_exposure_check_pending": true
+}

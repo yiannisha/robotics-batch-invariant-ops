@@ -1,0 +1,184 @@
+{
+  "runtime": {
+    "scope": "fixed_controls_render_and_derived_state_diagnostic",
+    "task": 2,
+    "initialization": 0,
+    "repeats": 5,
+    "forward_before_observe": false,
+    "source_episode_sha256": "cb996b899f90dfcd529bcc0dff5918620eb59a5120165751a540ef89a0b3e6ec",
+    "disable_dither": true,
+    "make_current_before_render": false,
+    "offscreen_samples": null,
+    "runner_sha256": "19839d5b7e4e287ee09ad6e34a10fda05359b31a84e8bae3138cc6a73127f1bf",
+    "model_evaluated": false
+  },
+  "repeats": [
+    {
+      "repeat": 0,
+      "first_repeat_difference": null,
+      "difference_detail": [],
+      "original_observation_mismatches": [
+        59
+      ],
+      "original_physics_mismatches": []
+    },
+    {
+      "repeat": 1,
+      "first_repeat_difference": 89,
+      "difference_detail": [
+        {
+          "field": "raw.observation.pixels.image2",
+          "dtype": "uint8",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "changed_elements": 3,
+          "max_absolute_error": 1.0,
+          "first_indices": [
+            [
+              43,
+              253,
+              0
+            ],
+            [
+              43,
+              253,
+              1
+            ],
+            [
+              43,
+              253,
+              2
+            ]
+          ]
+        }
+      ],
+      "original_observation_mismatches": [
+        59,
+        89
+      ],
+      "original_physics_mismatches": []
+    },
+    {
+      "repeat": 2,
+      "first_repeat_difference": 58,
+      "difference_detail": [
+        {
+          "field": "raw.observation.pixels.image2",
+          "dtype": "uint8",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "changed_elements": 3,
+          "max_absolute_error": 1.0,
+          "first_indices": [
+            [
+              163,
+              253,
+              0
+            ],
+            [
+              163,
+              253,
+              1
+            ],
+            [
+              163,
+              253,
+              2
+            ]
+          ]
+        }
+      ],
+      "original_observation_mismatches": [
+        58,
+        59
+      ],
+      "original_physics_mismatches": []
+    },
+    {
+      "repeat": 3,
+      "first_repeat_difference": 89,
+      "difference_detail": [
+        {
+          "field": "raw.observation.pixels.image2",
+          "dtype": "uint8",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "changed_elements": 3,
+          "max_absolute_error": 1.0,
+          "first_indices": [
+            [
+              43,
+              253,
+              0
+            ],
+            [
+              43,
+              253,
+              1
+            ],
+            [
+              43,
+              253,
+              2
+            ]
+          ]
+        }
+      ],
+      "original_observation_mismatches": [
+        59,
+        89
+      ],
+      "original_physics_mismatches": []
+    },
+    {
+      "repeat": 4,
+      "first_repeat_difference": 58,
+      "difference_detail": [
+        {
+          "field": "raw.observation.pixels.image2",
+          "dtype": "uint8",
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "changed_elements": 3,
+          "max_absolute_error": 1.0,
+          "first_indices": [
+            [
+              163,
+              253,
+              0
+            ],
+            [
+              163,
+              253,
+              1
+            ],
+            [
+              163,
+              253,
+              2
+            ]
+          ]
+        }
+      ],
+      "original_observation_mismatches": [
+        58,
+        59,
+        89
+      ],
+      "original_physics_mismatches": []
+    }
+  ],
+  "all_raw_repeats_exact": false
+}

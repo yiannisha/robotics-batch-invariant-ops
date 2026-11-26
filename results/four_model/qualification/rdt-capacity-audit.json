@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "records": 24,
+  "feasible": {
+    "native|B16": true,
+    "batch_invariant|B16": true,
+    "native|B32": true,
+    "batch_invariant|B32": true
+  }
+}

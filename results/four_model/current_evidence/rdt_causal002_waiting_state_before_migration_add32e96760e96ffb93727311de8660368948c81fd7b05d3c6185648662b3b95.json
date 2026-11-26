@@ -1,0 +1,23 @@
+{
+  "status": "waiting_for_live_independent_performance_audit",
+  "model": "rdt",
+  "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+  "pid": 3928883,
+  "ticks": "425310908",
+  "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_002/rdt.json",
+  "plan_sha256": "49e77d3129f32cd9e55bfd0db6afce14656e2307f8c91eb98c09e97c5c5730c8",
+  "wrapper": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v2.py",
+  "wrapper_sha256": "b23447df73977452d9a8dde98d47b1e88ef441b6b0984bae538735ec8c77127a",
+  "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/bin/python",
+  "env": {
+    "RDT_CHECKPOINT": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b",
+    "RDT_SIGLIP": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip",
+    "RDT_SOURCE": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt",
+    "RDT_MANISKILL_EXACT_MANIFEST": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/replay_manifest.json",
+    "CUDA_VISIBLE_DEVICES": "GPU-8e8d81cd-96dc-69ec-4078-3dc7acc88762",
+    "OMP_NUM_THREADS": "8",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/causal_002/measurements.jsonl",
+  "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-performance-independent-audit-001.json"
+}

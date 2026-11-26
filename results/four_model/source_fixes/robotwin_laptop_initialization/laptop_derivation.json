@@ -1,0 +1,7 @@
+{
+  "task_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/robotwin/envs/open_laptop.py",
+  "task_source_sha256": "b826d4f36513dba6df3c17b65f1251bf3dbe2994857ba672f4d06c5900c0cac0",
+  "upstream_pre_motion_prefix": "face_prod = get_face_prod(self.laptop.get_pose().q, [1, 0, 0], [1, 0, 0])\narm_tag = ArmTag('left' if face_prod > 0 else 'right')\nself.arm_tag = arm_tag",
+  "purpose": "Initialize the released arm reference on a fresh task instance; no physics, success-predicate or policy modification.",
+  "previous_worker_sha256": "f8f67238cf4f941ab7cebe56108a474e16d9a5b6f0f51f9991f67ca52ae788b3"
+}

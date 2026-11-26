@@ -1,0 +1,65 @@
+{
+  "status": "source_operator_inventory_reconciled",
+  "source_patterns_b1": 32,
+  "source_patterns_b8": 32,
+  "source_traces": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74"
+  },
+  "components": [
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_conv_mean_v1.json",
+      "configuration_sha256": "49af20de576bcd1a9c37e34db2fdcbeb4c5d2502d33a2e1bd90c09a8e978e094",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_conv_mean_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_conv_mean_audit_v3.json",
+      "audit_sha256": "2d267d7f7a54ba1d024f9dcd9821cdb937cdff83468ac49419a5f5a7cb9af5da",
+      "independently_verified_records": 5100,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 3,
+      "source_patterns_b8": 3
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_linear_layouts_v1.json",
+      "configuration_sha256": "f0e21c8bfbb27080ee42aa88318f016c0875414e51f6e63a86fbbf91e0a2d438",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_linear_layouts_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_linear_complete_audit.json",
+      "audit_sha256": "37ffe854ec92a937fc9cbb096ab4e8d02722833c743325c47b3ce1bcd1c52efe",
+      "independently_verified_records": 40800,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 24,
+      "source_patterns_b8": 24
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_attention_v1.json",
+      "configuration_sha256": "eafb2bd39f1bd58b7bfd1cec063c89f9b14a4a8ece29d3689709ff3517eb96e4",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_attention_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_attention_complete_audit.json",
+      "audit_sha256": "7bf2233a725ac41fc43ffb121ec5af1b33f9f1c8561ba8dc332e1a4bccc9c3fa",
+      "independently_verified_records": 6800,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 4,
+      "source_patterns_b8": 4
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_shared_matmul_v1.json",
+      "configuration_sha256": "149658ba21c92ca0c652b923ecb21b1cd1345db82ccd72df9e1e8eaea8a6783d",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_shared_matmul_v1.jsonl",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_shared_matmul_complete_audit.json",
+      "audit_sha256": "5d7b7dfa5dd5df182171f98fcc72291d83e77c871be9a75064a253a551a742c2",
+      "independently_verified_records": 1700,
+      "measurement_coverage_complete": true,
+      "source_patterns_b1": 1,
+      "source_patterns_b8": 1
+    }
+  ],
+  "missing_patterns": {
+    "1": [],
+    "8": []
+  },
+  "all_source_patterns_mapped": true,
+  "all_component_measurements_complete": true,
+  "full_traced_operator_qualification_complete": true,
+  "scope": "Observed high-level source shapes/strides and captured mask variants; full-model numerical/fidelity/heldout QA remain separate.",
+  "performance_qualified": false,
+  "auditor_sha256": "9c875aa2e8c1405ac47f3f61c0db1b895a40baae870c2db59f0ee7875c6a1238"
+}

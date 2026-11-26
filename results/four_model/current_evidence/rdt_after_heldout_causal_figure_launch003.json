@@ -1,0 +1,8 @@
+{
+  "pid": 587693,
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-after-heldout-causal-flow-figures-003.py",
+  "sha256": "fe78867de457728f81a7b0aa2c053bcf489d3982818b422720a95e6eb9a58dc8",
+  "dependency_pid": 566487,
+  "dependency_start_ticks": "450133428",
+  "full_model_campaign_complete": false
+}

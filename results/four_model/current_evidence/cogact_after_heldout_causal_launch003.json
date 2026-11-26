@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-11-11T04:12:35.426556+00:00",
+  "pid": 1926072,
+  "start_ticks": "439160771",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-after-heldout-causal-ablation-003.py",
+  "launcher_sha256": "af77448452f42916415e8c9a25085f7e2a0ca3a78fd907e960fd2250c9433d3e",
+  "accepted_heldout_audit_sha256": "ae71d1b44033c1119de7d89a180888b3d9b12dca7cbb0bc67b644d02c4fafd2f",
+  "plan_sha256": "0e85a351e7b1275aee79254715804d5cd443bb42ef095b5e331ec697038cede3",
+  "numerical_sources_and_experiment_plan_unchanged": true,
+  "scheduling_change": "Causal stability proceeds after accepted heldout; isolated performance remains pending and is not an acceptance prerequisite for numerical causal measurements.",
+  "actual_causal_complete": false,
+  "full_campaign_complete": false
+}

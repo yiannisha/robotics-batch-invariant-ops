@@ -1,0 +1,20 @@
+{
+  "status": "complete_observable_state_fixed_replay_independently_verified",
+  "tasks": [
+    "PegInsertionSide-v1",
+    "PickCube-v1",
+    "StackCube-v1",
+    "PlugCharger-v1",
+    "PushCube-v1"
+  ],
+  "initializations": 3,
+  "repeats": 3,
+  "episodes": 45,
+  "raw_frames_verified": 18045,
+  "unique_raw_frames_verified": 6015,
+  "physics_controller_task_drives_rng_observations_exact": true,
+  "model_evaluated": false,
+  "paired_success_rate_campaign_complete": false,
+  "raw_replays_sha256": "2ee918727e5e8146f2c0a1d300d24ffc6036169dc3ba3d525d26b36c0424439a",
+  "auditor_sha256": "8cb8b65171b271e1eafef0898d18524eff312cc11ea2a9b6df3847cfd55e063d"
+}

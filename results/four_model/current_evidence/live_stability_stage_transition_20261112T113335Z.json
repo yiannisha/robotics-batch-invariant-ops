@@ -1,0 +1,25 @@
+{
+  "classification": "verified_wait",
+  "observed_utc": "2026-11-12T11:33:35.039413+00:00",
+  "workers": [
+    {
+      "stage": "rdt_idle_timing",
+      "pid": 1781635,
+      "start_ticks": 450441247,
+      "state": "S",
+      "cpu_ticks": 3,
+      "status": "waiting_for_300_consecutive_idle_seconds",
+      "idle_seconds": 0
+    },
+    {
+      "stage": "lingbot_diagnostic",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 12376086,
+      "completed_pairs": 404,
+      "total_pairs": 600
+    }
+  ],
+  "full_campaign_complete": false
+}

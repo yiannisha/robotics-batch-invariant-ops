@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-11-11T18:25:15.032772+00:00",
+  "checks": {
+    "pi05_legacy_plan_unchanged": true,
+    "rdt_legacy_plan_unchanged": true,
+    "cogact_legacy_plan_unchanged": true,
+    "legacy_lingbot_qualification_rejected": "Corrected trace precision audit required",
+    "foreign_model_override_rejected": "Corrected qualification override is LingBot-only"
+  },
+  "new_source_sha256": "bb6dfcf8e56d95655fa7d188b062b2eadf710754e6b09f68e180e6301b1285b8",
+  "actual_corrected_lingbot_plan_created": false,
+  "full_campaign_complete": false
+}

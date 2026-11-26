@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "case": "Altered actual PI output RMS rejected",
+  "exit_code": 1,
+  "error": "ValueError: RMS differs",
+  "no_acceptance_output": true
+}

@@ -1,0 +1,61 @@
+{
+  "status": "study_initial_record_hashes_match_independently_qualified_canonical_snapshots",
+  "matched_episodes": [
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "condition": "native_singleton",
+      "episode_file_sha256": "ee3c9c90e03ba315019e6279eacfb283042a9af8fa368413590f052de60dc417"
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "condition": "native_dynamic",
+      "episode_file_sha256": "26f7fd1973e80128d44c58a496edf7de05687ff8bb79efe81365174746bf454c"
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "condition": "patched_singleton",
+      "episode_file_sha256": "ed97a4fd0b56e36ad25fea2b6f3e49289c9ec2ac74916342e5d13beca6a27ee4"
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "condition": "patched_dynamic",
+      "episode_file_sha256": "2ef1bc828416bd8095ad691a09a54abebb8fe86bd3979a40daa8ffb08f608334"
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "condition": "native_singleton_repeat",
+      "episode_file_sha256": "b1ab82117c79af85b29e48e3b02761452f24ba66649dfd36206a2767647ad70f"
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "condition": "native_dynamic_repeat",
+      "episode_file_sha256": "cdd2f810c52eb61a99c762be200fd8529a9abfaaefe9ed8b567e6e0dd0d23a21"
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "condition": "patched_singleton_repeat",
+      "episode_file_sha256": "75784e5af1031cc9d2a14109133a31a833b657a67ea658114cdfabb1b7235dcc"
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "condition": "patched_dynamic_repeat",
+      "episode_file_sha256": "0d453ef56b89afd244fcf6f7898f7eecc69c813a66e63a8b1b0f947b55b05301"
+    }
+  ],
+  "qualified_start_ids": [
+    0,
+    1,
+    2
+  ],
+  "reset_audit_sha256": "82dccda2906c9787b102de0c436120a922519d4e010ca242e1626a3d230e4180",
+  "candidate_lock_sha256": "fcbf88f25a7387a6dc6abb1f70beaaff3586599221bed2c6bfa18d26cfc351c1",
+  "study_raw_input_audit_is_separate_requirement": true
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "snapshot_real_input_numerical_probe",
+  "official_b1_equivalent": true,
+  "same_condition_repeats_exact": true,
+  "comparisons": 36,
+  "native_failures": 12,
+  "invariant_failures": 0,
+  "success_rate_campaign_complete": false
+}

@@ -1,0 +1,22 @@
+{
+  "status": "full_200_start_magnitudes_bootstrap_and_frame_explicit_figure_verified",
+  "observed_utc": "2026-11-10T07:34:25.591277+00:00",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "accepted_cogact_starts": 200,
+  "tasks": 4,
+  "raw_frame_files_verified": 96300,
+  "fixed_input_nonsingleton_pairs_verified": 14748,
+  "bootstrap_resamples": 20000,
+  "bootstrap_estimates": 48,
+  "figure_rows_independently_recounted": 8,
+  "figure_visually_inspected": true,
+  "visual_review": "All four task labels and coordinate frames readable; native and invariant series clear; zero differences explicitly labeled; axes and qualification limits visible.",
+  "sources": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2.json": "327cd02ad21c41800ac73c51f23ceeec5e70394ba0ab198027cc86215446b178",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_independent_audit.json": "1a5a4c915277e923d76b9b6c6c0536eac76034351e746f908db9b61148b4f720",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_bootstrap_001.json": "63624cab2f42f53d81ab18507b93f662dd89cf3f675dae8a47e982df68988205",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_bootstrap_001_independent_audit.json": "18b830a2f3fc1c6e14b556686b9f3892431ee6c803813b4e1a23f406087d3a32",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_cogact_200_frame_v2_001/provenance.json": "11af89ee7379ce028a574c2c13a98e232151f2b20908dd0a3b9f5622ed269028"
+  },
+  "full_campaign_complete": false
+}

@@ -1,0 +1,64 @@
+{
+  "status": "actual_prepared_request_loader_integration_passed",
+  "scope": "Loader-only probe with in-memory metadata and synthetic explicit noise; production full-corpus gate deliberately bypassed for this probe. No neural inference or complete-corpus acceptance.",
+  "model_keys": [
+    "images",
+    "img_masks",
+    "lang_tokens",
+    "lang_masks",
+    "state",
+    "image_grid_thw"
+  ],
+  "prepared_schema": {
+    "images": {
+      "shape": [
+        3,
+        256,
+        1536
+      ],
+      "dtype": "torch.float32"
+    },
+    "img_masks": {
+      "shape": [
+        3
+      ],
+      "dtype": "torch.bool"
+    },
+    "lang_tokens": {
+      "shape": [
+        72
+      ],
+      "dtype": "torch.int64"
+    },
+    "lang_masks": {
+      "shape": [
+        72
+      ],
+      "dtype": "torch.bool"
+    },
+    "state": {
+      "shape": [
+        55
+      ],
+      "dtype": "torch.float32"
+    },
+    "image_grid_thw": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "torch.int64"
+    },
+    "noise": {
+      "shape": [
+        50,
+        55
+      ],
+      "dtype": "torch.float32"
+    }
+  },
+  "actual_request_file": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-002/selected_requests/6d294286a66bd948290a3477099627678109504afc236df3d53c780b50b1f1ec.pt.gz",
+  "actual_request_sha256": "e3f26a71f64c6d61393727279d813680ed9bfbd1ae0178237aab76ba32fc272a",
+  "corrupt_tensor_signature_rejected": true,
+  "production_partial_corpus_gate_separately_rejected": true
+}

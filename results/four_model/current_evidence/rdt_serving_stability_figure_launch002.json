@@ -1,0 +1,28 @@
+{
+  "status": "launched_waiting_for_current_performance_audit",
+  "pid": 2782251,
+  "start_ticks": "452729791",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-idle-gated-serving-stability-figures-002.py",
+  "launcher_sha256": "28ee7b08f388490dc171640d47a3e2496aaf36d0f0796d99df1eb855e2001a94",
+  "dependency_pid": 1791898,
+  "dependency_start_ticks": "450444333",
+  "state": {
+    "status": "waiting_for_live_independent_performance_audit",
+    "model": "rdt",
+    "model_id": "rdt_maniskill_exact",
+    "dependency_pid": 1791898,
+    "dependency_start_ticks": "450444333",
+    "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-idle-gated-independent-performance-audit-002.json",
+    "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+    "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/bin/python",
+    "raw": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/isolated_performance_002/queue.jsonl",
+    "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/isolated_performance_002/independent_performance_audit.json",
+    "output_dir": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/rdt_serving_stability_tradeoff_002",
+    "source_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_serving_stability_tradeoff.py": "46fbe0d68ca90519146f5e4e8ceb4641a5b4e2e82c260375bf7ba2b0a72f9c22",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_serving_tradeoff_table.py": "8e08934d7f3808fd8546485b1694223e55db0da50a561eed2908b01510ab4d11"
+    }
+  },
+  "measurements_accepted": false,
+  "full_campaign_complete": false
+}

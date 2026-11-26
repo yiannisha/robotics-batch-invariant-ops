@@ -1,0 +1,18 @@
+{
+  "status": "complete_lingbot_traced_operator_qualification_accepted",
+  "observed_utc": "2026-11-09T13:50:17.597063+00:00",
+  "source_patterns_b1": 33,
+  "source_patterns_b8": 33,
+  "measurements": 56100,
+  "component_measurement_counts": [
+    40800,
+    10200,
+    5100
+  ],
+  "coverage_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/coverage_complete_audit.json",
+  "coverage_audit_sha256": "fd0a2ef9b86e92ade880ec7debab60eac78d1a249e5607e087266cf08b427fa9",
+  "freeze_operator_gate_passed": true,
+  "validated_artifact_paths": 12,
+  "full_model_diagnostic_complete": false,
+  "performance_qualified": false
+}

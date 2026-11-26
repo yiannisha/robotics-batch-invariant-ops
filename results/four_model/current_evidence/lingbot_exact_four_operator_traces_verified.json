@@ -1,0 +1,64 @@
+{
+  "status": "four_actual_operator_trace_artifacts_hash_verified",
+  "observed_utc": "2026-11-09T12:50:19.421561+00:00",
+  "traces": [
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/actual_trace_B1_native.json",
+      "sha256": "a956992baa7b51e4feba0bbe01ca4b8b7b7d24a4021d98aab88b48c58b4d683a",
+      "batch_size": 1,
+      "implementation": "native",
+      "patterns": 33,
+      "calls": 6399,
+      "operations": [
+        "aten::linear",
+        "aten::matmul",
+        "aten::mean",
+        "aten::softmax"
+      ]
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/actual_trace_B1_batch_invariant.json",
+      "sha256": "941e77421ffee9d3d5854097704a97a31a9abb2410ec2db491a1db0e1a7b4eb0",
+      "batch_size": 1,
+      "implementation": "batch_invariant",
+      "patterns": 33,
+      "calls": 6399,
+      "operations": [
+        "aten::linear",
+        "aten::matmul",
+        "aten::mean",
+        "aten::softmax"
+      ]
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/actual_trace_B8_native.json",
+      "sha256": "5d2769c70c2d7927985d4f4b54e7b8d2355e118872c322965025efc951dc6e27",
+      "batch_size": 8,
+      "implementation": "native",
+      "patterns": 33,
+      "calls": 6399,
+      "operations": [
+        "aten::linear",
+        "aten::matmul",
+        "aten::mean",
+        "aten::softmax"
+      ]
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/actual_trace_B8_batch_invariant.json",
+      "sha256": "5c2acb2647f9ded0de6cbb799f6a65e09b1d6e1151082f1652026be6b2d3d181",
+      "batch_size": 8,
+      "implementation": "batch_invariant",
+      "patterns": 33,
+      "calls": 6399,
+      "operations": [
+        "aten::linear",
+        "aten::matmul",
+        "aten::mean",
+        "aten::softmax"
+      ]
+    }
+  ],
+  "full_operator_qualification_complete": false,
+  "acceptance_scope": "Trace provenance only; no numerical or operator-coverage acceptance."
+}

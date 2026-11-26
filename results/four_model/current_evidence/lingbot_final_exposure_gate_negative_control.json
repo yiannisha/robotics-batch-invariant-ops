@@ -1,0 +1,8 @@
+{
+  "status": "final_exposure_auditor_rejected_pilot_in_place_of_full_cohort",
+  "rejected": true,
+  "reason": "ValueError: A complete independently audited 2500-start paired cohort is required",
+  "auditor_sha256": "5cae2d2273bb3495386515c6dbed9ba300b857485110e9bba090d74d151891b3",
+  "final_seal_created": false,
+  "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-final-exposure-pilot-rejection-001.log"
+}

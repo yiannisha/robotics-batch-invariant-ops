@@ -1,0 +1,149 @@
+{
+  "status": "trace_applicability_inventory_only",
+  "inspector_source_sha256": "c654325cd349ef2e74525e888f2fe65098456eb02620ce5fd485439bf97c0282",
+  "models": [
+    {
+      "adapter": "scripts.model_invariance.adapters.pi05_libero_exact",
+      "trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/aten_all_trace_v2_B8.json",
+      "trace_sha256": "2839a3b7304b0a0a2c45f2822c969d90195aa18dc1d554482de93598c3cc545b",
+      "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_split_local_v2/replay_manifest.json",
+      "manifest_sha256": "2ca7352b19f0bf805805e7b6bb7a00a0d258894836c3f0eb0e76604c3079ea4c",
+      "execution_configuration": {
+        "checkpoint_revision": "7152f13e34c6c115d808aea0e5d08aca74eac14b",
+        "suite": "libero_10",
+        "language_padding": "max_length_right",
+        "language_tokens": 200,
+        "sampler": "unchanged_official_predict_action_chunk",
+        "flow_steps": 10,
+        "chunk_size": 50,
+        "max_action_dim": 32,
+        "robot_action_dim": 7,
+        "normalization": "checkpoint_mean_std",
+        "precision": "bfloat16",
+        "tf32": false,
+        "execution": "eager"
+      },
+      "observed_operations": [
+        "aten::conv2d",
+        "aten::linear",
+        "aten::matmul",
+        "aten::mean",
+        "aten::scaled_dot_product_attention",
+        "aten::softmax"
+      ],
+      "convolution_intervention": "required_observed",
+      "explicit_sdpa_intervention": "required_observed",
+      "ablation_measurements_complete": false
+    },
+    {
+      "adapter": "scripts.model_invariance.adapters.rdt_maniskill_exact",
+      "trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/replay_manifest.json",
+      "manifest_sha256": "ec7d55f15b737789583bfbd26fb8504e29d36828ba275e27327f8967bfee5a01",
+      "execution_configuration": {
+        "checkpoint_revision": "9622afab2b7ce2312a6cf1febc526928589b77eb",
+        "suite": "maniskill_five",
+        "language_padding": "fixed_right_in_both_modes",
+        "language_tokens": 30,
+        "image_history": 2,
+        "camera_slots": 3,
+        "vision_encoding": "genuinely_batched_six_slots_per_request",
+        "diffusion_steps": 5,
+        "chunk_size": 64,
+        "precision": "bfloat16",
+        "tf32": false,
+        "control_frequency": 25,
+        "action_dim": 8,
+        "noise_dim": 128,
+        "sampler": "official_maniskill_wrapper_equivalent_DPM_solver",
+        "execution": "eager"
+      },
+      "observed_operations": [
+        "aten::bmm",
+        "aten::conv2d",
+        "aten::linear",
+        "aten::matmul",
+        "aten::mean",
+        "aten::scaled_dot_product_attention",
+        "aten::softmax"
+      ],
+      "convolution_intervention": "required_observed",
+      "explicit_sdpa_intervention": "required_observed",
+      "ablation_measurements_complete": false
+    },
+    {
+      "adapter": "scripts.model_invariance.adapters.cogact_simpler_exact",
+      "trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/replay_manifest.json",
+      "manifest_sha256": "aeffa91444d59f9427b404dd01f4eb166fe12aed18508ea962ca1caa81b321ec",
+      "execution_configuration": {
+        "checkpoint_revision": "ca302a300542393a0b06e291465076a7d9105c23",
+        "suite": "simpler_google_four",
+        "language_padding": "fixed_right_in_both_primary_modes",
+        "language_tokens": 64,
+        "precision": "vlm_bfloat16_diffusion_float32",
+        "tf32": false,
+        "chunk_size": 16,
+        "action_dim": 7,
+        "diffusion_steps": 10,
+        "cfg_scale": 1.5,
+        "execution": "eager",
+        "released_default_fidelity": "separate_longest_padding_singleton_measurement_required"
+      },
+      "observed_operations": [
+        "aten::conv2d",
+        "aten::linear",
+        "aten::matmul",
+        "aten::mean",
+        "aten::scaled_dot_product_attention"
+      ],
+      "convolution_intervention": "required_observed",
+      "explicit_sdpa_intervention": "required_observed",
+      "ablation_measurements_complete": false
+    },
+    {
+      "adapter": "scripts.model_invariance.adapters.lingbot_robotwin_exact",
+      "trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/actual_trace_B8_native.json",
+      "trace_sha256": "5d2769c70c2d7927985d4f4b54e7b8d2355e118872c322965025efc951dc6e27",
+      "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/replay_manifest.json",
+      "manifest_sha256": "59c26c4a5d854834fdad3139ea9b3519a7783586471e86cf601e643b71a8d779",
+      "execution_configuration": {
+        "checkpoint_revision": "0451855729ec904f970600e0aec8b84661423afe",
+        "suite": "robotwin_released_50",
+        "precision": "official_constructor_dtype_then_fp32",
+        "flow_steps": 10,
+        "action_chunk_size": 50,
+        "model_action_dim": 55,
+        "language_tokens": 72,
+        "deterministic_moe": "deterministic_token_choice_moe_shared_native_invariant",
+        "tf32": false,
+        "released_atomic_moe_baseline": "separate_nonrepeatable_supplement",
+        "vision_shape_cache": "cleared_each_inference",
+        "output_domains": [
+          "normalized_55",
+          "official_physical_14"
+        ]
+      },
+      "observed_operations": [
+        "aten::linear",
+        "aten::matmul",
+        "aten::mean",
+        "aten::softmax"
+      ],
+      "convolution_intervention": "source_review_required_before_inapplicability",
+      "explicit_sdpa_intervention": "source_review_required_before_inapplicability",
+      "ablation_measurements_complete": false
+    }
+  ],
+  "negative_controls_rejected": [
+    "foreign_adapter",
+    "foreign_manifest",
+    "wrong_batch_size",
+    "empty_inventory"
+  ],
+  "conv2d_positive_control": "passed",
+  "full_ablation_acceptance": false,
+  "freeze_ordering_note": "Existing numerical freezes remain immutable. Ablations are outstanding diagnostic evidence; no retrospective claim that they preceded freeze is permitted."
+}

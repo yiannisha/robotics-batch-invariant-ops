@@ -1,0 +1,32 @@
+{
+  "observed_utc": "2026-11-10T21:02:35.031825+00:00",
+  "status": "accepted_report_and_audit_hashes_reverified",
+  "summary_sha256": "0d74b358f875da8f4cc17bd531e934f579e2f07417061e758d2ca535ac233bdd",
+  "checked_artifacts": [
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_rdt_250.json",
+      "sha256": "683a5b0a34d018afb047304a98b7eef1206eed71120bb73e9a88f680989547a2"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_rdt_250_independent_audit.json",
+      "sha256": "e942f4d51118cda7931751e5cc885a5784be65ae870ce1251f1a4a7ab97bb4a7"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500.json",
+      "sha256": "311d7cf6ddd81f0684d20dbbbac038f874c1510c4c734e1af5516ccba206e81b"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500_independent_audit.json",
+      "sha256": "3314a478f2db0f447a9e8ba2b4b4f9b54e6ce99d59a60f1589056b4b458b03b7"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2.json",
+      "sha256": "327cd02ad21c41800ac73c51f23ceeec5e70394ba0ab198027cc86215446b178"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_independent_audit.json",
+      "sha256": "1a5a4c915277e923d76b9b6c6c0536eac76034351e746f908db9b61148b4f720"
+    }
+  ],
+  "full_campaign_complete": false
+}

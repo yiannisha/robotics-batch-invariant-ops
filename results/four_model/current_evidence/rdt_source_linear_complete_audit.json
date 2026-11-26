@@ -1,0 +1,2989 @@
+{
+  "status": "source_linear_measured_arrangements_independently_verified",
+  "raw_records": 42500,
+  "raw_records_sha256": "88fdb2513a0c0a4d61f5f4397a4e633de6925bc0f705570016ac4695c30ca1a5",
+  "configuration_sha256": "5dbfb656a68ebb8741f0a40b6cfff0f06bf33ecc27391bbfade220f692abfd73",
+  "auditor_sha256": "58d70f0ac2455d223588e19981d23675586496e95fcb8a259ffa6cf2e2090376",
+  "arrangements": [
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 87,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 94,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 92,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 94,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 85,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_08c9f577490ef664|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 95,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 87,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 94,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 92,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 94,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 85,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 86,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_09382e9d6ee1950a|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 95,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_0fc5fd7c47bda4dd|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_1369c2fe3a2da944|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_304a520a31e5668b|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_324dcb1c4d9b10ca|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_350d1fefca323edf|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_363da50203a7ff79|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 32,
+      "singleton_fidelity_max_absolute_error": 0.25
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 28,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 22,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 30,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 26,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 24,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 27,
+      "singleton_fidelity_max_absolute_error": 0.25
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_60709e8536e8931f|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 32,
+      "singleton_fidelity_max_absolute_error": 0.25
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 28,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 22,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 30,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 26,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 24,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 27,
+      "singleton_fidelity_max_absolute_error": 0.25
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_64b0fd021242aa69|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 21,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_85f4e40807c61416|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_872e9e651722718b|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_9e92200c46ef7017|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_a486342b08658057|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 2.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_ae00621242e9910a|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_b8a431062a878f92|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d80014702aa0e276|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_d9dc3d15c3610a12|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_e30eb859b96199d8|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fba6308876971090|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis0_fed2f8edd5185529|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_3cf72cd5cc197e51|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axis1_92d55b15af182993|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.0
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_51ec4c6b39bc06c3|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.5
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    },
+    {
+      "key": "rdt_source_linear_axisNone_ef1e0a0a94e8815b|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.125
+    }
+  ],
+  "all_linear_arrangements_complete": true,
+  "prescribed_arrangements": 425,
+  "completed_arrangements": 425,
+  "full_operator_qualification_complete": false,
+  "shared_gpu_timing_not_qualified": true
+}

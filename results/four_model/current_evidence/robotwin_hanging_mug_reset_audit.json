@@ -1,0 +1,15 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "hanging_mug",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 900,
+  "raw_frames_verified": 2703,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 2703,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "8260a7b885e6ab3d4091c409647ec036727c370fd1c6ec7ac7cb8c81604e878b",
+  "auditor_sha256": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0"
+}

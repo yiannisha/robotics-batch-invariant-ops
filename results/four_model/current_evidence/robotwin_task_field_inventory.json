@@ -1,0 +1,1350 @@
+{
+  "scope": "static_inventory_only_runtime_field_encoding_not_yet_qualified",
+  "task_count": 50,
+  "tasks": [
+    {
+      "task": "lift_pot",
+      "source_sha256": "347e06f3f9f82b1bc35882671bbbdea50b6e3c77fff0f7fb4449b024875402eb",
+      "assigned": [
+        "model_id",
+        "model_name",
+        "pot"
+      ],
+      "referenced": [
+        "close_gripper",
+        "grasp_actor",
+        "info",
+        "model_id",
+        "model_name",
+        "move",
+        "move_by_displacement",
+        "pot",
+        "prohibited_area",
+        "robot"
+      ]
+    },
+    {
+      "task": "hanging_mug",
+      "source_sha256": "8793ed6be6a80b18a10690767a1910c3c49a7a9e4887ecbdd48a191ca3e03034",
+      "assigned": [
+        "middle_pos",
+        "mug",
+        "mug_id",
+        "rack"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "grasp_actor",
+        "info",
+        "is_right_gripper_open",
+        "middle_pos",
+        "move",
+        "move_by_displacement",
+        "mug",
+        "mug_id",
+        "place_actor",
+        "rack"
+      ]
+    },
+    {
+      "task": "stack_bowls_three",
+      "source_sha256": "95848e9c2987e64fef2cfd928128d7a19967ba600c57dc7a6b7f1c9ea5b358e6",
+      "assigned": [
+        "bowl1",
+        "bowl1_target_pose",
+        "bowl2",
+        "bowl3",
+        "las_arm",
+        "quat_of_target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "bowl1",
+        "bowl1_target_pose",
+        "bowl2",
+        "bowl3",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "las_arm",
+        "move",
+        "move_bowl",
+        "move_by_displacement",
+        "place_actor",
+        "prohibited_area",
+        "quat_of_target_pose",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "scan_object",
+      "source_sha256": "860dfe2cc86d180096089bc87502c7904f7ce2efb64fb32620c1720ca0178c2b",
+      "assigned": [
+        "left_object_target_pose",
+        "object",
+        "object_id",
+        "right_object_target_pose",
+        "scanner",
+        "scanner_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_close",
+        "is_right_gripper_close",
+        "left_object_target_pose",
+        "move",
+        "move_by_displacement",
+        "object",
+        "object_id",
+        "place_actor",
+        "prohibited_area",
+        "right_object_target_pose",
+        "scanner",
+        "scanner_id",
+        "scene"
+      ]
+    },
+    {
+      "task": "handover_block",
+      "source_sha256": "5439712296d7e143d41f8e78b4ab86cd4fad7fb98f40f5f5abb067a462d17650",
+      "assigned": [
+        "block_middle_pose",
+        "box",
+        "target_box"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "block_middle_pose",
+        "box",
+        "grasp_actor",
+        "info",
+        "is_right_gripper_open",
+        "move",
+        "move_by_displacement",
+        "open_gripper",
+        "place_actor",
+        "target_box"
+      ]
+    },
+    {
+      "task": "click_bell",
+      "source_sha256": "a0b7673e6ef842738999acbccaaa3d01f86d62a147bb8387cb92163218db48ac",
+      "assigned": [
+        "bell",
+        "bell_id",
+        "check_arm_function",
+        "stage_success_tag"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "bell",
+        "bell_id",
+        "check_arm_function",
+        "check_success",
+        "get_gripper_actor_contact_position",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_close",
+        "is_right_gripper_close",
+        "move",
+        "move_by_displacement",
+        "stage_success_tag"
+      ]
+    },
+    {
+      "task": "put_object_cabinet",
+      "source_sha256": "1de25dd513b4ad29e158440eefb28fb050be95d557c7df1b87578168ff35a7b2",
+      "assigned": [
+        "arm_tag",
+        "cabinet",
+        "model_id",
+        "model_name",
+        "object",
+        "origin_z",
+        "selected_model_id",
+        "selected_modelname"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "arm_tag",
+        "cabinet",
+        "grasp_actor",
+        "info",
+        "model_id",
+        "model_name",
+        "move",
+        "move_by_displacement",
+        "object",
+        "origin_z",
+        "place_actor",
+        "prohibited_area",
+        "robot",
+        "selected_model_id",
+        "selected_modelname"
+      ]
+    },
+    {
+      "task": "open_microwave",
+      "source_sha256": "ad679b7753fc50487ba8034570e3b94aa7bfc84756048b94580fa3d2516a1bd0",
+      "assigned": [
+        "microwave",
+        "model_id",
+        "model_name",
+        "plan_success"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "check_success",
+        "grasp_actor",
+        "info",
+        "microwave",
+        "model_id",
+        "model_name",
+        "move",
+        "move_by_displacement",
+        "open_gripper",
+        "plan_success",
+        "prohibited_area"
+      ]
+    },
+    {
+      "task": "stack_blocks_three",
+      "source_sha256": "b19f1f1c5a3a2c7c7312a4e1b2e577ccd269ebb0c444c287fecbc16ff5b47fb9",
+      "assigned": [
+        "block1",
+        "block1_target_pose",
+        "block2",
+        "block3",
+        "last_actor",
+        "last_gripper"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "block1",
+        "block1_target_pose",
+        "block2",
+        "block3",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "last_actor",
+        "last_gripper",
+        "move",
+        "move_by_displacement",
+        "pick_and_place_block",
+        "place_actor",
+        "prohibited_area",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "place_shoe",
+      "source_sha256": "9e9b29eaca488f41617127070add87f33900c37db0d286a4c4b08e2138cbfc6f",
+      "assigned": [
+        "shoe",
+        "shoe_id",
+        "target_block"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "move",
+        "move_by_displacement",
+        "open_gripper",
+        "place_actor",
+        "prohibited_area",
+        "shoe",
+        "shoe_id",
+        "target_block"
+      ]
+    },
+    {
+      "task": "adjust_bottle",
+      "source_sha256": "4f76b35e718a4c5a364dae564d35d68268755818d9062e3ed4ff393d158d0548",
+      "assigned": [
+        "bottle",
+        "left_target_pose",
+        "model_id",
+        "qpose_tag",
+        "right_target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "bottle",
+        "delay",
+        "grasp_actor",
+        "info",
+        "left_target_pose",
+        "model_id",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "qpose_tag",
+        "right_target_pose"
+      ]
+    },
+    {
+      "task": "beat_block_hammer",
+      "source_sha256": "90269f15f9ce274fb5bcad703c47b0b552ff5a2f0a3ff62d12dbe9a553018014",
+      "assigned": [
+        "block",
+        "hammer"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "block",
+        "check_actors_contact",
+        "grasp_actor",
+        "hammer",
+        "info",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "prohibited_area"
+      ]
+    },
+    {
+      "task": "blocks_ranking_rgb",
+      "source_sha256": "0e632df38d9024e7952c0df7a1f59e3d011b537724e6e6588455dee4d4e6074b",
+      "assigned": [
+        "block1",
+        "block1_target_pose",
+        "block2",
+        "block2_target_pose",
+        "block3",
+        "block3_target_pose",
+        "last_gripper"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "block1",
+        "block1_target_pose",
+        "block2",
+        "block2_target_pose",
+        "block3",
+        "block3_target_pose",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "last_gripper",
+        "move",
+        "move_by_displacement",
+        "pick_and_place_block",
+        "place_actor",
+        "prohibited_area",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "blocks_ranking_size",
+      "source_sha256": "18ddb8ca5465f450ef03db292bcfc22e8e795fcb397f104fc24213a5fa063696",
+      "assigned": [
+        "block1",
+        "block1_target_pose",
+        "block2",
+        "block2_target_pose",
+        "block3",
+        "block3_target_pose",
+        "last_gripper"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "block1",
+        "block1_target_pose",
+        "block2",
+        "block2_target_pose",
+        "block3",
+        "block3_target_pose",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "last_gripper",
+        "move",
+        "move_by_displacement",
+        "pick_and_place_block",
+        "place_actor",
+        "prohibited_area",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "click_alarmclock",
+      "source_sha256": "f69a1ad4f1b483ab0dd82d8bad872e12047ed8d898f1fa4058de9e382ddeef49",
+      "assigned": [
+        "alarm",
+        "alarmclock_id",
+        "check_arm_function",
+        "stage_success_tag"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "alarm",
+        "alarmclock_id",
+        "check_arm_function",
+        "check_success",
+        "get_grasp_pose",
+        "get_gripper_actor_contact_position",
+        "info",
+        "is_left_gripper_close",
+        "is_right_gripper_close",
+        "move",
+        "move_by_displacement",
+        "stage_success_tag"
+      ]
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "source_sha256": "3bd57fe9172d59731db1ccf1bc9605dfe3ef08a0f7224edc720ea4812c214611",
+      "assigned": [
+        "deskbin",
+        "deskbin_id",
+        "dustbin",
+        "garbage_num",
+        "middle_pose",
+        "pour_actions",
+        "sphere_lst"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "delay",
+        "deskbin",
+        "deskbin_id",
+        "dustbin",
+        "garbage_num",
+        "grasp_actor",
+        "info",
+        "middle_pose",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "pour_actions",
+        "prohibited_area",
+        "scene",
+        "sphere_lst",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "grab_roller",
+      "source_sha256": "f0e1864199605acf59cf8982dded05129d873bb3934f200e47abafd918d41c89",
+      "assigned": [
+        "model_id",
+        "roller"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_close",
+        "is_right_gripper_close",
+        "model_id",
+        "move",
+        "move_by_displacement",
+        "roller"
+      ]
+    },
+    {
+      "task": "handover_mic",
+      "source_sha256": "41ed0f2561cc8f1ae2449ba405decd4f5d7e3b80243b60921598657551891b17",
+      "assigned": [
+        "grasp_arm_tag",
+        "handover_arm_tag",
+        "handover_middle_pose",
+        "microphone",
+        "microphone_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "get_gripper_actor_contact_position",
+        "grasp_actor",
+        "grasp_arm_tag",
+        "handover_arm_tag",
+        "handover_middle_pose",
+        "info",
+        "is_left_gripper_close",
+        "is_left_gripper_open",
+        "is_right_gripper_close",
+        "is_right_gripper_open",
+        "microphone",
+        "microphone_id",
+        "move",
+        "move_by_displacement",
+        "open_gripper",
+        "place_actor"
+      ]
+    },
+    {
+      "task": "move_can_pot",
+      "source_sha256": "ea838bb2502199610eea6cc058a4ba5fc7abb01c3d8ee0705c44854ddca20186",
+      "assigned": [
+        "arm_tag",
+        "can",
+        "can_id",
+        "orig_z",
+        "pot",
+        "pot_id",
+        "target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "arm_tag",
+        "can",
+        "can_id",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "orig_z",
+        "place_actor",
+        "pot",
+        "pot_id",
+        "prohibited_area",
+        "robot",
+        "table_z_bias",
+        "target_pose"
+      ]
+    },
+    {
+      "task": "move_pillbottle_pad",
+      "source_sha256": "a5db7c65db15c2273d1f9e99fab8fc00533a27b740a45161c9402d43b8aa6824",
+      "assigned": [
+        "pad",
+        "pillbottle",
+        "pillbottle_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "pad",
+        "pillbottle",
+        "pillbottle_id",
+        "place_actor",
+        "robot",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "move_playingcard_away",
+      "source_sha256": "edf557d5a29ab724860651e24398e03c400a71e4c82bdbf2cedd3958fbfb6cc2",
+      "assigned": [
+        "playingcards",
+        "playingcards_id",
+        "target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "open_gripper",
+        "playingcards",
+        "playingcards_id",
+        "prohibited_area",
+        "robot",
+        "target_pose"
+      ]
+    },
+    {
+      "task": "place_cans_plasticbox",
+      "source_sha256": "5d004110de53d95c7a6fc7721f9136d96b9792a61b97686f7b5489ff7ec48a5f",
+      "assigned": [
+        "object1",
+        "object1_id",
+        "object2",
+        "object2_id",
+        "plasticbox",
+        "plasticbox_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "move",
+        "move_by_displacement",
+        "object1",
+        "object1_id",
+        "object2",
+        "object2_id",
+        "place_actor",
+        "plasticbox",
+        "plasticbox_id"
+      ]
+    },
+    {
+      "task": "place_container_plate",
+      "source_sha256": "7a288f27f61e96fe905d5cfb80eb0a4fd8e490c829f2f02149951266012a3aee",
+      "assigned": [
+        "actor_name",
+        "container",
+        "container_id",
+        "plate",
+        "plate_id"
+      ],
+      "referenced": [
+        "actor_name",
+        "add_prohibit_area",
+        "container",
+        "container_id",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "plate",
+        "plate_id"
+      ]
+    },
+    {
+      "task": "place_dual_shoes",
+      "source_sha256": "f35c4a133e1de567b274cbd15f158f585eb05e32aeb05be88839d249d0d7ab9e",
+      "assigned": [
+        "left_shoe",
+        "right_shoe",
+        "right_shoe_middle_pose",
+        "shoe_box",
+        "shoe_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "delay",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "left_shoe",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "prohibited_area",
+        "right_shoe",
+        "right_shoe_middle_pose",
+        "shoe_box",
+        "shoe_id"
+      ]
+    },
+    {
+      "task": "place_empty_cup",
+      "source_sha256": "424bbd61f990ebfffb283eb152d17103c2a990edd20f68229203a96a2fd4d581",
+      "assigned": [
+        "coaster",
+        "cup"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "close_gripper",
+        "coaster",
+        "cup",
+        "delay",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "move",
+        "move_by_displacement",
+        "place_actor"
+      ]
+    },
+    {
+      "task": "place_fan",
+      "source_sha256": "7e8be55f1f26ce6128c254b50464edc438a96f272581ccb19827521bc679c237",
+      "assigned": [
+        "color_name",
+        "color_value",
+        "fan",
+        "fan_id",
+        "pad",
+        "target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "color_name",
+        "color_value",
+        "fan",
+        "fan_id",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "pad",
+        "place_actor",
+        "prohibited_area",
+        "robot",
+        "scene",
+        "target_pose"
+      ]
+    },
+    {
+      "task": "place_mouse_pad",
+      "source_sha256": "369bf399d0fd6a2687abb7d80b8feb6101c8b5405d33f9de63bbbdaaea7b73d0",
+      "assigned": [
+        "color_name",
+        "color_value",
+        "mouse",
+        "mouse_id",
+        "target",
+        "target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "color_name",
+        "color_value",
+        "grasp_actor",
+        "info",
+        "mouse",
+        "mouse_id",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "robot",
+        "target",
+        "target_pose"
+      ]
+    },
+    {
+      "task": "place_object_basket",
+      "source_sha256": "e809bd3eabac48cb34589f164291b04b9e2fbf6cc1ebd8c4024c0af8e265ed48",
+      "assigned": [
+        "arm_tag",
+        "basket",
+        "basket_id",
+        "basket_name",
+        "object",
+        "object_id",
+        "object_name",
+        "object_start_height",
+        "plan_success",
+        "start_height"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "arm_tag",
+        "back_to_origin",
+        "basket",
+        "basket_id",
+        "basket_name",
+        "check_actors_contact",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "move_to_pose",
+        "object",
+        "object_id",
+        "object_name",
+        "object_start_height",
+        "open_gripper",
+        "place_actor",
+        "plan_success",
+        "start_height"
+      ]
+    },
+    {
+      "task": "place_object_scale",
+      "source_sha256": "555f04a2a2fa0a41ad8dfccd771579d1cc2686fc65ad6c7ef297c98f4c9ba310",
+      "assigned": [
+        "arm_tag",
+        "object",
+        "scale",
+        "scale_id",
+        "selected_model_id",
+        "selected_modelname"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "arm_tag",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "move",
+        "move_by_displacement",
+        "object",
+        "place_actor",
+        "scale",
+        "scale_id",
+        "selected_model_id",
+        "selected_modelname"
+      ]
+    },
+    {
+      "task": "place_object_stand",
+      "source_sha256": "0b4db3a679230ff3732b9bfdfcfaba3437bd5f942043de9921240118849e3fe8",
+      "assigned": [
+        "displaystand",
+        "displaystand_id",
+        "object",
+        "selected_model_id",
+        "selected_modelname"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "displaystand",
+        "displaystand_id",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "object",
+        "place_actor",
+        "robot",
+        "selected_model_id",
+        "selected_modelname"
+      ]
+    },
+    {
+      "task": "place_phone_stand",
+      "source_sha256": "719cf84ebf997b8d15d0ef9f997d439da62d64067a292b6008433da3536a0216",
+      "assigned": [
+        "phone",
+        "phone_id",
+        "stand",
+        "stand_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "move",
+        "phone",
+        "phone_id",
+        "place_actor",
+        "stand",
+        "stand_id"
+      ]
+    },
+    {
+      "task": "move_stapler_pad",
+      "source_sha256": "c2b7aa7bf4e896afc392a8cf1ac107b6982088a459c716de005a3412fcdedd6d",
+      "assigned": [
+        "color_name",
+        "color_value",
+        "pad",
+        "pad_pose",
+        "stapler",
+        "stapler_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "color_name",
+        "color_value",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "pad",
+        "pad_pose",
+        "place_actor",
+        "robot",
+        "scene",
+        "stapler",
+        "stapler_id"
+      ]
+    },
+    {
+      "task": "open_laptop",
+      "source_sha256": "b826d4f36513dba6df3c17b65f1251bf3dbe2994857ba672f4d06c5900c0cac0",
+      "assigned": [
+        "arm_tag",
+        "laptop",
+        "model_id",
+        "model_name"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "arm_tag",
+        "check_success",
+        "grasp_actor",
+        "info",
+        "laptop",
+        "model_id",
+        "model_name",
+        "move",
+        "plan_success",
+        "robot"
+      ]
+    },
+    {
+      "task": "pick_diverse_bottles",
+      "source_sha256": "95ebb80fa96eafd0b7ff5518251c2a7aa42f22ef9b7cfdda4e80eac511f06151",
+      "assigned": [
+        "actor_pose",
+        "bottle1",
+        "bottle1_id",
+        "bottle2",
+        "bottle2_id",
+        "id_list",
+        "left_target_pose",
+        "right_target_pose"
+      ],
+      "referenced": [
+        "actor_pose",
+        "add_prohibit_area",
+        "bottle1",
+        "bottle1_id",
+        "bottle2",
+        "bottle2_id",
+        "delay",
+        "grasp_actor",
+        "id_list",
+        "info",
+        "left_target_pose",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "prohibited_area",
+        "right_target_pose"
+      ]
+    },
+    {
+      "task": "pick_dual_bottles",
+      "source_sha256": "422f23510f3662405dcb5518d1ebe8a0270935849a4b02a2585615ff7bffc4ef",
+      "assigned": [
+        "actor_pose",
+        "bottle1",
+        "bottle2",
+        "left_target_pose",
+        "render_freq",
+        "right_target_pose"
+      ],
+      "referenced": [
+        "actor_pose",
+        "add_prohibit_area",
+        "bottle1",
+        "bottle2",
+        "grasp_actor",
+        "info",
+        "left_target_pose",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "prohibited_area",
+        "render_freq",
+        "right_target_pose",
+        "together_open_gripper"
+      ]
+    },
+    {
+      "task": "place_a2b_left",
+      "source_sha256": "8603f48febcb5b5b534dc7d973ac4651264ebb9c6fb60f199d4d2adc9e14d7cd",
+      "assigned": [
+        "object",
+        "selected_model_id_A",
+        "selected_model_id_B",
+        "selected_modelname_A",
+        "selected_modelname_B",
+        "target_object"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "object",
+        "place_actor",
+        "robot",
+        "selected_model_id_A",
+        "selected_model_id_B",
+        "selected_modelname_A",
+        "selected_modelname_B",
+        "target_object"
+      ]
+    },
+    {
+      "task": "place_a2b_right",
+      "source_sha256": "1225e32207912e15855deff8aa9d4fd2cf425b4c5eeaeaf1eb795daaba4ac6ae",
+      "assigned": [
+        "object",
+        "selected_model_id_A",
+        "selected_model_id_B",
+        "selected_modelname_A",
+        "selected_modelname_B",
+        "target_object"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "object",
+        "place_actor",
+        "robot",
+        "selected_model_id_A",
+        "selected_model_id_B",
+        "selected_modelname_A",
+        "selected_modelname_B",
+        "target_object"
+      ]
+    },
+    {
+      "task": "place_bread_basket",
+      "source_sha256": "50c433166301a7f0ac8615d041cc51aa673746b5b7d6fcc0b6f29790c560c053",
+      "assigned": [
+        "basket_id",
+        "bread",
+        "bread_id",
+        "breadbasket"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "basket_id",
+        "bread",
+        "bread_id",
+        "breadbasket",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "open_gripper",
+        "place_actor",
+        "robot",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "place_bread_skillet",
+      "source_sha256": "b1fa08d7f23d8bcd933ea7d64904fea17f67dbe58101c66e42c6addbfdbbcd73",
+      "assigned": [
+        "bread",
+        "bread_id",
+        "model_id_list",
+        "skillet",
+        "skillet_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "bread",
+        "bread_id",
+        "get_arm_pose",
+        "grasp_actor",
+        "info",
+        "model_id_list",
+        "move",
+        "move_by_displacement",
+        "move_to_pose",
+        "place_actor",
+        "skillet",
+        "skillet_id",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "place_burger_fries",
+      "source_sha256": "19e8a3428e677839e7e51ae6488752acc940a7d2bc8ee54587c354b422ba6d2c",
+      "assigned": [
+        "frenchfries",
+        "hamburg",
+        "object1_id",
+        "object2_id",
+        "tray",
+        "tray_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "frenchfries",
+        "grasp_actor",
+        "hamburg",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "move",
+        "move_by_displacement",
+        "object1_id",
+        "object2_id",
+        "place_actor",
+        "tray",
+        "tray_id"
+      ]
+    },
+    {
+      "task": "place_can_basket",
+      "source_sha256": "9f24e5ac98146babe93c68cb46baaf1d7bf21e38dbfc7c0b29e7020ae764e7f0",
+      "assigned": [
+        "arm_tag",
+        "basket",
+        "basket_id",
+        "basket_name",
+        "can",
+        "can_id",
+        "can_name",
+        "object_start_height",
+        "plan_success",
+        "start_height"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "arm_tag",
+        "back_to_origin",
+        "basket",
+        "basket_id",
+        "basket_name",
+        "can",
+        "can_id",
+        "can_name",
+        "check_actors_contact",
+        "close_gripper",
+        "get_arm_pose",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "move_to_pose",
+        "object_start_height",
+        "open_gripper",
+        "place_actor",
+        "plan_success",
+        "start_height"
+      ]
+    },
+    {
+      "task": "press_stapler",
+      "source_sha256": "69274cf09aa1d4ba51469621461683b5225b8f98cf7837f821e848196ce51f9c",
+      "assigned": [
+        "stage_success_tag",
+        "stapler",
+        "stapler_id"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "close_gripper",
+        "get_gripper_actor_contact_position",
+        "grasp_actor",
+        "info",
+        "move",
+        "stage_success_tag",
+        "stapler",
+        "stapler_id"
+      ]
+    },
+    {
+      "task": "rotate_qrcode",
+      "source_sha256": "382165e22a2a52a73958ff69c662e57a4d1f0bc8cb7cecf3e9dd1f5ba11defa9",
+      "assigned": [
+        "model_id",
+        "qrcode",
+        "target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "model_id",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "qrcode",
+        "table_z_bias",
+        "target_pose"
+      ]
+    },
+    {
+      "task": "shake_bottle_horizontally",
+      "source_sha256": "def5f373a3a289c946bb32c6d01145672432dbe1d2b71a10992e5280d5f8dead",
+      "assigned": [
+        "bottle",
+        "bottle_id",
+        "id_list"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "bottle",
+        "bottle_id",
+        "grasp_actor",
+        "id_list",
+        "info",
+        "move",
+        "move_by_displacement",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "shake_bottle",
+      "source_sha256": "2e37395b302eb37ecac39b2a676ea119c4bf7a1dcc9e6df75cd683a5cf37b026",
+      "assigned": [
+        "bottle",
+        "bottle_id",
+        "id_list"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "bottle",
+        "bottle_id",
+        "grasp_actor",
+        "id_list",
+        "info",
+        "move",
+        "move_by_displacement",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "stack_blocks_two",
+      "source_sha256": "4e92a679cb5be4ef87a1b842432c930560a2c9b539a4cbcee0161e2b2112f526",
+      "assigned": [
+        "block1",
+        "block1_target_pose",
+        "block2",
+        "last_actor",
+        "last_gripper"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "block1",
+        "block1_target_pose",
+        "block2",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "last_actor",
+        "last_gripper",
+        "move",
+        "move_by_displacement",
+        "pick_and_place_block",
+        "place_actor",
+        "prohibited_area",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "stack_bowls_two",
+      "source_sha256": "3e3217c277d84a0838739d55a0061a9acb3315240b5a99c6607d9637ea719637",
+      "assigned": [
+        "bowl1",
+        "bowl1_target_pose",
+        "bowl2",
+        "las_arm",
+        "quat_of_target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "bowl1",
+        "bowl1_target_pose",
+        "bowl2",
+        "grasp_actor",
+        "info",
+        "is_left_gripper_open",
+        "is_right_gripper_open",
+        "las_arm",
+        "move",
+        "move_bowl",
+        "move_by_displacement",
+        "place_actor",
+        "prohibited_area",
+        "quat_of_target_pose",
+        "table_z_bias"
+      ]
+    },
+    {
+      "task": "stamp_seal",
+      "source_sha256": "28a159e27aa76459355fa1f81e962815c62ee6435727039d73664b7eb6731b82",
+      "assigned": [
+        "color_name",
+        "color_value",
+        "seal",
+        "seal_id",
+        "target",
+        "target_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "color_name",
+        "color_value",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "place_actor",
+        "robot",
+        "seal",
+        "seal_id",
+        "target",
+        "target_pose"
+      ]
+    },
+    {
+      "task": "turn_switch",
+      "source_sha256": "035e108a861f94f61369ba2221431e123b7ac231e8de683d8bf38090bf021f9a",
+      "assigned": [
+        "model_id",
+        "model_name",
+        "switch"
+      ],
+      "referenced": [
+        "close_gripper",
+        "grasp_actor",
+        "info",
+        "model_id",
+        "model_name",
+        "move",
+        "prohibited_area",
+        "switch"
+      ]
+    },
+    {
+      "task": "put_bottles_dustbin",
+      "source_sha256": "1c03a4b227daa7d285fa366944f1f75773e32dc6a7b73ab693217a13fcd42795",
+      "assigned": [
+        "bottle_id",
+        "bottle_num",
+        "bottles",
+        "bottles_data",
+        "dustbin",
+        "right_middle_pose"
+      ],
+      "referenced": [
+        "add_prohibit_area",
+        "back_to_origin",
+        "bottle_id",
+        "bottle_num",
+        "bottles",
+        "bottles_data",
+        "delay",
+        "dustbin",
+        "grasp_actor",
+        "info",
+        "move",
+        "move_by_displacement",
+        "open_gripper",
+        "place_actor",
+        "right_middle_pose",
+        "scene"
+      ]
+    }
+  ]
+}

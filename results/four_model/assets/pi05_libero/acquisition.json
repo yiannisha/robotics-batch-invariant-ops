@@ -1,0 +1,58 @@
+{
+  "model": "pi05_libero",
+  "repository": "lerobot/pi05_libero_finetuned_v044",
+  "revision": "7152f13e34c6c115d808aea0e5d08aca74eac14b",
+  "status": "checkpoint_acquired_and_hashed",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4390,
+      "sha256": "b1ba487d27f8dfdb873e4bab1856aaecfd4b297035a829942eeda43691c71f71",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "config.json",
+      "bytes": 2170,
+      "sha256": "2f6d4b96b032593e1de65b391ee7252a70227bff398ef1b94658fea17818142f",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 7473096344,
+      "sha256": "877b3ec1130548b69af7f8aeef3ec9d3fc7738040f0b9beb490857ec970997ae",
+      "upstream_lfs_sha256": "877b3ec1130548b69af7f8aeef3ec9d3fc7738040f0b9beb490857ec970997ae"
+    },
+    {
+      "path": "policy_postprocessor.json",
+      "bytes": 660,
+      "sha256": "37d719a6584600988e6c343306d2eaee0575109f235ad500313577f73e47e8a1",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "bytes": 7668,
+      "sha256": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9",
+      "upstream_lfs_sha256": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9"
+    },
+    {
+      "path": "policy_preprocessor.json",
+      "bytes": 1903,
+      "sha256": "3d669ffc18d0364536735d8203076dcc69d3a6523aa5956ccaada3f9e1e6b748",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "policy_preprocessor_step_2_normalizer_processor.safetensors",
+      "bytes": 7668,
+      "sha256": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9",
+      "upstream_lfs_sha256": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9"
+    },
+    {
+      "path": "train_config.json",
+      "bytes": 5621,
+      "sha256": "199518b79faeaef0877e9a1eb5f2df6884902476a7d4491c7f865142c3fe90fd",
+      "upstream_lfs_sha256": null
+    }
+  ],
+  "inference_qualified": false,
+  "closed_loop_qualified": false
+}

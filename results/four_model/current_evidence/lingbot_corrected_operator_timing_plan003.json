@@ -1,0 +1,22 @@
+{
+  "status": "built_corrected_operator_timing_plan_execution_pending",
+  "command": [
+    "python3",
+    "-m",
+    "scripts.build_operator_performance_plans_v2",
+    "--campaign-base",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign",
+    "--model",
+    "lingbot",
+    "--operator-directory",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001/operator",
+    "--output-dir",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/operator_performance_plans_precision003"
+  ],
+  "builder_sha256": "bb6dfcf8e56d95655fa7d188b062b2eadf710754e6b09f68e180e6301b1285b8",
+  "coverage_sha256": "d2c00b952294d62880aa3e4e0749c280c9d100794da9399149ecab3fe96be3ab",
+  "outputs": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/operator_performance_plans_precision003/lingbot.json": "c6bba5afe1f37b254b131c2b058118c579cbe2961cf471a96fab914e5446d5a8"
+  },
+  "full_campaign_complete": false
+}

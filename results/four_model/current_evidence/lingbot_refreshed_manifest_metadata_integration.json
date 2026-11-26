@@ -1,0 +1,12 @@
+{
+  "status": "unchanged_exact_adapter_loaded_refreshed_metadata_and_verified_all_noise_bytes",
+  "observed_utc": "2026-11-09T13:17:46.622155+00:00",
+  "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full_fresh_candidates_v1/replay_manifest.json",
+  "manifest_sha256": "9628d1d70f4b4572a550c5d3ebf0c323f9aa06aa5f129ca5a6955e1af4fb9e98",
+  "observations": 1000,
+  "heldout_rows": 800,
+  "diagnostic_rows_byte_identical": true,
+  "indexed_noise_fingerprints_checked": 3000,
+  "neural_inference_executed": false,
+  "final_exposure_seal": false
+}

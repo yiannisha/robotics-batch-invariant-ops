@@ -1,0 +1,111 @@
+{
+  "status": "paired_rollouts_independently_audited_provisional_pending_numerical_QA",
+  "completed_paired_starts": 3,
+  "prescribed_paired_starts": 200,
+  "episodes": 36,
+  "by_task": {
+    "pick_can": {
+      "paired_starts": 3,
+      "successes": {
+        "native_singleton": 3,
+        "native_dynamic": 3,
+        "patched_singleton": 3,
+        "patched_dynamic": 3,
+        "released_native_singleton": 3,
+        "released_native_dynamic": 3
+      },
+      "success_rate": {
+        "native_singleton": 1.0,
+        "native_dynamic": 1.0,
+        "patched_singleton": 1.0,
+        "patched_dynamic": 1.0,
+        "released_native_singleton": 1.0,
+        "released_native_dynamic": 1.0
+      }
+    }
+  },
+  "blocks": [
+    {
+      "task": "pick_can",
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": false,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 1,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    },
+    {
+      "task": "pick_can",
+      "initialization": 2,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "released_native_singleton": true,
+        "released_native_dynamic": true
+      },
+      "attribution": {
+        "native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "controlled_identical_input_batch_arithmetic"
+        },
+        "released_native": {
+          "first_action_divergence": 1,
+          "identical_preprocessed_inputs_at_divergence": true,
+          "interpretation": "released_padding_extent_and_arithmetic_joint_effect"
+        }
+      }
+    }
+  ],
+  "reconstructed_policy_calls": 2880,
+  "raw_frames_verified": 2916,
+  "all_completed_blocks_pass_reset_AA_and_invariant_trajectory_checks": true,
+  "controlled_primary_fixed64": true,
+  "released_native_supplements_separate": true,
+  "cohort_rollouts_complete": false,
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "candidate_lock_sha256": "51f480eba2e274081347b5d3c184ad6ef5fdba5f2e38edf4985d46af559a8b91",
+  "auditor_sha256": "ea832a5280bfbe9369d91e3f21c39a57aa0dddae1532a6f5d57ca6689d241ffb"
+}

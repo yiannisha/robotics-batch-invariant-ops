@@ -1,0 +1,97 @@
+{
+  "status": "actual_operator_coverage_independently_verified",
+  "complete": true,
+  "observed_source_patterns": 29,
+  "completed_source_patterns": 29,
+  "groups": [
+    {
+      "configuration_file": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/actual_shape_config.json",
+      "configuration_sha256": "d4776a4bcd53d28e519bd70df13691a61f499c99d3bf5232bc85316ba873a4ac",
+      "raw_file": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/actual_shapes_100seeds.jsonl",
+      "raw_sha256": "c47d0931599a0dad21690efdaf5756c89e59f90050bc86cb140ce78e67cb568b",
+      "records": 45900,
+      "complete_configurations": [
+        "actual_00_scaled_dot_product_attention",
+        "actual_01_linear",
+        "actual_02_linear",
+        "actual_03_linear",
+        "actual_04_linear",
+        "actual_05_linear",
+        "actual_06_linear",
+        "actual_07_linear",
+        "actual_08_linear",
+        "actual_09_linear",
+        "actual_10_matmul",
+        "actual_11_matmul",
+        "actual_12_matmul",
+        "actual_13_matmul",
+        "actual_14_linear",
+        "actual_15_linear",
+        "actual_16_linear",
+        "actual_17_linear",
+        "actual_18_linear",
+        "actual_19_linear",
+        "actual_20_matmul",
+        "actual_21_matmul",
+        "actual_22_conv2d",
+        "actual_23_mean",
+        "actual_24_linear",
+        "actual_25_linear",
+        "actual_26_mean"
+      ],
+      "total_configurations": 27,
+      "native_failed_measurements": 15694,
+      "all_invariant_measurements_exact": true,
+      "complete": true
+    },
+    {
+      "configuration_file": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/actual_precision_supplement_config.json",
+      "configuration_sha256": "56a1bc0925c5291d4d67570cb428a9e2c46d09bfa3746a04953cb0a7d44fe09e",
+      "raw_file": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/actual_precision_supplement_100seeds.jsonl",
+      "raw_sha256": "8b6caa3568165112c3cbd001dba42df0264b06cb33c2f9e866d2b689d54ffba0",
+      "records": 5100,
+      "complete_configurations": [
+        "actual_22_conv2d",
+        "actual_26_softmax",
+        "actual_27_softmax"
+      ],
+      "total_configurations": 3,
+      "native_failed_measurements": 0,
+      "all_invariant_measurements_exact": true,
+      "complete": true
+    },
+    {
+      "configuration_file": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/actual_matmul_source_layout_config.json",
+      "configuration_sha256": "a07539e3d4f9928fe4dc3af25ce94a485df9cee51a428a50f8dee71da9e9008f",
+      "raw_file": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/actual_matmul_source_layout_100seeds.jsonl",
+      "raw_sha256": "5f2b71d73b5f66871fb37fbc9de2aa2a8541c3b102d2333c8bfc557a9caba9ca",
+      "records": 10200,
+      "complete_configurations": [
+        "actual_10_matmul",
+        "actual_11_matmul",
+        "actual_12_matmul",
+        "actual_13_matmul",
+        "actual_20_matmul",
+        "actual_21_matmul"
+      ],
+      "total_configurations": 6,
+      "native_failed_measurements": 488,
+      "all_invariant_measurements_exact": true,
+      "complete": true
+    }
+  ],
+  "excluded_from_primary_coverage": [
+    "Legacy flattened-head BMM layouts",
+    "Legacy TF32True native convolution"
+  ],
+  "legacy_precision_context": {
+    "tf32_matmul": false,
+    "tf32_cudnn": true,
+    "cudnn_benchmark": false,
+    "NVIDIA_TF32_OVERRIDE": null,
+    "scope": "Fresh process under the unchanged original qualifier imports; explains why the F32 convolution native baseline must be repeated with model TF32False."
+  },
+  "model_performance_qualified": false,
+  "full_campaign_complete": false,
+  "auditor_sha256": "8c0ba0c6fed8a979f3878d5ca3a3775561a149375425edd728cfc84d7c58e708"
+}

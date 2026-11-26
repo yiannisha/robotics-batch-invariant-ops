@@ -1,0 +1,23 @@
+{
+  "status": "waiting_for_live_independent_performance_audit",
+  "model": "lingbot",
+  "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+  "pid": 3928886,
+  "ticks": "425310909",
+  "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_002/lingbot.json",
+  "plan_sha256": "123258e8c70241ad30896ad7bd6b8595cd420a8c5582e336d6979d56da272bbe",
+  "wrapper": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v2.py",
+  "wrapper_sha256": "b23447df73977452d9a8dde98d47b1e88ef441b6b0984bae538735ec8c77127a",
+  "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/lingbot/bin/python",
+  "env": {
+    "LINGBOT_VLA2_SOURCE": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/lingbot-vla2",
+    "LINGBOT_VLA2_CHECKPOINT": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/lingbot_vla2/checkpoints/global_step_50000/hf_ckpt",
+    "QWEN3VL_PATH": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/lingbot_qwen_metadata",
+    "LINGBOT_ROBOTWIN_EXACT_MANIFEST": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/replay_manifest.json",
+    "CUDA_VISIBLE_DEVICES": "GPU-225bc55c-3ea0-e312-43ae-c673a57f5dde",
+    "OMP_NUM_THREADS": "8",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/causal_002/measurements.jsonl",
+  "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-performance-independent-audit-001.json"
+}

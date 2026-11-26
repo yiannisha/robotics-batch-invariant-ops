@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-11-09T17:31:38.634649+00:00",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "scope": "Recount of completed 125-start independent raw audit; full 200-start cohort and full numerical campaign remain incomplete.",
+  "source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_progress_audit_expanded_v5.json",
+  "source_sha256": "80c406bec8be2120bf3cf1329b094250ac37278677d9115dd846453abc11f1ae",
+  "source_status": "paired_rollouts_independently_audited_provisional_pending_numerical_QA",
+  "rows": [
+    {
+      "task": "move_near",
+      "audited_starts": 50,
+      "native_starts_with_action_divergence": 50,
+      "native_identical_input_at_divergence": 50,
+      "native_first_divergence_control_histogram": {
+        "1": 50
+      },
+      "invariant_starts_with_trajectory_divergence": 0
+    },
+    {
+      "task": "open_drawer",
+      "audited_starts": 25,
+      "native_starts_with_action_divergence": 25,
+      "native_identical_input_at_divergence": 25,
+      "native_first_divergence_control_histogram": {
+        "1": 25
+      },
+      "invariant_starts_with_trajectory_divergence": 0
+    },
+    {
+      "task": "pick_can",
+      "audited_starts": 50,
+      "native_starts_with_action_divergence": 50,
+      "native_identical_input_at_divergence": 50,
+      "native_first_divergence_control_histogram": {
+        "1": 50
+      },
+      "invariant_starts_with_trajectory_divergence": 0
+    }
+  ],
+  "invariant_exactness_evidence": "Source auditor asserts all completed blocks pass reset, A/A and invariant trajectory checks.",
+  "magnitude_recount_pending": true,
+  "accepted_magnitude_starts_unchanged": 827,
+  "full_campaign_complete": false
+}

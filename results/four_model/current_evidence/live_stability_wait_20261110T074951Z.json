@@ -1,0 +1,54 @@
+{
+  "observed_utc": "2026-11-10T07:49:51.295375+00:00",
+  "classification": "verified_wait",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "workers": [
+    {
+      "model": "pi05",
+      "pid": 1942407,
+      "start_ticks": 424051173,
+      "state": "R",
+      "cpu_ticks": 8427169,
+      "completed_pairs": 1947,
+      "prescribed_pairs": 2400,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 8089
+    },
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 11166301,
+      "completed_pairs": 553,
+      "prescribed_pairs": 2400,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 15439
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 6832411,
+      "completed_pairs": 317,
+      "prescribed_pairs": 600,
+      "parent_status": "running_full_model_diagnostic",
+      "cpu_ticks_advanced": 7658
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 1669713,
+      "completed_pairs": 210,
+      "prescribed_pairs": 2400,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 11785
+    }
+  ],
+  "accepted_magnitude_starts": 950,
+  "cogact_full_magnitude_and_bootstrap_audits_complete": true,
+  "full_campaign_complete": false
+}

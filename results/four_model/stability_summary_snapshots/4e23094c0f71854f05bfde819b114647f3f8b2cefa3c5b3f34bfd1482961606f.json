@@ -1,0 +1,111 @@
+{
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "scope": "Independently audited 25-start magnitude subset; larger paired-count audit cohorts are separate, pending magnitude verification.",
+  "full_campaign_complete": false,
+  "source_report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_quantitative.json",
+  "source_report_sha256": "a5f9695a23a1396fa04d63dca4a7181ddb1d978a86f133c1a600951fc1a1aa92",
+  "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_quantitative_independent_audit.json",
+  "independent_audit_sha256": "a2a61d9afca8c8273f0d134e247b3f9403da7e9090571965c87d849b3721e201",
+  "same_condition_repeat_controls": "exact",
+  "fixed_input_error_scope": "Only equal preprocessed input and indexed noise; later feedback input differences excluded.",
+  "physical_drift_scope": "Closed-loop end-effector position difference on common horizon, from identical canonical starts.",
+  "comparability": "Normalized output scales are model-specific; do not rank models by cross-model RMS.",
+  "rows": [
+    {
+      "model": "pi05",
+      "task": "0",
+      "mode": "native",
+      "audited_starts": 5,
+      "starts_with_action_divergence": 5,
+      "fixed_identical_input_calls": 5,
+      "fixed_input_normalized_output_rms_error": 0.004516367815897709,
+      "fixed_input_normalized_output_max_absolute_error": 0.037055015563964844,
+      "eef_position_median_start_max_mm": 21.95684262159573,
+      "eef_position_worst_mm": 262.7242676685218
+    },
+    {
+      "model": "pi05",
+      "task": "0",
+      "mode": "invariant",
+      "audited_starts": 5,
+      "starts_with_action_divergence": 0,
+      "fixed_identical_input_calls": 24,
+      "fixed_input_normalized_output_rms_error": 0.0,
+      "fixed_input_normalized_output_max_absolute_error": 0.0,
+      "eef_position_median_start_max_mm": 0.0,
+      "eef_position_worst_mm": 0.0
+    },
+    {
+      "model": "pi05",
+      "task": "2",
+      "mode": "native",
+      "audited_starts": 7,
+      "starts_with_action_divergence": 7,
+      "fixed_identical_input_calls": 7,
+      "fixed_input_normalized_output_rms_error": 0.005403110449055667,
+      "fixed_input_normalized_output_max_absolute_error": 0.06680488586425781,
+      "eef_position_median_start_max_mm": 17.56329472188338,
+      "eef_position_worst_mm": 22.152487496581298
+    },
+    {
+      "model": "pi05",
+      "task": "2",
+      "mode": "invariant",
+      "audited_starts": 7,
+      "starts_with_action_divergence": 0,
+      "fixed_identical_input_calls": 23,
+      "fixed_input_normalized_output_rms_error": 0.0,
+      "fixed_input_normalized_output_max_absolute_error": 0.0,
+      "eef_position_median_start_max_mm": 0.0,
+      "eef_position_worst_mm": 0.0
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "mode": "native",
+      "audited_starts": 10,
+      "starts_with_action_divergence": 10,
+      "fixed_identical_input_calls": 10,
+      "fixed_input_normalized_output_rms_error": 0.0010027202241909231,
+      "fixed_input_normalized_output_max_absolute_error": 0.0078125,
+      "eef_position_median_start_max_mm": 31.76166309090917,
+      "eef_position_worst_mm": 191.19444253787768
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "mode": "invariant",
+      "audited_starts": 10,
+      "starts_with_action_divergence": 0,
+      "fixed_identical_input_calls": 161,
+      "fixed_input_normalized_output_rms_error": 0.0,
+      "fixed_input_normalized_output_max_absolute_error": 0.0,
+      "eef_position_median_start_max_mm": 0.0,
+      "eef_position_worst_mm": 0.0
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "mode": "native",
+      "audited_starts": 3,
+      "starts_with_action_divergence": 3,
+      "fixed_identical_input_calls": 3,
+      "fixed_input_normalized_output_rms_error": 0.0013333403913107819,
+      "fixed_input_normalized_output_max_absolute_error": 0.005882978439331055,
+      "eef_position_median_start_max_mm": 11.661065424877119,
+      "eef_position_worst_mm": 15.884343518065783
+    },
+    {
+      "model": "cogact",
+      "task": "pick_can",
+      "mode": "invariant",
+      "audited_starts": 3,
+      "starts_with_action_divergence": 0,
+      "fixed_identical_input_calls": 180,
+      "fixed_input_normalized_output_rms_error": 0.0,
+      "fixed_input_normalized_output_max_absolute_error": 0.0,
+      "eef_position_median_start_max_mm": 0.0,
+      "eef_position_worst_mm": 0.0
+    }
+  ]
+}

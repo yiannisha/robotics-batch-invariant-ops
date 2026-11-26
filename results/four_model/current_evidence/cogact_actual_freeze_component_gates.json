@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "operator_bound_files": 15,
+  "diagnostic_arrangements": 46800,
+  "scope": "Actual completed operator and diagnostic freeze gates; final input disjointness missing, no freeze created"
+}

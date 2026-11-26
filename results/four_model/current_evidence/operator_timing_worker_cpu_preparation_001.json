@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-11-09T18:50:55.018093+00:00",
+  "status": "operator_timing_worker_cpu_preparation_verified",
+  "cpu_unit_tests_passed": 6,
+  "actual_source_mask_cases_reconstructed_bitwise": 4,
+  "timing_quantile_and_seed_controls_passed": true,
+  "sources": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/operator_performance_operands.py": "4f84b21408db0c8bc0ba8a9ecd5a1bb9df100689f41b886b4e122ef86a5958a3",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_operator_performance_operands.py": "9e9bf7d4085a5c6c8546e391cd67e3caa148ac60d499d434560051cd720b6da1",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_qualified_operator_cases.py": "aae4af7c13fa79aedc3893e0d0784a48c6bcb01bf5b96ef0a4c4c59d1944755a"
+  },
+  "actual_gpu_timings_accepted": false,
+  "remaining": "Isolation wrapper, independent timing/capacity audit, GPU integration and queue launch.",
+  "full_campaign_complete": false
+}

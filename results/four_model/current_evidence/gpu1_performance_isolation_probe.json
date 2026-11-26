@@ -1,0 +1,40 @@
+{
+  "status": "busy_gpu_not_qualified_for_isolated_timing",
+  "observation": {
+    "gpu_uuid": "GPU-61f5ae1b-8084-7e66-090b-8acba690563c",
+    "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "driver_version": "580.173.02",
+    "memory_used": "769 MiB",
+    "gpu_utilization": "0 %",
+    "temperature": "34 C",
+    "sm_clock": "2340 MHz",
+    "processes": [
+      {
+        "pid": 4179674,
+        "type": "G",
+        "used_memory": "311 MiB"
+      },
+      {
+        "pid": 4179675,
+        "type": "G",
+        "used_memory": "435 MiB"
+      }
+    ],
+    "observed_at_utc": "2026-11-09T07:30:29.616927+00:00"
+  },
+  "foreign_processes": [
+    {
+      "pid": 4179674,
+      "type": "G",
+      "used_memory": "311 MiB"
+    },
+    {
+      "pid": 4179675,
+      "type": "G",
+      "used_memory": "435 MiB"
+    }
+  ],
+  "observation_only": true,
+  "continuous_isolation_not_claimed": true,
+  "probe_source_sha256": "d391f37c593865153f9ff142fa6a140a38b7bcc9f3f1b874d210b6c497e50055"
+}

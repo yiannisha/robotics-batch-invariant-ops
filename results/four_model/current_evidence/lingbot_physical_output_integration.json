@@ -1,0 +1,15 @@
+{
+  "status": "official_physical_action_output_reconstructed_singleton_and_B8",
+  "native_episode": "episodes/lift_pot/diagnostic-0/episode.json.gz",
+  "call": 0,
+  "physical_shape": [
+    50,
+    14
+  ],
+  "dtype": "float32",
+  "singleton_matches_stored_native_actions_exactly": true,
+  "duplicate_B8_all_rows_match_exactly": true,
+  "input_context_tensors_unchanged": true,
+  "neural_inference_performed": false,
+  "scope": "Transforms-only official server; retained native normalized output, no new NN or invariant result"
+}

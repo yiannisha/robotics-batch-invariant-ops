@@ -1,0 +1,93 @@
+{
+  "timestamp_utc": "2026-11-09T15:33:43.951365+00:00",
+  "classification": "verified_wait",
+  "checked_analysis_jobs": [
+    {
+      "group": "flow_step_stability_queued_latest",
+      "pid": 2216571,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "flow_step_stability_queued_latest",
+      "pid": 2795075,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "causal_ablation_continuations_latest",
+      "pid": 2384063,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "causal_ablation_continuations_latest",
+      "pid": 2385624,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "causal_ablation_continuations_latest",
+      "pid": 2387225,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "causal_ablation_continuations_latest",
+      "pid": 2389130,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "causal_contract_audits_queued_latest",
+      "pid": 2492914,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "causal_contract_audits_queued_latest",
+      "pid": 2494565,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "causal_contract_audits_queued_latest",
+      "pid": 2496258,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "causal_contract_audits_queued_latest",
+      "pid": 2795548,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "cogact_expanded_bootstrap_queued_latest",
+      "pid": 2639630,
+      "identity_matches": true,
+      "state": "S"
+    },
+    {
+      "group": "cogact_expanded_bootstrap_queued_latest",
+      "pid": 2639655,
+      "identity_matches": true,
+      "state": "S"
+    }
+  ],
+  "issues": [],
+  "live_primary_counts": {
+    "rdt_diagnostic_pairs": 562,
+    "pi05_heldout_pairs": 478,
+    "lingbot_diagnostic_pairs": 34
+  },
+  "primary_pids_verified_live": [
+    1942407,
+    2152926,
+    4055960,
+    2770000,
+    836058
+  ],
+  "claim": "No new completed full-model evidence in this observation. Existing jobs left running.",
+  "full_campaign_complete": false
+}

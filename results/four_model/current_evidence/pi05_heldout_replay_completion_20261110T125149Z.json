@@ -1,0 +1,51 @@
+{
+  "observed_utc": "2026-11-10T12:51:49.437568+00:00",
+  "classification": "progress",
+  "pi05_replay_completed_pairs": 2400,
+  "pi05_parent": {
+    "status": "completed_freeze_heldout_and_independent_audit",
+    "source_sha256": {
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-seal-heldout-001.commands.json": "e91860593fa02906d392e73b8cea9d0a26f6c968af86f30c4315bc25fd7064df",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/freeze_four_model_numerics.py": "2fa448cff6acb3ff2fa63b4013a889c42efe1f24e0c7c3ac7e93a6aaf3076c53",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exposure_qualified_heldout.py": "f14261211a45cc0ce2ec388ea34fc88d8d1a29b7b21c9fc50bd1f88cee97dbc2",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_four_model_heldout.py": "125661e72a69e16341be84b42ed6faa166568814091a86d36363578178a0d307",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_four_model_diagnostic.py": "77981338ea393479971e5d1adc11a1aea8258277d6ab5e65228c070746e63db3"
+    }
+  },
+  "pi05_auditors": [],
+  "pi05_audit_exists": true,
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 14860815,
+      "completed_pairs": 736,
+      "prescribed_pairs": 2400,
+      "parent_status": "running"
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 8744196,
+      "completed_pairs": 412,
+      "prescribed_pairs": 600,
+      "parent_status": "running_full_model_diagnostic"
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 5054177,
+      "completed_pairs": 751,
+      "prescribed_pairs": 2400,
+      "parent_status": "running"
+    }
+  ],
+  "accepted_magnitude_starts": 950,
+  "full_campaign_complete": false
+}

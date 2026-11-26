@@ -1,0 +1,17 @@
+{
+  "status": "descriptive_flow_stage_distributions_independently_recounted",
+  "model_id": "lingbot_robotwin_exact",
+  "report_sha256": "700bc8e56b4ce6d4a97d6402d00fb8ca49e4f42992b2a9e4752bb6872e25d4cb",
+  "source_hashes": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001/diagnostic/invariance.jsonl.gz": "c46d72a2e4084361fe2df7cd9f6bb22c1647fb1baa7cc62c00ecbc389397d849",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001/diagnostic/independent_complete_audit.json": "4024b671054d77ee1b26aed9551b5503fd13fb1db05a4f762bf0d9bbbfc1647f",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001/diagnostic/invariance.jsonl.gz.runtime.json": "8154401acc80776bdba2020f0f149b721b0d08855e196c24c99129baba4e4dab"
+  },
+  "auditor_sha256": "e17681f0b70193a64b04c4ba4fd6dfe1d9a4dd0c2ebe771c610dc175b81178a3",
+  "verified_stage_groups": 10000,
+  "request_noise_pairs": 600,
+  "scope": "Descriptive task/mode/batch/stage distributions only",
+  "causal_ablations_complete": false,
+  "confidence_intervals_verified": false,
+  "full_campaign_complete": false
+}

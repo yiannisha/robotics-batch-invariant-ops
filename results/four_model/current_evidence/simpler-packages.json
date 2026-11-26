@@ -1,0 +1,146 @@
+{
+  "python": "3.10.22 (main, Oct  9 2026, 15:21:30) [Clang 22.1.3 ]",
+  "executable": "/home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/.venv-simpler/bin/python",
+  "packages": [
+    {
+      "name": "beautifulsoup4",
+      "version": "4.15.0"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2"
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2"
+    },
+    {
+      "name": "Farama-Notifications",
+      "version": "0.0.6"
+    },
+    {
+      "name": "filelock",
+      "version": "4.1.0"
+    },
+    {
+      "name": "gdown",
+      "version": "6.5.1"
+    },
+    {
+      "name": "gitdb",
+      "version": "4.0.12"
+    },
+    {
+      "name": "GitPython",
+      "version": "3.2.1"
+    },
+    {
+      "name": "gymnasium",
+      "version": "0.29.1"
+    },
+    {
+      "name": "h5py",
+      "version": "3.16.0"
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "ImageIO",
+      "version": "2.38.0"
+    },
+    {
+      "name": "imageio-ffmpeg",
+      "version": "0.8.1"
+    },
+    {
+      "name": "mani_skill2_real2sim",
+      "version": "0.5.3"
+    },
+    {
+      "name": "numpy",
+      "version": "1.24.4"
+    },
+    {
+      "name": "opencv-python",
+      "version": "4.11.0.86"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0"
+    },
+    {
+      "name": "PySocks",
+      "version": "1.7.1"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2"
+    },
+    {
+      "name": "rtree",
+      "version": "1.4.1"
+    },
+    {
+      "name": "ruckig",
+      "version": "0.19.4"
+    },
+    {
+      "name": "sapien",
+      "version": "2.2.2"
+    },
+    {
+      "name": "scipy",
+      "version": "1.15.3"
+    },
+    {
+      "name": "setuptools",
+      "version": "80.10.2"
+    },
+    {
+      "name": "simpler_env",
+      "version": "0.0.1"
+    },
+    {
+      "name": "smmap",
+      "version": "5.0.3"
+    },
+    {
+      "name": "soupsieve",
+      "version": "2.10"
+    },
+    {
+      "name": "tabulate",
+      "version": "0.10.0"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1"
+    },
+    {
+      "name": "transforms3d",
+      "version": "0.4.2"
+    },
+    {
+      "name": "trimesh",
+      "version": "5.2.0"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0"
+    }
+  ]
+}

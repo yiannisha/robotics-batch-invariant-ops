@@ -1,0 +1,13 @@
+{
+  "scope": "CPU provenance validation only; no timing executed",
+  "new_builder_accepted": true,
+  "legacy_builder_rejected": true,
+  "syntax_checks_passed": true,
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/benchmark_qualified_operator_cases_v3.py": "6e371875faf833db2784752e692161ca7dfa31a477b5ce83bb9ae433ab50ba67",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_operator_benchmark_v3.py": "6c99baa641b1c71744337da2197b4d364cb026a98371a7dd4fcae82807f861f7",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_isolated_operator_performance_v3.py": "44fd97ae0dc326141290726ce1eca53eac178a6be56d918ffe45ebc20c1ac124"
+  },
+  "full_campaign_complete": false,
+  "execution_pending": true
+}

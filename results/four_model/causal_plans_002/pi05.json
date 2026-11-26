@@ -1,0 +1,21 @@
+{
+  "model": "pi05",
+  "adapter": "scripts.model_invariance.adapters.pi05_libero_exact",
+  "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/replay_manifest.json",
+  "manifest_sha256": "969f4f6e8167ef6ef00aa7f5ecc95ff225b628beec919a5621900f913642feb7",
+  "trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/aten_all_trace_v2_B8.json",
+  "trace_sha256": "2839a3b7304b0a0a2c45f2822c969d90195aa18dc1d554482de93598c3cc545b",
+  "seed": 20261005,
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation.py": "2a22e79ec4f0aaab8444575d49f682369101c069d9fb9d7f300f69c2ef19f16e",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_causal_ablation.py": "c617cfa751bdd597388d8883c24c655c272ca70901172c94710cd8f3d520c8f9",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_replay_invariance.py": "10b764781288d3e6947cabd2c39dfb0b3b2c8de53b5ded663cc5f9a77d086537",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/harness.py": "399c331fc42298636b335d19d8296057c2aeb520826744d039d509f3d7a8237f",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/moe.py": "065865169d1ea65257ccfeebd40b6c63db40fee254ff11d299c87130796cbb77",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/pi05_libero_exact.py": "12bbc894e5d9af6a37721c06f94b612f8656e6183fabae9ab83d828d12d5ec73",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/verify_pi05_libero_checkpoint.py": "371151a963748b84a8eb168ba4f10a57e656f8d69fbbed0fead828fe6878ee1a",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v2.py": "b23447df73977452d9a8dde98d47b1e88ef441b6b0984bae538735ec8c77127a"
+  }
+}

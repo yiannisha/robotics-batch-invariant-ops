@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-11-11T04:31:35.188635+00:00",
+  "status": "cogact_captured_local_replay_verified_with_cross_implementation_operand_limit",
+  "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/local_leaf_attribution_003/independent_local_replay.json",
+  "audit_sha256": "21e01163a81a7caa05ea922d48c63faab327ac52a0194f1c360cde53d29ed0a9",
+  "trace_and_four_captures_rehashed": true,
+  "native_leaf_batch_dependence_demonstrated": true,
+  "invariant_leaf_bitwise_stability_demonstrated": true,
+  "same_operands_across_implementations": false,
+  "same_operand_repair_demonstrated": false,
+  "globally_first_operator_attribution_complete": false,
+  "full_campaign_complete": false
+}

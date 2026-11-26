@@ -1,0 +1,24 @@
+{
+  "status": "linear_auditor_rejected_corrupted_retained_measurements",
+  "controls": [
+    {
+      "control": "changed_stride",
+      "rejected": true,
+      "exit_code": 1,
+      "reason": "ValueError: Measured batch input differs from source layout",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/linear_auditor_negative_changed_stride_001.jsonl",
+      "sha256": "256af6affb0e67dfce0f788840e98c9c68074ebaba0527ede5679c216d7be55f",
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-linear-audit-negative-changed_stride-001.log"
+    },
+    {
+      "control": "duplicate_seed",
+      "rejected": true,
+      "exit_code": 1,
+      "reason": "ValueError: Duplicate measured seed",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/linear_auditor_negative_duplicate_seed_001.jsonl",
+      "sha256": "aef5fb5cc8adc2fdd69141f5b7003ff16d9a19ea4f30f08f2e454fc2ed9326df",
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-linear-audit-negative-duplicate_seed-001.log"
+    }
+  ],
+  "auditor_sha256": "3fbb43043e4a5f51ac35a87417b2dfd45ce46a8a773c16a2716d7c1879ca61f4"
+}

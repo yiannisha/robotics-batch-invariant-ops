@@ -1,0 +1,15 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "place_shoe",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 500,
+  "raw_frames_verified": 1503,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1503,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "0611368a5140bf6c2aa99d37570611770811d5832361e1a9715338b1783aaf95",
+  "auditor_sha256": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0"
+}

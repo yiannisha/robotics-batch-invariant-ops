@@ -1,0 +1,75 @@
+{
+  "scope": "complete_episode_pilot",
+  "model": "lingbot_vla2",
+  "task": "adjust_bottle",
+  "seed": 0,
+  "conditions": {
+    "native_singleton": [
+      false,
+      false
+    ],
+    "native_dynamic": [
+      false,
+      true
+    ],
+    "patched_singleton": [
+      true,
+      false
+    ],
+    "patched_dynamic": [
+      true,
+      true
+    ],
+    "native_singleton_repeat": [
+      false,
+      false
+    ],
+    "native_dynamic_repeat": [
+      false,
+      true
+    ],
+    "patched_singleton_repeat": [
+      true,
+      false
+    ],
+    "patched_dynamic_repeat": [
+      true,
+      true
+    ]
+  },
+  "dynamic_cycle": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "instruction": "Use the left arm to grab the green bottle with white label head-up.",
+  "instruction_type": "unseen",
+  "canonical_state": {
+    "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/robotwin-expert-seed-001/frames/frame-000000.pt",
+    "observation_sha256": "893411550a77d42036d8866d41f085a5214e45c7bfe77ea817f023cc24a380e9",
+    "physics_sha256": "bd9b5557d2a2ab7724a4e50c9202588b746bbc684c38233f5118942026b601bf",
+    "rng_sha256": "467596ee52565c2e6f478202590e0939d21f000a20a2d2fe231d037761575d36",
+    "task_state_sha256": "18ee1c5f65b99f1db8daaabb659ad4d1c55654b518d01a1769f5bfa5b4f1dcff",
+    "controller": {
+      "take_action_count": 0,
+      "step_limit": 400,
+      "eval_success": false,
+      "instruction": "Use the left arm to grab the green bottle with white label head-up."
+    }
+  },
+  "expert_seed_sha256": "b2cbe980d11230ecc8684e1b443c42c430461b156a973a0d7ebb226d7d457f0d",
+  "native_contract": "released FP32 operators with deterministic token-choice MoE shared by both modes; atomic MoE baseline separately measured",
+  "chunk_length": 50,
+  "action_type": "qpos",
+  "source_client": "experiment/robotwin/eval_policy_client_lingbotvla.py",
+  "companion_contract": "real frames from qualified single-episode numerical probe; not unrelated-task evidence",
+  "capture_contract": "full physics/controller/task/RNG and RGB recorded after every action; released client renders at chunk boundaries",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/pilot_lingbot_robotwin_exact_start.py": "7105d14e3230a1cc63ed9e6e9981ffd11bd413e631fbcf5365b3d55aa4a931ce",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/robotwin_exact_worker.py": "ab0f821ac6e4d93eb78a14e27c675ca9f8eb7852eae3b5855fe4706f0432ef18",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/lingbot_vla2.py": "4f07b4527e6a4f19bc6b0c51a1e56f962949b0ccd871f877e07e6a31ccad68c3",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/lingbot-real-inputs-002/requests.pt": "acd214f807cd24a0340d165875bbcff84aac6cbcac6aedefd25eed4d055bb301"
+  },
+  "paired_success_rate_campaign_complete": false
+}

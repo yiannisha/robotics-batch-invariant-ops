@@ -1,0 +1,9 @@
+{
+  "status": "queued_corrected_precision_B64_capacity",
+  "pid": 3237331,
+  "start_ticks": 438505690,
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-B64-capacity-002.py",
+  "upstream_audit_pid": 3216922,
+  "output_root": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001",
+  "full_campaign_complete": false
+}

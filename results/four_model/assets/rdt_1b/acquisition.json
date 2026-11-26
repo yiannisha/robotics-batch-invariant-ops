@@ -1,0 +1,52 @@
+{
+  "model": "rdt_1b",
+  "repository": "robotics-diffusion-transformer/maniskill-model",
+  "revision": "9622afab2b7ce2312a6cf1febc526928589b77eb",
+  "status": "checkpoint_acquired_and_hashed",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 446,
+      "sha256": "323af7f7d87bbcddf80f70410e54b433d20fe326c46bae6a78bb2607e471b030",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "lang_embeds/text_embed_PegInsertionSide-v1.pt",
+      "bytes": 206223,
+      "sha256": "da798aab9df67a230259095c0d087772d10ff2dd089bd71762a1b6d1696dbbf3",
+      "upstream_lfs_sha256": "da798aab9df67a230259095c0d087772d10ff2dd089bd71762a1b6d1696dbbf3"
+    },
+    {
+      "path": "lang_embeds/text_embed_PickCube-v1.pt",
+      "bytes": 165159,
+      "sha256": "a9ac30bc88ef12b171e9323b8a2c64f0b0ae9a54715deb061c021deaadb37f7a",
+      "upstream_lfs_sha256": "a9ac30bc88ef12b171e9323b8a2c64f0b0ae9a54715deb061c021deaadb37f7a"
+    },
+    {
+      "path": "lang_embeds/text_embed_PlugCharger-v1.pt",
+      "bytes": 198006,
+      "sha256": "c38f80c549ec1d48f74ffdeafff8dd9f02ca64de8c3bddd7fe3cca173925922d",
+      "upstream_lfs_sha256": "c38f80c549ec1d48f74ffdeafff8dd9f02ca64de8c3bddd7fe3cca173925922d"
+    },
+    {
+      "path": "lang_embeds/text_embed_PushCube-v1.pt",
+      "bytes": 148775,
+      "sha256": "536272882840dd1d2aef759b7551da1515b9c0cbe45e491a025169efadf51471",
+      "upstream_lfs_sha256": "536272882840dd1d2aef759b7551da1515b9c0cbe45e491a025169efadf51471"
+    },
+    {
+      "path": "lang_embeds/text_embed_StackCube-v1.pt",
+      "bytes": 247084,
+      "sha256": "ca0a1f758d183e4c541b412efd2ffafacae7bdc7220d03f7e9dca3e93bb28985",
+      "upstream_lfs_sha256": "ca0a1f758d183e4c541b412efd2ffafacae7bdc7220d03f7e9dca3e93bb28985"
+    },
+    {
+      "path": "rdt/mp_rank_00_model_states.pt",
+      "bytes": 2456799148,
+      "sha256": "3fa89cbf7bbb1b2559b29f9ae153b431541cdaa0b3f1ee44b83b9934599b9fb8",
+      "upstream_lfs_sha256": "3fa89cbf7bbb1b2559b29f9ae153b431541cdaa0b3f1ee44b83b9934599b9fb8"
+    }
+  ],
+  "inference_qualified": false,
+  "closed_loop_qualified": false
+}

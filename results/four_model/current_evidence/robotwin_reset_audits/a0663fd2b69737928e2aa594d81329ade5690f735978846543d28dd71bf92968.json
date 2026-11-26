@@ -1,0 +1,15 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "move_stapler_pad",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 400,
+  "raw_frames_verified": 1203,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1203,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "1e4f67b7ca3429348f443f62136872a82b1af7ea7dc7d773a54690b906636f07",
+  "auditor_sha256": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0"
+}

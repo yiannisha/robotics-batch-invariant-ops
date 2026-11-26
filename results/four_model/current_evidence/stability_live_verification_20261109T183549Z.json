@@ -1,0 +1,54 @@
+{
+  "observed_at": "2026-11-09T18:35:49.176422+00:00",
+  "classification": "verified_wait",
+  "scope": "Live production progress, not independent scientific acceptance.",
+  "jobs": [
+    {
+      "job": "pi05_heldout",
+      "pid": 1942407,
+      "start_ticks": "424051173",
+      "state": "R",
+      "cpu_ticks": 3261956,
+      "prescribed_total": 2400,
+      "produced": 753
+    },
+    {
+      "job": "rdt_heldout",
+      "pid": 675019,
+      "start_ticks": "426340577",
+      "state": "R",
+      "cpu_ticks": 1459010,
+      "prescribed_total": 2400,
+      "produced": 72
+    },
+    {
+      "job": "lingbot_diagnostic",
+      "pid": 4055960,
+      "start_ticks": "425339189",
+      "state": "R",
+      "cpu_ticks": 1820914,
+      "prescribed_total": 600,
+      "produced": 88
+    },
+    {
+      "job": "cogact_paired",
+      "pid": 2770000,
+      "start_ticks": "421141328",
+      "state": "R",
+      "cpu_ticks": 9459762,
+      "prescribed_total": 200,
+      "produced": 165
+    },
+    {
+      "job": "cogact_magnitude_extraction",
+      "pid": 2720053,
+      "start_ticks": "426761984",
+      "state": "R",
+      "cpu_ticks": 298193,
+      "prescribed_total": 125,
+      "produced": 68
+    }
+  ],
+  "accepted_magnitude_starts": 827,
+  "full_campaign_complete": false
+}

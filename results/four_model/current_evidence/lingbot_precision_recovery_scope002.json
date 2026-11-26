@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-11-11T02:23:35.235949+00:00",
+  "status": "precision_path_requalification_in_progress",
+  "rejected_diagnostic": "full/diagnostic",
+  "replacement_root": "precision_v2_001",
+  "adapter": "scripts.model_invariance.adapters.lingbot_robotwin_exact_v2",
+  "accepted_corrected_model_results": false,
+  "full_campaign_complete": false,
+  "queued": [
+    "corrected B16/B32 capacity",
+    "corrected full diagnostic and singleton fidelity",
+    "independent diagnostic audit v2",
+    "corrected B64 capacity and independent audit"
+  ],
+  "remaining_migration": [
+    "operator trace and qualification precision provenance review; rerun affected actual traces/cases",
+    "paired simulator driver must load corrected adapter and preserve exact-reset qualification",
+    "freeze and heldout validators must bind corrected adapter identity and fresh exposure proof",
+    "performance/serving/queue, causal/local diagnostics and summary launchers must bind corrected freeze and adapter"
+  ],
+  "constraints": [
+    "Do not accept rejected TF32-enabled data as TF32-disabled evidence",
+    "Do not rewrite existing raw/provenance/pinned source files",
+    "Do not relax precision or exactness gates",
+    "Do not launch old dependent paired pipeline",
+    "Stability primary; no success-driven tuning; no WAM work"
+  ]
+}

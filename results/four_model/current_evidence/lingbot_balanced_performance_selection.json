@@ -1,0 +1,21 @@
+{
+  "status": "revised_lingbot_performance_selection_independently_checked",
+  "selections": [
+    {
+      "inputs": 8,
+      "distinct_tasks": 8,
+      "distinct_episodes": 8,
+      "independent_selection_audit_passed": true
+    },
+    {
+      "inputs": 64,
+      "distinct_tasks": 50,
+      "distinct_episodes": 64,
+      "independent_selection_audit_passed": true
+    }
+  ],
+  "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-heldout-isolated-performance-002.py",
+  "script_sha256": "8d5a67007e457c40d13bcc2fcf2ddc0a344a2c9cdd4e20aa8826abbfabf71d5f",
+  "old_launcher_superseded_before_measurements": true,
+  "performance_measurements_accepted": false
+}

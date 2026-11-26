@@ -1,0 +1,32 @@
+{
+  "status": "actual_trace_qualification_gap_identified",
+  "observed_utc": "2026-11-09T12:50:46.598818+00:00",
+  "b8_native_invariant_operator_signatures_identical": true,
+  "operator_inventory": {
+    "aten::linear": {
+      "patterns": 24,
+      "calls": 4728
+    },
+    "aten::matmul": {
+      "patterns": 2,
+      "calls": 396
+    },
+    "aten::mean": {
+      "patterns": 5,
+      "calls": 879
+    },
+    "aten::softmax": {
+      "patterns": 2,
+      "calls": 396
+    }
+  },
+  "legacy_builder_compatible": false,
+  "reasons": [
+    "Legacy builder requires scripts.model_invariance.adapters.lingbot_vla2 instead of the qualified lingbot_robotwin_exact adapter and a different execution configuration.",
+    "Legacy matrix helper accepts mm/addmm/bmm; actual exact-path traces expose linear/matmul.",
+    "Legacy reduction helper accepts aten::_softmax; actual exact-path traces expose aten::softmax.",
+    "Legacy evidence paths point to /workspace rather than the pinned campaign sources."
+  ],
+  "required_next_step": "Build exact-path source-derived qualification cases retaining observed shapes, strides, request grouping and reduction dimensions; independently audit coverage before freeze.",
+  "full_operator_qualification_complete": false
+}

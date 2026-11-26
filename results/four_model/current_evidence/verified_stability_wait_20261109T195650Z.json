@@ -1,0 +1,60 @@
+{
+  "timestamp_utc": "20261109T195650Z",
+  "observation_seconds": 20,
+  "live_processes": {
+    "pi05_heldout": {
+      "pid": 1942407,
+      "start_ticks": "424051173",
+      "state": "R",
+      "cpu_ticks": 3788475,
+      "read_characters": 22179253058,
+      "cpu_ticks_advanced": 2152,
+      "read_characters_advanced": 0
+    },
+    "rdt_heldout": {
+      "pid": 675019,
+      "start_ticks": "426340577",
+      "state": "R",
+      "cpu_ticks": 2447542,
+      "read_characters": 13549045285,
+      "cpu_ticks_advanced": 3898,
+      "read_characters_advanced": 0
+    },
+    "lingbot_diagnostic": {
+      "pid": 4055960,
+      "start_ticks": "425339189",
+      "state": "R",
+      "cpu_ticks": 2325580,
+      "read_characters": 97731014567,
+      "cpu_ticks_advanced": 2040,
+      "read_characters_advanced": 0
+    },
+    "cogact_paired": {
+      "pid": 2770000,
+      "start_ticks": "421141328",
+      "state": "R",
+      "cpu_ticks": 10195952,
+      "read_characters": 195184388866,
+      "cpu_ticks_advanced": 2730,
+      "read_characters_advanced": 106862905
+    },
+    "cogact_magnitude_audit": {
+      "pid": 1162887,
+      "start_ticks": "427280828",
+      "state": "R",
+      "cpu_ticks": 265224,
+      "read_characters": 237174078071,
+      "cpu_ticks_advanced": 1993,
+      "read_characters_advanced": 1931131488
+    }
+  },
+  "log_tails": {
+    "pi05-post-seal-heldout-001": "mpleted heldout 870 request-noise pairs\ncompleted heldout 871 request-noise pairs\ncompleted heldout 872 request-noise pairs\ncompleted heldout 873 request-noise pairs\ncompleted heldout 874 request-noise pairs\ncompleted heldout 875 request-noise pairs\n",
+    "rdt-post-seal-heldout-001": "mpleted heldout 116 request-noise pairs\ncompleted heldout 117 request-noise pairs\ncompleted heldout 118 request-noise pairs\ncompleted heldout 119 request-noise pairs\ncompleted heldout 120 request-noise pairs\ncompleted heldout 121 request-noise pairs\n",
+    "lingbot-post-operators-full-diagnostic-001": "\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\nDenoise 10 steps\ncompleted diagnostic 105 request-noise pairs\n",
+    "cogact-v6-stability-and-bootstrap-001": "ied cogact/open_drawer/9: raw drift and normalized errors\nverified cogact/open_drawer/10: raw drift and normalized errors\nverified cogact/open_drawer/11: raw drift and normalized errors\nverified cogact/open_drawer/12: raw drift and normalized errors\n"
+  },
+  "cogact_completed_blocks": 177,
+  "accepted_starts_unchanged": 827,
+  "full_campaign_complete": false
+}

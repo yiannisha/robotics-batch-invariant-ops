@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-11-11T02:34:15.498851+00:00",
+  "status": "versioned_freeze_and_heldout_auditor_prepared",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/freeze_four_model_numerics_v2.py": "4adcccbe8d40a9a88532a5196dd450b1a8fc598968f2d27ba874f033a49882d1",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_four_model_heldout_v2.py": "d17acacb088a9de560ca72e8380bc90ef0e499557cb990a9a9e26e72017cd9c6"
+  },
+  "legacy_operator_qualification_rejection_verified": true,
+  "heldout_corrected_adapter_identity_verified": true,
+  "actual_numerical_freeze_created": false,
+  "actual_heldout_complete": false,
+  "full_campaign_complete": false
+}

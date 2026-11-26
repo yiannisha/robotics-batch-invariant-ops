@@ -1,0 +1,25 @@
+{
+  "status": "old_numerical_heldout_observation_partition_exposed_before_freeze",
+  "model": "cogact",
+  "candidate_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/replay_manifest.json",
+  "candidate_manifest_sha256": "aeffa91444d59f9427b404dd01f4eb166fe12aed18508ea962ca1caa81b321ec",
+  "candidate_heldout_request_ids": [
+    "simpler/pick_can/5/observation-0/noise-0",
+    "simpler/pick_can/5/observation-0/noise-1",
+    "simpler/pick_can/5/observation-0/noise-2"
+  ],
+  "candidate_rgb_file_sha256": "2dd3db11791ed3907130ab63347e88284e5146e0cc51055f9c339cb686dd5161",
+  "rgb_typed_bytes_sha256": "470d0f3b43f7c37824d9ba78f6136a582b1e0b0cd79ae63fff25ce20506ce284",
+  "instruction": "pick coke can",
+  "paired_episode": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/blocks/pick_can/start-05/patched_singleton.json.gz",
+  "paired_episode_sha256": "38d9f1e189d3bab8783bf0164aee08fd12510c1e50ba6aee26601768aedafeae",
+  "paired_candidate_lock_sha256": "51f480eba2e274081347b5d3c184ad6ef5fdba5f2e38edf4985d46af559a8b91",
+  "paired_condition": "patched_singleton",
+  "paired_raw_request": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/requests/3c5828a35ff974fd7c85e3f4402f74db42a4363eff4102b03b2dbe445aa71a69.pt.gz",
+  "paired_raw_request_content_sha256": "3c5828a35ff974fd7c85e3f4402f74db42a4363eff4102b03b2dbe445aa71a69",
+  "paired_noise_matches_any_candidate_request_noise": false,
+  "scope": "RGB and instruction reused under the same fixed64 input protocol; indexed noise differs.",
+  "required_remedy": "Use a fresh observation-disjoint numerical holdout corpus and independently verify its source inputs before freeze-bound heldout acceptance. Preserve old candidate split as exposed exploratory evidence.",
+  "paired_stability_evidence_invalidated": false,
+  "full_campaign_complete": false
+}

@@ -1,0 +1,25 @@
+{
+  "status": "complete_linear_operator_sweep_independently_verified",
+  "observed_utc": "2026-11-09T13:40:18.133693+00:00",
+  "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_cases_v2.json",
+  "configuration_sha256": "8aa78528bbe9adc89f808ee9d6f414649810faee17ea11471570fd454cfad429",
+  "raw_records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_measurements.jsonl",
+  "raw_records_sha256": "6e8d6837194bdf5029e439b8163365a40fcbfdb5ebf9daa298956940f6eb6f53",
+  "independent_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_independent_audit.json",
+  "independent_audit_sha256": "39077d190ac6e538c98c3edb57d478211e1942c1a00d4ef003d191a211c558ea",
+  "source_patterns": 24,
+  "arrangements": 408,
+  "measurements": 40800,
+  "counts": {
+    "all_batched_comparisons": 38400,
+    "native_nonexact": 32400,
+    "invariant_nonexact": 0,
+    "request_scaled_batched_comparisons": 36800,
+    "request_scaled_native_nonexact": 32400,
+    "shared_internal_shape_batched_comparisons": 1600
+  },
+  "native_worst_absolute_error": 0.003173828125,
+  "full_operator_qualification_complete": false,
+  "performance_qualified": false,
+  "scope": "Synthetic operands with exact traced source shapes/strides. Shared internal-shape cases reported separately; full-model replay and trajectories remain separate."
+}

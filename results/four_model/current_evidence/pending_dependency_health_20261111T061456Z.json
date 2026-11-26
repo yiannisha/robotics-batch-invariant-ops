@@ -1,0 +1,182 @@
+{
+  "checked_utc": "2026-11-11T06:14:56.786957+00:00",
+  "scope": "process presence and scheduling status only; no numerical acceptance",
+  "jobs": [
+    {
+      "pid": 3216922,
+      "process_state": "S",
+      "start_ticks": "438501475",
+      "launcher": "lingbot-precision-independent-audit-002.py",
+      "status": "waiting_for_corrected_precision_measurements",
+      "error": null
+    },
+    {
+      "pid": 3237331,
+      "process_state": "S",
+      "start_ticks": "438505690",
+      "launcher": "lingbot-precision-B64-capacity-002.py",
+      "status": "waiting_for_live_full_diagnostic_pipeline",
+      "error": null
+    },
+    {
+      "pid": 3269006,
+      "process_state": "S",
+      "start_ticks": "438514720",
+      "launcher": "lingbot-precision-full-paired-002.py",
+      "status": "waiting_for_live_diagnostic_and_B64_pipeline",
+      "error": null
+    },
+    {
+      "pid": 3334864,
+      "process_state": "S",
+      "start_ticks": "438526319",
+      "launcher": "lingbot-precision-operator-traces-002.py",
+      "status": "waiting_for_corrected_precision_paired_stage",
+      "error": null
+    },
+    {
+      "pid": 3550876,
+      "process_state": "S",
+      "start_ticks": "438564511",
+      "launcher": "lingbot-precision-operator-inventory-audit-002.py",
+      "status": "waiting_for_corrected_precision_source_traces",
+      "error": null
+    },
+    {
+      "pid": 3601175,
+      "process_state": "S",
+      "start_ticks": "438575093",
+      "launcher": "lingbot-precision-freeze-heldout-002.py",
+      "status": "waiting_for_corrected_precision_operator_inventory_audit",
+      "error": null
+    },
+    {
+      "pid": 3624982,
+      "process_state": "S",
+      "start_ticks": "438580366",
+      "launcher": "lingbot-precision-isolated-performance-002.py",
+      "status": "waiting_for_live_heldout_and_independent_audit",
+      "error": null
+    },
+    {
+      "pid": 3624985,
+      "process_state": "S",
+      "start_ticks": "438580367",
+      "launcher": "lingbot-precision-independent-performance-audit-002.py",
+      "status": "waiting_for_live_isolated_policy_serving_queue_pipeline",
+      "error": null
+    },
+    {
+      "pid": 3669759,
+      "process_state": "S",
+      "start_ticks": "438593139",
+      "launcher": "lingbot-precision-causal-ablation-004.py",
+      "status": "waiting_for_corrected_independent_performance_audit",
+      "error": null
+    },
+    {
+      "pid": 3702763,
+      "process_state": "S",
+      "start_ticks": "438600537",
+      "launcher": "lingbot-precision-local-leaf-replay-004.py",
+      "status": "waiting_for_live_complete_causal_audit",
+      "error": null
+    },
+    {
+      "pid": 4002043,
+      "process_state": "S",
+      "start_ticks": "438672219",
+      "launcher": "lingbot-precision-causal-flow-figures-004.py",
+      "status": "waiting_for_live_independent_causal_audit",
+      "error": null
+    },
+    {
+      "pid": 384401,
+      "process_state": "S",
+      "start_ticks": "438804150",
+      "launcher": "lingbot-precision-bound-paired-magnitudes-002.py",
+      "status": "waiting_for_live_independent_performance_audit",
+      "error": null
+    },
+    {
+      "pid": 3304863,
+      "process_state": "S",
+      "start_ticks": "439476790",
+      "launcher": "lingbot-precision-task-tables-002.py",
+      "status": "waiting_for_live_independent_full_magnitude_audit",
+      "error": null
+    },
+    {
+      "pid": 3304864,
+      "process_state": "S",
+      "start_ticks": "439476810",
+      "launcher": "lingbot-precision-task-tables-independent-audit-002.py",
+      "status": "waiting_for_live_full_task_table_extraction",
+      "error": null
+    },
+    {
+      "pid": 3304865,
+      "process_state": "S",
+      "start_ticks": "439476831",
+      "launcher": "lingbot-precision-arm-bootstrap-002.py",
+      "status": "waiting_for_live_full_task_table_acceptance",
+      "error": null
+    },
+    {
+      "pid": 3602929,
+      "process_state": "S",
+      "start_ticks": "425242932",
+      "launcher": "rdt-post-heldout-isolated-performance-001.py",
+      "status": "waiting_for_live_heldout_and_independent_audit",
+      "error": null
+    },
+    {
+      "pid": 3928883,
+      "process_state": "S",
+      "start_ticks": "425310908",
+      "launcher": "rdt-post-performance-independent-audit-001.py",
+      "status": "waiting_for_live_isolated_policy_serving_queue_pipeline",
+      "error": null
+    },
+    {
+      "pid": 2774681,
+      "process_state": "S",
+      "start_ticks": "434476070",
+      "launcher": "rdt-post-performance-causal-ablation-003.py",
+      "status": "waiting_for_live_independent_performance_audit",
+      "error": null
+    },
+    {
+      "pid": 2798495,
+      "process_state": "S",
+      "start_ticks": "434482505",
+      "launcher": "rdt-post-causal-independent-audit-003.py",
+      "status": "waiting_for_live_full_causal_ablation_pipeline",
+      "error": null
+    },
+    {
+      "pid": 2798609,
+      "process_state": "S",
+      "start_ticks": "434482509",
+      "launcher": "rdt-post-causal-local-leaf-replay-003.py",
+      "status": "waiting_for_live_complete_causal_audit",
+      "error": null
+    },
+    {
+      "pid": 2798611,
+      "process_state": "S",
+      "start_ticks": "434482512",
+      "launcher": "rdt-post-causal-flow-figures-003.py",
+      "status": "waiting_for_live_independent_causal_audit",
+      "error": null
+    },
+    {
+      "pid": 2798630,
+      "process_state": "S",
+      "start_ticks": "434482516",
+      "launcher": "rdt-post-local-isolated-operator-performance-003.py",
+      "status": "waiting_for_live_local_gpu_diagnostic_process",
+      "error": null
+    }
+  ]
+}

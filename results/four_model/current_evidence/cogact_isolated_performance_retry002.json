@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-11-11T03:53:42.288391+00:00",
+  "performance_pid": 1421074,
+  "performance_start_ticks": "439047457",
+  "audit_pid": 1421075,
+  "audit_start_ticks": "439047457",
+  "source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-heldout-isolated-performance-002.py": "0fc0b44c31b93112bc49af5d24f171617ec6946876aebfe0b1118acf0466989d",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-002.py": "42d97042817c2a797f78178f28dd1c82a96fe4fac92920afe09be0ae45714002"
+  },
+  "reason": "Prior own timing child terminated by isolation guard; target GPU observed idle before fresh retry.",
+  "new_output_directory": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_002",
+  "accepted": false,
+  "full_campaign_complete": false
+}

@@ -1,0 +1,150 @@
+{
+  "observed_utc": "2026-11-10T15:12:53.146765+00:00",
+  "jobs": [
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-independent-audit-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-independent-audit-003.py",
+      "pid": 2798433,
+      "start_ticks": "434482490",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05-post-causal-independent-audit-001_pre_migration_33b8a7580c726adf97b367edf4d3eff26bd6f229507fb58530e79af1b03df586.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-local-leaf-replay-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-local-leaf-replay-003.py",
+      "pid": 2798447,
+      "start_ticks": "434482495",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05-post-causal-local-leaf-replay-001_pre_migration_fafc9858a0b47604ae90e610706db11879f7019671d4c86e4a217cd693ea132a.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-flow-figures-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-flow-figures-003.py",
+      "pid": 2798469,
+      "start_ticks": "434482498",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05-post-causal-flow-figures-001_pre_migration_ab82acb2c35625aa0249b9843c8ebe0702a0728803c033dcb4ebf6b87a22f0e1.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-local-isolated-operator-performance-002.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-local-isolated-operator-performance-003.py",
+      "pid": 2798492,
+      "start_ticks": "434482502",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05-post-local-isolated-operator-performance-002_pre_migration_701033f15be51c0366d66f4c942d76718c3df08fba89cb96c7ad40d55836214a.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-independent-audit-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-independent-audit-003.py",
+      "pid": 2798495,
+      "start_ticks": "434482505",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt-post-causal-independent-audit-001_pre_migration_6826755284b92496d3142e9aec2165371e65244528f33055caef15c4c226c725.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-local-leaf-replay-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-local-leaf-replay-003.py",
+      "pid": 2798609,
+      "start_ticks": "434482509",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt-post-causal-local-leaf-replay-001_pre_migration_4495be27df34b8cbd91f720ddb4184079013ec1b122acbd67b4e978f687f87f4.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-flow-figures-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-flow-figures-003.py",
+      "pid": 2798611,
+      "start_ticks": "434482512",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt-post-causal-flow-figures-001_pre_migration_24abbaacaca3050e3cf9ec456f2a78dff08beddbd8d1e40547f9fc446df96dfb.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-local-isolated-operator-performance-002.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-local-isolated-operator-performance-003.py",
+      "pid": 2798630,
+      "start_ticks": "434482516",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/rdt-post-local-isolated-operator-performance-002_pre_migration_ae89364c53211e340c4503c856ac561960fb3be763bb95c3c517b390d1a411cd.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-independent-audit-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-independent-audit-003.py",
+      "pid": 2798647,
+      "start_ticks": "434482519",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact-post-causal-independent-audit-001_pre_migration_0000f8e3757c4808d5d18c755874b601ca7260f39a188599b04e968adfe39baa.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-local-leaf-replay-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-local-leaf-replay-003.py",
+      "pid": 2798661,
+      "start_ticks": "434482523",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact-post-causal-local-leaf-replay-001_pre_migration_60e98f8d165644357409aa6ddff114064afbdfed89c76f5681569343359ec3e7.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-flow-figures-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-flow-figures-003.py",
+      "pid": 2798678,
+      "start_ticks": "434482526",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact-post-causal-flow-figures-001_pre_migration_983fc4cea22702bcbb724400858d5dcdbaa631b02bc402112a8794c55bea3aac.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-local-isolated-operator-performance-002.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-local-isolated-operator-performance-003.py",
+      "pid": 2798695,
+      "start_ticks": "434482530",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact-post-local-isolated-operator-performance-002_pre_migration_989efea0448cae24016cd5fa0054063888ea2b3708ffee52d5cd5b32504886df.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-independent-audit-001.py",
+      "old_status": "superseded_before_analysis",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-independent-audit-003.py",
+      "pid": 2798794,
+      "start_ticks": "434482533",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot-post-causal-independent-audit-001_pre_migration_c6bc8df23f280c00c4427aafedd2751536a3bec012f088561f3758180c52a62b.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-local-leaf-replay-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-local-leaf-replay-003.py",
+      "pid": 2798796,
+      "start_ticks": "434482536",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot-post-causal-local-leaf-replay-001_pre_migration_08ae286b9beafd1b4fe57c05cbb4541efa3b6fc1cb08da85086d5aa5bebea382.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-flow-figures-001.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-flow-figures-003.py",
+      "pid": 2798816,
+      "start_ticks": "434482540",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot-post-causal-flow-figures-001_pre_migration_e73317791a6406b612a440e8803ce889c4609fac75ce15473d4efb230bb58e0c.json"
+    },
+    {
+      "old": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-local-isolated-operator-performance-002.py",
+      "old_status": "failed",
+      "retired_handles": [],
+      "new": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-local-isolated-operator-performance-003.py",
+      "pid": 2798848,
+      "start_ticks": "434482543",
+      "archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot-post-local-isolated-operator-performance-002_pre_migration_abed37a96e225bda0f06c41379d2bcb5324376670b687e9fd8dac94d2353d547.json"
+    }
+  ],
+  "full_campaign_complete": false
+}

@@ -1,0 +1,30 @@
+{
+  "scope": "fixed_action_simulator_replay_only",
+  "model_evaluated": false,
+  "reset_protocol": "fresh_scene_same_seed_exact_state_and_observation_checked",
+  "environment": {
+    "obs_mode": "rgb",
+    "control_mode": "pd_joint_pos",
+    "render_mode": "rgb_array",
+    "reward_mode": "sparse",
+    "sim_backend": "cpu",
+    "shader_pack": "default",
+    "continue_after_time_limit_until_success_or_400": true
+  },
+  "versions": {
+    "mani_skill": "3.0.1",
+    "sapien": "3.0.3",
+    "torch": "2.8.0"
+  },
+  "runner_sha256": "4bf230c24af6cebf219b804c4b3df5c88a70e9d6125ad29c2ea61f36f1fea3d0",
+  "arguments": {
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/rdt-maniskill-replay-003",
+    "tasks": [
+      "PlugCharger-v1"
+    ],
+    "initializations": 3,
+    "repeats": 3,
+    "steps": 400,
+    "reward_mode": "sparse"
+  }
+}

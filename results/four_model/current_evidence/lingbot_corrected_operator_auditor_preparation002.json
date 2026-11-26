@@ -1,0 +1,10 @@
+{
+  "observed_utc": "2026-11-11T02:32:42.898405+00:00",
+  "status": "versioned_operator_inventory_auditor_prepared",
+  "auditor": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_exact_operator_coverage_v2.py",
+  "auditor_sha256": "a8cc0b0eb5451f134c7232a9fb4c87568d700b7ac89e043f9b8b6bdecce9f33b",
+  "legacy_actual_trace_negative_control_rejected": true,
+  "corrected_actual_trace_audit_executed": false,
+  "full_traced_operator_qualification_complete": false,
+  "full_campaign_complete": false
+}

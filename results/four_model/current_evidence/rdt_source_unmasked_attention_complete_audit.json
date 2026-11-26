@@ -1,0 +1,218 @@
+{
+  "status": "source_attention_measurements_independently_verified",
+  "configuration_sha256": "62ad82450d7e92969a4034aab8a2243bf04410a06279a83fc54675fbf6ed4043",
+  "raw_records": 3400,
+  "raw_records_sha256": "2a724596f8bd18fadc61368ebdd6262313a787f8b0fb41824883923764e75ff6",
+  "auditor_sha256": "f4dc89aa33b5633e7e7516489c152097d03039ca3d74fb3c1d58a1afb9a30f72",
+  "arrangements": [
+    {
+      "arrangement": "rdt_source_attention_K4374|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K4374|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K67|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    }
+  ],
+  "completed_arrangements": 34,
+  "prescribed_arrangements": 34,
+  "all_selected_arrangements_complete": true,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

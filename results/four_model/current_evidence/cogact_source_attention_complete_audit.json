@@ -1,0 +1,422 @@
+{
+  "status": "source_attention_measurements_independently_verified",
+  "configuration_sha256": "eafb2bd39f1bd58b7bfd1cec063c89f9b14a4a8ece29d3689709ff3517eb96e4",
+  "raw_records": 6800,
+  "raw_records_sha256": "ae0c968b4a5ab594a91384ea625f20c65ada6b2b343695c3ecff477a5b4916c5",
+  "auditor_sha256": "b5188c70861a8a42387732f7f9e79bb5869457da99b148739594927e7fba04de",
+  "arrangements": [
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q256|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H16_Q261|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 100
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H32_Q320|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "cogact_source_attention_H4_Q17|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    }
+  ],
+  "completed_arrangements": 68,
+  "prescribed_arrangements": 68,
+  "all_selected_arrangements_complete": true,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

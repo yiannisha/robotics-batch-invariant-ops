@@ -1,0 +1,65 @@
+{
+  "observed_utc": "2026-11-11T02:36:17.254592+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 24959109,
+      "completed_pairs": 1236,
+      "total_pairs": 2400
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 14333789,
+      "completed_pairs": 2238,
+      "total_pairs": 2400
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 75601,
+      "completed_pairs": 3,
+      "total_pairs": 600
+    }
+  ],
+  "corrected_lingbot_queued_chain": [
+    {
+      "launcher": "lingbot-precision-operator-inventory-audit-002",
+      "pid": 3550876,
+      "start_ticks": 438564511,
+      "state": "S",
+      "status": "waiting_for_corrected_precision_source_traces"
+    },
+    {
+      "launcher": "lingbot-precision-freeze-heldout-002",
+      "pid": 3601175,
+      "start_ticks": 438575093,
+      "state": "S",
+      "status": "waiting_for_corrected_precision_operator_inventory_audit"
+    },
+    {
+      "launcher": "lingbot-precision-isolated-performance-002",
+      "pid": 3624982,
+      "start_ticks": 438580366,
+      "state": "S",
+      "status": "waiting_for_live_heldout_and_independent_audit"
+    },
+    {
+      "launcher": "lingbot-precision-independent-performance-audit-002",
+      "pid": 3624985,
+      "start_ticks": 438580367,
+      "state": "S",
+      "status": "waiting_for_live_isolated_policy_serving_queue_pipeline"
+    }
+  ],
+  "accepted_paired_starts": 950,
+  "full_campaign_complete": false
+}

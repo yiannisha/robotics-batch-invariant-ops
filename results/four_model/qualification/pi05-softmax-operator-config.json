@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "selected_operations": [
+    "aten::softmax"
+  ],
+  "adapter": "scripts.model_invariance.adapters.pi05_libero_exact",
+  "adapter_execution_configuration": {
+    "checkpoint_revision": "7152f13e34c6c115d808aea0e5d08aca74eac14b",
+    "suite": "libero_10",
+    "language_padding": "max_length_right",
+    "language_tokens": 200,
+    "sampler": "unchanged_official_predict_action_chunk",
+    "flow_steps": 10,
+    "chunk_size": 50,
+    "max_action_dim": 32,
+    "robot_action_dim": 7,
+    "normalization": "checkpoint_mean_std",
+    "precision": "bfloat16",
+    "tf32": false,
+    "execution": "eager"
+  },
+  "replay_manifest_sha256": "2ca7352b19f0bf805805e7b6bb7a00a0d258894836c3f0eb0e76604c3079ea4c",
+  "source_evidence": [
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/aten_all_trace_v2_B1.json",
+      "sha256": "bd3d21036c0a75fce0fdc41a0c64de0e05590f39b21729183a790248a47c6475"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/aten_all_trace_v2_B8.json",
+      "sha256": "2839a3b7304b0a0a2c45f2822c969d90195aa18dc1d554482de93598c3cc545b"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "actual_26_softmax",
+      "source_operation": "aten::softmax",
+      "source_trace_index": 26,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            8,
+            50,
+            1018
+          ],
+          "stride": [
+            407200,
+            50900,
+            1018,
+            1
+          ]
+        },
+        -1,
+        "torch.float32"
+      ],
+      "source_observed_count": 180,
+      "dtype": "torch.float32",
+      "layout": "contiguous",
+      "operation": "softmax",
+      "m_per_request": 1,
+      "input_per_unit": [
+        8,
+        50,
+        1018
+      ],
+      "dim": -1
+    },
+    {
+      "id": "actual_27_softmax",
+      "source_operation": "aten::softmax",
+      "source_trace_index": 27,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            8,
+            968,
+            968
+          ],
+          "stride": [
+            7496192,
+            937024,
+            968,
+            1
+          ]
+        },
+        -1,
+        "torch.float32"
+      ],
+      "source_observed_count": 18,
+      "dtype": "torch.float32",
+      "layout": "contiguous",
+      "operation": "softmax",
+      "m_per_request": 1,
+      "input_per_unit": [
+        8,
+        968,
+        968
+      ],
+      "dim": -1
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "causal_flow_figure_table_independently_recounted",
+  "table_sha256": "7e387460a4d652768fa4611d06cd0f6c73e3a7d75ba32628e4c8a4b04770e065",
+  "groups_verified": 300,
+  "auditor_sha256": "456ba33b3df068a162e3863fe4b34cad4262e0542604f1d6e1c2a45345732d16",
+  "visual_inspection_complete": false,
+  "tensor_errors_independently_rederived": false,
+  "full_campaign_complete": false
+}

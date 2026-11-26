@@ -1,0 +1,77 @@
+{
+  "status": "prepared_input_reconstruction_matches_actual_neural_call_records",
+  "model": "rdt",
+  "checked_calls": [
+    {
+      "task": "PegInsertionSide-v1",
+      "call": 0,
+      "history_valid": [
+        false,
+        true
+      ]
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "call": 1,
+      "history_valid": [
+        true,
+        true
+      ]
+    },
+    {
+      "task": "PickCube-v1",
+      "call": 0,
+      "history_valid": [
+        false,
+        true
+      ]
+    },
+    {
+      "task": "PickCube-v1",
+      "call": 1,
+      "history_valid": [
+        true,
+        true
+      ]
+    },
+    {
+      "task": "StackCube-v1",
+      "call": 0,
+      "history_valid": [
+        false,
+        true
+      ]
+    },
+    {
+      "task": "StackCube-v1",
+      "call": 1,
+      "history_valid": [
+        true,
+        true
+      ]
+    },
+    {
+      "task": "PlugCharger-v1",
+      "call": 0,
+      "history_valid": [
+        false,
+        true
+      ]
+    },
+    {
+      "task": "PlugCharger-v1",
+      "call": 1,
+      "history_valid": [
+        true,
+        true
+      ]
+    }
+  ],
+  "total_calls": 8,
+  "tasks_without_completed_first_episode": [
+    "PushCube-v1"
+  ],
+  "neural_inference_performed": false,
+  "identity_source_sha256": "dac40690b9aa659ab5d4958b3d5fee34eca9e91116a010ca5da4d826428e21c3",
+  "scope": "CPU integration on available paired task-start0 records, first two calls; unavailable tasks explicit. Not heldout disjointness conclusion."
+}

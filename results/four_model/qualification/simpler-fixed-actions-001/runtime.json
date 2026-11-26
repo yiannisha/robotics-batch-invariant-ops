@@ -1,0 +1,27 @@
+{
+  "scope": "fixed_action_simulator_replay_only",
+  "model_evaluated": false,
+  "arguments": {
+    "pizero_project": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/batch-invariant-pizero-exp/open-pi-zero",
+    "simpler_root": "/home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/SimplerEnv",
+    "simpler_python": "/home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/.venv-simpler/bin/python",
+    "vulkan_icd": "/usr/share/vulkan/icd.d/nvidia_icd.json",
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/simpler-fixed-actions-001",
+    "initializations": 3,
+    "max_steps": 200,
+    "repeats": 3,
+    "tasks": [
+      "pick_can",
+      "move_near",
+      "open_drawer",
+      "close_drawer"
+    ]
+  },
+  "source_sha256": {
+    "simpler_support.py": "bec152181c5abefade74c80aeaaa718f6d3661dafce35ff47f26279ffba117d6",
+    "simpler_worker.py": "ebba941685b4c597af69aa31d74c7865c5ef099a6eafeab2336de3d6403e0538"
+  },
+  "runner_sha256": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+  "simpler_revision": "59ad9e1539042ed333fd8ebba1b0395f5662f0bd",
+  "gpu_inventory": "GPU-e34fe940-5eed-cc24-23e4-18c32eacf887, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.173.02\nGPU-61f5ae1b-8084-7e66-090b-8acba690563c, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.173.02\nGPU-8e8d81cd-96dc-69ec-4078-3dc7acc88762, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.173.02\nGPU-b59bc4df-4404-7482-a08a-1b70e27d2df1, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.173.02\nGPU-94757602-37c3-0344-da17-6ac647c8325b, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.173.02\nGPU-225bc55c-3ea0-e312-43ae-c673a57f5dde, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.173.02\nGPU-4a81e719-26fc-0481-7bbf-f8deade1c22c, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.173.02\nGPU-f391c6f3-68e5-d0f7-7d47-edae147c7882, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.173.02\n"
+}

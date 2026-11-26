@@ -1,0 +1,13 @@
+{
+  "scope": "complete_episode_pilot",
+  "episodes": 8,
+  "all_AA_exact": true,
+  "repeat_checks": {
+    "native_singleton": true,
+    "native_dynamic": true,
+    "patched_singleton": true,
+    "patched_dynamic": true
+  },
+  "invariant_trajectories_exact": true,
+  "paired_success_rate_campaign_complete": false
+}

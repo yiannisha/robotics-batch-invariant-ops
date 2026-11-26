@@ -1,0 +1,6388 @@
+{
+  "schema_version": 1,
+  "model": "rdt",
+  "adapter": "scripts.model_invariance.adapters.rdt_maniskill_exact",
+  "adapter_execution_configuration": {
+    "checkpoint_revision": "9622afab2b7ce2312a6cf1febc526928589b77eb",
+    "suite": "maniskill_five",
+    "language_padding": "fixed_right_in_both_modes",
+    "language_tokens": 30,
+    "image_history": 2,
+    "camera_slots": 3,
+    "vision_encoding": "genuinely_batched_six_slots_per_request",
+    "diffusion_steps": 5,
+    "chunk_size": 64,
+    "precision": "bfloat16",
+    "tf32": false,
+    "control_frequency": 25,
+    "action_dim": 8,
+    "noise_dim": 128,
+    "sampler": "official_maniskill_wrapper_equivalent_DPM_solver",
+    "execution": "eager"
+  },
+  "source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/coverage_complete_audit.json": "fe8a28f7239cdbb59740220855f3f73eb8334c10a7cdf6d9ec7ee767fdf4f064",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a"
+  },
+  "cases": [
+    {
+      "id": "B1_source_000",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 0,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              1,
+              2048
+            ],
+            "stride": [
+              2048,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 2
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_001",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 1,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              1,
+              256
+            ],
+            "stride": [
+              256,
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_002",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 2,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_003",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 3,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_004",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 4,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              30,
+              2048
+            ],
+            "stride": [
+              61440,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_005",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 5,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              30,
+              2048
+            ],
+            "stride": [
+              61440,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 70
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_006",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 6,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              30,
+              4096
+            ],
+            "stride": [
+              122880,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_007",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 7,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              137216,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              30,
+              64
+            ],
+            "stride": [
+              61440,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              30,
+              64
+            ],
+            "stride": [
+              122880,
+              64,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bool",
+            "shape": [
+              1,
+              1,
+              67,
+              30
+            ],
+            "stride": [
+              30,
+              30,
+              0,
+              1
+            ],
+            "values": [
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                ]
+              ]
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "keyword_arguments": {},
+        "count": 70
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": {
+        "kind": "same_request_zero_from_lossless_B8_capture",
+        "capture": {
+          "data": "eNpjZMQBGEAApwROWcIAl14GBiJMpthVAFx3AME=",
+          "dtype": "torch.bool",
+          "encoding": "zlib_base64_original_dtype_bytes_v1",
+          "original_dtype_bytes_count": 240,
+          "original_dtype_bytes_sha256": "eeb274c95d05c66327efee839708e254a66ad27b41ae28bbad88b259c347d63e",
+          "shape": [
+            8,
+            1,
+            67,
+            30
+          ],
+          "stride": [
+            30,
+            30,
+            0,
+            1
+          ],
+          "values_shape": [
+            8,
+            1,
+            1,
+            30
+          ]
+        },
+        "selector": 0,
+        "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+        "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+        "source_operation_index": 25,
+        "target_request_id": "maniskill/PegInsertionSide-v1/0/observation-0/noise-0",
+        "target_compact_mask_sha256": "defaabd3e6bc6e73647ec7f763fda57a094a6d3c64076bb522c474505072364f",
+        "all_matching_B8_target_masks_agree": true
+      }
+    },
+    {
+      "id": "B1_source_008",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 8,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              137216,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              4374,
+              64
+            ],
+            "stride": [
+              8957952,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              4374,
+              64
+            ],
+            "stride": [
+              17915904,
+              64,
+              4096,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "keyword_arguments": {},
+        "count": 70
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_009",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 9,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              137216,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              137216,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              411648,
+              64,
+              6144,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "keyword_arguments": {},
+        "count": 140
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_010",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 10,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              4374,
+              1152
+            ],
+            "stride": [
+              5038848,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_011",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 11,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              4374,
+              2048
+            ],
+            "stride": [
+              8957952,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_012",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 12,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              4374,
+              2048
+            ],
+            "stride": [
+              8957952,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 70
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_013",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 13,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              6,
+              1152
+            ],
+            "stride": [
+              1152,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_014",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 14,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              64,
+              2048
+            ],
+            "stride": [
+              131072,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_015",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 15,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              64,
+              256
+            ],
+            "stride": [
+              16384,
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 5
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_016",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 16,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              67,
+              2048
+            ],
+            "stride": [
+              137216,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              128,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              128
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 5
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_017",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 17,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              67,
+              2048
+            ],
+            "stride": [
+              137216,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 705
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_018",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 18,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              67,
+              2048
+            ],
+            "stride": [
+              137216,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6144,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6144
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 140
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_019",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 19,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              1,
+              1152
+            ],
+            "stride": [
+              1152,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_020",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 20,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              1,
+              4304
+            ],
+            "stride": [
+              4304,
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              4304
+            ],
+            "stride": [
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_021",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 21,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_022",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 22,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              16,
+              1,
+              729
+            ],
+            "stride": [
+              11664,
+              729,
+              729,
+              1
+            ]
+          },
+          [
+            1
+          ]
+        ],
+        "aten_operation": "aten::mean",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_023",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 23,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              16,
+              729,
+              729
+            ],
+            "stride": [
+              8503056,
+              531441,
+              729,
+              1
+            ]
+          },
+          -1,
+          "torch.float32"
+        ],
+        "aten_operation": "aten::softmax",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_024",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 24,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              16,
+              729,
+              729
+            ],
+            "stride": [
+              8503056,
+              531441,
+              729,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              16,
+              729,
+              72
+            ],
+            "stride": [
+              839808,
+              72,
+              1152,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::matmul",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_025",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 25,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              16,
+              729,
+              72
+            ],
+            "stride": [
+              839808,
+              72,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              16,
+              72,
+              729
+            ],
+            "stride": [
+              839808,
+              72,
+              1,
+              1152
+            ]
+          }
+        ],
+        "aten_operation": "aten::matmul",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_026",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 26,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              3,
+              384,
+              384
+            ],
+            "stride": [
+              442368,
+              147456,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              3,
+              14,
+              14
+            ],
+            "stride": [
+              588,
+              196,
+              14,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          },
+          [
+            14,
+            14
+          ]
+        ],
+        "aten_operation": "aten::conv2d",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_027",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 27,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              729,
+              1152
+            ],
+            "stride": [
+              839808,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 108
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_028",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 28,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              729,
+              1152
+            ],
+            "stride": [
+              839808,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_029",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 29,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6,
+              729,
+              4304
+            ],
+            "stride": [
+              3137616,
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              4304
+            ],
+            "stride": [
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_030",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 30,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              729,
+              6,
+              1152
+            ],
+            "stride": [
+              1152,
+              839808,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2304,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2304
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_031",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 31,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              96,
+              1,
+              729
+            ],
+            "stride": [
+              729,
+              729,
+              1
+            ]
+          },
+          -1
+        ],
+        "aten_operation": "aten::softmax",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_032",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 32,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              96,
+              1,
+              729
+            ],
+            "stride": [
+              729,
+              729,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              96,
+              729,
+              72
+            ],
+            "stride": [
+              72,
+              6912,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::bmm",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_033",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json",
+      "source_trace_sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e",
+      "source_operation_index": 33,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              96,
+              1,
+              72
+            ],
+            "stride": [
+              72,
+              6912,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              96,
+              72,
+              729
+            ],
+            "stride": [
+              72,
+              1,
+              6912
+            ]
+          }
+        ],
+        "aten_operation": "aten::bmm",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_000",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 0,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 5
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_001",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 1,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 5
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_002",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 2,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              48,
+              1152
+            ],
+            "stride": [
+              1152,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_003",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 3,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              1,
+              1152
+            ],
+            "stride": [
+              1152,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_004",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 4,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              1,
+              4304
+            ],
+            "stride": [
+              4304,
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              4304
+            ],
+            "stride": [
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_005",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 5,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_006",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 6,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              16,
+              1,
+              729
+            ],
+            "stride": [
+              11664,
+              729,
+              729,
+              1
+            ]
+          },
+          [
+            1
+          ]
+        ],
+        "aten_operation": "aten::mean",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_007",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 7,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              16,
+              729,
+              729
+            ],
+            "stride": [
+              8503056,
+              531441,
+              729,
+              1
+            ]
+          },
+          -1,
+          "torch.float32"
+        ],
+        "aten_operation": "aten::softmax",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_008",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 8,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              16,
+              729,
+              729
+            ],
+            "stride": [
+              8503056,
+              531441,
+              729,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              16,
+              729,
+              72
+            ],
+            "stride": [
+              839808,
+              72,
+              1152,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::matmul",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_009",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 9,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              16,
+              729,
+              72
+            ],
+            "stride": [
+              839808,
+              72,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              16,
+              72,
+              729
+            ],
+            "stride": [
+              839808,
+              72,
+              1,
+              1152
+            ]
+          }
+        ],
+        "aten_operation": "aten::matmul",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_010",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 10,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              3,
+              384,
+              384
+            ],
+            "stride": [
+              442368,
+              147456,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              3,
+              14,
+              14
+            ],
+            "stride": [
+              588,
+              196,
+              14,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          },
+          [
+            14,
+            14
+          ]
+        ],
+        "aten_operation": "aten::conv2d",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_011",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 11,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              729,
+              1152
+            ],
+            "stride": [
+              839808,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 108
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_012",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 12,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              729,
+              1152
+            ],
+            "stride": [
+              839808,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_013",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 13,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              48,
+              729,
+              4304
+            ],
+            "stride": [
+              3137616,
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              4304
+            ],
+            "stride": [
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_014",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 14,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              729,
+              48,
+              1152
+            ],
+            "stride": [
+              1152,
+              839808,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2304,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2304
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_015",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 15,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              768,
+              1,
+              729
+            ],
+            "stride": [
+              729,
+              729,
+              1
+            ]
+          },
+          -1
+        ],
+        "aten_operation": "aten::softmax",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_016",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 16,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              768,
+              1,
+              729
+            ],
+            "stride": [
+              729,
+              729,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              768,
+              729,
+              72
+            ],
+            "stride": [
+              72,
+              55296,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::bmm",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_017",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 17,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              768,
+              1,
+              72
+            ],
+            "stride": [
+              72,
+              55296,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              768,
+              72,
+              729
+            ],
+            "stride": [
+              72,
+              1,
+              55296
+            ]
+          }
+        ],
+        "aten_operation": "aten::bmm",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_018",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 18,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              1,
+              2048
+            ],
+            "stride": [
+              2048,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 2
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_019",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 19,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              1,
+              256
+            ],
+            "stride": [
+              256,
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_020",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 20,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 5
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_021",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 21,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 5
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_022",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 22,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              30,
+              2048
+            ],
+            "stride": [
+              61440,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_023",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 23,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              30,
+              2048
+            ],
+            "stride": [
+              61440,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 70
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_024",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 24,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              30,
+              4096
+            ],
+            "stride": [
+              122880,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_025",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 25,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              137216,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              30,
+              64
+            ],
+            "stride": [
+              61440,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              30,
+              64
+            ],
+            "stride": [
+              122880,
+              64,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bool",
+            "shape": [
+              8,
+              1,
+              67,
+              30
+            ],
+            "stride": [
+              30,
+              30,
+              0,
+              1
+            ],
+            "values": [
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true
+                  ]
+                ]
+              ]
+            ],
+            "values_shape": [
+              8,
+              1,
+              1,
+              30
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": {
+          "data": "eNpjZMQBGEAApwROWcIAl14GBiJMpthVAFx3AME=",
+          "dtype": "torch.bool",
+          "encoding": "zlib_base64_original_dtype_bytes_v1",
+          "original_dtype_bytes_count": 240,
+          "original_dtype_bytes_sha256": "eeb274c95d05c66327efee839708e254a66ad27b41ae28bbad88b259c347d63e",
+          "shape": [
+            8,
+            1,
+            67,
+            30
+          ],
+          "stride": [
+            30,
+            30,
+            0,
+            1
+          ],
+          "values_shape": [
+            8,
+            1,
+            1,
+            30
+          ]
+        },
+        "keyword_arguments": {},
+        "count": 70
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": {
+        "kind": "direct_lossless_source_capture",
+        "capture": {
+          "data": "eNpjZMQBGEAApwROWcIAl14GBiJMpthVAFx3AME=",
+          "dtype": "torch.bool",
+          "encoding": "zlib_base64_original_dtype_bytes_v1",
+          "original_dtype_bytes_count": 240,
+          "original_dtype_bytes_sha256": "eeb274c95d05c66327efee839708e254a66ad27b41ae28bbad88b259c347d63e",
+          "shape": [
+            8,
+            1,
+            67,
+            30
+          ],
+          "stride": [
+            30,
+            30,
+            0,
+            1
+          ],
+          "values_shape": [
+            8,
+            1,
+            1,
+            30
+          ]
+        },
+        "selector": null
+      }
+    },
+    {
+      "id": "B8_source_026",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 26,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              137216,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              4374,
+              64
+            ],
+            "stride": [
+              8957952,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              4374,
+              64
+            ],
+            "stride": [
+              17915904,
+              64,
+              4096,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": null,
+        "keyword_arguments": {},
+        "count": 70
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_027",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 27,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              137216,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              137216,
+              64,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              67,
+              64
+            ],
+            "stride": [
+              411648,
+              64,
+              6144,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": null,
+        "keyword_arguments": {},
+        "count": 140
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_028",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 28,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              4374,
+              1152
+            ],
+            "stride": [
+              5038848,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_029",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 29,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              4374,
+              2048
+            ],
+            "stride": [
+              8957952,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_030",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 30,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              4374,
+              2048
+            ],
+            "stride": [
+              8957952,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 70
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_031",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 31,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              64,
+              2048
+            ],
+            "stride": [
+              131072,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_032",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 32,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              64,
+              256
+            ],
+            "stride": [
+              16384,
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 5
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_033",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 33,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              67,
+              2048
+            ],
+            "stride": [
+              137216,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              128,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              128
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 5
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_034",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 34,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              67,
+              2048
+            ],
+            "stride": [
+              137216,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              2048
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 705
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_035",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+      "source_operation_index": 35,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              67,
+              2048
+            ],
+            "stride": [
+              137216,
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6144,
+              2048
+            ],
+            "stride": [
+              2048,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              6144
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 140
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    }
+  ],
+  "timing_protocol": {
+    "sessions": 5,
+    "warmup_calls": 20,
+    "timed_calls": 200
+  },
+  "operand_contract": "Retain exact traced dtype, shape and strides. Generate physical storage once, preserving broadcast strides. Restore captured masks losslessly.",
+  "reference_contract": "Attention matrix products: explicit invariant per-matrix MM versus batched persistent invariant path; native measured separately.",
+  "excludes": "Tracing, profiler, allocation, input generation, compilation and initialization from timed regions.",
+  "status": "operator_timing_plan_only_execution_and_independent_acceptance_pending",
+  "full_campaign_complete": false,
+  "builder_sha256": "7eb8b42dccd0e264dd21100ce9288c0b00d0d82e7529db5cfa37b8d3dc43bacb"
+}

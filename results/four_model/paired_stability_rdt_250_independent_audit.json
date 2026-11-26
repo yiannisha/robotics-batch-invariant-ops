@@ -1,0 +1,1262 @@
+{
+  "status": "reported_subset_stability_metrics_independently_verified",
+  "report_sha256": "683a5b0a34d018afb047304a98b7eef1206eed71120bb73e9a88f680989547a2",
+  "reporting_source_sha256": "f0f2bca7f6d6b2873fce32392303089a6b2c41a67931baab6adb5bd108125a35",
+  "auditor_sha256": "81ba88c4ee0de3b3b0224f7f810b5df9475981044d839ff27331312c6d36cb89",
+  "raw_frame_files_verified": 169290,
+  "fixed_input_nonsingleton_pairs_verified": 2822,
+  "paired_starts_verified": [
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 0
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 1
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 2
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 3
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 4
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 5
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 6
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 7
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 8
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 9
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 10
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 11
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 12
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 13
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 14
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 15
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 16
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 17
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 18
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 19
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 20
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 21
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 22
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 23
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 24
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 25
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 26
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 27
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 28
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 29
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 30
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 31
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 32
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 33
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 34
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 35
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 36
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 37
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 38
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 39
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 40
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 41
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 42
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 43
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 44
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 45
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 46
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 47
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 48
+    },
+    {
+      "model": "rdt",
+      "task": "PegInsertionSide-v1",
+      "initialization": 49
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 0
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 1
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 2
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 3
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 4
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 5
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 6
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 7
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 8
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 9
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 10
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 11
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 12
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 13
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 14
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 15
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 16
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 17
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 18
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 19
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 20
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 21
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 22
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 23
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 24
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 25
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 26
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 27
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 28
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 29
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 30
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 31
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 32
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 33
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 34
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 35
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 36
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 37
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 38
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 39
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 40
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 41
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 42
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 43
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 44
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 45
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 46
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 47
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 48
+    },
+    {
+      "model": "rdt",
+      "task": "PickCube-v1",
+      "initialization": 49
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 0
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 1
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 2
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 3
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 4
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 5
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 6
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 7
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 8
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 9
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 10
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 11
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 12
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 13
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 14
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 15
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 16
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 17
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 18
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 19
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 20
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 21
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 22
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 23
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 24
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 25
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 26
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 27
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 28
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 29
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 30
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 31
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 32
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 33
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 34
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 35
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 36
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 37
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 38
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 39
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 40
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 41
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 42
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 43
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 44
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 45
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 46
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 47
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 48
+    },
+    {
+      "model": "rdt",
+      "task": "PlugCharger-v1",
+      "initialization": 49
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 0
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 1
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 2
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 3
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 4
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 5
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 6
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 7
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 8
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 9
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 10
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 11
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 12
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 13
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 14
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 15
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 16
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 17
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 18
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 19
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 20
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 21
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 22
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 23
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 24
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 25
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 26
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 27
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 28
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 29
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 30
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 31
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 32
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 33
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 34
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 35
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 36
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 37
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 38
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 39
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 40
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 41
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 42
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 43
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 44
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 45
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 46
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 47
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 48
+    },
+    {
+      "model": "rdt",
+      "task": "PushCube-v1",
+      "initialization": 49
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 0
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 1
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 2
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 3
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 4
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 5
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 6
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 7
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 8
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 9
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 10
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 11
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 12
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 13
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 14
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 15
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 16
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 17
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 18
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 19
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 20
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 21
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 22
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 23
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 24
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 25
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 26
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 27
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 28
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 29
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 30
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 31
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 32
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 33
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 34
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 35
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 36
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 37
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 38
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 39
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 40
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 41
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 42
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 43
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 44
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 45
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 46
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 47
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 48
+    },
+    {
+      "model": "rdt",
+      "task": "StackCube-v1",
+      "initialization": 49
+    }
+  ],
+  "angular_formula_crosscheck_absolute_tolerance_rad": 1e-07,
+  "full_four_model_campaign_complete": false
+}

@@ -1,0 +1,3050 @@
+{
+  "goal_status": "active",
+  "asset_root": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign",
+  "completed": [
+    "four_checkpoint_acquisitions_and_hashes",
+    "pi05_813_tensor_strict_load",
+    "simpler_36_fixed_action_replay_rollouts",
+    "libero_27_fixed_action_replay_rollouts_14040_steps",
+    "pi05_real_libero_probe_72_comparisons_no_invariant_failures",
+    "pi05_complete_episode_8_condition_pilot_independently_audited",
+    "cogact_real_simpler_probe_36_comparisons_no_invariant_failures_and_official_B1_equivalence",
+    "rdt_400_step_fixed_replay_4_dense_tasks_plus_sparse_plug_charger",
+    "lingbot_and_robotwin_assets_acquired",
+    "lingbot_deploy_import_and_blackwell_flash_attention_smoke",
+    "pi05_corpus_1000_observations_3_noises_independently_verified",
+    "pi05_full_capacity_B16_B32_verified",
+    "lingbot_all_1708_tensors_verified_with_official_dtype_sequence",
+    "curobo_sm120_build_complete",
+    "robotwin_cold_initialization_and_20_action_three_repeat_pilot_exact",
+    "lingbot_real_robotwin_probe_36_comparisons_invariant_exact_under_deterministic_MoE",
+    "rdt_real_maniskill_probe_official_B1_equivalence_and_invariant_exact",
+    "cogact_complete_episode_8_condition_pilot_independently_audited",
+    "rdt_complete_episode_8_condition_pilot_independently_audited",
+    "pi05_first_divergence_localization_complete_invariant_boundary_exact",
+    "robotwin_released_expert_filter_seed0_eligible_and_canonical_instruction_selection",
+    "lingbot_eight_complete_episodes_independently_audited_all_AA_and_invariant_trajectories_exact_native_divergence_step50",
+    "lingbot_pilot_auditor_rejected_five_corrupted_evidence_variants",
+    "rdt_corpus_100_episodes_1000_real_inputs_independently_rebuilt_3000_noises_regenerated_and_all_source_controls_verified",
+    "split_and_byte_metrics_10_regression_tests_passed",
+    "pi05_two_additional_observed_softmax_shapes_traced_B1_B8_supplemental_qualification_pending",
+    "pi05_fresh_100_episode_1000_input_corpus_independently_rebuilt_split_local_schedule_verified",
+    "rdt_whole_policy_234_record_final_output_smoke_117_invariant_exact_all_diagnostic_inputs_B32_ran_both_modes",
+    "rdt_B16_B32_capacity_24_measured_arrangements_independently_audited",
+    "four_policy_environment_package_snapshots_and_GPU_driver_inventory_retained",
+    "pi05_original_27_configuration_45900_record_sweep_terminal_supplement_required_for_TF32_conv_and_missing_softmax",
+    "six_runtime_provenance_resume_guard_tests_plus_prior_ten_regressions_all16_passed",
+    "cogact_corpus_100_episodes_1000_real_inputs_3000_noises_all_controllers_independently_verified",
+    "pi05_29_selected_source_operator_patterns_independently_verified_with_true_matmul_strides_and_TF32False_convolution",
+    "robotwin_released_benchmark_first_eligible_seed100001_three_full400_control_replays_independently_verified_including_CPU_CUDA_RNG_1203frames",
+    "cogact_B16_B32_capacity_24_arrangements_independently_audited",
+    "lingbot_official_benchmark_seed100001_eight_model_episodes_independently_audited",
+    "robotwin_50_task_252_assigned_field_static_inventory_and_five_serializer_tests",
+    "robotwin_expanded_source_task_state_400_controls_three_repeats_independently_verified_1203frames",
+    "rdt_B8_operator_trace_retains_exact_broadcast_mask_values",
+    "two_simulator_environment_package_snapshots_retained",
+    "eight_task_state_and_mask_trace_regression_tests_passed",
+    "rdt_full_observable_state_45_episodes_18045_raw_frames_independently_verified",
+    "rdt_full_paired_candidate_passed_actual_GPU_QA_singleton_bytes_and_started",
+    "pi05_second_worker_actual_GPU_QA_and_candidate_lock_passed_task1_first_block_complete",
+    "31_runtime_reset_mask_and_paired_guard_tests_plus_three_statistics_tests_passed",
+    "pi05_28_paired_starts_224_episodes_independently_audited_27_task0_one_task1",
+    "rdt_first_full_eight_condition_block_independently_audited_inputs_regenerated_all_AA_BI_trajectories_exact",
+    "rdt_first_block_all8_initial_snapshots_match_qualified_canonical_state_records",
+    "paired_bootstrap_exactly_matches_original_pizero_function_on_all8_current_task_comparisons",
+    "cogact_fresh_worker_full_observable_reset_36_replays_3510frames_independently_verified_including_packed_scene",
+    "cogact_11_state_encoder_and_primary_released_condition_guard_tests_passed",
+    "cogact_full_12_episode_per_start_paired_study_startup_QA_B1_and_official_four_tasks_B1_plus_mixed_B8_fidelity_passed_first_episode_complete",
+    "lingbot_click_bell_bound_callback_references_qualified_in_isolated_source_three_replays_1203frames_independently_verified",
+    "historical_pi05_default_renderer_v1_72_starts_excluded_from_primary_and_rdt10_independently_audited",
+    "pi05_render_failure_isolated_to_uint8_RGB_only_physics_and_derived_geometry_exact",
+    "pi05_no_MSAA100_full_fixed_replays_all10tasks_plus_two_failed_trajectories_independently_verified",
+    "cogact_first3_paired_starts36episodes_independently_audited_with_full_input_and_controller_reconstruction",
+    "robotwin_cabinet_origin_z_arm_tag_initialization_three700_control_replays_independently_verified"
+  ],
+  "live_at_last_check": {
+    "pi05_full_diagnostic": {
+      "exec_session": 18706,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-fresh-full-diagnostic-003.log",
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/diagnostic",
+      "scope": "600 diagnostic request/noise pairs from fresh starts10,11; corrected split-local companion schedule; strict runtime/source sidecar; timing excluded from performance because own CogACT collector initially shares GPU1"
+    },
+    "rdt_full_diagnostic": {
+      "exec_session": 3982,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-full-diagnostic-002.log",
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/diagnostic",
+      "scope": "600 diagnostic request/noise pairs; genuinely batched vision and all five diffusion prediction/sample traces; first two completed blocks verified to retain ten per-step labels"
+    },
+    "cogact_full_diagnostic": {
+      "exec_session": 72973,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-full-diagnostic-001.log",
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/diagnostic",
+      "scope": "600 request/noise pairs, complete policy including ten CFG diffusion traces, fixed64 controlled inputs; final acceptance pending"
+    },
+    "robotwin_roster_fixed_replay": {
+      "exec_session": 40047,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/robotwin-source-task-state-roster-002",
+      "scope": "All50 released tasks: lift_pot and hanging_mug independently passed; remaining tasks pending; model-free qualification"
+    },
+    "rdt_paired_success_study": {
+      "exec_session": 64204,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-paired-locked-worker-gpu5-001.log",
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/rdt_maniskill_locked_v1",
+      "scope": "Five tasks x50 starts xfour conditions plus repeat controls; fixed30 controlled inputs; pending numerical QA acceptance",
+      "gpu_uuid": "GPU-225bc55c-3ea0-e312-43ae-c673a57f5dde"
+    },
+    "cogact_paired_success_study": {
+      "exec_session": 81082,
+      "pid": 2770000,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1",
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-paired-locked-worker-gpu4-001.log",
+      "scope": "Four tasks x50 starts; four controlled-fixed64 primary conditions plus released-native singleton/dynamic supplements, each repeated (2400 episodes). All provisional until QA/fidelity acceptance.",
+      "gpu_uuid": "GPU-94757602-37c3-0344-da17-6ac647c8325b",
+      "simulator_cuda_visible_devices": "GPU-f391c6f3-68e5-d0f7-7d47-edae147c7882"
+    },
+    "pi05_no_msaa_gpu5": {
+      "exec_session": 70008,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/pi05_libero_no_msaa_locked_v2",
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-no-msaa-paired-worker-gpu5-001.log",
+      "scope": "Separate500-start rerun with no multisampling and raw per-control observations/derived physics/RNG; old default-renderer results excluded; model QA singleton byte checks required"
+    },
+    "pi05_no_msaa_gpu7": {
+      "exec_session": 27852,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/pi05_libero_no_msaa_locked_v2",
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-no-msaa-paired-worker-gpu7-001.log",
+      "scope": "Separate500-start rerun with no multisampling and raw per-control observations/derived physics/RNG; old default-renderer results excluded; model QA singleton byte checks required"
+    }
+  },
+  "next": [
+    "Continue all four-model numerical/paired/reset and operator campaigns; no WAM work.",
+    "Finish fresh native-only RDT corpus collection and independent reconstruction; require observation-disjointness audit plus content-addressed freeze before heldout evaluation. Old RDT heldout observation partition is exposed. Audit observation exposure for PI05/CogACT before their heldout claims.",
+    "Complete RDT425 actual-source linear arrangements and large-softmax supplement; complete CogACT source convolution/mean sweep and remaining linear/attention operator cases with lossless source masks; qualify LingBot operators.",
+    "Finish50-task LingBot reset roster with independent isolated task fixes, complete model corpus and paired stability study; retain controlled-MoE baseline disclosure and released-default fidelity evidence.",
+    "Accept expanded RDT/PI05 paired progress audits when terminal and passing, then rebuild numerical/action/trajectory stability statistics and independently audit reported magnitudes.",
+    "Finish diagnostic qualification, numerical freezes, genuinely unseen heldout replay, singleton fidelity, isolated performance/serving and final requirement-by-requirement audits for all four models."
+  ],
+  "excluded": [
+    "all WAM work"
+  ],
+  "important_runtime_notes": [
+    "Always restrict CUDA_VISIBLE_DEVICES; enumerating all host GPUs triggers PyTorch failure from unhealthy GPU3. Do not disturb unrelated jobs.",
+    "RoboTwin pip setuptools<81 required for sapien3.0.0b1 pkg_resources.",
+    "Local CUDA compiler installs headers under targets/x86_64-linux/include; build requires CPATH and LIBRARY_PATH pointing at targets include/lib.",
+    "RDT upstream dense reward unsupported for PlugCharger on ManiSkill3.0.1; explicit sparse reward qualification retained separately; do not hide version/protocol difference.",
+    "Preserve failed probes: CogACT001 missing unrelated prepare_replay dependency; resolved by AST-reading TASKS from reference source,002 passed. Curobo001 missing headers;002 uses explicit target include/lib. LingBot001 naive final dtype audit failed,002 audits complete upstream dtype sequence.",
+    "CogACT controlled native and invariant use fixed64 language tokens. Fidelity vs released unpadded singleton is not exact, max physical action difference1.0; do not report controlled-native metrics as released-default policy metrics.",
+    "RDT fixed30 tokens matched released singleton exactly in pilot.",
+    "LingBot released atomic MoE singleton repeats not exact (max error0.0011393427848815918); deterministic MoE shared across native and invariant passed probe.",
+    "RoboTwin RGB/physics exact in short replay despite OIDN denoiser CUDA errors; full episode qualification required.",
+    "Historical audit tests have two preexisting missing /workspace fixture failures confirmed against unmodified HEAD; 43 others pass.",
+    "RDT corpus launch001 failed before collection due missing PYTHONPATH; terminal log retained; launch002 explicitly sets repo import path and is collecting.",
+    "Split-local B32 diagnostic batches use31 distinct observations from19 non-target episodes because diagnostic split has20 episodes. Heldout B32 can use31 distinct episodes. All companion inputs remain in target split and outside target episode.",
+    "Original PI05 heldout inputs were used as provisional companions. Fresh starts10..19 replace the primary corpus to avoid reusing exposed heldout inputs.",
+    "Fresh PI05 launch002 failed at EGL setup because robosuite parsed CUDA UUID as integer. Terminal log retained. Launch003 keeps CUDA UUID and explicitly sets numeric MUJOCO_EGL_DEVICE_ID=1.",
+    "Shared replay harness retains flow.step_* and actions.* traces. RDT/CogACT exact adapters now alias diffusion.* into flow.step_*; original RDT three-request smoke proves final-output invariance but not per-diffusion-step coverage.",
+    "Original operator qualifier inherited cudnn TF32True despite model TF32False. BF16 and default-FP32-matmul shapes retain their precision; native F32 convolution is being repeated with TF32False alongside missing softmax shapes. Original convolution records remain supplemental TF32True evidence.",
+    "Full replay runs now write source/device/runtime sidecars and refuse resuming records with changed identity or missing provenance. Existing pre-sidecar smoke source was saved before this addition.",
+    "LingBot released evaluator starts100000*(1+seed) and uses100 instruction candidates. Seed0 pilot is engine evidence only; benchmark replay selected100001 after expert rejection100000. Full model benchmark cohort must follow this source protocol.",
+    "CogACT smoke001 rejected non-step diffusion.noise label. Smoke002 rejected CFG trace leading axis2B vs logicalB. Both attempts retained with no completed comparisons; smoke003 stacks both conditional/unconditional branches per request [B,2,16,7] and preserves model arithmetic.",
+    "CogACT expanded checks exposed packed articulation drift after original restore setters. Fresh seeded worker reconstruction qualifies all36 repeats including packed scene;27/36 match old-worker trajectories,9/36 differ already at initial observation. Original native-only collection is not pooled with the new full paired protocol.",
+    "CogACT eta0 DDIM draws unused auxiliary noise. New paired runner scopes Torch RNG per inference, proves ambient RNG unchanged, and reproduces QA outputs bytewise before and after official-sampler checks. Supplemental released-native singleton/dynamic paths avoid labeling fixed64 as unmodified native.",
+    "RoboTwin click_bell fixed in isolated capture variant by retaining selected bound method owner/function/source hash. put_object_cabinet cold setup lacks origin_z/arm_tag set in upstream expert pre-motion prefix; isolated evaluator initialization replay is pending. Live roster002 sources remain unchanged."
+  ],
+  "updated_utc": "2026-11-10T15:45:17.163094+00:00",
+  "stopped_provisional_runs": [
+    {
+      "exec_session": 32303,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-full-diagnostic-001.log",
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/diagnostic",
+      "scope": "600 diagnostic request-noise pairs; B1,2,4,8,16,32; complete before freeze and heldout",
+      "progress_at_last_check": "48/600 complete readable request-noise blocks (3744 records); still running",
+      "terminal_exit_code": 130,
+      "reason": "Diagnostic B32 companion schedule consumed heldout episode inputs. Deliberately interrupted after inspecting source/manifest. Preserve as provisional only; do not resume or use as accepted heldout evidence."
+    },
+    {
+      "model": "rdt_maniskill_exact",
+      "exec_session": 33073,
+      "terminal_exit_code": 1,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-full-diagnostic-001.log",
+      "retained_directory": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/diagnostic_incomplete_step_trace_001",
+      "reason": "Deliberate SIGINT/KeyboardInterrupt to standardize diffusion trace labels before accepting full per-step coverage. Adapter now emits flow.step_XX aliases; arithmetic unchanged; restarted002."
+    },
+    {
+      "exec_session": 24859,
+      "terminal_exit_code": 130,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/robotwin-source-task-state-roster-001",
+      "reason": "Deliberately interrupted after lift_pot rejected unsupported articulation link state. Added explicit link pose/velocity/inertia/mass/damping capture, tests passed; new source snapshot roster002 independently passed lift_pot and hanging_mug. Preserve rejected001."
+    },
+    {
+      "exec_session": 84766,
+      "terminal_exit_code": 1,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-paired-locked-worker-gpu5-001.log",
+      "reason": "Exact native-dynamic repeat observation mismatch at task2/start1; all actions, recorded physics and derived geometry identical; diagnostic isolated one-level one-pixel RGB nondeterminism with default multisampling. Do not resume or pool with renderer-v2 study."
+    },
+    {
+      "exec_session": 67396,
+      "terminal_exit_code": 1,
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-paired-locked-worker-gpu7-002.log",
+      "reason": "Exact native-dynamic repeat observation mismatch at task2/start0; all actions, recorded physics and derived geometry identical; diagnostic isolated one-level one-pixel RGB nondeterminism with default multisampling. Do not resume or pool with renderer-v2 study."
+    }
+  ],
+  "stability_reporting_update": {
+    "primary_endpoint": "singleton_vs_batched_stability",
+    "quantitative_summary_session": 81070,
+    "quantitative_summary_output": "results/four_model/paired_stability_quantitative.json",
+    "metric_checks": "7 tests passed: quaternion identity/antipodal/small-angle, float32 and BF16 original-precision ULP, signed zero, feedback exclusion, output dtype.",
+    "lingbot_click_alarmclock_reset_qualification_session": 4421,
+    "operator_qualification_change": "Source-requested softmax output dtype now retained; FP64 reference explicitly remains float64. No new operator qualification accepted from this edit.",
+    "rdt_source_softmax_qualification": {
+      "session": 27092,
+      "config": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_v2.json",
+      "scope": "100 seeds per arrangement; B1,2,4,8 only. No full operator coverage or qualified performance claim.",
+      "previous_attempt": {
+        "session": 39337,
+        "terminal_exit_code": 1,
+        "cause": "Configuration omitted required source_operation; no raw measurement records written. Failed v1 config/log retained."
+      },
+      "isolated_arrangement": "B2 first; preceding B1 100 seeds complete; prior process stopped on absent CUPTI kernels, exit1",
+      "progress": "B1 and B2 first complete100seeds each; runner continues B2 last,B4 first/last,B8 first/last in isolated CUDA processes",
+      "terminal_exit_code": 0,
+      "independently_verified_raw_records": 700,
+      "independently_verified_arrangements": 7,
+      "audit": "source_softmax_output_precision_audit.json"
+    },
+    "quantitative_original_summary_completed": true,
+    "audited_quantitative_starts": {
+      "pi05": 12,
+      "rdt": 10,
+      "cogact": 3
+    },
+    "alarmclock_reset_qualification": {
+      "session": 4421,
+      "terminal_exit_code": 0,
+      "independent_audit_session": 98058,
+      "independent_audit_terminal_exit_code": 0,
+      "raw_frames_verified": 1203
+    },
+    "lingbot_dump_bin_reset_qualification": {
+      "session": 39345,
+      "source": "robotwin-action-entity-state-source-002",
+      "output": "robotwin-dump-bin-action-entity-replay-003",
+      "earlier_failures": [
+        "Action-state-only helper rejected actual SAPIEN Entity, session63944 exit1",
+        "First Entity helper attempted kinematic target on dynamic body, session9893 exit1; corrected helper verified on actual SAPIEN CPU dynamic and kinematic spheres before fresh run"
+      ],
+      "terminal_exit_code": 0,
+      "repeats": 3,
+      "controls_per_repeat": 600,
+      "first_eligible_seed": 100002,
+      "independent_audit_session": 24822,
+      "independent_audit_terminal_exit_code": 0,
+      "raw_frames_verified": 1803
+    },
+    "quantitative_summary_terminal_exit_code": 0,
+    "quantitative_report_sha256": "a5f9695a23a1396fa04d63dca4a7181ddb1d978a86f133c1a600951fc1a1aa92",
+    "diagnostic_fixed_input_summary": {
+      "session": 28907,
+      "terminal_exit_code": 0,
+      "output": "results/four_model/diagnostic_batch_stability_progress.json",
+      "complete_request_noise_pairs": {
+        "pi05": 332,
+        "rdt": 142,
+        "cogact": 244
+      },
+      "metric": "element-weighted RMS/mean squared singleton-batch differences, normalized output and each denoising stage separately; only complete arrangement sets included",
+      "tests": "9 tests passed, including partial-cohort exclusion and corrupted gzip rejection"
+    },
+    "quantitative_independent_metric_audit": {
+      "session": 48076,
+      "output": "results/four_model/paired_stability_quantitative_independent_audit.json",
+      "terminal_exit_code": 0,
+      "raw_frame_files_verified": 21766,
+      "fixed_input_nonsingleton_pairs_verified": 415,
+      "paired_starts_verified": 25
+    },
+    "rdt_expanded_progress_audit_session": 10413,
+    "lingbot_reset_union": {
+      "qualified_tasks": 38,
+      "prescribed_tasks": 50,
+      "output": "results/four_model/robotwin_reset_qualification_union.json",
+      "scope": "First eligible released seed and three complete fixed-action repeats per task; model evaluation still pending"
+    },
+    "rdt_source_linear_qualification": {
+      "first_measured_arrangement_session": 64468,
+      "first_session_terminal_exit_code": 0,
+      "first_arrangement": "rdt_source_linear_axis1_92d55b15af182993|B2|last",
+      "first_arrangement_100_seeds_independently_verified": true,
+      "sweep_session": 95270,
+      "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_linear_layouts_v1.json",
+      "prescribed_linear_arrangements": 425,
+      "source_patterns": {
+        "B1": 23,
+        "B8": 25
+      },
+      "prior_runner_failure": "sweep001 invoked file path without package root; terminal exit1 before measuring; sweep002 uses module invocation; logs retained",
+      "tests": "14 layout and metric checks passed",
+      "independently_verified_arrangements": 54,
+      "independently_verified_raw_records": 5400
+    },
+    "lingbot_scale_reset_qualification": {
+      "session": 85920,
+      "terminal_exit_code": 0,
+      "independent_audit_session": 46256,
+      "independent_audit_terminal_exit_code": 0,
+      "raw_frames_verified": 1203,
+      "first_eligible_seed": 100000,
+      "source": "robotwin-scale-initialization-source-001",
+      "scope": "Released pre-motion arm_tag assignment initialized on fresh task; no physics or predicate change"
+    },
+    "cogact_actual_source_operator_trace": {
+      "session": 60425,
+      "batch_sizes": [
+        1,
+        8
+      ],
+      "B8_diagnostic_replay_indices": [
+        0,
+        250,
+        500,
+        750,
+        1,
+        251,
+        501,
+        751
+      ],
+      "scope": "All four tasks in B8. Provenance only, not qualification.",
+      "terminal_exit_code": 0
+    },
+    "pi05_expanded_progress_audit_session": 56870,
+    "cogact_lossless_attention_mask_trace": {
+      "session": 35398,
+      "terminal_exit_code": 0,
+      "batch_sizes": [
+        1,
+        8
+      ],
+      "mask_encoding": "zlib_base64_original_dtype_bytes_v1",
+      "scope": "Exact additive mask bytes, dtype, shape, original stride, compact shape and SHA verified. Not operator qualification."
+    },
+    "cogact_source_convolution_mean_qualification": {
+      "session": 90595,
+      "cases": 3,
+      "prescribed_arrangements": 51,
+      "scope": "Source BF16 DINO/SigLIP patch convolutions and float32 VLM mean.100 seeds each, B1,2,4,8,16,31,32,33,64; shared timing unqualified. Other operator classes outstanding.",
+      "terminal_exit_code": 0,
+      "independently_verified_arrangements": 51,
+      "independently_verified_raw_records": 5100,
+      "independent_audit": "results/four_model/current_evidence/cogact_source_conv_mean_audit.json"
+    },
+    "lingbot_laptop_reset_qualification": {
+      "session": 19317,
+      "source": "robotwin-laptop-initialization-source-001",
+      "output": "robotwin-laptop-initialization-replay-001",
+      "scope": "Copy released pre-motion face-product arm selection into fresh task; exact source prefix AST and source hash retained.",
+      "terminal_exit_code": 0,
+      "repeats": 3,
+      "controls_per_repeat": 700,
+      "first_eligible_seed": 100000,
+      "independent_audit_session": 75849,
+      "independent_audit_terminal_exit_code": 0,
+      "raw_frames_verified": 2103
+    },
+    "scientific_metric_and_layout_tests_passed": 23,
+    "rdt_source_softmax_large_supplement": {
+      "session": 21278,
+      "batch_sizes": [
+        16,
+        31,
+        32,
+        33,
+        64
+      ],
+      "source_config": "source_softmax_output_precision_large_v1.json",
+      "scope": "Remaining prescribed sizes; cannot be pooled with smaller sweep until semantic/config equivalence audit.",
+      "terminal_exit_code": 1,
+      "stop_reason": "B64 explicit reference timing allocation exceeded fragmented shared GPU memory; measurements throughB33 retained",
+      "B64_retry_session": 74530,
+      "B64_retry_allocator": "expandable_segments:True",
+      "numerical_code_changed": false
+    },
+    "fresh_rdt_numerical_holdout_collection": {
+      "session": 23197,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003",
+      "initialization_ids": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "native_only": true,
+      "batch_invariant_evaluation_started": false,
+      "acceptance_pending": [
+        "Independent corpus reconstruction",
+        "Observation disjointness from prior corpora and sealed paired exposure cohort",
+        "Numerical freeze binding fresh manifest and disjointness audit"
+      ],
+      "terminal_exit_code": 0,
+      "independent_corpus_audit_session": 62883,
+      "independent_corpus_audit_terminal_exit_code": 0,
+      "independently_rebuilt_observations": 1000,
+      "independently_rebuilt_episodes": 100,
+      "audited_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/audited_manifest.json"
+    },
+    "old_rdt_numerical_heldout_exposure": {
+      "evidence": "results/four_model/heldout_observation_exposure.json",
+      "status": "Observation-input reuse confirmed in pre-freeze invariant paired inference; indexed noise differs",
+      "old_candidate_partition_cannot_be_claimed_observation_unseen": true,
+      "paired_stability_evidence_invalidated": false
+    },
+    "heldout_runner": "scripts/run_exposure_qualified_heldout.py",
+    "actual_old_manifest_gate_probe": "Expected exit1: exposed old numerical heldout partition rejected before loading freeze/audit files or a model. Log retained.",
+    "expanded_paired_progress": {
+      "pi05": {
+        "audited_starts": 91,
+        "native_action_divergent_starts": 91,
+        "invariant_action_divergent_starts": 0,
+        "reconstructed_policy_calls": 4990
+      },
+      "rdt": {
+        "audited_starts": 46,
+        "native_action_divergent_starts": 46,
+        "invariant_action_divergent_starts": 0,
+        "reconstructed_policy_calls": 8880
+      },
+      "cogact": {
+        "audited_starts": 18,
+        "native_action_divergent_starts": 18,
+        "invariant_action_divergent_starts": 0,
+        "reconstructed_policy_calls": 17280
+      }
+    },
+    "quantitative_summary_v2": {
+      "session": 67459,
+      "output": "results/four_model/paired_stability_quantitative_v2.json",
+      "scope": "91 pi05/46 RDT/3 CogACT: full independent raw drift and fixed-input error verification complete; full campaigns still incomplete",
+      "independent_audit_session": 31417,
+      "independent_audit_terminal_exit_code": 0,
+      "independently_verified_starts": 140,
+      "raw_frame_files_verified": 136786,
+      "fixed_input_nonsingleton_pairs_verified": 1536
+    },
+    "cogact_expanded_paired_audit_session": 37826,
+    "lingbot_native_corpus_collection": {
+      "session": 53998,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001",
+      "prescribed_tasks": 50,
+      "prescribed_episodes": 200,
+      "qualified_tasks_at_start": 38,
+      "scope": "Four native episodes/task; two diagnostic100000+ and two prospective-heldout200000+; native controlled deterministic MoE only, no BI inference or heldout acceptance; resume remaining task qualifications later",
+      "fresh_startup_weight_verification": "All1708 tensors/6375907511 elements byte exact after official constructor->FP32 dtype sequence",
+      "terminal_exit_code": 1,
+      "completed_native_episodes": 10,
+      "stop_reason": "Released expert play_once planning exception; original collector stopped instead of applying released evaluator rejection rule. Model/simulator data retained; no invariant failure.",
+      "independent_partial_corpus_audit": {
+        "session": 95462,
+        "terminal_exit_code": 0,
+        "episodes_rebuilt": 9,
+        "raw_frames_verified": 3926,
+        "model_calls_rebuilt": 82,
+        "selected_inputs_rebuilt": 42
+      },
+      "replacement_collector": "scripts/collect_lingbot_robotwin_campaign_replay_v2.py",
+      "replacement_scope": "Stage-aware released expert failure filter; canonical-capture/model/reset/step exceptions still fail. Clean separate corpus and full re-verification planned."
+    },
+    "cogact_fresh_cold_collection_integration": {
+      "session": 87441,
+      "terminal_exit_code": 0,
+      "tasks": 4,
+      "initialization": 50,
+      "exact_cold_initial_checks_passed": true,
+      "fixed_steps_per_task": 2,
+      "model_evaluated": false,
+      "scope": "Integration smoke; full native corpus still pending"
+    },
+    "old_cogact_numerical_heldout_exposure": {
+      "evidence": "results/four_model/heldout_observation_exposure_cogact.json",
+      "status": "Heldout5 pick_can initial RGB/instruction byte identical to pre-freeze invariant paired request; noisediff"
+    },
+    "old_pi05_numerical_heldout_exposure": {
+      "evidence": "results/four_model/heldout_observation_exposure_pi05.json",
+      "status": "Heldout12 task0 raw observation and all prepared tensor bytes match pre-freeze invariant v1 default-renderer request. Rejection of v1 does not erase exposure."
+    },
+    "rdt_source_linear_complete": {
+      "independent_audit": "results/four_model/current_evidence/rdt_source_linear_complete_audit.json",
+      "raw_records": 42500,
+      "completed_arrangements": 425,
+      "full_operator_qualification_complete": false,
+      "timing_qualified": false
+    },
+    "rdt_source_softmax_complete": {
+      "independent_union_audit": "results/four_model/current_evidence/rdt_source_softmax_union_audit.json",
+      "raw_records": 1700,
+      "arrangements": 17,
+      "full_operator_qualification_complete": false
+    },
+    "lingbot_native_corpus_v2": {
+      "pid": 1243919,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-002",
+      "live_confirmed": true,
+      "latest_observed_completed_episodes": 7,
+      "prescribed_episodes": 200,
+      "batch_invariant_evaluation_started": false,
+      "independent_progress_audit_session": 77626,
+      "independent_progress_audit": {
+        "session": 77626,
+        "terminal_exit_code": 0,
+        "episodes": 10,
+        "raw_frames": 4540,
+        "model_calls": 95,
+        "selected_inputs": 44,
+        "numerical_acceptance": false
+      }
+    },
+    "cogact_fresh_native_collection": {
+      "session": 93233,
+      "pid": 1604201,
+      "live_confirmed": false,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/cogact-simpler-unexposed-002",
+      "prescribed_episodes": 100,
+      "prescribed_observations": 1000,
+      "checkpoint_assets_rehashed_before_load": true,
+      "prospective_heldout_skips_reset_frame": true,
+      "independent_auditor": "scripts/audit_cogact_unexposed_holdout_corpus.py",
+      "audit_status": "prepared_not_executed_pending_corpus",
+      "heldout_acceptance_pending": [
+        "independent corpus reconstruction",
+        "prepared-input disjointness",
+        "numerical freeze"
+      ],
+      "terminal_exit_code": 1,
+      "stop_reason": "Invalid nonexistent adapter.reset_model call before first model inference; corrected to stateless adapter contract."
+    },
+    "rdt_source_mean_complete": {
+      "audit": "results/four_model/current_evidence/rdt_source_mean_audit.json",
+      "raw_records": 1700,
+      "arrangements": 17,
+      "full_model_operator_qualification_complete": false
+    },
+    "cogact_fresh_native_collection_retry": {
+      "session": 64506,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/cogact-simpler-unexposed-003",
+      "first_episode_completed": true,
+      "first_episode": "pick_can/50",
+      "prescribed_episodes": 100,
+      "independent_corpus_audit_pending": true,
+      "latest_observed_completed_episodes": 100,
+      "terminal_exit_code": 0,
+      "collected_observations": 1000,
+      "independent_corpus_audit_session": 26498,
+      "independent_corpus_audit_complete": true,
+      "independent_corpus_audit_terminal_exit_code": 0
+    },
+    "rdt_source_matrix_sweep": {
+      "session": 90677,
+      "config": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_matrix_layouts_v1.json",
+      "prescribed_arrangements": 68,
+      "prescribed_records": 6800,
+      "source_patterns": 4,
+      "scope": "Both rank4 vision matmuls group6 plus both pooling bmm patterns group96; source strides preserved with observed B1/B8 scaling",
+      "first_arrangement_complete100": false,
+      "independent_auditor": "scripts/audit_rdt_source_matrix_ops.py",
+      "full_model_operator_qualification_complete": false,
+      "v1_excluded_from_final_qualification": true,
+      "v1_stop_reason": "Batched target slices retain batch-dependent pooling strides; replaced with exact-value reconstruction in actual B1 source strides.",
+      "corrected_session": 78857,
+      "corrected_raw_records": "source_matrix_layouts_v2.jsonl",
+      "v2_B2_pooling_smoke_session": 22031,
+      "v2_B2_first_pooling_pattern100seeds_passed": true,
+      "v2_B2_second_pooling_pattern_pending": false,
+      "v2_B2_pooling_independent_audit_records": 200,
+      "corrected_terminal_exit_code": 0,
+      "independent_complete_records": 6800,
+      "completed_arrangements": 68,
+      "all_arrangements_independently_verified": true
+    },
+    "pi05_fresh_native_collection": {
+      "session": 74242,
+      "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004",
+      "prescribed_episodes": 100,
+      "prescribed_observations": 1000,
+      "official_initialization_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "renderer": "qualified_no_msaa",
+      "cold_initial_comparison": "raw physics/controller/RNG/observation/derived byte identities across two fresh env instances",
+      "frame_selection": "Predeclared evenly spaced controlframes1..steps-1; exclude reset and terminal observation",
+      "rollout_noise_namespace": "fresh-no-msaa-004",
+      "heldout_acceptance_pending": [
+        "independent full corpus reconstruction",
+        "prepared-input disjointness from all prior numerical/paired cohorts including excluded v1",
+        "numerical freeze"
+      ],
+      "independent_auditor": "scripts/audit_pi05_unexposed_holdout_corpus.py",
+      "audit_status": "prepared_not_run_pending_corpus",
+      "first_episode_completed": true,
+      "first_episode": "task0/start0",
+      "first_episode_controls": 520,
+      "cold_initial_exact_check_passed": true,
+      "latest_observed_completed_episodes": 100,
+      "terminal_exit_code": 0,
+      "collected_observations": 1000,
+      "independent_corpus_audit_session": 70310,
+      "independent_corpus_audit_complete": true,
+      "first_auditor_stopped_exit_code": 143,
+      "first_auditor_stop_reason": "Review found inner loop overwriting episode tuple key and source episode path. Source archived; variables corrected; no candidate data changed or audit accepted.",
+      "independent_corpus_audit_retry_log": "pi05-unexposed-native-corpus-audit-002.log",
+      "independent_corpus_audit_retry_session": 44201,
+      "independent_corpus_audit_retry_terminal_exit_code": 0,
+      "raw_frames_verified": 29228,
+      "native_source_inputs_rebuilt": 632,
+      "selected_inputs_rebuilt": 1000,
+      "prepared_input_disjointness_still_pending": true
+    },
+    "rdt_source_attention_sweep": {
+      "session": 59307,
+      "config": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_v1.json",
+      "prescribed_arrangements": 51,
+      "prescribed_records": 5100,
+      "independently_verified_progress_records": 132,
+      "completed_arrangements": 1,
+      "scope": "Three traced QKV layouts, including exact captured bool 25-valid/30-token mask and its broadcast strides; other task masks outstanding",
+      "full_model_operator_qualification_complete": false
+    },
+    "cogact_source_linear_sweep": {
+      "session": 50899,
+      "config": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/source_linear_layouts_v1.json",
+      "source_patterns": 24,
+      "prescribed_arrangements": 408,
+      "prescribed_records": 40800,
+      "coordinate_tests_passed": 3,
+      "CFG_coordinates": "conditional[i] plus unconditional[B+i], canonical singleton keeps actual source strides",
+      "full_operator_qualification_complete": false,
+      "performance_qualified": false
+    },
+    "lingbot_campaign_numerical_input_preparation": {
+      "builder": "scripts/build_lingbot_campaign_replay_manifest.py",
+      "adapter": "scripts/model_invariance/adapters/lingbot_robotwin_exact.py",
+      "status": "prepared; no numerical neural inference started",
+      "actual_collected_inputs_schema_checked": 44,
+      "distinct_prepared_schemas": 1,
+      "language_tokens": 72,
+      "request_loader_actual_input_probe": "results/four_model/current_evidence/lingbot_campaign_request_loader_integration.json",
+      "partial_corpus_gate_expected_rejection_log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-partial-corpus-sealing-rejection-001.log",
+      "full_corpus_independent_reconstruction_required": true,
+      "remaining": [
+        "complete native collection and independent audit",
+        "seal numerical manifest with explicit noises",
+        "full neural diagnostic and operator qualification",
+        "freeze and prepared-input-disjoint heldout",
+        "paired stability campaign and remaining full scope"
+      ]
+    },
+    "prepared_input_heldout_gate": {
+      "identity_kind": "prepared_neural_inputs_before_first_model_operation",
+      "raw_only_audit_rejected": true,
+      "tests_passed": 4,
+      "RDT_progress_audit_session": 27291,
+      "scope": "Actual pre-neural pixels BF16/state BF16/language/mask/control frequency; noise/request IDs excluded",
+      "final_acceptance_pending_completed_exposure_cohort": true,
+      "RDT_progress_result": {
+        "heldout_unique_observations": 800,
+        "exposed_unique_observations": 7975,
+        "collisions": 0,
+        "status": "prepared_input_exposure_progress_only",
+        "heldout_acceptance": false
+      }
+    },
+    "cogact_source_attention_sweep": {
+      "session": 58931,
+      "source_patterns": 4,
+      "prescribed_arrangements": 68,
+      "prescribed_records": 6800,
+      "mask_contract": "Original BF16 additive causal/padding mask bytes; B8 source rows cycled with singleton selecting exact target mask; B1 capture verified equal to source B8request0",
+      "CFG_coordinates": "conditional[i], unconditional[B+i]; source singleton strides reconstructed",
+      "mask_reconstruction_batches_verified": [
+        1,
+        2,
+        8,
+        33,
+        64
+      ],
+      "independent_progress_records": 300,
+      "full_operator_qualification_complete": false,
+      "timing_qualified": false,
+      "terminal_exit_code": 0,
+      "independent_verified_complete": true,
+      "independent_complete_records": 6800,
+      "completed_arrangements": 68
+    },
+    "cogact_prepared_input_heldout_gate": {
+      "identity_helper": "scripts/cogact_prepared_observation_identity.py",
+      "exposure_auditor": "scripts/audit_cogact_heldout_observation_disjointness.py",
+      "actual_record_integration": "results/four_model/current_evidence/cogact_prepared_input_identity_integration.json",
+      "actual_call_records_reconstructed": 3,
+      "scope": "Exact original FP32 image/token/mask traces verified; freshness fingerprint conservatively casts vision pixels to effective BF16 before hashing, excludes noise and request IDs",
+      "full_corpus_disjointness_audit_not_run": false,
+      "heldout_acceptance": false,
+      "progress_audit_session": 81487,
+      "progress_audit_complete": false
+    },
+    "pi05_prepared_input_heldout_gate": {
+      "helper": "scripts/pi05_prepared_observation_identity.py",
+      "auditor": "scripts/audit_pi05_heldout_observation_disjointness.py",
+      "actual_input_integration": "results/four_model/current_evidence/pi05_prepared_input_identity_integration.json",
+      "scope": "Official GPU-resized/normalized F32 images and language tokens/masks; unused separate state excluded; all prior paired siblings including rejected MSAA v1 included; unattributed observations conservatively checked against all task instructions",
+      "audit_status": "prepared; waiting independent candidate corpus audit",
+      "progress_audit_session": 53714,
+      "progress_audit_terminal_exit_code": 0,
+      "heldout_unique_observations": 800,
+      "prior_effective_input_identities": 9868,
+      "collisions": 0,
+      "heldout_acceptance": false
+    },
+    "rdt_all_task_attention_trace": {
+      "session": 32682,
+      "terminal_exit_code": 0,
+      "tasks": 5,
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+      "valid_language_tokens": [
+        25,
+        20,
+        30,
+        24,
+        18,
+        25,
+        20,
+        30
+      ],
+      "distinct_masks": 5,
+      "additional_mask_qualification_pending": true,
+      "initial_bad_environment_launch_log_preserved": true
+    },
+    "rdt_source_attention_mask_supplement": {
+      "config": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_masks_v1.json",
+      "mask_patterns": 6,
+      "task_valid_token_counts": [
+        25,
+        20,
+        30,
+        24,
+        18
+      ],
+      "prescribed_arrangements": 102,
+      "prescribed_records": 10200,
+      "reference": "Full32head source singleton per request, not a different head extent",
+      "independent_mask_measurement_audit_pending": true,
+      "full_operator_qualification_complete": false,
+      "session": 24098,
+      "independent_auditor": "scripts/audit_rdt_source_attention_masks.py",
+      "independent_progress_records": 891,
+      "completed_arrangements": 102,
+      "CUDA_mask_reconstructions_verified": 30,
+      "terminal_exit_code": 0,
+      "independent_verified_complete": true,
+      "independent_complete_records": 10200
+    },
+    "audited_magnitude_summary": {
+      "path": "results/four_model/stability_audited_summary.json",
+      "audited_starts": 155,
+      "source_report": "paired_stability_quantitative_v2.json",
+      "separate_from_expanded_paired_count_cohorts": true,
+      "primary_metrics": [
+        "fixed-input normalized output RMS/max error",
+        "closed-loop EEF physical drift",
+        "exact disagreement counts"
+      ]
+    },
+    "cogact_shared_source_matmul": {
+      "session": 63171,
+      "terminal_exit_code": 0,
+      "independent_verified_complete": true,
+      "records": 1700,
+      "arrangements": 17,
+      "physical_source_shapes": "[1,64,1]@[1,1,320] remain fixed for all logical batch sizes",
+      "full_operator_qualification_complete": false
+    },
+    "rdt_remaining_conv_and_pool_softmax": {
+      "config": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_conv_pool_softmax_v1.json",
+      "patterns": 2,
+      "prescribed_arrangements": 34,
+      "prescribed_records": 3400,
+      "scope": "384px SigLIP patch convolution group6 plus pooling softmax group96 retaining BF16 output",
+      "independent_audit_pending": true,
+      "session": 1295,
+      "terminal_exit_code": 0,
+      "independent_verified_complete": true,
+      "verified_records": 3400,
+      "completed_arrangements": 34,
+      "full_operator_qualification_complete": false
+    },
+    "cogact_operator_inventory": {
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/coverage_progress_audit.json",
+      "source_patterns_b1": 32,
+      "source_patterns_b8": 32,
+      "all_source_patterns_mapped": true,
+      "all_measurements_complete": false,
+      "full_traced_operator_qualification_complete": false
+    },
+    "rdt_operator_inventory": {
+      "source_patterns_b1": 34,
+      "source_patterns_b8": 36,
+      "all_source_patterns_mapped": true,
+      "all_measurements_complete": true,
+      "all_task_mask_measurements_complete": true,
+      "full_traced_operator_qualification_complete": true,
+      "independently_verified_component_records": 69700,
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/coverage_complete_audit.json",
+      "full_model_diagnostic_and_heldout_complete": false
+    },
+    "cogact_18_magnitude_summary": {
+      "session": 18103,
+      "report": "results/four_model/paired_stability_cogact_18.json",
+      "independent_magnitude_audit_pending": false,
+      "terminal_exit_code": 0,
+      "independent_magnitude_audit_session": 45265,
+      "independent_magnitude_audit_terminal_exit_code": 0,
+      "raw_frame_files_verified": 7182,
+      "fixed_input_nonsingleton_pairs_verified": 1109
+    },
+    "rdt_original_head_split_attention_sweep": {
+      "session": 59307,
+      "terminal_exit_code": 241,
+      "intentionally_stopped": true,
+      "reason": "Superseded reference split actual32head request into one-head calls; preserve exploratory records and use same native/invariant calls with source-matched full32head per-request reference.",
+      "scope_not_reduced": true
+    },
+    "rdt_unmasked_source_attention": {
+      "session": 28057,
+      "config": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_unmasked_full_heads_v1.json",
+      "source_patterns": 2,
+      "prescribed_arrangements": 34,
+      "prescribed_records": 3400,
+      "reference_contract": "explicit_per_request_full_source_head_extent",
+      "equivalence_probe": "results/four_model/current_evidence/rdt_attention_reference_harness_equivalence.json",
+      "independent_audit_pending": true,
+      "model_or_operator_implementation_changed": false,
+      "terminal_exit_code": 0,
+      "independent_verified_complete": true,
+      "verified_records": 3400,
+      "completed_arrangements": 34
+    },
+    "pi05_fresh_v3_capacity": {
+      "session": 86699,
+      "terminal_exit_code": 0,
+      "arrangements": 24,
+      "all_B16_B32_arrangements_ran": true,
+      "independent_audit": "results/four_model/current_evidence/pi05_fresh_v3_capacity_audit.json"
+    },
+    "lingbot_physical_output_adapter": {
+      "adapter": "scripts/model_invariance/adapters/lingbot_robotwin_exact.py",
+      "output_domains": [
+        "normalized55",
+        "official_physical14"
+      ],
+      "integration_session": 69550,
+      "integration_terminal_exit_code": 0,
+      "integration": "results/four_model/current_evidence/lingbot_physical_output_integration.json",
+      "scope": "Released feature-transform unapply reproduces retained native physical actions exactly at B1 and duplicate B8; per-request contexts cloned independently and unchanged",
+      "new_neural_batch_stability_result": false
+    },
+    "four_model_numerical_freeze": {
+      "script": "scripts/freeze_four_model_numerics.py",
+      "tests_passed": 5,
+      "status": "prepared; final disjointness seal still required; no freeze created",
+      "binds_distinct_diagnostic_and_heldout_manifests": true,
+      "actual_adapter_execution_configuration_required": true,
+      "independent_diagnostic_audit_required": true,
+      "actual_pi05_diagnostic_binding_gate_passed": true
+    },
+    "pi05_full_diagnostic": {
+      "producer_terminal_exit_code": 0,
+      "completed_request_noise_pairs": 600,
+      "independent_audit_session": 55169,
+      "independent_audit_pending": false,
+      "script": "scripts/audit_four_model_diagnostic.py",
+      "independent_audit_terminal_exit_code": 0,
+      "independently_verified_arrangements": 46800,
+      "singleton_fidelity_records": 600,
+      "native_nonexact_arrangements": 22200,
+      "invariant_all_outputs_and_recorded_stages_exact": true
+    }
+  },
+  "cogact_operator_completion_update": {
+    "full_traced_operator_qualification_complete": true,
+    "source_patterns_b1": 32,
+    "source_patterns_b8": 32,
+    "independently_verified_records": 54400,
+    "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_operator_coverage_complete_audit.json",
+    "full_model_campaign_complete": false,
+    "prepared_input_exposure_progress": {
+      "unique_heldout": 795,
+      "prior_unique": 15477,
+      "overlaps": 0,
+      "final_seal": false
+    }
+  },
+  "expanded_rdt_paired_audit_v3": {
+    "session_id": 17882,
+    "status": "completed_terminal0",
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/rdt_maniskill_locked_v1/independent_progress_audit_expanded_v3.json",
+    "rebuild_inputs": true,
+    "acceptance_pending": false,
+    "completed_paired_starts": 199,
+    "episodes": 1592,
+    "reconstructed_policy_calls": 27214
+  },
+  "latest_observed_paired_counts": {
+    "pi05": 500,
+    "rdt": 250,
+    "cogact": 40,
+    "scope": "Recorded block summaries, not independently accepted magnitude results"
+  },
+  "performance_freeze_guard_tests": {
+    "tests_passed": 12,
+    "command": "python3 -m unittest scripts.test_isolated_frozen_benchmark scripts.test_gpu_isolation",
+    "scope": "Immutable numerical path and benchmark sources; accepted same-GPU/same-freeze isolated serving calibration required for queue; compute/graphics isolation",
+    "performance_run_started": false
+  },
+  "pi05_complete_diagnostic_stability_aggregate": {
+    "report": "results/four_model/pi05_complete_diagnostic_batch_stability.json",
+    "output_aggregate_recount": "results/four_model/pi05_complete_diagnostic_batch_aggregate_audit_v2.json",
+    "request_noise_pairs": 600,
+    "native_B2_to_B32_rms_range": [
+      0.011230316509475471,
+      0.012728627417296051
+    ],
+    "invariant_rms_all_batches": 0,
+    "scope": "Normalized fixed-input output differences; not centered sample variance or physical trajectory drift",
+    "verified_task_mode_batch_groups": 120
+  },
+  "expanded_cogact_paired_audit_v3": {
+    "session_id": 3024,
+    "status": "completed_terminal0",
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_progress_audit_expanded_v3.json",
+    "rebuild_inputs": true,
+    "acceptance_pending": false,
+    "completed_paired_starts": 39,
+    "episodes": 468,
+    "reconstructed_policy_calls": 37440,
+    "raw_frames_verified": 37908
+  },
+  "cogact_post_diagnostic_pipeline": {
+    "session_id": 58556,
+    "producer_pid": 821764,
+    "status": "completed_all_three_steps",
+    "job_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-diagnostic-audit-001.py",
+    "source_hash_guard": true,
+    "steps": [
+      "independent_complete_diagnostic_audit",
+      "batch_stability_summary",
+      "independent_output_aggregate_recount"
+    ],
+    "acceptance_pending": false
+  },
+  "pi05_post_paired_pipeline": {
+    "session_id": 80575,
+    "workers": [
+      4179674,
+      4179675
+    ],
+    "status": "full_500_start_audit_running",
+    "job_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-paired-audit-001.py",
+    "steps": [
+      "full_500_start_raw_frame_input_repeat_invariant_audit",
+      "final_prepared_input_disjointness_including_rejected_renderer_exposure"
+    ],
+    "source_hash_guard": true,
+    "acceptance_pending": true,
+    "rollout_workers_terminal_exit_code": 0,
+    "recorded_paired_starts": 500
+  },
+  "cogact_complete_diagnostic_stability": {
+    "request_noise_pairs": 600,
+    "arrangements": 46800,
+    "native_nonexact_arrangements": 22200,
+    "invariant_output_and_all_recorded_stages_exact": true,
+    "singleton_fidelity_nonexact": 600,
+    "singleton_fidelity_total": 600,
+    "aggregate_report": "results/four_model/cogact_complete_diagnostic_batch_aggregate_audit.json",
+    "scope": "Controlled fixed64 language padding in native and invariant, fixed-input normalized output deviation; no cross-model scale ranking",
+    "full_campaign_complete": false
+  },
+  "cogact_actual_freeze_component_gates": {
+    "status": "passed",
+    "operator_bound_files": 15,
+    "diagnostic_arrangements": 46800,
+    "evidence": "results/four_model/current_evidence/cogact_actual_freeze_component_gates.json",
+    "final_disjointness_seal_pending": true,
+    "freeze_created": false
+  },
+  "heldout_auditor_preparation": {
+    "script": "scripts/audit_four_model_heldout.py",
+    "schedule_tests_passed": 5,
+    "actual_schedule_probe_records": 78,
+    "actual_heldout_acceptance": false,
+    "scope": "Exact4adapter pinnedfreeze/freshness/cohort/noise/batching/stage/fidelity checks; no heldout run yet",
+    "full_validator_synthetic_tests": {
+      "passed": 5,
+      "requests": 24,
+      "arrangements": 1104,
+      "scope": "Synthetic fixtures only; no neural inference, freeze or actual heldout acceptance"
+    }
+  },
+  "pi05_post_seal_heldout_pipeline": {
+    "session_id": 2066,
+    "waits_for_pipeline_pid": 1755007,
+    "status": "waiting_for_live_audit_and_seal",
+    "commands": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-seal-heldout-001.commands.json",
+    "stages": [
+      "complete_numerical_freeze",
+      "full_heldout_2400_pairs_B1_2_4_8_16_32_with_fidelity",
+      "independent_heldout_audit"
+    ],
+    "gpu_uuid": "GPU-61f5ae1b-8084-7e66-090b-8acba690563c",
+    "heldout_started": false,
+    "freeze_created": false,
+    "source_hash_guard": true
+  },
+  "rdt_post_paired_pipeline": {
+    "session_id": 35254,
+    "status": "independent_full250start_audit_running",
+    "wait_pids": [
+      1421512,
+      1484177
+    ],
+    "stages": [
+      "independent_full250start_raw_state_input_repeat_trajectory_audit",
+      "final_effective_input_disjointness_check"
+    ],
+    "job_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-paired-audit-001.py",
+    "acceptance_pending": true,
+    "rollout_worker_exit_code": 0,
+    "recorded_paired_starts": 250,
+    "recorded_episodes": 2000,
+    "expanded_audit_exit_code": 0
+  },
+  "rdt_post_diagnostic_pipeline": {
+    "session_id": 63668,
+    "status": "waiting_for_live_producer",
+    "producer_pid": 2152926,
+    "steps": [
+      "independent_complete_diagnostic_audit",
+      "batch_stability_summary",
+      "independent_output_aggregate_recount"
+    ],
+    "job_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-diagnostic-audit-001.py",
+    "source_hash_guard": true,
+    "acceptance_pending": true
+  },
+  "lingbot_paired_implementation_gap": {
+    "runner": "scripts/run_lingbot_robotwin_paired_study.py",
+    "implementation_prepared": true,
+    "tasks": 50,
+    "starts_per_task": 50,
+    "episodes_per_start": 8,
+    "protocol_tests_passed": 6,
+    "model_simulator_integration_pending": true,
+    "independent_paired_auditor_pending": "Full newcampaign integration pending",
+    "actual_paired_campaign_started": false,
+    "prerequisites": "Complete200episode nativecorpus, exactmanifest, independently accepted fullmodeldiagnostic",
+    "retained_eight_episode_guard_integration": {
+      "status": "passed",
+      "native_first_action_divergence": 50,
+      "scope": "Legacyone-taskpilot only, no fullcampaignacceptance"
+    },
+    "independent_paired_auditor_prepared": true,
+    "auditor": "scripts/audit_lingbot_paired_study.py",
+    "physical_mapping_actual_pilot_probe": "passed_with_corruption_rejection_no_NN"
+  },
+  "lingbot_expanded_corpus_audit": {
+    "session_id": 2692,
+    "status": "completed_terminal0",
+    "scope": "Independent67episode snapshot reconstruction, not numerical/heldout acceptance",
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-002/independent_corpus_progress_v3.json",
+    "acceptance_pending": false,
+    "completed_native_episodes": 67,
+    "raw_frames_verified": 22715,
+    "model_calls_rebuilt": 486,
+    "selected_inputs_rebuilt": 332,
+    "full200episode_gate_complete": false
+  },
+  "lingbot_post_native_corpus_pipeline": {
+    "session_id": 39216,
+    "status": "waiting_for_live_collection_and_progress_audit",
+    "wait_pids": [
+      1243919,
+      2489335
+    ],
+    "source_hash_guard": true,
+    "stages": [
+      "independent_complete200episode_corpus_reconstruction",
+      "strict_complete_corpus_replay_manifest_builder"
+    ],
+    "job_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-native-corpus-001.py",
+    "acceptance_pending": true,
+    "numerical_qualification_started": false
+  },
+  "verified_fixed_input_summary": "results/four_model/fixed_input_batch_stability_verified_summary.json",
+  "lingbot_retained_pilot_magnitude": {
+    "scope": "One accepted adjust_bottle pilot start only; not full50taskcampaign",
+    "report": "results/four_model/lingbot_retained_pilot_dual_arm_stability.json",
+    "audit": "results/four_model/lingbot_retained_pilot_dual_arm_stability_independent_audit.json",
+    "raw_frames_independently_recounted": 452,
+    "native_peak_left_mm": 0.39742571659089504,
+    "native_peak_right_mm": 0.9097975081200294,
+    "invariant_peak_left_right_mm": [
+      0.0,
+      0.0
+    ],
+    "native_fixed_input_normalized_rms": 0.00011941216995477532,
+    "native_fixed_input_calls": 1,
+    "invariant_fixed_input_normalized_rms": 0.0,
+    "full_campaign_complete": false
+  },
+  "pi05_B64_performance_capacity": {
+    "session_id": 10724,
+    "pid": 3142704,
+    "status": "completed_independently_verified",
+    "gpu_uuid": "GPU-f391c6f3-68e5-d0f7-7d47-edae147c7882",
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/performance_capacity_B64.jsonl",
+    "scope": "12native/BI duplicate/diverse first/middle/last B64fullpolicycapacityarrangements on existingdiagnostic split; no latency qualification",
+    "independent_audit_pending": false,
+    "feasible_native": true,
+    "feasible_invariant": true,
+    "arrangements": 12,
+    "peak_incremental_bytes": 9788196352,
+    "isolated_performance_qualified": false
+  },
+  "cogact_B64_performance_capacity": {
+    "status": "completed_independently_verified",
+    "gpu_uuid": "GPU-f391c6f3-68e5-d0f7-7d47-edae147c7882",
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/performance_capacity_B64.jsonl",
+    "independent_audit_pending": false,
+    "isolated_performance_qualified": false,
+    "session_id": 4093,
+    "producer_exit_code": 0,
+    "arrangements": 12,
+    "feasible_native": true,
+    "feasible_invariant": true,
+    "invariant_ran_arrangements_exact": true,
+    "peak_incremental_bytes": 20531193344
+  },
+  "cogact_39_stability_extraction": {
+    "session_id": 92891,
+    "status": "completed_terminal0",
+    "output": "results/four_model/paired_stability_cogact_39.json",
+    "independent_magnitude_audit_pending": true,
+    "starts": 39
+  },
+  "rdt_B64_performance_capacity": {
+    "status": "recording_completed_terminal0_pending_independent_acceptance",
+    "gpu_uuid": "GPU-f391c6f3-68e5-d0f7-7d47-edae147c7882",
+    "scope": "Existingdiagnosticinput64selection, sameexactadapter/source/config as livefulldiagnostic; acceptance waitsforcompletedindependentdiagnostic audit",
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/performance_capacity_B64.jsonl",
+    "independent_audit_pending": true,
+    "isolated_performance_qualified": false,
+    "session_id": 47694,
+    "arrangements": 12,
+    "recorded_feasible_native": true,
+    "recorded_feasible_invariant": true
+  },
+  "cogact_39_stability_post_audit": {
+    "session_id": 39829,
+    "status": "completed_terminal0",
+    "source_hash_guard": true,
+    "job_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-39-stability-post-audit-001.py",
+    "output": "results/four_model/paired_stability_cogact_39_independent_audit.json",
+    "acceptance_pending": false,
+    "raw_frames_independently_verified": 15561,
+    "fixed_input_pairs_independently_verified": 2404
+  },
+  "lingbot_lossless_storage_probes": {
+    "current_frame_directory_bytes_observed": 19038976148,
+    "png_probe_ratio": 1.0304437201358376,
+    "adjacent_rgb_xor_probe_ratio": 0.8162708639592916,
+    "whole_frame_digest_roundtrip_exact": true,
+    "samples_per_probe": 4,
+    "live_formats_changed": false,
+    "scope": "Storage sizing/roundtrip probes only; no adoption, no model or simulator changes"
+  },
+  "audited_magnitude_summary_latest": {
+    "observed_utc": "2026-11-09T14:21:43.471533+00:00",
+    "summary": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/stability_audited_summary.json",
+    "summary_sha256": "b5b9121e575d5d378327df39100b5a1790ae7885e204f8371876d132dd7f0b1c",
+    "starts_by_model": {
+      "pi05": 500,
+      "rdt": 250,
+      "cogact": 77
+    },
+    "total_starts": 827,
+    "full_campaign_complete": false
+  },
+  "rdt_199_stability_extraction": {
+    "session_id": 73875,
+    "status": "running_last_observed",
+    "output": "results/four_model/paired_stability_rdt_199.json",
+    "independent_magnitude_audit_pending": true
+  },
+  "rdt_199_stability_post_audit": {
+    "status": "queued_after_live_extraction",
+    "job_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-199-stability-post-audit-001.py",
+    "output": "results/four_model/paired_stability_rdt_199_independent_audit.json",
+    "acceptance_pending": true,
+    "source_hash_guard": true,
+    "session_id": 92691
+  },
+  "pi05_full_paired_audit_latest": {
+    "completed_paired_starts": 500,
+    "episodes": 4000,
+    "raw_frames_verified": 1177264,
+    "native_divergent_starts": 500,
+    "invariant_divergent_starts": 0,
+    "source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/pi05_libero_no_msaa_locked_v2/independent_complete_audit.json",
+    "sha256": "6d2bf746764d2a5d7d032eb6da3402b4305aeaa9c9fee3936ad6823082f1d199",
+    "full_magnitude_extraction_session": 12886,
+    "independent_magnitude_followup_session": 17290,
+    "numerical_qa_acceptance_pending": true
+  },
+  "pi05_accepted_final_exposure_and_freeze_latest": {
+    "recorded_at_utc": "2026-11-09T10:14:55.716793+00:00",
+    "heldout_observations": 800,
+    "previously_exposed_prepared_inputs": 11951,
+    "collisions": 0,
+    "seal": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/prepared_input_disjointness_final.json",
+    "seal_sha256": "014236e0a89d94e9904038b3e8b5737df71748256d56e03ff182b7b3077f79af",
+    "freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/numerical_freeze.json",
+    "freeze_sha256": "2c7827b60cfd78ad3390de06a4e9a196e4b009395a97d4bf1a4a2f881b6546e5",
+    "heldout_pid": 1942407,
+    "heldout_parent_pid": 1942348,
+    "heldout_complete": false,
+    "full_campaign_complete": false
+  },
+  "rdt_full250_stability_continuation": {
+    "job": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-full-250-stability-001.py",
+    "session_id": 72087,
+    "status": "live_full250_independent_magnitude_audit",
+    "workers": {
+      "1208987": "423907985",
+      "1263565": "423919525"
+    },
+    "acceptance_pending": true,
+    "pid": 1640058,
+    "start_ticks": "424841454",
+    "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_rdt_250.json",
+    "report_sha256": "683a5b0a34d018afb047304a98b7eef1206eed71120bb73e9a88f680989547a2",
+    "completed_report_starts": 250,
+    "independent_audit_pid": 1846113,
+    "independent_audit_start_ticks": "424883888"
+  },
+  "cogact_expanded_two_task_progress_audit_latest": {
+    "pid": 2439198,
+    "start_ticks": "424144646",
+    "session_id": 95455,
+    "observed_completed_starts_at_launch": 77,
+    "observed_by_task": {
+      "pick_can": 50,
+      "move_near": 27
+    },
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_progress_audit_expanded_v4.json",
+    "status": "completed_independent_paired_audit",
+    "acceptance_pending": false,
+    "completed_starts": 77,
+    "episodes": 924,
+    "reconstructed_policy_calls": 73920,
+    "raw_frames_verified": 74844,
+    "native_divergent_starts": 77,
+    "invariant_divergent_starts": 0,
+    "proof_sha256": "3548c3cddf4d05d7bbcfb89ac5f52c3de5ea6866aa8711dd53c280aa96e46b04",
+    "full_campaign_complete": false
+  },
+  "rdt_199_magnitude_extraction_latest": {
+    "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_rdt_199.json",
+    "report_sha256": "560f9e7882ebb1674e1f0d7ed169989af53a3ee8f60f9f186a3b1ecb18f8834a",
+    "completed_starts": 199,
+    "extraction_terminal_exit_code": 0,
+    "independent_audit_pid": 3148632,
+    "independent_audit_start_ticks": "424290548",
+    "independent_audit_pending": false,
+    "accepted_summary_unchanged": false,
+    "independent_audit_status": "reported_subset_stability_metrics_independently_verified",
+    "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_rdt_199_independent_audit.json",
+    "independent_audit_sha256": "b690c313f108eeaa0a6a4df0257ffc96e466be587d185f2640579c41ba384815",
+    "raw_frame_files_verified": 158539,
+    "fixed_input_pairs_verified": 2603
+  },
+  "rdt_final_freeze_heldout_continuation": {
+    "job": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-seal-heldout-001.py",
+    "session_id": 20192,
+    "status": "waiting_for_live_complete_diagnostic_and_exposure_pipelines",
+    "workers": {
+      "2244027": "423259963",
+      "2270897": "423265977"
+    },
+    "acceptance_pending": true
+  },
+  "cogact_final_freeze_heldout_continuation": {
+    "job": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-seal-heldout-001.py",
+    "session_id": 89103,
+    "status": "waiting_for_live_complete_paired_and_exposure_pipeline",
+    "pid": 1736131,
+    "start_ticks": "424018054",
+    "acceptance_pending": true
+  },
+  "lingbot_full_native_collection_latest": {
+    "episodes": 200,
+    "selected_observations": 1000,
+    "tasks": 50,
+    "complete_prescribed_roster_verified": true,
+    "manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-002/collection_manifest.json",
+    "manifest_sha256": "5fd84e77ff842c5fc2b5e3c88fb87ffb0d27f4bb2930598028d4c516a541bd38",
+    "independent_full_corpus_audit_pid": 708991,
+    "independent_full_corpus_audit_start_ticks": "424646448",
+    "independent_acceptance_pending": false,
+    "independent_status": "native_corpus_completed_episode_inputs_and_actions_independently_rebuilt",
+    "independent_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-002/independent_complete_corpus_audit.json",
+    "independent_audit_sha256": "24d67091b45b1987e0410993a3daac57404f32c712bc4fff8581b2a8037ed267",
+    "raw_frames_verified": 49398,
+    "model_calls_rebuilt": 1077,
+    "replay_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/replay_manifest.json",
+    "replay_manifest_sha256": "59c26c4a5d854834fdad3139ea9b3519a7783586471e86cf601e643b71a8d779",
+    "diagnostic_observations": 200,
+    "heldout_observations": 800,
+    "indexed_noise_pairs": 3000,
+    "first_actual_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/actual_trace_B1_native.json",
+    "first_actual_trace_sha256": "a956992baa7b51e4feba0bbe01ca4b8b7b7d24a4021d98aab88b48c58b4d683a",
+    "actual_trace_pipeline_pid": 1851345,
+    "actual_trace_pipeline_start_ticks": "424040061",
+    "numerical_acceptance_pending": true
+  },
+  "pi05_full500_magnitude_extraction_latest": {
+    "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500.json",
+    "report_sha256": "311d7cf6ddd81f0684d20dbbbac038f874c1510c4c734e1af5516ccba206e81b",
+    "completed_starts": 500,
+    "tasks": 10,
+    "extraction_terminal_exit_code": 0,
+    "independent_audit_pid": 1107620,
+    "independent_audit_start_ticks": "424729680",
+    "independent_audit_pending": true,
+    "accepted_magnitude_summary_unchanged": true
+  },
+  "rdt_full_paired_audit_latest": {
+    "completed_paired_starts": 250,
+    "tasks": 5,
+    "episodes": 2000,
+    "reconstructed_policy_calls": 29344,
+    "native_divergent_starts": 250,
+    "invariant_divergent_starts": 0,
+    "source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/rdt_maniskill_locked_v1/independent_complete_audit.json",
+    "sha256": "17db20d96c75cf7fd38d33911c5ed6ec31c332a24cbb6e249bcacfe847a5eb88",
+    "final_exposure_audit_pid": 1164781,
+    "numerical_qa_acceptance_pending": true,
+    "full_magnitude_acceptance_pending": true
+  },
+  "cogact_77_magnitude_continuation": {
+    "extraction_session": 26603,
+    "independent_followup_session": 73310,
+    "extraction_pid": 1316963,
+    "independent_magnitude_acceptance_pending": true,
+    "status": "live_independent_magnitude_audit",
+    "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_77.json",
+    "report_sha256": "ee15265d1d59885086f6d010173b9d7d347fc187c260a24eef0f549a63ef7ef8",
+    "completed_report_starts": 77,
+    "extraction_terminal_exit_code": 0,
+    "independent_audit_pid": 2046264,
+    "independent_audit_start_ticks": "424920677"
+  },
+  "lingbot_full_cohort_storage_preparation": {
+    "directory": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign",
+    "available_bytes_at_check": 2061476683776,
+    "native_corpus_frame_files": 49398,
+    "native_corpus_frame_bytes": 33007602966,
+    "pilot_content_addressing_probe": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-pilot-content-addressed-storage-probe-001.py",
+    "probe_session": 41898,
+    "probe_log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-pilot-content-addressed-storage-probe-002.log",
+    "first_attempt_import_failure_before_data_read_retained": true,
+    "projection_pending": false,
+    "cohort_or_raw_retention_reduced": false,
+    "pilot_probe_complete": true,
+    "pilot_frames": 904,
+    "pilot_unique_complete_frame_identities": 287,
+    "pilot_roundtrips_exact": true,
+    "rough_frame_only_projection_bytes": 1047918368500.2212,
+    "proof": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_pilot_content_addressed_storage_probe.json",
+    "proof_sha256": "3fbd1f532c794d8945299f8bbff741d262f01de34a22b9020810ed62f28ab59a",
+    "full_cohort_capacity_acceptance": false
+  },
+  "rdt_final_exposure_latest": {
+    "status": "complete_observation_disjoint_heldout_independently_verified",
+    "heldout_unique_observations": 800,
+    "exposed_unique_observations": 11361,
+    "collisions": 0,
+    "source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/prepared_input_disjointness_final.json",
+    "sha256": "b1ed3bd6bc424b606b10aaddcb042098b56c7406973a74e42fc4e591c0492ef7",
+    "numerical_freeze_pending_complete_diagnostic": true
+  },
+  "lingbot_exact_operator_execution_latest": {
+    "observed_utc": "2026-11-09T13:21:46.941444+00:00",
+    "inventory_proof": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_exact_prepared_inventory_union.json",
+    "operator_patterns": 33,
+    "linear_prescribed_measurements": 40800,
+    "reduction_prescribed_measurements": 10200,
+    "remaining_prescribed_measurements": 5100,
+    "pipelines": [
+      {
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-capacity-linear-sweep-001.json",
+        "status": "completed_linear_sweep_and_independent_audit"
+      },
+      {
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-linear-reductions-001.json",
+        "status": "completed_six_reduction_cases_and_independent_audit"
+      },
+      {
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-reductions-remaining-001.json",
+        "status": "completed_remaining_operator_sweep_and_independent_audit"
+      },
+      {
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-operators-full-diagnostic-001.json",
+        "status": "running_full_model_diagnostic"
+      },
+      {
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-diagnostic-B64-capacity-001.json",
+        "status": "waiting_for_live_full_diagnostic_pipeline"
+      }
+    ],
+    "full_operator_qualification_complete": true,
+    "full_model_diagnostic_complete": false
+  },
+  "lingbot_heldout_refresh_latest": {
+    "observed_utc": "2026-11-09T13:21:46.938630+00:00",
+    "initial_exposed_rows": 13,
+    "replacement_requests_independently_rebuilt": 13,
+    "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_13_heldout_replacement_independent_audit.json",
+    "audit_sha256": "69205b3fcb89a7e4b8da50a6244ed4c2012d8814daf840abde8b577eacae38e6",
+    "full_exposure_universe_and_final_seal_complete": false,
+    "original_live_manifest_unchanged": true,
+    "refreshed_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full_fresh_candidates_v1/replay_manifest.json",
+    "refreshed_manifest_sha256": "9628d1d70f4b4572a550c5d3ebf0c323f9aa06aa5f129ca5a6955e1af4fb9e98",
+    "refreshed_manifest_metadata_loaded_by_unchanged_adapter": true,
+    "all3000noise_fingerprints_verified": true,
+    "retained_native_request_files_rehashed": 1172,
+    "checked_prior_unique_inputs": 1185,
+    "repaired_candidate_collisions": 0,
+    "earlier_pilot_companions_reconciled": true,
+    "final_exposure_auditor_prepared": true,
+    "final_exposure_auditor_rejected_pilot": true
+  },
+  "cogact_77_magnitude_audit_latest": {
+    "status": "reported_subset_stability_metrics_independently_verified",
+    "audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_77_independent_audit.json",
+    "audit_sha256": "5e2bae7fdcad44649aad744a1e25f71269b9dd7dd67302ca5a1f60f47c4ff838",
+    "raw_frame_files_verified": 30723,
+    "fixed_input_pairs_verified": 4756
+  },
+  "lingbot_full_campaign_queued_stages_latest": {
+    "observed_utc": "2026-11-09T13:30:23.576002+00:00",
+    "jobs": [
+      {
+        "name": "lingbot-post-diagnostic-B64-capacity-001",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-diagnostic-B64-capacity-001.py",
+        "source_sha256": "8453af354ed0b397387a43d99953bf73d5c127898c0b706e1a95109e941f3ab3",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-diagnostic-B64-capacity-001.json",
+        "status": "waiting_for_live_full_diagnostic_pipeline",
+        "pid": 3189801,
+        "start_ticks": "425157502",
+        "process_state": "S"
+      },
+      {
+        "name": "lingbot-post-diagnostic-full-paired-001",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-diagnostic-full-paired-001.py",
+        "source_sha256": "fb950f54e3eca30996563443b9c4e717108864eade6e2a980bb96832e305fe91",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-diagnostic-full-paired-001.json",
+        "status": "waiting_for_live_diagnostic_and_B64_pipeline",
+        "pid": 3341438,
+        "start_ticks": "425188104",
+        "process_state": "S"
+      },
+      {
+        "name": "lingbot-post-seal-heldout-001",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-seal-heldout-001.py",
+        "source_sha256": "1037cc640c4d1ae37552f03fccafea7afd8e1c39532d73d1ab521f94f3a28b81",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-seal-heldout-001.json",
+        "status": "waiting_for_live_full_paired_audit_and_final_exposure_pipeline",
+        "pid": 3412408,
+        "start_ticks": "425201986",
+        "process_state": "S"
+      }
+    ],
+    "paired_output": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_locked_v1",
+    "paired_prescribed_starts": 2500,
+    "paired_prescribed_episodes": 20000,
+    "prelaunch_available_bytes_minimum": 1500000000000,
+    "freeze_and_heldout_not_yet_executed": true,
+    "full_campaign_complete": false
+  },
+  "lingbot_complete_linear_operator_latest": {
+    "status": "complete_linear_operator_sweep_independently_verified",
+    "observed_utc": "2026-11-09T13:40:18.133693+00:00",
+    "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_cases_v2.json",
+    "configuration_sha256": "8aa78528bbe9adc89f808ee9d6f414649810faee17ea11471570fd454cfad429",
+    "raw_records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_measurements.jsonl",
+    "raw_records_sha256": "6e8d6837194bdf5029e439b8163365a40fcbfdb5ebf9daa298956940f6eb6f53",
+    "independent_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_independent_audit.json",
+    "independent_audit_sha256": "39077d190ac6e538c98c3edb57d478211e1942c1a00d4ef003d191a211c558ea",
+    "source_patterns": 24,
+    "arrangements": 408,
+    "measurements": 40800,
+    "counts": {
+      "all_batched_comparisons": 38400,
+      "native_nonexact": 32400,
+      "invariant_nonexact": 0,
+      "request_scaled_batched_comparisons": 36800,
+      "request_scaled_native_nonexact": 32400,
+      "shared_internal_shape_batched_comparisons": 1600
+    },
+    "native_worst_absolute_error": 0.003173828125,
+    "full_operator_qualification_complete": false,
+    "performance_qualified": false,
+    "scope": "Synthetic operands with exact traced source shapes/strides. Shared internal-shape cases reported separately; full-model replay and trajectories remain separate."
+  },
+  "lingbot_complete_operator_qualification_latest": {
+    "status": "complete_lingbot_traced_operator_qualification_accepted",
+    "observed_utc": "2026-11-09T13:50:17.597063+00:00",
+    "source_patterns_b1": 33,
+    "source_patterns_b8": 33,
+    "measurements": 56100,
+    "component_measurement_counts": [
+      40800,
+      10200,
+      5100
+    ],
+    "coverage_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/coverage_complete_audit.json",
+    "coverage_audit_sha256": "fd0a2ef9b86e92ade880ec7debab60eac78d1a249e5607e087266cf08b427fa9",
+    "freeze_operator_gate_passed": true,
+    "validated_artifact_paths": 12,
+    "full_model_diagnostic_complete": false,
+    "performance_qualified": false
+  },
+  "isolated_performance_pipeline_jobs_latest": {
+    "observed_utc": "2026-11-09T13:56:01.722734+00:00",
+    "jobs": [
+      {
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-heldout-isolated-performance-001.py",
+        "script_sha256": "9204d40881b656145aafee8fb06b24eb3368da33058d34d9df5e3dae4e0cba7a",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-heldout-isolated-performance-001.json",
+        "status": "waiting_for_live_heldout_and_independent_audit",
+        "pid": 2004602,
+        "start_ticks": "424060281"
+      },
+      {
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-performance-independent-audit-001.py",
+        "script_sha256": "a2b8e232eb63cb5292634f51a5bce3533a2bc6c9a2bb1810404e6fa24c2f976f",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-performance-independent-audit-001.json",
+        "status": "waiting_for_live_isolated_policy_serving_queue_pipeline",
+        "pid": 3928884,
+        "start_ticks": "425310908"
+      },
+      {
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-heldout-isolated-performance-001.py",
+        "script_sha256": "2836cbf45df3e0b33b6e163a1bb6dfe5b77ed77923234ccfe8a24b4a04f50821",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-heldout-isolated-performance-001.json",
+        "status": "waiting_for_live_heldout_and_independent_audit",
+        "pid": 3602929,
+        "start_ticks": "425242932"
+      },
+      {
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-performance-independent-audit-001.py",
+        "script_sha256": "da49c9d1e49ba406ce63fbaec16a7c2d03ec4296c74845fcac2df3f08e3c9673",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-performance-independent-audit-001.json",
+        "status": "waiting_for_live_isolated_policy_serving_queue_pipeline",
+        "pid": 3928883,
+        "start_ticks": "425310908"
+      },
+      {
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-heldout-isolated-performance-001.py",
+        "script_sha256": "ac5960a42d2591bdaf3f67cf5b1c89f4ae1a8853c862d446f5cd88521d78b38d",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-heldout-isolated-performance-001.json",
+        "status": "waiting_for_live_heldout_and_independent_audit",
+        "pid": 3602930,
+        "start_ticks": "425242932"
+      },
+      {
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-001.py",
+        "script_sha256": "7ea046ca67dbeb8f7d78aa6010f6c92d070962d2bb2e3e5da4fc341854126470",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-001.json",
+        "status": "waiting_for_live_isolated_policy_serving_queue_pipeline",
+        "pid": 3928885,
+        "start_ticks": "425310909"
+      },
+      {
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-heldout-isolated-performance-002.py",
+        "script_sha256": "8d5a67007e457c40d13bcc2fcf2ddc0a344a2c9cdd4e20aa8826abbfabf71d5f",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-heldout-isolated-performance-002.json",
+        "status": "waiting_for_live_heldout_and_independent_audit",
+        "pid": 3738754,
+        "start_ticks": "425272050"
+      },
+      {
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-performance-independent-audit-001.py",
+        "script_sha256": "0a0933796f534385970880e505271fb57d7522d07bb0abc18e384c8d601a643d",
+        "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-performance-independent-audit-001.json",
+        "status": "waiting_for_live_isolated_policy_serving_queue_pipeline",
+        "pid": 3928886,
+        "start_ticks": "425310909"
+      }
+    ],
+    "measured_or_accepted_performance": false,
+    "independent_auditor": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_four_model_isolated_performance.py",
+    "focused_isolation_audit_tests_passed": 6,
+    "lingbot_input_selection": "8 tasks/8 episodes serving; 50 tasks/64 episodes policy; original waiting launcher superseded before inference"
+  },
+  "lingbot_full_model_diagnostic_live_latest": {
+    "pid": 4055960,
+    "start_ticks": "425339189",
+    "pipeline": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-operators-full-diagnostic-001.json",
+    "full_model_diagnostic_complete": false
+  },
+  "rdt_250_magnitude_audit_latest": {
+    "status": "reported_subset_stability_metrics_independently_verified",
+    "audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_rdt_250_independent_audit.json",
+    "audit_sha256": "e942f4d51118cda7931751e5cc885a5784be65ae870ce1251f1a4a7ab97bb4a7",
+    "raw_frame_files_verified": 169290,
+    "fixed_input_pairs_verified": 2822
+  },
+  "pi05_500_magnitude_audit_latest": {
+    "status": "reported_subset_stability_metrics_independently_verified",
+    "audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500_independent_audit.json",
+    "audit_sha256": "3314a478f2db0f447a9e8ba2b4b4f9b54e6ce99d59a60f1589056b4b458b03b7",
+    "raw_frame_files_verified": 416178,
+    "fixed_input_pairs_verified": 2620
+  },
+  "cogact_expanded_v5_and_full_magnitude_latest": {
+    "observed_utc": "2026-11-09T14:26:01.015597+00:00",
+    "progress_audit_live": {
+      "pid": 836058,
+      "start_ticks": "425542911",
+      "command": [
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python",
+        "-m",
+        "scripts.audit_cogact_paired_study",
+        "--directory",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1",
+        "--output",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_progress_audit_expanded_v5.json",
+        "--rebuild-inputs"
+      ]
+    },
+    "completed_blocks_at_audit_launch": 125,
+    "progress_audit_output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_progress_audit_expanded_v5.json",
+    "full200_magnitude_waiter": {
+      "pid": 893593,
+      "start_ticks": "425553478",
+      "command": [
+        "python3",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-full-200-stability-002.py"
+      ]
+    },
+    "full200_magnitude_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-full-200-stability-002.json",
+    "accepted_cogact_magnitude_starts": 77,
+    "full_campaign_complete": false
+  },
+  "causal_ablation_applicability_latest": {
+    "timestamp_utc": "2026-11-09T15:03:22.980454+00:00",
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/causal_ablation_applicability_001.json",
+    "sha256": "6833dcea19c9c8022c4d51c3d178330a78684a9a5ecb3bc147b0d61842f93299",
+    "status": "preflight_inventory_complete_measurements_outstanding",
+    "finding": "Current exact RDT path observes conv2d and SDPA; inherited convolution-inapplicability contract is stale. PI05 and CogACT also observe both. LingBot source review required before declaring absent interventions.",
+    "frozen_sources_modified": false,
+    "remaining": [
+      "Source-backed LingBot intervention mapping",
+      "Exact-adapter causal wrapper and independently audited complete ablations",
+      "Flow-step propagation and task-level uncertainty summaries",
+      "Honest freeze/addendum ordering reconciliation without changing numerical freezes"
+    ]
+  },
+  "flow_step_stability_latest": {
+    "timestamp_utc": "2026-11-09T16:39:42.074396+00:00",
+    "studies": [
+      {
+        "model": "pi05",
+        "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/pi05_flow_step_stability_001.json",
+        "report_sha256": "043e5aaf328e54ddcc88a9a82807307af321851f55e51a3999ee95f7e99cfebb",
+        "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/pi05_flow_step_stability_001_independent_audit.json",
+        "status": "descriptive_flow_stage_distributions_independently_recounted",
+        "stage_groups": 2000,
+        "request_noise_pairs": 600,
+        "figures": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/pi05_flow_step_stability_001"
+      },
+      {
+        "model": "cogact",
+        "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/cogact_flow_step_stability_001.json",
+        "report_sha256": "6926e365d0ffaf7d04d018912e84fdcd499318f2273cfc86b5d7d266b0eca15d",
+        "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/cogact_flow_step_stability_001_independent_audit.json",
+        "status": "descriptive_flow_stage_distributions_independently_recounted",
+        "stage_groups": 400,
+        "request_noise_pairs": 600,
+        "figures": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_flow_step_stability_001"
+      },
+      {
+        "model": "rdt",
+        "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/rdt_flow_step_stability_001.json",
+        "report_sha256": "345540f6eab63e4b5ac93c80f8229518d64744592d546e63721a0578c7afc1d2",
+        "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/rdt_flow_step_stability_001_independent_audit.json",
+        "status": "descriptive_flow_stage_distributions_independently_recounted",
+        "stage_groups": 500,
+        "request_noise_pairs": 600,
+        "figures": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/rdt_flow_step_stability_001"
+      }
+    ],
+    "negative_controls": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/flow_step_stability_negative_controls_001.json",
+    "scope": "Native and invariant diverse-companion batches B2/4/8/16/32, target first. Task-specific per-stage exact rates, median/p95/max RMSE and maximum absolute differences. Descriptive only; no episode bootstrap CI or intermediate causal modes claimed.",
+    "remaining_models": [
+      "lingbot"
+    ],
+    "full_campaign_complete": false
+  },
+  "flow_step_stability_queued_latest": {
+    "timestamp_utc": "2026-11-09T15:29:20.448209+00:00",
+    "jobs": [
+      {
+        "model": "rdt",
+        "pid": 2216571,
+        "start_ticks": "425815169",
+        "session_id": 77118,
+        "status": "waiting_for_live_diagnostic_audit_pipeline",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-diagnostic-flow-stability-001.py",
+        "script_sha256": "dcc3b765c02f1d85f9bcca1994eb9cd9d7c65b2725e1849621e1c86b9a2205e1",
+        "dependency_pid": 2270897,
+        "dependency_start_ticks": "423265977",
+        "source_sha256": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_flow_step_stability.py": "a345983aedf07a715a47f6aadb0f0de360b2bfba91f69fb0d65f7f5fb865ba1b",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_flow_step_stability.py": "e17681f0b70193a64b04c4ba4fd6dfe1d9a4dd0c2ebe771c610dc175b81178a3",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_flow_step_stability.py": "ab2fa07cba50ab1d90f4ec195e28a8982e67a3919d686bea522367001907cf06"
+        }
+      },
+      {
+        "model": "lingbot",
+        "pid": 2795075,
+        "start_ticks": "425935686",
+        "status": "waiting_for_live_diagnostic_audit_pipeline",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-diagnostic-flow-stability-002.py",
+        "script_sha256": "a3fd37e327b1804d75b59c28b3c9ff77efec45158bcf1b535acc42250b1791b4",
+        "dependency_pid": 2673330,
+        "dependency_start_ticks": "425049152"
+      }
+    ],
+    "scope": "Full accepted600pair diagnostic then descriptive propagation extraction, independent recount and B8 figures. CPU only. No partial-cohort acceptance.",
+    "full_campaign_complete": false,
+    "superseded_before_analysis": [
+      {
+        "model": "lingbot",
+        "pid": 2216572,
+        "start_ticks": "425815169",
+        "session_id": 67085,
+        "status": "waiting_for_live_diagnostic_audit_pipeline",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-diagnostic-flow-stability-001.py",
+        "script_sha256": "c651bd183dd406a7ebaa89872702e1f5c5d0d78880ec1d6ed2ceb5373eb91389",
+        "dependency_pid": 2673330,
+        "dependency_start_ticks": "425049152",
+        "source_sha256": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_flow_step_stability.py": "a345983aedf07a715a47f6aadb0f0de360b2bfba91f69fb0d65f7f5fb865ba1b",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_flow_step_stability.py": "e17681f0b70193a64b04c4ba4fd6dfe1d9a4dd0c2ebe771c610dc175b81178a3",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_flow_step_stability.py": "ab2fa07cba50ab1d90f4ec195e28a8982e67a3919d686bea522367001907cf06"
+        }
+      }
+    ],
+    "lingbot_diagnostic_audit_path_correction": "Use producer-written independent_complete_audit.json"
+  },
+  "causal_ablation_continuations_latest": {
+    "timestamp_utc": "2026-11-09T15:14:35.320685+00:00",
+    "all_four_preflights_passed": true,
+    "negative_control_evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_001/preflight_controls_v2.json",
+    "independent_ablation_audit_pending": true,
+    "freeze_ordering": "Additional locked diagnostic evidence after heldout/performance; existing freezes unchanged. No retrospective claim of pre-freeze completion. New numerical changes would require new qualification and fresh heldout.",
+    "full_campaign_complete": false,
+    "superseded_jobs_before_inference": [
+      {
+        "model": "pi05",
+        "pid": 2353213,
+        "start_ticks": "425843144",
+        "status": "waiting_for_live_independent_performance_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-performance-causal-ablation-001.py",
+        "script_sha256": "ea6f7d76415eed4e26adcb01cfced9f01bbc389b201863a4b9710dfd7f027bd0",
+        "dependency_pid": 3928884,
+        "dependency_start_ticks": "425310908",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_001/pi05.json",
+        "plan_sha256": "78f3690254cc67e3b86c667bae56acaef24fd99ec3e27093054ebf0ac2c800f3",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/causal_001/measurements.jsonl"
+      },
+      {
+        "model": "rdt",
+        "pid": 2353258,
+        "start_ticks": "425843260",
+        "status": "waiting_for_live_independent_performance_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-performance-causal-ablation-001.py",
+        "script_sha256": "00b4d01e9179922604310bff0340be3bb4198b9a6aac77cee55a59860420a718",
+        "dependency_pid": 3928883,
+        "dependency_start_ticks": "425310908",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_001/rdt.json",
+        "plan_sha256": "652648f917ba9ed58d07cd4973710fc7f78b0189c78d2d5ff1ebb94753572ffb",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/causal_001/measurements.jsonl"
+      },
+      {
+        "model": "cogact",
+        "pid": 2353327,
+        "start_ticks": "425843377",
+        "status": "waiting_for_live_independent_performance_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-causal-ablation-001.py",
+        "script_sha256": "87f18c7761da99bd8cd8a7429be9e350662eeceaa048ee7208d8c3bb5a55fab5",
+        "dependency_pid": 3928885,
+        "dependency_start_ticks": "425310909",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_001/cogact.json",
+        "plan_sha256": "42e01d53f5e32aacc28604a57f39210ddd4b559f6fb76f154a4e0822469ed483",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_001/measurements.jsonl"
+      },
+      {
+        "model": "lingbot",
+        "pid": 2353368,
+        "start_ticks": "425843492",
+        "status": "waiting_for_live_independent_performance_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-performance-causal-ablation-001.py",
+        "script_sha256": "c95356d9e829d9428ebb2a810a0363bcaec72a4ce001d31578d0bb1a9e9fdbd4",
+        "dependency_pid": 3928886,
+        "dependency_start_ticks": "425310909",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_001/lingbot.json",
+        "plan_sha256": "f98aff06f7ba03ee985e8f2aa83fe49987043d5f5bbc08662199d46989d6afa9",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/causal_001/measurements.jsonl"
+      }
+    ],
+    "jobs": [
+      {
+        "model": "pi05",
+        "pid": 2384063,
+        "start_ticks": "425850700",
+        "status": "waiting_for_live_independent_performance_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-performance-causal-ablation-002.py",
+        "script_sha256": "8481be601d34690f4974cf9f40d54b0a984f812991b5ec661db11159ef4664d1",
+        "dependency_pid": 3928884,
+        "dependency_start_ticks": "425310908",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_002/pi05.json",
+        "plan_sha256": "56d53aff767300321c9d7abcd90cd5b94d701d376469d68ab62438f99168d28a",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/causal_002/measurements.jsonl"
+      },
+      {
+        "model": "rdt",
+        "pid": 2385624,
+        "start_ticks": "425850817",
+        "status": "waiting_for_live_independent_performance_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-performance-causal-ablation-002.py",
+        "script_sha256": "7469a3b41aaaa3b4148692c1c20ba9400ee3dbbaf48a65cb8cefdca266ad2e81",
+        "dependency_pid": 3928883,
+        "dependency_start_ticks": "425310908",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_002/rdt.json",
+        "plan_sha256": "49e77d3129f32cd9e55bfd0db6afce14656e2307f8c91eb98c09e97c5c5730c8",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/causal_002/measurements.jsonl"
+      },
+      {
+        "model": "cogact",
+        "pid": 2387225,
+        "start_ticks": "425850933",
+        "status": "waiting_for_live_independent_performance_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-causal-ablation-002.py",
+        "script_sha256": "c49bad37cb8db93ec6967ad83ea2d3ea098ffbd074dee695db6c8501faa72d55",
+        "dependency_pid": 3928885,
+        "dependency_start_ticks": "425310909",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_002/cogact.json",
+        "plan_sha256": "4d66377892918f7090cbe0a2c1f296dda12ee4ce618ca439a86f359730501d19",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_002/measurements.jsonl"
+      },
+      {
+        "model": "lingbot",
+        "pid": 2389130,
+        "start_ticks": "425851049",
+        "status": "waiting_for_live_independent_performance_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-performance-causal-ablation-002.py",
+        "script_sha256": "68da6a14726197734cdedcd348039300e1b0b509abe6ea5a50bbda2caeb82c16",
+        "dependency_pid": 3928886,
+        "dependency_start_ticks": "425310909",
+        "plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_002/lingbot.json",
+        "plan_sha256": "123258e8c70241ad30896ad7bd6b8595cd420a8c5582e336d6979d56da272bbe",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/causal_002/measurements.jsonl"
+      }
+    ],
+    "wrapper_version": 2,
+    "correction": "PI05 execution configuration requires model loading. v2 checks retained configuration after existing runner loads model; no numerical adapter monkeypatch.",
+    "negative_control_evidence_scope": "v1 preflight controls retained; v2 all-four positive preflights passed. No actual ablation inference yet."
+  },
+  "causal_contract_audits_queued_latest": {
+    "timestamp_utc": "2026-11-09T15:29:20.448209+00:00",
+    "jobs": [
+      {
+        "model": "pi05",
+        "pid": 2492914,
+        "start_ticks": "425873605",
+        "status": "waiting_for_live_full_causal_ablation_pipeline",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-independent-audit-001.py",
+        "script_sha256": "c779ec0a74fc4b029f5d97b86861cddddab1829d1b90cc7c6ffc1cd75f7ba133",
+        "dependency_pid": 2384063,
+        "dependency_start_ticks": "425850700",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/causal_002/independent_contract_audit.json"
+      },
+      {
+        "model": "rdt",
+        "pid": 2494565,
+        "start_ticks": "425873721",
+        "status": "waiting_for_live_full_causal_ablation_pipeline",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-independent-audit-001.py",
+        "script_sha256": "adfdd13e5c364c5393b8a963bd336206b9dd0f1c7611e2b9d9eae34e7d77902e",
+        "dependency_pid": 2385624,
+        "dependency_start_ticks": "425850817",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/causal_002/independent_contract_audit.json"
+      },
+      {
+        "model": "cogact",
+        "pid": 2496258,
+        "start_ticks": "425873837",
+        "status": "waiting_for_live_full_causal_ablation_pipeline",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-independent-audit-001.py",
+        "script_sha256": "2cdfcd4e6e5c1a073d2fcc73bc33ae502378f33cf688db98a12c9fcc50398b05",
+        "dependency_pid": 2387225,
+        "dependency_start_ticks": "425850933",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_002/independent_contract_audit.json"
+      },
+      {
+        "model": "lingbot",
+        "pid": 2795548,
+        "start_ticks": "425935802",
+        "status": "waiting_for_live_full_causal_ablation_pipeline",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-independent-audit-002.py",
+        "script_sha256": "c236afc9c2ea2c5af7c2255212c06d5d9ed212acfdab34102cb4860f32a738c2",
+        "dependency_pid": 2389130,
+        "dependency_start_ticks": "425851049"
+      }
+    ],
+    "focused_tests_passed": 9,
+    "auditor_source_sha256": "038e828d6bdb002e862814086c6726cc0b3be87aadb2f1524f7dadb38f799540",
+    "scope": "Full3600-record measurement contracts, source/noise/companion identities, required-stage coverage, intervention counts, metrics consistency and first recorded divergence. Independent tensor-array error rederivation and operator-local reexecution are not claimed.",
+    "full_campaign_complete": false,
+    "superseded_before_analysis": [
+      {
+        "model": "lingbot",
+        "pid": 2497950,
+        "start_ticks": "425873955",
+        "status": "waiting_for_live_full_causal_ablation_pipeline",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-independent-audit-001.py",
+        "script_sha256": "851b51bc2f24a636bbf961b0ff79d567d113bd6ac15730f29b257f5796b1cce8",
+        "dependency_pid": 2389130,
+        "dependency_start_ticks": "425851049",
+        "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/causal_002/independent_contract_audit.json"
+      }
+    ],
+    "lingbot_diagnostic_audit_path_correction": "Use producer-written independent_complete_audit.json"
+  },
+  "paired_stability_uncertainty_latest": {
+    "timestamp_utc": "2026-11-10T07:36:39.859096+00:00",
+    "summary": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_bootstrap_verified_summary_003.json",
+    "summary_sha256": "b81f7ce8fab808dea1e47f3c2146de554022427bc7686aca3b4c2a4330eb5bd3",
+    "audited_starts": 950,
+    "tasks": 19,
+    "verified_estimates": 228,
+    "resamples": 20000,
+    "full_campaign_complete": false
+  },
+  "cogact_expanded_bootstrap_queued_latest": {
+    "timestamp_utc": "2026-11-09T15:23:20.265405+00:00",
+    "jobs": [
+      {
+        "tag": "v5",
+        "pid": 2639630,
+        "start_ticks": "425903455",
+        "status": "waiting_for_live_independent_magnitude_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-v5-post-magnitude-bootstrap-001.py",
+        "script_sha256": "52ec02ffacfa8fccd5f94f5a2f623f12b813e327189ae6cfd0438c31bdb709d4",
+        "dependency_pid": 1086885,
+        "dependency_start_ticks": "425591574",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v5_bootstrap_001.json",
+        "independent_audit_output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v5_bootstrap_001_independent_audit.json"
+      },
+      {
+        "tag": "200",
+        "pid": 2639655,
+        "start_ticks": "425903571",
+        "status": "waiting_for_live_independent_magnitude_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-200-post-magnitude-bootstrap-001.py",
+        "script_sha256": "6f5a23eef7c2c776ca5c3b36ae198eba38d2fceff96d5c0488a9fc963678cb3e",
+        "dependency_pid": 893593,
+        "dependency_start_ticks": "425553478",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_bootstrap_001.json",
+        "independent_audit_output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_bootstrap_001_independent_audit.json"
+      }
+    ],
+    "accepted_cohort_unchanged": 77,
+    "produced_complete_blocks_observed": 134,
+    "independent_expanded_audit_live_pid": 836058,
+    "full_campaign_complete": false
+  },
+  "lingbot_full_stability_preparation_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_full_stability_preparation_001.json",
+    "evidence_sha256": "d0b09036b9e806eddf91eb3c972dd51648807622db94ab5d2a315c1ab6205924",
+    "status": "full_cohort_extractor_prepared_focused_controls_passed",
+    "timestamp_utc": "2026-11-09T15:26:15.163852+00:00",
+    "source_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_lingbot_full_paired_stability.py": "52fa67b3568923e2da590562743f1204109107deb9ce5b72e8d047887eabd62f",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_lingbot_full_stability.py": "c0f3e0660b806e5aeae6cfc56065a3f24f33b8b4603c62bea9d2ce51f28d1a51",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_lingbot_dual_arm_drift.py": "f86b37440f93e5964b0d834ed9c8c08cbeb3771305080b46c71eaffae92098fb"
+    },
+    "test_command": "envs/lingbot/bin/python -m unittest scripts.test_lingbot_full_stability scripts.test_lingbot_dual_arm_drift",
+    "focused_tests_passed": 10,
+    "full_cohort_integration_executed": false,
+    "actual_full_cohort_magnitude_results": false,
+    "scope": "Full2500start/20000episode gate; separate arm translation/rotation; 14-dimensional physical action components; identical-input/indexed-noise comparisons; common horizons only. B1-only starts explicitly unobserved for numerical batch errors.",
+    "remaining": [
+      "Independent full-cohort magnitude verifier with episode-byte binding to the full paired proof",
+      "Real full-cohort extraction and raw-frame recount after paired completion",
+      "Task-specific dual-arm summaries and paired-start uncertainty",
+      "Integration into final acceptance evidence"
+    ],
+    "full_campaign_complete": false
+  },
+  "lingbot_bound_paired_magnitudes_queued_latest": {
+    "timestamp_utc": "2026-11-09T15:29:20.448209+00:00",
+    "job": {
+      "model": "lingbot",
+      "pid": 2808969,
+      "start_ticks": "425938699",
+      "status": "waiting_for_live_independent_performance_audit",
+      "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-performance-bound-paired-magnitudes-001.py",
+      "script_sha256": "d47d3c898dd54872e9a777672c9a5db1282554a73c507a71a382a7654a9c769e",
+      "dependency_pid": 3928886,
+      "dependency_start_ticks": "425310909"
+    },
+    "byte_binding_focused_tests_passed": 5,
+    "combined_lingbot_measurement_tests_passed": 16,
+    "actual_full_audit_or_magnitude_results": false,
+    "remaining": "Independent full dual-arm magnitude recount, task summaries and uncertainty. Full numerical/inference acceptance still pending.",
+    "full_campaign_complete": false
+  },
+  "lingbot_full_magnitude_independent_audit_queued_latest": {
+    "timestamp_utc": "2026-11-09T15:32:47.472564+00:00",
+    "job": {
+      "pid": 2913722,
+      "start_ticks": "425959183",
+      "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-bound-magnitudes-independent-audit-001.py",
+      "script_sha256": "0aa05c00a3ff9043c19aeda0b192f1ef56708bfd4c0b6e1b96452b289f6ff5af",
+      "status": "waiting_for_live_bound_full_magnitude_extraction",
+      "dependency_pid": 2808969,
+      "dependency_start_ticks": "425938699",
+      "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_001.json",
+      "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_001_independent_audit.json"
+    },
+    "focused_arithmetic_tests_passed": 7,
+    "auditor_sha256": "794b54fb14e32dce66fdd9efc7ccd6bf76aa09d13750a5c1646ae707462f2b09",
+    "scope": "Full2500start/20000episode byte-bound cohort. Independently rederive float32 action bit differences, equal-input normalized SSE/RMS/ULP, physical component errors and both arms translation/rotation from actual raw frames. No neural inference.",
+    "actual_full_cohort_integration_executed": false,
+    "full_campaign_complete": false
+  },
+  "verified_live_primary_jobs_latest": {
+    "timestamp_utc": "2026-11-09T17:20:33.816865+00:00",
+    "jobs": [
+      {
+        "pid": 675019,
+        "state": "R",
+        "start_ticks": "426340577",
+        "cpu_ticks": 543321
+      },
+      {
+        "pid": 1942407,
+        "state": "R",
+        "start_ticks": "424051173",
+        "cpu_ticks": 2772794
+      },
+      {
+        "pid": 4055960,
+        "state": "R",
+        "start_ticks": "425339189",
+        "cpu_ticks": 1342716
+      },
+      {
+        "pid": 2770000,
+        "state": "R",
+        "start_ticks": "421141328",
+        "cpu_ticks": 8741881
+      },
+      {
+        "pid": 836058,
+        "state": "R",
+        "start_ticks": "425542911",
+        "cpu_ticks": 1708089
+      }
+    ],
+    "recorded_pipeline_failures": []
+  },
+  "queue_dependency_verification_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/queue_dependency_verification_001.json",
+    "timestamp_utc": "2026-11-09T15:33:43.951365+00:00",
+    "classification": "verified_wait",
+    "checked_analysis_jobs": [
+      {
+        "group": "flow_step_stability_queued_latest",
+        "pid": 2216571,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "flow_step_stability_queued_latest",
+        "pid": 2795075,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "causal_ablation_continuations_latest",
+        "pid": 2384063,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "causal_ablation_continuations_latest",
+        "pid": 2385624,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "causal_ablation_continuations_latest",
+        "pid": 2387225,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "causal_ablation_continuations_latest",
+        "pid": 2389130,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "causal_contract_audits_queued_latest",
+        "pid": 2492914,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "causal_contract_audits_queued_latest",
+        "pid": 2494565,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "causal_contract_audits_queued_latest",
+        "pid": 2496258,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "causal_contract_audits_queued_latest",
+        "pid": 2795548,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "cogact_expanded_bootstrap_queued_latest",
+        "pid": 2639630,
+        "identity_matches": true,
+        "state": "S"
+      },
+      {
+        "group": "cogact_expanded_bootstrap_queued_latest",
+        "pid": 2639655,
+        "identity_matches": true,
+        "state": "S"
+      }
+    ],
+    "issues": [],
+    "live_primary_counts": {
+      "rdt_diagnostic_pairs": 562,
+      "pi05_heldout_pairs": 478,
+      "lingbot_diagnostic_pairs": 34
+    },
+    "primary_pids_verified_live": [
+      1942407,
+      2152926,
+      4055960,
+      2770000,
+      836058
+    ],
+    "claim": "No new completed full-model evidence in this observation. Existing jobs left running.",
+    "full_campaign_complete": false
+  },
+  "verified_wait_primary_jobs_latest": {
+    "timestamp_utc": "2026-11-09T17:16:42.065186+00:00",
+    "jobs": [
+      {
+        "pid": 675019,
+        "state": "R",
+        "start_ticks": "426340577",
+        "cpu_ticks": 496632
+      },
+      {
+        "pid": 1942407,
+        "state": "R",
+        "start_ticks": "424051173",
+        "cpu_ticks": 2747709
+      },
+      {
+        "pid": 4055960,
+        "state": "R",
+        "start_ticks": "425339189",
+        "cpu_ticks": 1318172
+      },
+      {
+        "pid": 2770000,
+        "state": "R",
+        "start_ticks": "421141328",
+        "cpu_ticks": 8702852
+      },
+      {
+        "pid": 836058,
+        "state": "R",
+        "start_ticks": "425542911",
+        "cpu_ticks": 1671078
+      }
+    ],
+    "observation_interval_seconds": 50,
+    "full_campaign_complete": false
+  },
+  "lingbot_task_stability_tables_queued_latest": {
+    "timestamp_utc": "2026-11-09T15:38:39.851140+00:00",
+    "job": {
+      "pid": 3095936,
+      "start_ticks": "425995412",
+      "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-magnitude-audit-task-tables-001.py",
+      "script_sha256": "c7f32474c8ddb4d3de90bf56f89495952a6d3f731b68fee8b65e9f932cb09f41",
+      "status": "waiting_for_live_independent_full_magnitude_audit",
+      "dependency_pid": 2913722,
+      "dependency_start_ticks": "425959183",
+      "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_001.json",
+      "csv_output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_001.csv"
+    },
+    "focused_tests_passed": 3,
+    "actual_tables_extracted": false,
+    "scope": "50tasks/50starts each; native and invariant; separate arms; position mm and rotation rad; exact-input pooled numerical error and explicit eligible-start counts. Null if unobserved, no invented zero.",
+    "remaining": "Independent descriptive table recount and task-level paired uncertainty after actual full magnitude acceptance.",
+    "full_campaign_complete": false
+  },
+  "operator_first_divergence_projection_preflight_latest": {
+    "timestamp_utc": "2026-11-09T15:41:31.253981+00:00",
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_leaf_projection_preflight_001.json",
+    "evidence_sha256": "a0a352ee290eec5ea24808b5cc53f949be23c66aef131c75f49279265c2782d6",
+    "status": "model_aware_leaf_projection_required",
+    "operator_attribution_complete": false,
+    "existing_diagnostic_and_paired_acceptance_unchanged": true,
+    "next_requirement": "Source-backed request-axis mapping and capture/reexecution at the actual first comparable boundary; generic slicing cannot certify CogACT CFG leaves."
+  },
+  "operator_first_divergence_projection_preparation_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/leaf_request_projection_preparation_001.json",
+    "evidence_sha256": "b5cf446fb7fdd19c8742341daabae3594547bf1db4bf7965df7111cad961f8f8",
+    "timestamp_utc": "2026-11-09T15:45:24.708184+00:00",
+    "status": "source_backed_cfg_projection_prepared_and_integrated_cpu_controls_passed",
+    "source_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/leaf_request_projection.py": "3c114c77c75d00709521deaa12678cedaf6eace134d47f23d315abf39de251a0",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_leaf_request_projection.py": "527221809e7b0ec43ee085a5b3628287cc5b48a3506f9bb2761672e93d14f565",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "01f934695ed82bed607126c362525017cd347f868f3404ee711329606946ab93"
+    },
+    "focused_tests_passed": 6,
+    "integrated_cfg_target_projection_control": "passed",
+    "unresolved_same_shape_control": "rejected_as_noncomparable",
+    "scope": "Separate exact-adapter leaf tracer uses conditional/unconditional target blocks for CogACT action_model.net. Requires declared logical batch size and preserves reference/candidate scan hashes. Unknown shapes excluded from numeric attribution.",
+    "actual_model_tracing_executed": false,
+    "operator_attribution_complete": false,
+    "remaining": [
+      "Actual exact-input traced inference and repeated output checks",
+      "Source-backed mapping for any further flattened or shared structural boundaries",
+      "Capture real local operator inputs/weights/outputs and independently verify isolated reexecution"
+    ],
+    "frozen_or_live_numerical_sources_changed": false,
+    "full_campaign_complete": false
+  },
+  "captured_operand_layout_preparation_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/captured_operand_layout_preparation_001.json",
+    "evidence_sha256": "71247d8d7685117eaa278fae7e1b4332c075181e179535831927373d43d23179",
+    "timestamp_utc": "2026-11-09T15:51:22.885278+00:00",
+    "status": "operand_layout_capture_restore_cpu_controls_passed",
+    "source_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_captured_tensor_layout.py": "ca662c35761ca8403238e4628bb63f6f93b5b370e6b11f6dd4db86b06de13003"
+    },
+    "focused_tests_passed": 9,
+    "scope": "Physical-span and logical-bit hashes, dtype, shape, strides, storage offset and pointer alignment. Supports broadcast zero strides by copying physical storage once.",
+    "gpu_alignment_required_by_default": true,
+    "cpu_controls_disable_alignment_only_for_layout_roundtrips": true,
+    "actual_model_operands_captured": false,
+    "gpu_operator_reexecution_verified": false,
+    "operator_attribution_complete": false,
+    "remaining": [
+      "Integrate capture at actual supported leaf boundaries",
+      "Retain real inputs/weights/outputs with source/config/noise provenance",
+      "Independently reproduce captured outputs in isolation under pinned precision and invariant mode"
+    ],
+    "full_campaign_complete": false
+  },
+  "captured_leaf_replay_preparation_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/captured_leaf_replay_preparation_001.json",
+    "evidence_sha256": "0984007d50f3b37d00578ee256288d7c52e040e7c05527c53d536c95b71862c3",
+    "timestamp_utc": "2026-11-09T15:57:42.335299+00:00",
+    "status": "supported_leaf_snapshot_and_isolated_replay_cpu_controls_passed",
+    "source_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_leaf_operator.py": "41b6428b16fcbc16c1181f61027a824cebe0c426e399a5350a7f237086b73c3b",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "59a6c2e6eab6e3d692afcbc651d00b72d0d8cff614794a68c6b1eb0d18d82d4b",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_captured_leaf_operator.py": "f533fe081a3d5f5e92cfb96fbeef8dc36349aa4285164457af7112f160247ee6"
+    },
+    "focused_controls_passed_combined": 23,
+    "hook_file_replay_cpu_integration": "passed",
+    "supported_exact_module_types": [
+      "torch.nn.Linear",
+      "torch.nn.Conv2d with zero padding mode"
+    ],
+    "scope": "Captures actual operand/weight/bias/output storage and precision/autocast/invariant context. Replays twice with output bit and layout checks. Source/reduction flags, CUDA numerical environment and GPU UUID/runtime retained. GPU alignment cannot be disabled.",
+    "integration": "Separate leaf tracer can retain four mode/batch operand artifacts with byte hashes; unsupported leaves remain explicit.",
+    "actual_checkpoint_operand_capture_executed": false,
+    "actual_gpu_isolated_replay_verified": false,
+    "globally_first_operator_attribution_complete": false,
+    "remaining": [
+      "Independent artifact-level replay/projection audit CLI",
+      "Actual GPU trace with repeated-output controls",
+      "Validate local native/invariant same-input contrast before claiming causal leaf batching dependence"
+    ],
+    "full_campaign_complete": false
+  },
+  "captured_leaf_artifact_audit_preparation_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/captured_leaf_artifact_audit_preparation_001.json",
+    "evidence_sha256": "6ab3abae748f192d0bfc75fec409c2e8c42b3b7c4b6551c02b418e5129273ee8",
+    "timestamp_utc": "2026-11-09T16:04:27.191743+00:00",
+    "status": "artifact_replay_and_causal_prerequisite_verifier_prepared",
+    "source_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_captured_leaf_replay.py": "fde40b5e8de1dece6685f7dcd1f78a00d756724ff7ac5836c26ffa45356ef037",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_captured_leaf_audit.py": "c20f5e02b2e87dc3af0d275ecf1d79f400dcab9387ce271f2d8320dc26e35a53",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "ac92e15c730767899774593bb43f91c4669ac66560fe2398e64a942978558cf3",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_leaf_operator.py": "41b6428b16fcbc16c1181f61027a824cebe0c426e399a5350a7f237086b73c3b",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43"
+    },
+    "focused_controls_passed_combined": 30,
+    "new_verifier_controls_passed": 7,
+    "scope": "Binds four operator artifact files to diagnostic manifest, indexed noise, loaded checkpoint config, source-backed target projection and native scan hashes. Replays captured operators twice, checks static weights and same target operands, and reports local causal prerequisite flags.",
+    "actual_gpu_artifact_audit_executed": false,
+    "globally_first_operator_attribution_complete": false,
+    "remaining": [
+      "Actual checkpoint-derived capture on model-matched GPU after scheduled experiments",
+      "Run independent artifact replay with byte-exact output reproduction",
+      "Review unsupported or input-divergent leaves without presenting them as global first operators"
+    ],
+    "full_campaign_complete": false
+  },
+  "predeclared_local_leaf_replay_queued_latest": {
+    "timestamp_utc": "2026-11-09T16:08:00.762918+00:00",
+    "jobs": [
+      {
+        "model": "pi05",
+        "pid": 3980152,
+        "start_ticks": "426168763",
+        "status": "waiting_for_live_complete_causal_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-causal-local-leaf-replay-001.py",
+        "script_sha256": "682244cc24bfa7fd79739819580de547eb413a506d3cd3e48f305cc8185ad35c",
+        "dependency_pid": 2492914,
+        "dependency_start_ticks": "425873605",
+        "target_replay_index": 0,
+        "target_request_id": "libero_10/0/10/observation-0/noise-0",
+        "noise_id": 0,
+        "freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/numerical_freeze.json",
+        "output_directory": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/local_leaf_attribution_001",
+        "source_sha256": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "ac92e15c730767899774593bb43f91c4669ac66560fe2398e64a942978558cf3",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/leaf_request_projection.py": "3c114c77c75d00709521deaa12678cedaf6eace134d47f23d315abf39de251a0",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_leaf_operator.py": "41b6428b16fcbc16c1181f61027a824cebe0c426e399a5350a7f237086b73c3b",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_captured_leaf_replay.py": "fde40b5e8de1dece6685f7dcd1f78a00d756724ff7ac5836c26ffa45356ef037",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_frozen_benchmark.py": "f624b7832aed9216fdde23613d08828b58fa5b1f1280eabf3f73842e8ba6c302",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/gpu_isolation.py": "d391f37c593865153f9ff142fa6a140a38b7bcc9f3f1b874d210b6c497e50055",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation.py": "2a22e79ec4f0aaab8444575d49f682369101c069d9fb9d7f300f69c2ef19f16e",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_causal_ablation.py": "c617cfa751bdd597388d8883c24c655c272ca70901172c94710cd8f3d520c8f9",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_replay_invariance.py": "10b764781288d3e6947cabd2c39dfb0b3b2c8de53b5ded663cc5f9a77d086537",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/harness.py": "399c331fc42298636b335d19d8296057c2aeb520826744d039d509f3d7a8237f",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/moe.py": "065865169d1ea65257ccfeebd40b6c63db40fee254ff11d299c87130796cbb77",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/pi05_libero_exact.py": "12bbc894e5d9af6a37721c06f94b612f8656e6183fabae9ab83d828d12d5ec73",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/verify_pi05_libero_checkpoint.py": "371151a963748b84a8eb168ba4f10a57e656f8d69fbbed0fead828fe6878ee1a",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v2.py": "b23447df73977452d9a8dde98d47b1e88ef441b6b0984bae538735ec8c77127a"
+        }
+      },
+      {
+        "model": "rdt",
+        "pid": 3981912,
+        "start_ticks": "426168879",
+        "status": "waiting_for_live_complete_causal_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-causal-local-leaf-replay-001.py",
+        "script_sha256": "12a91cd1c9b788dc411f1738b7de99722973b6984258e110aa753aceeed76c4c",
+        "dependency_pid": 2494565,
+        "dependency_start_ticks": "425873721",
+        "target_replay_index": 0,
+        "target_request_id": "maniskill/PegInsertionSide-v1/0/observation-0/noise-0",
+        "noise_id": 0,
+        "freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/numerical_freeze.json",
+        "output_directory": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/local_leaf_attribution_001",
+        "source_sha256": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "ac92e15c730767899774593bb43f91c4669ac66560fe2398e64a942978558cf3",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/leaf_request_projection.py": "3c114c77c75d00709521deaa12678cedaf6eace134d47f23d315abf39de251a0",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_leaf_operator.py": "41b6428b16fcbc16c1181f61027a824cebe0c426e399a5350a7f237086b73c3b",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_captured_leaf_replay.py": "fde40b5e8de1dece6685f7dcd1f78a00d756724ff7ac5836c26ffa45356ef037",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_frozen_benchmark.py": "f624b7832aed9216fdde23613d08828b58fa5b1f1280eabf3f73842e8ba6c302",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/gpu_isolation.py": "d391f37c593865153f9ff142fa6a140a38b7bcc9f3f1b874d210b6c497e50055",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation.py": "2a22e79ec4f0aaab8444575d49f682369101c069d9fb9d7f300f69c2ef19f16e",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_causal_ablation.py": "c617cfa751bdd597388d8883c24c655c272ca70901172c94710cd8f3d520c8f9",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_replay_invariance.py": "10b764781288d3e6947cabd2c39dfb0b3b2c8de53b5ded663cc5f9a77d086537",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/harness.py": "399c331fc42298636b335d19d8296057c2aeb520826744d039d509f3d7a8237f",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/moe.py": "065865169d1ea65257ccfeebd40b6c63db40fee254ff11d299c87130796cbb77",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/rdt_maniskill_exact.py": "ee3a0f03c9f7b805abc9b767166fefef66d23741253b3f46c7fe2ac953d19d12",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/rdt_maniskill.py": "ad6855644b5b5ec63bc704b503cd0e8101593dba60cd9b7c7f6687bd3630cfa5",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_rdt_paired_server.py": "74f9127bf18ec3eb9232ffbbac2130c68aaf9537f2f3715204a079f8730f969a",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v2.py": "b23447df73977452d9a8dde98d47b1e88ef441b6b0984bae538735ec8c77127a"
+        }
+      },
+      {
+        "model": "cogact",
+        "pid": 3983500,
+        "start_ticks": "426168995",
+        "status": "waiting_for_live_complete_causal_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-causal-local-leaf-replay-001.py",
+        "script_sha256": "269722cc4cea8ddd4c5ce8b9c9b14ed7bebe021a453669a87765c5ddbb54c307",
+        "dependency_pid": 2496258,
+        "dependency_start_ticks": "425873837",
+        "target_replay_index": 750,
+        "target_request_id": "simpler/close_drawer/0/observation-0/noise-0",
+        "noise_id": 0,
+        "freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/numerical_freeze.json",
+        "output_directory": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/local_leaf_attribution_001",
+        "source_sha256": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "ac92e15c730767899774593bb43f91c4669ac66560fe2398e64a942978558cf3",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/leaf_request_projection.py": "3c114c77c75d00709521deaa12678cedaf6eace134d47f23d315abf39de251a0",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_leaf_operator.py": "41b6428b16fcbc16c1181f61027a824cebe0c426e399a5350a7f237086b73c3b",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_captured_leaf_replay.py": "fde40b5e8de1dece6685f7dcd1f78a00d756724ff7ac5836c26ffa45356ef037",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_frozen_benchmark.py": "f624b7832aed9216fdde23613d08828b58fa5b1f1280eabf3f73842e8ba6c302",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/gpu_isolation.py": "d391f37c593865153f9ff142fa6a140a38b7bcc9f3f1b874d210b6c497e50055",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation.py": "2a22e79ec4f0aaab8444575d49f682369101c069d9fb9d7f300f69c2ef19f16e",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_causal_ablation.py": "c617cfa751bdd597388d8883c24c655c272ca70901172c94710cd8f3d520c8f9",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_replay_invariance.py": "10b764781288d3e6947cabd2c39dfb0b3b2c8de53b5ded663cc5f9a77d086537",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/harness.py": "399c331fc42298636b335d19d8296057c2aeb520826744d039d509f3d7a8237f",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/moe.py": "065865169d1ea65257ccfeebd40b6c63db40fee254ff11d299c87130796cbb77",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/cogact_simpler_exact.py": "79fd820654a47d6ae819cb91be7d779a1a46cac5013e4e7cb81aefb8d2f96f7f",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/cogact_small.py": "c072c41ce01562fe553261c454587281e0f3f7f3b453de87301c194e06384728",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v2.py": "b23447df73977452d9a8dde98d47b1e88ef441b6b0984bae538735ec8c77127a"
+        }
+      },
+      {
+        "model": "lingbot",
+        "pid": 3985553,
+        "start_ticks": "426169111",
+        "status": "waiting_for_live_complete_causal_audit",
+        "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-causal-local-leaf-replay-001.py",
+        "script_sha256": "f8183e3f62b008f0e9066b71e24c0f0aa2ddb48d62fbc0f80598086ababeeaa1",
+        "dependency_pid": 2795548,
+        "dependency_start_ticks": "425935802",
+        "target_replay_index": 200,
+        "target_request_id": "lingbot-robotwin/adjust_bottle/100001/frame-0/noise-0",
+        "noise_id": 0,
+        "freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full_fresh_candidates_v1/numerical_freeze.json",
+        "output_directory": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/local_leaf_attribution_001",
+        "source_sha256": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "ac92e15c730767899774593bb43f91c4669ac66560fe2398e64a942978558cf3",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/leaf_request_projection.py": "3c114c77c75d00709521deaa12678cedaf6eace134d47f23d315abf39de251a0",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_leaf_operator.py": "41b6428b16fcbc16c1181f61027a824cebe0c426e399a5350a7f237086b73c3b",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_captured_leaf_replay.py": "fde40b5e8de1dece6685f7dcd1f78a00d756724ff7ac5836c26ffa45356ef037",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_isolated_frozen_benchmark.py": "f624b7832aed9216fdde23613d08828b58fa5b1f1280eabf3f73842e8ba6c302",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/gpu_isolation.py": "d391f37c593865153f9ff142fa6a140a38b7bcc9f3f1b874d210b6c497e50055",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation.py": "2a22e79ec4f0aaab8444575d49f682369101c069d9fb9d7f300f69c2ef19f16e",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_causal_ablation.py": "c617cfa751bdd597388d8883c24c655c272ca70901172c94710cd8f3d520c8f9",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_replay_invariance.py": "10b764781288d3e6947cabd2c39dfb0b3b2c8de53b5ded663cc5f9a77d086537",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/harness.py": "399c331fc42298636b335d19d8296057c2aeb520826744d039d509f3d7a8237f",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/moe.py": "065865169d1ea65257ccfeebd40b6c63db40fee254ff11d299c87130796cbb77",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/lingbot_robotwin_exact.py": "2741c85f046d99d3a505cec6fce50acff2d22a72abb935a7a88e0ef881bc629b",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/lingbot_vla2.py": "4f07b4527e6a4f19bc6b0c51a1e56f962949b0ccd871f877e07e6a31ccad68c3",
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/utils.py": "aa8d55137c17a1efa78d3a8124a131ddacf8166b56a2d8802f68bc04b434e747",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v2.py": "b23447df73977452d9a8dde98d47b1e88ef441b6b0984bae538735ec8c77127a"
+        }
+      }
+    ],
+    "selection": "First diagnostic row by task/episode/observation/index, noise0, B2; fixed before tracing, no outcome/error selection",
+    "scope": "One additional local mechanism case per model; not full cohort or globally first operator attribution",
+    "actual_gpu_capture_or_replay_executed": false,
+    "source_files_now_pinned": [
+      "trace_exact_model_leaf_divergence.py",
+      "leaf_request_projection.py",
+      "captured_tensor_layout.py",
+      "captured_leaf_operator.py",
+      "audit_captured_leaf_replay.py"
+    ],
+    "full_campaign_complete": false
+  },
+  "lingbot_task_table_independent_audit_queued_latest": {
+    "timestamp_utc": "2026-11-09T16:10:40.169163+00:00",
+    "job": {
+      "pid": 4076546,
+      "start_ticks": "426187300",
+      "status": "waiting_for_live_full_task_table_extraction",
+      "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-task-tables-independent-audit-001.py",
+      "script_sha256": "6b8d4ef44028a061363b42539536421f7fbdc6659bbdfa3e338dfde694ee64a3",
+      "dependency_pid": 3095936,
+      "dependency_start_ticks": "425995412",
+      "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_001_independent_audit.json"
+    },
+    "focused_tests_passed": 5,
+    "scope": "Recount200 task/mode/arm descriptive rows from independently accepted full2500-start magnitudes; verify matching CSV values and schema, missing observation remains null. No CI or new raw-frame reexecution claim.",
+    "actual_full_tables_audited": false,
+    "full_campaign_complete": false
+  },
+  "lingbot_arm_stability_uncertainty_queued_latest": {
+    "timestamp_utc": "2026-11-09T16:16:28.461663+00:00",
+    "job": {
+      "pid": 44035,
+      "start_ticks": "426220778",
+      "status": "waiting_for_live_full_task_table_acceptance",
+      "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-task-acceptance-arm-bootstrap-001.py",
+      "script_sha256": "dacd9dfcb207938f11239dff9a9678b74634ccfdfc2a1a1474ecfaa950238cb0",
+      "dependency_pid": 4076546,
+      "dependency_start_ticks": "426187300",
+      "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_arm_stability_bootstrap_001.json",
+      "independent_recount_output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_arm_stability_bootstrap_001_independent_audit.json"
+    },
+    "focused_arithmetic_tests_passed": 4,
+    "synthetic_full_shape_recount_passed": true,
+    "synthetic_full_shape_tasks": 50,
+    "synthetic_full_shape_starts": 2500,
+    "synthetic_control_resamples": 10000,
+    "actual_protocol_resamples": 20000,
+    "negative_controls_passed": 3,
+    "control_evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_arm_bootstrap_synthetic_controls_001.json",
+    "scope": "Whole restored-start paired resampling per task; separate left/right position/rotation means/medians, action-divergence fraction, and native-minus-invariant contrasts. Explicit native exposure counts. Conditional cohort CIs, no multiplicity correction or numerical-MSE CI.",
+    "actual_model_intervals_extracted": false,
+    "full_campaign_complete": false
+  },
+  "current_campaign_documentation_latest": {
+    "timestamp_utc": "2026-11-09T16:23:35.693839+00:00",
+    "document": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/FOUR_MODEL_CAMPAIGN.md",
+    "document_sha256": "b78b1bce3a26580a285a7bb146f0fe77a31c3ca4f3cee9e9c4edf1b337ae311a",
+    "accepted_stability_snapshot_starts": 827,
+    "source_report_audit_hash_pairs_reverified": 3,
+    "scope": "Primary stability endpoint and current accepted cohorts moved to document header; repeat controls and released-native CogACT supplement distinguished. No acceptance requirement removed. Freeze/later-diagnostic chronology caveat preserved.",
+    "full_campaign_complete": false
+  },
+  "rdt_complete_diagnostic_latest": {
+    "timestamp_utc": "2026-11-09T16:38:20.020250+00:00",
+    "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/diagnostic/independent_diagnostic_audit.json",
+    "audit_sha256": "f0b001f8952ee4f08ed43a951f337b5c6bb79556ca177994b13031def16e1754",
+    "request_noise_pairs": 600,
+    "arrangement_records": 46800,
+    "native_nonexact_arrangements": 22200,
+    "invariant_output_and_all_recorded_stages_exact": true,
+    "aggregate_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/rdt_complete_diagnostic_batch_aggregate_audit.json",
+    "native_batch_rms": {
+      "1": 0.0,
+      "2": 0.0012235557733827967,
+      "4": 0.002334229712828149,
+      "8": 0.0020690608576102087,
+      "16": 0.0022445199333656976,
+      "32": 0.0014722241700125156
+    },
+    "numerical_freeze": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/numerical_freeze.json",
+    "numerical_freeze_sha256": "426f83df968a3a7f0374dd7fcedd176acba99a916aeed690aefa5fe538b4be84",
+    "heldout_live_process": {
+      "pid": 675019,
+      "start_ticks": "426340577",
+      "state": "R",
+      "command": [
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/bin/python",
+        "-m",
+        "scripts.run_model_replay_invariance",
+        "--manifest",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/audited_manifest.json",
+        "--freeze",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/numerical_freeze.json",
+        "--split",
+        "heldout",
+        "--adapter",
+        "scripts.model_invariance.adapters.rdt_maniskill_exact",
+        "--output",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/invariance.jsonl.gz",
+        "--fidelity-output",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/singleton_fidelity.jsonl.gz",
+        "--batch-sizes",
+        "1",
+        "2",
+        "4",
+        "8",
+        "16",
+        "32",
+        "--fail-on-invariant-violation"
+      ]
+    },
+    "full_campaign_complete": false,
+    "flow_distributions_verified_groups": 500,
+    "B8_first_prediction_native_exact_rate_by_task": 0.0,
+    "B8_first_prediction_invariant_exact_rate_by_task": 1.0
+  },
+  "singleton_fidelity_aggregate_latest": {
+    "timestamp_utc": "2026-11-09T16:46:47.427389+00:00",
+    "summary": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/singleton_fidelity_verified_summary_001.json",
+    "summary_sha256": "1a02795d4f4829b55e8b7437498f86648fc81c885056fa93bf158b5ce5314b2c",
+    "models": [
+      "pi05",
+      "rdt",
+      "cogact"
+    ],
+    "comparisons_per_model": 600,
+    "tasks_total": 19,
+    "negative_controls_rejected": 4,
+    "arithmetic_sanity_controls_passed": 3,
+    "remaining_model": "lingbot",
+    "scope": "Independent arithmetic recount of source-bound producer-measured normalized errors; not tensor-array rederivation or success maximization. Physical mixed-unit errors not pooled.",
+    "full_campaign_complete": false
+  },
+  "lingbot_singleton_fidelity_queued_latest": {
+    "timestamp_utc": "2026-11-09T16:48:05.781813+00:00",
+    "job": {
+      "pid": 1008545,
+      "start_ticks": "426408667",
+      "status": "waiting_for_live_complete_diagnostic_audit",
+      "script": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-diagnostic-singleton-fidelity-001.py",
+      "script_sha256": "5956f7dc5e38b6eb4ca2cd8415044edc21d71d755ca1b82da5f6a23ab76ed922",
+      "dependency_pid": 2673330,
+      "dependency_start_ticks": "425049152",
+      "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_singleton_fidelity_001.json",
+      "audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_singleton_fidelity_001_independent_audit.json"
+    },
+    "scope": "Source-pinned CPU extraction and independent arithmetic recount only after full600-pair diagnostic acceptance. BI B1 vs controlled-native B1; separate from batch stability.",
+    "actual_lingbot_aggregates_extracted": false,
+    "full_campaign_complete": false
+  },
+  "diagnostic_heldout_episode_split_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/diagnostic_heldout_episode_split_verification_001.json",
+    "evidence_sha256": "1ca41d7b7c00dae95f2e23e53a956c8cf3ed6ba2ccfbb3e4eecb011455d2130a",
+    "timestamp_utc": "2026-11-09T16:53:14.554236+00:00",
+    "status": "selected_cross_manifest_episode_splits_verified",
+    "scope": "Actual freeze command inputs; episode-level split only, distinct from prepared-input exposure seal and full numerical acceptance. CogACT/LingBot freezes pending.",
+    "models": [
+      {
+        "model": "pi05",
+        "diagnostic_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/replay_manifest.json",
+        "diagnostic_manifest_sha256": "969f4f6e8167ef6ef00aa7f5ecc95ff225b628beec919a5621900f913642feb7",
+        "heldout_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/audited_manifest.json",
+        "heldout_manifest_sha256": "586bbb92a8d99b2802ca8a444d93559375aa6612fe29438c2a3edc42c9fab9b7",
+        "diagnostic_observations": 200,
+        "heldout_observations": 800,
+        "diagnostic_episodes": 20,
+        "heldout_episodes": 80,
+        "episode_intersection": [],
+        "freeze_exists": true,
+        "selection_command_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/pi05-post-seal-heldout-001.commands.json",
+        "selection_command_source_sha256": "e91860593fa02906d392e73b8cea9d0a26f6c968af86f30c4315bc25fd7064df",
+        "freeze_sha256": "2c7827b60cfd78ad3390de06a4e9a196e4b009395a97d4bf1a4a2f881b6546e5",
+        "both_manifests_bound_by_actual_freeze": true
+      },
+      {
+        "model": "rdt",
+        "diagnostic_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/replay_manifest.json",
+        "diagnostic_manifest_sha256": "ec7d55f15b737789583bfbd26fb8504e29d36828ba275e27327f8967bfee5a01",
+        "heldout_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/audited_manifest.json",
+        "heldout_manifest_sha256": "f7f4fa9bd71741407334f337b5dba09415647f9ad3edf76e73404669db56a277",
+        "diagnostic_observations": 200,
+        "heldout_observations": 800,
+        "diagnostic_episodes": 20,
+        "heldout_episodes": 80,
+        "episode_intersection": [],
+        "freeze_exists": true,
+        "selection_command_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-post-seal-heldout-001.commands.json",
+        "selection_command_source_sha256": "a7315c4a0c6fe34de859b6e26ff31c1250533311cd73bf5ed3d6b17fa9447a4b",
+        "freeze_sha256": "426f83df968a3a7f0374dd7fcedd176acba99a916aeed690aefa5fe538b4be84",
+        "both_manifests_bound_by_actual_freeze": true
+      },
+      {
+        "model": "cogact",
+        "diagnostic_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/replay_manifest.json",
+        "diagnostic_manifest_sha256": "aeffa91444d59f9427b404dd01f4eb166fe12aed18508ea962ca1caa81b321ec",
+        "heldout_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/cogact-simpler-unexposed-003/audited_manifest.json",
+        "heldout_manifest_sha256": "5f7d9b85fafbb9f8668587d559bca92646144d41d18e08e9a666b28e4982a010",
+        "diagnostic_observations": 200,
+        "heldout_observations": 800,
+        "diagnostic_episodes": 20,
+        "heldout_episodes": 80,
+        "episode_intersection": [],
+        "freeze_exists": false,
+        "selection_command_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-seal-heldout-001.commands.json",
+        "selection_command_source_sha256": "1f7fb331cb1f53cecec8d03d4c61c803acb447a0f1b7ae5621a56b626fdcab43",
+        "both_manifests_bound_by_actual_freeze": false
+      },
+      {
+        "model": "lingbot",
+        "diagnostic_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/replay_manifest.json",
+        "diagnostic_manifest_sha256": "59c26c4a5d854834fdad3139ea9b3519a7783586471e86cf601e643b71a8d779",
+        "heldout_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full_fresh_candidates_v1/replay_manifest.json",
+        "heldout_manifest_sha256": "9628d1d70f4b4572a550c5d3ebf0c323f9aa06aa5f129ca5a6955e1af4fb9e98",
+        "diagnostic_observations": 200,
+        "heldout_observations": 800,
+        "diagnostic_episodes": 100,
+        "heldout_episodes": 100,
+        "episode_intersection": [],
+        "freeze_exists": false,
+        "selection_command_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-seal-heldout-001.py",
+        "selection_command_source_sha256": "1037cc640c4d1ae37552f03fccafea7afd8e1c39532d73d1ab521f94f3a28b81",
+        "both_manifests_bound_by_actual_freeze": false
+      }
+    ],
+    "full_campaign_complete": false
+  },
+  "cogact_exact_adapter_cfg_flow_projection_latest": {
+    "timestamp_utc": "2026-11-09T16:56:49.943170+00:00",
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_exact_adapter_cfg_flow_projection_control_001.json",
+    "evidence_sha256": "1896d5e1663ad6a515472305e2735ee983fb6275715cab24aacfe3dd4711bc68",
+    "actual_adapter_callback_cpu_control_passed": true,
+    "checkpoint_or_gpu_test_executed": false,
+    "scope": "Primary exact-adapter flow callbacks retain conditional/unconditional branches per logical request; separate generic leaf first-slice counterexample does not apply."
+  },
+  "cogact_magnitude_schema_recovery_latest": {
+    "observed_at": "2026-11-09T17:46:25.904590+00:00",
+    "reason": "Old extraction KeyError tcp_pose on drawer tasks; old partial report not accepted.",
+    "sources": "scripts/summarize_paired_stability_v2.py and scripts/audit_paired_stability_metrics_v2.py",
+    "coordinate_frames": "drawer robot-base EEF xyz/wxyz from agent.eef_pos; other tasks retain world TCP. No pooling across tasks/frames.",
+    "expanded_parent_pid": 2720050,
+    "full200_parent_pid": 2720051,
+    "launch_evidence": "current_evidence/cogact_drawer_schema_recovery_launch_001.json",
+    "accepted_magnitude_starts_unchanged": 827,
+    "full_campaign_complete": false
+  },
+  "causal_flow_figures_latest": {
+    "observed_at": "2026-11-09T17:53:04.024241+00:00",
+    "status": "prepared_and_queued_after_complete_causal_contract_audits",
+    "models": [
+      "pi05",
+      "rdt",
+      "cogact",
+      "lingbot"
+    ],
+    "modes": 6,
+    "source": "scripts/plot_causal_flow_stability.py",
+    "independent_table_auditor": "scripts/audit_causal_flow_figure_table.py",
+    "synthetic_controls": "current_evidence/causal_flow_figure_synthetic_controls_001.json",
+    "queue_evidence": "current_evidence/causal_flow_figures_queue_001.json",
+    "actual_model_figures_accepted": false,
+    "visual_inspection_pending": true,
+    "full_campaign_complete": false
+  },
+  "final_diagnostic_chronology_gate_latest": {
+    "observed_at": "2026-11-09T19:26:22.782084+00:00",
+    "status": "reference_order_clarified_final_identity_and_acceptance_checks_pending",
+    "evidence": "current_evidence/final_diagnostic_chronology_reconciliation_002.json",
+    "prior_overstrict_freeze_before_causal_inference_withdrawn": true,
+    "actual_causal_local_and_heldout_identity_audits_still_required": true,
+    "full_campaign_complete": false
+  },
+  "live_stability_production_latest": {
+    "observed_utc": "2026-11-10T07:36:39.859096+00:00",
+    "classification": "verified_wait",
+    "primary_endpoint": "singleton_vs_batched_stability",
+    "workers": [
+      {
+        "model": "pi05",
+        "pid": 1942407,
+        "start_ticks": 424051173,
+        "state": "R",
+        "cpu_ticks": 8340883,
+        "completed_pairs": 1927,
+        "prescribed_pairs": 2400,
+        "parent_status": "running"
+      },
+      {
+        "model": "rdt",
+        "pid": 675019,
+        "start_ticks": 426340577,
+        "state": "R",
+        "cpu_ticks": 11003541,
+        "completed_pairs": 545,
+        "prescribed_pairs": 2400,
+        "parent_status": "running"
+      },
+      {
+        "model": "lingbot",
+        "pid": 4055960,
+        "start_ticks": 425339189,
+        "state": "R",
+        "cpu_ticks": 6748974,
+        "completed_pairs": 313,
+        "prescribed_pairs": 600,
+        "parent_status": "running_full_model_diagnostic"
+      },
+      {
+        "model": "cogact",
+        "pid": 4146616,
+        "start_ticks": 430781854,
+        "state": "R",
+        "cpu_ticks": 1543174,
+        "completed_pairs": 194,
+        "prescribed_pairs": 2400,
+        "parent_status": "running"
+      }
+    ],
+    "accepted_magnitude_starts": 950,
+    "cogact_full_magnitude_and_bootstrap_audits_complete": true,
+    "full_campaign_complete": false,
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/live_stability_wait_20261110T073639Z.json"
+  },
+  "isolated_operator_performance_latest": {
+    "observed_at": "2026-11-09T19:14:51.899262+00:00",
+    "status": "versioned_isolated_operator_timings_and_independent_audits_queued",
+    "plans": "results/four_model/operator_performance_plans_002",
+    "source_cases": 258,
+    "case_variants": 290,
+    "timing_slots": 3270,
+    "cpu_controls_passed": 21,
+    "source_mask_cases_restored_bitwise": 4,
+    "component_metadata_layouts_crosschecked": 32,
+    "queue_evidence": "current_evidence/isolated_operator_performance_queue_002.json",
+    "source_guards_pinned": true,
+    "actual_gpu_integration_and_timings_accepted": false,
+    "full_campaign_complete": false
+  },
+  "serving_stability_figures_latest": {
+    "status": "queued_after_independent_real_performance_audits",
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/serving_stability_figure_queue_001.json",
+    "primary_endpoint": "singleton_vs_batched_stability",
+    "actual_model_figures_accepted": false,
+    "full_campaign_complete": false
+  },
+  "cogact_frame_explicit_plots_latest": {
+    "status": "full_200_start_figure_values_verified_and_visually_inspected",
+    "figure": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_cogact_200_frame_v2_001/cogact_paired_stability.png",
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_200_magnitude_acceptance_001.json",
+    "full_campaign_complete": false
+  },
+  "singleton_batched_task_table_latest": {
+    "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/singleton_batched_stability_task_table_003.csv",
+    "sha256": "3551e38fed0654f29b0be5de44b25d3834cace8de8607fe5bd09b9ad712267b9",
+    "rows": 38,
+    "accepted_starts": 950
+  },
+  "accepted_stability_latest": {
+    "accepted_starts": 950,
+    "models": {
+      "pi05": 500,
+      "rdt": 250,
+      "cogact": 200
+    },
+    "summary": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/stability_audited_summary.json",
+    "summary_sha256": "0d74b358f875da8f4cc17bd531e934f579e2f07417061e758d2ca535ac233bdd",
+    "bootstrap_summary": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_bootstrap_verified_summary_003.json",
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_200_magnitude_acceptance_001.json",
+    "full_campaign_complete": false
+  },
+  "cogact_full_paired_production_latest": {
+    "status": "full_200_start_raw_magnitudes_bootstrap_and_figure_verified",
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_200_magnitude_acceptance_001.json",
+    "completed_paired_starts": 200,
+    "raw_audit_complete": true,
+    "numerical_qa_acceptance_pending": false,
+    "accepted_magnitude_starts": 200,
+    "full_campaign_complete": false
+  },
+  "pi05_complete_heldout_stability_latest": {
+    "verified_utc": "2026-11-10T14:33:16.861501+00:00",
+    "proof": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/heldout_fresh004/independent_heldout_audit.json",
+    "proof_sha256": "e5634a9cd1605f620b43bed4b3f86c5e4f0361406f217744fcacc975b303a812",
+    "all_six_input_artifacts_rehashed": true,
+    "auditor_source_rehashed": true,
+    "request_noise_pairs": 2400,
+    "arrangement_records": 187200,
+    "native_nonexact_arrangements": 88800,
+    "invariant_output_and_all_recorded_stages_exact": true,
+    "singleton_fidelity_nonexact_records": 2400,
+    "scope": "Fixed-input singleton-versus-batched stability; BI B1 versus native B1 fidelity is separate. Not additional simulator starts.",
+    "full_model_campaign_complete": false
+  },
+  "pi05_serving_stability_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05_serving_stability_acceptance001.json",
+    "native_dynamic_nonexact_requests": 746,
+    "invariant_dynamic_nonexact_requests": 0,
+    "requests_per_configuration": 1000,
+    "unique_fixtures": 8,
+    "visual_inspection_complete": true,
+    "full_campaign_complete": false
+  },
+  "causal_version3_migration_latest": {
+    "plans": "results/four_model/causal_plans_003",
+    "waiting_launcher_evidence": "results/four_model/current_evidence/causal_v3_waiting_launcher_migration001.json",
+    "downstream_evidence": "results/four_model/current_evidence/causal_v3_downstream_migration001.json",
+    "reason": "Task-scoped episode identity; old sources and failed runs retained",
+    "accepted_causal_results": false
+  },
+  "pi05_causal_and_local_replay_latest": {
+    "evidence": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/pi05_causal_and_local_replay_acceptance003.json",
+    "measurement_records": 3600,
+    "same_operand_repair_demonstrated": true,
+    "globally_first_operator_attribution_complete": false,
+    "full_campaign_complete": false
+  },
+  "pi05_operator_performance_latest": {
+    "observed_utc": "2026-11-10T15:45:17.163094+00:00",
+    "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/isolated_operator_performance_002/independent_operator_performance_audit.json",
+    "audit_sha256": "7ef91582490ed3ee151cded685e684b70e2abb62afd6d4dd08b739b437d5d9a0",
+    "audit_result": {
+      "status": "complete_operator_timing_records_independently_recounted",
+      "model": "pi05",
+      "plan_sha256": "05afd12d915c136aac2bb3fbe8a810c14d6e436f205bed425707fda35d645279",
+      "raw_sha256": "a3dcdc01ddb40ede2f77bf824ddbfbd5c36fc43dae468e268192876a0b74d33c",
+      "isolation_sha256": "dcacfa1b5fa2e9b59a5788668ab3def56716cb234d4d338d0dd0cbdcc196e4ec",
+      "runtime_sha256": "e749fb558cf54551aafcb1b8b8e9fd956e954cc2d7a91e961287f27abaed57a2",
+      "case_count": 58,
+      "timing_slots": 710,
+      "statuses": {
+        "timed": 710
+      },
+      "all_planned_modes_timed": true,
+      "generated_numerical_operand_bytes_independently_rederived": false,
+      "source_attention_masks_independently_rederived": true,
+      "timing_and_isolation_scope": "Retained raw samples, trace layouts, captured masks and sampled compute/graphics inventory.",
+      "auditor_sha256": "b7471e1163869199cb33d13dc132719c08e2838999803f415f6b7a0f000c3ef6",
+      "full_campaign_complete": false
+    },
+    "full_campaign_complete": false
+  },
+  "cogact_complete_heldout_stability_latest": {
+    "observed_utc": "2026-11-11T03:50:09.618570+00:00",
+    "status": "complete_cogact_heldout_stability_promoted_after_hash_reverification",
+    "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/heldout_fresh003/independent_heldout_audit.json",
+    "audit_sha256": "ae71d1b44033c1119de7d89a180888b3d9b12dca7cbb0bc67b644d02c4fafd2f",
+    "all_audit_bound_inputs_rehashed": true,
+    "independent_auditor_source_rehashed": true,
+    "request_noise_pairs": 2400,
+    "arrangement_records": 187200,
+    "native_nonexact_arrangements": 88800,
+    "invariant_output_and_all_recorded_stages_exact": true,
+    "singleton_fidelity_nonexact_records": 2400,
+    "accepted_simulation_starts_unchanged": 950,
+    "full_campaign_complete": false
+  },
+  "cogact_causal_contract_latest": {
+    "observed_utc": "2026-11-11T04:30:49.097885+00:00",
+    "status": "complete_cogact_causal_measurement_contracts_and_figure_review_verified",
+    "causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_003/independent_contract_audit.json",
+    "causal_audit_sha256": "cf564d235d7e24a45d0c303f62769808c301a48ba584777f5fbd5eb104640a97",
+    "raw_and_provenance_and_pinned_sources_rehashed": true,
+    "measurement_records": 3600,
+    "request_noise_pairs": 600,
+    "rows": [
+      {
+        "mode": "existing_invariant_ops",
+        "requests": 600,
+        "nonexact_outputs": 0,
+        "any_recorded_boundary_divergence": 0,
+        "maximum_output_error": 0.0,
+        "first_recorded_boundaries": {}
+      },
+      {
+        "mode": "explicit_per_matrix_reference",
+        "requests": 600,
+        "nonexact_outputs": 0,
+        "any_recorded_boundary_divergence": 0,
+        "maximum_output_error": 0.0,
+        "first_recorded_boundaries": {}
+      },
+      {
+        "mode": "full_invariant",
+        "requests": 600,
+        "nonexact_outputs": 0,
+        "any_recorded_boundary_divergence": 0,
+        "maximum_output_error": 0.0,
+        "first_recorded_boundaries": {}
+      },
+      {
+        "mode": "native",
+        "requests": 600,
+        "nonexact_outputs": 600,
+        "any_recorded_boundary_divergence": 600,
+        "maximum_output_error": 1.0,
+        "first_recorded_boundaries": {
+          "flow.step_00.sample": 600
+        }
+      },
+      {
+        "mode": "native_deterministic",
+        "requests": 600,
+        "nonexact_outputs": 600,
+        "any_recorded_boundary_divergence": 600,
+        "maximum_output_error": 1.0,
+        "first_recorded_boundaries": {
+          "flow.step_00.sample": 600
+        }
+      },
+      {
+        "mode": "operators_plus_patch_projection",
+        "requests": 600,
+        "nonexact_outputs": 0,
+        "any_recorded_boundary_divergence": 0,
+        "maximum_output_error": 0.0,
+        "first_recorded_boundaries": {}
+      }
+    ],
+    "tensor_errors_independently_rederived": false,
+    "local_operator_reexecution_verified": false,
+    "globally_first_operator_attribution_complete": false,
+    "figure_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_003/independent_table_audit.json": "5030a7e56fbb45e60889f022e3943e94f58d71fe0afc45ee1e40180db9f352b9",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_003/plotted_table.json": "04f7263ffca3366fb986fd287ea02fc354985a3ce359b9a96d9d2042c1d8595d",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_003/sample_page01.pdf": "c97c5000b406eaaa0f7e66229f2862e8d9e3b11daad312ac963883e7db196f52",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_003/sample_page01.png": "47b450f1dd792b2605b636bedff43d48458849164ec8f2ac42d7e8709a2d4600"
+    },
+    "figure_visual_inspection_complete": true,
+    "full_campaign_complete": false
+  },
+  "cogact_local_replay_latest": {
+    "observed_utc": "2026-11-11T04:31:35.188635+00:00",
+    "status": "cogact_captured_local_replay_verified_with_cross_implementation_operand_limit",
+    "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/local_leaf_attribution_003/independent_local_replay.json",
+    "audit_sha256": "21e01163a81a7caa05ea922d48c63faab327ac52a0194f1c360cde53d29ed0a9",
+    "trace_and_four_captures_rehashed": true,
+    "native_leaf_batch_dependence_demonstrated": true,
+    "invariant_leaf_bitwise_stability_demonstrated": true,
+    "same_operands_across_implementations": false,
+    "same_operand_repair_demonstrated": false,
+    "globally_first_operator_attribution_complete": false,
+    "full_campaign_complete": false
+  }
+}

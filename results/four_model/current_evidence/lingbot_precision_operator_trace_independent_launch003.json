@@ -1,0 +1,17 @@
+{
+  "status": "launched_corrected_trace_and_inventory_audit",
+  "trace": {
+    "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-operator-traces-003.py",
+    "sha256": "8356f4e0d0c125738e27de934e507e523fd680cc5098ddc90d9e14e4824c03f8",
+    "pid": 1722887,
+    "ticks": 455494270
+  },
+  "audit": {
+    "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-operator-inventory-audit-003.py",
+    "sha256": "0a533056b8772c6eae17b767fe7d2a0c726ac74da054cdba40bd2dd0242af446",
+    "pid": 1723397,
+    "ticks": 455494294
+  },
+  "scope": "Same trace commands, numerical pins and outputs as attempt002; diagnostic inputs already exposed. Capacity prerequisite completed. Paired simulator stopped prelaunch for space; final paired exposure remains prerequisite for heldout freeze.",
+  "full_campaign_complete": false
+}

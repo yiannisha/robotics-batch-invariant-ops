@@ -1,0 +1,26 @@
+{
+  "all_four_preflights_passed": true,
+  "negative_controls": [
+    {
+      "case": "missing_source_pin",
+      "rejected": true,
+      "reason": "ValueError: Missing required experiment source pin"
+    },
+    {
+      "case": "wrong_manifest_hash",
+      "rejected": true,
+      "reason": "ValueError: Replay manifest changed"
+    },
+    {
+      "case": "foreign_adapter",
+      "rejected": true,
+      "reason": "ValueError: Foreign adapter"
+    },
+    {
+      "case": "changed_trace_hash",
+      "rejected": true,
+      "reason": "ValueError: Trace changed"
+    }
+  ],
+  "no_inference_performed": true
+}

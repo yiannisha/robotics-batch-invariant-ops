@@ -1,0 +1,8 @@
+{
+  "status": "retained_one_start_dual_arm_magnitudes_independently_recounted",
+  "report_sha256": "43431652e86e2112b13dc3306fed33e905a661b29730f38360aa47158f57c862",
+  "auditor_sha256": "c7faa3b7593632e08dd0b4e1297ff39ea7167a4a8358a260ee3ec5006d71ef2b",
+  "verified_raw_frames": 452,
+  "scope": "One retained adjust_bottle pilot start only, not50taskcampaign",
+  "full_campaign_complete": false
+}

@@ -1,0 +1,20 @@
+{
+  "status": "complete_corpus_independently_verified",
+  "episodes": 100,
+  "observations": 1000,
+  "split_counts": {
+    "diagnostic": 200,
+    "heldout": 800
+  },
+  "all_raw_rgb_rehashed": true,
+  "all_expanded_raw_states_rehashed": true,
+  "reset_protocol": "fresh_seeded_worker_reconstruction_exact_canonical_snapshot_comparison",
+  "heldout_input_disjointness_still_pending": true,
+  "all_controller_actions_recomputed": true,
+  "all_request_noise_regenerated": true,
+  "all_companions_split_local": true,
+  "manifest_sha256": "0156f3268d99a78421c48ec863c44a74143470e0d0abcdcc750b407008cc8941",
+  "auditor_sha256": "83275730e6ce56c63c707b28137fc64ef917d1d23fa47a893f3877ff6a58035b",
+  "native_contract": "native operators with fixed64 language extent; not unmodified released longest-padding policy",
+  "paired_success_rate_campaign_complete": false
+}

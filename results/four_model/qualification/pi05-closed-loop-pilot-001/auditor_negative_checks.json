@@ -1,0 +1,35 @@
+{
+  "status": "all_six_invalid_campaign_variants_rejected",
+  "checks": [
+    {
+      "case": "missing_episode",
+      "rejected": true,
+      "error": "RuntimeError: duplicate/missing/extra episodes"
+    },
+    {
+      "case": "changed_initial_state",
+      "rejected": true,
+      "error": "RuntimeError: initial state or observations differ"
+    },
+    {
+      "case": "condition_dependent_noise",
+      "rejected": true,
+      "error": "RuntimeError: noise is not indexed independently of condition"
+    },
+    {
+      "case": "wrong_batch_schedule",
+      "rejected": true,
+      "error": "RuntimeError: batch schedule mismatch"
+    },
+    {
+      "case": "changed_invariant_normalized_chunk",
+      "rejected": true,
+      "error": "RuntimeError: normalized invariant chunks differ"
+    },
+    {
+      "case": "invalid_first_divergence_attribution",
+      "rejected": true,
+      "error": "RuntimeError: first native mismatch lacks attribution"
+    }
+  ]
+}

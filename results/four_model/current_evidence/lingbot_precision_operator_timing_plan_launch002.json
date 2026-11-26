@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-11-11T18:25:51.417733+00:00",
+  "classification": "queued_cpu_plan_generation_not_timing_results",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-operator-timing-plan-002.py",
+  "launcher_sha256": "eb4af42ddeb28a1dc32819c83a8b8e95bccb8077980c358b29d9e5ab72378701",
+  "pid": 1600349,
+  "start_ticks": "444280370",
+  "configuration": {
+    "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+    "pid": 3550876,
+    "ticks": "438564511",
+    "upstream": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-operator-inventory-audit-002.json",
+    "builder": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/build_operator_performance_plans_v2.py",
+    "builder_sha256": "bb6dfcf8e56d95655fa7d188b062b2eadf710754e6b09f68e180e6301b1285b8",
+    "coverage": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001/operator/coverage_complete_audit.json",
+    "command": [
+      "python3",
+      "-m",
+      "scripts.build_operator_performance_plans_v2",
+      "--campaign-base",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign",
+      "--model",
+      "lingbot",
+      "--operator-directory",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001/operator",
+      "--output-dir",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/operator_performance_plans_precision002"
+    ]
+  },
+  "full_campaign_complete": false
+}

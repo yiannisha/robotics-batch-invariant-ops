@@ -1,0 +1,15 @@
+{
+  "status": "independently_audited_partial_operator_stability",
+  "observed_utc": "2026-11-09T12:59:26.362456+00:00",
+  "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_progress_audit_001.json",
+  "audit_sha256": "3ac06ee15ca1ec11130dd90d9e98481e503a7cdc338f41cc1ed0db588e47ce1d",
+  "audited_measurements": 8039,
+  "completed_arrangements": 80,
+  "prescribed_arrangements": 408,
+  "batched_comparisons": 7539,
+  "native_nonexact_batched_comparisons": 6939,
+  "invariant_nonexact_batched_comparisons": 0,
+  "native_max_absolute_error": 0.0008544921875,
+  "scope": "Synthetic operands with actual captured linear shapes/strides; not full-model replay or simulator trajectory results.",
+  "full_operator_qualification_complete": false
+}

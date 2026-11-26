@@ -1,0 +1,9 @@
+{
+  "status": "queued_corrected_precision_full_paired_and_audit",
+  "pid": 3269006,
+  "start_ticks": 438514720,
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-full-paired-002.py",
+  "upstream_B64_pid": 3237331,
+  "output": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001",
+  "full_campaign_complete": false
+}

@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-11-09T15:57:42.335299+00:00",
+  "status": "supported_leaf_snapshot_and_isolated_replay_cpu_controls_passed",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_leaf_operator.py": "41b6428b16fcbc16c1181f61027a824cebe0c426e399a5350a7f237086b73c3b",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "59a6c2e6eab6e3d692afcbc651d00b72d0d8cff614794a68c6b1eb0d18d82d4b",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_captured_leaf_operator.py": "f533fe081a3d5f5e92cfb96fbeef8dc36349aa4285164457af7112f160247ee6"
+  },
+  "focused_controls_passed_combined": 23,
+  "hook_file_replay_cpu_integration": "passed",
+  "supported_exact_module_types": [
+    "torch.nn.Linear",
+    "torch.nn.Conv2d with zero padding mode"
+  ],
+  "scope": "Captures actual operand/weight/bias/output storage and precision/autocast/invariant context. Replays twice with output bit and layout checks. Source/reduction flags, CUDA numerical environment and GPU UUID/runtime retained. GPU alignment cannot be disabled.",
+  "integration": "Separate leaf tracer can retain four mode/batch operand artifacts with byte hashes; unsupported leaves remain explicit.",
+  "actual_checkpoint_operand_capture_executed": false,
+  "actual_gpu_isolated_replay_verified": false,
+  "globally_first_operator_attribution_complete": false,
+  "remaining": [
+    "Independent artifact-level replay/projection audit CLI",
+    "Actual GPU trace with repeated-output controls",
+    "Validate local native/invariant same-input contrast before claiming causal leaf batching dependence"
+  ],
+  "full_campaign_complete": false
+}

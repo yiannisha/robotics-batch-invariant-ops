@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-11-12T23:45:06.551364+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "stage": "lingbot_diagnostic",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 16951497,
+      "completed_units": 580,
+      "total_units": 600
+    }
+  ],
+  "full_campaign_complete": false
+}

@@ -1,0 +1,68 @@
+{
+  "observed_utc": "2026-11-10T12:53:18.811687+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "pi05_policy",
+      "pid": 3490608,
+      "start_ticks": 433636942,
+      "state": "R",
+      "cpu_ticks": 10052
+    },
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 14879209,
+      "completed_pairs": 737,
+      "parent_status": "running"
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 8753833,
+      "completed_pairs": 413,
+      "parent_status": "running_full_model_diagnostic"
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 5069084,
+      "completed_pairs": 753,
+      "parent_status": "running"
+    }
+  ],
+  "pi05_heldout_audit": {
+    "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/heldout_fresh004/independent_heldout_audit.json",
+    "sha256": "e5634a9cd1605f620b43bed4b3f86c5e4f0361406f217744fcacc975b303a812",
+    "result": {
+      "status": "complete_four_model_heldout_independently_verified",
+      "model_id": "pi05_libero",
+      "input_sha256": {
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/audited_manifest.json": "586bbb92a8d99b2802ca8a444d93559375aa6612fe29438c2a3edc42c9fab9b7",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/numerical_freeze.json": "2c7827b60cfd78ad3390de06a4e9a196e4b009395a97d4bf1a4a2f881b6546e5",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/pi05-no-msaa-unexposed-004/prepared_input_disjointness_final.json": "014236e0a89d94e9904038b3e8b5737df71748256d56e03ff182b7b3077f79af",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/heldout_fresh004/invariance.jsonl.gz": "1c50a17e1fb16021f6f4b7301ef606ac4ad33f6532d10f757668c50c90053bf0",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/heldout_fresh004/singleton_fidelity.jsonl.gz": "9f6e3b7f4526ba4dda3fffc02e5572b37b25f84d9c51ec72716d30891e87663e",
+        "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/heldout_fresh004/invariance.jsonl.gz.runtime.json": "49698ffc672766db508a2d8194ca98d569ec26ceeda554474bcd3f18e7ba3ff2"
+      },
+      "request_noise_pairs": 2400,
+      "implementation_groups": 4800,
+      "arrangement_records": 187200,
+      "native_nonexact_arrangements": 88800,
+      "invariant_output_and_all_recorded_stages_exact": true,
+      "singleton_fidelity_records": 2400,
+      "singleton_fidelity_nonexact_records": 2400,
+      "auditor_sha256": "125661e72a69e16341be84b42ed6faa166568814091a86d36363578178a0d307",
+      "full_model_campaign_complete": false
+    }
+  },
+  "pi05_performance_status": "running",
+  "accepted_magnitude_starts": 950,
+  "full_campaign_complete": false
+}

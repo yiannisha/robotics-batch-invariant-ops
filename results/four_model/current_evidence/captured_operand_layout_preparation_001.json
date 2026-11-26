@@ -1,0 +1,21 @@
+{
+  "timestamp_utc": "2026-11-09T15:51:22.885278+00:00",
+  "status": "operand_layout_capture_restore_cpu_controls_passed",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_captured_tensor_layout.py": "ca662c35761ca8403238e4628bb63f6f93b5b370e6b11f6dd4db86b06de13003"
+  },
+  "focused_tests_passed": 9,
+  "scope": "Physical-span and logical-bit hashes, dtype, shape, strides, storage offset and pointer alignment. Supports broadcast zero strides by copying physical storage once.",
+  "gpu_alignment_required_by_default": true,
+  "cpu_controls_disable_alignment_only_for_layout_roundtrips": true,
+  "actual_model_operands_captured": false,
+  "gpu_operator_reexecution_verified": false,
+  "operator_attribution_complete": false,
+  "remaining": [
+    "Integrate capture at actual supported leaf boundaries",
+    "Retain real inputs/weights/outputs with source/config/noise provenance",
+    "Independently reproduce captured outputs in isolation under pinned precision and invariant mode"
+  ],
+  "full_campaign_complete": false
+}

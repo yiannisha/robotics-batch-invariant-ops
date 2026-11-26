@@ -1,0 +1,64 @@
+{
+  "status": "selected_source_operator_measurements_independently_verified",
+  "configuration_sha256": "38b74e0d39efd8270aade746882b4911a83b193498f78b2e4433555a027a1d46",
+  "raw_records": 700,
+  "raw_records_sha256": "d5a6f74e6e63b29a6251cfc7227927a3575dade6120c0926203f56510de633c3",
+  "auditor_sha256": "c52ce46bfc9779256bba4d85cf978339ca5e03338ce2a1a9d9cd4fed4e1b87ee",
+  "arrangements": [
+    {
+      "arrangement": "rdt_vision_softmax_bf16_to_f32|B1|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 4.470348358154297e-08
+    },
+    {
+      "arrangement": "rdt_vision_softmax_bf16_to_f32|B2|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 4.470348358154297e-08
+    },
+    {
+      "arrangement": "rdt_vision_softmax_bf16_to_f32|B2|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 4.470348358154297e-08
+    },
+    {
+      "arrangement": "rdt_vision_softmax_bf16_to_f32|B4|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 4.470348358154297e-08
+    },
+    {
+      "arrangement": "rdt_vision_softmax_bf16_to_f32|B4|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 5.960464477539063e-08
+    },
+    {
+      "arrangement": "rdt_vision_softmax_bf16_to_f32|B8|first",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 4.470348358154297e-08
+    },
+    {
+      "arrangement": "rdt_vision_softmax_bf16_to_f32|B8|last",
+      "measured_seeds": 100,
+      "complete100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 5.960464477539063e-08
+    }
+  ],
+  "completed_arrangements": 7,
+  "prescribed_arrangements": 7,
+  "all_selected_arrangements_complete": true,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true,
+  "scope": "Only B1,2,4,8 in this run; larger batch sizes and other operators remain outstanding. Shared-GPU timings unqualified."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "pilot_raw_evidence_independently_verified",
+  "model": "cogact",
+  "scope": "complete_episode_pilot",
+  "episodes": 8,
+  "blocks": [
+    {
+      "task": "pick_can",
+      "initialization": 0,
+      "all_AA_exact": true,
+      "invariant_batching_exact": true,
+      "native_first_action_divergence": 1
+    }
+  ],
+  "request_noise_regenerated_and_verified": true,
+  "controller_actions_recomputed": true,
+  "episode_bytes_sha256": "4fc2b2333fbb057ff62dba3f5cbb1b43418425bfcd5184f3e9b9b1a261bfccc5",
+  "auditor_sha256": "05c571539193fc13e712b5d22ebfc8195726d8bc511ab179971d291ba9bcd03b",
+  "paired_success_rate_campaign_complete": false
+}

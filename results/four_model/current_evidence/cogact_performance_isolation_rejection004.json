@@ -1,0 +1,13 @@
+{
+  "status": "rejected_foreign_gpu_activity_no_accepted_timing",
+  "verified_utc": "2026-11-13T01:49:12.722113+00:00",
+  "isolation_sha256": "0454aad20194eb30a00bd1938796ac761a4317b76cc2d01afea81129c6d446ad",
+  "partial_measurements_sha256": "cd04e1ea9abe64ca3282e4c51e640a2805d1cd944c138996dcd80591e0d9f1d1",
+  "partial_records": 2394,
+  "child_exit_code": -15,
+  "downstream_processes_terminal": true,
+  "independent_acceptance_exists": false,
+  "automatic_retry": false,
+  "stability_results_unchanged": true,
+  "full_campaign_complete": false
+}

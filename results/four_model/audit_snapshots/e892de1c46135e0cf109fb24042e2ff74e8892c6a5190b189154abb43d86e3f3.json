@@ -1,0 +1,542 @@
+{
+  "status": "paired_rollouts_independently_audited_provisional_pending_numerical_QA",
+  "completed_paired_starts": 46,
+  "prescribed_paired_starts": 250,
+  "episodes": 368,
+  "by_task": {
+    "PegInsertionSide-v1": {
+      "paired_starts": 46,
+      "successes": {
+        "native_singleton": 5,
+        "native_dynamic": 1,
+        "patched_singleton": 3,
+        "patched_dynamic": 3
+      },
+      "unique_initial_physics_states": 46,
+      "success_rate": {
+        "native_singleton": 0.10869565217391304,
+        "native_dynamic": 0.021739130434782608,
+        "patched_singleton": 0.06521739130434782,
+        "patched_dynamic": 0.06521739130434782
+      },
+      "BI_minus_native_singleton_percentage_points": -4.3478260869565215,
+      "BI_minus_native_dynamic_percentage_points": 4.3478260869565215
+    }
+  },
+  "blocks": [
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 1,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 2,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 18
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 3,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 18
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 4,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 5,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 6,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 17
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 7,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 8,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 9,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 10,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": false,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 17
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 11,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 12,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 23
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 13,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 14,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 21
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 15,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 16,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 17,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 18,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 19,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 20,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 21,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 22,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 23,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 24,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 21
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 25,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 26,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 27,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 18
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 28,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 17
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 29,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 30,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 31,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 18
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 32,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 17
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 33,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 34,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 18
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 35,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 18
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 36,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 18
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 37,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 19
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 38,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 17
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 39,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 40,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 41,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 17
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 42,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 43,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 16
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 44,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 21
+    },
+    {
+      "task": "PegInsertionSide-v1",
+      "initialization": 45,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 17
+    }
+  ],
+  "reconstructed_policy_calls": 8880,
+  "all_completed_blocks_pass_reset_AA_and_invariant_trajectory_checks": true,
+  "cohort_rollouts_complete": false,
+  "controlled_native_fixed30": true,
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "candidate_lock_sha256": "fcbf88f25a7387a6dc6abb1f70beaaff3586599221bed2c6bfa18d26cfc351c1",
+  "auditor_sha256": "2685ee2148f403c0f1939ddac042b4a22d622e044db46328ebb0e62dcd26a23f"
+}

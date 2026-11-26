@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-11-11T16:31:48.778828+00:00",
+  "classification": "corrected_precision_serving_figure_queue_preparation_not_results",
+  "old_launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-performance-serving-stability-figures-001.py",
+  "old_launcher_sha256": "2a7c3b30c0bf054a911db5a8f90cbca21557307ce5b984f11efdc811fca3989c",
+  "new_launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-serving-stability-figures-002.py",
+  "new_launcher_sha256": "f47e5dffbffbea4f5a3c5652074e4ee779837322880e6716eb77d469dbd39639",
+  "pid": 3018887,
+  "start_ticks": "443596106",
+  "dependency_pid": 3624985,
+  "dependency_start_ticks": "438580367",
+  "changes": "Only launcher D configuration changed; corrected precision paths, live independent audit dependency, CPU plotting interpreter. Plot and independent recount sources unchanged.",
+  "configuration": {
+    "model": "lingbot",
+    "model_id": "lingbot_robotwin_exact",
+    "dependency_pid": 3624985,
+    "dependency_start_ticks": "438580367",
+    "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-independent-performance-audit-002.json",
+    "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+    "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python",
+    "raw": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001/isolated_performance_002/queue.jsonl",
+    "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001/isolated_performance_002/independent_performance_audit.json",
+    "output_dir": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/lingbot_serving_stability_tradeoff_precision002",
+    "source_sha256": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_serving_stability_tradeoff.py": "46fbe0d68ca90519146f5e4e8ceb4641a5b4e2e82c260375bf7ba2b0a72f9c22",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_serving_tradeoff_table.py": "8e08934d7f3808fd8546485b1694223e55db0da50a561eed2908b01510ab4d11"
+    }
+  },
+  "full_campaign_complete": false
+}

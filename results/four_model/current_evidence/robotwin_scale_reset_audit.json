@@ -1,0 +1,15 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "place_object_scale",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 400,
+  "raw_frames_verified": 1203,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1203,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "1ce216ea533b155b501a8631c8785e6623802db84e4a57ea1e164286252dcbc0",
+  "auditor_sha256": "a30cf4a1ce8aac5e6f1bbecde9dcbbafae8a2481d495082e8841b82549e0fb57"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "source_episodes_sha256": "de88ec10a3454e8fcfb13a6cf957849c0ac8d1dd7391d8efe6de7241363e7e1a",
+  "episodes": 8,
+  "checks": {
+    "all_same_condition_repeats_exact": true,
+    "invariant_actions_and_trajectories_exact": true,
+    "native_first_action_divergence": 50
+  },
+  "scope": "New paired guards applied to retained one-task eight-episode pilot after schema conversion; no new model inference or50taskcampaignqualification"
+}

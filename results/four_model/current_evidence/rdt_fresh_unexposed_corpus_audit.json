@@ -1,0 +1,37 @@
+{
+  "status": "complete_corpus_independently_verified",
+  "observations": 1000,
+  "episodes": 100,
+  "split_counts": {
+    "diagnostic": 200,
+    "heldout": 800
+  },
+  "raw_inputs_rebuilt": true,
+  "all_noise_regenerated": true,
+  "all_source_executed_controls_verified": true,
+  "initialization_ids": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "heldout_acceptance_pending_observation_disjointness_audit": true,
+  "manifest_sha256": "54ad1e2a80f141dcde190db5dab156d7df2ae0a213def4843dc734b7a7539c30",
+  "auditor_sha256": "3358adce4bd200893b9193ee079dcf5db5efaf972fd5e7b58e8ba22c7bdc1feb"
+}

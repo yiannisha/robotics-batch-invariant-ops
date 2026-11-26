@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-11-10T17:22:20.354310+00:00",
+  "status": "retained_operator_timing_artifact_hashes_reverified",
+  "audit_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/isolated_operator_performance_002/independent_operator_performance_audit.json",
+  "verified_artifacts": {
+    "operator_timings.jsonl": "a3dcdc01ddb40ede2f77bf824ddbfbd5c36fc43dae468e268192876a0b74d33c",
+    "isolation.json": "dcacfa1b5fa2e9b59a5788668ab3def56716cb234d4d338d0dd0cbdcc196e4ec",
+    "operator_timings.jsonl.runtime.json": "e749fb558cf54551aafcb1b8b8e9fd956e954cc2d7a91e961287f27abaed57a2"
+  },
+  "full_campaign_complete": false
+}

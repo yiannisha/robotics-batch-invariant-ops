@@ -1,0 +1,40 @@
+{
+  "model": "cogact_small",
+  "repository": "CogACT/CogACT-Small",
+  "revision": "ca302a300542393a0b06e291465076a7d9105c23",
+  "status": "checkpoint_acquired_and_hashed",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4066,
+      "sha256": "8e502e03216f41afbe7ca9364b968bb46c3d568d46021d44d60074de57dcb075",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "checkpoints/CogACT-Small.pt",
+      "bytes": 30215225166,
+      "sha256": "013cf0d4954e8a560064905ee03785ce3d0fa126697d4410cfde9a6754665e44",
+      "upstream_lfs_sha256": "013cf0d4954e8a560064905ee03785ce3d0fa126697d4410cfde9a6754665e44"
+    },
+    {
+      "path": "config.json",
+      "bytes": 1556,
+      "sha256": "acab8c046e576225262ed733fcb38e9e2d986613d82ed2ce897fbdfa3fb12a39",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "config.yaml",
+      "bytes": 1297,
+      "sha256": "4c156b9dbfd01eab659244bae33612982244b808db70d81664f6d97f5c2890a3",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "path": "dataset_statistics.json",
+      "bytes": 53448,
+      "sha256": "b9f87dcc2b4449ca552066aecb90337507848810a9cf3d0cf18b9f86f03be61c",
+      "upstream_lfs_sha256": null
+    }
+  ],
+  "inference_qualified": false,
+  "closed_loop_qualified": false
+}

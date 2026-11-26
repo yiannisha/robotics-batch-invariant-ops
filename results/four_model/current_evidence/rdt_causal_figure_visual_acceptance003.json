@@ -1,0 +1,28 @@
+{
+  "verified_at_utc": "2026-11-12T11:31:19.646351+00:00",
+  "visually_inspected": [
+    "prediction_page01.png",
+    "sample_page01.png"
+  ],
+  "visual_inspection_complete": true,
+  "observations": "Five task panels; native and native deterministic nonzero curves overlap; invariant variants lie at zero. Prediction page includes six-mode legend and descriptive median/p95 scope.",
+  "scope": "Descriptive retained diagnostic comparisons, not population confidence intervals; tensor errors not independently reconstructed.",
+  "artifact_sha256": {
+    "independent_table_audit.json": "5857ad906440302bc43304b4d7e38f56a0bef71cdff508683b1c48e2dbf87cc5",
+    "sample_page01.png": "4357b6d2bd273945c16b90ad5feddc4b7c0cc8111eda90a242300fc09e0c646d",
+    "prediction_page01.png": "e954e5eb47506f58a0c589b2018409e580854eec5c39316d77d97a95e339dbd8",
+    "sample_page01.pdf": "b40213e2c19b27e6d9e73e79d5d7da0e5acd22ea393a5a9719f1bcc7cdf6e61e",
+    "prediction_page01.pdf": "bb7779925d0dc93fa67cecce0522f3078c8f2049e851b2827625683714119ad7",
+    "plotted_table.json": "7e387460a4d652768fa4611d06cd0f6c73e3a7d75ba32628e4c8a4b04770e065"
+  },
+  "independent_table_audit": {
+    "status": "causal_flow_figure_table_independently_recounted",
+    "table_sha256": "7e387460a4d652768fa4611d06cd0f6c73e3a7d75ba32628e4c8a4b04770e065",
+    "groups_verified": 300,
+    "auditor_sha256": "456ba33b3df068a162e3863fe4b34cad4262e0542604f1d6e1c2a45345732d16",
+    "visual_inspection_complete": false,
+    "tensor_errors_independently_rederived": false,
+    "full_campaign_complete": false
+  },
+  "full_campaign_complete": false
+}

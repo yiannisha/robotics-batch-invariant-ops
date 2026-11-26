@@ -1,0 +1,23 @@
+{
+  "status": "B64_full_policy_capacity_independently_verified",
+  "bound_files_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/replay_manifest.json": "aeffa91444d59f9427b404dd01f4eb166fe12aed18508ea962ca1caa81b321ec",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/diagnostic/invariance.jsonl.gz.runtime.json": "d08d101f3c8e1523720fb71434ab278b750aa0fc90af0b458b3d19578ea37777",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/diagnostic/independent_diagnostic_audit.json": "eb0cf076073f0c7f38282be9cc034d70dcc4a369a65d28f4bd2d20b8eee310c2",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/performance_capacity_B64.jsonl": "2e1864514833c8e481a40e6b796644835828c31e63671b946f97861c0e4439d8",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/performance_capacity_B64.jsonl.runtime.json": "b99a0082e997685a5b583100aaf2c4e38c84bf58c5ce6a309b7e5304a1cfe7ed",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/performance_capacity_B64.jsonl.driver.py": "b929f2f5b02061389281127c0d726fc933aaf45831e25a691f189890cd3071b7"
+  },
+  "arrangements": 12,
+  "feasible": {
+    "native": true,
+    "batch_invariant": true
+  },
+  "invariant_ran_arrangements_exact": true,
+  "gpu_uuid": "f391c6f3-68e5-d0f7-7d47-edae147c7882",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "peak_incremental_bytes": 20531193344,
+  "isolated_performance_qualified": false,
+  "auditor_sha256": "30077afd662ed623dfd2c15435aa69144d9951fabb6d7b973d335090a1183932",
+  "full_campaign_complete": false
+}

@@ -1,0 +1,74 @@
+{
+  "observed_utc": "2026-11-10T10:26:44.528394+00:00",
+  "classification": "verified_wait",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "workers": [
+    {
+      "model": "pi05",
+      "pid": 1942407,
+      "start_ticks": 424051173,
+      "state": "R",
+      "cpu_ticks": 9450318,
+      "completed_pairs": 2182,
+      "prescribed_pairs": 2400,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 6684
+    },
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 13084080,
+      "completed_pairs": 648,
+      "prescribed_pairs": 2400,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 12728
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 7823268,
+      "completed_pairs": 364,
+      "prescribed_pairs": 600,
+      "parent_status": "running_full_model_diagnostic",
+      "cpu_ticks_advanced": 6587
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 3532572,
+      "completed_pairs": 528,
+      "prescribed_pairs": 2400,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 12898
+    }
+  ],
+  "accepted_magnitude_starts": 950,
+  "full_campaign_complete": false,
+  "storage_recovery": {
+    "root_free_bytes": 11943768064,
+    "scratch_free_bytes": 967862669312,
+    "relocated_cache": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/uv-cache-root-relief-20261110",
+    "verified_files": 55290,
+    "verified_bytes": 15418311104,
+    "original_path_preserved_by_symlink": true,
+    "interrupted_monitoring_records": [
+      "robotics-batch-invariant-ops/results/four_model/current_evidence/live_stability_wait_20261110T082644Z.json.incomplete_disk_full"
+    ],
+    "experiment_outputs_on_scratch": true,
+    "relocated_checkpoint": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/root-relief-pizero-assets/fractal_beta_step29576_2024-12-29_13-10_42.pt",
+    "checkpoint_sha256": "1da40985d963ddf394fa63e7db5ddd4cd8082d5c6ce0b2a0cae56abd8b6ec0eb",
+    "checkpoint_original_path_preserved_by_symlink": true,
+    "cache_relocation_reclaimed_little_due_to_remaining_hardlinks": true
+  },
+  "storage_free_bytes_now": {
+    "/": 11629469696,
+    "/scratch": 967856955392,
+    "/vastdisk": 1899399405568
+  }
+}

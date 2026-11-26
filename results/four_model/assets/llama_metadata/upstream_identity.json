@@ -1,0 +1,9 @@
+{
+  "repo": "NousResearch/Llama-2-7b-hf",
+  "revision": "8efe6c9b93655b934e27bd9981e3ec13e55aee9d",
+  "patterns": [
+    "config.json",
+    "tokenizer*",
+    "special_tokens_map.json"
+  ]
+}

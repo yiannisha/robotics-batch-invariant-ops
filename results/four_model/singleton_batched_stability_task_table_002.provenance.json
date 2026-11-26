@@ -1,0 +1,12 @@
+{
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "accepted_starts": 875,
+  "task_mode_rows": 36,
+  "summary": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/stability_audited_summary.json",
+  "summary_sha256": "4c340c787c5788450873140f302dcb809a216c72bea0469cc1068d52b7d53a8d",
+  "csv": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/singleton_batched_stability_task_table_002.csv",
+  "csv_sha256": "05dd6352f8288656f2ea8d07fdeaf414dcbd86b5730fb36a8b95e5c59d3b99aa",
+  "mse_definition": "RMS squared; derived paired mean squared difference, not centered variance or a new raw-tensor audit.",
+  "frame_scope": "CogACT drawer: robot-base frame; pick/move, PI05 and RDT: world. No pooling across tasks or frames.",
+  "full_campaign_complete": false
+}

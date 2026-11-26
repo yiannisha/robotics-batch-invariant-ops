@@ -1,0 +1,12 @@
+{
+  "status": "singleton_fidelity_aggregate_arithmetic_independently_recounted",
+  "model_id": "pi05_libero",
+  "report_sha256": "0db13b96faab4bfb068c0f8b1731b04f65cf87b104e0423beb7b455d556394c4",
+  "raw_sha256": "4fc9ca10c206e385cc40eecb68ed47a4895bc2f98626f56ecaa7e65cbffa78a7",
+  "diagnostic_audit_sha256": "d5e51ad663d6f45102edb70e36257188b47a7d2e84001bbad33609e95b62ffae",
+  "auditor_sha256": "51e8c40f3aa99f31ce818e07fea672162778819ee8d527177bde94c7edac19d1",
+  "comparisons": 600,
+  "tasks": 10,
+  "scope": "Recount of producer-measured normalized B1 implementation differences. Not independent tensor-error rederivation or batching stability.",
+  "full_campaign_complete": false
+}

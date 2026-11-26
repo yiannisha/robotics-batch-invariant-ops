@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-11-09T19:57:21.551295+00:00",
+  "plotter_sha256": "46fbe0d68ca90519146f5e4e8ceb4641a5b4e2e82c260375bf7ba2b0a72f9c22",
+  "synthetic_png_sha256": "421f61b8931d4f04c41303a76aba5599f1c1a74b91edec010379b3a4c6f1f5b1",
+  "visual_review": {
+    "title_explicitly_synthetic": true,
+    "axis_units_readable": true,
+    "legend_references_readable": true,
+    "load_numbers_readable": true,
+    "exact_vs_violated_symbols_visible": true,
+    "padding_reference_caveat_readable": true,
+    "caption_unclipped": true
+  },
+  "scope": "Synthetic layout only. Every future real model figure requires separate visual inspection.",
+  "actual_model_figures_accepted": false,
+  "full_campaign_complete": false
+}

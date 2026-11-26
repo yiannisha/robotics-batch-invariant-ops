@@ -1,0 +1,22 @@
+{
+  "timestamp_utc": "2026-11-09T16:04:27.191743+00:00",
+  "status": "artifact_replay_and_causal_prerequisite_verifier_prepared",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_captured_leaf_replay.py": "fde40b5e8de1dece6685f7dcd1f78a00d756724ff7ac5836c26ffa45356ef037",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_captured_leaf_audit.py": "c20f5e02b2e87dc3af0d275ecf1d79f400dcab9387ce271f2d8320dc26e35a53",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "ac92e15c730767899774593bb43f91c4669ac66560fe2398e64a942978558cf3",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_leaf_operator.py": "41b6428b16fcbc16c1181f61027a824cebe0c426e399a5350a7f237086b73c3b",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/captured_tensor_layout.py": "f8728986ed16fcdf21fe077255319e079cf3c801c7a1fff934ff4d89195bab43"
+  },
+  "focused_controls_passed_combined": 30,
+  "new_verifier_controls_passed": 7,
+  "scope": "Binds four operator artifact files to diagnostic manifest, indexed noise, loaded checkpoint config, source-backed target projection and native scan hashes. Replays captured operators twice, checks static weights and same target operands, and reports local causal prerequisite flags.",
+  "actual_gpu_artifact_audit_executed": false,
+  "globally_first_operator_attribution_complete": false,
+  "remaining": [
+    "Actual checkpoint-derived capture on model-matched GPU after scheduled experiments",
+    "Run independent artifact replay with byte-exact output reproduction",
+    "Review unsupported or input-divergent leaves without presenting them as global first operators"
+  ],
+  "full_campaign_complete": false
+}

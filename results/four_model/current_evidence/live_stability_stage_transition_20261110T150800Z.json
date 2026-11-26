@@ -1,0 +1,56 @@
+{
+  "observed_utc": "2026-11-10T15:08:00.112424+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "pi05_queue",
+      "pid": 2350584,
+      "start_ticks": 434375443,
+      "cpu_ticks": 91056,
+      "cpu_ticks_advanced": 9449,
+      "state": "R"
+    },
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 16530329,
+      "completed_pairs": 819,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 15014
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 9598234,
+      "completed_pairs": 447,
+      "parent_status": "running_full_model_diagnostic",
+      "cpu_ticks_advanced": 7533
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 6433379,
+      "completed_pairs": 942,
+      "parent_status": "running",
+      "cpu_ticks_advanced": 15452
+    }
+  ],
+  "pi05_performance_status": "running",
+  "accepted_magnitude_starts": 950,
+  "full_campaign_complete": false,
+  "pi05_policy_records_bytes": 6119398,
+  "previous_observation": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/live_stability_stage_transition_20261110T150645Z.json",
+  "pi05_policy_isolation_status": "completed",
+  "pi05_policy_isolation_sha256": "22aa313ce5c6265f4d8d3d67999e7266873a468625ce8051296553097fbcfccd",
+  "pi05_current_benchmark": "queue",
+  "lingbot_diagnostic_bytes": 18833640,
+  "lingbot_diagnostic_growth_since_previous_observation_bytes": 0,
+  "pi05_serving_isolation_status": "completed",
+  "pi05_serving_isolation_sha256": "498ed62dcbdc65ced0cab9d8ffc7f5fd4abf721624e19a281bdac9870096c241"
+}

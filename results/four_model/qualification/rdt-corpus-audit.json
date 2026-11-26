@@ -1,0 +1,14 @@
+{
+  "status": "complete_corpus_independently_verified",
+  "observations": 1000,
+  "episodes": 100,
+  "split_counts": {
+    "diagnostic": 200,
+    "heldout": 800
+  },
+  "raw_inputs_rebuilt": true,
+  "all_noise_regenerated": true,
+  "all_source_executed_controls_verified": true,
+  "manifest_sha256": "e44bf4e402d503069208ae2019366ece2bbcbd6829fbf4cde0597369dd7b05a9",
+  "auditor_sha256": "60b75fe0aad77b7a172023e2b13c6acfc32b92e28c570648d08ccb534d155de8"
+}

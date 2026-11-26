@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-11-11T04:33:04.709542+00:00",
+  "status": "cogact_same_native_operand_local_intervention_verified",
+  "report": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/local_leaf_attribution_003/same_native_operands_intervention001.json",
+  "report_sha256": "67056afeacd6bd8ea42e8786b35969b5f04233ae5e6593ecd25dcc5dac5cc327",
+  "all_bound_inputs_and_sources_rehashed": true,
+  "comparisons": {
+    "native": {
+      "target_output_exact": false,
+      "maximum_absolute_error": 0.03125,
+      "repeats_exact": true
+    },
+    "batch_invariant": {
+      "target_output_exact": true,
+      "maximum_absolute_error": 0.0,
+      "repeats_exact": true
+    }
+  },
+  "same_operand_local_repair_demonstrated": true,
+  "scope": "Counterfactual supported local operator intervention on captured native operands; original full-model paths unchanged",
+  "original_local_capture_acceptance_unchanged": true,
+  "globally_first_operator_attribution_complete": false,
+  "full_campaign_complete": false
+}

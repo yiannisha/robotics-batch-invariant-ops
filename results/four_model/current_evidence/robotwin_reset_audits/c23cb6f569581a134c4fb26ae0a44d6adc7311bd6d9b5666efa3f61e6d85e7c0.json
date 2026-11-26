@@ -1,0 +1,15 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "open_laptop",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 700,
+  "raw_frames_verified": 2103,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 2103,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "673d6be19f183e4285f5036e3a884031a6d6f1735095b6470c9262ce6302985f",
+  "auditor_sha256": "a30cf4a1ce8aac5e6f1bbecde9dcbbafae8a2481d495082e8841b82549e0fb57"
+}

@@ -1,0 +1,26 @@
+{
+  "status": "source_attention_measurements_independently_verified",
+  "configuration_sha256": "506d45185a5b486af058efd420619883ed441907393a8187424987e16b6b6fcc",
+  "raw_records": 132,
+  "raw_records_sha256": "91a10edcfbc35864ba737dcaef76697ac7de0d4e3631d2085f5fc91c73cabf42",
+  "auditor_sha256": "7a73ca7192feb62cca5f9f2432a4143671e283666b76c8505cd071ac430c70c8",
+  "arrangements": [
+    {
+      "arrangement": "rdt_source_attention_K30|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_attention_K30|B2|first",
+      "measured_seeds": 32,
+      "complete": false,
+      "native_nonexact_seeds": 0
+    }
+  ],
+  "completed_arrangements": 1,
+  "prescribed_arrangements": 51,
+  "all_selected_arrangements_complete": false,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

@@ -1,0 +1,10 @@
+{
+  "status": "serving_tradeoff_table_independently_recounted",
+  "table_sha256": "afd0bac9ec47e6e213da5dc3847804742bc52f3cb71dc78cbd8ee5d2a26c1331",
+  "model_id": "pi05_libero",
+  "groups_verified": 16,
+  "requests_verified": 4000,
+  "auditor_sha256": "8e08934d7f3808fd8546485b1694223e55db0da50a561eed2908b01510ab4d11",
+  "visual_inspection_complete": false,
+  "full_campaign_complete": false
+}

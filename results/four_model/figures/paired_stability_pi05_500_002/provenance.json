@@ -1,0 +1,181 @@
+{
+  "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500.json",
+  "report_sha256": "311d7cf6ddd81f0684d20dbbbac038f874c1510c4c734e1af5516ccba206e81b",
+  "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_pi05_500_independent_audit.json",
+  "audit_sha256": "3314a478f2db0f447a9e8ba2b4b4f9b54e6ce99d59a60f1589056b4b458b03b7",
+  "plotter_sha256": "b1f3c33d6c3457f7e0cf6d6fc3c290f343a965b0c80570473d100e417e8c06e1",
+  "matplotlib_version": "3.11.2",
+  "plotted_rows": [
+    {
+      "task": "0",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.003918768979027318,
+      "median_start_peak_eef_mm": 29.295857841669108,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "0",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "1",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.006063289746137547,
+      "median_start_peak_eef_mm": 15.39468021746408,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "1",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "2",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.02544642137567356,
+      "median_start_peak_eef_mm": 14.074542712463995,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "2",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "3",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.0034994151431948246,
+      "median_start_peak_eef_mm": 11.047258603320639,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "3",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "4",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.004113826487485715,
+      "median_start_peak_eef_mm": 7.662680614699385,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "4",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "5",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.00329930583430351,
+      "median_start_peak_eef_mm": 4.722532735757243,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "5",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "6",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.0032954820181727196,
+      "median_start_peak_eef_mm": 10.73256106200051,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "6",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "7",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.004844858152817625,
+      "median_start_peak_eef_mm": 40.33412795507426,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "7",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "8",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.002546730302304424,
+      "median_start_peak_eef_mm": 60.84436804646454,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "8",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "9",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.023575494770355736,
+      "median_start_peak_eef_mm": 42.16021853530311,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "9",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_pi05_500_002/pi05_paired_stability.png",
+      "sha256": "572f468fe9adb746e9fc7aaf8dae8e1a920fdd7757b73a020aff5577b0ead167"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_pi05_500_002/pi05_paired_stability.pdf",
+      "sha256": "36999226536c9dfcf4b309128d508e85af1ecd58d8b73ba37650b5dff588482c"
+    }
+  ],
+  "full_campaign_complete": false
+}

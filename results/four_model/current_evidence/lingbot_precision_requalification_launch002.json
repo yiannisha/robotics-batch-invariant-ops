@@ -1,0 +1,24 @@
+{
+  "status": "launched_precision_requalification",
+  "pid": 3204645,
+  "start_ticks": 438497682,
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-requalification-002.py",
+  "root": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/precision_v2_001",
+  "source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/replay_manifest.json": "59c26c4a5d854834fdad3139ea9b3519a7783586471e86cf601e643b71a8d779",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/capacity.jsonl": "a21ad7a1747a11f4d7257b800186f4c4edb53511fb5e19125af0bfdcd35ff427",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_exact_operator_coverage.py": "74b7e38ceeda59f0f1de5eac89eea6bdacc8aca6a95fd7437ce35b6f2dcfdcb2",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_replay_invariance.py": "10b764781288d3e6947cabd2c39dfb0b3b2c8de53b5ded663cc5f9a77d086537",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_four_model_diagnostic.py": "77981338ea393479971e5d1adc11a1aea8258277d6ab5e65228c070746e63db3",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/freeze_four_model_numerics.py": "2fa448cff6acb3ff2fa63b4013a889c42efe1f24e0c7c3ac7e93a6aaf3076c53",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/harness.py": "399c331fc42298636b335d19d8296057c2aeb520826744d039d509f3d7a8237f",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/lingbot_robotwin_exact.py": "2741c85f046d99d3a505cec6fce50acff2d22a72abb935a7a88e0ef881bc629b",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/lingbot_vla2.py": "4f07b4527e6a4f19bc6b0c51a1e56f962949b0ccd871f877e07e6a31ccad68c3",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/moe.py": "065865169d1ea65257ccfeebd40b6c63db40fee254ff11d299c87130796cbb77",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/lingbot_robotwin_exact_v2.py": "c757a9592ddf5e52737acf734c50f71a44966bcae13726e6834dae4efb5ca5b0",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/qualify_full_policy_capacity.py": "93ce677f4ebb99c05866ac335ebf46dfd873679f43d7721d3cd6b07e42cd9fcd"
+  },
+  "full_campaign_complete": false
+}

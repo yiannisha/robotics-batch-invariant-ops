@@ -1,0 +1,62 @@
+{
+  "scope": "complete_episode_pilot",
+  "model": "cogact_small",
+  "tasks": [
+    "pick_can"
+  ],
+  "initializations": 1,
+  "conditions": {
+    "native_singleton": [
+      false,
+      false
+    ],
+    "native_dynamic": [
+      false,
+      true
+    ],
+    "patched_singleton": [
+      true,
+      false
+    ],
+    "patched_dynamic": [
+      true,
+      true
+    ],
+    "native_singleton_repeat": [
+      false,
+      false
+    ],
+    "native_dynamic_repeat": [
+      false,
+      true
+    ],
+    "patched_singleton_repeat": [
+      true,
+      false
+    ],
+    "patched_dynamic_repeat": [
+      true,
+      true
+    ]
+  },
+  "max_steps": 200,
+  "language_padding": "fixed_right_64_in_both_primary_operator_modes",
+  "native_label": "controlled native operators with fixed input extent; not unmodified longest-padding serving",
+  "noise_scheme": "sha256-task-initialization-policy-call",
+  "dynamic_cycle": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "controller": "released_adaptive_ensemble_horizon2_alpha0.1_and_google_sticky_gripper",
+  "runner_sha256": "39f5093ed95edecb42afcebac91110a8bb725eaea44d8eb2261448d318d256ac",
+  "companion_sha256": "56e625c4e3ec4376098db0100252ad54c0e7c828157a77fb6e5df309d1a61a26",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/cogact_small.py": "c072c41ce01562fe553261c454587281e0f3f7f3b453de87301c194e06384728",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_cogact_paired_server.py": "274bfc6219e72cd362df362ca2b0a9d3940db20ea6c0658ba0fcbdf204f38565",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/batch-invariant-pizero-exp/open-pi-zero/experiments/simpler_worker.py": "ebba941685b4c597af69aa31d74c7865c5ef099a6eafeab2336de3d6403e0538",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/batch-invariant-pizero-exp/open-pi-zero/experiments/simpler_support.py": "bec152181c5abefade74c80aeaaa718f6d3661dafce35ff47f26279ffba117d6"
+  },
+  "paired_success_rate_campaign_complete": false
+}

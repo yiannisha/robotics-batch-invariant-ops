@@ -1,0 +1,22 @@
+{
+  "status": "prepared_operator_case_inventory_reconciled_without_measurement_acceptance",
+  "observed_utc": "2026-11-09T13:02:48.062091+00:00",
+  "batches": {
+    "1": {
+      "source_patterns": 33,
+      "mapped_exactly_once": true,
+      "native_invariant_signature_union_identical": true
+    },
+    "8": {
+      "source_patterns": 33,
+      "mapped_exactly_once": true,
+      "native_invariant_signature_union_identical": true
+    }
+  },
+  "configurations_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_linear_cases_v2.json": "8aa78528bbe9adc89f808ee9d6f414649810faee17ea11471570fd454cfad429",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_reduction_cases.json": "70aadfa2114a1bb12f5221c5ee42335049be3abe69546bc14d216828ff1bc41e",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/operator/exact_remaining_cases.json": "ac86eca5a93eb9aeba92bdf19a2c5520b7bb402942052c80dc1a5f7f198f2fe8"
+  },
+  "full_operator_qualification_complete": false
+}

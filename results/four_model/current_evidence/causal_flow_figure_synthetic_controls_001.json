@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-09T17:52:08.864678+00:00",
+  "actual_model_results": false,
+  "scope": "Temporary synthetic-only end-to-end plot arithmetic and negative controls. Fixture deleted; no model evidence accepted.",
+  "passed_controls": [
+    "synthetic_3600_record_six_mode_plot_and_recount",
+    "changed_median_rejected",
+    "missing_group_rejected",
+    "duplicate_group_rejected",
+    "wrong_exact_count_rejected",
+    "changed_figure_artifact_rejected"
+  ],
+  "sources": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/plot_causal_flow_stability.py": "40157fa9cba2466d8e7d47069ef71caa55c41abb5d15addafa02bb7b7e1bd7d6",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_causal_flow_figure_table.py": "456ba33b3df068a162e3863fe4b34cad4262e0542604f1d6e1c2a45345732d16"
+  },
+  "full_campaign_complete": false
+}

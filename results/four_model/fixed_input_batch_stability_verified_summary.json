@@ -1,0 +1,376 @@
+{
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "definition": "Element-weighted RMS deviation from the same-implementation singleton, fixed prepared input and indexed noise; not centered sample variance",
+  "comparability": "Compare native versus invariant within each model. Normalized scales/tasks differ across models.",
+  "full_campaign_complete": false,
+  "studies": [
+    {
+      "model": "pi05",
+      "request_noise_pairs": 600,
+      "configuration": {
+        "checkpoint_revision": "7152f13e34c6c115d808aea0e5d08aca74eac14b",
+        "suite": "libero_10",
+        "language_padding": "max_length_right",
+        "language_tokens": 200,
+        "sampler": "unchanged_official_predict_action_chunk",
+        "flow_steps": 10,
+        "chunk_size": 50,
+        "max_action_dim": 32,
+        "robot_action_dim": 7,
+        "normalization": "checkpoint_mean_std",
+        "precision": "bfloat16",
+        "tf32": false,
+        "execution": "eager"
+      },
+      "rows": [
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 1,
+          "comparisons": 600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 2,
+          "comparisons": 2400,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 4,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 8,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 16,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 32,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "native",
+          "batch_size": 1,
+          "comparisons": 600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "native",
+          "batch_size": 2,
+          "comparisons": 2400,
+          "nonexact_comparisons": 2400,
+          "rms": 0.012728627417296051,
+          "max_absolute_error": 1.9756749272346497
+        },
+        {
+          "implementation": "native",
+          "batch_size": 4,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.011230316509475473,
+          "max_absolute_error": 1.9672950506210327
+        },
+        {
+          "implementation": "native",
+          "batch_size": 8,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.01224154832385313,
+          "max_absolute_error": 1.9739259481430054
+        },
+        {
+          "implementation": "native",
+          "batch_size": 16,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.011968733731588133,
+          "max_absolute_error": 1.973460078239441
+        },
+        {
+          "implementation": "native",
+          "batch_size": 32,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.011886426103759616,
+          "max_absolute_error": 1.974182367324829
+        }
+      ],
+      "aggregate_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/pi05_complete_diagnostic_batch_aggregate_audit_v2.json",
+      "aggregate_audit_sha256": "cf572303e620e3a70b6cf499f487ec6473288479979560d0790b8377c1ea08fb",
+      "diagnostic_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/diagnostic/independent_diagnostic_audit.json",
+      "diagnostic_audit_sha256": "d5e51ad663d6f45102edb70e36257188b47a7d2e84001bbad33609e95b62ffae",
+      "scope": "Complete independently accepted diagnostic; final heldout/trajectory campaign remains separate"
+    },
+    {
+      "model": "cogact",
+      "request_noise_pairs": 600,
+      "configuration": {
+        "checkpoint_revision": "ca302a300542393a0b06e291465076a7d9105c23",
+        "suite": "simpler_google_four",
+        "language_padding": "fixed_right_in_both_primary_modes",
+        "language_tokens": 64,
+        "precision": "vlm_bfloat16_diffusion_float32",
+        "tf32": false,
+        "chunk_size": 16,
+        "action_dim": 7,
+        "diffusion_steps": 10,
+        "cfg_scale": 1.5,
+        "execution": "eager",
+        "released_default_fidelity": "separate_longest_padding_singleton_measurement_required"
+      },
+      "rows": [
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 1,
+          "comparisons": 600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 2,
+          "comparisons": 2400,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 4,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 8,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 16,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 32,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "native",
+          "batch_size": 1,
+          "comparisons": 600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "native",
+          "batch_size": 2,
+          "comparisons": 2400,
+          "nonexact_comparisons": 2400,
+          "rms": 0.00926391391085505,
+          "max_absolute_error": 0.9665531367063522
+        },
+        {
+          "implementation": "native",
+          "batch_size": 4,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.007642052384175901,
+          "max_absolute_error": 0.8797949962317944
+        },
+        {
+          "implementation": "native",
+          "batch_size": 8,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.008192352297974314,
+          "max_absolute_error": 0.87882224842906
+        },
+        {
+          "implementation": "native",
+          "batch_size": 16,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.008192304728101004,
+          "max_absolute_error": 0.8788131289184093
+        },
+        {
+          "implementation": "native",
+          "batch_size": 32,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.008192397276418269,
+          "max_absolute_error": 0.878815334290266
+        }
+      ],
+      "aggregate_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/cogact_complete_diagnostic_batch_aggregate_audit.json",
+      "aggregate_audit_sha256": "2f77bc6286cb7b92c493e706915c565eb3f09bcdb44dedaad27b785146be3ccb",
+      "diagnostic_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/diagnostic/independent_diagnostic_audit.json",
+      "diagnostic_audit_sha256": "eb0cf076073f0c7f38282be9cc034d70dcc4a369a65d28f4bd2d20b8eee310c2",
+      "scope": "Complete independently accepted diagnostic; final heldout/trajectory campaign remains separate"
+    },
+    {
+      "model": "rdt",
+      "request_noise_pairs": 600,
+      "configuration": {
+        "checkpoint_revision": "9622afab2b7ce2312a6cf1febc526928589b77eb",
+        "suite": "maniskill_five",
+        "language_padding": "fixed_right_in_both_modes",
+        "language_tokens": 30,
+        "image_history": 2,
+        "camera_slots": 3,
+        "vision_encoding": "genuinely_batched_six_slots_per_request",
+        "diffusion_steps": 5,
+        "chunk_size": 64,
+        "precision": "bfloat16",
+        "tf32": false,
+        "control_frequency": 25,
+        "action_dim": 8,
+        "noise_dim": 128,
+        "sampler": "official_maniskill_wrapper_equivalent_DPM_solver",
+        "execution": "eager"
+      },
+      "rows": [
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 1,
+          "comparisons": 600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 2,
+          "comparisons": 2400,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 4,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 8,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 16,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "batch_invariant",
+          "batch_size": 32,
+          "comparisons": 3600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "native",
+          "batch_size": 1,
+          "comparisons": 600,
+          "nonexact_comparisons": 0,
+          "rms": 0.0,
+          "max_absolute_error": 0.0
+        },
+        {
+          "implementation": "native",
+          "batch_size": 2,
+          "comparisons": 2400,
+          "nonexact_comparisons": 2400,
+          "rms": 0.0012235557733827967,
+          "max_absolute_error": 0.048828125
+        },
+        {
+          "implementation": "native",
+          "batch_size": 4,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.002334229712828149,
+          "max_absolute_error": 0.2109375
+        },
+        {
+          "implementation": "native",
+          "batch_size": 8,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.0020690608576102087,
+          "max_absolute_error": 0.333984375
+        },
+        {
+          "implementation": "native",
+          "batch_size": 16,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.0022445199333656976,
+          "max_absolute_error": 0.4248046875
+        },
+        {
+          "implementation": "native",
+          "batch_size": 32,
+          "comparisons": 3600,
+          "nonexact_comparisons": 3600,
+          "rms": 0.0014722241700125156,
+          "max_absolute_error": 0.1015625
+        }
+      ],
+      "aggregate_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/rdt_complete_diagnostic_batch_aggregate_audit.json",
+      "aggregate_audit_sha256": "043dfadfcc5122cf11f605aa10fbd70d31e548d4767ccad42200881df05db335",
+      "diagnostic_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/diagnostic/independent_diagnostic_audit.json",
+      "diagnostic_audit_sha256": "f0b001f8952ee4f08ed43a951f337b5c6bb79556ca177994b13031def16e1754",
+      "scope": "Complete independently accepted diagnostic; final heldout/trajectory campaign remains separate"
+    }
+  ]
+}

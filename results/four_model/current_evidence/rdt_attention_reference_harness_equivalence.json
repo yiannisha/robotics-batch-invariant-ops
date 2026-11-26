@@ -1,0 +1,14 @@
+{
+  "status": "native_invariant_inputs_and_outputs_unchanged_reference_now_source_singleton_heads",
+  "configurations": [
+    "rdt_source_attention_K4374",
+    "rdt_source_attention_K67"
+  ],
+  "batch_size": 2,
+  "seeds": [
+    1000000
+  ],
+  "configuration_sha256": "62ad82450d7e92969a4034aab8a2243bf04410a06279a83fc54675fbf6ed4043",
+  "scope": "Harness equivalence on both unmasked source layouts; full100seed/allbatch qualification still required",
+  "model_weights_or_operations_changed": false
+}

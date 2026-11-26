@@ -1,0 +1,38 @@
+{
+  "observed_utc": "2026-11-11T02:44:25.978201+00:00",
+  "previous_snapshot": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/live_stability_wait_20261111T024327Z.json",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 25058530,
+      "completed_pairs": 1241,
+      "total_pairs": 2400,
+      "cpu_ticks_delta": 11923
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 14435165,
+      "completed_pairs": 2256,
+      "total_pairs": 2400,
+      "cpu_ticks_delta": 12087
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 126979,
+      "completed_pairs": 5,
+      "total_pairs": 600,
+      "cpu_ticks_delta": 6150
+    }
+  ],
+  "full_campaign_complete": false
+}

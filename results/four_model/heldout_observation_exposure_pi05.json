@@ -1,0 +1,25 @@
+{
+  "status": "old_numerical_heldout_observation_partition_exposed_before_freeze",
+  "model": "pi05",
+  "candidate_manifest": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/replay_manifest.json",
+  "candidate_manifest_sha256": "969f4f6e8167ef6ef00aa7f5ecc95ff225b628beec919a5621900f913642feb7",
+  "candidate_heldout_request_ids": [
+    "libero_10/0/12/observation-0/noise-0",
+    "libero_10/0/12/observation-0/noise-1",
+    "libero_10/0/12/observation-0/noise-2"
+  ],
+  "candidate_input_file_sha256": "86c1d7b749faaacddaf428d91d6ce1f3eef8a5cf90b27112c35c823913814ac8",
+  "observation_sha256": "386b2178909ceecc85a2be36577efe2da33187c6448aa1a87f48ba875ee6762a",
+  "prepared_input_without_noise_sha256": "980d7f3e55dbc42ed941ee43dbc8b53db8e45f85d591685274d55d9ba45be054",
+  "all_preprocessed_input_tensor_bytes_equal": true,
+  "paired_episode": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/pi05_libero_locked_v1/blocks/task-00/start-12/patched_singleton.json.gz",
+  "paired_episode_sha256": "723b7d8feb19e884d9e0453ab10da6fe8a7aeb6a507111ea0e7f8a3edb719e90",
+  "paired_condition": "patched_singleton",
+  "paired_candidate_lock_sha256": "ab564e2fde598b1c661c82411bb98bfdd3acf06850f3484096218000c6911b98",
+  "paired_target_input_with_noise_sha256": "a08d7dbff829d84dc2b08bb039de9b2989698bb69825f43ee9a73b2cc0cc5bd2",
+  "exposure_cohort": "Rejected default-MSAA v1; rejection does not erase prior model-input exposure.",
+  "scope": "Identical initial observation and all prepared input tensors excluding changed indexed noise.",
+  "required_remedy": "Fresh observation-disjoint numerical holdout inputs on the pinned no-MSAA runtime; exclude already exposed reset inputs and audit all prior source cohorts before freeze-bound acceptance.",
+  "paired_stability_evidence_invalidated": false,
+  "full_campaign_complete": false
+}

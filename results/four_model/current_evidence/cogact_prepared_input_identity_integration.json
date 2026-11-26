@@ -1,0 +1,14 @@
+{
+  "status": "prepared_input_reconstruction_matches_actual_neural_call_records",
+  "model": "cogact",
+  "calls": [
+    0,
+    1,
+    2
+  ],
+  "source_episode": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/blocks/pick_can/start-00/native_singleton.json.gz",
+  "noise_and_request_id_do_not_change_identity": true,
+  "identity_uses_effective_bfloat16_vision_pixels": true,
+  "neural_inference_performed": false,
+  "scope": "Three actual pick_can native call records; other task inputs and full heldout disjointness remain pending"
+}

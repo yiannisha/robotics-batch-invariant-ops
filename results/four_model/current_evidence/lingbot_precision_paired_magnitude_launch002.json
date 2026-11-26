@@ -1,0 +1,47 @@
+{
+  "observed_utc": "2026-11-11T03:13:09.210664+00:00",
+  "pid": 384401,
+  "start_ticks": 438804150,
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-bound-paired-magnitudes-002.py",
+  "launcher_sha256": "19462ee74a8c6953f65261893e603ff8da077c7b884729bc36e072ec1b688a8d",
+  "configuration": {
+    "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+    "pid": 3624985,
+    "ticks": "438580367",
+    "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-independent-performance-audit-002.json",
+    "sources": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_paired_study_bound.py": "ae1b7f2f4fb1367e48f5be11b69475e78933e68d817960c475637e41f908600d",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_lingbot_full_paired_stability.py": "de6566a5cb27f127391df05ba8824844372ca34506f1c677bb2b44c1f25b7476",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_campaign_corpus.py": "809a9c4087c389e3e16c5f27b5ef88d77573065e70a8f71dd877b47308db5da6",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/measure_lingbot_pilot_stability.py": "bbb1b93bdb460651b2d95d49784eaa65ae3c3cd0c6cfa054eff33d326cd7a687",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_paired_stability.py": "f0f2bca7f6d6b2873fce32392303089a6b2c41a67931baab6adb5bd108125a35",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_paired_study_bound_v2.py": "da7e36b18caefe5462198ed66631120852f085f341312c8b6366a6a00afb3caf",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_full_stability_v2.py": "e63a289496a27cafec37b927bea8f7638c4bbe3a3652450c06852c65a10a2c5e"
+    },
+    "command": [
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/lingbot/bin/python",
+      "-m",
+      "scripts.audit_lingbot_paired_study_bound_v2",
+      "--source",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/lingbot-vla2",
+      "--checkpoint",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/lingbot_vla2/checkpoints/global_step_50000/hf_ckpt",
+      "--qwen-metadata",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/lingbot_qwen_metadata",
+      "--qualification-union",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/robotwin_reset_qualification_union.json",
+      "--directory",
+      "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001",
+      "--output",
+      "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001/independent_complete_episode_bound_audit.json",
+      "--require-complete"
+    ],
+    "bound_audit": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001/independent_complete_episode_bound_audit.json",
+    "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision002.json",
+    "directory": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001",
+    "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/lingbot/bin/python"
+  },
+  "actual_full_paired_magnitudes_accepted": false,
+  "full_campaign_complete": false
+}

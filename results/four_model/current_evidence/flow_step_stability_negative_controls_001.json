@@ -1,0 +1,14 @@
+{
+  "controls": [
+    {
+      "case": "corrupt_p95",
+      "rejected": true,
+      "reason": "ValueError: ('close_drawer', 'batch_invariant', 2, 'flow.step_00.sample'): p95_comparison_rmse differs"
+    },
+    {
+      "case": "drop_stage_group",
+      "rejected": true,
+      "reason": "ValueError: Missing/duplicate table rows"
+    }
+  ]
+}

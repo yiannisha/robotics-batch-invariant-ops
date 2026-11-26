@@ -1,0 +1,90 @@
+11/08 [22:06:40] INFO     | >> [*] Loading from local checkpoint     load.py:132
+                          path                                                  
+                          `/scratch/hadjiyiannis_3_gmail_com/pi0-lib            
+                          ero/four-model-campaign/assets/cogact_smal            
+                          l/checkpoints/CogACT-Small.pt`                        
+                 INFO     | >> [*] Found Config =>> Loading &        load.py:180
+                          Freezing prism-dinosiglip-224px+7b with:              
+                                       Vision Backbone =>>                      
+                          dinosiglip-vit-so-224px                               
+                                       LLM Backbone    =>>                      
+                          llama2-7b-pure                                        
+                                       Arch Specifier  =>>                      
+                          no-align+fused-gelu-mlp                               
+                                       Checkpoint Path =>>                      
+                          `/scratch/hadjiyiannis_3_gmail_com/pi0-lib            
+                          ero/four-model-campaign/assets/cogact_smal            
+                          l/checkpoints/CogACT-Small.pt`                        
+                 INFO     | >> [*] Loading Vision Backbone           load.py:189
+                          dinosiglip-vit-so-224px                               
+11/08 [22:06:44] INFO     | >> [*] Loading Pretrained LLM            load.py:196
+                          llama2-7b-pure via HF Transformers                    
+                 INFO     | >>     |=> Building empty llama2 LLM base_llm.py:134
+                          from                                                  
+                          `/scratch/hadjiyiannis_3_gmail_com/pi0                
+                          -libero/four-model-campaign/assets/lla                
+                          ma_metadata`                                          
+                 INFO     | >>     |=> Loading llama2 (Fast)     base_llm.py:151
+                          Tokenizer via the AutoTokenizer API                   
+11/08 [22:06:51] INFO     | >> [*] Loading VLA                       load.py:205
+                          prism-dinosiglip-224px+7b from Checkpoint             
+CogACT loaded
+/home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/.venv-simpler/lib/python3.10/site-packages/sapien/core/renderer_config.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+[2026-11-08 22:06:55.272] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2026-11-08 22:06:55.272] [svulkan2] [warning] Continue without GLFW.
+/home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/.venv-simpler/lib/python3.10/site-packages/sapien/core/renderer_config.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/.venv-simpler/lib/python3.10/site-packages/gymnasium/envs/registration.py:513: DeprecationWarning: [33mWARN: The environment MoveNearGoogleBakedTexInScene-v0 is out of date. You should consider upgrading to version `v1`.[0m
+  logger.deprecation(
+[2026-11-08 22:06:58.094] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2026-11-08 22:06:58.094] [svulkan2] [warning] Continue without GLFW.
+/home/hadjiyiannis_3_gmail_com/batch-invariance-experiments/.venv-simpler/lib/python3.10/site-packages/sapien/core/renderer_config.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+[2026-11-08 22:07:01.440] [svulkan2] [error] GLFW error: X11: Failed to open display 
+[2026-11-08 22:07:01.440] [svulkan2] [warning] Continue without GLFW.
+/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/lib/python3.12/site-packages/torch/library.py:381: UserWarning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::mm(Tensor self, Tensor mat2) -> Tensor
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: CUDA
+  previous kernel: registered at /pytorch/aten/src/ATen/LegacyBatchingRegistrations.cpp:1079
+       new kernel: registered at /dev/null:1715 (Triggered internally at /pytorch/aten/src/ATen/core/dispatch/OperatorEntry.cpp:218.)
+  self.m.impl(
+Official B1 sampler equivalence verified
+invariant=False target=0 B=1 duplicate: exact=True
+invariant=False target=0 B=1 unrelated: exact=True
+invariant=False target=0 B=2 duplicate: exact=False
+invariant=False target=0 B=2 unrelated: exact=False
+invariant=False target=0 B=4 duplicate: exact=False
+invariant=False target=0 B=4 unrelated: exact=False
+invariant=False target=1 B=1 duplicate: exact=True
+invariant=False target=1 B=1 unrelated: exact=True
+invariant=False target=1 B=2 duplicate: exact=False
+invariant=False target=1 B=2 unrelated: exact=False
+invariant=False target=1 B=4 duplicate: exact=False
+invariant=False target=1 B=4 unrelated: exact=False
+invariant=False target=2 B=1 duplicate: exact=True
+invariant=False target=2 B=1 unrelated: exact=True
+invariant=False target=2 B=2 duplicate: exact=False
+invariant=False target=2 B=2 unrelated: exact=False
+invariant=False target=2 B=4 duplicate: exact=False
+invariant=False target=2 B=4 unrelated: exact=False
+invariant=True target=0 B=1 duplicate: exact=True
+invariant=True target=0 B=1 unrelated: exact=True
+invariant=True target=0 B=2 duplicate: exact=True
+invariant=True target=0 B=2 unrelated: exact=True
+invariant=True target=0 B=4 duplicate: exact=True
+invariant=True target=0 B=4 unrelated: exact=True
+invariant=True target=1 B=1 duplicate: exact=True
+invariant=True target=1 B=1 unrelated: exact=True
+invariant=True target=1 B=2 duplicate: exact=True
+invariant=True target=1 B=2 unrelated: exact=True
+invariant=True target=1 B=4 duplicate: exact=True
+invariant=True target=1 B=4 unrelated: exact=True
+invariant=True target=2 B=1 duplicate: exact=True
+invariant=True target=2 B=1 unrelated: exact=True
+invariant=True target=2 B=2 duplicate: exact=True
+invariant=True target=2 B=2 unrelated: exact=True
+invariant=True target=2 B=4 duplicate: exact=True
+invariant=True target=2 B=4 unrelated: exact=True

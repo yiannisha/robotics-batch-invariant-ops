@@ -1,0 +1,25 @@
+{
+  "status": "corrected_precision_task_statistics_waiters_live_and_source_pins_verified",
+  "checked_utc": "2026-11-11T05:07:39.613841+00:00",
+  "jobs": [
+    {
+      "pid": 3304863,
+      "process_state": "S",
+      "status": "waiting_for_live_independent_full_magnitude_audit",
+      "source_hash_verified": true
+    },
+    {
+      "pid": 3304864,
+      "process_state": "S",
+      "status": "waiting_for_live_full_task_table_extraction",
+      "source_hash_verified": true
+    },
+    {
+      "pid": 3304865,
+      "process_state": "S",
+      "status": "waiting_for_live_full_task_table_acceptance",
+      "source_hash_verified": true
+    }
+  ],
+  "full_campaign_complete": false
+}

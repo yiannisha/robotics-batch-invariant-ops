@@ -1,0 +1,14 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "adjust_bottle",
+  "seed": 100001,
+  "repeats": 3,
+  "controls_per_repeat": 400,
+  "raw_frames_verified": 1203,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "09651af78ab7aa474bcb89738728f755b10f412aaeba59f0126bc5b375ae10b9",
+  "auditor_sha256": "efacdd228b2f001d47dd965e556300aebdd398f5c37c7eff0ca41d9dd0f8ea98"
+}

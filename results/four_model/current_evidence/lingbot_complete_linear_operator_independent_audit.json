@@ -1,0 +1,2870 @@
+{
+  "status": "source_linear_measured_arrangements_independently_verified",
+  "raw_records": 40800,
+  "raw_records_sha256": "6e8d6837194bdf5029e439b8163365a40fcbfdb5ebf9daa298956940f6eb6f53",
+  "configuration_sha256": "8aa78528bbe9adc89f808ee9d6f414649810faee17ea11471570fd454cfad429",
+  "auditor_sha256": "3fbb43043e4a5f51ac35a87417b2dfd45ce46a8a773c16a2716d7c1879ca61f4",
+  "arrangements": [
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000335693359375
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000274658203125
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000339508056640625
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000274658203125
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003662109375
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003662109375
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00028228759765625
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002593994140625
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000274658203125
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003204345703125
+    },
+    {
+      "key": "lingbot_exact_linear_050a896e12f7bafd|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000179290771484375
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_09da4cd47d9365cf|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00020599365234375
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00020599365234375
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_2297ddf5e0dbd787|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 9.5367431640625e-06
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.049041748046875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.1444091796875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.1444091796875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.1444091796875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 9.5367431640625e-06
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 9.5367431640625e-06
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 1.33514404296875e-05
+    },
+    {
+      "key": "lingbot_exact_linear_2ec8f7375f123985|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 9.5367431640625e-06
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008392333984375
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000823974609375
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00077056884765625
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.000732421875
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0008087158203125
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008544921875
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007171630859375
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000823974609375
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007171630859375
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000823974609375
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008544921875
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008087158203125
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007781982421875
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007171630859375
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008087158203125
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007171630859375
+    },
+    {
+      "key": "lingbot_exact_linear_360c3a3d60d793fc|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007171630859375
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.000274658203125
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000335693359375
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003509521484375
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003509521484375
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003204345703125
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00030517578125
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0002899169921875
+    },
+    {
+      "key": "lingbot_exact_linear_38c70aa0cef62a71|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0004119873046875
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.002716064453125
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0028076171875
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00274658203125
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0033416748046875
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.002716064453125
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.002685546875
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0028076171875
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.002838134765625
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00274658203125
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0026397705078125
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00262451171875
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00274658203125
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00262451171875
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.002685546875
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00299072265625
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.003173828125
+    },
+    {
+      "key": "lingbot_exact_linear_38d73685c0c98a1c|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00274658203125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_3a2d4ca51a2b8e4d|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001190185546875
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0011138916015625
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001068115234375
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0011138916015625
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001068115234375
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010833740234375
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001068115234375
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0011444091796875
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001373291015625
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010223388671875
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0011749267578125
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0013580322265625
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010833740234375
+    },
+    {
+      "key": "lingbot_exact_linear_40c6efb77c0e5876|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001129150390625
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010223388671875
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0011138916015625
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.001190185546875
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001190185546875
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00115966796875
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010223388671875
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001068115234375
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010223388671875
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001129150390625
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00128173828125
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001129150390625
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00112152099609375
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001190185546875
+    },
+    {
+      "key": "lingbot_exact_linear_44e86a8593f476a9|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00091552734375
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0008697509765625
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000823974609375
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008544921875
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000823974609375
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000823974609375
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0009765625
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000946044921875
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0009765625
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0009002685546875
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_48699ad802fc43fc|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00091552734375
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001373291015625
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001373291015625
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001373291015625
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_53fc185846f4307c|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000335693359375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003509521484375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00038909912109375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00038909912109375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003204345703125
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000335693359375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0004425048828125
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000335693359375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0004119873046875
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000335693359375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000335693359375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00038909912109375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000396728515625
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003509521484375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0004119873046875
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00038909912109375
+    },
+    {
+      "key": "lingbot_exact_linear_6f4d0c8406db4a5a|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0003814697265625
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0010833740234375
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010833740234375
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00115966796875
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001007080078125
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001129150390625
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001434326171875
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_7871f31e9138faf5|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00020599365234375
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_7a9d4f067ce44373|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00020599365234375
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00020599365234375
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_85706e0bc31ab4e2|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00016021728515625
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001678466796875
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_8c05d2a1467a6981|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00014495849609375
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0008544921875
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0009613037109375
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0008544921875
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007171630859375
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00079345703125
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000732421875
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007476806640625
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008087158203125
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000762939453125
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008087158203125
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000823974609375
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00079345703125
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008544921875
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007476806640625
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000823974609375
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0008544921875
+    },
+    {
+      "key": "lingbot_exact_linear_934669ed73f02bc2|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00079345703125
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00115966796875
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0010528564453125
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010528564453125
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00104522705078125
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0011749267578125
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001129150390625
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0011444091796875
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010528564453125
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00103759765625
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0010986328125
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0009918212890625
+    },
+    {
+      "key": "lingbot_exact_linear_c03dfcc1a9f4d1c0|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.001129150390625
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c22aea62b2d3703c|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0006866455078125
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000701904296875
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00081634521484375
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000701904296875
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007171630859375
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00067138671875
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00067138671875
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007781982421875
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007476806640625
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007781982421875
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007476806640625
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0007476806640625
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0006866455078125
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0006866455078125
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0006561279296875
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00067138671875
+    },
+    {
+      "key": "lingbot_exact_linear_c99bc7a29ef5a1ed|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0006256103515625
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001373291015625
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001373291015625
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.000152587890625
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001220703125
+    },
+    {
+      "key": "lingbot_exact_linear_cdb2280ef8fd1b37|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00012969970703125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.0001983642578125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00018310546875
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00019073486328125
+    },
+    {
+      "key": "lingbot_exact_linear_d67e84be5c78dea7|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 100,
+      "singleton_fidelity_max_absolute_error": 0.00017547607421875
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B16|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B16|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B1|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B2|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B2|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B31|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B31|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B32|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B32|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B33|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B33|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B4|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B4|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B64|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B64|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B8|first",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    },
+    {
+      "key": "lingbot_exact_linear_f3cd364e8dcda3dd|B8|last",
+      "measured_seeds": 100,
+      "all100seeds": true,
+      "native_nonexact_seeds": 0,
+      "singleton_fidelity_max_absolute_error": 0.0
+    }
+  ],
+  "all_linear_arrangements_complete": true,
+  "prescribed_arrangements": 408,
+  "completed_arrangements": 408,
+  "full_operator_qualification_complete": false,
+  "shared_gpu_timing_not_qualified": true
+}

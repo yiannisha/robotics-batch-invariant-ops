@@ -1,0 +1,61 @@
+{
+  "observed_utc": "2026-11-10T08:29:53.697792+00:00",
+  "classification": "progress_and_verified_wait",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "workers": [
+    {
+      "model": "pi05",
+      "pid": 1942407,
+      "start_ticks": 424051173,
+      "state": "R",
+      "cpu_ticks": 8687569,
+      "completed_pairs": 2007,
+      "prescribed_pairs": 2400,
+      "parent_status": "running"
+    },
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 11653906,
+      "completed_pairs": 578,
+      "prescribed_pairs": 2400,
+      "parent_status": "running"
+    },
+    {
+      "model": "lingbot",
+      "pid": 4055960,
+      "start_ticks": 425339189,
+      "state": "R",
+      "cpu_ticks": 7085995,
+      "completed_pairs": 330,
+      "prescribed_pairs": 600,
+      "parent_status": "running_full_model_diagnostic"
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 2075577,
+      "completed_pairs": 267,
+      "prescribed_pairs": 2400,
+      "parent_status": "running"
+    }
+  ],
+  "accepted_magnitude_starts": 950,
+  "full_campaign_complete": false,
+  "storage_recovery": {
+    "root_free_bytes": 173215744,
+    "scratch_free_bytes": 967862669312,
+    "relocated_cache": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/uv-cache-root-relief-20261110",
+    "verified_files": 55290,
+    "verified_bytes": 15418311104,
+    "original_path_preserved_by_symlink": true,
+    "interrupted_monitoring_records": [
+      "robotics-batch-invariant-ops/results/four_model/current_evidence/live_stability_wait_20261110T082644Z.json.incomplete_disk_full"
+    ],
+    "experiment_outputs_on_scratch": true
+  }
+}

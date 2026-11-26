@@ -1,0 +1,51 @@
+{
+  "status": "complete_four_model_diagnostic_independently_verified",
+  "model_id": "cogact_simpler_exact",
+  "adapter_execution_configuration": {
+    "checkpoint_revision": "ca302a300542393a0b06e291465076a7d9105c23",
+    "suite": "simpler_google_four",
+    "language_padding": "fixed_right_in_both_primary_modes",
+    "language_tokens": 64,
+    "precision": "vlm_bfloat16_diffusion_float32",
+    "tf32": false,
+    "chunk_size": 16,
+    "action_dim": 7,
+    "diffusion_steps": 10,
+    "cfg_scale": 1.5,
+    "execution": "eager",
+    "released_default_fidelity": "separate_longest_padding_singleton_measurement_required"
+  },
+  "manifest_sha256": "aeffa91444d59f9427b404dd01f4eb166fe12aed18508ea962ca1caa81b321ec",
+  "diagnostic_sha256": "4df6101236c03877f98cfe1621a64be5e3e40736e773eab4d8ca0fbc66594f8a",
+  "fidelity_sha256": "f8c2745c67fcc1f676d335e4bd48cda023ab26a9501dcb55a3530635ea0faada",
+  "runtime_sha256": "d08d101f3c8e1523720fb71434ab278b750aa0fc90af0b458b3d19578ea37777",
+  "capacity_sha256": "e6593fd3320eb1702e16e39e5716bc64dd4b3274312415b19f8b513a4fd60b99",
+  "diagnostic_observations": 200,
+  "request_noise_pairs": 600,
+  "implementation_groups": 1200,
+  "arrangement_records": 46800,
+  "native_nonexact_arrangements": 22200,
+  "invariant_output_and_all_recorded_stages_exact": true,
+  "required_denoising_labels": [
+    "flow.step_00.sample",
+    "flow.step_01.sample",
+    "flow.step_02.sample",
+    "flow.step_03.sample",
+    "flow.step_04.sample",
+    "flow.step_05.sample",
+    "flow.step_06.sample",
+    "flow.step_07.sample",
+    "flow.step_08.sample",
+    "flow.step_09.sample"
+  ],
+  "singleton_fidelity_records": 600,
+  "singleton_fidelity_nonexact_records": 600,
+  "large_batch_feasible": {
+    "native|B16": true,
+    "batch_invariant|B16": true,
+    "native|B32": true,
+    "batch_invariant|B32": true
+  },
+  "auditor_sha256": "77981338ea393479971e5d1adc11a1aea8258277d6ab5e65228c070746e63db3",
+  "full_model_campaign_complete": false
+}

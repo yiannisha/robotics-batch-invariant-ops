@@ -1,0 +1,53 @@
+{
+  "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_77.json",
+  "report_sha256": "ee15265d1d59885086f6d010173b9d7d347fc187c260a24eef0f549a63ef7ef8",
+  "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_77_independent_audit.json",
+  "audit_sha256": "5e2bae7fdcad44649aad744a1e25f71269b9dd7dd67302ca5a1f60f47c4ff838",
+  "plotter_sha256": "b1f3c33d6c3457f7e0cf6d6fc3c290f343a965b0c80570473d100e417e8c06e1",
+  "matplotlib_version": "3.11.2",
+  "plotted_rows": [
+    {
+      "task": "move_near",
+      "mode": "native",
+      "starts": 27,
+      "normalized_action_rms": 0.0020179472806049134,
+      "median_start_peak_eef_mm": 64.65773800048561,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "move_near",
+      "mode": "invariant",
+      "starts": 27,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "pick_can",
+      "mode": "native",
+      "starts": 50,
+      "normalized_action_rms": 0.002375019882872823,
+      "median_start_peak_eef_mm": 6.494797780653255,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "pick_can",
+      "mode": "invariant",
+      "starts": 50,
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_cogact_77_002/cogact_paired_stability.png",
+      "sha256": "defeca5f1d0c23459c05253dd075fa0c925ce25c49daecf7e59c07aa3b77a3e1"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_cogact_77_002/cogact_paired_stability.pdf",
+      "sha256": "6156e375c8d371932af6b93c0709df3c9329f179d25c80d6f5cba4d7bc07bb79"
+    }
+  ],
+  "full_campaign_complete": false
+}

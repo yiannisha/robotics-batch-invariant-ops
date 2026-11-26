@@ -1,0 +1,38 @@
+{
+  "observed_utc": "2026-11-09T12:58:53.817533+00:00",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "pipelines": [
+    {
+      "pipeline": "lingbot-post-capacity-linear-sweep-001",
+      "status": "running_full_linear_sweep",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-capacity-linear-sweep-001.json"
+    },
+    {
+      "pipeline": "lingbot-post-linear-reductions-001",
+      "status": "waiting_for_live_linear_sweep_and_audit",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-linear-reductions-001.json"
+    },
+    {
+      "pipeline": "lingbot-post-reductions-remaining-001",
+      "status": "waiting_for_live_reduction_pipeline",
+      "state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-reductions-remaining-001.json"
+    }
+  ],
+  "prepared_source_pattern_coverage": {
+    "linear": 24,
+    "request_scaled_reductions": 6,
+    "shared_pooling_and_rotary_matmul": 3,
+    "total": 33
+  },
+  "prescribed_measurements": {
+    "linear": 40800,
+    "reductions": 10200,
+    "remaining": 5100
+  },
+  "cpu_checks": {
+    "linear_layout_and_position": 432,
+    "missing_duplicate_inventory_rejections": 2,
+    "remaining_layout_and_request_coordinates": 54
+  },
+  "full_operator_qualification_complete": false
+}

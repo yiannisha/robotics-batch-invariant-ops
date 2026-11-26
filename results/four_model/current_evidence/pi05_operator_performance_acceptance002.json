@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-11-10T15:45:17.163094+00:00",
+  "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/isolated_operator_performance_002/independent_operator_performance_audit.json",
+  "audit_sha256": "7ef91582490ed3ee151cded685e684b70e2abb62afd6d4dd08b739b437d5d9a0",
+  "audit_result": {
+    "status": "complete_operator_timing_records_independently_recounted",
+    "model": "pi05",
+    "plan_sha256": "05afd12d915c136aac2bb3fbe8a810c14d6e436f205bed425707fda35d645279",
+    "raw_sha256": "a3dcdc01ddb40ede2f77bf824ddbfbd5c36fc43dae468e268192876a0b74d33c",
+    "isolation_sha256": "dcacfa1b5fa2e9b59a5788668ab3def56716cb234d4d338d0dd0cbdcc196e4ec",
+    "runtime_sha256": "e749fb558cf54551aafcb1b8b8e9fd956e954cc2d7a91e961287f27abaed57a2",
+    "case_count": 58,
+    "timing_slots": 710,
+    "statuses": {
+      "timed": 710
+    },
+    "all_planned_modes_timed": true,
+    "generated_numerical_operand_bytes_independently_rederived": false,
+    "source_attention_masks_independently_rederived": true,
+    "timing_and_isolation_scope": "Retained raw samples, trace layouts, captured masks and sampled compute/graphics inventory.",
+    "auditor_sha256": "b7471e1163869199cb33d13dc132719c08e2838999803f415f6b7a0f000c3ef6",
+    "full_campaign_complete": false
+  },
+  "full_campaign_complete": false
+}

@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-11-11T03:50:09.618570+00:00",
+  "status": "complete_cogact_heldout_stability_promoted_after_hash_reverification",
+  "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/heldout_fresh003/independent_heldout_audit.json",
+  "audit_sha256": "ae71d1b44033c1119de7d89a180888b3d9b12dca7cbb0bc67b644d02c4fafd2f",
+  "all_audit_bound_inputs_rehashed": true,
+  "independent_auditor_source_rehashed": true,
+  "request_noise_pairs": 2400,
+  "arrangement_records": 187200,
+  "native_nonexact_arrangements": 88800,
+  "invariant_output_and_all_recorded_stages_exact": true,
+  "singleton_fidelity_nonexact_records": 2400,
+  "accepted_simulation_starts_unchanged": 950,
+  "full_campaign_complete": false
+}

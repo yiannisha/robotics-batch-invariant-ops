@@ -1,0 +1,36 @@
+{
+  "wrapper_sha256": "2a22e79ec4f0aaab8444575d49f682369101c069d9fb9d7f300f69c2ef19f16e",
+  "controls": [
+    {
+      "case": "missing_source_pin",
+      "rejected": true,
+      "reason": "ValueError: Missing required experiment source pin"
+    },
+    {
+      "case": "wrong_manifest_hash",
+      "rejected": true,
+      "reason": "ValueError: Replay manifest changed"
+    },
+    {
+      "case": "foreign_adapter",
+      "rejected": true,
+      "reason": "ValueError: Foreign adapter"
+    },
+    {
+      "case": "changed_trace_hash",
+      "rejected": true,
+      "reason": "ValueError: Trace changed"
+    },
+    {
+      "case": "heldout_companion",
+      "rejected": true,
+      "reason": "ValueError: Held-out companion exposure is forbidden"
+    },
+    {
+      "case": "same_episode_companion",
+      "rejected": true,
+      "reason": "ValueError: Companion must come from another episode"
+    }
+  ],
+  "no_inference_performed": true
+}

@@ -1,0 +1,422 @@
+{
+  "status": "source_matrix_measurements_independently_verified",
+  "configuration_sha256": "f6c1f251c5fc703f5b8e1c9a1ec7d76e321310428d2a6828963cb3b85cc6f153",
+  "raw_records": 6800,
+  "raw_records_sha256": "02d3a6c4ba88f755e819ea03b853b732ce61d613e13e774b99e8be30c16863e5",
+  "auditor_sha256": "a195feadcc3847aa95bb4118b7990c243facdc93cbf3339025b5f2e7cf1db366",
+  "arrangements": [
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 68
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 63
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 56
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 52
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 61
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 62
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 60
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 67
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 65
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 64
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 60
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 63
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 60
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 61
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 68
+    },
+    {
+      "arrangement": "rdt_source_bmm_78a4308178b5|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 71
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_bmm_bcab22c4dfc5|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_9599482d03c6|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B16|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B31|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B31|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B32|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B32|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B33|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B33|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B64|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B64|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_matmul_969bdb69710a|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    }
+  ],
+  "completed_arrangements": 68,
+  "prescribed_arrangements": 68,
+  "all_selected_arrangements_complete": true,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

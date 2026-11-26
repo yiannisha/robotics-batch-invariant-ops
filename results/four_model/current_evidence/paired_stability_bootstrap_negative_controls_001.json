@@ -1,0 +1,25 @@
+{
+  "auditor_sha256": "03241879d73fb35320e25bc75b9f338c14aac715fae5b63a0cdbd22e826cfded",
+  "controls": [
+    {
+      "case": "altered_interval",
+      "rejected": true,
+      "reason": "ValueError: cogact/move_near/native/mean_per_start_fixed_input_mse: ci95_high differs"
+    },
+    {
+      "case": "missing_task",
+      "rejected": true,
+      "reason": "ValueError: Missing/duplicate bootstrap task"
+    },
+    {
+      "case": "duplicate_estimate",
+      "rejected": true,
+      "reason": "ValueError: Missing/duplicate estimates"
+    },
+    {
+      "case": "altered_rehashed_draws",
+      "rejected": true,
+      "reason": "ValueError: Retained draws differ from declared seed"
+    }
+  ]
+}

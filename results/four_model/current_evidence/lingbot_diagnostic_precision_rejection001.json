@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-11-11T02:20:26.779696+00:00",
+  "status": "diagnostic_complete_rejected_runtime_precision",
+  "model": "lingbot_robotwin_exact",
+  "completed_pairs": 600,
+  "accepted": false,
+  "full_campaign_complete": false,
+  "reason": "Runtime records tf32_matmul=true despite execution_configuration.tf32=false; independent audit rejects Wrong runtime precision.",
+  "source_finding": "Exact adapter disables TF32 before super.load_model; upstream modeling_lingbot_vla_v2.py:1228 sets float32 matmul precision high. Requires correction after construction and requalification, not relaxation of audit.",
+  "artifacts": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/diagnostic/invariance.jsonl.gz": {
+      "sha256": "30dafe6659436ae47e8d45ebdbb9ca59cb627c4eb0d759233ea03fccdd8785a7",
+      "bytes": 25283444
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/diagnostic/singleton_fidelity.jsonl.gz": {
+      "sha256": "083828a8ff0cb7dde098d925322ff30208f4df45b9b5a18fbb9e1ffa86d71738",
+      "bytes": 674075
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/diagnostic/invariance.jsonl.gz.runtime.json": {
+      "sha256": "fbaff8e4237ac54fca0ba4a1851a4eff9f2673f3f83a9699ba8aaaeeb0313bc5",
+      "bytes": 7953
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-post-operators-full-diagnostic-001.log": {
+      "sha256": "35c4c06c6b089504a42635488712a7f9e672762d82b16494997961b06c560f2b",
+      "bytes": 949908
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "task_source": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/robotwin/envs/place_object_scale.py",
+  "task_source_sha256": "555f04a2a2fa0a41ad8dfccd771579d1cc2686fc65ad6c7ef297c98f4c9ba310",
+  "upstream_pre_motion_assignment": "self.arm_tag = ArmTag('right' if self.object.get_pose().p[0] > 0 else 'left')",
+  "purpose": "Initialize the success-check arm reference on a fresh task instance; no motion, success predicate or policy change.",
+  "previous_worker_sha256": "c9cc3439945bee945312e32ed0de2e26aae99176e595e45fded6232afde9dcd4"
+}

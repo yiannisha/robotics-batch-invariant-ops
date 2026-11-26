@@ -1,0 +1,17 @@
+{
+  "status": "complete_corpus_independently_verified",
+  "episodes": 100,
+  "observations": 1000,
+  "split_counts": {
+    "diagnostic": 200,
+    "heldout": 800
+  },
+  "all_raw_rgb_rehashed": true,
+  "all_controller_actions_recomputed": true,
+  "all_request_noise_regenerated": true,
+  "all_companions_split_local": true,
+  "manifest_sha256": "eb194630f8b9ee41d238d6c41ca1fa73acdce9faa4f9a8c5b11c848992d32765",
+  "auditor_sha256": "2f65a3e68aef9ad0beb1f6f528957944a78b8645feb67c64d6904317e86f92f4",
+  "native_contract": "native operators with fixed64 language extent; not unmodified released longest-padding policy",
+  "paired_success_rate_campaign_complete": false
+}

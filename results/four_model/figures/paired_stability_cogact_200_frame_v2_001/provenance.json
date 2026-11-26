@@ -1,0 +1,93 @@
+{
+  "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2.json",
+  "report_sha256": "327cd02ad21c41800ac73c51f23ceeec5e70394ba0ab198027cc86215446b178",
+  "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_independent_audit.json",
+  "audit_sha256": "1a5a4c915277e923d76b9b6c6c0536eac76034351e746f908db9b61148b4f720",
+  "plotter_sha256": "20c4fd27369938aa2a8bcd90decbc3ad04c8680c054ead5e770880126f477e1c",
+  "matplotlib_version": "3.11.2",
+  "plotted_rows": [
+    {
+      "task": "close_drawer",
+      "mode": "native",
+      "starts": 50,
+      "eef_pose_frame": "robot_base",
+      "normalized_action_rms": 0.009576329984135393,
+      "median_start_peak_eef_mm": 88.51564836452779,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "close_drawer",
+      "mode": "invariant",
+      "starts": 50,
+      "eef_pose_frame": "robot_base",
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "move_near",
+      "mode": "native",
+      "starts": 50,
+      "eef_pose_frame": "world",
+      "normalized_action_rms": 0.002555161858169878,
+      "median_start_peak_eef_mm": 62.417791443702725,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "move_near",
+      "mode": "invariant",
+      "starts": 50,
+      "eef_pose_frame": "world",
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "open_drawer",
+      "mode": "native",
+      "starts": 50,
+      "eef_pose_frame": "robot_base",
+      "normalized_action_rms": 0.002510506106516515,
+      "median_start_peak_eef_mm": 85.4281837341413,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "open_drawer",
+      "mode": "invariant",
+      "starts": 50,
+      "eef_pose_frame": "robot_base",
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    },
+    {
+      "task": "pick_can",
+      "mode": "native",
+      "starts": 50,
+      "eef_pose_frame": "world",
+      "normalized_action_rms": 0.002375019882872823,
+      "median_start_peak_eef_mm": 6.494797780653255,
+      "action_divergence_percent": 100.0
+    },
+    {
+      "task": "pick_can",
+      "mode": "invariant",
+      "starts": 50,
+      "eef_pose_frame": "world",
+      "normalized_action_rms": 0.0,
+      "median_start_peak_eef_mm": 0.0,
+      "action_divergence_percent": 0.0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_cogact_200_frame_v2_001/cogact_paired_stability.png",
+      "sha256": "9a4eba396e5aa72ed6bcda77b61152e9b47141e11842e0bdbd7d39ae312d1a94"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_cogact_200_frame_v2_001/cogact_paired_stability.pdf",
+      "sha256": "31d066a8d646d60a6c38f814fc3a7db7050ac1636e6d2ff47fe858f865f93d69"
+    }
+  ],
+  "full_campaign_complete": false
+}

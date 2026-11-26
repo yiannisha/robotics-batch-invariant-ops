@@ -1,0 +1,27 @@
+{
+  "status": "fixed_action_replay_verified",
+  "model_evaluated": false,
+  "blocks": [
+    {
+      "task": "PlugCharger-v1",
+      "initialization": 0,
+      "repeats": 3,
+      "steps": 400,
+      "exact": true
+    },
+    {
+      "task": "PlugCharger-v1",
+      "initialization": 1,
+      "repeats": 3,
+      "steps": 400,
+      "exact": true
+    },
+    {
+      "task": "PlugCharger-v1",
+      "initialization": 2,
+      "repeats": 3,
+      "steps": 400,
+      "exact": true
+    }
+  ]
+}

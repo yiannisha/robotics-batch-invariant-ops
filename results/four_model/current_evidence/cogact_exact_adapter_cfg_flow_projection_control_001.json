@@ -1,0 +1,21 @@
+{
+  "status": "actual_exact_adapter_cfg_flow_projection_cpu_control_passed",
+  "scope": "Synthetic parent forward only; actual exact-adapter callback executes on CPU. No checkpoint load, neural inference or new model measurement.",
+  "source": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/cogact_simpler_exact.py",
+  "source_sha256": "79fd820654a47d6ae819cb91be7d779a1a46cac5013e4e7cb81aefb8d2f96f7f",
+  "input_branch_layout": [
+    "conditional_target",
+    "conditional_companion",
+    "unconditional_target",
+    "unconditional_companion"
+  ],
+  "canonical_flow_shape": [
+    2,
+    2,
+    1
+  ],
+  "target_branches_correct": true,
+  "companion_branches_correct": true,
+  "accepted_diagnostic_cfg_mapping_affected_by_generic_leaf_bug": false,
+  "full_campaign_complete": false
+}

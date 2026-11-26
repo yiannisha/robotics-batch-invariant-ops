@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-11-11T02:37:59.103469+00:00",
+  "pid": 3669759,
+  "start_ticks": 438593139,
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-causal-ablation-004.py",
+  "launcher_sha256": "ece172c0df5e091318f43833a63c6e8d1fb4818b89027c4a3806dda9d81b5742",
+  "configuration": {
+    "pid": 3624985,
+    "ticks": 438580367,
+    "upstream": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-independent-performance-audit-002.json",
+    "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+    "base": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign",
+    "pins": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_exact_model_causal_ablation_v4.py": "0382dea945a3c42fff996c1900c8e22ce67efed426910d0088ddd0047aef34d6",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_exact_model_causal_ablation_v4.py": "fa982fa6e8d6c09fe49bcbe4d1b674525b15848eca2b6f2f32fce9527f61405c",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_causal_ablation_v3.py": "cdb01b2499b12efe9d9a79be353d1896bb216c5ef5fbb070c9d89646becdeb67",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/lingbot_robotwin_exact_v2.py": "c757a9592ddf5e52737acf734c50f71a44966bcae13726e6834dae4efb5ca5b0",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/causal_plans_003/lingbot.json": "04191e33fa8b5fce4d1c69eeb7ab0a31015845765af915ea90754a9941151dc1"
+    }
+  },
+  "actual_causal_complete": false,
+  "full_campaign_complete": false
+}

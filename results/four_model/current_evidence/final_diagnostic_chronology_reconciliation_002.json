@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-09T19:26:22.782084+00:00",
+  "status": "reference_order_clarified_final_identity_and_acceptance_checks_pending",
+  "reference_plan": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/batch-invariant-pizero-exp/PLAN.md",
+  "reference_sha256": "fda244172aa7328532470d4282819b6c209c9a2440071d080a2976383c74a4fc",
+  "reference_sections": {
+    "14": "Freeze after diagnostic numerical coverage; do not change numerical implementation based on held-out results. Actual implementation bug requires invalidation, fix, new freeze, full heldout rerun.",
+    "16": "Complete six-mode causal ablation after the implementation freeze.",
+    "17": "Heldout evaluation after numerical freeze.",
+    "33": "Frozen implementation before heldout plus completed causal ablations/flow/operator/policy/serving/closed-loop artifacts are all required."
+  },
+  "correction_to": "current_evidence/final_diagnostic_chronology_gap_001.json",
+  "withdrawn_inference": "A freeze predating causal ablations is not itself a protocol failure or an automatic requirement to repeat the complete campaign; that ordering appears in the reference plan.",
+  "remaining_requirements": [
+    "Actual complete causal and local attribution audits for all4 models.",
+    "Independent heldout proofs bound to a prior qualified numerical freeze, with unchanged numerical sources/configuration/checkpoint.",
+    "Honest disclosure that the current causal study is scheduled after initial heldout evaluation, unlike reference section order.",
+    "If any late study identifies an actual full-path implementation bug or causes a numerical-path change, invalidate affected prior heldout acceptance, requalify and freeze a new revision, and rerun the full properly exposure-qualified heldout campaign.",
+    "Do not use heldout measurements or success outcomes to select/tune the invariant implementation."
+  ],
+  "all_original_scientific_deliverables_required": true,
+  "full_campaign_complete": false,
+  "additional_full_campaign_started": false,
+  "necessary_requalification_reruns_remain_within_existing_goal_authorization": true
+}

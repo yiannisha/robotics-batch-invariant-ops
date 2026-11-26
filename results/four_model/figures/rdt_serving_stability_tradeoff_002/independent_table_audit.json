@@ -1,0 +1,10 @@
+{
+  "status": "serving_tradeoff_table_independently_recounted",
+  "table_sha256": "cc35712f9e68675f6a367f662b4cd71d75b90bcd8dbb0d4628c3286a77e8fb64",
+  "model_id": "rdt_maniskill_exact",
+  "groups_verified": 16,
+  "requests_verified": 4000,
+  "auditor_sha256": "8e08934d7f3808fd8546485b1694223e55db0da50a561eed2908b01510ab4d11",
+  "visual_inspection_complete": false,
+  "full_campaign_complete": false
+}

@@ -1,0 +1,29 @@
+{
+  "pid": 1781635,
+  "start_ticks": 450441247,
+  "state": "S",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-idle-gated-isolated-performance-002.py",
+  "sha256": "ad9dc5395099d059db923f1d9c40a6c4ccef6cab0b0476672206f1b424effb98",
+  "idle_gate_status": {
+    "status": "waiting_for_300_consecutive_idle_seconds",
+    "observed_gpu": {
+      "gpu_uuid": "GPU-8e8d81cd-96dc-69ec-4078-3dc7acc88762",
+      "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "driver_version": "580.173.02",
+      "memory_used": "627 MiB",
+      "gpu_utilization": "0 %",
+      "temperature": "32 C",
+      "sm_clock": "180 MHz",
+      "processes": [
+        {
+          "pid": 608566,
+          "type": "G",
+          "used_memory": "617 MiB"
+        }
+      ],
+      "observed_at_utc": "2026-11-12T11:32:40.359246+00:00"
+    },
+    "idle_seconds": 0
+  },
+  "full_campaign_complete": false
+}

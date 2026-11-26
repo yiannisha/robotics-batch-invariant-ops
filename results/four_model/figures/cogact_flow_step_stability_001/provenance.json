@@ -1,0 +1,19 @@
+{
+  "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/cogact_flow_step_stability_001.json",
+  "report_sha256": "6926e365d0ffaf7d04d018912e84fdcd499318f2273cfc86b5d7d266b0eca15d",
+  "independent_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/cogact_flow_step_stability_001_independent_audit.json",
+  "audit_sha256": "bc9ba169c6ead0238baed4f13c51a0a54e065dc600d75e87ade84f36bf6e7cb5",
+  "plotter_sha256": "ab2fa07cba50ab1d90f4ec195e28a8982e67a3919d686bea522367001907cf06",
+  "batch_size": 8,
+  "matplotlib_version": "3.11.2",
+  "artifacts": [
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_flow_step_stability_001/sample_B8.png",
+      "sha256": "76d9641b32448431bd6a418e5497bc100946b397c6c9afadd25a67e24a6cf75c"
+    },
+    {
+      "path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_flow_step_stability_001/sample_B8.pdf",
+      "sha256": "8a2f39dd59311b5040e0b2d08c34e39a68152874169360f2d5cb06a48d8305cc"
+    }
+  ]
+}

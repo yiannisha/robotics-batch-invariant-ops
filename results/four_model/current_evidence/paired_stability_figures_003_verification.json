@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-11-09T17:37:49.414110+00:00",
+  "status": "figure_values_and_source_artifacts_crosschecked",
+  "scope": "34 plotted task/mode rows checked against previously accepted magnitude summary; all three rendered PNGs visually inspected. Not a new raw-data audit.",
+  "figures": [
+    {
+      "model": "pi05",
+      "plotted_rows_checked": 20,
+      "provenance": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_pi05_500_003/provenance.json",
+      "provenance_sha256": "05754672093d5885b94eebe99e74690e0d22f9f27c53ec382b6534b17059f361"
+    },
+    {
+      "model": "rdt",
+      "plotted_rows_checked": 10,
+      "provenance": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_rdt_250_003/provenance.json",
+      "provenance_sha256": "5651722d49db33a79f06d3bad7fe1a8ea906024025616274acaee4a7a68609af"
+    },
+    {
+      "model": "cogact",
+      "plotted_rows_checked": 4,
+      "provenance": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/paired_stability_cogact_77_003/provenance.json",
+      "provenance_sha256": "67e6f731c8122147146e1927693110e7a1c4833ebef004cd14b290cf24390df7"
+    }
+  ],
+  "supersedes_figure_versions": [
+    "001",
+    "002"
+  ],
+  "full_campaign_complete": false
+}

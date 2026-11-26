@@ -1,0 +1,74 @@
+{
+  "observed_utc": "2026-11-11T04:30:49.097885+00:00",
+  "status": "complete_cogact_causal_measurement_contracts_and_figure_review_verified",
+  "causal_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/causal_003/independent_contract_audit.json",
+  "causal_audit_sha256": "cf564d235d7e24a45d0c303f62769808c301a48ba584777f5fbd5eb104640a97",
+  "raw_and_provenance_and_pinned_sources_rehashed": true,
+  "measurement_records": 3600,
+  "request_noise_pairs": 600,
+  "rows": [
+    {
+      "mode": "existing_invariant_ops",
+      "requests": 600,
+      "nonexact_outputs": 0,
+      "any_recorded_boundary_divergence": 0,
+      "maximum_output_error": 0.0,
+      "first_recorded_boundaries": {}
+    },
+    {
+      "mode": "explicit_per_matrix_reference",
+      "requests": 600,
+      "nonexact_outputs": 0,
+      "any_recorded_boundary_divergence": 0,
+      "maximum_output_error": 0.0,
+      "first_recorded_boundaries": {}
+    },
+    {
+      "mode": "full_invariant",
+      "requests": 600,
+      "nonexact_outputs": 0,
+      "any_recorded_boundary_divergence": 0,
+      "maximum_output_error": 0.0,
+      "first_recorded_boundaries": {}
+    },
+    {
+      "mode": "native",
+      "requests": 600,
+      "nonexact_outputs": 600,
+      "any_recorded_boundary_divergence": 600,
+      "maximum_output_error": 1.0,
+      "first_recorded_boundaries": {
+        "flow.step_00.sample": 600
+      }
+    },
+    {
+      "mode": "native_deterministic",
+      "requests": 600,
+      "nonexact_outputs": 600,
+      "any_recorded_boundary_divergence": 600,
+      "maximum_output_error": 1.0,
+      "first_recorded_boundaries": {
+        "flow.step_00.sample": 600
+      }
+    },
+    {
+      "mode": "operators_plus_patch_projection",
+      "requests": 600,
+      "nonexact_outputs": 0,
+      "any_recorded_boundary_divergence": 0,
+      "maximum_output_error": 0.0,
+      "first_recorded_boundaries": {}
+    }
+  ],
+  "tensor_errors_independently_rederived": false,
+  "local_operator_reexecution_verified": false,
+  "globally_first_operator_attribution_complete": false,
+  "figure_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_003/independent_table_audit.json": "5030a7e56fbb45e60889f022e3943e94f58d71fe0afc45ee1e40180db9f352b9",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_003/plotted_table.json": "04f7263ffca3366fb986fd287ea02fc354985a3ce359b9a96d9d2042c1d8595d",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_003/sample_page01.pdf": "c97c5000b406eaaa0f7e66229f2862e8d9e3b11daad312ac963883e7db196f52",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/figures/cogact_causal_flow_stability_003/sample_page01.png": "47b450f1dd792b2605b636bedff43d48458849164ec8f2ac42d7e8709a2d4600"
+  },
+  "figure_visual_inspection_complete": true,
+  "full_campaign_complete": false
+}

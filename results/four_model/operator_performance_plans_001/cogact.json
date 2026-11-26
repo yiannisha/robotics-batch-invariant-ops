@@ -1,0 +1,3707 @@
+{
+  "schema_version": 1,
+  "model": "cogact",
+  "adapter": "scripts.model_invariance.adapters.cogact_simpler_exact",
+  "adapter_execution_configuration": {
+    "checkpoint_revision": "ca302a300542393a0b06e291465076a7d9105c23",
+    "suite": "simpler_google_four",
+    "language_padding": "fixed_right_in_both_primary_modes",
+    "language_tokens": 64,
+    "precision": "vlm_bfloat16_diffusion_float32",
+    "tf32": false,
+    "chunk_size": 16,
+    "action_dim": 7,
+    "diffusion_steps": 10,
+    "cfg_scale": 1.5,
+    "execution": "eager",
+    "released_default_fidelity": "separate_longest_padding_singleton_measurement_required"
+  },
+  "source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/coverage_complete_audit.json": "5692d455a76524c211d1218b201b2b3b092f082ffcfc4b6b42adf77b9d1c80f3",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74"
+  },
+  "cases": [
+    {
+      "id": "B1_source_000",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 0,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              16,
+              256,
+              72
+            ],
+            "stride": [
+              884736,
+              72,
+              3456,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              16,
+              256,
+              72
+            ],
+            "stride": [
+              884736,
+              72,
+              3456,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              16,
+              256,
+              72
+            ],
+            "stride": [
+              884736,
+              72,
+              3456,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": null,
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_001",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 1,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              16,
+              261,
+              64
+            ],
+            "stride": [
+              801792,
+              64,
+              3072,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              16,
+              261,
+              64
+            ],
+            "stride": [
+              801792,
+              64,
+              3072,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              16,
+              261,
+              64
+            ],
+            "stride": [
+              801792,
+              64,
+              3072,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": null,
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_002",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 2,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256,
+              1152
+            ],
+            "stride": [
+              294912,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_003",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 3,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256,
+              1152
+            ],
+            "stride": [
+              294912,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              3456,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              3456
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_004",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 4,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256,
+              1152
+            ],
+            "stride": [
+              294912,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_005",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 5,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256,
+              2176
+            ],
+            "stride": [
+              557056,
+              2176,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8704,
+              2176
+            ],
+            "stride": [
+              2176,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8704
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_006",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 6,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256,
+              4096
+            ],
+            "stride": [
+              1048576,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_007",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 7,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256,
+              4304
+            ],
+            "stride": [
+              1101824,
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              4304
+            ],
+            "stride": [
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_008",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 8,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              256,
+              8704
+            ],
+            "stride": [
+              2228224,
+              8704,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              8704
+            ],
+            "stride": [
+              8704,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_009",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 9,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              261,
+              1024
+            ],
+            "stride": [
+              267264,
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024,
+              1024
+            ],
+            "stride": [
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_010",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 10,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              261,
+              1024
+            ],
+            "stride": [
+              267264,
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              3072,
+              1024
+            ],
+            "stride": [
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              3072
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_011",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 11,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              261,
+              1024
+            ],
+            "stride": [
+              267264,
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              1024
+            ],
+            "stride": [
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_012",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 12,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              261,
+              4096
+            ],
+            "stride": [
+              1069056,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_013",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 13,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              3,
+              224,
+              224
+            ],
+            "stride": [
+              150528,
+              50176,
+              224,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024,
+              3,
+              14,
+              14
+            ],
+            "stride": [
+              588,
+              196,
+              14,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024
+            ],
+            "stride": [
+              1
+            ]
+          },
+          [
+            14,
+            14
+          ]
+        ],
+        "aten_operation": "aten::conv2d",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_014",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 14,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              3,
+              224,
+              224
+            ],
+            "stride": [
+              150528,
+              50176,
+              224,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              3,
+              14,
+              14
+            ],
+            "stride": [
+              588,
+              196,
+              14,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          },
+          [
+            14,
+            14
+          ]
+        ],
+        "aten_operation": "aten::conv2d",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_015",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 15,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              320,
+              128
+            ],
+            "stride": [
+              1310720,
+              40960,
+              128,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              320,
+              128
+            ],
+            "stride": [
+              1310720,
+              40960,
+              128,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              32,
+              320,
+              128
+            ],
+            "stride": [
+              1310720,
+              40960,
+              128,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              1,
+              320,
+              320
+            ],
+            "stride": [
+              102400,
+              102400,
+              320,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": {
+          "data": "eNrt0rEBwwAMwzB/3tOTnpCNg0B9YOPu95hVu3+uYKU/Aq31R6C1/gi01h+B1voj0Fp/BFrrj0Br/RForT8CrfVHoLX+CLTWH4HW+iPQWn8EWuuPQGv9EWitPwKt9Uegtf4ItNYfgdb6I9BafwRa649Aa/0RaK0/Aq31R6C1/gi01h+B1voj0Fp/BFrrj0Br/RForT8CrfVHoLX+CLTWH4HW+iPQWn8EWuuPQGv9EWitPwKt9Uegtf4ItNYfgdb6I9BafwRa649Aa/0RaK0/Aq31R6C1/gi01h+B1voj0Fp/BFrrj0Br/RForT8CrfVHoLX+CLTWH4HW+iPQ7gi0XX8E8kegLfsjkD8CbdkfgfwRaMv+COSPQFv2RyB/BNqyPwL5I9CW/RHIH4G27I9A/gi0ZX8E8kegLfsjkD8CbdkfgfwRaMv+COSPQFv2RyB/BNqyPwL5I9CW/RHIH4G27I9A/gi0ZX8E8kegLfsjkD8CbdkfgfwRaMv+COSPQFv2RyB/BNqyPwL5I9CW/RHIH4G27I9A/gi0ZX8E8kegLfsjkD8CbdkfgfwRaMv+COSPQFv2RyB/BNqyPwL5I9CW/RHIH4F2R6DxRyB/BBp/BPJHoPFHIH8EGn8E8keg8UcgfwQafwTyR6DxRyB/BBp/BPJHoPFHIH8EGn8E8keg8UcgfwQafwTyR6DxRyB/BPInAvkjkD8RyB+B/IlA/gjkTwTyRyB/IpA/AvkTgfwRyJ8I5I9A/kQUfwTyR6DxRyB/BBp/BPJHoPFHIH8EGn8E8kcgfyKQPwL5E4H8EcifCOSPQP5EIH8E8icC+SOQPxHIH4H8iUD+CORPBPJHIH8ikD8C+ROB/BHInwjkj0D+RCB/BPInAv2aQP60KtCfCeRPqwL9mED+tCrQfwnkT6sC/ZZA/rQq0F8J5E+rAv2UQP60KtA/CeRPqwL9kkD+tCrQHwnkT6sC/ZBA/rQq0P8I5E+rAv2OQP60KtDfCORPqwL9jED+tCrQvwjkT6sC/YpA/rQq0J8I5E+rAv2IQP60KtB/CORPqwL9hkD+tCrQXwjkT6sC/YRA/rQq0D8I5E+rAv2CQP60KtAfCORPqwL9gED+tCrQ/cWfVgW6vUqBLq9SoLurFOjqKgW6uUqBLq5SoHurFOjaKgW6tUqBLq1SoDurFOjKKgW6sUqBLqxSoPuqFOi6KgW6rUqBLiv+xJ/En/iT+BN/En/iT/zxJ/7EH3/iT/zxJ/7EH3/iT/zxJ/7EH3/iT/zxJ/7EH3/iT/zxJ/7En8Sf+JP4E38Sf+JP4k/8iT/+xJ/440/8iT/+xJ/440/8ib9vewFwJVhG",
+          "dtype": "torch.bfloat16",
+          "encoding": "zlib_base64_original_dtype_bytes_v1",
+          "original_dtype_bytes_count": 204800,
+          "original_dtype_bytes_sha256": "f04f8bc21d738acc2bf7d4ea1a15bdf7222badb632c109e60fe81b07a2fa399b",
+          "shape": [
+            1,
+            1,
+            320,
+            320
+          ],
+          "stride": [
+            102400,
+            102400,
+            320,
+            1
+          ],
+          "values_shape": [
+            1,
+            1,
+            320,
+            320
+          ]
+        },
+        "keyword_arguments": {},
+        "count": 32
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": {
+        "kind": "direct_lossless_source_capture",
+        "capture": {
+          "data": "eNrt0rEBwwAMwzB/3tOTnpCNg0B9YOPu95hVu3+uYKU/Aq31R6C1/gi01h+B1voj0Fp/BFrrj0Br/RForT8CrfVHoLX+CLTWH4HW+iPQWn8EWuuPQGv9EWitPwKt9Uegtf4ItNYfgdb6I9BafwRa649Aa/0RaK0/Aq31R6C1/gi01h+B1voj0Fp/BFrrj0Br/RForT8CrfVHoLX+CLTWH4HW+iPQWn8EWuuPQGv9EWitPwKt9Uegtf4ItNYfgdb6I9BafwRa649Aa/0RaK0/Aq31R6C1/gi01h+B1voj0Fp/BFrrj0Br/RForT8CrfVHoLX+CLTWH4HW+iPQ7gi0XX8E8kegLfsjkD8CbdkfgfwRaMv+COSPQFv2RyB/BNqyPwL5I9CW/RHIH4G27I9A/gi0ZX8E8kegLfsjkD8CbdkfgfwRaMv+COSPQFv2RyB/BNqyPwL5I9CW/RHIH4G27I9A/gi0ZX8E8kegLfsjkD8CbdkfgfwRaMv+COSPQFv2RyB/BNqyPwL5I9CW/RHIH4G27I9A/gi0ZX8E8kegLfsjkD8CbdkfgfwRaMv+COSPQFv2RyB/BNqyPwL5I9CW/RHIH4F2R6DxRyB/BBp/BPJHoPFHIH8EGn8E8keg8UcgfwQafwTyR6DxRyB/BBp/BPJHoPFHIH8EGn8E8keg8UcgfwQafwTyR6DxRyB/BPInAvkjkD8RyB+B/IlA/gjkTwTyRyB/IpA/AvkTgfwRyJ8I5I9A/kQUfwTyR6DxRyB/BBp/BPJHoPFHIH8EGn8E8kcgfyKQPwL5E4H8EcifCOSPQP5EIH8E8icC+SOQPxHIH4H8iUD+CORPBPJHIH8ikD8C+ROB/BHInwjkj0D+RCB/BPInAv2aQP60KtCfCeRPqwL9mED+tCrQfwnkT6sC/ZZA/rQq0F8J5E+rAv2UQP60KtA/CeRPqwL9kkD+tCrQHwnkT6sC/ZBA/rQq0P8I5E+rAv2OQP60KtDfCORPqwL9jED+tCrQvwjkT6sC/YpA/rQq0J8I5E+rAv2IQP60KtB/CORPqwL9hkD+tCrQXwjkT6sC/YRA/rQq0D8I5E+rAv2CQP60KtAfCORPqwL9gED+tCrQ/cWfVgW6vUqBLq9SoLurFOjqKgW6uUqBLq5SoHurFOjaKgW6tUqBLq1SoDurFOjKKgW6sUqBLqxSoPuqFOi6KgW6rUqBLiv+xJ/En/iT+BN/En/iT/zxJ/7EH3/iT/zxJ/7EH3/iT/zxJ/7EH3/iT/zxJ/7EH3/iT/zxJ/7En8Sf+JP4E38Sf+JP4k/8iT/+xJ/440/8iT/+xJ/440/8ib9vewFwJVhG",
+          "dtype": "torch.bfloat16",
+          "encoding": "zlib_base64_original_dtype_bytes_v1",
+          "original_dtype_bytes_count": 204800,
+          "original_dtype_bytes_sha256": "f04f8bc21d738acc2bf7d4ea1a15bdf7222badb632c109e60fe81b07a2fa399b",
+          "shape": [
+            1,
+            1,
+            320,
+            320
+          ],
+          "stride": [
+            102400,
+            102400,
+            320,
+            1
+          ],
+          "values_shape": [
+            1,
+            1,
+            320,
+            320
+          ]
+        },
+        "selector": null
+      }
+    },
+    {
+      "id": "B1_source_016",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 16,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              320,
+              11008
+            ],
+            "stride": [
+              3522560,
+              11008,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              11008
+            ],
+            "stride": [
+              11008,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 32
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_017",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 17,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              320,
+              4096
+            ],
+            "stride": [
+              1310720,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              11008,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 64
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_018",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 18,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              320,
+              4096
+            ],
+            "stride": [
+              1310720,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              32064,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_019",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 19,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1,
+              320,
+              4096
+            ],
+            "stride": [
+              1310720,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 128
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_020",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 20,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1,
+              320,
+              4096
+            ],
+            "stride": [
+              1310720,
+              4096,
+              1
+            ]
+          },
+          [
+            -1
+          ],
+          true
+        ],
+        "aten_operation": "aten::mean",
+        "keyword_arguments": {},
+        "count": 65
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_021",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 21,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1,
+              64,
+              1
+            ],
+            "stride": [
+              64,
+              1,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1,
+              1,
+              320
+            ],
+            "stride": [
+              320,
+              320,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::matmul",
+        "keyword_arguments": {},
+        "count": 32
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_022",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 22,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              1,
+              4096
+            ],
+            "stride": [
+              4096,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_023",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 23,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              16,
+              7
+            ],
+            "stride": [
+              112,
+              7,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              7
+            ],
+            "stride": [
+              7,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_024",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 24,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              17,
+              1536
+            ],
+            "stride": [
+              26112,
+              1536,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              1536
+            ],
+            "stride": [
+              1536,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_025",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 25,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              17,
+              384
+            ],
+            "stride": [
+              6528,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1152,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_026",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 26,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              17,
+              384
+            ],
+            "stride": [
+              6528,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1536,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1536
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_027",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 27,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              17,
+              384
+            ],
+            "stride": [
+              6528,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_028",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 28,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              17,
+              384
+            ],
+            "stride": [
+              6528,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              7,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              7
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_029",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 29,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_030",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 30,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B1_source_031",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B1.json",
+      "source_trace_sha256": "94b3548cd67ed479c2e7851e0754a6d8fd1ac2a9669b05350e8ba40b0f6608f0",
+      "source_operation_index": 31,
+      "logical_batch_size": 1,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              4,
+              17,
+              96
+            ],
+            "stride": [
+              19584,
+              96,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              4,
+              17,
+              96
+            ],
+            "stride": [
+              19584,
+              96,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              2,
+              4,
+              17,
+              96
+            ],
+            "stride": [
+              19584,
+              96,
+              1152,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": null,
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_000",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 0,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              16,
+              256,
+              72
+            ],
+            "stride": [
+              884736,
+              72,
+              3456,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              16,
+              256,
+              72
+            ],
+            "stride": [
+              884736,
+              72,
+              3456,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              16,
+              256,
+              72
+            ],
+            "stride": [
+              884736,
+              72,
+              3456,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": null,
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_001",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 1,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              16,
+              261,
+              64
+            ],
+            "stride": [
+              801792,
+              64,
+              3072,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              16,
+              261,
+              64
+            ],
+            "stride": [
+              801792,
+              64,
+              3072,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              16,
+              261,
+              64
+            ],
+            "stride": [
+              801792,
+              64,
+              3072,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": null,
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_002",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 2,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              256,
+              1152
+            ],
+            "stride": [
+              294912,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_003",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 3,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              256,
+              1152
+            ],
+            "stride": [
+              294912,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              3456,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              3456
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_004",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 4,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              256,
+              1152
+            ],
+            "stride": [
+              294912,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304,
+              1152
+            ],
+            "stride": [
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4304
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_005",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 5,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              256,
+              2176
+            ],
+            "stride": [
+              557056,
+              2176,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8704,
+              2176
+            ],
+            "stride": [
+              2176,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8704
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_006",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 6,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              256,
+              4096
+            ],
+            "stride": [
+              1048576,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_007",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 7,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              256,
+              4304
+            ],
+            "stride": [
+              1101824,
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              4304
+            ],
+            "stride": [
+              4304,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 27
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_008",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 8,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              256,
+              8704
+            ],
+            "stride": [
+              2228224,
+              8704,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              8704
+            ],
+            "stride": [
+              8704,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_009",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 9,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              261,
+              1024
+            ],
+            "stride": [
+              267264,
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024,
+              1024
+            ],
+            "stride": [
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_010",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 10,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              261,
+              1024
+            ],
+            "stride": [
+              267264,
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              3072,
+              1024
+            ],
+            "stride": [
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              3072
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_011",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 11,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              261,
+              1024
+            ],
+            "stride": [
+              267264,
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              1024
+            ],
+            "stride": [
+              1024,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_012",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 12,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              261,
+              4096
+            ],
+            "stride": [
+              1069056,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 24
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_013",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 13,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              3,
+              224,
+              224
+            ],
+            "stride": [
+              150528,
+              50176,
+              224,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024,
+              3,
+              14,
+              14
+            ],
+            "stride": [
+              588,
+              196,
+              14,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1024
+            ],
+            "stride": [
+              1
+            ]
+          },
+          [
+            14,
+            14
+          ]
+        ],
+        "aten_operation": "aten::conv2d",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_014",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 14,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              3,
+              224,
+              224
+            ],
+            "stride": [
+              150528,
+              50176,
+              224,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152,
+              3,
+              14,
+              14
+            ],
+            "stride": [
+              588,
+              196,
+              14,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          },
+          [
+            14,
+            14
+          ]
+        ],
+        "aten_operation": "aten::conv2d",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_015",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 15,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              320,
+              128
+            ],
+            "stride": [
+              1310720,
+              40960,
+              128,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              320,
+              128
+            ],
+            "stride": [
+              1310720,
+              40960,
+              128,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              32,
+              320,
+              128
+            ],
+            "stride": [
+              1310720,
+              40960,
+              128,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              1,
+              320,
+              320
+            ],
+            "stride": [
+              102400,
+              102400,
+              320,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": {
+          "data": "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",
+          "dtype": "torch.bfloat16",
+          "encoding": "zlib_base64_original_dtype_bytes_v1",
+          "original_dtype_bytes_count": 1638400,
+          "original_dtype_bytes_sha256": "4a2cda1996dc7d3b386ba3a3f08eceff62a2770ecab6792c9557fffd6bc085d6",
+          "shape": [
+            8,
+            1,
+            320,
+            320
+          ],
+          "stride": [
+            102400,
+            102400,
+            320,
+            1
+          ],
+          "values_shape": [
+            8,
+            1,
+            320,
+            320
+          ]
+        },
+        "keyword_arguments": {},
+        "count": 32
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": {
+        "kind": "direct_lossless_source_capture",
+        "capture": {
+          "data": "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",
+          "dtype": "torch.bfloat16",
+          "encoding": "zlib_base64_original_dtype_bytes_v1",
+          "original_dtype_bytes_count": 1638400,
+          "original_dtype_bytes_sha256": "4a2cda1996dc7d3b386ba3a3f08eceff62a2770ecab6792c9557fffd6bc085d6",
+          "shape": [
+            8,
+            1,
+            320,
+            320
+          ],
+          "stride": [
+            102400,
+            102400,
+            320,
+            1
+          ],
+          "values_shape": [
+            8,
+            1,
+            320,
+            320
+          ]
+        },
+        "selector": null
+      }
+    },
+    {
+      "id": "B8_source_016",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 16,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              320,
+              11008
+            ],
+            "stride": [
+              3522560,
+              11008,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              11008
+            ],
+            "stride": [
+              11008,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 32
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_017",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 17,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              320,
+              4096
+            ],
+            "stride": [
+              1310720,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              11008,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 64
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_018",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 18,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              320,
+              4096
+            ],
+            "stride": [
+              1310720,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              32064,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 1
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_019",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 19,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              8,
+              320,
+              4096
+            ],
+            "stride": [
+              1310720,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.bfloat16",
+            "shape": [
+              4096,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 128
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_020",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 20,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1,
+              64,
+              1
+            ],
+            "stride": [
+              64,
+              1,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1,
+              1,
+              320
+            ],
+            "stride": [
+              320,
+              320,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::matmul",
+        "keyword_arguments": {},
+        "count": 32
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_021",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 21,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              1,
+              4096
+            ],
+            "stride": [
+              4096,
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              4096
+            ],
+            "stride": [
+              4096,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_022",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 22,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              16,
+              7
+            ],
+            "stride": [
+              112,
+              7,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              7
+            ],
+            "stride": [
+              7,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_023",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 23,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              17,
+              1536
+            ],
+            "stride": [
+              26112,
+              1536,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              1536
+            ],
+            "stride": [
+              1536,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_024",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 24,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              17,
+              384
+            ],
+            "stride": [
+              6528,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1152,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1152
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_025",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 25,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              17,
+              384
+            ],
+            "stride": [
+              6528,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1536,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              1536
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_026",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 26,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              17,
+              384
+            ],
+            "stride": [
+              6528,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_027",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 27,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              17,
+              384
+            ],
+            "stride": [
+              6528,
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              7,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              7
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_028",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 28,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              256
+            ],
+            "stride": [
+              256,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_029",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 29,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384,
+              384
+            ],
+            "stride": [
+              384,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              384
+            ],
+            "stride": [
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::linear",
+        "keyword_arguments": {},
+        "count": 10
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_030",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 30,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              4,
+              17,
+              96
+            ],
+            "stride": [
+              19584,
+              96,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              4,
+              17,
+              96
+            ],
+            "stride": [
+              19584,
+              96,
+              1152,
+              1
+            ]
+          },
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              16,
+              4,
+              17,
+              96
+            ],
+            "stride": [
+              19584,
+              96,
+              1152,
+              1
+            ]
+          }
+        ],
+        "aten_operation": "aten::scaled_dot_product_attention",
+        "attention_mask": null,
+        "keyword_arguments": {},
+        "count": 60
+      },
+      "modes": [
+        "native",
+        "batch_invariant",
+        "explicit_invariant_per_matrix"
+      ],
+      "mask_binding": null
+    },
+    {
+      "id": "B8_source_031",
+      "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/operator/aten_trace_masks_B8.json",
+      "source_trace_sha256": "e386fd8ce62f36406825ddcb2c7021ac9beeb519a1c5db8f2b672c075b231d74",
+      "source_operation_index": 31,
+      "logical_batch_size": 8,
+      "entry": {
+        "arguments": [
+          {
+            "device": "cuda",
+            "dtype": "torch.float32",
+            "shape": [
+              8,
+              320,
+              4096
+            ],
+            "stride": [
+              1310720,
+              4096,
+              1
+            ]
+          },
+          [
+            -1
+          ],
+          true
+        ],
+        "aten_operation": "aten::mean",
+        "keyword_arguments": {},
+        "count": 65
+      },
+      "modes": [
+        "native",
+        "batch_invariant"
+      ],
+      "mask_binding": null
+    }
+  ],
+  "timing_protocol": {
+    "sessions": 5,
+    "warmup_calls": 20,
+    "timed_calls": 200
+  },
+  "operand_contract": "Retain exact traced dtype, shape and strides. Generate physical storage once, preserving broadcast strides. Restore captured masks losslessly.",
+  "reference_contract": "Attention matrix products: explicit invariant per-matrix MM versus batched persistent invariant path; native measured separately.",
+  "excludes": "Tracing, profiler, allocation, input generation, compilation and initialization from timed regions.",
+  "status": "operator_timing_plan_only_execution_and_independent_acceptance_pending",
+  "full_campaign_complete": false,
+  "builder_sha256": "7eb8b42dccd0e264dd21100ce9288c0b00d0d82e7529db5cfa37b8d3dc43bacb"
+}

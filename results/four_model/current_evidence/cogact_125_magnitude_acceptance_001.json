@@ -1,0 +1,19 @@
+{
+  "timestamp_utc": "2026-11-09T20:39:40.312926+00:00",
+  "status": "accepted_125_start_cogact_magnitudes_and_bootstrap_promoted",
+  "magnitude_report_sha256": "2d17e24ef590a0ec517fa1bea5c15564fcf86ca32f7b495fe7011a342afd6450",
+  "magnitude_audit_sha256": "67ec1596c2d1c2a8132d784f302ef176be0f996a110a8cbf273e515d06134152",
+  "bootstrap_report_sha256": "1fbb6e4a95d0ef839f9131eb6d51cdb1c737bc4f74de198c402e7c55889dcb5c",
+  "bootstrap_audit_sha256": "14a3f904c6b20af3990c4f6df6233bc92fa8414aee9738a501ee970af6c03748",
+  "previous_summary_archive": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/accepted_summary_history/stability_audited_summary_b5b9121e575d5d378327df39100b5a1790ae7885e204f8371876d132dd7f0b1c.json",
+  "previous_summary_sha256": "b5b9121e575d5d378327df39100b5a1790ae7885e204f8371876d132dd7f0b1c",
+  "new_summary_sha256": "4c340c787c5788450873140f302dcb809a216c72bea0469cc1068d52b7d53a8d",
+  "accepted_starts": 875,
+  "cogact_starts": 125,
+  "figure_values_verified": 6,
+  "figure_visually_inspected": true,
+  "figure_provenance_sha256": "2df9b329b5fc0327ef7ac37f7b15092a65afb7c0a280a71752f057f8a10514a5",
+  "frame_scope": "CogACT drawer: robot-base frame; pick/move, PI05 and RDT: world. No pooling across tasks or frames.",
+  "released_native_supplement_excluded_from_primary_summary": true,
+  "full_campaign_complete": false
+}

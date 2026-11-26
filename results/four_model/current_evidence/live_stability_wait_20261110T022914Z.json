@@ -1,0 +1,37 @@
+{
+  "observed_utc": "2026-11-10T02:29:14.309284+00:00",
+  "classification": "verified_wait",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "processes": [
+    {
+      "pid": 1942407,
+      "identity_matches": true,
+      "state": "R",
+      "cpu_ticks": 6340952,
+      "rchar": 26293563170
+    },
+    {
+      "pid": 675019,
+      "identity_matches": true,
+      "state": "R",
+      "cpu_ticks": 7253396,
+      "rchar": 14547501773
+    },
+    {
+      "pid": 4055960,
+      "identity_matches": true,
+      "state": "R",
+      "cpu_ticks": 4794236,
+      "rchar": 169084843153
+    },
+    {
+      "pid": 2383779,
+      "identity_matches": true,
+      "state": "R",
+      "cpu_ticks": 2398702,
+      "rchar": 1398791908206
+    }
+  ],
+  "cogact_full_raw_proof_exists": false,
+  "acceptance_changed": false
+}

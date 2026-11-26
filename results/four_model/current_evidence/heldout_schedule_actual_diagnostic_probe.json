@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "arrangements": 78,
+  "scope": "Schedule integration only on first complete accepted diagnostic request, synthetic in-memory split labels; no heldout/freshness claim"
+}

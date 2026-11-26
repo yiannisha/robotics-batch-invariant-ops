@@ -1,0 +1,38 @@
+{
+  "scope": "Four actual adjacent-frame pairs; in-memory lossless XOR storage probe only, live formats unchanged",
+  "rows": [
+    {
+      "task": "lift_pot",
+      "source": "4cbbbcc9939ecd451f8e122e4a49de155043297ee2ad8613125094664f6e316a.pt.gz",
+      "base": "frames/045a36f716d27e587636b1dbbee28652cbca611dbcf1fa1dad2acf56296b80ec.pt.gz",
+      "original_bytes": 515718,
+      "probe_delta_bytes": 357615,
+      "whole_frame_digest_exact": true
+    },
+    {
+      "task": "click_bell",
+      "source": "57ef4d8d0bb4997535b4c76051c33b619e2950235fe38dd8d298736b314ff784.pt.gz",
+      "base": "frames/0ff8f7ec4d7ff738f8c7efb431326b1bc4b7c3d1b52af43ac956c8ffd0616350.pt.gz",
+      "original_bytes": 509692,
+      "probe_delta_bytes": 428616,
+      "whole_frame_digest_exact": true
+    },
+    {
+      "task": "adjust_bottle",
+      "source": "b6e34a82523aabe31a52686569206a58f1125c3f89d1dc3e342f72740908b151.pt.gz",
+      "base": "frames/9e2d0e26f151de18fe511d94d67f0d84d7e906709b182298d81b8461cea12b4a.pt.gz",
+      "original_bytes": 527333,
+      "probe_delta_bytes": 441510,
+      "whole_frame_digest_exact": true
+    },
+    {
+      "task": "grab_roller",
+      "source": "85835ba6e58011d870100442a13e44a749237e8d969fc234abba06e699edd888.pt.gz",
+      "base": "frames/9552def0101610ae3efbaeb7541d390b63d181c3c85cb04de0f08bea5529fe93.pt.gz",
+      "original_bytes": 513859,
+      "probe_delta_bytes": 459166,
+      "whole_frame_digest_exact": true
+    }
+  ],
+  "measured_ratio": 0.8162708639592916
+}

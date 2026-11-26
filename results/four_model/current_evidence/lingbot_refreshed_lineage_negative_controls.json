@@ -1,0 +1,22 @@
+{
+  "status": "refreshed_lineage_auditor_rejected_rehashed_unauthorized_changes",
+  "controls": [
+    {
+      "control": "changed_diagnostic_row",
+      "rejected": true,
+      "reason": "ValueError: Refreshed snapshot includes unaudited changes",
+      "candidate": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-heldout-refresh-metadata-001/changed_diagnostic_row_negative_candidate.json",
+      "candidate_sha256": "4df900bf89439c197c7dbb5b0c9e6160492923f0b4b52b0ede077acd24c727a2",
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-lineage-negative-changed_diagnostic_row-001.log"
+    },
+    {
+      "control": "changed_unauthorized_heldout_row",
+      "rejected": true,
+      "reason": "ValueError: Refreshed snapshot includes unaudited changes",
+      "candidate": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-heldout-refresh-metadata-001/changed_unauthorized_heldout_row_negative_candidate.json",
+      "candidate_sha256": "77f750b2dbf65571c2d15c738eb8dbb785198c5e40267b5a33da3ef5bc7b7e03",
+      "log": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-lineage-negative-changed_unauthorized_heldout_row-001.log"
+    }
+  ],
+  "auditor_sha256": "83869e87ba55ffcd143e2988ef74a4c6a94aeffa4032199944651ab6282778dc"
+}

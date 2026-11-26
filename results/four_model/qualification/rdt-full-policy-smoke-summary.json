@@ -1,0 +1,12 @@
+{
+  "scope": "three_request_noise_pair_entire_policy_final_output_smoke_not_full_diagnostic",
+  "records": 234,
+  "invariant_records": 117,
+  "invariant_output_and_all_trace_failures": 0,
+  "native_output_failures": 111,
+  "B32_actual_execution_both_modes": true,
+  "all_target_and_companion_IDs_diagnostic": true,
+  "raw_sha256": "66dd50784701bbfa4bfe3248cac67f08b016c55a35abe548eb4d049810dcbf1c",
+  "full_diagnostic_complete": false,
+  "per_diffusion_step_trace_coverage": false
+}

@@ -1,0 +1,846 @@
+{
+  "status": "paired_rollouts_independently_audited_provisional_pending_numerical_QA",
+  "candidate_lock_sha256": "ab564e2fde598b1c661c82411bb98bfdd3acf06850f3484096218000c6911b98",
+  "completed_paired_starts": 72,
+  "prescribed_paired_starts": 500,
+  "episodes": 576,
+  "by_task": {
+    "0": {
+      "paired_starts": 47,
+      "successes": {
+        "native_singleton": 33,
+        "native_dynamic": 33,
+        "patched_singleton": 32,
+        "patched_dynamic": 32
+      },
+      "unique_initial_physics_states": 47,
+      "success_rate": {
+        "native_singleton": 0.7021276595744681,
+        "native_dynamic": 0.7021276595744681,
+        "patched_singleton": 0.6808510638297872,
+        "patched_dynamic": 0.6808510638297872
+      },
+      "BI_minus_native_singleton_percentage_points": -2.127659574468085,
+      "BI_minus_native_dynamic_percentage_points": -2.127659574468085
+    },
+    "1": {
+      "paired_starts": 25,
+      "successes": {
+        "native_singleton": 24,
+        "native_dynamic": 25,
+        "patched_singleton": 24,
+        "patched_dynamic": 24
+      },
+      "unique_initial_physics_states": 25,
+      "success_rate": {
+        "native_singleton": 0.96,
+        "native_dynamic": 1.0,
+        "patched_singleton": 0.96,
+        "patched_dynamic": 0.96
+      },
+      "BI_minus_native_singleton_percentage_points": 0.0,
+      "BI_minus_native_dynamic_percentage_points": -4.0
+    }
+  },
+  "raw_inputs_and_noise_reconstructed": true,
+  "reconstructed_policy_calls": 3856,
+  "all_completed_blocks_pass_reset_AA_and_invariant_trajectory_checks": true,
+  "cohort_rollouts_complete": false,
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "blocks": [
+    {
+      "task": 0,
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 1,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 2,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 3,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 4,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 5,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 6,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 7,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 8,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 9,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 10,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 11,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 12,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 13,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 14,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 15,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 16,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 17,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 18,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 19,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 20,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 21,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 22,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 23,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 24,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 25,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 26,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 27,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 28,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 29,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 30,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 31,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 32,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 33,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 34,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 35,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 36,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 37,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": true,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 38,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 39,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 40,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 41,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 42,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 43,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 44,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 45,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 0,
+      "initialization": 46,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 0,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 1,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 2,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 3,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 4,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 5,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 6,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 7,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 8,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 9,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 10,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 11,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 12,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 13,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 14,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 15,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 16,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 17,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 18,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 19,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 20,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 21,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 22,
+      "outcomes": {
+        "native_singleton": false,
+        "native_dynamic": true,
+        "patched_singleton": false,
+        "patched_dynamic": false
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 23,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    },
+    {
+      "task": 1,
+      "initialization": 24,
+      "outcomes": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true
+      },
+      "native_first_action_divergence": 50
+    }
+  ],
+  "auditor_sha256": "b632d293d8c2617bdfbe261b663b17cef830e8527a28bc14d5b35cb08eb021d7"
+}

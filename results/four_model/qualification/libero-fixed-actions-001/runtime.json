@@ -1,0 +1,25 @@
+{
+  "scope": "fixed_action_simulator_replay_only",
+  "model_evaluated": false,
+  "reset_protocol": "fresh_scene_explicit_init_state_id_before_every_reset",
+  "arguments": {
+    "output": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/qualification/libero-fixed-actions-001",
+    "suite": "libero_10",
+    "tasks": [
+      0,
+      1,
+      2
+    ],
+    "initializations": 3,
+    "repeats": 3,
+    "max_steps": 520
+  },
+  "versions": {
+    "lerobot": "0.4.4",
+    "hf-libero": "0.1.4",
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.0"
+  },
+  "wrapper_source_sha256": "199a0fac56444d133cb8bcbdfe3bcffaa51304a1490754ad69c02f97dfcecb5a",
+  "runner_source_sha256": "c131fd265862cd11b670290ecbab17b474732b2adee3764064380d8fffd40a54"
+}

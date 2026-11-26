@@ -1,0 +1,106 @@
+{
+  "status": "independent_output_batch_aggregate_recount_passed",
+  "scope": "Output aggregates by batch; source diagnostic separately independently accepted; denoising aggregates not reaudited here",
+  "report_sha256": "cf41c55f643a702436749628fb26ff5b72b4bb4cc4d9b65153bdd8e0b9dca62f",
+  "raw_sha256": "80b10e7ec9979abb8a41b3fe1126f767abe83e60e031a18b065f0628221474d0",
+  "source_diagnostic_audit_sha256": "d5e51ad663d6f45102edb70e36257188b47a7d2e84001bbad33609e95b62ffae",
+  "rows": [
+    {
+      "implementation": "batch_invariant",
+      "batch_size": 1,
+      "comparisons": 600,
+      "nonexact_comparisons": 0,
+      "rms": 0.0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "implementation": "batch_invariant",
+      "batch_size": 2,
+      "comparisons": 2400,
+      "nonexact_comparisons": 0,
+      "rms": 0.0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "implementation": "batch_invariant",
+      "batch_size": 4,
+      "comparisons": 3600,
+      "nonexact_comparisons": 0,
+      "rms": 0.0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "implementation": "batch_invariant",
+      "batch_size": 8,
+      "comparisons": 3600,
+      "nonexact_comparisons": 0,
+      "rms": 0.0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "implementation": "batch_invariant",
+      "batch_size": 16,
+      "comparisons": 3600,
+      "nonexact_comparisons": 0,
+      "rms": 0.0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "implementation": "batch_invariant",
+      "batch_size": 32,
+      "comparisons": 3600,
+      "nonexact_comparisons": 0,
+      "rms": 0.0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "implementation": "native",
+      "batch_size": 1,
+      "comparisons": 600,
+      "nonexact_comparisons": 0,
+      "rms": 0.0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "implementation": "native",
+      "batch_size": 2,
+      "comparisons": 2400,
+      "nonexact_comparisons": 2400,
+      "rms": 0.012728627417296051,
+      "max_absolute_error": 1.9756749272346497
+    },
+    {
+      "implementation": "native",
+      "batch_size": 4,
+      "comparisons": 3600,
+      "nonexact_comparisons": 3600,
+      "rms": 0.011230316509475473,
+      "max_absolute_error": 1.9672950506210327
+    },
+    {
+      "implementation": "native",
+      "batch_size": 8,
+      "comparisons": 3600,
+      "nonexact_comparisons": 3600,
+      "rms": 0.01224154832385313,
+      "max_absolute_error": 1.9739259481430054
+    },
+    {
+      "implementation": "native",
+      "batch_size": 16,
+      "comparisons": 3600,
+      "nonexact_comparisons": 3600,
+      "rms": 0.011968733731588133,
+      "max_absolute_error": 1.973460078239441
+    },
+    {
+      "implementation": "native",
+      "batch_size": 32,
+      "comparisons": 3600,
+      "nonexact_comparisons": 3600,
+      "rms": 0.011886426103759616,
+      "max_absolute_error": 1.974182367324829
+    }
+  ],
+  "full_campaign_complete": false
+}

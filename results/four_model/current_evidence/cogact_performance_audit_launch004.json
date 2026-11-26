@@ -1,0 +1,32 @@
+{
+  "status": "waiting_for_live_timing_attempt004",
+  "pid": 1840208,
+  "start_ticks": "455522270",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-post-performance-independent-audit-004.py",
+  "launcher_sha256": "1399de9b26cfb1cd30c086054288e4d94de3a31d5726501db1b5dc9e91b2a80c",
+  "configuration": {
+    "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+    "pid": 1830913,
+    "ticks": "455519838",
+    "hashes": {
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_four_model_isolated_performance.py": "e39442e33c95702c4f2a48ea0049e005f37f59a523cd41e29c6fdfa98845baf6",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_full_cross_model_campaign.py": "1b1e9665911cde483816a4bcc8c9b518c8f6f07c46b8f673e922274c574ec4d2",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/freeze_four_model_numerics.py": "2fa448cff6acb3ff2fa63b4013a889c42efe1f24e0c7c3ac7e93a6aaf3076c53"
+    },
+    "upstream_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-isolated-performance-004.json",
+    "command": [
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python",
+      "-m",
+      "scripts.audit_four_model_isolated_performance",
+      "--model-id",
+      "cogact_simpler_exact",
+      "--freeze",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/numerical_freeze.json",
+      "--directory",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_004",
+      "--output",
+      "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/cogact_simpler_exact/full/isolated_performance_004/independent_performance_audit.json"
+    ]
+  },
+  "full_campaign_complete": false
+}

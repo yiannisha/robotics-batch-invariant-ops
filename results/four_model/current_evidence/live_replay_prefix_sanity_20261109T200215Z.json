@@ -1,0 +1,217 @@
+{
+  "timestamp_utc": "20261109T200215Z",
+  "scope": "Up to first 10000 complete records per live file. Reported exactness flags only; not tensor rederivation, complete factorial validation, or final acceptance.",
+  "results": [
+    {
+      "model": "pi05",
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/heldout_fresh004/invariance.jsonl.gz",
+      "records_inspected": 10000,
+      "counts": {
+        "native/B1": {
+          "records": 258,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "native/B2": {
+          "records": 774,
+          "output_nonexact_records": 774,
+          "flow_nonexact_records": 774
+        },
+        "native/B4": {
+          "records": 1031,
+          "output_nonexact_records": 1031,
+          "flow_nonexact_records": 1031
+        },
+        "native/B8": {
+          "records": 1025,
+          "output_nonexact_records": 1025,
+          "flow_nonexact_records": 1025
+        },
+        "native/B16": {
+          "records": 1024,
+          "output_nonexact_records": 1024,
+          "flow_nonexact_records": 1024
+        },
+        "native/B32": {
+          "records": 896,
+          "output_nonexact_records": 896,
+          "flow_nonexact_records": 896
+        },
+        "batch_invariant/B1": {
+          "records": 256,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B2": {
+          "records": 768,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B4": {
+          "records": 1024,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B8": {
+          "records": 1024,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B16": {
+          "records": 1024,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B32": {
+          "records": 896,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        }
+      },
+      "non_native_nonexact_records": [],
+      "read_endpoint": "bounded_prefix_10000_records",
+      "acceptance": false
+    },
+    {
+      "model": "rdt",
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/heldout_fresh003/invariance.jsonl.gz",
+      "records_inspected": 9750,
+      "counts": {
+        "native/B1": {
+          "records": 250,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "native/B2": {
+          "records": 750,
+          "output_nonexact_records": 750,
+          "flow_nonexact_records": 750
+        },
+        "native/B4": {
+          "records": 1000,
+          "output_nonexact_records": 1000,
+          "flow_nonexact_records": 1000
+        },
+        "native/B8": {
+          "records": 1000,
+          "output_nonexact_records": 1000,
+          "flow_nonexact_records": 1000
+        },
+        "native/B16": {
+          "records": 1000,
+          "output_nonexact_records": 1000,
+          "flow_nonexact_records": 1000
+        },
+        "native/B32": {
+          "records": 875,
+          "output_nonexact_records": 875,
+          "flow_nonexact_records": 875
+        },
+        "batch_invariant/B1": {
+          "records": 250,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B2": {
+          "records": 750,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B4": {
+          "records": 1000,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B8": {
+          "records": 1000,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B16": {
+          "records": 1000,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B32": {
+          "records": 875,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        }
+      },
+      "non_native_nonexact_records": [],
+      "read_endpoint": "read_current_stream_end",
+      "acceptance": false
+    },
+    {
+      "model": "lingbot",
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/lingbot_robotwin_exact/full/diagnostic/invariance.jsonl.gz",
+      "records_inspected": 8268,
+      "counts": {
+        "native/B1": {
+          "records": 212,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "native/B2": {
+          "records": 636,
+          "output_nonexact_records": 636,
+          "flow_nonexact_records": 636
+        },
+        "native/B4": {
+          "records": 848,
+          "output_nonexact_records": 848,
+          "flow_nonexact_records": 848
+        },
+        "native/B8": {
+          "records": 848,
+          "output_nonexact_records": 848,
+          "flow_nonexact_records": 848
+        },
+        "native/B16": {
+          "records": 848,
+          "output_nonexact_records": 848,
+          "flow_nonexact_records": 848
+        },
+        "native/B32": {
+          "records": 742,
+          "output_nonexact_records": 742,
+          "flow_nonexact_records": 742
+        },
+        "batch_invariant/B1": {
+          "records": 212,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B2": {
+          "records": 636,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B4": {
+          "records": 848,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B8": {
+          "records": 848,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B16": {
+          "records": 848,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        },
+        "batch_invariant/B32": {
+          "records": 742,
+          "output_nonexact_records": 0,
+          "flow_nonexact_records": 0
+        }
+      },
+      "non_native_nonexact_records": [],
+      "read_endpoint": "read_current_stream_end",
+      "acceptance": false
+    }
+  ],
+  "full_campaign_complete": false
+}

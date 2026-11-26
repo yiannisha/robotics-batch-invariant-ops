@@ -1,0 +1,17 @@
+{
+  "status": "descriptive_flow_stage_distributions_independently_recounted",
+  "model_id": "pi05_libero",
+  "report_sha256": "043e5aaf328e54ddcc88a9a82807307af321851f55e51a3999ee95f7e99cfebb",
+  "source_hashes": {
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/diagnostic/invariance.jsonl.gz": "80b10e7ec9979abb8a41b3fe1126f767abe83e60e031a18b065f0628221474d0",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/diagnostic/independent_diagnostic_audit.json": "d5e51ad663d6f45102edb70e36257188b47a7d2e84001bbad33609e95b62ffae",
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full_fresh_split_v3/diagnostic/invariance.jsonl.gz.runtime.json": "d8fbfc688ee18269979218af2bc81e618451486d4242e8b1c2bb626ac145144b"
+  },
+  "auditor_sha256": "e17681f0b70193a64b04c4ba4fd6dfe1d9a4dd0c2ebe771c610dc175b81178a3",
+  "verified_stage_groups": 2000,
+  "request_noise_pairs": 600,
+  "scope": "Descriptive task/mode/batch/stage distributions only",
+  "causal_ablations_complete": false,
+  "confidence_intervals_verified": false,
+  "full_campaign_complete": false
+}

@@ -1,0 +1,165 @@
+{
+  "status": "provisional_task_specific_paired_statistics",
+  "completed_paired_starts": 28,
+  "prescribed_paired_starts": 500,
+  "by_task": {
+    "0": {
+      "paired_starts": 27,
+      "unit": "paired_task_initialization",
+      "repeats_counted_as_trials": false,
+      "successes": {
+        "native_singleton": 18,
+        "native_dynamic": 17,
+        "patched_singleton": 18,
+        "patched_dynamic": 18
+      },
+      "success_rate": {
+        "native_singleton": 0.6666666666666666,
+        "native_dynamic": 0.6296296296296297,
+        "patched_singleton": 0.6666666666666666,
+        "patched_dynamic": 0.6666666666666666
+      },
+      "comparisons": {
+        "patched_singleton_minus_native_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            -11.11111111111111,
+            11.11111111111111
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 1,
+          "reference_only_successes": 1,
+          "both_successes": 17,
+          "both_failures": 8,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_native_dynamic": {
+          "estimate_percentage_points": 3.7037037037037033,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            11.11111111111111
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 1,
+          "reference_only_successes": 0,
+          "both_successes": 17,
+          "both_failures": 9,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "native_dynamic_minus_native_singleton": {
+          "estimate_percentage_points": -3.7037037037037033,
+          "paired_bootstrap_ci95_percentage_points": [
+            -11.11111111111111,
+            0.0
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 1,
+          "both_successes": 17,
+          "both_failures": 9,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_patched_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 18,
+          "both_failures": 9,
+          "exact_two_sided_mcnemar_p": 1.0
+        }
+      }
+    },
+    "1": {
+      "paired_starts": 1,
+      "unit": "paired_task_initialization",
+      "repeats_counted_as_trials": false,
+      "successes": {
+        "native_singleton": 1,
+        "native_dynamic": 1,
+        "patched_singleton": 1,
+        "patched_dynamic": 1
+      },
+      "success_rate": {
+        "native_singleton": 1.0,
+        "native_dynamic": 1.0,
+        "patched_singleton": 1.0,
+        "patched_dynamic": 1.0
+      },
+      "comparisons": {
+        "patched_singleton_minus_native_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250402,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 1,
+          "both_failures": 0,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_native_dynamic": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250402,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 1,
+          "both_failures": 0,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "native_dynamic_minus_native_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250402,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 1,
+          "both_failures": 0,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_patched_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250402,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 1,
+          "both_failures": 0,
+          "exact_two_sided_mcnemar_p": 1.0
+        }
+      }
+    }
+  },
+  "bootstrap_method": "pi_zero_analyze_simpler_percentile_paired_episode_bootstrap",
+  "bootstrap_limitations": "Empirical paired resampling cannot represent discordance types absent from the observed sample; small samples require caution.",
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "source_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/pi05_libero_locked_v1/independent_progress_audit.json",
+  "source_audit_sha256": "41fb1ec4c5af4c44867aa829d9abc0e63892dfca4bc7a7b407f266d1716f334c",
+  "source_audit_snapshot": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/pi05_libero_locked_v1/audit_snapshots/41fb1ec4c5af4c44867aa829d9abc0e63892dfca4bc7a7b407f266d1716f334c.json",
+  "statistics_source_sha256": "89bd67dd1bb6c1e36eb981557e0858f33ad949445715e59017318e94781b6289"
+}

@@ -1,0 +1,63 @@
+{
+  "observed_at": "2026-11-09T17:26:59.323952+00:00",
+  "classification": "verified_wait",
+  "primary_endpoint": "singleton_vs_batched_stability",
+  "full_campaign_complete": false,
+  "accepted_magnitude_starts": 827,
+  "accepted_source_hash_verification": [
+    {
+      "model": "cogact",
+      "source_hashes_match": true
+    },
+    {
+      "model": "rdt",
+      "source_hashes_match": true
+    },
+    {
+      "model": "pi05",
+      "source_hashes_match": true
+    }
+  ],
+  "live_jobs": [
+    {
+      "job": "pi05_heldout",
+      "pid": 1942407,
+      "start_ticks": "424051173",
+      "state": "R",
+      "cpu_ticks": 2814551,
+      "produced_pairs": 649
+    },
+    {
+      "job": "rdt_heldout",
+      "pid": 675019,
+      "start_ticks": "426340577",
+      "state": "R",
+      "cpu_ticks": 621020,
+      "produced_pairs": 30
+    },
+    {
+      "job": "lingbot_diagnostic",
+      "pid": 4055960,
+      "start_ticks": "425339189",
+      "state": "R",
+      "cpu_ticks": 1383483,
+      "produced_pairs": 65
+    },
+    {
+      "job": "cogact_paired",
+      "pid": 2770000,
+      "start_ticks": "421141328",
+      "state": "S",
+      "cpu_ticks": 8809035,
+      "produced_blocks": 154
+    },
+    {
+      "job": "cogact_expanded_raw_audit",
+      "pid": 836058,
+      "start_ticks": "425542911",
+      "state": "R",
+      "cpu_ticks": 1770569
+    }
+  ],
+  "note": "Production counts are not independently accepted results. Existing pinned runs preserved. Success optimization is not an objective."
+}

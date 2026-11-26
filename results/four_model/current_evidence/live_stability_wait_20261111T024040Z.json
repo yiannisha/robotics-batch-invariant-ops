@@ -1,0 +1,37 @@
+{
+  "observed_utc": "2026-11-11T02:40:40.748716+00:00",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 25012744,
+      "completed_pairs": 1238,
+      "total_pairs": 2400,
+      "cpu_ticks_delta": 11827
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 14388422,
+      "completed_pairs": 2248,
+      "total_pairs": 2400,
+      "cpu_ticks_delta": 12230
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 103301,
+      "completed_pairs": 4,
+      "total_pairs": 600,
+      "cpu_ticks_delta": 6105
+    }
+  ],
+  "full_campaign_complete": false
+}

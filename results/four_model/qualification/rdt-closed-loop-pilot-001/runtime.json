@@ -1,0 +1,96 @@
+{
+  "scope": "complete_episode_pilot",
+  "model": "rdt_1b",
+  "tasks": [
+    "PickCube-v1"
+  ],
+  "initializations": 1,
+  "conditions": {
+    "native_singleton": [
+      false,
+      false
+    ],
+    "native_dynamic": [
+      false,
+      true
+    ],
+    "patched_singleton": [
+      true,
+      false
+    ],
+    "patched_dynamic": [
+      true,
+      true
+    ],
+    "native_singleton_repeat": [
+      false,
+      false
+    ],
+    "native_dynamic_repeat": [
+      false,
+      true
+    ],
+    "patched_singleton_repeat": [
+      true,
+      false
+    ],
+    "patched_dynamic_repeat": [
+      true,
+      true
+    ]
+  },
+  "dynamic_cycle": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "language_extent": 30,
+  "primary_language_padding": "fixed_right_in_both_modes",
+  "max_steps": 400,
+  "model_control_frequency": 25,
+  "executed_action_stride": 4,
+  "termination": "released evaluator: stop on terminal/truncated success or 400 executed controls",
+  "reset_protocol": "fresh_scene_per_condition_explicit_indexed_seed",
+  "artifact_files": [
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/rdt/mp_rank_00_model_states.pt",
+      "sha256": "3fa89cbf7bbb1b2559b29f9ae153b431541cdaa0b3f1ee44b83b9934599b9fb8"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_PegInsertionSide-v1.pt",
+      "sha256": "da798aab9df67a230259095c0d087772d10ff2dd089bd71762a1b6d1696dbbf3"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_PickCube-v1.pt",
+      "sha256": "a9ac30bc88ef12b171e9323b8a2c64f0b0ae9a54715deb061c021deaadb37f7a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_PlugCharger-v1.pt",
+      "sha256": "c38f80c549ec1d48f74ffdeafff8dd9f02ca64de8c3bddd7fe3cca173925922d"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_PushCube-v1.pt",
+      "sha256": "536272882840dd1d2aef759b7551da1515b9c0cbe45e491a025169efadf51471"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_StackCube-v1.pt",
+      "sha256": "ca0a1f758d183e4c541b412efd2ffafacae7bdc7220d03f7e9dca3e93bb28985"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/model.safetensors",
+      "sha256": "ea2abad2b7f8a9c1aa5e49a244d5d57ffa71c56f720c94bc5d240ef4d6e1d94a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/config.json",
+      "sha256": "adc04928d8fd19a61822584fe0cf2e813e5ebac17f3e49fb1ea096860ae6457b"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/preprocessor_config.json",
+      "sha256": "f59da2f87c3cd079bd4f8f3037e81b277c60c498e279a8020331f67a5a3157e8"
+    }
+  ],
+  "runner_sha256": "2078e90cd8e9d80281dafa99bf602f0ff811f83ea53206983fe688903b49872a",
+  "backend_sha256": "74f9127bf18ec3eb9232ffbbac2130c68aaf9537f2f3715204a079f8730f969a",
+  "paired_success_rate_campaign_complete": false
+}

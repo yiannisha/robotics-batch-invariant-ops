@@ -1,0 +1,32 @@
+EXACT PickCube-v1/0: 400 x 3
+EXACT PickCube-v1/1: 400 x 3
+EXACT PickCube-v1/2: 400 x 3
+EXACT PushCube-v1/0: 400 x 3
+EXACT PushCube-v1/1: 400 x 3
+EXACT PushCube-v1/2: 400 x 3
+EXACT StackCube-v1/0: 400 x 3
+EXACT StackCube-v1/1: 400 x 3
+EXACT StackCube-v1/2: 400 x 3
+EXACT PegInsertionSide-v1/0: 400 x 3
+EXACT PegInsertionSide-v1/1: 400 x 3
+EXACT PegInsertionSide-v1/2: 400 x 3
+Traceback (most recent call last):
+  File "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/qualify_rdt_maniskill_replay.py", line 99, in <module>
+    main()
+  File "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/qualify_rdt_maniskill_replay.py", line 58, in main
+    env = gym.make(task, obs_mode="rgb", control_mode="pd_joint_pos",
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/lib/python3.12/site-packages/gymnasium/envs/registration.py", line 738, in make
+    env = env_creator(**env_spec_kwargs)  # ty:ignore[call-top-callable]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/lib/python3.12/site-packages/mani_skill/utils/registration.py", line 182, in make
+    env = env_spec.make(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/lib/python3.12/site-packages/mani_skill/utils/registration.py", line 79, in make
+    return self.cls(**_kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/lib/python3.12/site-packages/mani_skill/envs/tasks/tabletop/plug_charger.py", line 51, in __init__
+    super().__init__(*args, robot_uids=robot_uids, **kwargs)
+  File "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/rdt/lib/python3.12/site-packages/mani_skill/envs/sapien_env.py", line 303, in __init__
+    raise NotImplementedError("Unsupported reward mode: {}".format(reward_mode))
+NotImplementedError: Unsupported reward mode: dense

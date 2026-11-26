@@ -1,0 +1,43 @@
+{
+  "status": "source_softmax_union_configuration_equivalence_verified",
+  "parts": [
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_v2.json",
+      "configuration_sha256": "38b74e0d39efd8270aade746882b4911a83b193498f78b2e4433555a027a1d46",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_v2.jsonl",
+      "records_sha256": "d5a6f74e6e63b29a6251cfc7227927a3575dade6120c0926203f56510de633c3",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_audit.json",
+      "audit_sha256": "ce6a521dc6b0d1a5c91c057efae6e99cb6c5bcae8f64ef022fa19cb57d9ea158",
+      "raw_records": 700
+    },
+    {
+      "configuration": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_v1.json",
+      "configuration_sha256": "5db55987fc174f2da5b05758e50cc12728a86561d360311f68336a6a8f99c68d",
+      "records": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_v1.jsonl",
+      "records_sha256": "d681c6ae5663a56d46fac48bf05bff7f54e5144ea0e10da5433b0c17ee3be5dc",
+      "audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_audit.json",
+      "audit_sha256": "d82c843a9a7467f68f4c82d1acf1aa257ce7a906c3cad5f0f46fd5bccc6ef4b4",
+      "raw_records": 1000
+    }
+  ],
+  "only_configuration_differences": [
+    "coverage_limit",
+    "configurations[].batch_sizes"
+  ],
+  "batch_sizes": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    31,
+    32,
+    33,
+    64
+  ],
+  "arrangements": 17,
+  "raw_records": 1700,
+  "invariant_nonexact_records": 0,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

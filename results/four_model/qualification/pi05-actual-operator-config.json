@@ -1,0 +1,1309 @@
+{
+  "schema_version": 1,
+  "adapter": "scripts.model_invariance.adapters.pi05_libero_exact",
+  "adapter_execution_configuration": {
+    "checkpoint_revision": "7152f13e34c6c115d808aea0e5d08aca74eac14b",
+    "suite": "libero_10",
+    "language_padding": "max_length_right",
+    "language_tokens": 200,
+    "sampler": "unchanged_official_predict_action_chunk",
+    "flow_steps": 10,
+    "chunk_size": 50,
+    "max_action_dim": 32,
+    "robot_action_dim": 7,
+    "normalization": "checkpoint_mean_std",
+    "precision": "bfloat16",
+    "tf32": false,
+    "execution": "eager"
+  },
+  "replay_manifest_sha256": "9b6088f5a18bc0d67510db3e477ecc3ea54e6f9cb78bb8dce04488ac6818a4b9",
+  "source_evidence": [
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/aten_complete_trace_B1.json",
+      "sha256": "c6409e318d4898f745ff257ad65a4416f51c1fe3e6781fd11b0bb9983e07772a"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/pi05_libero/full/operator/aten_complete_trace_B8.json",
+      "sha256": "b233c60044dde569ebc02c5e8ce23970e1c42286acfeb625542343a2f7e2f0e2"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "actual_00_scaled_dot_product_attention",
+      "source_operation": "aten::scaled_dot_product_attention",
+      "source_trace_index": 0,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            16,
+            256,
+            72
+          ],
+          "stride": [
+            294912,
+            18432,
+            72,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            16,
+            256,
+            72
+          ],
+          "stride": [
+            294912,
+            18432,
+            72,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            16,
+            256,
+            72
+          ],
+          "stride": [
+            294912,
+            18432,
+            72,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 81,
+      "dtype": "torch.bfloat16",
+      "layout": "qkv_source_strided",
+      "operation": "sdpa",
+      "m_per_request": 1,
+      "query_heads": 16,
+      "key_heads": 16,
+      "value_heads": 16,
+      "query_length": 256,
+      "key_length": 256,
+      "head_dim": 72,
+      "value_dim": 72,
+      "source_q_stride": [
+        294912,
+        18432,
+        72,
+        1
+      ],
+      "source_k_stride": [
+        294912,
+        18432,
+        72,
+        1
+      ],
+      "source_v_stride": [
+        294912,
+        18432,
+        72,
+        1
+      ],
+      "scale": 0.11785113019775792
+    },
+    {
+      "id": "actual_01_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 1,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            256,
+            1152
+          ],
+          "stride": [
+            294912,
+            1152,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1152,
+            1152
+          ],
+          "stride": [
+            1152,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1152
+          ],
+          "stride": [
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 324,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "addmm",
+      "m_per_request": 256,
+      "k": 1152,
+      "n": 1152
+    },
+    {
+      "id": "actual_02_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 2,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            256,
+            1152
+          ],
+          "stride": [
+            294912,
+            1152,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            2048,
+            1152
+          ],
+          "stride": [
+            1152,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            2048
+          ],
+          "stride": [
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 3,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "addmm",
+      "m_per_request": 256,
+      "k": 1152,
+      "n": 2048
+    },
+    {
+      "id": "actual_03_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 3,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            256,
+            1152
+          ],
+          "stride": [
+            294912,
+            1152,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4304,
+            1152
+          ],
+          "stride": [
+            1152,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4304
+          ],
+          "stride": [
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 81,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "addmm",
+      "m_per_request": 256,
+      "k": 1152,
+      "n": 4304
+    },
+    {
+      "id": "actual_04_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 4,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            256,
+            4304
+          ],
+          "stride": [
+            1101824,
+            4304,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1152,
+            4304
+          ],
+          "stride": [
+            4304,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1152
+          ],
+          "stride": [
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 81,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "addmm",
+      "m_per_request": 256,
+      "k": 4304,
+      "n": 1152
+    },
+    {
+      "id": "actual_05_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 5,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            50,
+            1024
+          ],
+          "stride": [
+            51200,
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            2048,
+            1024
+          ],
+          "stride": [
+            1024,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 180,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 50,
+      "k": 1024,
+      "n": 2048
+    },
+    {
+      "id": "actual_06_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 6,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            50,
+            1024
+          ],
+          "stride": [
+            51200,
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            256,
+            1024
+          ],
+          "stride": [
+            1024,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 360,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 50,
+      "k": 1024,
+      "n": 256
+    },
+    {
+      "id": "actual_07_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 7,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            50,
+            1024
+          ],
+          "stride": [
+            51200,
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            4096,
+            1024
+          ],
+          "stride": [
+            1024,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 360,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 50,
+      "k": 1024,
+      "n": 4096
+    },
+    {
+      "id": "actual_08_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 8,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            50,
+            2048
+          ],
+          "stride": [
+            102400,
+            2048,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1024,
+            2048
+          ],
+          "stride": [
+            2048,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 180,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 50,
+      "k": 2048,
+      "n": 1024
+    },
+    {
+      "id": "actual_09_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 9,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            50,
+            4096
+          ],
+          "stride": [
+            204800,
+            4096,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1024,
+            4096
+          ],
+          "stride": [
+            4096,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 180,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 50,
+      "k": 4096,
+      "n": 1024
+    },
+    {
+      "id": "actual_10_matmul",
+      "source_operation": "aten::matmul",
+      "source_trace_index": 10,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            8,
+            50,
+            1018
+          ],
+          "stride": [
+            407200,
+            50900,
+            1018,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            8,
+            1018,
+            256
+          ],
+          "stride": [
+            0,
+            0,
+            256,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 180,
+      "dtype": "torch.bfloat16",
+      "layout": "contiguous",
+      "operation": "bmm",
+      "m_per_request": 8,
+      "m": 50,
+      "k": 1018,
+      "n": 256,
+      "layout_scope": "shape-equivalent flattened-head diagnostic; original broadcast strides retained in source evidence"
+    },
+    {
+      "id": "actual_11_matmul",
+      "source_operation": "aten::matmul",
+      "source_trace_index": 11,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            8,
+            50,
+            256
+          ],
+          "stride": [
+            102400,
+            256,
+            2048,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            8,
+            256,
+            1018
+          ],
+          "stride": [
+            0,
+            0,
+            1,
+            256
+          ]
+        }
+      ],
+      "source_observed_count": 180,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "bmm",
+      "m_per_request": 8,
+      "m": 50,
+      "k": 256,
+      "n": 1018,
+      "layout_scope": "shape-equivalent flattened-head diagnostic; original broadcast strides retained in source evidence"
+    },
+    {
+      "id": "actual_12_matmul",
+      "source_operation": "aten::matmul",
+      "source_trace_index": 12,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            8,
+            968,
+            256
+          ],
+          "stride": [
+            1982464,
+            256,
+            2048,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            8,
+            256,
+            968
+          ],
+          "stride": [
+            0,
+            0,
+            1,
+            256
+          ]
+        }
+      ],
+      "source_observed_count": 18,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "bmm",
+      "m_per_request": 8,
+      "m": 968,
+      "k": 256,
+      "n": 968,
+      "layout_scope": "shape-equivalent flattened-head diagnostic; original broadcast strides retained in source evidence"
+    },
+    {
+      "id": "actual_13_matmul",
+      "source_operation": "aten::matmul",
+      "source_trace_index": 13,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            8,
+            968,
+            968
+          ],
+          "stride": [
+            7496192,
+            937024,
+            968,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            8,
+            968,
+            256
+          ],
+          "stride": [
+            0,
+            0,
+            256,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 18,
+      "dtype": "torch.bfloat16",
+      "layout": "contiguous",
+      "operation": "bmm",
+      "m_per_request": 8,
+      "m": 968,
+      "k": 968,
+      "n": 256,
+      "layout_scope": "shape-equivalent flattened-head diagnostic; original broadcast strides retained in source evidence"
+    },
+    {
+      "id": "actual_14_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 14,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            968,
+            16384
+          ],
+          "stride": [
+            15859712,
+            16384,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            2048,
+            16384
+          ],
+          "stride": [
+            16384,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 18,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 968,
+      "k": 16384,
+      "n": 2048
+    },
+    {
+      "id": "actual_15_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 15,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            968,
+            2048
+          ],
+          "stride": [
+            1982464,
+            2048,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            16384,
+            2048
+          ],
+          "stride": [
+            2048,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 36,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 968,
+      "k": 2048,
+      "n": 16384
+    },
+    {
+      "id": "actual_16_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 16,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            968,
+            2048
+          ],
+          "stride": [
+            1982464,
+            2048,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            2048,
+            2048
+          ],
+          "stride": [
+            2048,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 36,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 968,
+      "k": 2048,
+      "n": 2048
+    },
+    {
+      "id": "actual_17_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 17,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            1,
+            968,
+            2048
+          ],
+          "stride": [
+            1982464,
+            2048,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.bfloat16",
+          "shape": [
+            256,
+            2048
+          ],
+          "stride": [
+            2048,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 36,
+      "dtype": "torch.bfloat16",
+      "layout": "right_transposed",
+      "operation": "mm",
+      "m_per_request": 968,
+      "k": 2048,
+      "n": 256
+    },
+    {
+      "id": "actual_18_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 18,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            1024
+          ],
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1024,
+            1024
+          ],
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1024
+          ],
+          "stride": [
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 20,
+      "dtype": "torch.float32",
+      "layout": "right_transposed",
+      "operation": "addmm",
+      "m_per_request": 1,
+      "k": 1024,
+      "n": 1024
+    },
+    {
+      "id": "actual_19_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 19,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            1024
+          ],
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            3072,
+            1024
+          ],
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            3072
+          ],
+          "stride": [
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 370,
+      "dtype": "torch.float32",
+      "layout": "right_transposed",
+      "operation": "addmm",
+      "m_per_request": 1,
+      "k": 1024,
+      "n": 3072
+    },
+    {
+      "id": "actual_20_matmul",
+      "source_operation": "aten::matmul",
+      "source_trace_index": 20,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128,
+            1
+          ],
+          "stride": [
+            128,
+            1,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            1,
+            50
+          ],
+          "stride": [
+            50,
+            50,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 10,
+      "dtype": "torch.float32",
+      "layout": "contiguous",
+      "operation": "bmm",
+      "m_per_request": 1,
+      "m": 128,
+      "k": 1,
+      "n": 50,
+      "layout_scope": "shape-equivalent flattened-head diagnostic; original broadcast strides retained in source evidence"
+    },
+    {
+      "id": "actual_21_matmul",
+      "source_operation": "aten::matmul",
+      "source_trace_index": 21,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128,
+            1
+          ],
+          "stride": [
+            128,
+            1,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            1,
+            968
+          ],
+          "stride": [
+            968,
+            968,
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 1,
+      "dtype": "torch.float32",
+      "layout": "contiguous",
+      "operation": "bmm",
+      "m_per_request": 1,
+      "m": 128,
+      "k": 1,
+      "n": 968,
+      "layout_scope": "shape-equivalent flattened-head diagnostic; original broadcast strides retained in source evidence"
+    },
+    {
+      "id": "actual_22_conv2d",
+      "source_operation": "aten::conv2d",
+      "source_trace_index": 22,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            3,
+            224,
+            224
+          ],
+          "stride": [
+            150528,
+            50176,
+            224,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1152,
+            3,
+            14,
+            14
+          ],
+          "stride": [
+            588,
+            196,
+            14,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1152
+          ],
+          "stride": [
+            1
+          ]
+        },
+        [
+          14,
+          14
+        ]
+      ],
+      "source_observed_count": 3,
+      "dtype": "torch.float32",
+      "layout": "contiguous",
+      "operation": "conv2d",
+      "m_per_request": 1,
+      "input_per_image": [
+        3,
+        224,
+        224
+      ],
+      "weight_shape": [
+        1152,
+        3,
+        14,
+        14
+      ],
+      "stride": [
+        14,
+        14
+      ],
+      "padding": [
+        0,
+        0
+      ],
+      "dilation": [
+        1,
+        1
+      ],
+      "groups": 1,
+      "has_bias": true
+    },
+    {
+      "id": "actual_23_mean",
+      "source_operation": "aten::mean",
+      "source_trace_index": 23,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            50,
+            1024
+          ],
+          "stride": [
+            51200,
+            1024,
+            1
+          ]
+        },
+        [
+          -1
+        ],
+        true
+      ],
+      "source_observed_count": 370,
+      "dtype": "torch.float32",
+      "layout": "contiguous",
+      "operation": "mean",
+      "m_per_request": 1,
+      "input_per_unit": [
+        50,
+        1024
+      ],
+      "dim": -1,
+      "keepdim": true
+    },
+    {
+      "id": "actual_24_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 24,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            50,
+            1024
+          ],
+          "stride": [
+            51200,
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            32,
+            1024
+          ],
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            32
+          ],
+          "stride": [
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 10,
+      "dtype": "torch.float32",
+      "layout": "right_transposed",
+      "operation": "addmm",
+      "m_per_request": 50,
+      "k": 1024,
+      "n": 32
+    },
+    {
+      "id": "actual_25_linear",
+      "source_operation": "aten::linear",
+      "source_trace_index": 25,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            50,
+            32
+          ],
+          "stride": [
+            1600,
+            32,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1024,
+            32
+          ],
+          "stride": [
+            32,
+            1
+          ]
+        },
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1024
+          ],
+          "stride": [
+            1
+          ]
+        }
+      ],
+      "source_observed_count": 10,
+      "dtype": "torch.float32",
+      "layout": "right_transposed",
+      "operation": "addmm",
+      "m_per_request": 50,
+      "k": 32,
+      "n": 1024
+    },
+    {
+      "id": "actual_26_mean",
+      "source_operation": "aten::mean",
+      "source_trace_index": 26,
+      "source_observed_arguments": [
+        {
+          "device": "cuda",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            968,
+            2048
+          ],
+          "stride": [
+            1982464,
+            2048,
+            1
+          ]
+        },
+        [
+          -1
+        ],
+        true
+      ],
+      "source_observed_count": 37,
+      "dtype": "torch.float32",
+      "layout": "contiguous",
+      "operation": "mean",
+      "m_per_request": 1,
+      "input_per_unit": [
+        968,
+        2048
+      ],
+      "dim": -1,
+      "keepdim": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "scope": "Four retained rawframes, in-memory PNG roundtrip and sizing probe only; live formats unchanged",
+  "rows": [
+    {
+      "source": "000098fe52f83dddda4f13e8bb215396a565c49852dbc6b7289a4bc20dd2a04c.pt.gz",
+      "original_bytes": 580540,
+      "probe_packed_bytes": 641159,
+      "rgb_arrays": 4
+    },
+    {
+      "source": "542086e6af70732967d5ee1c0fb8cc462e42fea78228882da2bc56921803b627.pt.gz",
+      "original_bytes": 860600,
+      "probe_packed_bytes": 823065,
+      "rgb_arrays": 4
+    },
+    {
+      "source": "aa865e029b65a001ddafeaa884ab4b06023247dc41cee3f0ca22f86a7dc5210f.pt.gz",
+      "original_bytes": 712469,
+      "probe_packed_bytes": 752787,
+      "rgb_arrays": 4
+    },
+    {
+      "source": "fffe170a9c1552979335a39e68af8e74a49d84a9ac4e86bdbf7cce142df780b8.pt.gz",
+      "original_bytes": 702448,
+      "probe_packed_bytes": 725995,
+      "rgb_arrays": 4
+    }
+  ]
+}

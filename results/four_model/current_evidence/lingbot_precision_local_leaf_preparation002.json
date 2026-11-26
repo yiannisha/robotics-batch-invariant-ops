@@ -1,0 +1,9 @@
+{
+  "observed_utc": "2026-11-11T02:38:39.362075+00:00",
+  "status": "corrected_local_leaf_capture_driver_prepared",
+  "driver": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence_v2.py",
+  "driver_sha256": "17f7dc548412f08d2484cb9961f984d7f6c754ae75bb4830f7409f7873d9d73a",
+  "actual_local_capture_executed": false,
+  "globally_first_operator_attribution_complete": false,
+  "full_campaign_complete": false
+}

@@ -1,0 +1,219 @@
+{
+  "reason": "Prioritize singleton versus batched stability analysis after completed paired study; GPU performance is independent.",
+  "numerical_sources_changed": false,
+  "acceptance_checks_weakened": false,
+  "old": [
+    {
+      "pid": 384401,
+      "ticks": "438804150",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-bound-paired-magnitudes-002.py",
+      "sha256": "19462ee74a8c6953f65261893e603ff8da077c7b884729bc36e072ec1b688a8d",
+      "state": {
+        "status": "waiting_for_live_independent_performance_audit",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "pid": 3624985,
+        "ticks": "438580367",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-independent-performance-audit-002.json",
+        "sources": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_paired_study_bound.py": "ae1b7f2f4fb1367e48f5be11b69475e78933e68d817960c475637e41f908600d",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_lingbot_full_paired_stability.py": "de6566a5cb27f127391df05ba8824844372ca34506f1c677bb2b44c1f25b7476",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_campaign_corpus.py": "809a9c4087c389e3e16c5f27b5ef88d77573065e70a8f71dd877b47308db5da6",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/measure_lingbot_pilot_stability.py": "bbb1b93bdb460651b2d95d49784eaa65ae3c3cd0c6cfa054eff33d326cd7a687",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_paired_stability.py": "f0f2bca7f6d6b2873fce32392303089a6b2c41a67931baab6adb5bd108125a35",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_paired_study_bound_v2.py": "da7e36b18caefe5462198ed66631120852f085f341312c8b6366a6a00afb3caf",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_full_stability_v2.py": "e63a289496a27cafec37b927bea8f7638c4bbe3a3652450c06852c65a10a2c5e"
+        },
+        "command": [
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/lingbot/bin/python",
+          "-m",
+          "scripts.audit_lingbot_paired_study_bound_v2",
+          "--source",
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/lingbot-vla2",
+          "--checkpoint",
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/lingbot_vla2/checkpoints/global_step_50000/hf_ckpt",
+          "--qwen-metadata",
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/lingbot_qwen_metadata",
+          "--qualification-union",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/robotwin_reset_qualification_union.json",
+          "--directory",
+          "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001",
+          "--output",
+          "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001/independent_complete_episode_bound_audit.json",
+          "--require-complete"
+        ],
+        "bound_audit": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001/independent_complete_episode_bound_audit.json",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision002.json",
+        "directory": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001",
+        "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/lingbot/bin/python"
+      }
+    },
+    {
+      "pid": 3304863,
+      "ticks": "439476790",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-002.py",
+      "sha256": "fab79ce28cb972b7b6012f1089d2d9d4883f982581089baec2db3a9c490ca096",
+      "state": {
+        "status": "waiting_for_live_independent_full_magnitude_audit",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "pid": 384401,
+        "ticks": "438804150",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-bound-paired-magnitudes-002.json",
+        "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision002.json",
+        "magnitude_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision002.json.independent_audit.json",
+        "script": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_lingbot_task_stability.py",
+        "script_sha256": "de36bf8157864005c88633fd83380e902c359dc5072eb3304fc2b1b86937bd8c",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision002.json",
+        "csv_output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision002.csv"
+      }
+    },
+    {
+      "pid": 3304864,
+      "ticks": "439476810",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-independent-audit-002.py",
+      "sha256": "2fc9e12dd0a233f0873a659474ad3b6bf18e988496b5e0e737558c13613575ac",
+      "state": {
+        "status": "waiting_for_live_full_task_table_extraction",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "pid": 3304863,
+        "ticks": "439476790",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-002.json",
+        "auditor": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_task_stability.py",
+        "auditor_sha256": "3345a4cc54c6e0429d1adf99b60a51869f3be1e247fe26c6ffd0d4910db57edc",
+        "table": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision002.json",
+        "csv_table": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision002.csv",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision002_independent_audit.json"
+      }
+    },
+    {
+      "pid": 3304865,
+      "ticks": "439476831",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-arm-bootstrap-002.py",
+      "sha256": "d08753ea9b54152c06b0d0687c3722072bc7bcd6a56f2baaab74f3b5ac7e3f74",
+      "state": {
+        "status": "waiting_for_live_full_task_table_acceptance",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "pid": 3304864,
+        "ticks": "439476810",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-independent-audit-002.json",
+        "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python",
+        "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision002.json",
+        "magnitude_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision002.json.independent_audit.json",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_arm_stability_bootstrap_precision002.json",
+        "draws": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_arm_stability_bootstrap_draws_precision002.npz",
+        "recount": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_arm_stability_bootstrap_precision002_independent_audit.json",
+        "sources": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/bootstrap_lingbot_arm_stability.py": "a7dc5908607cfe9a8e60e2d390d67939da5a89e4fdb499eae34ecc179b7173e0",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_arm_bootstrap.py": "cb4034cc85ca05ddbe58adb1be110ddfad3c15e64589b9f93d2bb992f1b0d46a"
+        }
+      }
+    }
+  ],
+  "new": [
+    {
+      "pid": 2546682,
+      "ticks": "442423566",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-bound-paired-magnitudes-003.py",
+      "sha256": "b5f5a3c2731e9bd8bbcdbc6a75b928fa6ab851f3fa96d779a3eeaca80ae317d4",
+      "state": {
+        "status": "waiting_for_live_full_paired_study_acceptance",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "pid": 3269006,
+        "ticks": "438514720",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-full-paired-002.json",
+        "sources": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_paired_study_bound.py": "ae1b7f2f4fb1367e48f5be11b69475e78933e68d817960c475637e41f908600d",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_lingbot_full_paired_stability.py": "de6566a5cb27f127391df05ba8824844372ca34506f1c677bb2b44c1f25b7476",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_campaign_corpus.py": "809a9c4087c389e3e16c5f27b5ef88d77573065e70a8f71dd877b47308db5da6",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/measure_lingbot_pilot_stability.py": "bbb1b93bdb460651b2d95d49784eaa65ae3c3cd0c6cfa054eff33d326cd7a687",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_paired_stability.py": "f0f2bca7f6d6b2873fce32392303089a6b2c41a67931baab6adb5bd108125a35",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_paired_study_bound_v2.py": "da7e36b18caefe5462198ed66631120852f085f341312c8b6366a6a00afb3caf",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_full_stability_v2.py": "e63a289496a27cafec37b927bea8f7638c4bbe3a3652450c06852c65a10a2c5e"
+        },
+        "command": [
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/lingbot/bin/python",
+          "-m",
+          "scripts.audit_lingbot_paired_study_bound_v2",
+          "--source",
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/lingbot-vla2",
+          "--checkpoint",
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/lingbot_vla2/checkpoints/global_step_50000/hf_ckpt",
+          "--qwen-metadata",
+          "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/lingbot_qwen_metadata",
+          "--qualification-union",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/robotwin_reset_qualification_union.json",
+          "--directory",
+          "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001",
+          "--output",
+          "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001/independent_complete_episode_bound_audit_stability003.json",
+          "--require-complete"
+        ],
+        "bound_audit": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001/independent_complete_episode_bound_audit_stability003.json",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision003.json",
+        "directory": "/vastdisk/hadjiyiannis_3_gmail_com/four-model-campaign/paired/lingbot_robotwin_precision_v2_001",
+        "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/lingbot/bin/python"
+      }
+    },
+    {
+      "pid": 2546723,
+      "ticks": "442423571",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-003.py",
+      "sha256": "a6b7aa2d9760a2e975289613c4f937dabdac2b5e8c5d4625a2ab9ec6a863cde4",
+      "state": {
+        "status": "waiting_for_live_independent_full_magnitude_audit",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "pid": 2546682,
+        "ticks": "442423566",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-bound-paired-magnitudes-003.json",
+        "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision003.json",
+        "magnitude_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision003.json.independent_audit.json",
+        "script": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_lingbot_task_stability.py",
+        "script_sha256": "de36bf8157864005c88633fd83380e902c359dc5072eb3304fc2b1b86937bd8c",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision003.json",
+        "csv_output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision003.csv"
+      }
+    },
+    {
+      "pid": 2546724,
+      "ticks": "442423576",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-independent-audit-003.py",
+      "sha256": "e4312a41c06a3c60ee49a70a73f341699dd1ae09a586655db31f4d9a9475ae24",
+      "state": {
+        "status": "waiting_for_live_full_task_table_extraction",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "pid": 2546723,
+        "ticks": "442423571",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-003.json",
+        "auditor": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_task_stability.py",
+        "auditor_sha256": "3345a4cc54c6e0429d1adf99b60a51869f3be1e247fe26c6ffd0d4910db57edc",
+        "table": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision003.json",
+        "csv_table": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision003.csv",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_task_stability_precision003_independent_audit.json"
+      }
+    },
+    {
+      "pid": 2546725,
+      "ticks": "442423582",
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-arm-bootstrap-003.py",
+      "sha256": "b4d0831a3e5db4ff46640c2a050219f998ffc74ec84ac58097bcc272cd53979a",
+      "state": {
+        "status": "waiting_for_live_full_task_table_acceptance",
+        "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+        "pid": 2546724,
+        "ticks": "442423576",
+        "dependency_state": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-independent-audit-003.json",
+        "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/pi05/bin/python",
+        "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision003.json",
+        "magnitude_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_full_paired_stability_precision003.json.independent_audit.json",
+        "output": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_arm_stability_bootstrap_precision003.json",
+        "draws": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_arm_stability_bootstrap_draws_precision003.npz",
+        "recount": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/lingbot_arm_stability_bootstrap_precision003_independent_audit.json",
+        "sources": {
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/bootstrap_lingbot_arm_stability.py": "a7dc5908607cfe9a8e60e2d390d67939da5a89e4fdb499eae34ecc179b7173e0",
+          "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_arm_bootstrap.py": "cb4034cc85ca05ddbe58adb1be110ddfad3c15e64589b9f93d2bb992f1b0d46a"
+        }
+      }
+    }
+  ]
+}

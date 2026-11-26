@@ -1,0 +1,43 @@
+{
+  "status": "resource_impasse_revalidated_three_consecutive_goal_turns",
+  "verified_utc": "2026-11-13T01:50:44.747898+00:00",
+  "scope": "Remaining execution cannot complete on currently qualified storage/GPU paths. Accepted primary stability evidence is retained. Full goal remains unachieved.",
+  "available_bytes": {
+    "/vastdisk": 1322616147968,
+    "/scratch": 967427031040
+  },
+  "lingbot_required_prelaunch_reserve_bytes": 1500000000000,
+  "rdt_waiter_identity_live": true,
+  "rdt_latest_idle_observation": {
+    "status": "waiting_for_300_consecutive_idle_seconds",
+    "observed_gpu": {
+      "gpu_uuid": "GPU-8e8d81cd-96dc-69ec-4078-3dc7acc88762",
+      "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "driver_version": "580.173.02",
+      "memory_used": "627 MiB",
+      "gpu_utilization": "0 %",
+      "temperature": "30 C",
+      "sm_clock": "180 MHz",
+      "processes": [
+        {
+          "pid": 608566,
+          "type": "G",
+          "used_memory": "617 MiB"
+        }
+      ],
+      "observed_at_utc": "2026-11-13T01:50:36.016044+00:00"
+    },
+    "idle_seconds": 0
+  },
+  "cogact_timing_latest_status": "foreign_gpu_activity",
+  "evidence": {
+    "robotics-batch-invariant-ops/results/four_model/current_evidence/cogact_performance_isolation_rejection004.json": "7287aeeeefbd3c2b8ffc5651cf1aa422791230f1bce55c155f36bfa9b1dee2ec",
+    "robotics-batch-invariant-ops/results/four_model/current_evidence/four_model_remaining_evidence_inventory002.json": "1855140418ed0b2cd8ed7e98d9c3ed401297bed29a0eea7268e07d97d7a5d714",
+    "robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_paired_storage_layout_assessment001.json": "2dc9c7d207020bc7ee1650b50b606df7fefac4e8921813d0d680a6ee186ddbbe"
+  },
+  "needed_external_change": [
+    "Writable retained-data location with at least 1.5TB free or added vastdisk capacity for full LingBot paired study.",
+    "Stable GPU access free of foreign processes throughout isolated timing measurements."
+  ],
+  "full_campaign_complete": false
+}

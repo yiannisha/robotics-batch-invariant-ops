@@ -1,0 +1,31 @@
+{
+  "status": "pilot_raw_evidence_verified",
+  "scope": "complete_episode_pilot",
+  "episodes": 8,
+  "blocks": [
+    {
+      "task": 0,
+      "initialization": 0,
+      "eight_conditions_verified": true,
+      "AA_exact": true,
+      "invariant_batching_exact": true,
+      "native_first_action_mismatch": 50,
+      "success": {
+        "native_singleton": false,
+        "native_dynamic": false,
+        "patched_singleton": false,
+        "patched_dynamic": false,
+        "native_singleton_repeat": false,
+        "native_dynamic_repeat": false,
+        "patched_singleton_repeat": false,
+        "patched_dynamic_repeat": false
+      }
+    }
+  ],
+  "success_rate_campaign_complete": false,
+  "source_sha256": {
+    "runtime.json": "a7b686a145947a9aca7af88dd8a45d1a49e2fcd43e1b33b4fb0be6cf2e7571e8",
+    "episodes.jsonl": "6fedea2a6293ffb6306967edda3564a4c3ba141f0a20e21ee28ed17794e8154d"
+  },
+  "auditor_sha256": "43178eb391442f9d0dba18795a891aad3f1a2182b5d4dbb8cb6466e30238da1a"
+}

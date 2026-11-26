@@ -1,0 +1,18 @@
+{
+  "observed_at_utc": "2026-11-09T07:50:51.170487+00:00",
+  "checks": [
+    {
+      "model": "cogact_simpler_exact",
+      "runtime_sha256": "d08d101f3c8e1523720fb71434ab278b750aa0fc90af0b458b3d19578ea37777",
+      "all_pinned_runtime_sources_unchanged": true,
+      "checked_source_count": 38
+    },
+    {
+      "model": "rdt_maniskill_exact",
+      "runtime_sha256": "ae3eabc4392f1b6d25bc20d67b412c8044aff470ed918a68ddd6b712bdbb26fc",
+      "all_pinned_runtime_sources_unchanged": true,
+      "checked_source_count": 14
+    }
+  ],
+  "scope": "Source integrity only; numerical completion not implied"
+}

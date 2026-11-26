@@ -1,0 +1,70 @@
+{
+  "observed_utc": "2026-11-11T02:46:03.468424+00:00",
+  "previous_snapshot": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/live_stability_wait_20261111T024540Z.json",
+  "classification": "verified_wait",
+  "workers": [
+    {
+      "model": "rdt",
+      "pid": 675019,
+      "start_ticks": 426340577,
+      "state": "R",
+      "cpu_ticks": 25078436,
+      "completed_pairs": 1242,
+      "total_pairs": 2400,
+      "cpu_ticks_delta": 4607
+    },
+    {
+      "model": "cogact",
+      "pid": 4146616,
+      "start_ticks": 430781854,
+      "state": "R",
+      "cpu_ticks": 14455313,
+      "completed_pairs": 2260,
+      "total_pairs": 2400,
+      "cpu_ticks_delta": 4665
+    },
+    {
+      "model": "lingbot",
+      "pid": 3269221,
+      "start_ticks": 438514975,
+      "state": "R",
+      "cpu_ticks": 137063,
+      "completed_pairs": 5,
+      "total_pairs": 600,
+      "cpu_ticks_delta": 2360
+    }
+  ],
+  "verified_live_waiters": [
+    {
+      "pid": 3550876,
+      "start_ticks": 438564511,
+      "status": "waiting_for_corrected_precision_source_traces"
+    },
+    {
+      "pid": 3601175,
+      "start_ticks": 438575093,
+      "status": "waiting_for_corrected_precision_operator_inventory_audit"
+    },
+    {
+      "pid": 3624982,
+      "start_ticks": 438580366,
+      "status": "waiting_for_live_heldout_and_independent_audit"
+    },
+    {
+      "pid": 3624985,
+      "start_ticks": 438580367,
+      "status": "waiting_for_live_isolated_policy_serving_queue_pipeline"
+    },
+    {
+      "pid": 3669759,
+      "start_ticks": 438593139,
+      "status": "waiting_for_corrected_independent_performance_audit"
+    },
+    {
+      "pid": 3702763,
+      "start_ticks": 438600537,
+      "status": "waiting_for_live_complete_causal_audit"
+    }
+  ],
+  "full_campaign_complete": false
+}

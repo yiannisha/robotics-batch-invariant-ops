@@ -1,0 +1,27 @@
+{
+  "status": "all_five_tasks_attention_mask_capture_verified",
+  "source_trace": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json",
+  "source_trace_sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a",
+  "request_ids": [
+    "maniskill/PegInsertionSide-v1/0/observation-0/noise-0",
+    "maniskill/PickCube-v1/0/observation-0/noise-0",
+    "maniskill/StackCube-v1/0/observation-0/noise-0",
+    "maniskill/PlugCharger-v1/0/observation-0/noise-0",
+    "maniskill/PushCube-v1/0/observation-0/noise-0",
+    "maniskill/PegInsertionSide-v1/0/observation-1/noise-0",
+    "maniskill/PickCube-v1/0/observation-1/noise-0",
+    "maniskill/StackCube-v1/0/observation-1/noise-0"
+  ],
+  "valid_language_tokens": [
+    25,
+    20,
+    30,
+    24,
+    18,
+    25,
+    20,
+    30
+  ],
+  "mask_original_bytes_sha256": "eeb274c95d05c66327efee839708e254a66ad27b41ae28bbad88b259c347d63e",
+  "scope": "Source capture only, numerical qualification of heterogeneous/task-specific masks still pending"
+}

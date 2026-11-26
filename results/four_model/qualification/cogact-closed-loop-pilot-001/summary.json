@@ -1,0 +1,28 @@
+{
+  "scope": "complete_episode_pilot",
+  "blocks": [
+    {
+      "task": "pick_can",
+      "initialization": 0,
+      "all_AA_exact": true,
+      "invariant_batching_exact": true,
+      "native_first_action_divergence": 1,
+      "success": {
+        "native_singleton": true,
+        "native_dynamic": true,
+        "patched_singleton": true,
+        "patched_dynamic": true,
+        "native_singleton_repeat": true,
+        "native_dynamic_repeat": true,
+        "patched_singleton_repeat": true,
+        "patched_dynamic_repeat": true
+      },
+      "singleton_padding_fidelity": {
+        "comparison": "fixed64_native_singleton_vs_released_longest_padding_singleton",
+        "exact": false,
+        "max_absolute_error": 1.0
+      }
+    }
+  ],
+  "paired_success_rate_campaign_complete": false
+}

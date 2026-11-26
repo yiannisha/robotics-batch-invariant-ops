@@ -1,0 +1,783 @@
+{
+  "schema_version": 1,
+  "model_id": "rdt_maniskill_exact",
+  "frozen_at_utc": "2026-11-09T16:35:53.409255+00:00",
+  "git_head": "b734818852aa694dcd5fe7bd07e0b5de3d76e390",
+  "git_status": "M research/dreamzero/blocked.md\n M scripts/audit_full_cross_model_campaign.py\n M scripts/qualify_real_shape_matrix_ops.py\n M scripts/run_cogact_paired_server.py\n M scripts/run_model_replay_invariance.py\n M scripts/run_rdt_paired_server.py\n M scripts/trace_model_first_divergence.py\n M scripts/trace_model_operator_shapes.py\n?? FOUR_MODEL_CAMPAIGN.md\n?? research/dreamzero/local_setup_status.md\n?? research/dreamzero/preliminary_results.md\n?? results/\n?? scripts/audit_captured_leaf_replay.py\n?? scripts/audit_cogact_campaign_corpus.py\n?? scripts/audit_cogact_heldout_observation_disjointness.py\n?? scripts/audit_cogact_observable_state_replay.py\n?? scripts/audit_cogact_operator_coverage.py\n?? scripts/audit_cogact_paired_study.py\n?? scripts/audit_cogact_shared_matmul.py\n?? scripts/audit_cogact_source_attention_ops.py\n?? scripts/audit_cogact_source_linear_ops.py\n?? scripts/audit_cogact_unexposed_holdout_corpus.py\n?? scripts/audit_diagnostic_batch_aggregates.py\n?? scripts/audit_exact_model_causal_ablation.py\n?? scripts/audit_fixed_input_paired_pilots.py\n?? scripts/audit_flow_step_stability.py\n?? scripts/audit_four_model_diagnostic.py\n?? scripts/audit_four_model_heldout.py\n?? scripts/audit_four_model_isolated_performance.py\n?? scripts/audit_lingbot_arm_bootstrap.py\n?? scripts/audit_lingbot_campaign_corpus.py\n?? scripts/audit_lingbot_exact_linear_ops.py\n?? scripts/audit_lingbot_exact_operator_coverage.py\n?? scripts/audit_lingbot_exact_remaining_ops.py\n?? scripts/audit_lingbot_full_stability.py\n?? scripts/audit_lingbot_heldout_observation_disjointness.py\n?? scripts/audit_lingbot_paired_study.py\n?? scripts/audit_lingbot_paired_study_bound.py\n?? scripts/audit_lingbot_refreshed_corpus_lineage.py\n?? scripts/audit_lingbot_robotwin_pilot.py\n?? scripts/audit_lingbot_task_stability.py\n?? scripts/audit_paired_stability_bootstrap.py\n?? scripts/audit_paired_stability_metrics.py\n?? scripts/audit_pi05_actual_operators.py\n?? scripts/audit_pi05_campaign_corpus.py\n?? scripts/audit_pi05_closed_loop_pilot.py\n?? scripts/audit_pi05_deterministic_render_replay.py\n?? scripts/audit_pi05_heldout_observation_disjointness.py\n?? scripts/audit_pi05_no_msaa_paired_study.py\n?? scripts/audit_pi05_paired_study.py\n?? scripts/audit_pi05_unexposed_holdout_corpus.py\n?? scripts/audit_policy_performance_capacity.py\n?? scripts/audit_rdt_campaign_corpus.py\n?? scripts/audit_rdt_heldout_observation_disjointness.py\n?? scripts/audit_rdt_observable_state_replay.py\n?? scripts/audit_rdt_operator_coverage.py\n?? scripts/audit_rdt_paired_study.py\n?? scripts/audit_rdt_source_attention_masks.py\n?? scripts/audit_rdt_source_attention_ops.py\n?? scripts/audit_rdt_source_linear_ops.py\n?? scripts/audit_rdt_source_matrix_ops.py\n?? scripts/audit_rdt_unexposed_holdout_corpus.py\n?? scripts/audit_robotwin_benchmark_replay.py\n?? scripts/audit_source_conv_mean_softmax.py\n?? scripts/bootstrap_lingbot_arm_stability.py\n?? scripts/bootstrap_paired_stability.py\n?? scripts/build_cogact_exact_conv_mean_config.py\n?? scripts/build_cogact_exact_linear_config.py\n?? scripts/build_lingbot_campaign_replay_manifest.py\n?? scripts/build_lingbot_exact_linear_cases.py\n?? scripts/build_lingbot_exact_reduction_cases.py\n?? scripts/build_lingbot_exact_remaining_cases.py\n?? scripts/build_pi05_libero_operator_config.py\n?? scripts/build_rdt_exact_linear_config.py\n?? scripts/captured_leaf_operator.py\n?? scripts/captured_tensor_layout.py\n?? scripts/cogact_cold_collection_env.py\n?? scripts/cogact_prepared_observation_identity.py\n?? scripts/cogact_simpler_state_worker.py\n?? scripts/collect_cogact_simpler_campaign_replay.py\n?? scripts/collect_cogact_unexposed_holdout_replay.py\n?? scripts/collect_lingbot_robotwin_campaign_replay.py\n?? scripts/collect_lingbot_robotwin_campaign_replay_v2.py\n?? scripts/collect_pi05_libero_campaign_replay.py\n?? scripts/collect_pi05_unexposed_holdout_replay.py\n?? scripts/collect_rdt_maniskill_campaign_replay.py\n?? scripts/collect_rdt_unexposed_holdout_replay.py\n?? scripts/diagnose_pi05_render_repeat.py\n?? scripts/freeze_four_model_numerics.py\n?? scripts/freeze_split_local_companions.py\n?? scripts/gpu_isolation.py\n?? scripts/inspect_causal_ablation_applicability.py\n?? scripts/leaf_request_projection.py\n?? scripts/libero_deterministic_renderer.py\n?? scripts/maniskill_state_evidence.py\n?? scripts/measure_lingbot_pilot_stability.py\n?? scripts/model_invariance/adapters/cogact_simpler_exact.py\n?? scripts/model_invariance/adapters/lingbot_robotwin_exact.py\n?? scripts/model_invariance/adapters/pi05_libero_exact.py\n?? scripts/model_invariance/adapters/rdt_maniskill_exact.py\n?? scripts/pi05_prepared_observation_identity.py\n?? scripts/pilot_cogact_snapshot_exact_start.py\n?? scripts/pilot_lingbot_robotwin_exact_start.py\n?? scripts/pilot_pi05_libero_exact_start.py\n?? scripts/pilot_rdt_maniskill_exact_start.py\n?? scripts/plot_flow_step_stability.py\n?? scripts/prepare_four_model_assets.py\n?? scripts/probe_cogact_snapshot_inputs.py\n?? scripts/probe_lingbot_real_robotwin_inputs.py\n?? scripts/probe_pi05_libero_real_inputs.py\n?? scripts/probe_rdt_real_maniskill_inputs.py\n?? scripts/probe_robotwin_exact_initialization.py\n?? scripts/qualify_cogact_observable_state_replay.py\n?? scripts/qualify_cogact_shared_matmul.py\n?? scripts/qualify_cogact_source_attention_ops.py\n?? scripts/qualify_cogact_source_linear_ops.py\n?? scripts/qualify_full_policy_capacity.py\n?? scripts/qualify_libero_fixed_action_replay.py\n?? scripts/qualify_lingbot_exact_linear_ops.py\n?? scripts/qualify_lingbot_exact_remaining_ops.py\n?? scripts/qualify_pi05_deterministic_render_replay.py\n?? scripts/qualify_policy_performance_capacity.py\n?? scripts/qualify_rdt_maniskill_replay.py\n?? scripts/qualify_rdt_observable_state_replay.py\n?? scripts/qualify_rdt_source_attention_masks.py\n?? scripts/qualify_rdt_source_attention_ops.py\n?? scripts/qualify_rdt_source_linear_ops.py\n?? scripts/qualify_rdt_source_matrix_ops.py\n?? scripts/qualify_rdt_source_matrix_ops_v2.py\n?? scripts/qualify_robotwin_benchmark_replay.py\n?? scripts/qualify_robotwin_task_roster.py\n?? scripts/qualify_simpler_fixed_action_replay.py\n?? scripts/rdt_prepared_observation_identity.py\n?? scripts/robotwin_exact_worker.py\n?? scripts/robotwin_task_state.py\n?? scripts/run_cogact_shared_matmul_sweep.py\n?? scripts/run_cogact_simpler_paired_study.py\n?? scripts/run_cogact_source_attention_sweep.py\n?? scripts/run_cogact_source_linear_sweep.py\n?? scripts/run_dreamzero_droid_pairs.py\n?? scripts/run_dreamzero_native_worker.py\n?? scripts/run_exact_model_causal_ablation.py\n?? scripts/run_exact_model_causal_ablation_v2.py\n?? scripts/run_exposure_qualified_heldout.py\n?? scripts/run_isolated_frozen_benchmark.py\n?? scripts/run_isolated_operator_arrangements.py\n?? scripts/run_lingbot_exact_linear_sweep.py\n?? scripts/run_lingbot_exact_remaining_sweep.py\n?? scripts/run_lingbot_robotwin_paired_study.py\n?? scripts/run_pi05_libero_no_msaa_paired_study.py\n?? scripts/run_pi05_libero_paired_study.py\n?? scripts/run_rdt_maniskill_paired_study.py\n?? scripts/run_rdt_source_attention_mask_sweep.py\n?? scripts/run_rdt_source_attention_sweep.py\n?? scripts/run_rdt_source_linear_sweep.py\n?? scripts/run_rdt_source_matrix_sweep.py\n?? scripts/run_rdt_source_matrix_sweep_v2.py\n?? scripts/sim_state_evidence.py\n?? scripts/summarize_diagnostic_batch_stability.py\n?? scripts/summarize_dreamzero_pairs.py\n?? scripts/summarize_flow_step_stability.py\n?? scripts/summarize_lingbot_full_paired_stability.py\n?? scripts/summarize_lingbot_task_stability.py\n?? scripts/summarize_paired_stability.py\n?? scripts/summarize_paired_success_progress.py\n?? scripts/test_attention_mask_capture.py\n?? scripts/test_captured_leaf_audit.py\n?? scripts/test_captured_leaf_operator.py\n?? scripts/test_captured_tensor_layout.py\n?? scripts/test_cogact_paired_study.py\n?? scripts/test_cogact_sim_state.py\n?? scripts/test_cogact_source_cfg_coordinates.py\n?? scripts/test_cogact_trace_labels.py\n?? scripts/test_diagnostic_batch_stability.py\n?? scripts/test_exact_model_causal_audit.py\n?? scripts/test_four_model_freeze_gates.py\n?? scripts/test_four_model_heldout_audit.py\n?? scripts/test_four_model_heldout_schedule.py\n?? scripts/test_four_model_isolated_performance_audit.py\n?? scripts/test_gpu_isolation.py\n?? scripts/test_heldout_observation_exposure.py\n?? scripts/test_isolated_frozen_benchmark.py\n?? scripts/test_leaf_request_projection.py\n?? scripts/test_libero_renderer_protocol.py\n?? scripts/test_lingbot_arm_bootstrap.py\n?? scripts/test_lingbot_campaign_collection.py\n?? scripts/test_lingbot_dual_arm_drift.py\n?? scripts/test_lingbot_episode_binding.py\n?? scripts/test_lingbot_expert_filter.py\n?? scripts/test_lingbot_exposure_freeze_schema.py\n?? scripts/test_lingbot_full_stability.py\n?? scripts/test_lingbot_full_stability_audit.py\n?? scripts/test_lingbot_paired_protocol.py\n?? scripts/test_lingbot_task_audit.py\n?? scripts/test_lingbot_task_stability.py\n?? scripts/test_operator_mask_trace.py\n?? scripts/test_operator_output_dtype.py\n?? scripts/test_paired_stability_metrics.py\n?? scripts/test_paired_success_statistics.py\n?? scripts/test_rdt_paired_study.py\n?? scripts/test_rdt_source_linear_layouts.py\n?? scripts/test_replay_metrics.py\n?? scripts/test_replay_runtime_provenance.py\n?? scripts/test_robotwin_task_state.py\n?? scripts/test_split_local_companions.py\n?? scripts/trace_exact_model_leaf_divergence.py\n?? scripts/trace_model_operator_shapes_with_masks.py\n?? scripts/validate_lingbot_exposure_freeze_schema.py\n?? scripts/verify_lingbot_vla2_checkpoint_runtime.py\n?? scripts/verify_pi05_libero_checkpoint.py",
+  "content_addressed_freeze": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/freeze_four_model_numerics.py": {
+      "bytes": 12010,
+      "sha256": "2fa448cff6acb3ff2fa63b4013a889c42efe1f24e0c7c3ac7e93a6aaf3076c53"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/freeze_model_numerics.py": {
+      "bytes": 9254,
+      "sha256": "4c91a6c1cb50160839550ec9e44d5cefb3bde103d926eb8dc1cfc0b0e04c831d"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_four_model_diagnostic.py": {
+      "bytes": 5590,
+      "sha256": "77981338ea393479971e5d1adc11a1aea8258277d6ab5e65228c070746e63db3"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_full_cross_model_campaign.py": {
+      "bytes": 402878,
+      "sha256": "1b1e9665911cde483816a4bcc8c9b518c8f6f07c46b8f673e922274c574ec4d2"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_pi05_actual_operators.py": {
+      "bytes": 15876,
+      "sha256": "8c0ba0c6fed8a979f3878d5ca3a3775561a149375425edd728cfc84d7c58e708"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/replay_manifest.json": {
+      "bytes": 2256597,
+      "sha256": "ec7d55f15b737789583bfbd26fb8504e29d36828ba275e27327f8967bfee5a01"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/audited_manifest.json": {
+      "bytes": 2263663,
+      "sha256": "f7f4fa9bd71741407334f337b5dba09415647f9ad3edf76e73404669db56a277"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/diagnostic/invariance.jsonl.gz": {
+      "bytes": 15135525,
+      "sha256": "6be4563ff3d1b5aaa43165ce8ea27a1170ec4858c140f63c35f86b24f7f1e076"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/diagnostic/independent_diagnostic_audit.json": {
+      "bytes": 2067,
+      "sha256": "f0b001f8952ee4f08ed43a951f337b5c6bb79556ca177994b13031def16e1754"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/diagnostic/singleton_fidelity.jsonl.gz": {
+      "bytes": 712960,
+      "sha256": "2b9751ae324b56e13137bc67bca6f10300dba8ef71470d1e400dacf528149519"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/diagnostic/invariance.jsonl.gz.runtime.json": {
+      "bytes": 3979,
+      "sha256": "ae3eabc4392f1b6d25bc20d67b412c8044aff470ed918a68ddd6b712bdbb26fc"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/capacity.jsonl": {
+      "bytes": 80382,
+      "sha256": "607e8e4eb952edff5ef32980fb559dccf900ce69d311297c807fad141889c9ee"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/prepared_input_disjointness_final.json": {
+      "bytes": 2975697,
+      "sha256": "b1ed3bd6bc424b606b10aaddcb042098b56c7406973a74e42fc4e591c0492ef7"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/coverage_complete_audit.json": {
+      "bytes": 7926,
+      "sha256": "fe8a28f7239cdbb59740220855f3f73eb8334c10a7cdf6d9ec7ee767fdf4f064"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_B1.json": {
+      "bytes": 78346,
+      "sha256": "7bc4da5e2164461cb6ea074ea71412c6abb11241eeddb1e8c91f5deb0b8cd36e"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/aten_trace_all_tasks_masks_B8.json": {
+      "bytes": 36772,
+      "sha256": "08d2dce9e3e8c22874ae31239c92d7584ffd8ae2cfa12d092a6bbca5ccb2238a"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_linear_layouts_v1.json": {
+      "bytes": 55013,
+      "sha256": "5dbfb656a68ebb8741f0a40b6cfff0f06bf33ecc27391bbfade220f692abfd73"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_linear_layouts_v1.jsonl": {
+      "bytes": 188470392,
+      "sha256": "88fdb2513a0c0a4d61f5f4397a4e633de6925bc0f705570016ac4695c30ca1a5"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_linear_layouts_complete_audit.json": {
+      "bytes": 94552,
+      "sha256": "08d2b0ef0486cb1c748cc2f366b14ba28c4bce6b7e764be0477ad5e13a125faf"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_matrix_layouts_v1.json": {
+      "bytes": 10967,
+      "sha256": "f6c1f251c5fc703f5b8e1c9a1ec7d76e321310428d2a6828963cb3b85cc6f153"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_matrix_layouts_v2.jsonl": {
+      "bytes": 29379349,
+      "sha256": "02d3a6c4ba88f755e819ea03b853b732ce61d613e13e774b99e8be30c16863e5"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_matrix_complete_audit.json": {
+      "bytes": 11593,
+      "sha256": "8b5295da7d926b4542d7564ffe52e8212ac0d8febd978ad5e8f04e60a6281f8a"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_mean_v2.json": {
+      "bytes": 2704,
+      "sha256": "ef160b280b2a822c4fa3c3e79073a2487fee004bd4a114008c26875f0a147cd5"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_mean_v2.jsonl": {
+      "bytes": 6945674,
+      "sha256": "b9a3e75df6351eaa7e449b41c650b32201e0940b228baa2e179e641b1d13dca3"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_mean_audit.json": {
+      "bytes": 4565,
+      "sha256": "c5d0ebca730a8efc340fe8539be3d49c314c09667d6cafe36016e0d190dd9d49"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_v2.json": {
+      "bytes": 1908,
+      "sha256": "38b74e0d39efd8270aade746882b4911a83b193498f78b2e4433555a027a1d46"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_v2.jsonl": {
+      "bytes": 2916634,
+      "sha256": "d5a6f74e6e63b29a6251cfc7227927a3575dade6120c0926203f56510de633c3"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_audit_v2.json": {
+      "bytes": 2411,
+      "sha256": "7553520e104043a01364809712e2d40428d2dc67ecdfc503d51ed81f8bbd48aa"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_v1.json": {
+      "bytes": 1969,
+      "sha256": "5db55987fc174f2da5b05758e50cc12728a86561d360311f68336a6a8f99c68d"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_v1.jsonl": {
+      "bytes": 4165807,
+      "sha256": "d681c6ae5663a56d46fac48bf05bff7f54e5144ea0e10da5433b0c17ee3be5dc"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_softmax_output_precision_large_audit.json": {
+      "bytes": 3192,
+      "sha256": "d82c843a9a7467f68f4c82d1acf1aa257ce7a906c3cad5f0f46fd5bccc6ef4b4"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_unmasked_full_heads_v1.json": {
+      "bytes": 8127,
+      "sha256": "62ad82450d7e92969a4034aab8a2243bf04410a06279a83fc54675fbf6ed4043"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_unmasked_full_heads_v1.jsonl": {
+      "bytes": 15528304,
+      "sha256": "2a724596f8bd18fadc61368ebdd6262313a787f8b0fb41824883923764e75ff6"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_unmasked_full_heads_complete_audit.json": {
+      "bytes": 5994,
+      "sha256": "53a3e477663e912eb5dbd778b3d04dfd1ae6d05ede47b3a1dca2f3fff9fdcca6"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_masks_v1.json": {
+      "bytes": 439090,
+      "sha256": "117ec328c44f4a395ceb9038c293b0a364c64b64408865a7827bc209bc5ceb54"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_masks_v1.jsonl": {
+      "bytes": 47626590,
+      "sha256": "85b3d66b4c4b3948c4180317e5d2c1d20a80db5592e9951e699fd9e64c8f72de"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_attention_masks_complete_audit.json": {
+      "bytes": 17571,
+      "sha256": "1b31fbe742ccf86b9e5e079e95e568161c0d936729f6e4c38fc04387390902bb"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_conv_pool_softmax_v1.json": {
+      "bytes": 5519,
+      "sha256": "9c748905928b0093c991a26b230670068d795c50a855382458663b51c496c77c"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_conv_pool_softmax_v1.jsonl": {
+      "bytes": 13949672,
+      "sha256": "b287c5ce3b06ee32c4f4b52a3b54e7685e40995717ec2f6889794439ccfdd4d4"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/campaign/rdt_maniskill_exact/full/operator/source_conv_pool_softmax_complete_audit.json": {
+      "bytes": 8430,
+      "sha256": "fe570935ce24260273b71ffa4d5ad3ef654c7c059638c2a6eefc1972bdba9359"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/__init__.py": {
+      "bytes": 1453,
+      "sha256": "457c6f3f7eb2733f1144a0aec8886649a8442b5703d39571a7815cd095ddb001"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/batch_invariant_ops.py": {
+      "bytes": 64137,
+      "sha256": "28a2f0333b97b323f772ecb5509be24cbf7a3906a9b6d6518e9830e910b323de"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/batch_invariant_ops/moe.py": {
+      "bytes": 4256,
+      "sha256": "065865169d1ea65257ccfeebd40b6c63db40fee254ff11d299c87130796cbb77"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/__init__.py": {
+      "bytes": 203,
+      "sha256": "1b513e899a44f235eff0f1a7bda89ad376947a38088a49757dd328da89cc5e9b"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/__init__.py": {
+      "bytes": 52,
+      "sha256": "490a39697d3ff651adf55a275d0ace101c3a4829ebdfe6d34836c695c8b62e46"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/rdt_maniskill.py": {
+      "bytes": 21847,
+      "sha256": "ad6855644b5b5ec63bc704b503cd0e8101593dba60cd9b7c7f6687bd3630cfa5"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/adapters/rdt_maniskill_exact.py": {
+      "bytes": 6252,
+      "sha256": "ee3a0f03c9f7b805abc9b767166fefef66d23741253b3f46c7fe2ac953d19d12"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/model_invariance/harness.py": {
+      "bytes": 12258,
+      "sha256": "399c331fc42298636b335d19d8296057c2aeb520826744d039d509f3d7a8237f"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_model_replay_invariance.py": {
+      "bytes": 30464,
+      "sha256": "10b764781288d3e6947cabd2c39dfb0b3b2c8de53b5ded663cc5f9a77d086537"
+    },
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/run_rdt_paired_server.py": {
+      "bytes": 11754,
+      "sha256": "74f9127bf18ec3eb9232ffbbac2130c68aaf9537f2f3715204a079f8730f969a"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/multimodal_encoder/siglip_encoder.py": {
+      "bytes": 2924,
+      "sha256": "cdeb1b694712de3d5c355c2b72c6576bdaeb64f4177ec1903fcc5b4717244c9c"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/rdt/blocks.py": {
+      "bytes": 11985,
+      "sha256": "edabf27ecf6f7779ff5fb583d7cee4de3b7b234e3411d61ee8a397ec0b6c3142"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/rdt/model.py": {
+      "bytes": 6753,
+      "sha256": "85ca164af0cf97678fe2a6f2e771b4c743ed41dfdf7c24b7b6bf747f14d23ad3"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/rdt_runner.py": {
+      "bytes": 10942,
+      "sha256": "b7d1aacec1a59df2de8b5bfbecf96e409abc18ca2db7442ae2d44fe5b647d953"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/README.md": {
+      "bytes": 446,
+      "sha256": "323af7f7d87bbcddf80f70410e54b433d20fe326c46bae6a78bb2607e471b030"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/acquisition.json": {
+      "bytes": 2090,
+      "sha256": "94622a070c6c110ccb56ec887a4892b2bd1d5091fa00ce12c7429ba1a854ba70"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_PickCube-v1.pt": {
+      "bytes": 165159,
+      "sha256": "a9ac30bc88ef12b171e9323b8a2c64f0b0ae9a54715deb061c021deaadb37f7a"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_PegInsertionSide-v1.pt": {
+      "bytes": 206223,
+      "sha256": "da798aab9df67a230259095c0d087772d10ff2dd089bd71762a1b6d1696dbbf3"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_PushCube-v1.pt": {
+      "bytes": 148775,
+      "sha256": "536272882840dd1d2aef759b7551da1515b9c0cbe45e491a025169efadf51471"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_StackCube-v1.pt": {
+      "bytes": 247084,
+      "sha256": "ca0a1f758d183e4c541b412efd2ffafacae7bdc7220d03f7e9dca3e93bb28985"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/lang_embeds/text_embed_PlugCharger-v1.pt": {
+      "bytes": 198006,
+      "sha256": "c38f80c549ec1d48f74ffdeafff8dd9f02ca64de8c3bddd7fe3cca173925922d"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_1b/rdt/mp_rank_00_model_states.pt": {
+      "bytes": 2456799148,
+      "sha256": "3fa89cbf7bbb1b2559b29f9ae153b431541cdaa0b3f1ee44b83b9934599b9fb8"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/config.json": {
+      "bytes": 576,
+      "sha256": "adc04928d8fd19a61822584fe0cf2e813e5ebac17f3e49fb1ea096860ae6457b"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/preprocessor_config.json": {
+      "bytes": 368,
+      "sha256": "f59da2f87c3cd079bd4f8f3037e81b277c60c498e279a8020331f67a5a3157e8"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/special_tokens_map.json": {
+      "bytes": 409,
+      "sha256": "2b6a1ff67a27e0df9ac0c7d93250fc0d87431c7b366b3d5669217104f9088a26"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/tokenizer.json": {
+      "bytes": 2399357,
+      "sha256": "c6e405cb7c670d56636a9402c81023a55bc6c3c53d89cf02b92f5c5005bfe920"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/tokenizer_config.json": {
+      "bytes": 711,
+      "sha256": "d6423dae508cc3a129d22ea443841c111832a1a73125b8f25ea8736951698bcb"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/model.safetensors": {
+      "bytes": 3511950624,
+      "sha256": "ea2abad2b7f8a9c1aa5e49a244d5d57ffa71c56f720c94bc5d240ef4d6e1d94a"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/assets/rdt_siglip/upstream_identity.json": {
+      "bytes": 162,
+      "sha256": "ffd1d48653864cb9288c7e6fae3c2952ab6f1ed2f811856b9c59f8b9989bb99e"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/main.py": {
+      "bytes": 12015,
+      "sha256": "bce706ea34a98be7253835553a6e7de7bb842a6c2d7d6ab5740c7be3f1aa5685"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/configs/state_vec.py": {
+      "bytes": 3577,
+      "sha256": "6f8816b75ac6d80e405b0696c5aec6409715bab484c3f22bf7a599323dabd551"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/compute_dataset_stat.py": {
+      "bytes": 8628,
+      "sha256": "22683d7c2c999e051abe4901aa75a4cf6c8991ac3925dd39229b24fa46e73990"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/compute_dataset_stat_hdf5.py": {
+      "bytes": 3234,
+      "sha256": "a714c067d6697fc99ea126f9dc908e7e71c1ada502a75b0e0b1f7c172a07048d"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/episode_transform.py": {
+      "bytes": 16335,
+      "sha256": "581954f49fe6f9b7131250cb291c97b94525575e4f01a27df1dccd6648f7401c"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/filelock.py": {
+      "bytes": 655,
+      "sha256": "9230f98a85d1a44f5cc87f279882154a5281c102d003d505cb6ad95fb9aa245a"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/hdf5_maniskill_dataset.py": {
+      "bytes": 9958,
+      "sha256": "ce51b7802b65a5d680c7d61710adebfe5a5399b4074af2937b70173ddda485cb"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/hdf5_vla_dataset.py": {
+      "bytes": 14714,
+      "sha256": "9fcbd21bedad4a356d64f2e68de280ed6a6f5210badfb9d9d4d5a14ef726e893"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess.py": {
+      "bytes": 10765,
+      "sha256": "6dd2ffe37afd6cac620585a707f2789757c4ffe9640154dd453115c36adc7eb2"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/producer.py": {
+      "bytes": 11673,
+      "sha256": "a8cc293d0721a78f6fcac3c08e05af6ae578925e140d43c85e1e0fefb7a980c4"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/utils.py": {
+      "bytes": 7529,
+      "sha256": "6ef92857fc88053a5ae86ff124fcddf704b0a9aa05f7952c7a404469823917fa"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/vla_dataset.py": {
+      "bytes": 5585,
+      "sha256": "73ca1fe84c5a97dafa2f771d6eafc04204dfb3a9245d4bd2099e3602bf54fd1f"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/docs/test_6drot.py": {
+      "bytes": 2603,
+      "sha256": "b67a4d662b4ddaddc05e9cd00bb9e9408ef2350dfbf30b3465a47a447f7d1501"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/eval_sim/eval_dp.py": {
+      "bytes": 8390,
+      "sha256": "fa96b64a59036e0c9bd23f5dd22f0a7ab04dd4c1ab73f7d22983ef9bf11cf74b"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/eval_sim/eval_octo.py": {
+      "bytes": 7730,
+      "sha256": "2207928468f32eea2155662c409c020daa4c9fbab530a73254a3ce6b1d6710a4"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/eval_sim/eval_openvla.py": {
+      "bytes": 8889,
+      "sha256": "eb51212c0257be52803ff67968f2a2a39f5e580a8196eb8373e367859713d112"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/eval_sim/eval_rdt_maniskill.py": {
+      "bytes": 6163,
+      "sha256": "6cd11d35d82c6aff6cd4625a2acdb54f8ab1cad0ab954942443450e3b57bb3dd"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/ema_model.py": {
+      "bytes": 3374,
+      "sha256": "71b4fad018ece7b8fa8080bedeaa7d4adbe3e353c6f9474f15ae954e1d1b2284"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/hub_mixin.py": {
+      "bytes": 3117,
+      "sha256": "609a9e0782177f8d10c15aef0fd8fcd0afef93b1c80cd68803f50c20852a9581"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/scripts/agilex_inference.py": {
+      "bytes": 30093,
+      "sha256": "16b9c06fc29d1296fa5b5a9d009f393338c85f185d7bfa659d143e9b43cff55d"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/scripts/agilex_model.py": {
+      "bytes": 12347,
+      "sha256": "abb8b87693a38a0f39071b7f764f59e3516d5164e4848f2959022ffaed3ea50d"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/scripts/encode_lang.py": {
+      "bytes": 1718,
+      "sha256": "c6c2f17b44f6bae53d78abd26f7d1a29ffcde43dc165151b7317690babda0b8a"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/scripts/encode_lang_batch.py": {
+      "bytes": 2664,
+      "sha256": "13d6be3f763bccb82f9984747615087b7511acbe9bd372161af9bfe147ea3413"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/scripts/maniskill_model.py": {
+      "bytes": 11614,
+      "sha256": "503644ff977704f212e007bc6cd05e4ea7ce84c66324bc31eccf36da31555bb0"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/train/dataset.py": {
+      "bytes": 19497,
+      "sha256": "6bff84d54cdc6abb24a67f61d62456fc0073b8bede00671e2086cea4c1ec38c7"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/train/image_corrupt.py": {
+      "bytes": 1266,
+      "sha256": "862f858cbeae08c1ec8d033cd9d95f89f811e407dd6e89eb014cc96f2eb4db2d"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/train/sample.py": {
+      "bytes": 4286,
+      "sha256": "fc5541c370366fa5baa09d82d31f98d4b3ac7262177fca998d1a0fce63b77cd6"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/train/train.py": {
+      "bytes": 21173,
+      "sha256": "9aae5bbabea025325a25dad55fb6f69b49761b2d4ae69b17a9f7b5df03cc9deb"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/agilex/hdf5totfrecords.py": {
+      "bytes": 5439,
+      "sha256": "a880d616a580500717f93527a66266b8db0d8570e37ae5a5c4e6b445882334d9"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/aloha/hdf5totfrecords.py": {
+      "bytes": 5116,
+      "sha256": "b8af7f13173ec80dd4b3842754a3a7925bebb721574edd1a7bae2b1bc7d7a621"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/bridgev2/bridgedata_numpy_to_tfrecord.py": {
+      "bytes": 6094,
+      "sha256": "2e1568b95043fb04d970136b68726bfe128c6aa40171131889ffd105abb1d079"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/bridgev2/bridgedata_raw_to_numpy.py": {
+      "bytes": 10687,
+      "sha256": "e9a80f2d8605934696e1644b6ebb19761216fefd5e0c557fa5ce6cc51532bf67"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/calvin/hdf5totfrecords.py": {
+      "bytes": 3459,
+      "sha256": "3c8d605ddb9caaf6b4b188d847d050a571477d2fb94f60a8eb0115f671323711"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/__init__.py": {
+      "bytes": 3123,
+      "sha256": "1e6f75bf679664569ee230727e99f5cd9b2dcebaf49ef8b709f21cec46644c86"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/agilex.py": {
+      "bytes": 7991,
+      "sha256": "6fcd81632e24e4dc8a11d78bf4ecacfe0d95afdac536ab142d15db1fad941cb3"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/aloha_mobile.py": {
+      "bytes": 7611,
+      "sha256": "a36cd93b788062b6700783f0c5a0c7a433cdbc940935a3367fa3e7170e5be97c"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/aloha_static.py": {
+      "bytes": 7980,
+      "sha256": "bf281a3c43b453b0034bc8356f30201ef63a4756d2b669429ab996176592de4b"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/asu_table_top_converted_externally_to_rlds.py": {
+      "bytes": 3252,
+      "sha256": "22b434448b0ecf4ed63bb86cbb0a1a102d4f1d958304e5c5d2df77a83196fdb3"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/austin_buds_dataset_converted_externally_to_rlds.py": {
+      "bytes": 2805,
+      "sha256": "95967c6ddddeb1d64748cf1036195562552922ba1df9a1fc1bbbe73aadc34f81"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/austin_sailor_dataset_converted_externally_to_rlds.py": {
+      "bytes": 3246,
+      "sha256": "8ef6018eb1621213aca8880f1532f3112da377e0526c0f83cb077de70f228675"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/austin_sirius_dataset_converted_externally_to_rlds.py": {
+      "bytes": 3310,
+      "sha256": "f7067eea366f1b99f97e1d4cea03ad81bb8d4eeeab37217d61ebd14a4e50fe6f"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/bc_z.py": {
+      "bytes": 3450,
+      "sha256": "5846c0bad49ef5b468eb46ed2c38767804926c0146dde9b3a730ff06072bdcad"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/berkeley_autolab_ur5.py": {
+      "bytes": 3358,
+      "sha256": "f3855135ba49a9758bd237a020b4a47f3dee760636132b06ccb8154776bfcf73"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/berkeley_cable_routing.py": {
+      "bytes": 2406,
+      "sha256": "58b9c78e5e18f98c52aa15771997b917f11e046b2034a316efeb67a1465165c9"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/berkeley_fanuc_manipulation.py": {
+      "bytes": 2786,
+      "sha256": "6d7229ef4b01290c44553553af11c44080cd5c34195440ac8cb2eef34ed3706b"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/berkeley_gnm_cory_hall.py": {
+      "bytes": 2497,
+      "sha256": "301677371beb00131548ff9ce314f1f985bd9b3ebd98eaa385432359d7814cb5"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/berkeley_gnm_recon.py": {
+      "bytes": 2473,
+      "sha256": "ac762a701df4591e1154a069ab1fd19c9d720962088b7db49679ca08c21c2650"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/berkeley_gnm_sac_son.py": {
+      "bytes": 2503,
+      "sha256": "150eb4a22ee421e6ba0bb62f29819296ebd7c1628c82af216e78453d0101032d"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/berkeley_mvp_converted_externally_to_rlds.py": {
+      "bytes": 3253,
+      "sha256": "50a9d3385d31279b459e3a2f4edd5d865c32fdf165f3eef6994f078d974e13dd"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/berkeley_rpt_converted_externally_to_rlds.py": {
+      "bytes": 2800,
+      "sha256": "cfda4900d2a0563a48daa4f7eb840d57efe0994bac8603129f5ab6dac96f6697"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/bridge.py": {
+      "bytes": 2912,
+      "sha256": "2d9cc13d0b43cddeffd71b335264bcbafff76ebbebed549afd0dedb83ee7d1b8"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/bridgev2.py": {
+      "bytes": 7238,
+      "sha256": "f0aa1e3f491f278fca30c2f9df094256c19f3e98bb225eebb1898eff711fddb0"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/calvin.py": {
+      "bytes": 6542,
+      "sha256": "9848d6dbe8cd819fdfb50ee6c6537f628162c27f4a38e29691edada193bd8435"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/cmu_franka_exploration_dataset_converted_externally_to_rlds.py": {
+      "bytes": 2283,
+      "sha256": "f699a28aa21e89deba26513cd81e83f6f4fc2f4c7dda851cba44b7b8dfae73ba"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/cmu_play_fusion.py": {
+      "bytes": 2649,
+      "sha256": "97e04376d20808ec61d0930d6c2ac5eb4b39e3f84643fe3e07d0926edd3887a7"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/cmu_stretch.py": {
+      "bytes": 2578,
+      "sha256": "d31323c3c3e2e0f901a6b3710007a06242f37e67ed85300ef54d2575a047faf5"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/columbia_cairlab_pusht_real.py": {
+      "bytes": 2511,
+      "sha256": "7e754366bf407cb85042f7c7d43436e6631ceb90acf3563fc4b52b8e1216da05"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/dlr_edan_shared_control_converted_externally_to_rlds.py": {
+      "bytes": 3322,
+      "sha256": "ba532ff78753fa96bd9c2d833358bf2f888b61e637fbc807ca89b55d1e419b82"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/dlr_sara_grid_clamp_converted_externally_to_rlds.py": {
+      "bytes": 3191,
+      "sha256": "7cec1b852881e2d9bb85c90797247f865b51d1d9ea9db2d47d5bb982c8980f1b"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/dlr_sara_pour_converted_externally_to_rlds.py": {
+      "bytes": 3227,
+      "sha256": "1e5f1b8f7ed461f12ee807bafaf455a306873d1ce4582ac64182c93d992052e4"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/dobbe.py": {
+      "bytes": 2777,
+      "sha256": "8aca7e31e66e92288df980d8257880a7852c18e28bf3d387e01488df715fa9d8"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/droid.py": {
+      "bytes": 3001,
+      "sha256": "4120b1588599f4cc980982ed4df9251ab55be4baffb33384e467d4e4f250edf3"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/eth_agent_affordances.py": {
+      "bytes": 2389,
+      "sha256": "4336970f56bbe896f9a47262cb34c9cb0ad4d2b10a4493b80fd6e3106849ecd0"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/fmb.py": {
+      "bytes": 2787,
+      "sha256": "7ebcc3641cefba57918d0ab4f9b61af4d4c46e65d2e4072989aa03e2ff71aba2"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/fractal20220817_data.py": {
+      "bytes": 3226,
+      "sha256": "3bb15b54a5b0b5067c1de44720f567ad3357701ffd309873812821a4ac258bb2"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/furniture_bench_dataset_converted_externally_to_rlds.py": {
+      "bytes": 3526,
+      "sha256": "43ef0fb0eb16ce6b8e96eff429a14704c6715402db231356131b02cbf5a71d3c"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/iamlab_cmu_pickup_insert_converted_externally_to_rlds.py": {
+      "bytes": 2420,
+      "sha256": "c1514c1f2db6e6c7bd887645d4b04ba15dd5630cc93da881cf11a4b32413bb00"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/imperialcollege_sawyer_wrist_cam.py": {
+      "bytes": 2137,
+      "sha256": "a5a17b55f7335818fdaca58901f7b66f5bbfeeb74b238e13c80160a750e54113"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/jaco_play.py": {
+      "bytes": 3304,
+      "sha256": "dde3b540d6c00d8cb7a2da1b4f9399a88677a7d097b2cafedff8e9fa5e73c53e"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/kaist_nonprehensile_converted_externally_to_rlds.py": {
+      "bytes": 3762,
+      "sha256": "80ed8689d823920168262976f7c4b162ab626802fd24252274dfcf214b233c23"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/kuka.py": {
+      "bytes": 3702,
+      "sha256": "fee0be39b5c8080dc5d8968990df10d60a2ae8fe7ed7254f11892f948a3b1511"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/language_table.py": {
+      "bytes": 2028,
+      "sha256": "c716953d04617b897d4aa7ad6b924cec82595640af4bbddad9f0200111aaada7"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/maniskill_dataset_converted_externally_to_rlds.py": {
+      "bytes": 4219,
+      "sha256": "42fb13c0e11034a8623abb578be328742f483175143b4df4d51623596a7c170c"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/nyu_door_opening_surprising_effectiveness.py": {
+      "bytes": 2603,
+      "sha256": "0c3869ab6cf1a364dc813055e8a8a52f04efdaf96a28bb05e724a5a59c40ab8a"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/nyu_franka_play_dataset_converted_externally_to_rlds.py": {
+      "bytes": 3164,
+      "sha256": "a9ef925559dd21d632421643f7b6e648e39c1ad17afd8126c66ba7ef87ae5984"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/nyu_rot_dataset_converted_externally_to_rlds.py": {
+      "bytes": 2611,
+      "sha256": "0df798c2637379e494f2fd0c62db24ff6cde03eb00ff38c31c2289d1afc6dfcb"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/qut_dexterous_manpulation.py": {
+      "bytes": 2393,
+      "sha256": "61da006c2df6ab82f0316cb9a382aecb83e62fa4c90665fd69111eb981afa75b"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/rh20t.py": {
+      "bytes": 7980,
+      "sha256": "1b77faff01bb4939cba62e9cd5d9cec8889422dc592154a2ee537ce8acc8c180"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/robo_net.py": {
+      "bytes": 2448,
+      "sha256": "f36d63f778ed2bd04f352b80141ab6761a37f18179faf09b3b4e469ea5d213c9"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/robomimic_can_ph.py": {
+      "bytes": 3428,
+      "sha256": "cc115b6b78400d64f77f812cfb09f09d0439c6ad6e995c3acbc366a3395ff2a9"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/robomimic_lift_ph.py": {
+      "bytes": 3445,
+      "sha256": "644f2b6e7b920000560d0b50d47f23a874a085576910667650ca15a666370296"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/robomimic_square_ph.py": {
+      "bytes": 3450,
+      "sha256": "f6ea3d15fed604d0b3f869dfa0b91e7cbe3fe95195b7428f7244d1a7b1d079c5"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/robomimic_tool_hang_ph.py": {
+      "bytes": 3459,
+      "sha256": "7c05017f6ac8967c8e0e3801c772319f9cb20e932eda90b12dc73abe5f4b8d55"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/robomimic_transport_ph.py": {
+      "bytes": 5234,
+      "sha256": "ab5d98d456143fc69d5c0c7813d333b0a6276353f5b19da61a8f25abe76b17b1"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/roboset.py": {
+      "bytes": 14928,
+      "sha256": "1ba3ab1cce7153dbf2029c978df75a24843d719191a9b0e18e8e1198f1a0def2"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/roboturk.py": {
+      "bytes": 2329,
+      "sha256": "f5fc72b6a2c6a12ae901785b935b6edabb9eee3c9be9fdd5672af4be09a801af"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/roboturk_real_laundrylayout.py": {
+      "bytes": 10233,
+      "sha256": "c49dc3e75aeffaefc61be574cbb240fae4ce7b454fd16f400e9a143f4729e155"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/roboturk_real_objectsearch.py": {
+      "bytes": 9753,
+      "sha256": "312cd4dd20c890cf79428e1720698bf49e6ee93e797312e29f8cf06c4ce6af5d"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/roboturk_real_towercreation.py": {
+      "bytes": 10225,
+      "sha256": "6af2f9969fea7eeda0b985b56d2a2733eadf49b89b24ef39ae1a0b61257aa3f6"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/stanford_hydra_dataset_converted_externally_to_rlds.py": {
+      "bytes": 3489,
+      "sha256": "affcfd3b25a998eb111cb3720746759712711e023e4e3bf5b27de478729054e1"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/stanford_kuka_multimodal_dataset_converted_externally_to_rlds.py": {
+      "bytes": 2836,
+      "sha256": "fb08072459e8f186657d25e6d09381361fbe5988a7405cffbb79ae36c4c43ab8"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/stanford_mask_vit_converted_externally_to_rlds.py": {
+      "bytes": 3669,
+      "sha256": "d6deff0857923d38327ae98a1c664ae902f64260b967d953737b2ce4cc13d651"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/stanford_robocook_converted_externally_to_rlds.py": {
+      "bytes": 3048,
+      "sha256": "a5ebb428dae8acd001372754822ce2eaa71f7ae38e887d176e1fbb0e02c8fdcd"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/taco_play.py": {
+      "bytes": 3452,
+      "sha256": "23ec834d17e69b23888429c0a84bdfbec87e2def08c23343c3f7b9bfb1cdb9e1"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/tokyo_u_lsmo_converted_externally_to_rlds.py": {
+      "bytes": 3118,
+      "sha256": "1873d25681ee4b7e97593ae6664dee60f687553fa1b3c5b4f4d9cf58083545f0"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/toto.py": {
+      "bytes": 2609,
+      "sha256": "7a2505b56bb867a9dd96150ebb92f27f25fb9828416189264829bc8c60f48774"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/ucsd_kitchen_dataset_converted_externally_to_rlds.py": {
+      "bytes": 3074,
+      "sha256": "aa0494608b70a14a655eabffdd98d852ad398e251097634a2b12b21e04f833d3"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/ucsd_pick_and_place_dataset_converted_externally_to_rlds.py": {
+      "bytes": 2906,
+      "sha256": "d306063e55d22922066191ea1ee33f6cda99ab9d52d1d7d560d828168689b933"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/uiuc_d3field.py": {
+      "bytes": 2190,
+      "sha256": "c00e36710e5cd9f3b047294fc7e6af407ca5d7b0860fab1371a5fd07ce4b4094"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/usc_cloth_sim_converted_externally_to_rlds.py": {
+      "bytes": 2151,
+      "sha256": "162bfeb0319fc88392f25eadfd2f5ef8ee09b7e2c819f58fbf610d0d80b6d1dc"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/utaustin_mutex.py": {
+      "bytes": 2762,
+      "sha256": "1e446a2744361c1eac33df657fd755bf7a61206fdec2eef089aaa616752a8b08"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/utokyo_pr2_opening_fridge_converted_externally_to_rlds.py": {
+      "bytes": 3102,
+      "sha256": "5a2095656a5959750c492c98a167b7dd155ad4d3a2ea51c08a744f3ce07f7064"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/utokyo_pr2_tabletop_manipulation_converted_externally_to_rlds.py": {
+      "bytes": 3110,
+      "sha256": "baf45eb5dfdcde4cdbf523b7294f246f7f4efb9dfe7b548fb72331991d9eae63"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/utokyo_xarm_bimanual_converted_externally_to_rlds.py": {
+      "bytes": 4824,
+      "sha256": "224679054924073eee29c71d15b6bb075fbfd9e8552baf47ce5e3d8c2fb9f712"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/utokyo_xarm_pick_and_place_converted_externally_to_rlds.py": {
+      "bytes": 3679,
+      "sha256": "972bd8b8be12567d9051c9334b172b32f3ccb5a8c27efc135a90325fcbcae343"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/preprocess_scripts/viola.py": {
+      "bytes": 3106,
+      "sha256": "9790e48c8ffc71e208f4a2f5d72eaea85b5aa4625d69ecd8ad674c23c46bf420"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/rh20t/hdf5totfrecords.py": {
+      "bytes": 8967,
+      "sha256": "bd736b981bb639e86a125e03135b34ad1a0f588b1f973f182e0f1f781497f921"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/roboset/download.py": {
+      "bytes": 1233,
+      "sha256": "a85b4870af482f84e08970c9dbc2144fd552d9f5d36bdde0d31584d0ff465cac"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/data/roboset/h5totfrecords.py": {
+      "bytes": 3699,
+      "sha256": "5e7033f27c9663b71de13b7e72aec49e34c900dd330683261155973cf1e67414"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/multimodal_encoder/clip_encoder.py": {
+      "bytes": 5774,
+      "sha256": "83a0cf82ffd0f600a8463a8f65d8d2f3f6ba5dbdaae5c503083b2d0f6b1f8350"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/multimodal_encoder/dinov2_encoder.py": {
+      "bytes": 2971,
+      "sha256": "99ef0292a1a8e941b0c50fcdf38592e5f8b29f86a165b171d7672ec94f61ca7e"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/sources/rdt/models/multimodal_encoder/t5_encoder.py": {
+      "bytes": 3910,
+      "sha256": "d6fe4a6c68ed4978e4bb5f7a57bb2ea1441153135bae5db76dcbeca66ae7fa3e"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-002/corpus_audit.json": {
+      "bytes": 456,
+      "sha256": "d72e5a1badb6853561baf07e91bdec49b86e6b8d55de670dc02e247dbd14e223"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-002/noise.npy": {
+      "bytes": 98304128,
+      "sha256": "76b77e050f10849463414dfe81169121bb8925a988e99e97e055d0d3486cdbb8"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/corpus_audit.json": {
+      "bytes": 715,
+      "sha256": "0acf2e77f111c184cde7a2d5035dbb050db50deb1b758c9375b3b03723648161"
+    },
+    "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/rdt-maniskill-unexposed-003/noise.npy": {
+      "bytes": 98304128,
+      "sha256": "a22db4c20034d73b1d8ecc101d4b87e94de783fc571dbf661ba04451f724fdab"
+    }
+  },
+  "adapter_execution_configuration": {
+    "checkpoint_revision": "9622afab2b7ce2312a6cf1febc526928589b77eb",
+    "suite": "maniskill_five",
+    "language_padding": "fixed_right_in_both_modes",
+    "language_tokens": 30,
+    "image_history": 2,
+    "camera_slots": 3,
+    "vision_encoding": "genuinely_batched_six_slots_per_request",
+    "diffusion_steps": 5,
+    "chunk_size": 64,
+    "precision": "bfloat16",
+    "tf32": false,
+    "control_frequency": 25,
+    "action_dim": 8,
+    "noise_dim": 128,
+    "sampler": "official_maniskill_wrapper_equivalent_DPM_solver",
+    "execution": "eager"
+  },
+  "diagnostic_request_pairs": 600,
+  "diagnostic_implementation_groups": 1200,
+  "diagnostic_arrangement_records": 46800,
+  "singleton_fidelity_records": 600,
+  "large_batch_feasible": {
+    "native|B16": true,
+    "batch_invariant|B16": true,
+    "native|B32": true,
+    "batch_invariant|B32": true
+  },
+  "invariant_diagnostic_exact": true,
+  "diagnostic_manifest_sha256": "ec7d55f15b737789583bfbd26fb8504e29d36828ba275e27327f8967bfee5a01",
+  "heldout_manifest_sha256": "f7f4fa9bd71741407334f337b5dba09415647f9ad3edf76e73404669db56a277",
+  "prepared_input_disjointness_verified": true,
+  "full_traced_operator_qualification_complete": true,
+  "full_four_model_campaign_complete": false
+}

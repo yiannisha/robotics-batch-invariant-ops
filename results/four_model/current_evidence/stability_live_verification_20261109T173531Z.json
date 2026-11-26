@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-11-09T17:35:31.353061+00:00",
+  "classification": "verified_wait",
+  "live_jobs": [
+    {
+      "job": "pi05_heldout",
+      "pid": 1942407,
+      "start_ticks": "424051173",
+      "state": "R",
+      "cpu_ticks": 2869957
+    },
+    {
+      "job": "rdt_heldout",
+      "pid": 675019,
+      "start_ticks": "426340577",
+      "state": "R",
+      "cpu_ticks": 723248
+    },
+    {
+      "job": "lingbot_diagnostic",
+      "pid": 4055960,
+      "start_ticks": "425339189",
+      "state": "R",
+      "cpu_ticks": 1437745
+    },
+    {
+      "job": "cogact_paired",
+      "pid": 2770000,
+      "start_ticks": "421141328",
+      "state": "R",
+      "cpu_ticks": 8896836
+    },
+    {
+      "job": "cogact_magnitude_extraction",
+      "pid": 2189899,
+      "start_ticks": "426650620",
+      "state": "R",
+      "cpu_ticks": 48347
+    }
+  ],
+  "produced_pair_counts": {
+    "pi05-post-seal-heldout-001": 662,
+    "rdt-post-seal-heldout-001": 36,
+    "lingbot-post-operators-full-diagnostic-001": 68
+  },
+  "cogact_produced_blocks": 155,
+  "magnitude_status": "extracting_expanded_v5_stability_magnitudes",
+  "accepted_magnitude_starts": 827,
+  "full_campaign_complete": false
+}

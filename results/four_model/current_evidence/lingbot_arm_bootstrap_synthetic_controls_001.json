@@ -1,0 +1,29 @@
+{
+  "scope": "Synthetic CPU controls only; no model evidence",
+  "full_shape_fixture_starts": 2500,
+  "full_shape_fixture_tasks": 50,
+  "fixture_resamples": 10000,
+  "complete_synthetic_recount_passed": true,
+  "negative_controls": [
+    {
+      "case": "altered_interval",
+      "rejected": true,
+      "reason": "ValueError: synthetic_task_00/native/left_mean_peak_position_mm: ci95_high differs"
+    },
+    {
+      "case": "missing_task",
+      "rejected": true,
+      "reason": "ValueError: Missing/duplicate reported task"
+    },
+    {
+      "case": "rehashed_altered_draws",
+      "rejected": true,
+      "reason": "ValueError: Retained draws differ from seed"
+    }
+  ],
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/bootstrap_lingbot_arm_stability.py": "a7dc5908607cfe9a8e60e2d390d67939da5a89e4fdb499eae34ecc179b7173e0",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_lingbot_arm_bootstrap.py": "cb4034cc85ca05ddbe58adb1be110ddfad3c15e64589b9f93d2bb992f1b0d46a"
+  },
+  "actual_model_results": false
+}

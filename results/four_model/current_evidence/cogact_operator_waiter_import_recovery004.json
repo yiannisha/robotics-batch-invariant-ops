@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-11-11T03:55:08.293625+00:00",
+  "pid": 1458453,
+  "start_ticks": "439056058",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-retry-local-isolated-operator-performance-004.py",
+  "launcher_sha256": "9d937884bb7f5c82781db0250119ac136c7b1e47668610a3b8a5e7f3f563d5d8",
+  "previous_launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-retry-local-isolated-operator-performance-003.py",
+  "previous_failed_before_wait_or_measurement": true,
+  "reason": "Import requires repository PYTHONPATH; corrected launch environment only.",
+  "full_campaign_complete": false
+}

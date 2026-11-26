@@ -1,0 +1,50 @@
+{
+  "observed_utc": "2026-11-10T09:19:16.337050+00:00",
+  "launchers": [
+    {
+      "pid": 2204086,
+      "start_ticks": 423251297,
+      "state": "S",
+      "name": "pi05-post-seal-heldout-001",
+      "status": "running"
+    },
+    {
+      "pid": 3656961,
+      "start_ticks": 424394005,
+      "state": "S",
+      "name": "rdt-post-seal-heldout-001",
+      "status": "running"
+    },
+    {
+      "pid": 498330,
+      "start_ticks": 424604390,
+      "state": "S",
+      "name": "cogact-post-seal-heldout-001",
+      "status": "running"
+    },
+    {
+      "pid": 2673330,
+      "start_ticks": 425049152,
+      "state": "S",
+      "name": "lingbot-post-operators-full-diagnostic-001",
+      "status": "running_full_model_diagnostic"
+    },
+    {
+      "pid": 3189801,
+      "start_ticks": 425157502,
+      "state": "S",
+      "name": "lingbot-post-diagnostic-B64-capacity-001",
+      "status": "waiting_for_live_full_diagnostic_pipeline"
+    },
+    {
+      "pid": 3341438,
+      "start_ticks": 425188104,
+      "state": "S",
+      "name": "lingbot-post-diagnostic-full-paired-001",
+      "status": "waiting_for_live_diagnostic_and_B64_pipeline"
+    }
+  ],
+  "checked_pinned_files": 152,
+  "mismatches": [],
+  "classification": "verified_wait"
+}

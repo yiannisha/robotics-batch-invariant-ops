@@ -1,0 +1,8 @@
+{
+  "pid": 1791898,
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/rdt-idle-gated-independent-performance-audit-002.py",
+  "sha256": "5f2edf2f1d9c802be5f63fe4976b7d6d86dff6c8b7841b370504ee54cb885672",
+  "dependency_pid": 1781635,
+  "dependency_start_ticks": "450441247",
+  "full_campaign_complete": false
+}

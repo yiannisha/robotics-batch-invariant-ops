@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-11-09T17:49:52.701650+00:00",
+  "scope": "Regression check of currently completed partial v6 rows against previously accepted77-start comparisons. Not acceptance of the125-start magnitude report.",
+  "matching_starts": [
+    {
+      "task": "move_near",
+      "initialization": 0
+    },
+    {
+      "task": "move_near",
+      "initialization": 1
+    },
+    {
+      "task": "move_near",
+      "initialization": 2
+    },
+    {
+      "task": "move_near",
+      "initialization": 3
+    },
+    {
+      "task": "move_near",
+      "initialization": 4
+    }
+  ],
+  "comparisons_exactly_equal": true,
+  "new_report_partial_starts": 5,
+  "live_child": {
+    "pid": 2720053,
+    "start_ticks": "426761984",
+    "state": "R",
+    "cpu_ticks": 22590
+  },
+  "accepted_magnitude_starts_unchanged": 827,
+  "full_campaign_complete": false
+}

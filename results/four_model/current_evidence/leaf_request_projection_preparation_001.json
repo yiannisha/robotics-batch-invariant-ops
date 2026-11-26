@@ -1,0 +1,22 @@
+{
+  "timestamp_utc": "2026-11-09T15:45:24.708184+00:00",
+  "status": "source_backed_cfg_projection_prepared_and_integrated_cpu_controls_passed",
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/leaf_request_projection.py": "3c114c77c75d00709521deaa12678cedaf6eace134d47f23d315abf39de251a0",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/test_leaf_request_projection.py": "527221809e7b0ec43ee085a5b3628287cc5b48a3506f9bb2761672e93d14f565",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/trace_exact_model_leaf_divergence.py": "01f934695ed82bed607126c362525017cd347f868f3404ee711329606946ab93"
+  },
+  "focused_tests_passed": 6,
+  "integrated_cfg_target_projection_control": "passed",
+  "unresolved_same_shape_control": "rejected_as_noncomparable",
+  "scope": "Separate exact-adapter leaf tracer uses conditional/unconditional target blocks for CogACT action_model.net. Requires declared logical batch size and preserves reference/candidate scan hashes. Unknown shapes excluded from numeric attribution.",
+  "actual_model_tracing_executed": false,
+  "operator_attribution_complete": false,
+  "remaining": [
+    "Actual exact-input traced inference and repeated output checks",
+    "Source-backed mapping for any further flattened or shared structural boundaries",
+    "Capture real local operator inputs/weights/outputs and independently verify isolated reexecution"
+  ],
+  "frozen_or_live_numerical_sources_changed": false,
+  "full_campaign_complete": false
+}

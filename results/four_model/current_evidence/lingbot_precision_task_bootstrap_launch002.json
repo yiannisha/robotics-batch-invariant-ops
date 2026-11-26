@@ -1,0 +1,27 @@
+{
+  "status": "queued_corrected_precision_task_tables_and_bootstrap_not_results",
+  "jobs": [
+    {
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-002.py",
+      "sha256": "fab79ce28cb972b7b6012f1089d2d9d4883f982581089baec2db3a9c490ca096",
+      "pid": 3304863,
+      "start_ticks": "439476790",
+      "state": "waiting_for_live_independent_full_magnitude_audit"
+    },
+    {
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-task-tables-independent-audit-002.py",
+      "sha256": "2fc9e12dd0a233f0873a659474ad3b6bf18e988496b5e0e737558c13613575ac",
+      "pid": 3304864,
+      "start_ticks": "439476810",
+      "state": "waiting_for_live_full_task_table_extraction"
+    },
+    {
+      "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/lingbot-precision-arm-bootstrap-002.py",
+      "sha256": "d08753ea9b54152c06b0d0687c3722072bc7bcd6a56f2baaab74f3b5ac7e3f74",
+      "pid": 3304865,
+      "start_ticks": "439476831",
+      "state": "waiting_for_live_full_task_table_acceptance"
+    }
+  ],
+  "full_campaign_complete": false
+}

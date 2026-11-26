@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-11-09T22:19:37.394655+00:00",
+  "status": "all_200_blocks_retained_full_independent_raw_audit_live",
+  "tasks": {
+    "pick_can": 50,
+    "move_near": 50,
+    "open_drawer": 50,
+    "close_drawer": 50
+  },
+  "retained_episode_files": 2400,
+  "producer_pid": 2770000,
+  "producer_handle_missing": true,
+  "audit_parent_pid": 1736131,
+  "audit_parent_start_ticks": "424018054",
+  "audit_children": [
+    {
+      "pid": 2383779,
+      "start_ticks": "428397247",
+      "state": "R",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python -m scripts.audit_cogact_paired_study --directory /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1 --output /scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_complete_audit.json --rebuild-inputs --require-complete "
+    }
+  ],
+  "acceptance": false,
+  "accepted_magnitude_starts": 875,
+  "full_campaign_complete": false
+}

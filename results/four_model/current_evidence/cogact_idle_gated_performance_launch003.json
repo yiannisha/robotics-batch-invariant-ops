@@ -1,0 +1,10 @@
+{
+  "observed_utc": "2026-11-11T04:03:25.317380+00:00",
+  "pid": 1702486,
+  "start_ticks": "439105760",
+  "launcher": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/logs/cogact-idle-gated-isolated-performance-003.py",
+  "launcher_sha256": "f706cf0a99181da0c8b0d167a9c771675544478b4b818ad91c3f3084522dc62d",
+  "reason": "Two rejected timing attempts; require 300 consecutive sampled idle seconds before next attempt, then retain original isolation checks.",
+  "actual_retry_measurements_started": false,
+  "full_campaign_complete": false
+}

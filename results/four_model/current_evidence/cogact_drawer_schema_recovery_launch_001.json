@@ -1,0 +1,57 @@
+{
+  "observed_at": "2026-11-09T17:46:07.534143+00:00",
+  "launched": [
+    {
+      "name": "cogact-v6-stability-and-bootstrap-001",
+      "pid": 2720050,
+      "start_ticks": "426761982",
+      "script_sha256": "6daa1a48034e31f8edf9d7315637106d12cbf3b1fa0e940e3d5794216f03555f",
+      "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1",
+      "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python",
+      "proof": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_progress_audit_expanded_v5.json",
+      "expected_starts": 125,
+      "dependency_pid": 1736131,
+      "dependency_start_ticks": "424018054",
+      "source_sha256": {
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_paired_stability_v2.py": "f277a9daa4326d9e4464882189f7258cd97eeff064b3c40c54f4580b47bf8d5f",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_paired_stability_metrics_v2.py": "066dcfd3aa63470cde75d473c848d93d0a5fa7eaa10d49f77c6c5bf1d423e751",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/bootstrap_paired_stability.py": "969df51fb8c91313ea4e609fef49adaf00d2622cdcf6dd2e83c28ca4017c4b6d",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_paired_stability_bootstrap.py": "03241879d73fb35320e25bc75b9f338c14aac715fae5b63a0cdbd22e826cfded",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_cogact_paired_study.py": "ea832a5280bfbe9369d91e3f21c39a57aa0dddae1532a6f5d57ca6689d241ffb"
+      },
+      "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v6.json",
+      "audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v6_independent_audit.json",
+      "bootstrap": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v6_bootstrap_001.json",
+      "draws": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v6_bootstrap_draws_001.npz",
+      "bootstrap_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_v6_bootstrap_001_independent_audit.json"
+    },
+    {
+      "name": "cogact-full-200-stability-and-bootstrap-003",
+      "pid": 2720051,
+      "start_ticks": "426761982",
+      "script_sha256": "2c91727febcc1a49a39510ffd1844d9553200c50cbac331f977bab1e4333ff98",
+      "repo": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops",
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1",
+      "python": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/envs/cogact/bin/python",
+      "proof": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/cogact_simpler_locked_v1/independent_complete_audit.json",
+      "expected_starts": 200,
+      "dependency_pid": 1736131,
+      "dependency_start_ticks": "424018054",
+      "source_sha256": {
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_paired_stability_v2.py": "f277a9daa4326d9e4464882189f7258cd97eeff064b3c40c54f4580b47bf8d5f",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_paired_stability_metrics_v2.py": "066dcfd3aa63470cde75d473c848d93d0a5fa7eaa10d49f77c6c5bf1d423e751",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/bootstrap_paired_stability.py": "969df51fb8c91313ea4e609fef49adaf00d2622cdcf6dd2e83c28ca4017c4b6d",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_paired_stability_bootstrap.py": "03241879d73fb35320e25bc75b9f338c14aac715fae5b63a0cdbd22e826cfded",
+        "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/audit_cogact_paired_study.py": "ea832a5280bfbe9369d91e3f21c39a57aa0dddae1532a6f5d57ca6689d241ffb"
+      },
+      "report": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2.json",
+      "audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_independent_audit.json",
+      "bootstrap": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_bootstrap_001.json",
+      "draws": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_bootstrap_draws_001.npz",
+      "bootstrap_audit": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/paired_stability_cogact_200_v2_bootstrap_001_independent_audit.json"
+    }
+  ],
+  "accepted_magnitude_starts_unchanged": 827,
+  "full_campaign_complete": false
+}

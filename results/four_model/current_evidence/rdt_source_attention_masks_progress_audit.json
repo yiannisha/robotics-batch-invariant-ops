@@ -1,0 +1,68 @@
+{
+  "status": "source_attention_measurements_independently_verified",
+  "configuration_sha256": "117ec328c44f4a395ceb9038c293b0a364c64b64408865a7827bc209bc5ceb54",
+  "raw_records": 891,
+  "raw_records_sha256": "7ea87ad6aeee31157af2a8e8b6f1c15716a8e3d24a22b0323b119efc6bbdfcb5",
+  "auditor_sha256": "33eaccc8bbe967d0f806bda94e61e38f26cef35584437b2518b91e6fb6cb228a",
+  "arrangements": [
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B16|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B16|last",
+      "measured_seeds": 91,
+      "complete": false,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B1|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B2|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B2|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B4|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B4|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B8|first",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    },
+    {
+      "arrangement": "rdt_source_language_mask_valid25|B8|last",
+      "measured_seeds": 100,
+      "complete": true,
+      "native_nonexact_seeds": 0
+    }
+  ],
+  "completed_arrangements": 8,
+  "prescribed_arrangements": 102,
+  "all_selected_arrangements_complete": false,
+  "full_model_operator_qualification_complete": false,
+  "timing_not_qualified": true
+}

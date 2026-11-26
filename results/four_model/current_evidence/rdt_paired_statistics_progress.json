@@ -1,0 +1,90 @@
+{
+  "status": "provisional_task_specific_paired_statistics",
+  "completed_paired_starts": 10,
+  "prescribed_paired_starts": 250,
+  "by_task": {
+    "PegInsertionSide-v1": {
+      "paired_starts": 10,
+      "unit": "paired_task_initialization",
+      "repeats_counted_as_trials": false,
+      "successes": {
+        "native_singleton": 1,
+        "native_dynamic": 1,
+        "patched_singleton": 2,
+        "patched_dynamic": 2
+      },
+      "success_rate": {
+        "native_singleton": 0.1,
+        "native_dynamic": 0.1,
+        "patched_singleton": 0.2,
+        "patched_dynamic": 0.2
+      },
+      "comparisons": {
+        "patched_singleton_minus_native_singleton": {
+          "estimate_percentage_points": 10.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            30.0
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 1,
+          "reference_only_successes": 0,
+          "both_successes": 1,
+          "both_failures": 8,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_native_dynamic": {
+          "estimate_percentage_points": 10.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            30.0
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 1,
+          "reference_only_successes": 0,
+          "both_successes": 1,
+          "both_failures": 8,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "native_dynamic_minus_native_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 1,
+          "both_failures": 9,
+          "exact_two_sided_mcnemar_p": 1.0
+        },
+        "patched_dynamic_minus_patched_singleton": {
+          "estimate_percentage_points": 0.0,
+          "paired_bootstrap_ci95_percentage_points": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_seed": 20250401,
+          "bootstrap_resamples": 10000,
+          "candidate_only_successes": 0,
+          "reference_only_successes": 0,
+          "both_successes": 2,
+          "both_failures": 8,
+          "exact_two_sided_mcnemar_p": 1.0
+        }
+      }
+    }
+  },
+  "bootstrap_method": "pi_zero_analyze_simpler_percentile_paired_episode_bootstrap",
+  "bootstrap_limitations": "Empirical paired resampling cannot represent discordance types absent from the observed sample; small samples require caution.",
+  "numerical_qa_acceptance_pending": true,
+  "success_rate_campaign_complete": false,
+  "source_audit": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/rdt_maniskill_locked_v1/independent_progress_audit.json",
+  "source_audit_sha256": "174d49f8550dd71b8de7b963022f8030d60f2ef87e6c1797f598fbca4f1e15ef",
+  "source_audit_snapshot": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/paired/rdt_maniskill_locked_v1/audit_snapshots/174d49f8550dd71b8de7b963022f8030d60f2ef87e6c1797f598fbca4f1e15ef.json",
+  "statistics_source_sha256": "89bd67dd1bb6c1e36eb981557e0858f33ad949445715e59017318e94781b6289"
+}
