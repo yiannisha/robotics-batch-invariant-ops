@@ -1,0 +1,15 @@
+{
+  "status": "partial_corrected_native_corpus_reconstruction_independently_verified",
+  "observed_utc": "2026-11-26T22:10:31.548669+00:00",
+  "audit_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/replay/native_source_v3_001/progress_audit003.json",
+  "audit_sha256": "d83c7f465e52856c83a279e81798ea7b1d887041881a0b1fa85bcd5d5a3fe68a",
+  "manifest_snapshot_sha256": "f341d2e6bec3b56ed76350f1b94ad4e17307497534c3c12e32ad417e8db71b4b",
+  "completed_native_episodes": 12,
+  "raw_frames_verified": 5389,
+  "model_calls_rebuilt": 113,
+  "selected_inputs_rebuilt": 60,
+  "raw_file_digests_rechecked": 5675,
+  "paired_stability_measured": false,
+  "full_corpus_complete": false,
+  "heldout_freshness_accepted": false
+}

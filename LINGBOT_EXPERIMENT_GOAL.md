@@ -101,8 +101,9 @@ its task-owned callback explicitly. Failed attempts remain retained, and the
 cabinet initialization repair is still awaiting replay acceptance.
 
 Corrected, per-call TF32-off native source collection has recorded 13 of the
-prescribed 200 episodes at this checkpoint. Four episodes have independently
-verified reconstruction evidence; a larger snapshot audit is running. These
+prescribed 200 episodes at this checkpoint. Twelve episodes have independently
+verified reconstruction evidence: 5,389 raw frames, 113 policy calls and 60
+selected inputs, with corrected precision records verified. These
 source episodes supply future numerical inputs and are not paired stability
 trials. The 2,500-start paired campaign has not begun. Missing historical raw
 exposure identities remain unresolved; prospective collection alone does not
