@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_robotwin_benchmark_replay.py", line 93, in <module>
+    if __name__=='__main__':main()
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster001/frozen_helpers/qualify_robotwin_benchmark_replay.py", line 64, in main
+    raise RuntimeError(response['error'])
+RuntimeError: Uncovered task state at task.check_arm_function: builtins.method

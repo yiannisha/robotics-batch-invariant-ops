@@ -1,0 +1,27 @@
+{
+  "task": "click_alarmclock",
+  "pid": 4054397,
+  "start_ticks": "50865505",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/cabinet_source_v2_001/qualify_robotwin_benchmark_replay.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/click_alarmclock_callback002",
+    "--task",
+    "click_alarmclock",
+    "--seed-start",
+    "100000",
+    "--repeats",
+    "3",
+    "--capture-source-task-state"
+  ],
+  "observed_utc": "2026-11-26T22:33:51.323023+00:00",
+  "model_evaluated": false,
+  "independent_audit_required": true
+}
