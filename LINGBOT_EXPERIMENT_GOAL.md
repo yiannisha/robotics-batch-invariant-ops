@@ -2,8 +2,8 @@
 
 Requested November 26, 2026. The active research priority is LingBot-VLA2;
 existing pi05/RDT/CogACT evidence is preserved. No WAM experiments are in scope.
-The broader four-model campaign remains incomplete; this document does not mark
-it complete or replace the thread's unfinished goal in the application.
+The focused LingBot goal is now active in the application. The previous broader
+four-model campaign remains incomplete; creating this goal does not mark it complete.
 
 ## Objective and fixed comparison
 
@@ -64,3 +64,23 @@ same-condition repeats before accepting simulator evidence.
 
 The paired stability study is the priority. Ancillary timing must not gate its
 execution or reporting once simulator and retention requirements are satisfied.
+
+## Recovery progress: November 26, 2026
+
+The new host has roughly 12 TB available on scratch; the historical 1.5 TB
+capacity blocker no longer applies there. GPU UUIDs differ, so old numerical and
+simulator runtime acceptance cannot simply be transferred. Recovery root:
+`/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126`.
+
+Recovered clean source checkouts: LingBot `be969b8fd117fb70550c5d4bf4bc328211b5b1b6`,
+RoboTwin `13c3c47ff4312dd62484bcd51be034af55c062d1`, and LeRobot v0.4.2
+`58f70b6bd370864139a3795ac3497a9eae8c42d5`. Twenty source files bound by the old
+diagnostic acceptance match; four LeRobot dataset/utility files differ from the
+old modified checkout. Those differences are recorded, not silently accepted.
+
+`scripts/recover_lingbot_pinned_assets.py` is recovering the released checkpoint
+and RoboTwin asset archives against their archived SHA-256/size records, plus
+metadata-only Qwen assets at the pinned revision. Acquisition does not qualify
+inference or simulation. Separate Python 3.12 inference and Python 3.10 simulator
+environments are being rebuilt. Reset, runtime and numerical checks must precede
+new paired result acceptance. No new trajectory or success result is claimed.

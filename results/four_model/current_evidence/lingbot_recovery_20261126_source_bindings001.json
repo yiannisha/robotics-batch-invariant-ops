@@ -1,0 +1,44 @@
+{
+  "sources": {
+    "lingbot-vla2": {
+      "commit": "be969b8fd117fb70550c5d4bf4bc328211b5b1b6",
+      "dirty": false
+    },
+    "robotwin": {
+      "commit": "13c3c47ff4312dd62484bcd51be034af55c062d1",
+      "dirty": false
+    },
+    "lerobot": {
+      "commit": "58f70b6bd370864139a3795ac3497a9eae8c42d5",
+      "dirty": false
+    }
+  },
+  "archived_bound_source_matches": [
+    "sources/lerobot/src/lerobot/__init__.py",
+    "sources/lerobot/src/lerobot/__version__.py",
+    "sources/lerobot/src/lerobot/configs/types.py",
+    "sources/lerobot/src/lerobot/datasets/backward_compatibility.py",
+    "sources/lerobot/src/lerobot/datasets/compute_stats.py",
+    "sources/lerobot/src/lerobot/datasets/image_writer.py",
+    "sources/lerobot/src/lerobot/utils/utils.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/__init__.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/__init__.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/configuration_lingbot_vla.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/flex_attention.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/modeling_lingbot_vla.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/modeling_lingbot_vla_v2.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/qwen2_action_expert.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/qwen3vl_in_vla.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/qwenvl_in_vla.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/lingbot_vla/utils.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/pi0/__init__.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/vision_models/align_heads/depth_head.py",
+    "sources/lingbot-vla2/lingbotvla/models/vla/vision_models/align_heads/resampler.py"
+  ],
+  "mismatches": [
+    "sources/lerobot/src/lerobot/datasets/lerobot_dataset.py",
+    "sources/lerobot/src/lerobot/datasets/utils.py",
+    "sources/lerobot/src/lerobot/datasets/video_utils.py",
+    "sources/lerobot/src/lerobot/utils/constants.py"
+  ]
+}

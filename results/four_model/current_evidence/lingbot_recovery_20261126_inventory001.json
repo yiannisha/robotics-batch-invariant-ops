@@ -1,0 +1,24 @@
+{
+  "status": "new_host_recovery_in_progress",
+  "observed_utc": "2026-11-26T21:01:44.170054+00:00",
+  "root": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126",
+  "scratch_available_bytes": 12307183427584,
+  "old_campaign_root_exists": false,
+  "gpu_inventory": "0, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-fef539ca-c842-db24-5697-95781fb884a3, 97887 MiB, 5721 MiB\n1, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-7f4a5f0f-d5d2-76f3-6923-f8e0de12cb65, 97887 MiB, 63693 MiB\n2, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-1e4894b2-a7d1-4863-b6ef-0e74aca1cdef, 97887 MiB, 4418 MiB\n3, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-17594d78-b021-bba8-5fcd-7e09d2bdf8f9, 97887 MiB, 1 MiB\n4, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-167c1d85-563b-a684-fcac-779c17913fb2, 97887 MiB, 4 MiB\n5, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-5fb9d7f1-65cd-ed25-9ba6-d086c3e5ca5b, 97887 MiB, 4023 MiB\n6, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-a85eae54-d6ea-0c38-fc85-92990146d0b7, 97887 MiB, 1 MiB\n7, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-b03defa1-ef8a-de89-5d3b-d05b46a5cb0b, 97887 MiB, 1 MiB\n",
+  "asset_recovery_launch": {
+    "pid": 1984520,
+    "start_ticks": "50307909",
+    "command": [
+      "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/recovery/bin/python",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/recover_lingbot_pinned_assets.py",
+      "--archive",
+      "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model",
+      "--destination",
+      "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets",
+      "--output",
+      "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/asset_recovery001.json"
+    ]
+  },
+  "scope": "Resource discovery and asset recovery only; prior hardware identity differs, so runtime/reset/numerical requalification is required.",
+  "full_campaign_complete": false
+}

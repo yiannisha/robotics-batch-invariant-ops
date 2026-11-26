@@ -1,0 +1,22 @@
+{
+  "status": "recovery_checkpoint_and_cpu_contract_tests_verified",
+  "verified_utc": "2026-11-26T21:08:04.406677+00:00",
+  "tests": {
+    "count": 31,
+    "result": "passed",
+    "modules": [
+      "scripts.test_lingbot_paired_protocol",
+      "scripts.test_lingbot_full_stability",
+      "scripts.test_lingbot_dual_arm_drift",
+      "scripts.test_four_model_freeze_gates",
+      "scripts.test_lingbot_episode_binding",
+      "scripts.test_lingbot_exposure_freeze_schema"
+    ]
+  },
+  "checkpoint_tensors_verified": 1708,
+  "checkpoint_elements": 6375907511,
+  "checkpoint_load_qa_sha256": "adc3603c934cd91a13126c12e3b44029d7d1341e3ed19b070f950ee31b61dae4",
+  "asset_recovery_receipt_sha256": "cc96a2f39d1e01402d677db3ede8c92e1318a452b98eace55e1672d8c7811612",
+  "scope": "Asset integrity, official constructor dtype-sequence load, imports and CPU protocol contracts only. Fresh GPU numerical qualification and simulator reset/replay qualification remain required.",
+  "full_campaign_complete": false
+}

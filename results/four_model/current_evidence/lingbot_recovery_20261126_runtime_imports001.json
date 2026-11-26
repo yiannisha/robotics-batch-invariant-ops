@@ -1,0 +1,21 @@
+{
+  "status": "runtime_imports_verified_not_inference_qualified",
+  "observed_utc": "2026-11-26T21:04:58.487662+00:00",
+  "inference": {
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.3",
+    "flash_attn": "2.8.3",
+    "released_server_import": true,
+    "import_gpu_uuid": "GPU-17594d78-b021-bba8-5fcd-7e09d2bdf8f9"
+  },
+  "simulator": {
+    "python": "3.10.17",
+    "torch": "2.8.0+cu128",
+    "sapien": "3.0.0b1",
+    "numpy": "1.26.4",
+    "sapien_and_mplib_import": true
+  },
+  "scope": "Package and released server imports only. No checkpoint construction, simulator reset, or numerical inference is qualified.",
+  "full_campaign_complete": false
+}

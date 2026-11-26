@@ -1,0 +1,19 @@
+{
+  "status": "all_tensors_loaded_and_verified",
+  "tensor_count": 1708,
+  "source_elements": 6375907511,
+  "strict_official_loader": true,
+  "all_tensors_exact_after_declared_dtype_conversion": true,
+  "load_dtype_counts": {
+    "torch.bfloat16": 727,
+    "torch.float32": 981
+  },
+  "dtype_sequence": "checkpoint -> official constructor parameter dtype -> released FP32 deployment conversion",
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "precision": "float32",
+  "deterministic_moe": "shared_with_native_and_invariant_conditions",
+  "runner_sha256": "b66fa739dbe05717ed42a3cb35bdb6357eab836651bc5d399a62f80e9aa0f6f1",
+  "numerical_inference_qualified": false,
+  "closed_loop_qualified": false
+}

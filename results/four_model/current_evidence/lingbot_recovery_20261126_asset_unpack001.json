@@ -1,0 +1,24 @@
+{
+  "status": "verified_assets_unpacked",
+  "archives": {
+    "background_texture.zip": {
+      "members": 11003,
+      "uncompressed_bytes": 11025457080
+    },
+    "embodiments.zip": {
+      "members": 250,
+      "uncompressed_bytes": 943569382
+    },
+    "objects.zip": {
+      "members": 10070,
+      "uncompressed_bytes": 4636111726
+    }
+  },
+  "links": {
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/assets/objects": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/objects",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/assets/embodiments": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/embodiments",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/assets/background_texture": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/robotwin_unpacked_001/background_texture"
+  },
+  "excluded_metadata_prefix": "__MACOSX/",
+  "simulator_qualified": false
+}
