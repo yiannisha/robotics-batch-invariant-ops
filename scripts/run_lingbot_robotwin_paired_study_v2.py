@@ -88,7 +88,13 @@ def main():
     from scripts import collect_lingbot_robotwin_campaign_replay_v2 as collector
     source_hashes[str(Path(collector.__file__).resolve())]=sha(Path(collector.__file__))
     workers={}
+    from scripts import lingbot_rigid_qualification as rigid_contract
+    from scripts import audit_robotwin_benchmark_replay_v4 as rigid_auditor
+    for helper in (rigid_contract, rigid_auditor):
+        source_hashes[str(Path(helper.__file__).resolve())]=sha(Path(helper.__file__))
     for task in tasks:
+        proof=json.loads((Path(q['qualified_tasks'][task]['directory'])/'independent_audit.json').read_text())
+        rigid_contract.require_rigid_replay_proof(proof)
         worker,sources=qualified_worker(q['qualified_tasks'][task]);workers[task]=worker;source_hashes.update(sources)
     os.environ.update(QWEN3VL_PATH=str(a.qwen_metadata),LINGBOT_VLA2_SOURCE=str(a.source),
         LINGBOT_VLA2_CHECKPOINT=str(a.checkpoint),LINGBOT_ROBOTWIN_EXACT_MANIFEST=str(a.manifest))
@@ -113,7 +119,7 @@ def main():
         runtime=dict(adapter='scripts.model_invariance.adapters.lingbot_robotwin_exact_v2',tf32_matmul=torch.backends.cuda.matmul.allow_tf32,tf32_cudnn=torch.backends.cudnn.allow_tf32,torch=torch.__version__,cuda=torch.version.cuda,gpu=torch.cuda.get_device_properties(0).name,
             gpu_uuid=str(torch.cuda.get_device_properties(0).uuid),simulator_python=str(a.robotwin_python.resolve()),
             simulator_source=str(a.robotwin_source.resolve())),
-        primary_endpoint='singleton_vs_batched_stability',numerical_qa_acceptance_pending=True)
+        primary_endpoint='singleton_vs_batched_stability',physics_capture_contract=rigid_contract.CONTRACT,numerical_qa_acceptance_pending=True)
     a.output.mkdir(parents=True,exist_ok=True);lock_path=a.output/'candidate_lock.json'
     if lock_path.exists():require(json.loads(lock_path.read_text())==lock,'Candidate changed on resume')
     else:write_json(lock_path,lock)
@@ -123,6 +129,7 @@ def main():
     def read_frame(frame):
         path=Path(frame['path']).resolve();require(path.is_relative_to(a.output.resolve()),'Worker frame escapes study')
         raw=torch.load(path,map_location='cpu',weights_only=False)
+        rigid_auditor.verify_rigid_physics(raw)
         for key in ('observation','physics','rng','task_state'):
             require(digest(raw[key])==frame[key+'_sha256'],'Raw worker state differs: '+key)
         require(raw['controller']==frame['controller'],'Controller evidence differs')

@@ -63,12 +63,16 @@ def main():
     require(not a.output.exists(),'Preserve existing audits')
     torch.set_num_threads(8);lock_path=d/'candidate_lock.json';lock_hash=sha(lock_path);lock=json.loads(lock_path.read_text())
     q=json.loads(a.qualification_union.read_text())
+    from scripts.lingbot_rigid_qualification import CONTRACT,require_rigid_replay_proof
+    from scripts.audit_robotwin_benchmark_replay_v4 import verify_rigid_physics
+    require(lock.get('physics_capture_contract')==CONTRACT,'Explicit rigid-body capture contract required')
     require(sha(a.qualification_union)==lock['qualification_union_sha256'],'Wrong task qualification union')
     tasks=q['prescribed_tasks'];require(len(tasks)==50 and len(set(tasks))==50 and lock['global_tasks']==tasks and set(q['qualified_tasks'])==set(tasks),'Wrong task roster')
     for entry in q['qualified_tasks'].values():
         directory=Path(entry['directory']);audit_path=directory/'independent_audit.json'
         require(sha(audit_path)==entry['independent_audit_sha256'],'Qualified simulator audit changed')
         proof=json.loads(audit_path.read_text())
+        require_rigid_replay_proof(proof)
         require(proof['initial_state_and_full_trajectories_exact'] and proof['cpu_and_cuda_rng_verified'] and proof['source_defined_task_state_frames_verified']==proof['raw_frames_verified'],'Incomplete simulator qualification')
         require(sha(directory/'replays.jsonl')==proof['raw_replays_sha256'],'Qualified simulator raw replay changed')
     require(lock['initialization_ids']==list(range(50)) and lock['conditions']==list(CONDITIONS) and lock['dynamic_cycle']==[1,2,4,8],'Wrong paired cohort/conditions')
@@ -123,6 +127,7 @@ def main():
             for i,frame in enumerate(trajectory):
                 if frame['raw_frame'] not in frame_cache:frame_cache[frame['raw_frame']]=raw(frame['raw_frame'],'frames')
                 value=frame_cache[frame['raw_frame']]
+                verify_rigid_physics(value)
                 for key in ('observation','physics','rng','task_state'):require(digest(value[key])==frame[key+'_sha256'],'Full observable state differs: '+key)
                 require(value['controller']==frame['controller'] and frame['controller']['take_action_count']==i and frame['controller']['instruction']==chosen['instruction'],'Controller progression differs')
                 if i<len(steps):require(not frame['controller']['eval_success'] and i<frame['controller']['step_limit'],'Episode continued after termination')

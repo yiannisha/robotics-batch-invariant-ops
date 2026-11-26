@@ -137,3 +137,10 @@ pending; no stronger task acceptance is claimed from tests or the smoke alone.
 The first v4 helper variant used the wrong sleeping-property API and its launched
 attempt was stopped and retained. The corrected immutable variant is
 `rigid_source_v4_002`, currently running `dump_bin_bigbin_rigid004`.
+
+The full 50-task stronger requalification is running separately in
+`task_roster_rigid_v4_001`; legacy results are not reused. The paired runner and
+bound episode auditor now require the stronger qualification report and check
+the rigid-body schema and Entity bindings on every retained frame. Forty-seven
+relevant tests pass, including rejection of legacy and partial attestations.
+At this checkpoint no task has completed the stronger independent replay audit.

@@ -1,0 +1,23 @@
+{
+  "pid": 132236,
+  "start_ticks": "50937566",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/rigid_source_v4_002/qualify_lingbot_robotwin_reset_roster.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--task-roster",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/robotwin_reset_qualification_union.json",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001"
+  ],
+  "driver_sha256": "630bd6feb1526a3d449b5ea133de2955029c784efd322526d7caea80aefcf0cc",
+  "helper_derivation_sha256": "0fd618e06891dcff417941b1ce54675705680da6490d3a3db9a5a072e83f67c4",
+  "scope": "full50 task requalification with explicit rigid dynamic state; not model evaluation",
+  "legacy_qualification_not_reused": true,
+  "independent_audit_required": true
+}

@@ -7,6 +7,7 @@ from scripts.probe_robotwin_exact_initialization_v3 import capture_state
 from scripts.robotwin_task_state_v4 import encode
 from scripts.audit_robotwin_benchmark_replay_v4 import verify_rigid_physics
 from scripts.qualify_simpler_fixed_action_replay import digest
+from scripts.lingbot_rigid_qualification import require_rigid_replay_proof
 
 
 class PhysxRigidDynamicComponent:
@@ -73,6 +74,28 @@ class RigidPhysics(unittest.TestCase):
         self.scene.get_all_actors = lambda:[self.first, self.first]
         with self.assertRaisesRegex(TypeError, 'unique'):encode(self.first, owner=self.env)
         with self.assertRaisesRegex(TypeError, 'Unscoped'):encode(self.first)
+
+
+class PairedQualificationGate(unittest.TestCase):
+    def proof(self):
+        return dict(status='complete_fixed_action_replay_independently_verified',
+                    repeats=3, controls_per_repeat=400, raw_frames_verified=1203,
+                    initial_state_and_full_trajectories_exact=True, cpu_and_cuda_rng_verified=True,
+                    source_defined_task_state_frames_verified=1203,
+                    rigid_body_state_frames_verified=1203, entity_references_bound_to_physics=0)
+
+    def test_complete_stronger_attestation_passes(self):
+        require_rigid_replay_proof(self.proof())
+
+    def test_legacy_partial_or_mismatched_attestations_are_rejected(self):
+        for key, value in [('rigid_body_state_frames_verified', None),
+                           ('rigid_body_state_frames_verified', 1202),
+                           ('entity_references_bound_to_physics', None),
+                           ('repeats', 2), ('controls_per_repeat', 399)]:
+            proof = self.proof()
+            proof[key] = value
+            with self.subTest(key=key, value=value), self.assertRaisesRegex(ValueError, 'qualification'):
+                require_rigid_replay_proof(proof)
 
 
 if __name__ == '__main__':unittest.main()

@@ -1,0 +1,13 @@
+{
+  "scope": "acceptance enforcement and tests; not simulator or model campaign completion",
+  "contract": "rigid_components_v2_entities_v4",
+  "relevant_tests_passed": 47,
+  "source_sha256": {
+    "lingbot_rigid_qualification.py": "747cfd79d0a0ad720034d80a9a9b133637445c4df332111882541ac1c8350a96",
+    "run_lingbot_robotwin_paired_study_v2.py": "cf65d1aee56ac7aef27fe7a531c0b6b804aae2c4ef260ab19a27bda271d9f551",
+    "audit_lingbot_paired_study_bound_v2.py": "fee2f9fe74844c7312b4c0bd1c9ae6b4034a8417f8322844e77ea2584271a12b",
+    "test_robotwin_rigid_physics.py": "14c56b91cbf7628af07f7118e6f047142b12e1e55ea3b130c8031f4cf9bebc68"
+  },
+  "stronger_independently_qualified_tasks": 0,
+  "full_model_campaign_complete": false
+}
