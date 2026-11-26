@@ -155,3 +155,13 @@ tasks: `lift_pot` and `dump_bin_bigbin`. The dump-bin report verifies 1,803 full
 rigid-state frames across three 600-control replays, 3,606 Action records and
 9,015 Entity-to-physics bindings. The stronger all-task roster continues; these
 two task reports do not establish full-roster or paired model completion.
+
+`rigid_qualified_union003` adds `turn_switch` and `hanging_mug`, for four accepted
+tasks. The stamp-seal attempt exposed a render-only Entity target outside the
+rigid-actor list. Recorder/auditor v5 captures its scene index, name, pose and
+explicit render-only component type, rejecting unknown components and conflicting
+aliases. Rigid-body capture is unchanged; earlier nonvisual task paths remain
+frozen. Fifty-one relevant tests and a SAPIEN check with a render system passed.
+The CPU-only visual smoke lacked a render system and was rejected. The failed
+stamp attempt remains retained; `stamp_seal_visual002` is running and is not yet
+accepted. The paired runner/auditor also validates this visual state extension.

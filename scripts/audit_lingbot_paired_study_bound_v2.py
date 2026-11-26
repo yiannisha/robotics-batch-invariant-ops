@@ -64,7 +64,7 @@ def main():
     torch.set_num_threads(8);lock_path=d/'candidate_lock.json';lock_hash=sha(lock_path);lock=json.loads(lock_path.read_text())
     q=json.loads(a.qualification_union.read_text())
     from scripts.lingbot_rigid_qualification import CONTRACT,require_rigid_replay_proof
-    from scripts.audit_robotwin_benchmark_replay_v4 import verify_rigid_physics
+    from scripts.audit_robotwin_benchmark_replay_v5 import verify_rigid_physics
     require(lock.get('physics_capture_contract')==CONTRACT,'Explicit rigid-body capture contract required')
     require(sha(a.qualification_union)==lock['qualification_union_sha256'],'Wrong task qualification union')
     tasks=q['prescribed_tasks'];require(len(tasks)==50 and len(set(tasks))==50 and lock['global_tasks']==tasks and set(q['qualified_tasks'])==set(tasks),'Wrong task roster')

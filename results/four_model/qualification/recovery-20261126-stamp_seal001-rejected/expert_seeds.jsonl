@@ -1,0 +1,1 @@
+{"request": {"op": "expert", "task": "stamp_seal", "seed": 100000, "test_num": 100, "instruction_type": "unseen"}, "response": {"ok": false, "error": "Entity reference is not a unique scene actor at task.target", "error_type": "TypeError"}}

@@ -89,7 +89,7 @@ def main():
     source_hashes[str(Path(collector.__file__).resolve())]=sha(Path(collector.__file__))
     workers={}
     from scripts import lingbot_rigid_qualification as rigid_contract
-    from scripts import audit_robotwin_benchmark_replay_v4 as rigid_auditor
+    from scripts import audit_robotwin_benchmark_replay_v5 as rigid_auditor
     for helper in (rigid_contract, rigid_auditor):
         source_hashes[str(Path(helper.__file__).resolve())]=sha(Path(helper.__file__))
     for task in tasks:

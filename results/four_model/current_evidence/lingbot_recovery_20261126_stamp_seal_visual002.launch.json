@@ -1,0 +1,26 @@
+{
+  "pid": 461528,
+  "start_ticks": "51025215",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001/qualify_robotwin_benchmark_replay.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/stamp_seal_visual002",
+    "--task",
+    "stamp_seal",
+    "--seed-start",
+    "100000",
+    "--repeats",
+    "3",
+    "--capture-source-task-state"
+  ],
+  "helper_derivation_sha256": "44d1a0019ac6d243e66e31f9ce3f2cc576c6605a28702450b53a136f579b9bf6",
+  "model_evaluated": false,
+  "independent_audit_required": true
+}

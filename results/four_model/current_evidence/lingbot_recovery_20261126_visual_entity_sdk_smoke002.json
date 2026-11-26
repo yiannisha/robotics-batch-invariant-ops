@@ -1,0 +1,1 @@
+{"scope": "SAPIEN API smoke with render system, not full replay qualification", "status": "passed", "component_types": ["sapien.pysapien.render.RenderBodyComponent"], "rejected_cpu_only_smoke": "RenderBody requires a render system; no qualification launched from that attempt"}

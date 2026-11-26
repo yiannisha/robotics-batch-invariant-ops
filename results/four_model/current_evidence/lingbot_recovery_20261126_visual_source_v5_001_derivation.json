@@ -1,0 +1,13 @@
+{
+  "scope": "render-only Entity target state extension; rigid-body checks unchanged",
+  "parent": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/rigid_source_v4_002",
+  "helper_sha256": {
+    "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "robotwin_exact_worker.py": "adfe27fc2aa283725ca31881dfe693b5f4dc4a0e74551722a6ac7b28286369a4",
+    "robotwin_task_state.py": "2b75129a6cd9ae73bdf168dec4565119dd425214316381ecd9724a2761ec3485",
+    "probe_robotwin_exact_initialization.py": "b34c214f69eb26282de3d5ae9086196b4e832c4a1e5f50b9d28aa5ad14586412",
+    "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+    "audit_robotwin_benchmark_replay.py": "6db49e8104b3a98047279b2ea6e2533167961840f99792692d0962ad52e07e7c"
+  },
+  "sdk_smoke_sha256": "79cfa7a30f7b89211311fb93335f61457ee0c9a34049be07ef60003b27579d03"
+}
