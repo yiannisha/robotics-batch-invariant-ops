@@ -1,0 +1,23 @@
+{
+  "pid": 1175267,
+  "start_ticks": "51204048",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/lingbot/bin/python",
+    "-m",
+    "scripts.audit_lingbot_campaign_corpus_v2",
+    "--directory",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/replay/native_source_v3_001",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/lingbot-vla2",
+    "--checkpoint",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/lingbot_vla2/checkpoints/global_step_50000/hf_ckpt",
+    "--qwen-metadata",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/assets/lingbot_qwen_metadata",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/replay/native_source_v3_001/progress_audit006.json"
+  ],
+  "prior_collector_terminal": true,
+  "completed_episodes": 44,
+  "manifest_sha256": "640092ee6e831ca6e04b2e587efe5e18fe363217f0a925fca5839dd0c9dcfc87",
+  "sealed_episode_and_source_hashes_verified": true
+}

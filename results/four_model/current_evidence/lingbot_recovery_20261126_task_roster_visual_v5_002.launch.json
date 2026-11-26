@@ -1,0 +1,28 @@
+{
+  "pid": 1258312,
+  "start_ticks": "51223845",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/roster_source_v5_002/qualify_lingbot_robotwin_reset_roster_v2.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--task-roster",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/robotwin_reset_qualification_union.json",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002",
+    "--helper-directory",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/roster_source_v5_002",
+    "--reuse-qualification-union",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/task_roster_visual_v5_002_reuse.json"
+  ],
+  "observed_utc": "2026-11-26T23:33:34.720447+00:00",
+  "reuse_qualification_sha256": "3c501175f56ebfa1629d3b9717ec05fcb570eab0c9b9a65d33147b5db8d51212",
+  "prepared_helper_derivation_sha256": "9dd3690f0282192353ed9732f2ac6f27461e7752ecf8282af3dc33a1d9045d8d",
+  "old_roster_stop_receipt_sha256": "6a06bce36e4489ba8941fb6cbd04bfebba97c83272d61d6082f02bf1c87e7faf",
+  "scope": "full50-task qualification with visual-aware capture; accepted old reports immutable",
+  "model_evaluated": false
+}

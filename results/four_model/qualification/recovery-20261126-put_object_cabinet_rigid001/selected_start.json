@@ -1,0 +1,33 @@
+{
+  "seed": 100026,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "073_rubikscube/base1",
+        "{B}": "036_cabinet/base0",
+        "{a}": "left",
+        "{b}": "right"
+      }
+    },
+    "instruction": "Pull out the drawer of the cabinet with light wood panels and set the red, blue, green, yellow rubikscube into it.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/put_object_cabinet/frames/frame-000000.pt",
+      "observation_sha256": "5ebf5b40c66bc5969c4c9a4e04b22efe0d3a3d882b50588393e3bb7d3300475d",
+      "physics_sha256": "8dd64134c74b094f76404139edbaffc75892d357e7a29507c2eb2d7cf5d62054",
+      "rng_sha256": "fc5686d645dd316d8b8deed6fec9314ef7f57beefe9266551cdc811a39106d10",
+      "task_state_sha256": "195a778516cd68faa956cca5c14b6435459e5dc713a9663752f6a7f6031effb0",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 700,
+        "eval_success": false,
+        "instruction": "Pull out the drawer of the cabinet with light wood panels and set the red, blue, green, yellow rubikscube into it."
+      }
+    }
+  }
+}

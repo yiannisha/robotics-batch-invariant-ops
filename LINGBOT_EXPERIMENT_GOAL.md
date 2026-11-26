@@ -186,3 +186,12 @@ the 1,172 source-corpus request records, remain unresolved. This partial history
 recovery is not a final freshness seal and does not gate the primary paired
 launch. Numerical qualification, full reset coverage and the full input corpus
 still precede that launch; ancillary timing does not.
+
+`rigid_qualified_union009` accepts 12 tasks after adding `handover_block`,
+`click_bell`, `stack_blocks_two`, and the cabinet rigid-state replay. After that
+cabinet acceptance, the v4 roster was stopped to upgrade capture; its partial
+next-task attempt remains retained. The visual-aware v2 roster driver is now
+running in `task_roster_visual_v5_002`, reusing those 12 byte-bound reports without
+rewriting their audits. Fifty-nine relevant tests pass. Source collection's
+current segment finished normally at 44/200 episodes, and independent snapshot
+audit 006 is running. Those 44 episodes are not all accepted merely by collection.

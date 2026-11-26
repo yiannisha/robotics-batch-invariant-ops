@@ -1,0 +1,27 @@
+{
+  "status": "stopped_owned_roster_to_upgrade_visual_capture_after_cabinet_acceptance",
+  "observed_utc": "2026-11-26T23:33:16.897474+00:00",
+  "terminated_owned_processes": [
+    {
+      "pid": 132236,
+      "start_ticks": "50937566",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/rigid_source_v4_002/qualify_lingbot_robotwin_reset_roster.py --source /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin --python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python --source-episodes /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl --task-roster /home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/robotwin_reset_qualification_union.json --output /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001 "
+    },
+    {
+      "pid": 1228442,
+      "start_ticks": "51216391",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/frozen_helpers/qualify_robotwin_benchmark_replay.py --source /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin --python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python --source-episodes /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl --output /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/open_microwave --task open_microwave --seed-start 100000 --repeats 3 --capture-source-task-state "
+    },
+    {
+      "pid": 1228450,
+      "start_ticks": "51216397",
+      "command": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/frozen_helpers/robotwin_exact_worker.py --source /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin --output /scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/open_microwave/frames --capture-cuda-rng --capture-source-task-state "
+    }
+  ],
+  "last_task": "open_microwave",
+  "accepted_task_reports": 7,
+  "snapshot": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/task_roster_rigid_v4_001_upgrade_snapshot.json",
+  "snapshot_sha256": "cbf53ed268936cae51aa56d176cdb4867dceb60485ff9a6a01fbcf6b294d45e7",
+  "no_raw_data_removed": true,
+  "completed_reports_preserved": true
+}
