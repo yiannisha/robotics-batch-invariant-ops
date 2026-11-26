@@ -1,0 +1,216 @@
+{
+  "scope": "historical tensor recovery only; not a policy or paired experiment",
+  "historical_pilot_sha256": "83b0d3ad35bc9df2c2c9fb9d647998194b1678e0c52dd0ad77b1cad7f5181e31",
+  "historical_exposure_history_sha256": "7acc135e262f232ad8fe182987a6ec8fc93fd42c345e47c27c1d3dbd64e267b1",
+  "expert_seed_sha256": "b2cbe980d11230ecc8684e1b443c42c430461b156a973a0d7ebb226d7d457f0d",
+  "requested_conditions": [
+    "native_singleton"
+  ],
+  "recovered_requests": [
+    {
+      "condition": "native_singleton",
+      "policy_call": 0,
+      "frame_index": 0,
+      "raw_request": "requests/e4c2ab855a73845f8d589a4b413bb3362cfdfaa7572de42af18566d24b04ff4a.pt.gz",
+      "request_file_sha256": "e46bb6e8b86715e6c3a41322befc23c999a77043ffe5dc9cb709697910764d37",
+      "input_signatures": {
+        "images": {
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            256,
+            1536
+          ],
+          "sha256": "ed8208bffb8cc0a33f3d2c607ca0c8003c6620624f3bd87fb1bc137aa3a804e0"
+        },
+        "img_masks": {
+          "dtype": "torch.bool",
+          "shape": [
+            3
+          ],
+          "sha256": "75c8fd04ad916aec3e3d5cb76a452b116b3d4d0912a0a485e9fb8e3d240e210c"
+        },
+        "lang_tokens": {
+          "dtype": "torch.int64",
+          "shape": [
+            72
+          ],
+          "sha256": "e72329c77b7274deacbb045f062f170261a6e3e58198c4862d911940753239c2"
+        },
+        "lang_masks": {
+          "dtype": "torch.bool",
+          "shape": [
+            72
+          ],
+          "sha256": "95aa15ae9b68a3a57c0a2c8c11478125b86e0a51b98cb23f1598772b73662af8"
+        },
+        "state": {
+          "dtype": "torch.float32",
+          "shape": [
+            55
+          ],
+          "sha256": "96a806dc109aec0bf065845af5437108f00baebe0765edeabd27304275c4481a"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            3,
+            3
+          ],
+          "sha256": "74db1921dc69fb6393b27f658d905fb5510509178e1aa276505332f3d6b1fcaa"
+        },
+        "noise": {
+          "dtype": "torch.float32",
+          "shape": [
+            50,
+            55
+          ],
+          "sha256": "36c4e615d499ca9c8f42c54c1883bd08fc4196ca9b76a7194549283868af1cdf"
+        }
+      },
+      "archived_signatures_exact": true,
+      "observation_sha256": "893411550a77d42036d8866d41f085a5214e45c7bfe77ea817f023cc24a380e9"
+    },
+    {
+      "condition": "native_singleton",
+      "policy_call": 1,
+      "frame_index": 50,
+      "raw_request": "requests/cce043bf9a21b15077d6fdcc6751976206ab54a1a3d0fc81892fd6c8bf874392.pt.gz",
+      "request_file_sha256": "c4e7c0cd957fcd7c6527055640bb2503d1974c6edcd027bb9890e4c3d0d5b63f",
+      "input_signatures": {
+        "images": {
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            256,
+            1536
+          ],
+          "sha256": "fb9f400a2f3f75019b60bb6704588ed13b810f7718cdebc5c5e1a9fa83984fc7"
+        },
+        "img_masks": {
+          "dtype": "torch.bool",
+          "shape": [
+            3
+          ],
+          "sha256": "75c8fd04ad916aec3e3d5cb76a452b116b3d4d0912a0a485e9fb8e3d240e210c"
+        },
+        "lang_tokens": {
+          "dtype": "torch.int64",
+          "shape": [
+            72
+          ],
+          "sha256": "e72329c77b7274deacbb045f062f170261a6e3e58198c4862d911940753239c2"
+        },
+        "lang_masks": {
+          "dtype": "torch.bool",
+          "shape": [
+            72
+          ],
+          "sha256": "95aa15ae9b68a3a57c0a2c8c11478125b86e0a51b98cb23f1598772b73662af8"
+        },
+        "state": {
+          "dtype": "torch.float32",
+          "shape": [
+            55
+          ],
+          "sha256": "3743a5686f689139bc7571b49556bb4fefa0e54fe51376feca85909429c736ba"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            3,
+            3
+          ],
+          "sha256": "74db1921dc69fb6393b27f658d905fb5510509178e1aa276505332f3d6b1fcaa"
+        },
+        "noise": {
+          "dtype": "torch.float32",
+          "shape": [
+            50,
+            55
+          ],
+          "sha256": "35dbcf9df6f60f5b979cb562eca41f7d2332d811ddd4e6837f340f5ac6dffba7"
+        }
+      },
+      "archived_signatures_exact": true,
+      "observation_sha256": "6d7846ce698295a83a3caf57d6157852d2ac02515e30e4225f455b66d72d4bbf"
+    },
+    {
+      "condition": "native_singleton",
+      "policy_call": 2,
+      "frame_index": 100,
+      "raw_request": "requests/4d56391e8e3e6dcaf9aa6758e84bc2a10dc3715bacbf8335e23b2d7f273316e1.pt.gz",
+      "request_file_sha256": "a607e64614c2137bf10b2be861b0278ee02381bc221859c9b8ef7bcb6c55f833",
+      "input_signatures": {
+        "images": {
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            256,
+            1536
+          ],
+          "sha256": "4c6c0107f4be109d5008d2066fbeeff93ebc7aa5a6dab588152f6ff35abc2f50"
+        },
+        "img_masks": {
+          "dtype": "torch.bool",
+          "shape": [
+            3
+          ],
+          "sha256": "75c8fd04ad916aec3e3d5cb76a452b116b3d4d0912a0a485e9fb8e3d240e210c"
+        },
+        "lang_tokens": {
+          "dtype": "torch.int64",
+          "shape": [
+            72
+          ],
+          "sha256": "e72329c77b7274deacbb045f062f170261a6e3e58198c4862d911940753239c2"
+        },
+        "lang_masks": {
+          "dtype": "torch.bool",
+          "shape": [
+            72
+          ],
+          "sha256": "95aa15ae9b68a3a57c0a2c8c11478125b86e0a51b98cb23f1598772b73662af8"
+        },
+        "state": {
+          "dtype": "torch.float32",
+          "shape": [
+            55
+          ],
+          "sha256": "9e3dd4305af92148263176d0cf0a4634bf7c039b85766c84089e30b9da40eba3"
+        },
+        "image_grid_thw": {
+          "dtype": "torch.int64",
+          "shape": [
+            3,
+            3
+          ],
+          "sha256": "74db1921dc69fb6393b27f658d905fb5510509178e1aa276505332f3d6b1fcaa"
+        },
+        "noise": {
+          "dtype": "torch.float32",
+          "shape": [
+            50,
+            55
+          ],
+          "sha256": "d6d28fafa868fcce17b4b1accfef3d951bb52a25110bc26e46b9218bc65952d1"
+        }
+      },
+      "archived_signatures_exact": true,
+      "observation_sha256": "4f74385172285cc07514c9a0872205901c94fed2aac2a581bce691ded67930ce"
+    }
+  ],
+  "neural_inference_performed": false,
+  "complete_historical_exposure_coverage": false,
+  "source_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/recover_lingbot_historical_pilot_inputs.py": "822e063afaa9ba4f9285344f3f5173dbd49e7eee2e8dd667fb70e07ed33d0e4a",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001/qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001/robotwin_exact_worker.py": "adfe27fc2aa283725ca31881dfe693b5f4dc4a0e74551722a6ac7b28286369a4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001/robotwin_task_state.py": "2b75129a6cd9ae73bdf168dec4565119dd425214316381ecd9724a2761ec3485",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001/probe_robotwin_exact_initialization.py": "b34c214f69eb26282de3d5ae9086196b4e832c4a1e5f50b9d28aa5ad14586412",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001/qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001/audit_robotwin_benchmark_replay.py": "6db49e8104b3a98047279b2ea6e2533167961840f99792692d0962ad52e07e7c"
+  },
+  "status": "requested_historical_pilot_tensors_recovered_by_exact_archived_signatures",
+  "recovered_request_count": 3
+}

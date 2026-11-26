@@ -1,0 +1,100 @@
+{
+  "status": "historical_pilot_request_tensors_independently_matched_to_archived_signatures",
+  "historical_pilot_sha256": "83b0d3ad35bc9df2c2c9fb9d647998194b1678e0c52dd0ad77b1cad7f5181e31",
+  "recovered_request_files": 9,
+  "unique_tensor_requests": 6,
+  "covered_historical_call_occurrences": 24,
+  "historical_call_occurrences": 24,
+  "coverage_by_condition": {
+    "native_singleton": 3,
+    "native_dynamic": 3,
+    "patched_singleton": 3,
+    "patched_dynamic": 3,
+    "native_singleton_repeat": 3,
+    "native_dynamic_repeat": 3,
+    "patched_singleton_repeat": 3,
+    "patched_dynamic_repeat": 3
+  },
+  "complete_this_pilot_input_coverage": true,
+  "request_files": [
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_probe001/requests/e4c2ab855a73845f8d589a4b413bb3362cfdfaa7572de42af18566d24b04ff4a.pt.gz",
+      "sha256": "e46bb6e8b86715e6c3a41322befc23c999a77043ffe5dc9cb709697910764d37",
+      "condition": "native_singleton",
+      "policy_call": 0,
+      "prepared_input_identity": "ae1d7a8f3491a4a72919b922a4c4596ba5976a0db1b2ae373a7a2ec913c6b94e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_probe001/requests/cce043bf9a21b15077d6fdcc6751976206ab54a1a3d0fc81892fd6c8bf874392.pt.gz",
+      "sha256": "c4e7c0cd957fcd7c6527055640bb2503d1974c6edcd027bb9890e4c3d0d5b63f",
+      "condition": "native_singleton",
+      "policy_call": 1,
+      "prepared_input_identity": "78f528acd1cde0a46c29f102dc0a4dc25735628c1e642ef1f2fb493fa9282312"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_probe001/requests/4d56391e8e3e6dcaf9aa6758e84bc2a10dc3715bacbf8335e23b2d7f273316e1.pt.gz",
+      "sha256": "a607e64614c2137bf10b2be861b0278ee02381bc221859c9b8ef7bcb6c55f833",
+      "condition": "native_singleton",
+      "policy_call": 2,
+      "prepared_input_identity": "dde90071d04d38d6200ca96bf2900bd2c01d006d3e403eccdfbf95d51a8b39ac"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/e4c2ab855a73845f8d589a4b413bb3362cfdfaa7572de42af18566d24b04ff4a.pt.gz",
+      "sha256": "e46bb6e8b86715e6c3a41322befc23c999a77043ffe5dc9cb709697910764d37",
+      "condition": "native_dynamic",
+      "policy_call": 0,
+      "prepared_input_identity": "ae1d7a8f3491a4a72919b922a4c4596ba5976a0db1b2ae373a7a2ec913c6b94e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/cce043bf9a21b15077d6fdcc6751976206ab54a1a3d0fc81892fd6c8bf874392.pt.gz",
+      "sha256": "c4e7c0cd957fcd7c6527055640bb2503d1974c6edcd027bb9890e4c3d0d5b63f",
+      "condition": "native_dynamic",
+      "policy_call": 1,
+      "prepared_input_identity": "78f528acd1cde0a46c29f102dc0a4dc25735628c1e642ef1f2fb493fa9282312"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/7fb3cd99e99725e2470f5c5ce7392834395dc366e13e4e0d18a576b075f0fcd1.pt.gz",
+      "sha256": "aa6c57dc8c3552041d6b69234c99778885c3ac1072e7a3785df8e466bf02323d",
+      "condition": "native_dynamic",
+      "policy_call": 2,
+      "prepared_input_identity": "89fcf3dda39426c4b6e35a94f446a11badf8b33a41356ae5bb1e4a9c3ce42f3e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/e4c2ab855a73845f8d589a4b413bb3362cfdfaa7572de42af18566d24b04ff4a.pt.gz",
+      "sha256": "e46bb6e8b86715e6c3a41322befc23c999a77043ffe5dc9cb709697910764d37",
+      "condition": "patched_singleton",
+      "policy_call": 0,
+      "prepared_input_identity": "ae1d7a8f3491a4a72919b922a4c4596ba5976a0db1b2ae373a7a2ec913c6b94e"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/53369685c436c89c1c655e13bb8dba58e15398484695d82fbad22c85d75360d7.pt.gz",
+      "sha256": "6115494d7bab3c143f8d9926b629b6d794f2c4a015aa27759472c7c8efb4d0af",
+      "condition": "patched_singleton",
+      "policy_call": 1,
+      "prepared_input_identity": "d5b144e7b194801873a00d92abbcd7750ff3b187884bfd5921500d0f2317a354"
+    },
+    {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/8f4ad8167f28ccf03348c2488bbc3aad93a160b6c7e3929980c6034fcc10447e.pt.gz",
+      "sha256": "88e01cc4e6c07993e5710b791be574fb7dcc4bd9102b3292d74a74898ef3908a",
+      "condition": "patched_singleton",
+      "policy_call": 2,
+      "prepared_input_identity": "d33f3260fa7dd12ba1b76907423efe8e97c35844635c2898e294db1f988f77ed"
+    }
+  ],
+  "raw_files_sha256": {
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/qualification/lingbot-closed-loop-pilot-001/episodes.jsonl.gz": "12686f641a9fc76afb9a39dd8d6a12e2de420011873b359214edb874b628c835",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_extended_preliminary_exposure_screen.json": "7acc135e262f232ad8fe182987a6ec8fc93fd42c345e47c27c1d3dbd64e267b1",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_probe001/recovery_report.json": "5732613601fe94aa1359caabb9ca0b4ede3e1d2efd3244e6cb0fdadf21b71a91",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_probe001/requests/e4c2ab855a73845f8d589a4b413bb3362cfdfaa7572de42af18566d24b04ff4a.pt.gz": "e46bb6e8b86715e6c3a41322befc23c999a77043ffe5dc9cb709697910764d37",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_probe001/requests/cce043bf9a21b15077d6fdcc6751976206ab54a1a3d0fc81892fd6c8bf874392.pt.gz": "c4e7c0cd957fcd7c6527055640bb2503d1974c6edcd027bb9890e4c3d0d5b63f",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_probe001/requests/4d56391e8e3e6dcaf9aa6758e84bc2a10dc3715bacbf8335e23b2d7f273316e1.pt.gz": "a607e64614c2137bf10b2be861b0278ee02381bc221859c9b8ef7bcb6c55f833",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/recovery_report.json": "e5abcbcc799ab2fe05c9672d4eb3da36712bc7e5f4a00446ee7848e4e410e433",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/e4c2ab855a73845f8d589a4b413bb3362cfdfaa7572de42af18566d24b04ff4a.pt.gz": "e46bb6e8b86715e6c3a41322befc23c999a77043ffe5dc9cb709697910764d37",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/cce043bf9a21b15077d6fdcc6751976206ab54a1a3d0fc81892fd6c8bf874392.pt.gz": "c4e7c0cd957fcd7c6527055640bb2503d1974c6edcd027bb9890e4c3d0d5b63f",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/7fb3cd99e99725e2470f5c5ce7392834395dc366e13e4e0d18a576b075f0fcd1.pt.gz": "aa6c57dc8c3552041d6b69234c99778885c3ac1072e7a3785df8e466bf02323d",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/53369685c436c89c1c655e13bb8dba58e15398484695d82fbad22c85d75360d7.pt.gz": "6115494d7bab3c143f8d9926b629b6d794f2c4a015aa27759472c7c8efb4d0af",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/pilot001_remainder002/requests/8f4ad8167f28ccf03348c2488bbc3aad93a160b6c7e3929980c6034fcc10447e.pt.gz": "88e01cc4e6c07993e5710b791be574fb7dcc4bd9102b3292d74a74898ef3908a"
+  },
+  "auditor_sha256": "5319ccb9fc3cea3f5703eab421a3f6dacdd8ef33692d0a3de79799bbaed36a97",
+  "complete_historical_exposure_coverage": false
+}
