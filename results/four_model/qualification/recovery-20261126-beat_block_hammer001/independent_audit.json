@@ -1,0 +1,15 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "beat_block_hammer",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 400,
+  "raw_frames_verified": 1203,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1203,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "c13a3140a6d88d268d4d008d2f29edc4ad5610404d9f6048451fdecf8b807138",
+  "auditor_sha256": "991b38377c37b2d39ea58c149b882e12937a7af36088de4f5d9674ca61f75fe0"
+}
