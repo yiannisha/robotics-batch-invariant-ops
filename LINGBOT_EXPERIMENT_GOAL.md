@@ -78,12 +78,11 @@ RoboTwin `13c3c47ff4312dd62484bcd51be034af55c062d1`, and LeRobot v0.4.2
 diagnostic acceptance match; four LeRobot dataset/utility files differ from the
 old modified checkout. Those differences are recorded, not silently accepted.
 
-`scripts/recover_lingbot_pinned_assets.py` is recovering the released checkpoint
-and RoboTwin asset archives against their archived SHA-256/size records, plus
-metadata-only Qwen assets at the pinned revision. Acquisition does not qualify
-inference or simulation. Separate Python 3.12 inference and Python 3.10 simulator
-environments are being rebuilt. Reset, runtime and numerical checks must precede
-new paired result acceptance. No new trajectory or success result is claimed.
+The released checkpoint and RoboTwin asset archives have been recovered against
+their archived SHA-256/size records, together with metadata-only Qwen assets at
+the pinned revision. Separate Python 3.12 inference and Python 3.10 simulator
+environments are restored. Acquisition and checkpoint loading do not establish
+numerical equivalence on this host; renewed numerical checks remain required.
 
 New-host simulator progress: Curobo v0.7.8 is built for SM120, official
 post-install package changes and embodiment path expansion are recorded, and
@@ -91,3 +90,20 @@ post-install package changes and embodiment path expansion are recorded, and
 (400 controls/repeat, 1,203 frames). Initial RGB and physics hashes match the
 archived pilot. The complete 50-task reset roster is running with frozen helper
 sources; full-roster coverage and paired inference are not yet accepted.
+
+The versioned merged record
+`results/four_model/current_evidence/lingbot_recovery_20261126_qualified_union003.json`
+binds eight independently audited tasks: `adjust_bottle`, `lift_pot`,
+`hanging_mug`, `stack_bowls_three`, `scan_object`, `handover_block`, `click_bell`,
+and `open_microwave`. The microwave qualification includes three complete
+1,500-control replays and 4,503 exact raw frames. The click-bell recorder covers
+its task-owned callback explicitly. Failed attempts remain retained, and the
+cabinet initialization repair is still awaiting replay acceptance.
+
+Corrected, per-call TF32-off native source collection has recorded 13 of the
+prescribed 200 episodes at this checkpoint. Four episodes have independently
+verified reconstruction evidence; a larger snapshot audit is running. These
+source episodes supply future numerical inputs and are not paired stability
+trials. The 2,500-start paired campaign has not begun. Missing historical raw
+exposure identities remain unresolved; prospective collection alone does not
+prove held-out freshness against the previous campaign.
