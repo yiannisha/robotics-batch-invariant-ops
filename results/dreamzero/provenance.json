@@ -1,0 +1,25 @@
+{
+  "repositories": {
+    "dreamzero": "ab790c198fbce33503358efbbd4187ce9a89adf3",
+    "robotics-batch-invariant-ops": "b734818852aa694dcd5fe7bd07e0b5de3d76e390",
+    "batch-invariant-pizero-exp": "5c27c822489f789b667548f91a028ce26350cab9",
+    "sim-evals": "3a6b0e8177f696947f49c082728f10ef5133ede1"
+  },
+  "scripts": {
+    "run_dreamzero_native_worker.py": "0c01087ebfcd9a3a1bcec12ee6024415ab7faf91ed7c4dde007f150c30d3d5a5",
+    "run_dreamzero_droid_pairs.py": "77fc5210540149e812c2c3b7a28f51ab9171dc95b830cc9707b542c0ac918d62",
+    "summarize_dreamzero_pairs.py": "aabab2c442833d817155602baff14b00bf5415da874e47e74c6f48c8e10d755d"
+  },
+  "gpus": "nvidia-smi indices 4 and 5, selected by UUID; simulator index 0",
+  "runtime": {
+    "native_gpu_uuids": [
+      "GPU-94757602-37c3-0344-da17-6ac647c8325b",
+      "GPU-225bc55c-3ea0-e312-43ae-c673a57f5dde"
+    ],
+    "attention": "official FA2 dispatcher falling back to PyTorch SDPA; TE and FlashAttention absent",
+    "cache": false,
+    "recompile_limit": 800,
+    "requests_completed": 12,
+    "torch": "2.8.0+cu129"
+  }
+}

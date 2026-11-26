@@ -1,0 +1,44 @@
+{
+  "index": 1,
+  "seconds": 50.87459466885775,
+  "normalized_target_sha256": {
+    "state": "40fb222306a621f9fc7c5c9c52980da474c21b8670b6efe23d89a84cb25879f0",
+    "state_mask": "2a1fd89411f5ba0cfa7200e86648624dcab48c3da303dc8f6dfe19fe5650117d",
+    "text_negative": "060985c3b7d8b211560d37b2ba3dcb040a3a34da487c14201b803ef3ba07b4aa",
+    "text_attention_mask_negative": "f7d6b5a2383045b004f95e1dc00157ebe066d4e14f6e28f2b7c571f5abccd00a",
+    "images": "df49443b18c760ba8b3f8a16fee422a731c2c22d3e00d851e54be4edd29c9add",
+    "text": "2ab049317fd39d14cab6a1aeda2ba4810f4db69e1835e7ef7ef922c1388fc629",
+    "text_attention_mask": "f7d6b5a2383045b004f95e1dc00157ebe066d4e14f6e28f2b7c571f5abccd00a",
+    "embodiment_id": "d113cd0e2ca351504af17098ae2437ae430772a023fcb5f8bf0ca3a61c116958",
+    "has_lapa_action": "dfe2a8f4797bf1a274051e31d649aff936d84a03feef441adb24809534d71c2c",
+    "is_cotrain_instance": "dfe2a8f4797bf1a274051e31d649aff936d84a03feef441adb24809534d71c2c"
+  },
+  "noise": [
+    {
+      "shape": [
+        2,
+        16,
+        2,
+        44,
+        80
+      ],
+      "target_sha256": "7c91b853a6b068fb8a1e44ea598f188a09d300385e8cd09feb1cd7b731d31c8e"
+    },
+    {
+      "shape": [
+        2,
+        24,
+        32
+      ],
+      "target_sha256": "c9f9819e06136094ce37b870c275693d8f3b0a22768543cecdd4cecacc9901da"
+    }
+  ],
+  "raw_target_sha256": {
+    "video.exterior_image_1_left": "d0a062aea394a5642598c1fe8dbd0fcdbea6e4e527915bd6f1a5a819b2359fbb",
+    "video.exterior_image_2_left": "97c9a576d37d8b3df61e63979c35ce6b682a1f64d6aafaae366d799e2e5b1c7b",
+    "video.wrist_image_left": "18217acf1dbfacdd46a4ff4349d91a953c61703d017fda36fa4af40278fa3d67",
+    "state.joint_position": "346269ef3562849d953579a4fde744e952b3c323d7a542d921e64ecb30b97494",
+    "state.gripper_position": "276becbe810e3d8d44241a28b8c390c9f676514c9ed25967f8ed052eee345aa8"
+  },
+  "finite": true
+}

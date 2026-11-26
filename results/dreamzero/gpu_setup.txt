@@ -1,0 +1,70 @@
+Sun Nov  8 23:38:55 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.173.02             Driver Version: 580.173.02     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX PRO 6000 Blac...    Off |   00000000:05:00.0 Off |                    0 |
+| N/A   41C    P0            148W /  600W |   23756MiB /  97887MiB |      1%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA RTX PRO 6000 Blac...    Off |   00000000:06:00.0 Off |                    0 |
+| N/A   68C    P0            419W /  600W |   36078MiB /  97887MiB |     99%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA RTX PRO 6000 Blac...    Off |   00000000:0A:00.0 Off |                    0 |
+| N/A   38C    P0             49W /  600W |     627MiB /  97887MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA RTX PRO 6000 Blac...    Off |   00000000:0B:00.0 N/A |                  N/A |
+|ERR!   35C    P0            N/A  /  N/A  |       0MiB /  97887MiB |     N/A      Default |
+|                                         |                        |                 ERR! |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA RTX PRO 6000 Blac...    On  |   00000000:84:00.0 Off |                    0 |
+| N/A   35C    P0             89W /  600W |    1472MiB /  97887MiB |     26%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA RTX PRO 6000 Blac...    On  |   00000000:85:00.0 Off |                    0 |
+| N/A   33C    P0             86W /  600W |     651MiB /  97887MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA RTX PRO 6000 Blac...    On  |   00000000:89:00.0 Off |                    0 |
+| N/A   55C    P0            259W /  600W |   73765MiB /  97887MiB |     33%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA RTX PRO 6000 Blac...    On  |   00000000:8A:00.0 Off |                    0 |
+| N/A   65C    P0            348W /  600W |   46008MiB /  97887MiB |     82%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          898164      C   ...ardy-20261011/venv/bin/python      16164MiB |
+|    0   N/A  N/A         1871161      G   ...ents/.venv-simpler/bin/python          8MiB |
+|    0   N/A  N/A         1921131    C+G   ...dreamzero/sim-venv/bin/python       7508MiB |
+|    1   N/A  N/A         1436061      C   ...mpaign/envs/cogact/bin/python      15554MiB |
+|    1   N/A  N/A         1871161    C+G   ...ents/.venv-simpler/bin/python       3216MiB |
+|    1   N/A  N/A         1939094      C   ...campaign/envs/pi05/bin/python      17278MiB |
+|    2   N/A  N/A          608566      G   ...rreal-vla/sim/venv/bin/python        617MiB |
+|    4   N/A  N/A         1925825      C   ...com/dreamzero/venv/bin/python        642MiB |
+|    4   N/A  N/A         1980922      C   ...campaign/envs/pi05/bin/python        766MiB |
+|    5   N/A  N/A         1925826      C   ...com/dreamzero/venv/bin/python        642MiB |
+|    6   N/A  N/A         1900330      C   ...FSDPVlaSftWorker.run_training      73756MiB |
+|    7   N/A  N/A         1330700      C   /opt/esam3m/bin/python                 7074MiB |
+|    7   N/A  N/A         1330703      C   /opt/esam3m/bin/python                 7074MiB |
+|    7   N/A  N/A         1330706      C   /opt/esam3m/bin/python                 5442MiB |
+|    7   N/A  N/A         1330707      C   /opt/esam3m/bin/python                 5442MiB |
+|    7   N/A  N/A         1330710      C   /opt/esam3m/bin/python                 5442MiB |
+|    7   N/A  N/A         1330711      C   /opt/esam3m/bin/python                 5442MiB |
+|    7   N/A  N/A         1966374      G   /opt/racing/bin/python                 1669MiB |
+|    7   N/A  N/A         1966375      G   /opt/racing/bin/python                 1669MiB |
+|    7   N/A  N/A         1967602      G   /opt/racing/bin/python                 1665MiB |
+|    7   N/A  N/A         1967698      G   /opt/racing/bin/python                 1665MiB |
+|    7   N/A  N/A         1980397      G   /opt/racing/bin/python                 1665MiB |
+|    7   N/A  N/A         1980445      G   /opt/racing/bin/python                 1665MiB |
++-----------------------------------------------------------------------------------------+

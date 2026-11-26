@@ -1,5 +1,11 @@
 # DreamZero status: BLOCKED for the single-H100 benchmark
 
+**Historical record.** On 2026-11-08, the multi-GPU host successfully ran the
+released DROID checkpoint and completed preliminary native paired simulation.
+See [preliminary results](preliminary_results.md) and
+[local setup](local_setup_status.md). The restriction below applies to the
+earlier single-H100 benchmark.
+
 The current official DreamZero PyTorch release cannot be executed under this
 plan's single-H100 constraint.
 

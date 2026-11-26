@@ -1,0 +1,244 @@
+{
+  "scope": "one scene, one initial state, batch sizes 1 and 2, preliminary native inference",
+  "normalized_target_inputs_identical": true,
+  "target_noise_identical": true,
+  "initial_states_identical": true,
+  "comparisons": {
+    "batch_effect": {
+      "fixed_input_actions": {
+        "exact_equal": false,
+        "max_abs": 0.15603074431419373,
+        "mean_abs": 0.013911839729795853,
+        "different_elements": 175
+      },
+      "executed_actions": {
+        "exact_equal": false,
+        "max_abs": 0.05133998394012451,
+        "mean_abs": 0.005891417909879237,
+        "different_elements": 108
+      },
+      "first_chunk_actions": {
+        "exact_equal": false,
+        "max_abs": 0.009406983852386475,
+        "mean_abs": 0.002395357470959425,
+        "different_elements": 52
+      },
+      "first_chunk_arm_joint_position": {
+        "exact_equal": false,
+        "max_abs": 0.006523530057165772,
+        "mean_abs": 0.0017077434801779287,
+        "different_elements": 56
+      },
+      "scene_state": {
+        "articulation/robot/root_pose": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "articulation/robot/root_velocity": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "articulation/robot/joint_position": {
+          "exact_equal": false,
+          "max_abs": 0.035597801208496094,
+          "mean_abs": 0.002296349971110773,
+          "different_elements": 208
+        },
+        "articulation/robot/joint_velocity": {
+          "exact_equal": false,
+          "max_abs": 0.07876578718423843,
+          "mean_abs": 0.00846674239632578,
+          "different_elements": 208
+        },
+        "rigid_object/rubiks_cube/root_pose": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "rigid_object/rubiks_cube/root_velocity": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "rigid_object/_24_bowl/root_pose": {
+          "exact_equal": false,
+          "max_abs": 7.418533414238482e-06,
+          "mean_abs": 1.2115539421867335e-06,
+          "different_elements": 103
+        },
+        "rigid_object/_24_bowl/root_velocity": {
+          "exact_equal": false,
+          "max_abs": 0.0009034974073074409,
+          "mean_abs": 3.984363684390405e-05,
+          "different_elements": 96
+        }
+      },
+      "first_different_action_step": 0
+    },
+    "singleton_repeat": {
+      "fixed_input_actions": {
+        "exact_equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "different_elements": 0
+      },
+      "executed_actions": {
+        "exact_equal": false,
+        "max_abs": 0.010436296463012695,
+        "mean_abs": 0.0016973705496639013,
+        "different_elements": 54
+      },
+      "first_chunk_actions": {
+        "exact_equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "different_elements": 0
+      },
+      "first_chunk_arm_joint_position": {
+        "exact_equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "different_elements": 0
+      },
+      "scene_state": {
+        "articulation/robot/root_pose": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "articulation/robot/root_velocity": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "articulation/robot/joint_position": {
+          "exact_equal": false,
+          "max_abs": 0.008755266666412354,
+          "mean_abs": 0.0007036016042028483,
+          "different_elements": 104
+        },
+        "articulation/robot/joint_velocity": {
+          "exact_equal": false,
+          "max_abs": 0.02452381420880556,
+          "mean_abs": 0.002009919300200216,
+          "different_elements": 104
+        },
+        "rigid_object/rubiks_cube/root_pose": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "rigid_object/rubiks_cube/root_velocity": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "rigid_object/_24_bowl/root_pose": {
+          "exact_equal": false,
+          "max_abs": 3.5497333783496288e-06,
+          "mean_abs": 8.1901816896744e-07,
+          "different_elements": 105
+        },
+        "rigid_object/_24_bowl/root_velocity": {
+          "exact_equal": false,
+          "max_abs": 0.0008948941067501437,
+          "mean_abs": 4.404062606247946e-05,
+          "different_elements": 96
+        }
+      },
+      "first_different_action_step": 8
+    },
+    "dynamic_repeat": {
+      "fixed_input_actions": {
+        "exact_equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "different_elements": 0
+      },
+      "executed_actions": {
+        "exact_equal": false,
+        "max_abs": 0.013686895370483398,
+        "mean_abs": 0.002369811525568366,
+        "different_elements": 56
+      },
+      "first_chunk_actions": {
+        "exact_equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "different_elements": 0
+      },
+      "first_chunk_arm_joint_position": {
+        "exact_equal": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "different_elements": 0
+      },
+      "scene_state": {
+        "articulation/robot/root_pose": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "articulation/robot/root_velocity": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "articulation/robot/joint_position": {
+          "exact_equal": false,
+          "max_abs": 0.011308563873171806,
+          "mean_abs": 0.0009831596040127057,
+          "different_elements": 104
+        },
+        "articulation/robot/joint_velocity": {
+          "exact_equal": false,
+          "max_abs": 0.03922935202717781,
+          "mean_abs": 0.0026857078534196542,
+          "different_elements": 104
+        },
+        "rigid_object/rubiks_cube/root_pose": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "rigid_object/rubiks_cube/root_velocity": {
+          "exact_equal": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different_elements": 0
+        },
+        "rigid_object/_24_bowl/root_pose": {
+          "exact_equal": false,
+          "max_abs": 2.946701251005379e-06,
+          "mean_abs": 8.200227478597341e-07,
+          "different_elements": 105
+        },
+        "rigid_object/_24_bowl/root_velocity": {
+          "exact_equal": false,
+          "max_abs": 0.00015703540066169808,
+          "mean_abs": 1.6172252772788293e-05,
+          "different_elements": 96
+        }
+      },
+      "first_different_action_step": 8
+    }
+  },
+  "controls_pass": true,
+  "fixed_batch_effect_exceeds_repeat": true,
+  "robot_joint_effect_exceeds_repeat": true,
+  "first_chunk_repeat_trajectories_exact": true,
+  "preliminary_batch_dependent_behavior_observed": true
+}

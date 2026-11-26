@@ -1,0 +1,11 @@
+{
+  "initial_state_sha256": "adbce4a159df15f58122612e7faf758221f3c4c0918672d08550b75614634d00",
+  "initial_observation_sha256": "1cd0c13fda88ec78efd2cc622788b1346df9a2ee9141a4ebd108de47fd6d1254",
+  "companion_sha256": "e55857cdcc76555def7ddaf579f10c604caa6a9f443141845bf2e0b591c24a44",
+  "scene": 1,
+  "seed": 42,
+  "steps": 16,
+  "torch": "2.8.0+cu129",
+  "initial_image_reused": true,
+  "dit_cache": false
+}
