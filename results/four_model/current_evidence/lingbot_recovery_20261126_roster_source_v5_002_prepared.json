@@ -1,0 +1,15 @@
+{
+  "scope": "prepared immutable visual-aware roster helpers; not launched or qualified by preparation",
+  "parent": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001",
+  "source_sha256": {
+    "qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "robotwin_exact_worker.py": "adfe27fc2aa283725ca31881dfe693b5f4dc4a0e74551722a6ac7b28286369a4",
+    "robotwin_task_state.py": "2b75129a6cd9ae73bdf168dec4565119dd425214316381ecd9724a2761ec3485",
+    "probe_robotwin_exact_initialization.py": "b34c214f69eb26282de3d5ae9086196b4e832c4a1e5f50b9d28aa5ad14586412",
+    "qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+    "audit_robotwin_benchmark_replay.py": "6db49e8104b3a98047279b2ea6e2533167961840f99792692d0962ad52e07e7c",
+    "lingbot_rigid_qualification.py": "747cfd79d0a0ad720034d80a9a9b133637445c4df332111882541ac1c8350a96",
+    "qualify_lingbot_robotwin_reset_roster_v2.py": "194cab3287dc9ef9705dad63ffa9b02046a4ee95cc5f3a3bcb4140793911193d"
+  },
+  "reuse_preserves_existing_report_bytes": true
+}
