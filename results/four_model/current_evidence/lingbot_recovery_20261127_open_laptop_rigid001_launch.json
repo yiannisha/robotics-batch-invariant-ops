@@ -1,0 +1,38 @@
+{
+  "pid": 3252346,
+  "start_ticks": "51719440",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/laptop_source_v7_001/qualify_robotwin_benchmark_replay.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/open_laptop_rigid001",
+    "--task",
+    "open_laptop",
+    "--seed-start",
+    "100000",
+    "--repeats",
+    "3",
+    "--capture-source-task-state"
+  ],
+  "observed_utc": "2026-11-27T00:56:10.672418+00:00",
+  "model_evaluated": false,
+  "independent_audit_required": true,
+  "gpu_uuid": "GPU-17594d78-b021-bba8-5fcd-7e09d2bdf8f9",
+  "cold_initialization_change": "Mirror released open_laptop pre-motion get_face_prod arm selection; no policy evaluation",
+  "source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/laptop_source_v7_001/qualify_robotwin_benchmark_replay.py": "d2ba3cf8845befb7b2a0d564b9107d2958d2944332d6273a43ae5ce3d7ea05aa",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/laptop_source_v7_001/robotwin_exact_worker.py": "311d1bac3e2d7a2a570e63ee246d9d1276ac0a047cec4d4235c71f59fadbd256",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/laptop_source_v7_001/robotwin_task_state.py": "2b75129a6cd9ae73bdf168dec4565119dd425214316381ecd9724a2761ec3485",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/laptop_source_v7_001/probe_robotwin_exact_initialization.py": "b34c214f69eb26282de3d5ae9086196b4e832c4a1e5f50b9d28aa5ad14586412",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/laptop_source_v7_001/qualify_simpler_fixed_action_replay.py": "3a9268b363dc48c31e903e57c4bb6f4f40c6a32a7c2a3932aa89ccb80e8c3bc4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/laptop_source_v7_001/audit_robotwin_benchmark_replay.py": "a721862dfc28383f9653c37aef36b5d0a83712e0f2a481aa29b9edcd8ccf072a",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/laptop_source_v7_001/derivation.json": "44d1a0019ac6d243e66e31f9ce3f2cc576c6605a28702450b53a136f579b9bf6"
+  },
+  "validation": "13 relevant tests passed; simulator acceptance pending"
+}

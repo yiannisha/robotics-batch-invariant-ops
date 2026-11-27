@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "001_bottle/base13",
+        "{B}": "001_bottle/base16"
+      }
+    },
+    "instruction": "Grab the plastic soda bottle with one arm, grab the green plastic bottle with ridged bottom with the other.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/pick_dual_bottles_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "a7e3424604992b10297ae22b5ef64810a5ea6d1f05d1c0d760879fe0910defd9",
+      "physics_sha256": "da7114543c36430b501c17655736014f01fe3d7dd3ade6152d9b6da99e580a57",
+      "rng_sha256": "4015fcd765ccef87191613c3eae9322af4b0ca0fac3a7904e3f993b636688def",
+      "task_state_sha256": "770999c95d802aa55b63d3dc6713d41ebc2d4c9733a6ebdadc2ff0c7efe3f7a3",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Grab the plastic soda bottle with one arm, grab the green plastic bottle with ridged bottom with the other."
+      }
+    }
+  }
+}
