@@ -240,3 +240,17 @@ The primary 2,500-start paired stability study has not started. No numerical
 variance or paired success result is inferred from these source episodes or
 reset qualifications. Historical evidence recovery and ancillary timing do not
 gate its launch once its simulator, numerical and retention requirements pass.
+
+The subsequent `rigid_qualified_union021` checkpoint binds 32 independently
+verified reset tasks. Accepted supplemental proofs include `press_stapler`,
+`put_bottles_dustbin`, `place_can_basket` and `place_burger_fries`; the failed
+first dustbin attempt remains retained. The accepted dustbin retry covers
+three 1,700-control replays and 5,103 exact raw frames.
+
+Corpus audit 007 has independently rebuilt all 64 episodes in its immutable
+snapshot: 20,371 raw frames, 436 model-call input/action reconstructions, and
+320 selected neural inputs. All 21,563 retained file hashes were subsequently
+rechecked, as were the producer source pins and the preserved 44-episode
+prefix. The accepted scope is 64 of 200 source episodes; neither full numerical
+qualification nor paired stability is established by this audit. Append-only
+source collection continues beyond that snapshot.
