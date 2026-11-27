@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "048_stapler/base6",
+        "{B}": "Cyan",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Move the rectangular stapler with curved corners to the Cyan colored mat",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/move_stapler_pad_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "7ec9fe114a298e42c040951031f0e3fae87c5bd8674797b670fda125b6f12412",
+      "physics_sha256": "bd0e9ba67143367aa94144e8a106f39b1ca1ced72c883673e5d36ab25a05516a",
+      "rng_sha256": "fb8218dfc657ed9bd297d56890a48730fa21f7a37a533ca185b083956b6b707e",
+      "task_state_sha256": "4f1bb2ca297f6ff650d40222fe1fc01c331b4bda724308ccc8620ad2e6f08c9f",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Move the rectangular stapler with curved corners to the Cyan colored mat"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "pid": 3439484,
+  "start_ticks": "51768203",
+  "command": [
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/expert_rejection_source_v6_001/qualify_robotwin_benchmark_replay.py",
+    "--source",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin",
+    "--python",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/bin/python",
+    "--source-episodes",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/retained_seed0_controls001/episodes.jsonl",
+    "--output",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_object_stand_rigid001",
+    "--task",
+    "place_object_stand",
+    "--seed-start",
+    "100000",
+    "--repeats",
+    "3",
+    "--capture-source-task-state"
+  ],
+  "observed_utc": "2026-11-27T01:04:18.298020+00:00",
+  "model_evaluated": false,
+  "independent_audit_required": true,
+  "gpu_uuid": "GPU-17594d78-b021-bba8-5fcd-7e09d2bdf8f9",
+  "concurrent_jobs_are_not_timing_measurements": true,
+  "frozen_helper_hashes_reverified": true,
+  "launcher_sha256": "e897ff8fa68e872d9540dd537c934da7974ba5593a1cd61d225496377bcfd496"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "place_empty_cup",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 500,
+  "raw_frames_verified": 1503,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1503,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "task_action_records_verified": 0,
+  "action_source_sha256": {},
+  "rigid_body_state_frames_verified": 1503,
+  "entity_references_bound_to_physics": 0,
+  "render_only_entity_records_verified": 0,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "d7fdf724ab40887926272261c9afd7ad4a98e00069cc808f5c0c4de3c9b999e2",
+  "auditor_sha256": "6db49e8104b3a98047279b2ea6e2533167961840f99792692d0962ad52e07e7c"
+}

@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "015_laptop/base10",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Lift the laptop with glossy black display using the left arm.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/open_laptop_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "9d7de7d1acdb22bbb035e36aaa52e349bfc2ca2c0716ac33e809f9f43f8585ac",
+      "physics_sha256": "1cdf16609c9ee85bf25045f3c01e49b69f21cfefd4f032803175b1e7a2f11424",
+      "rng_sha256": "48212f52c573a57fa84a2d62c089026d8ac4a5722d9de6f7e91c5506fb1acc04",
+      "task_state_sha256": "050c4f145a680c58e03ed938b0c8080a492902be30e750680fc9d2b21814594b",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 700,
+        "eval_success": false,
+        "instruction": "Lift the laptop with glossy black display using the left arm."
+      }
+    }
+  }
+}

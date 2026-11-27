@@ -1,0 +1,21 @@
+{
+  "scope": "released_seed_fixed_action_complete_replay_qualification",
+  "model_evaluated": false,
+  "task": "place_empty_cup",
+  "seed_start": 100000,
+  "instruction_pool_limit": 100,
+  "repeats": 3,
+  "control_contract": "retained seed0 native policy controls then hold final command until task success or horizon; no policy quality claim",
+  "source_episode_sha256": "83b0d3ad35bc9df2c2c9fb9d647998194b1678e0c52dd0ad77b1cad7f5181e31",
+  "source_action_bytes_sha256": "b5023a74d00c0cef4dde047b179960265ae043b69edcc24db66fc4606617623a",
+  "source_action_count": 112,
+  "source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/frozen_helpers/qualify_robotwin_benchmark_replay.py": "df6412ff62752b88a2b4e6b14f5fa2b86dc549027d1353172515c714a5521cc4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/frozen_helpers/robotwin_exact_worker.py": "adfe27fc2aa283725ca31881dfe693b5f4dc4a0e74551722a6ac7b28286369a4",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/frozen_helpers/probe_robotwin_exact_initialization.py": "b34c214f69eb26282de3d5ae9086196b4e832c4a1e5f50b9d28aa5ad14586412",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/frozen_helpers/robotwin_task_state.py": "2b75129a6cd9ae73bdf168dec4565119dd425214316381ecd9724a2761ec3485"
+  },
+  "capture_cuda_rng": true,
+  "capture_source_task_state": true,
+  "paired_success_rate_campaign_complete": false
+}

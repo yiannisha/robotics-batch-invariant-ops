@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "021_cup/base0",
+        "{B}": "019_coaster/base0"
+      }
+    },
+    "instruction": "Pick the handheld round blue cup and position it on the small drink-protecting wooden coaster",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_empty_cup/frames/frame-000000.pt",
+      "observation_sha256": "9de57b192533740b40b202d7cbd5d5aad6a7cbf418ff8d4447cada2f046ed209",
+      "physics_sha256": "df7f2224befc9dd8e5c7e9878274176fe95797bfe4e448139b57bda760ae4f51",
+      "rng_sha256": "600da2a5db602ca58d2f8b11e007bd69e779ec3fc6817be1a9b21f84b473ea14",
+      "task_state_sha256": "c23be77444fa30c179352dbc3f7dce5860eb9dacdf5db0535a77bfe2a4f2df93",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 500,
+        "eval_success": false,
+        "instruction": "Pick the handheld round blue cup and position it on the small drink-protecting wooden coaster"
+      }
+    }
+  }
+}
