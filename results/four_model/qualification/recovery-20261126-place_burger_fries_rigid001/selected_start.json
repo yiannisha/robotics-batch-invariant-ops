@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "006_hamburg/base3",
+        "{B}": "008_tray/base2",
+        "{C}": "005_french-fries/base0"
+      }
+    },
+    "instruction": "Use both arms to place the small rectangular hamburg and the golden crispy fries inside red box on the green tray.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_burger_fries_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "e3f4975bb953bd1b45dac17b023892c515f04cdbcd95c164636529b23df55fc2",
+      "physics_sha256": "ca61c29303f82959c2b3ba2fb03b26676d92bab6ca2e37893faf53cd7fca14b8",
+      "rng_sha256": "3d7bea3a031edfad1a0fcfc24de5783dd2ed2b47842ca60f4306eeb18e8538e8",
+      "task_state_sha256": "0bdce293c7dd490b16327db8066667af9a433d8b9c45aa114a050d0bcf6ce844",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 500,
+        "eval_success": false,
+        "instruction": "Use both arms to place the small rectangular hamburg and the golden crispy fries inside red box on the green tray."
+      }
+    }
+  }
+}

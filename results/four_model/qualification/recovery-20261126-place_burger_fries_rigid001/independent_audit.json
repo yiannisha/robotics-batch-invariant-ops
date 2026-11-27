@@ -1,0 +1,22 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "place_burger_fries",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 500,
+  "raw_frames_verified": 1503,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1503,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "task_action_records_verified": 0,
+  "action_source_sha256": {},
+  "rigid_body_state_frames_verified": 1503,
+  "entity_references_bound_to_physics": 0,
+  "render_only_entity_records_verified": 0,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "4a635ef91b95fdafacf630c7bb2ceff19f384e2080b97052d046a72a31ecd37e",
+  "auditor_sha256": "a721862dfc28383f9653c37aef36b5d0a83712e0f2a481aa29b9edcd8ccf072a"
+}
