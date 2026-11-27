@@ -254,3 +254,32 @@ rechecked, as were the producer source pins and the preserved 44-episode
 prefix. The accepted scope is 64 of 200 source episodes; neither full numerical
 qualification nor paired stability is established by this audit. Append-only
 source collection continues beyond that snapshot.
+
+## Native collection exposure correction
+
+A comparison of independently rebuilt signatures from corpus audit 007 found
+that 7 of its 256 selected held-out observations had already been consumed by
+native source-policy calls. The earlier final freshness checker included old
+native request banks, diagnostics and paired requests, but omitted the new
+source collection's own model-call request bank. These selections therefore
+cannot establish fresh held-out coverage. The accepted 64-episode input/action
+reconstruction remains valid; its preliminary held-out selection is not a
+freshness seal.
+
+Versioned freshness auditor
+`scripts/audit_lingbot_heldout_observation_disjointness_v2.py` now includes the
+complete independently audited native collection request bank, verifies every
+container SHA and the exact bank roster, and excludes noise and request IDs
+from input identity. Four new tests cover noise-independent identity, changed
+and unrecorded files, and rejection of partial source audits; eight relevant
+tests passed. The full historical and 2,500-start paired audit requirements are
+unchanged.
+
+Before numerical qualification, derive a separate versioned prospective
+held-out selection from retained source frames that excludes source-inference
+inputs, independently reconstruct that selection, and preserve the existing
+producer, source episodes and preliminary selections. Keep the prescribed
+per-episode input counts and diagnostic inputs. This correction requires no
+additional inference or policy-outcome filtering. Final freshness against
+history, diagnostics and the completed paired study remains required afterward;
+missing historical evidence still does not gate the primary paired launch.
