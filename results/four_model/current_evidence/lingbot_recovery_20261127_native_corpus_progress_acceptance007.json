@@ -1,0 +1,19 @@
+{
+  "status": "partial_native_corpus_audit_bound_raw_hashes_reverified",
+  "observed_utc": "2026-11-27T01:44:35.483797+00:00",
+  "completed_native_episodes": 92,
+  "raw_frames_verified": 27362,
+  "model_calls_rebuilt": 587,
+  "selected_inputs_rebuilt": 460,
+  "audit_sha256": "71b29109d12d1b3141600805da7122b450e1a106f10cc9ae1c9c9677e549e2d3",
+  "manifest_snapshot_sha256": "0e1e9c95312c94ba3451093685a87676ed47e9dd226443819438db9fd9e2e746",
+  "retained_raw_file_count": 28996,
+  "all_raw_file_hashes_reverified": true,
+  "append_only_current_manifest_prefix_verified": true,
+  "prior_64_episode_prefix_preserved": true,
+  "current_producer_source_pins_reverified": true,
+  "complete_200_episode_corpus_accepted": false,
+  "numerical_and_heldout_acceptance_complete": false,
+  "paired_stability_measured": false,
+  "acceptance_script_sha256": "38c18d3cca9130f4983e93910ba91cfcfd34248f218e6fd91989d3ad8c1bc564"
+}

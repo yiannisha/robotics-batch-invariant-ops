@@ -356,3 +356,24 @@ and accepted evidence are unchanged. Eight relevant tests passed, including
 synthetic case generation, precision/provenance rejection and rejection of
 legacy component labels before measurement. No actual recovered-runtime source
 trace or operator qualification is claimed by this tool preparation.
+
+The original source-corpus audit 008 is accepted on its sealed 92-episode
+snapshot: 27,362 frames, 587 native model-call reconstructions and 460 selected
+inputs. All 28,996 audited retained hashes were rechecked; the prior 64-episode
+prefix and producer source pins remain intact. This advances accepted source
+reconstruction to 92 of 200 episodes. It does not establish freshness for the
+original preliminary held-out rows or renew numerical/model stability evidence.
+
+A separate guarded historical-reconstruction run has started on the observed
+idle GPU 4 while primary corrected TF32-off collection continues on GPU 3. The
+auxiliary run follows the old TF32-on constructor path solely to recover old
+request containers. Before every neural forward, it requires exact container
+SHA membership in the retained original historical authorities and durably
+records that authorization. Unmatched prepared input ends the recovery attempt
+before inference, preserving its preparation and preceding partial replay.
+Thus the permitted forward inputs are a subset of already archived historical
+inputs, not a new numerical benchmark corpus. Guard tests, including a real
+recovered container, passed; independent post-run verification is queued.
+No additional original containers, complete history coverage, or historical
+trajectory equivalence are claimed from launch. Legacy and primary evidence
+remain separate; none of this recovery gates primary paired launch.
