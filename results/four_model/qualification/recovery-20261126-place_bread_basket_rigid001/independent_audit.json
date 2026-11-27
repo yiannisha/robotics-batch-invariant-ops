@@ -1,0 +1,22 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "place_bread_basket",
+  "seed": 100000,
+  "repeats": 3,
+  "controls_per_repeat": 700,
+  "raw_frames_verified": 2103,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 2103,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "task_action_records_verified": 0,
+  "action_source_sha256": {},
+  "rigid_body_state_frames_verified": 2103,
+  "entity_references_bound_to_physics": 0,
+  "render_only_entity_records_verified": 0,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "3795eae5e85fb9a7030205f768c47939a6134f989bfb89e5c8c315b23296b80e",
+  "auditor_sha256": "a721862dfc28383f9653c37aef36b5d0a83712e0f2a481aa29b9edcd8ccf072a"
+}

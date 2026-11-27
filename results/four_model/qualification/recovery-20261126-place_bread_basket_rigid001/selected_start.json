@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "076_breadbasket/base3",
+        "{B}": "075_bread/base5",
+        "{a}": "right"
+      }
+    },
+    "instruction": "Use one arm to grab the spongy golden brown bread, drop in the rectangular light brown breadbasket.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_bread_basket_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "e36702ed71eb49424907d314d64c552b376251f43c980688242412d1532ea20e",
+      "physics_sha256": "b33b9d086a35c62c5b94d071d40f4e2f6f94c2bba7afb461ce7429a47e7a095f",
+      "rng_sha256": "b2f26db88dd33ca8eba1dc5bd15f1a2986cafc09a468b5238f711678cf3a41d2",
+      "task_state_sha256": "c5dc1f6e7cf2b8eea1717142b3a1045f67dff3cd844a52e0a7001abc554646cf",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 700,
+        "eval_success": false,
+        "instruction": "Use one arm to grab the spongy golden brown bread, drop in the rectangular light brown breadbasket."
+      }
+    }
+  }
+}
