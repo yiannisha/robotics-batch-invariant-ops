@@ -203,3 +203,40 @@ snapshot were rechecked before launch. All 44 sealed episode payloads remained
 unchanged after launch. This removes an intermediate scheduling wait, not an
 acceptance check: the complete 200-episode corpus must still pass independent
 audit before numerical qualification/primary paired acceptance.
+
+## Recovery checkpoint: November 27, 2026
+
+`lingbot_recovery_20261126_rigid_qualified_union014.json` binds 24 independently
+audited tasks under the corrected rigid-component capture contract. These are
+model-free fixed-action replay qualifications, not paired inference results.
+The append-only native source collector completed 64 of 200 source episodes.
+Independent corpus audit 007 is rebuilding that sealed 64-episode snapshot;
+44 episodes remain the latest independently accepted corpus scope until that
+audit finishes. Resume 005 runs concurrently with this intermediate audit using
+an immutable 23-task qualification snapshot. The complete 200-episode corpus
+must pass independent reconstruction before numerical input sealing.
+
+The paired runner and independent episode auditor now explicitly reject native
+simulator drift, horizon differences or outcome differences when singleton and
+dynamic inference issue identical commands. This closes an acceptance gap; it
+is not a measured batching result. The relevant 72-test suite passed. A separate
+source and recorded-frame check confirms dual-arm drift uses actual simulated
+end-effector link poses. Benchmark `joint_action.vector` contains drive targets;
+actual articulation qpos is retained separately in the physics snapshots.
+
+The first supplemental `put_bottles_dustbin` reset attempt failed at seed 100000
+inside the released expert's `play_once`, before policy evaluation. Its raw
+attempt is retained. The released evaluator rejects such expert candidates,
+whereas the earlier reset qualifier stopped on non-`UnStableError` exceptions.
+Versioned qualifier v2 now records the exact stderr byte range and hash for
+released expert failures; independent replay auditor v6 verifies those bytes
+and distinguishes expert exceptions from instrumentation/reset errors. Four
+new rejection tests and 31 existing simulator tests passed. The retry starts
+again at seed 100000 and retains every candidate; no policy-outcome filtering
+is introduced. This retry is not accepted until three complete exact replays
+and independent audit finish. Existing live frozen helpers are unchanged.
+
+The primary 2,500-start paired stability study has not started. No numerical
+variance or paired success result is inferred from these source episodes or
+reset qualifications. Historical evidence recovery and ancillary timing do not
+gate its launch once its simulator, numerical and retention requirements pass.

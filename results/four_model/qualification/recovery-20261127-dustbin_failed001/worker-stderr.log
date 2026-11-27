@@ -1,0 +1,8 @@
+/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/lib/python3.10/site-packages/sapien/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Traceback (most recent call last):
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/visual_source_v5_001/robotwin_exact_worker.py", line 106, in main
+    info = env.play_once()
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/put_bottles_dustbin.py", line 116, in play_once
+    left_action[1][0].target_pose[2] -= delta_dis
+IndexError: list index out of range

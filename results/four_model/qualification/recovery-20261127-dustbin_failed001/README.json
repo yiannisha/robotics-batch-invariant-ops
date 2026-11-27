@@ -1,0 +1,13 @@
+{
+  "status": "failed_reset_qualification_attempt_retained_not_accepted",
+  "task": "put_bottles_dustbin",
+  "seed": 100000,
+  "model_evaluated": false,
+  "reason": "Released expert play_once raised IndexError; legacy qualification helper stopped instead of following released evaluator rejection.",
+  "retained_raw_directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/put_bottles_dustbin_rigid001",
+  "new_attempt": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/put_bottles_dustbin_rigid002",
+  "source_coverage_unchanged": true,
+  "qualification_protocol_change": "Versioned qualifier v2 and auditor v6 bind expert exception stderr byte ranges and reject instrumentation/reset errors.",
+  "validation": "35 relevant tests passed, including four expert rejection tests",
+  "full_model_campaign_complete": false
+}
