@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "047_mouse/base2",
+        "{B}": "074_displaystand/base4",
+        "{a}": "right"
+      }
+    },
+    "instruction": "Use the right arm to place the hand-sized black-gray mouse on the rectangular base displaystand",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_object_stand_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "96341d01da9ac0b90fd89747adf12fe54df6fec95a02426ccb118091545c7992",
+      "physics_sha256": "84738565f9a19633d2ffbe63409a3cbfdcc9c7910c17ec93a1465fa9c82e5bbc",
+      "rng_sha256": "b9d6301b2c4b5eed33e615a61f915d7d8c901d7f17d7bea75e1539a4509d8d96",
+      "task_state_sha256": "9564b1da164478b4d0a88e827dfbb93758858641366ebfdd865671e6078e5617",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Use the right arm to place the hand-sized black-gray mouse on the rectangular base displaystand"
+      }
+    }
+  }
+}
