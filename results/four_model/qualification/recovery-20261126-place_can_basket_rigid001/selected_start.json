@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "071_can/base3",
+        "{B}": "110_basket/base1",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Pick the palm-sized red metal Coca-Cola can, put it in the yellow rectangular basket with dual grips, then lift the yellow rectangular basket with dual grips.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_can_basket_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "0afd178b089b7f504b9df42c280af1a8b08f6de4ba4ed2cb2eef3a516f621e03",
+      "physics_sha256": "773d33e0e00eb0168127ecfcd653b46257dfa0aac08f663e84f49e75ef9c6262",
+      "rng_sha256": "a199a46e5df63bde1c34b1efe212fd8169e7ea30f487d09f3273e0aab5ad6fc6",
+      "task_state_sha256": "795a3214718f8c2c8edff18efb4173267fe0d04d4574f2f8676be567d352b128",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 700,
+        "eval_success": false,
+        "instruction": "Pick the palm-sized red metal Coca-Cola can, put it in the yellow rectangular basket with dual grips, then lift the yellow rectangular basket with dual grips."
+      }
+    }
+  }
+}
