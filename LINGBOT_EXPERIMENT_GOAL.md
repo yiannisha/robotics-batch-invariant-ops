@@ -343,3 +343,16 @@ gate. A schema check using the actual emitted constant fields passes that gate,
 and a false exclusion guarantee is rejected. Changing noise/request IDs leaves
 the six-key prepared identity unchanged. Nine relevant tests passed. These are
 interface/identity checks only, not a freshness seal or numerical freeze.
+
+Corrected operator-tool preparation now supports newly generated v2-adapter
+B1/B8 traces directly. The previous builders and component sweep guards required
+the legacy adapter label, whereas the renewed traces must retain the corrected
+adapter identity. The unified corrected builder requires actual TF32-off flags,
+the pinned checkpoint/configuration and matching source provenance. Versioned
+linear/remaining qualifiers and sweeps, remaining-component audit and full
+inventory audit preserve that identity; generic reduction measurement and
+independent linear auditing remain reusable without modification. Legacy code
+and accepted evidence are unchanged. Eight relevant tests passed, including
+synthetic case generation, precision/provenance rejection and rejection of
+legacy component labels before measurement. No actual recovered-runtime source
+trace or operator qualification is claimed by this tool preparation.

@@ -1,0 +1,29 @@
+{
+  "scope": "corrected operator tool preparation and synthetic-fixture tests only; no renewed operator measurements",
+  "verified_utc": "2026-11-27T01:35:15.975523+00:00",
+  "source_sha256": {
+    "scripts/build_lingbot_corrected_operator_cases.py": "885107eddf1a37d58754189e2147968088805827a577ccb7e07ca4a641d2c0de",
+    "scripts/qualify_lingbot_exact_linear_ops_v2.py": "e18222eb153c0689620b5323ec36330833ef737742158dde9a8e1440d981a64b",
+    "scripts/qualify_lingbot_exact_remaining_ops_v2.py": "e8d321a742c2d7ef35945f604283dcc13f03ff0e8bf7195429025fb4d45cd2c2",
+    "scripts/run_lingbot_exact_linear_sweep_v2.py": "ac568fd861404247d86d7462abbc628917322ccd5090d2384064facb4f083d4f",
+    "scripts/run_lingbot_exact_remaining_sweep_v2.py": "a05296f332fb1d2bbb4d1a89fb122ca1bd13af2ae3bc9259e5af6cb887b1f117",
+    "scripts/audit_lingbot_exact_remaining_ops_v2.py": "676dcca906deb5af1556465324ec7c1a4326299cd578a6652f133a081b206f88",
+    "scripts/audit_lingbot_exact_operator_coverage_v3.py": "5fea4504a252cc93807fd331f6b72b983c7121fe3affba9f9316039c0fb6353b",
+    "scripts/test_lingbot_corrected_operator_cases.py": "d18a17d4fbd0d16abc64f9d147e343ac5251db506aad7b78aa70886a460958b3"
+  },
+  "adapter": "scripts.model_invariance.adapters.lingbot_robotwin_exact_v2",
+  "actual_trace_tf32_off_required": true,
+  "legacy_adapter_and_mixed_provenance_rejected": true,
+  "source_case_families": [
+    "linear",
+    "request_reductions",
+    "shared_pooling_and_rotary_matmul"
+  ],
+  "relevant_tests_passed": 8,
+  "existing_legacy_sources_preserved": true,
+  "model_or_operator_kernel_sources_modified": false,
+  "actual_recovered_runtime_B1_B8_traces_created": false,
+  "operator_measurements_created": 0,
+  "full_traced_operator_qualification_complete": false,
+  "performance_qualified": false
+}
