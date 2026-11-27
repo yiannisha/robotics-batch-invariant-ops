@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "107_soap/base2",
+        "{B}": "057_toycar/base1",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Place the soap bar shaped rectangular on the right of the compact toycar with rotating wheels.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_a2b_right_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "2cf1dcb817596411f85b55f32074261dc9d7269687a4dc318761f2230f296a4d",
+      "physics_sha256": "71a0338cea3e17ec84fff987a8583b826cc1a8dd02658a5efb7d4a824778826d",
+      "rng_sha256": "29ce74bb59455750b6f992becca3f1714ebed0bab1e1c41045fe0cf81ad10352",
+      "task_state_sha256": "441d673a8579f8154e08dd516a750b5a6ded80abbf9546031648d6b7a6710e79",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Place the soap bar shaped rectangular on the right of the compact toycar with rotating wheels."
+      }
+    }
+  }
+}
