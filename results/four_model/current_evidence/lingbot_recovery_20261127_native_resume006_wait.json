@@ -1,0 +1,15 @@
+{
+  "status": "waiting_on_verified_original_collector_before_explicit_resume",
+  "waiter_pid": 3516101,
+  "waiter_start_ticks": "51786401",
+  "predecessor_pid": 2391549,
+  "predecessor_start_ticks": "51505442",
+  "expected_sealed_episode_count": 92,
+  "observed_utc": "2026-11-27T01:07:48.615753+00:00",
+  "waiter_script_sha256": "922f5fe166eaa55606f3982cff3abff16e13b341a1aedeb870f4122aac3b2bcd",
+  "qualification_snapshot": "latest independently accepted rigid-qualified union copied and checked after predecessor terminates",
+  "complete_source_audit_before_numerical_acceptance_required": true,
+  "next_collector_not_yet_launched": true,
+  "next_snapshot_audit_not_yet_launched": true,
+  "full_model_campaign_complete": false
+}
