@@ -1,0 +1,523 @@
+{
+  "scope": "independently verified explicit rigid-body and task-state fixed-action replay; no model evaluation",
+  "physics_capture_contract": "rigid_components_v2_entities_v4",
+  "observed_utc": "2026-11-27T01:11:24.509478+00:00",
+  "prescribed_tasks": [
+    "lift_pot",
+    "hanging_mug",
+    "stack_bowls_three",
+    "scan_object",
+    "handover_block",
+    "click_bell",
+    "put_object_cabinet",
+    "open_microwave",
+    "stack_blocks_three",
+    "place_shoe",
+    "adjust_bottle",
+    "beat_block_hammer",
+    "blocks_ranking_rgb",
+    "blocks_ranking_size",
+    "click_alarmclock",
+    "dump_bin_bigbin",
+    "grab_roller",
+    "handover_mic",
+    "move_can_pot",
+    "move_pillbottle_pad",
+    "move_playingcard_away",
+    "place_cans_plasticbox",
+    "place_container_plate",
+    "place_dual_shoes",
+    "place_empty_cup",
+    "place_fan",
+    "place_mouse_pad",
+    "place_object_basket",
+    "place_object_scale",
+    "place_object_stand",
+    "place_phone_stand",
+    "move_stapler_pad",
+    "open_laptop",
+    "pick_diverse_bottles",
+    "pick_dual_bottles",
+    "place_a2b_left",
+    "place_a2b_right",
+    "place_bread_basket",
+    "place_bread_skillet",
+    "place_burger_fries",
+    "place_can_basket",
+    "press_stapler",
+    "rotate_qrcode",
+    "shake_bottle_horizontally",
+    "shake_bottle",
+    "stack_blocks_two",
+    "stack_bowls_two",
+    "stamp_seal",
+    "turn_switch",
+    "put_bottles_dustbin"
+  ],
+  "qualified_tasks": {
+    "lift_pot": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/lift_pot",
+      "independent_audit_sha256": "f4b4fb918f6fb16f1bb7a556a61641dc4e21c880ff0296456f09ed05c4878ac7",
+      "raw_replays_sha256": "6d7b4a8e69c936c74e2e3bacd4906574acd85c85ef66a6c0b13d0aa2a5c1866b",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "c7e518020c9121065bed1aa2a11e2fc35b45b9197245f451aee69c5d7a87439d"
+    },
+    "dump_bin_bigbin": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/dump_bin_bigbin_rigid004",
+      "independent_audit_sha256": "fba8882e26054d03fd28af17090e0b3742fdbd7372c818a01c3f8d2787250d0e",
+      "raw_replays_sha256": "56ab9af895f14c4ffaa6f499f089af425ace23daa7a13213c9bc5bbc830dddbe",
+      "seed": 100002,
+      "raw_frames_verified": 1803,
+      "controls_per_repeat": 600,
+      "runtime_sha256": "19b7b50f8d5f993160b451c7641087c1d958adb99f9badb865fcb55f0e8ac811"
+    },
+    "turn_switch": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/turn_switch_rigid001",
+      "independent_audit_sha256": "6c654e3d346cdcd49ea907a11c43f34d490fb058a3112cb75c4dfc59e34b2bda",
+      "raw_replays_sha256": "ea1046465b4c63976024618d8730f0f8b9136cc2b691f93d78def2791560b7d1",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "961213e049e6cd66e5ea73e8808d52a4901a678f4818ae53950b211a1c1a01e7"
+    },
+    "hanging_mug": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/hanging_mug",
+      "independent_audit_sha256": "1d647cd011a236deff51adf81a7da6ce2c8a0662d0552f1441b59f71f2d651be",
+      "raw_replays_sha256": "20e5b5e98cfa135387adc2eb320ee9f5482fbd6f1760e7e3d33854d436f4887e",
+      "seed": 100000,
+      "raw_frames_verified": 2703,
+      "controls_per_repeat": 900,
+      "runtime_sha256": "a530d996ce570a5a0e6d1c86bd30533bad74f7947d7acd18373619dc98805f89"
+    },
+    "stack_bowls_three": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/stack_bowls_three",
+      "independent_audit_sha256": "6c642b8e9755af1e508d0cba1b492c6ad0343965e22942447633d1d39d39bfe7",
+      "raw_replays_sha256": "3e1c91d102bc0bbfef3d7cac9e8f87058b18151eeef45159d1f8938181cfb714",
+      "seed": 100000,
+      "raw_frames_verified": 3603,
+      "controls_per_repeat": 1200,
+      "runtime_sha256": "6897e805488a1d11af860e96d469849f9b8276f4d2ee34257cd4f85ef4bc7ccb"
+    },
+    "stamp_seal": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/stamp_seal_visual002",
+      "independent_audit_sha256": "67ea6a81a34344cb862f3dec5423759603bc83dc4e0c8f48cf55a64df7110234",
+      "raw_replays_sha256": "ff37cde59698d94034c3929552b51456e0613dfc9d179b493254e92d25cec616",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "27b6d3131190770240927d18b7426e97103c6cc455b1986aa10c5d8ab72fc5bb"
+    },
+    "scan_object": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/scan_object",
+      "independent_audit_sha256": "e05164bc5a86d579fcc39f8747c94fe13440411bfc75c1c26cd67c940e096c3c",
+      "raw_replays_sha256": "d6c4e0344a272b8b0cd2657bae46d2427bda2696cf732e1220189584856fbd02",
+      "seed": 100006,
+      "raw_frames_verified": 1503,
+      "controls_per_repeat": 500,
+      "runtime_sha256": "9aae116bf2e2ddc0f8e6b808019762521349a0477a3648ff28c12387f266108a"
+    },
+    "stack_bowls_two": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/stack_bowls_two_rigid001",
+      "independent_audit_sha256": "0456444e22e13988c60594721dfd971c82756183da204c5e0d8f07d2eee9f6d5",
+      "raw_replays_sha256": "c195186254af4029fd38b79fe47104a27081998d7aee5e9a15d1b6443bb077ba",
+      "seed": 100000,
+      "raw_frames_verified": 2703,
+      "controls_per_repeat": 900,
+      "isolated_source_variant": true,
+      "runtime_sha256": "9c2b17900018d09156f4b28cbc5d5d5d734e36f09a1fbf2e90da894b3b58337f"
+    },
+    "handover_block": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/handover_block",
+      "independent_audit_sha256": "82581b9db53c3954a7de1d1f31ade69a9aa5b447c048c6f76436eeb0404e1f9f",
+      "raw_replays_sha256": "099cb8887840cef24d757d9174fb19ba467d1cf792babf68a8632961b27e9236",
+      "seed": 100000,
+      "raw_frames_verified": 2403,
+      "controls_per_repeat": 800,
+      "runtime_sha256": "e9958469c1ce6c91f8cc02fa0bf8d9d07c450c6e3933e6f393be0d3823926d7a"
+    },
+    "click_bell": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/click_bell",
+      "independent_audit_sha256": "e9a4b4552e14245af2c7572b8ab014d31d313044fdba805367b2f557527afc36",
+      "raw_replays_sha256": "3dbd4d6ac0538dbe966735ac147f3ae250890a37748cd9ccc76f2141afc493fa",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "fc345079c5b454883c4018c5a5641dfcea09e20c7da59493ae751a728d8ebf02"
+    },
+    "stack_blocks_two": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/stack_blocks_two_rigid001",
+      "independent_audit_sha256": "6bf6eb03a3e25cf82a78cb879d277aef0658017baba6719c80427725ea48bad3",
+      "raw_replays_sha256": "85f510c0d49eca17dfed84d5d18c56ccec9e29baf23b36f766f488651be526a2",
+      "seed": 100000,
+      "raw_frames_verified": 2403,
+      "controls_per_repeat": 800,
+      "isolated_source_variant": true,
+      "runtime_sha256": "dcab19176fd509c40f8446462fc1ff03ed70aa9487098dd3710d397351bde764"
+    },
+    "put_object_cabinet": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_rigid_v4_001/put_object_cabinet",
+      "independent_audit_sha256": "a31c252de7570c6e6b0a1486f8d019f7645751f6a983ec113ce03b1fa597a39c",
+      "raw_replays_sha256": "9381671aa26991146e2248f723c4b9378fba1f4d0fa72f0f67807d9791ac82a1",
+      "seed": 100026,
+      "raw_frames_verified": 2103,
+      "controls_per_repeat": 700,
+      "runtime_sha256": "231da46bf469a05668cdd4da045f49e15293b9a2d5dded20437f7ebcdffa8b5e"
+    },
+    "open_microwave": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/open_microwave",
+      "independent_audit_sha256": "384afea23091c5d38c4500dfa9ddca84d9880a5f726f2f48221bf5ddc40a1cb2",
+      "raw_replays_sha256": "6d9925a428e253546a2fc089d6f709fc3a4fd9d51eccd567b0833527756ad9ff",
+      "seed": 100000,
+      "raw_frames_verified": 4503,
+      "controls_per_repeat": 1500,
+      "runtime_sha256": "75d0aedd70e8d07548ae2a88a4661747c28d1f9fc5ceed48dc3242aba4412793"
+    },
+    "stack_blocks_three": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/stack_blocks_three",
+      "independent_audit_sha256": "4bca39a89d9ca50c25598ffd0c6f8d3f3164ba41dfdeef7aa83d2440411328b4",
+      "raw_replays_sha256": "e6d9d90c401ff4cba2c0c1d542460f63b0005855c2c95a98bdcc83e5a676c87a",
+      "seed": 100000,
+      "raw_frames_verified": 3603,
+      "controls_per_repeat": 1200,
+      "runtime_sha256": "4151b07eda4e1d2dad54c3a966b0aab0ad72bfd45fa430573c17627984eade10"
+    },
+    "shake_bottle": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/shake_bottle_rigid001",
+      "independent_audit_sha256": "527f4167fecd0d15fd290e8ddfd1da898ac7a1d3703cadeeb5af391d7dda59dd",
+      "raw_replays_sha256": "975d9d6ae4183be81a737efecb1a3ac01978aaf69828c36c4e8868fedb8f9df5",
+      "seed": 100000,
+      "raw_frames_verified": 2103,
+      "controls_per_repeat": 700,
+      "isolated_source_variant": true,
+      "runtime_sha256": "82e0de1fbab126f3657a29f73dd051718a7d3d8bf0e796b84c1da104dd2347f4"
+    },
+    "place_shoe": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_shoe",
+      "independent_audit_sha256": "7030c60739e6c1e11a91db1f3141b78af5720e6c87304be2bf82d52c555d1d94",
+      "raw_replays_sha256": "42dd8f19949f603168090630e720b2cd6d7d61d3cff27c480c9c4d953421ab89",
+      "seed": 100000,
+      "raw_frames_verified": 1503,
+      "controls_per_repeat": 500,
+      "runtime_sha256": "e56e9dd37ee7dcac7139aea1ea517c54633e465dfe0a171f1a710c06f764a579"
+    },
+    "adjust_bottle": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/adjust_bottle",
+      "independent_audit_sha256": "ab51cb32b856ad62dfc382c59e032533ed1b6534082f379002b214d4a24e7daf",
+      "raw_replays_sha256": "bd9145861a41f515271e52918074083d8d35da966599e237fb0fb78b7428cb87",
+      "seed": 100001,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "2a3690fd7fae43e8b888e01d2813d06824955d1574d3ce51ebeafcb93cd88c6d"
+    },
+    "beat_block_hammer": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/beat_block_hammer",
+      "independent_audit_sha256": "0b37898ba5b4b36aa3e17402ae0aeeca203eaa17cdd53e7a393c8eb38b426159",
+      "raw_replays_sha256": "1ecb4074bd25fd2a72f827ecc6b48e967a84fda2c331fa702e56be8e3fdd221b",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "04d6c6b894ca2a6a9b00e41d4f9ab04af9874bf6cfb82c3fab64fe298e108d37"
+    },
+    "shake_bottle_horizontally": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/shake_bottle_horizontally_rigid001",
+      "independent_audit_sha256": "01360e391b1f3b15ce5d0ca4afbb12437e83c0cc98539d2bc8cb55316f1b1a51",
+      "raw_replays_sha256": "e893b0f4a5e0228e949333d0ce282b55941d4113befcfb70292e3366baf02029",
+      "seed": 100000,
+      "raw_frames_verified": 2103,
+      "controls_per_repeat": 700,
+      "isolated_source_variant": true,
+      "runtime_sha256": "1c73991cfc97be2e0995ee50832706cf43a969bf55a8e3518f7b5b345f81187a"
+    },
+    "blocks_ranking_rgb": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/blocks_ranking_rgb",
+      "independent_audit_sha256": "08f9c4c3a6ecbc02f91f599a14b39c10db35c72f1c05c5d6c73254c1ea992eeb",
+      "raw_replays_sha256": "cee7c06df39c437c87c341ab95e048227afb62a65bf27f85e27753be602bee78",
+      "seed": 100000,
+      "raw_frames_verified": 3603,
+      "controls_per_repeat": 1200,
+      "runtime_sha256": "e71b0adb4b687ab2d3d37973929e5992002071dc26e3f58e33fd6077ca1c4750"
+    },
+    "blocks_ranking_size": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/blocks_ranking_size",
+      "independent_audit_sha256": "95833c5cf4c036bfe3f7288d2dce1cc789349f452e5ad974ab267cae791dea41",
+      "raw_replays_sha256": "c38e6b524f57f0353604029c2884fe80dd80599d5eb634d526d42286487ee71f",
+      "seed": 100000,
+      "raw_frames_verified": 3603,
+      "controls_per_repeat": 1200,
+      "runtime_sha256": "0d51642c02feefdb486650adf16bf33cd7ce3c354f121c33a140d5cd2ad0c277"
+    },
+    "click_alarmclock": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/click_alarmclock",
+      "independent_audit_sha256": "8dcd34cd39f433481e290c35b57f13887a7f79fc86c62b53c5ad24fb1406c6fa",
+      "raw_replays_sha256": "6782aeeca2cc075de4073cf05134e89cc064337554a008f56d592ad1f6ae52fb",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "cb97babf0830ee80f4f366ba9ed6f8b8890653c0809c58e32dbda93da8ac0b1a"
+    },
+    "rotate_qrcode": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/rotate_qrcode_rigid001",
+      "independent_audit_sha256": "a6e7f412556a84b6a0c65e4054c14c48a9dc38263f9ae3a42a38b469e47fa5c4",
+      "raw_replays_sha256": "23f27501337244362717c7ca1fdd7c39ee795780b48c6cb4420297920ad87452",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "02b6d30a7b055efdff65c8ce9fb1e1858968c114762aa16a22661b3c46380293"
+    },
+    "grab_roller": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/grab_roller",
+      "independent_audit_sha256": "2fcb591a8d2e9e16cc4fc595e874984ae18646f16386cd06135433fbd6d39879",
+      "raw_replays_sha256": "c2bef87d8bb066fd01a6336305accd03630eb201c586d0faa4d7f48a85a1bbba",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "6d41c61f7cd02072a2dd667773ed26f437f42ebe6728d865b4b41cd4def5505e"
+    },
+    "handover_mic": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/handover_mic",
+      "independent_audit_sha256": "252091a921e696ac1690cd43521db4d1b5806ebc476e3b710ab18560aff3b224",
+      "raw_replays_sha256": "967af6d07e3fc5e8cbf11de73518691d4adce17108d6332ea5100ccb4501cdd3",
+      "seed": 100000,
+      "raw_frames_verified": 1803,
+      "controls_per_repeat": 600,
+      "runtime_sha256": "13e84820b0df4a7ba9494661bb33c1fbf4c5dfe658dd7504bcaa3581dc75b6d1"
+    },
+    "press_stapler": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/press_stapler_rigid001",
+      "independent_audit_sha256": "a409a23572c9e220bcd8b4c3e3d26da7f7c33b620c17f3f70b541b9b233f00e4",
+      "raw_replays_sha256": "6f21a2920624b567f88c3f2d81ce89e761536966aee59b3c54c620e255a202d5",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "e24f3ccd8f7a8c441973984eea17a25acca59f040de3ff68ff2724f002ce4636"
+    },
+    "move_can_pot": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/move_can_pot",
+      "independent_audit_sha256": "ddbae8ac12afdba5d3b9917939b9b190fbee7a0aaae71653c5890fcc43e5d16a",
+      "raw_replays_sha256": "8a70c41da818bf06f0850b25005aa43021eb4fcd26ee2f819c482c0655f0803b",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "b5a00cf91ecef30d6808050c4a6fea5b90232213485f60634d8ce409bf3d43ac"
+    },
+    "put_bottles_dustbin": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/put_bottles_dustbin_rigid002",
+      "independent_audit_sha256": "dbacba71071c44b29d4d166f4cc9affe92c23b0f0ca4dec7e3388ef3169f5533",
+      "raw_replays_sha256": "4699e89435354eaca5bbe0ffbcc4b9c4562fd05c0394272cce2e35b18741f657",
+      "seed": 100000,
+      "raw_frames_verified": 5103,
+      "controls_per_repeat": 1700,
+      "isolated_source_variant": true,
+      "runtime_sha256": "2cf7f35c5dbb2ff0fcd30094461e3dfb3e3b2d91e4c6cb38e7bbe36f1eec1507"
+    },
+    "move_pillbottle_pad": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/move_pillbottle_pad",
+      "independent_audit_sha256": "2cf16ed5729f1d2302225b05230c13a2c40814ffbde9324e5cafd78321164fc8",
+      "raw_replays_sha256": "37654aa026ea7f72e3ae89c2c1ae1a1b1da7caa0cc422bd34559ba94aac763e3",
+      "seed": 100001,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "adec25ba073a4cdf58a847f7a99eb056203dcff7b0192cb0f128847bf3e9d495"
+    },
+    "place_can_basket": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_can_basket_rigid001",
+      "independent_audit_sha256": "1e073654d84bb568af85e443fd2ca837ee85359a76bc425e15c354201a6cc0e2",
+      "raw_replays_sha256": "862a9bf4b34dbdf2b51a95b38565d28a525b5d681259e013868f88b6d3d0ace5",
+      "seed": 100000,
+      "raw_frames_verified": 2103,
+      "controls_per_repeat": 700,
+      "isolated_source_variant": true,
+      "runtime_sha256": "b39fd2369bd2d04e66f768aaeec0826bc67aeb6e0a877c6cdc76d0d312d2b896"
+    },
+    "place_burger_fries": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_burger_fries_rigid001",
+      "independent_audit_sha256": "d29847f7fa2ccf405b90ecaaf7e17ee20983575f4020df440e384a9ab8b2aab6",
+      "raw_replays_sha256": "4a635ef91b95fdafacf630c7bb2ceff19f384e2080b97052d046a72a31ecd37e",
+      "seed": 100000,
+      "raw_frames_verified": 1503,
+      "controls_per_repeat": 500,
+      "isolated_source_variant": true,
+      "runtime_sha256": "2a51270636fd581fc873844766809da20a31f2294498a0969b72bc6a568fb42d"
+    },
+    "move_playingcard_away": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/move_playingcard_away",
+      "independent_audit_sha256": "5fea985c7b53f62bf09e91a2b891a2bbc8663efa7b3334f5fc1536972570bb04",
+      "raw_replays_sha256": "743440065f8a7dfeacd299cf282dfff0582bbdc110ca2072194981664e5d7577",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "cb6f3b60687266361c2fb152462f025a1af8ec708b52aaf26d5bde64d5f99ffe"
+    },
+    "place_bread_skillet": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_bread_skillet_rigid001",
+      "independent_audit_sha256": "ec38a40dbfb763b1da3c46a16f5c18072da310040711eb81c14eba3faac1b728",
+      "raw_replays_sha256": "31877ec730a9ee03503fd429db1ab049576e0b1c9903de3a116212d791ce56f2",
+      "seed": 100004,
+      "raw_frames_verified": 1503,
+      "controls_per_repeat": 500,
+      "isolated_source_variant": true,
+      "runtime_sha256": "5d6adda5cf5306879222a234a85d8c098c41b2333e805e0adb24800ff2f33a8c"
+    },
+    "place_bread_basket": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_bread_basket_rigid001",
+      "independent_audit_sha256": "e501037c7c4e462ce519fa7eeaa62a93cd4578cfe89237a4d09a40d77ded4c27",
+      "raw_replays_sha256": "3795eae5e85fb9a7030205f768c47939a6134f989bfb89e5c8c315b23296b80e",
+      "seed": 100000,
+      "raw_frames_verified": 2103,
+      "controls_per_repeat": 700,
+      "isolated_source_variant": true,
+      "runtime_sha256": "6ce191cc07c7aa5ef8856f7f97b05ae046c02a012fbb590fd1292a85b5874553"
+    },
+    "place_cans_plasticbox": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_cans_plasticbox",
+      "independent_audit_sha256": "d31c2215d855d8606f3a4fa6afd54432ae10ec1ce17d9850f083034a5cb60999",
+      "raw_replays_sha256": "cbe912e3cbdd5acc636002fdb4f6dbf5c1aae9ede1b5eebdc0d5945b044cf2f1",
+      "seed": 100000,
+      "raw_frames_verified": 2403,
+      "controls_per_repeat": 800,
+      "runtime_sha256": "a556736ed613494cb517b05181354f98bbf8400848a59b7292fa28508f81ba20"
+    },
+    "place_a2b_right": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_a2b_right_rigid001",
+      "independent_audit_sha256": "157761e25cf5ab5ac4cc8939f0d81e9d39c215e2363c416e52e1020e828b87e5",
+      "raw_replays_sha256": "aa49d8c9445034c1a15f8a51151db6dec3410e97f6e1eb3d497482e5915c77c4",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "84a310c5a6cac3a4e22de6f5fce799fb7c2ce78262106d1e039a1345cdb10045"
+    },
+    "place_container_plate": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_container_plate",
+      "independent_audit_sha256": "cbe3ce16d33369979eb203a770bde477d67684477604386d643078c27f3f51b9",
+      "raw_replays_sha256": "d69c7952c2703c252ab6e8634c3ae2685d2e1549baa36138de4edf94cf6cef79",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "29bf7ca18e34436b904bdbaba0aaf896ecef42e4c08ac883d70d38d048c7c89c"
+    },
+    "place_a2b_left": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_a2b_left_rigid001",
+      "independent_audit_sha256": "03ff9cb9ecacf2f16f9d567cd080bf29fd7b251db2aba591151dac0b45f441b5",
+      "raw_replays_sha256": "412156555f9d2f9664ba8c9b0eaf2e18100fd8367bb5b52970ae413cb200eb45",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "2c3e7b04702925dbec1cb758d2d30d5ae14fc6bb4bd5886b95a02ab3a999c796"
+    },
+    "pick_dual_bottles": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/pick_dual_bottles_rigid001",
+      "independent_audit_sha256": "641b57bdc528ef886308da9768ef6d0ed49dde85cab67be9b58e7fc6f6d6259a",
+      "raw_replays_sha256": "12d77f9e4c9ea150a652b1e8466d4f4a644a83273d688dd0bbdbeda663900f94",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "8c7a365df8d29286c84c77070654d110259bba1d35d5cab2f98f88cc8afa93cb"
+    },
+    "pick_diverse_bottles": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/pick_diverse_bottles_rigid001",
+      "independent_audit_sha256": "2b2713ea0f4b642fb2661e149511f4fd104e81a55b1c659e4c6268e1d7ac738f",
+      "raw_replays_sha256": "3637f787e47b53892a2272e31da1a60bd468abb4fc0f83223a8bbdc816904ded",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "56ed46b7b954baea6b4c525cc37d9a729a2fb822f9b85447180f51b9079ec446"
+    },
+    "place_dual_shoes": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_dual_shoes",
+      "independent_audit_sha256": "409c566e2f4a7236e8ae0f5018080434416d48468d9568eae06ad6c7c8cecbf1",
+      "raw_replays_sha256": "b34a30c77c1ce9e450da6ec26256a153f0c8c14e67539eeefc515f0a66901c20",
+      "seed": 100001,
+      "raw_frames_verified": 1803,
+      "controls_per_repeat": 600,
+      "runtime_sha256": "a001e12911f7c90babcecf817e460b9acce5737f416998560a1b79f46d8828af"
+    },
+    "place_empty_cup": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_empty_cup",
+      "independent_audit_sha256": "dc7427fbeadee4b8943e8f7d12d65ce2958cd5dfc266b3edab545897de8a1d9c",
+      "raw_replays_sha256": "d7fdf724ab40887926272261c9afd7ad4a98e00069cc808f5c0c4de3c9b999e2",
+      "seed": 100000,
+      "raw_frames_verified": 1503,
+      "controls_per_repeat": 500,
+      "runtime_sha256": "bf174149d94fed6157003eb43b57ba0e763c0b016d9163c36d703d71b8f64c69"
+    },
+    "move_stapler_pad": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/move_stapler_pad_rigid001",
+      "independent_audit_sha256": "4061a4b4e7a5ce4e8f4985fe8ab4e6b972ddceeea8c01ff1c3d8f80027519346",
+      "raw_replays_sha256": "9d551a2f29693797c82016aec8af11ba7ff7aca192f8f9f26082bc958e1bd06d",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "5a5120381f93a236b60dc52caa09f9cf143bc81f6679e149aff81feffce6326e"
+    },
+    "open_laptop": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/open_laptop_rigid001",
+      "independent_audit_sha256": "b6b23b36ed71eedb9ca45defec938c74513f779f8b1046f6986ab9a20ff93829",
+      "raw_replays_sha256": "83dc56390e374abe6dfa333b1b633c203666776f0f8eb1602a7432f4e2ed56a9",
+      "seed": 100000,
+      "raw_frames_verified": 2103,
+      "controls_per_repeat": 700,
+      "isolated_source_variant": true,
+      "runtime_sha256": "cd0907b0e7f7bab467aca70418411e7c421627444549231f3a6a70ae45566b73"
+    },
+    "place_fan": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_fan",
+      "independent_audit_sha256": "3e116d190a25a89260a8149bd72c43585bf1fcf9c9ff2545fbf522dcdd5f5092",
+      "raw_replays_sha256": "16077ffb1d08907c6e71b93be0182b679263a3a4671df9f0f80ec989903c0a74",
+      "seed": 100002,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "a17e81a8c1d7a0008e47131cd1b299af2c86ba008d157d44852d37c69ddfe2e6"
+    },
+    "place_phone_stand": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_phone_stand_rigid001",
+      "independent_audit_sha256": "cfdfb0806693aca765ea7f8baa303d815fb71659c8516153ade81b06dd011824",
+      "raw_replays_sha256": "c5a143a715a59b85e38aaa47e8686506cbf6a2c59c1612a9822baaa31de23a42",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "6c86259719da3dbb2d6395c609c3a5bf3dc50a698bc34d81d019f695e8815c36"
+    },
+    "place_object_stand": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_object_stand_rigid001",
+      "independent_audit_sha256": "9f1bcff35a92dc550c51329bb1e7ec84cd526700cf5c71fde66a252e9712e09a",
+      "raw_replays_sha256": "a1a629a240fc76abc1ae5363ae52ad03f5cb85583dcfd066c9ec3ee9f11dce5d",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "isolated_source_variant": true,
+      "runtime_sha256": "747c0016708754455761735cab7674ce51ee5b05844b714d617d5d19c424e76b"
+    },
+    "place_mouse_pad": {
+      "directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_mouse_pad",
+      "independent_audit_sha256": "79786e5446e3992987d95a90c6067838c56b57077ecc271572b3a1a4741fa487",
+      "raw_replays_sha256": "7b35707b8ac95de2e23a4359016f80b7204004c482e4214bc3bca091f8c8c44a",
+      "seed": 100000,
+      "raw_frames_verified": 1203,
+      "controls_per_repeat": 400,
+      "runtime_sha256": "39a1c1c28beb270c64f68482bacf880454a72b3d25b691b69acf55e436165fbb"
+    }
+  },
+  "qualified_task_count": 48,
+  "missing_tasks": [
+    "place_object_basket",
+    "place_object_scale"
+  ],
+  "full_released_roster_qualified": false,
+  "failed_attempts_retained": {},
+  "source_roster_snapshot": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/rigid_union032_source_roster.json",
+  "source_roster_snapshot_sha256": "b2f954554943346fad477e2dcddb6f82d01c6f6588467a0e9c50a303309a8d99",
+  "model_evaluated": false,
+  "full_model_campaign_complete": false
+}

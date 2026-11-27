@@ -304,3 +304,24 @@ before numerical sealing; final historical/paired freshness remains separate.
 
 `rigid_qualified_union030` binds 44 independently audited reset tasks, including
 the accepted cold laptop initialization repair, stapler-pad and empty-cup tasks.
+
+## Full reset qualification recovered
+
+`rigid_qualified_union033` binds all 50 prescribed tasks to independently audited
+three-repeat cold-reset fixed-action replays: 150 complete repetitions and
+93,150 checked frames. Initial observations, controller/task/RNG state, complete
+rigid-body state and replay trajectories match exactly within each task's
+repeats. This is model-free simulator qualification, not paired policy results.
+The scale task required a versioned cold pre-motion arm selection restoration;
+its failed first attempt remains retained. The final scale and basket replay
+audits passed. The superseded roster driver was stopped after its unique work
+was accepted, with its partial duplicate basket attempt retained.
+
+The corrected native collector completed its 92-episode segment and resumed
+with the immutable 48-task snapshot that existed when its predecessor gate
+opened. Its separate 92-episode reconstruction audit is running. The full
+two-task reset proofs are now available for the subsequent explicit resume;
+all 200 source episodes remain required. Latest independently accepted source
+coverage is still 64 episodes, and the separate 64-episode held-out reselection
+audit remains pending. No new numerical or paired stability completion is
+inferred from full reset qualification.

@@ -1,0 +1,12 @@
+{
+  "scope": "all50 model-free cold-reset fixed-action replay qualification; not paired policy evidence",
+  "qualified_tasks": 50,
+  "independent_fixed_action_repeats": 150,
+  "raw_frames_verified": 93150,
+  "qualified_union_sha256": "646c7ab388a6aad37e14b02d78a783a71900c349da99a9221de250bc8bf7b3f0",
+  "all_initial_states_and_fixed_action_trajectories_exact": true,
+  "rigid_body_physics_and_task_state_included": true,
+  "model_evaluated": false,
+  "primary_paired_study_complete": false,
+  "failed_and_partial_attempts_retained": true
+}
