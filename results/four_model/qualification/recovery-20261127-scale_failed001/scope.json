@@ -1,0 +1,7 @@
+{
+  "status": "failed_cold_initialization_attempt_retained_not_accepted",
+  "model_evaluated": false,
+  "reason": "Missing released pre-motion arm_tag during first simulated control",
+  "raw_directory": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_object_scale_rigid001",
+  "replacement_attempt": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_object_scale_rigid002"
+}

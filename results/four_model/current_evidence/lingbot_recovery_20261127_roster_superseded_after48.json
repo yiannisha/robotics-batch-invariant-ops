@@ -1,0 +1,20 @@
+{
+  "status": "owned_roster_superseded_by_48_accepted_tasks_and_two_separate_attempts",
+  "observed_utc": "2026-11-27T01:12:47.029850+00:00",
+  "pid": 1258312,
+  "start_ticks": "51223845",
+  "process_group": 1258312,
+  "signal": "SIGTERM",
+  "reason": "Avoid duplicate basket replay and obsolete scale worker; separate basket and corrected scale attempts are live.",
+  "qualified_task_count": 48,
+  "remaining_tasks": [
+    "place_object_basket",
+    "place_object_scale"
+  ],
+  "roster_snapshot_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/logs/task_roster_visual_v5_002_superseded_snapshot.json",
+  "roster_snapshot_sha256": "b2f954554943346fad477e2dcddb6f82d01c6f6588467a0e9c50a303309a8d99",
+  "accepted_union_sha256": "67a164f87d06042dc10e7942d362eb20cde712d68f6484991067bdbbe2facc29",
+  "raw_evidence_deleted": false,
+  "partial_attempts_retained": true,
+  "full_50_task_reset_qualification_complete": false
+}

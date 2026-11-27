@@ -1,0 +1,18 @@
+/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/envs/robotwin/lib/python3.10/site-packages/sapien/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+[2026-11-27 01:10:53.006] [svulkan2] [error] OIDN Error: unsupported device type: CUDA
+[2026-11-27 01:10:53.020] [svulkan2] [error] OIDN Error: invalid handle
+[2026-11-27 01:10:53.036] [svulkan2] [error] OIDN Error: invalid handle
+[2026-11-27 01:10:53.057] [svulkan2] [error] OIDN Error: invalid handle
+[2026-11-27 01:11:14.858] [svulkan2] [error] OIDN Error: unsupported device type: CUDA
+[2026-11-27 01:11:14.882] [svulkan2] [error] OIDN Error: invalid handle
+[2026-11-27 01:11:14.922] [svulkan2] [error] OIDN Error: invalid handle
+[2026-11-27 01:11:14.978] [svulkan2] [error] OIDN Error: invalid handle
+Traceback (most recent call last):
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/expert_rejection_source_v6_001/robotwin_exact_worker.py", line 129, in main
+    env.take_action(action,action_type='qpos')
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/_base_task.py", line 1657, in take_action
+    if self.check_success():
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/place_object_scale.py", line 135, in check_success
+    check_arm = (self.is_left_gripper_open if self.arm_tag == "left" else self.is_right_gripper_open)
+AttributeError: 'place_object_scale' object has no attribute 'arm_tag'

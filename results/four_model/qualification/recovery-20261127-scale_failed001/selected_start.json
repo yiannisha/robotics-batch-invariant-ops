@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "072_electronicscale/base5",
+        "{B}": "050_bell/base1",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Grab the bell with raised round top and put it on the lightweight electronicscale for measuring weight",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/place_object_scale_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "1025a5218e39b70f0057a9c7d103fdb352e7bc57ed36bf9c3a6c46a078765b00",
+      "physics_sha256": "59ffe7db125f8d12ea1539fffc64fbeaccbcb97bc3deaf9b70d60c6c7622f835",
+      "rng_sha256": "91cadb82a43620579de81bea6ad56a2f33307f18efafd8006bb26f0f7ccb0784",
+      "task_state_sha256": "343a0117b18906feabb4a6de4edda5dd66bbfe807d626ae8eb0d3f34489f5c8e",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Grab the bell with raised round top and put it on the lightweight electronicscale for measuring weight"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/expert_rejection_source_v6_001/qualify_robotwin_benchmark_replay.py", line 111, in <module>
+    if __name__=='__main__':main()
+  File "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/expert_rejection_source_v6_001/qualify_robotwin_benchmark_replay.py", line 97, in main
+    if not response['ok']:raise RuntimeError(response['error'])
+RuntimeError: 'place_object_scale' object has no attribute 'arm_tag'
