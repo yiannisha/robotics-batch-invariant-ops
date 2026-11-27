@@ -1,0 +1,47 @@
+{
+  "scope": "updated partial-corpus storage projection; not full campaign acceptance or a per-frame upper bound",
+  "observed_utc": "2026-11-27T00:23:34.215704+00:00",
+  "completed_source_episodes": 65,
+  "source_manifest_snapshot_sha256": "11ce0beee05fa716bac33e249560cf1e92e5f47e5f43a9526a63c58f56620b94",
+  "available_bytes": 12040671784960,
+  "minimum_prelaunch_reserve_bytes": 1500000000000,
+  "minimum_prelaunch_reserve_currently_satisfied": true,
+  "observed_retained_categories": {
+    "frames": {
+      "files": 20479,
+      "bytes": 13534959863,
+      "median_bytes": 652087,
+      "max_bytes": 912091
+    },
+    "requests": {
+      "files": 439,
+      "bytes": 735530778,
+      "median_bytes": 1668896,
+      "max_bytes": 2083102
+    },
+    "outputs": {
+      "files": 439,
+      "bytes": 4792698,
+      "median_bytes": 10916,
+      "max_bytes": 10984
+    },
+    "selected_requests": {
+      "files": 322,
+      "bytes": 527324850,
+      "median_bytes": 1623525.5,
+      "max_bytes": 2071305
+    }
+  },
+  "full_horizon_frames_without_deduplication": 12420000,
+  "full_horizon_policy_calls": 248000,
+  "frame_projection_at_observed_max_bytes": 11328170220000,
+  "request_output_projection_at_observed_max_bytes": 519333328000,
+  "limitations": [
+    "Only source-corpus tasks observed so far; unseen task state and images can change compressed frame sizes.",
+    "Policy call projection assumes the current 50-control execution chunk.",
+    "No deduplication credit taken; metadata, diagnostics and other campaign evidence need additional space.",
+    "Reassess before full paired launch and monitor during retention; preserve rejected attempts and existing model evidence."
+  ],
+  "full_campaign_storage_upper_bound_proven": false,
+  "paired_stability_measured": false
+}
