@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "071_can/base3",
+        "{B}": "062_plasticbox/base3",
+        "{C}": "071_can/base2"
+      }
+    },
+    "instruction": "Grab the small red soda can, drop it into the medium-sized smooth plasticbox. Repeat for the cylindrical can with smooth surface.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_cans_plasticbox/frames/frame-000000.pt",
+      "observation_sha256": "ee7e99a6be36ee0830a5605b7a6efb0ac8ada77fabe02215496cd8ff36a26e93",
+      "physics_sha256": "292d249a3b85d38f45f0a4b817ac228f9462c3f552af32c794222b4cfd322951",
+      "rng_sha256": "3d7bea3a031edfad1a0fcfc24de5783dd2ed2b47842ca60f4306eeb18e8538e8",
+      "task_state_sha256": "23e0cd9cdec6930ab49a24e5f73e1ad3ed9017c13a2c85ff169cd626bbd31c32",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 800,
+        "eval_success": false,
+        "instruction": "Grab the small red soda can, drop it into the medium-sized smooth plasticbox. Repeat for the cylindrical can with smooth surface."
+      }
+    }
+  }
+}
