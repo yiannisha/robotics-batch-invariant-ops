@@ -283,3 +283,24 @@ per-episode input counts and diagnostic inputs. This correction requires no
 additional inference or policy-outcome filtering. Final freshness against
 history, diagnostics and the completed paired study remains required afterward;
 missing historical evidence still does not gate the primary paired launch.
+
+The retained-frame selector `scripts/reselect_lingbot_source_holdout.py` now
+produces a separate derived corpus with the original episodes and diagnostics
+unchanged. It keeps eight held-out anchors per episode and chooses the nearest
+unexposed prepared input, with lower-index ties, recording every rejected
+candidate. Source native calls, all diagnostic inputs and earlier held-out
+selections are excluded by the complete six-key neural-input identity. No
+neural inference or policy-outcome selection is used. The original producer and
+its preliminary selections remain retained.
+
+A 64-episode producer smoke retained all 320 selected inputs and changed exactly
+seven held-out rows; metadata screening found zero source/diagnostic collisions
+and 256 distinct held-out identities. This is producer evidence, not accepted
+freshness. Independent auditor v3 is reconstructing the source and selections,
+including each rejected nearest candidate, from actual retained tensors and
+official CPU preprocessing. Eleven relevant tests passed. The full 200-episode
+source corpus must still be collected, reconstructed, reselected and audited
+before numerical sealing; final historical/paired freshness remains separate.
+
+`rigid_qualified_union030` binds 44 independently audited reset tasks, including
+the accepted cold laptop initialization repair, stapler-pad and empty-cup tasks.
