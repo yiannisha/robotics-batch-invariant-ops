@@ -1,0 +1,35 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "large block",
+        "{B}": "medium block",
+        "{C}": "small block",
+        "{a}": "left",
+        "{b}": "right",
+        "{c}": "left"
+      }
+    },
+    "instruction": "Place large block, medium block, and small block in order at the center.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/blocks_ranking_size/frames/frame-000000.pt",
+      "observation_sha256": "1553f1f373d0f3e383beae52aa3d4f53c0fb697b166d9cd6da9e077b60e1eb34",
+      "physics_sha256": "97f01f565f96cb03da562463b2af90d63e7ace4efa8082b4c34a7ef20bf4e8a8",
+      "rng_sha256": "38b18d08f1b2f49a33e948476ee9cf5299aa604f418505f18240cd9aa428a518",
+      "task_state_sha256": "9e59d93b4353401fc67aae98ab792c5d25155908f953e025e555969fb8cbf5a1",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 1200,
+        "eval_success": false,
+        "instruction": "Place large block, medium block, and small block in order at the center."
+      }
+    }
+  }
+}

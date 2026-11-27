@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "070_paymentsign/base2",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Catch the black stand with angled display on the table and pick it up.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/rotate_qrcode_rigid001/frames/frame-000000.pt",
+      "observation_sha256": "4486cb332bf847cb3cfb13d5bc39c141e01f2907c6ec76116d4d201325067837",
+      "physics_sha256": "c73e31098b725ca6ce6d79428f3c626cea5199e8d4accd2c0dcc2068c430149a",
+      "rng_sha256": "654586d27f6a144b8608326623d7e9288675d629fe4e544a160c89c7fc3a71ac",
+      "task_state_sha256": "ec68a535369396a9f4242c385450632632d240fb36da7fba58110bdd12055895",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Catch the black stand with angled display on the table and pick it up."
+      }
+    }
+  }
+}

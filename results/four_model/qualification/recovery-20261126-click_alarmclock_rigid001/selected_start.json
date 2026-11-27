@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "046_alarm-clock/base1",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Click the top button of the alarm-clock with large numbers",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/click_alarmclock/frames/frame-000000.pt",
+      "observation_sha256": "052c092087ecf36d1903f918a0ad2562783d188a35a4ce20ff0d973537326dfc",
+      "physics_sha256": "200a33935452ca44df16fbe76f6235dc8378a2b523dcd87842a42b96e14ad157",
+      "rng_sha256": "654586d27f6a144b8608326623d7e9288675d629fe4e544a160c89c7fc3a71ac",
+      "task_state_sha256": "72108b41014a04dfc950883b8c70041d319c5900ff6970d0517e046dde10bef7",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Click the top button of the alarm-clock with large numbers"
+      }
+    }
+  }
+}
