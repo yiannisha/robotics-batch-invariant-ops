@@ -1,0 +1,31 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "081_playingcards/base2",
+        "{a}": "left"
+      }
+    },
+    "instruction": "Pick up the gold text on playing cards box and move it outward.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/move_playingcard_away/frames/frame-000000.pt",
+      "observation_sha256": "4b4de8cb4abfd7625522b4902c0d9c0545ebae62c85f8d6982b23f714cb1ae6c",
+      "physics_sha256": "29f75120e107f09afa6aaea7ac7845105ed239f16754c2fada97dc500d6d0d1e",
+      "rng_sha256": "654586d27f6a144b8608326623d7e9288675d629fe4e544a160c89c7fc3a71ac",
+      "task_state_sha256": "43c64f933be2efd4d7dc4aba56d76c3fd0f44ee716458f25e4479dbce891b51d",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Pick up the gold text on playing cards box and move it outward."
+      }
+    }
+  }
+}
