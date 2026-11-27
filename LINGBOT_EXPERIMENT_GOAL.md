@@ -377,3 +377,15 @@ recovered container, passed; independent post-run verification is queued.
 No additional original containers, complete history coverage, or historical
 trajectory equivalence are claimed from launch. Legacy and primary evidence
 remain separate; none of this recovery gates primary paired launch.
+
+The first combined recovery snapshot now retains 191 distinct original
+campaign-002 request containers, 89 beyond the earlier 102-container snapshot.
+Each recovered file and contributing source path was independently rechecked
+against the original historical audit's container SHA-256; duplicate source
+paths are counted once. The combined collector requires that exact historical
+authority file, preserves the earlier recovered set, and performs no inference.
+This is partial request-byte recovery, not complete historical coverage or
+historical trajectory equivalence. Guarded reconstruction continues separately.
+Metadata reconciliation also confirms that all 82 independently audited
+campaign-001 request containers overlap the later campaign-002 authority; this
+does not prove the remaining earlier-bank request roles are recovered.
