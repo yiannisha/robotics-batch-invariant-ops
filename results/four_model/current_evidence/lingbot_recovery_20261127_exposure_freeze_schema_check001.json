@@ -1,0 +1,13 @@
+{
+  "scope": "report-schema/identity compatibility check only; no final freshness or freeze acceptance",
+  "verified_utc": "2026-11-27T01:29:41.450942+00:00",
+  "auditor_sha256": "ac35f7dd56607bbcb209f1dc54f7e4a3e018a8a15416ee4ccc185dd317eb699a",
+  "freeze_gate_sha256": "2fa448cff6acb3ff2fa63b4013a889c42efe1f24e0c7c3ac7e93a6aaf3076c53",
+  "actual_emitted_report_constants_accepted_by_existing_freeze_gate": true,
+  "changed_noise_and_request_id_do_not_change_six_key_identity": true,
+  "false_exclusion_guarantee_rejected": true,
+  "relevant_tests_passed": 9,
+  "neural_inference_executed": false,
+  "final_freshness_accepted": false,
+  "numerical_freeze_accepted": false
+}

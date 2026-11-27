@@ -335,3 +335,11 @@ diagnostic inputs. Episodes and diagnostic rows are preserved byte-for-byte.
 This accepts the correction method on the partial snapshot, not full numerical
 input qualification or historical/paired freshness. The full 200-episode
 correction and independent reconstruction remain required.
+
+The final exposure checker is now version 3. It preserves the complete paired,
+historical and native-source-bank checks and additionally emits the exact
+`noise_and_request_ids_excluded` field required by the existing numerical-freeze
+gate. A schema check using the actual emitted constant fields passes that gate,
+and a false exclusion guarantee is rejected. Changing noise/request IDs leaves
+the six-key prepared identity unchanged. Nine relevant tests passed. These are
+interface/identity checks only, not a freshness seal or numerical freeze.
