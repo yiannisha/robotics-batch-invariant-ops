@@ -1,0 +1,22 @@
+{
+  "status": "complete_fixed_action_replay_independently_verified",
+  "task": "place_dual_shoes",
+  "seed": 100001,
+  "repeats": 3,
+  "controls_per_repeat": 600,
+  "raw_frames_verified": 1803,
+  "initial_state_and_full_trajectories_exact": true,
+  "cpu_and_cuda_rng_verified": true,
+  "source_defined_task_state_frames_verified": 1803,
+  "task_owned_callback_records_verified": 0,
+  "callback_source_sha256": {},
+  "task_action_records_verified": 0,
+  "action_source_sha256": {},
+  "rigid_body_state_frames_verified": 1803,
+  "entity_references_bound_to_physics": 0,
+  "render_only_entity_records_verified": 0,
+  "model_evaluated": false,
+  "full_50_task_qualification_complete": false,
+  "raw_replays_sha256": "b34a30c77c1ce9e450da6ec26256a153f0c8c14e67539eeefc515f0a66901c20",
+  "auditor_sha256": "6db49e8104b3a98047279b2ea6e2533167961840f99792692d0962ad52e07e7c"
+}

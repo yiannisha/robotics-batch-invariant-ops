@@ -1,0 +1,31 @@
+{
+  "seed": 100001,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "041_shoe/base1",
+        "{B}": "007_shoe-box/base0"
+      }
+    },
+    "instruction": "Grab two the white shoe, point tips left, place in the rectangular Nike box for shoes.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_dual_shoes/frames/frame-000000.pt",
+      "observation_sha256": "f84d538064105ac1cf21d1d449993340501064c195d5d8384c20ff73005e1300",
+      "physics_sha256": "95bf3c523ddc85c05ee464e33f6cf6992ea304bfe2a7f1280c2debb9e3340abd",
+      "rng_sha256": "b07d19c5142ee46cd93c617b8ed24ccab949aa3aea19af1cb8cbbd468ffaa31a",
+      "task_state_sha256": "89509e472b59247ebff4a829afc6146ef0ebd293c1850e0259cfb34e149647a7",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 600,
+        "eval_success": false,
+        "instruction": "Grab two the white shoe, point tips left, place in the rectangular Nike box for shoes."
+      }
+    }
+  }
+}
