@@ -56,6 +56,10 @@ def compare_episodes(episodes):
         require(digest(a['trajectory'][:first+1])==digest(b['trajectory'][:first+1]),'Native divergence lacks identical physical prefix')
         ac=a['calls'][a['steps'][first]['policy_call']];bc=b['calls'][b['steps'][first]['policy_call']]
         require(ac['target_input_sha256']==bc['target_input_sha256'],'Native first action divergence lacks equal-input attribution')
+    else:
+        require(len(a['steps'])==len(b['steps']),'Identical native commands have different horizons')
+        require(digest(a['trajectory'])==digest(b['trajectory']) and a['success']==b['success'],
+                'Identical native commands produced different simulator trajectories/outcomes')
     return dict(all_same_condition_repeats_exact=True,invariant_actions_and_trajectories_exact=True,native_first_action_divergence=first)
 
 

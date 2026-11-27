@@ -56,6 +56,22 @@ def reconstruct_physical_chunk(server,full,call):
     return physical
 
 
+def verify_native_causal_prefix(left,right):
+    first=next((i for i,(x,y) in enumerate(zip(left['steps'],right['steps']))
+        if np.asarray(x['action'],dtype=np.float32).tobytes()!=np.asarray(y['action'],dtype=np.float32).tobytes()),None)
+    common=min(len(left['steps']),len(right['steps'])) if first is None else first
+    require(digest(left['trajectory'][:common+1])==digest(right['trajectory'][:common+1]),
+            'Native divergence physical prefix differs')
+    if first is None:
+        require(len(left['steps'])==len(right['steps']),'Identical native commands have different horizons')
+        require(left['success']==right['success'],'Identical native commands have different outcomes')
+    else:
+        require(left['calls'][left['steps'][first]['policy_call']]['target_input_sha256']==
+                right['calls'][right['steps'][first]['policy_call']]['target_input_sha256'],
+                'Native divergence inputs differ')
+    return first
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('directory','qualification-union','source','checkpoint','qwen-metadata','output'):p.add_argument('--'+name,type=Path,required=True)
@@ -163,10 +179,7 @@ def main():
         require(digest(left['trajectory'])==digest(right['trajectory']) and digest(left['steps'])==digest(right['steps']),'Invariant trajectory differs')
         require([(r['normalized_sha256'],r['physical_sha256']) for r in left['calls']]==[(r['normalized_sha256'],r['physical_sha256']) for r in right['calls']],'Invariant output chunk differs')
         left,right=episodes['native_singleton'],episodes['native_dynamic']
-        first=next((i for i,(x,y) in enumerate(zip(left['steps'],right['steps'])) if np.asarray(x['action'],dtype=np.float32).tobytes()!=np.asarray(y['action'],dtype=np.float32).tobytes()),None)
-        if first is not None:
-            require(digest(left['trajectory'][:first+1])==digest(right['trajectory'][:first+1]),'Native divergence physical prefix differs')
-            require(left['calls'][left['steps'][first]['policy_call']]['target_input_sha256']==right['calls'][right['steps'][first]['policy_call']]['target_input_sha256'],'Native divergence inputs differ')
+        first=verify_native_causal_prefix(left,right)
         require(summary['native_first_action_divergence']==first and all(summary['success'][name]==e['success'] for name,e in episodes.items()),'Producer summary differs from reconstructed evidence')
         blocks.append(dict(task=task,initialization=initial,seed=seed,native_first_action_divergence=first,outcomes={name:episodes[name]['success'] for name in CONDITIONS}))
     complete=seen=={(task,i) for task in tasks for i in range(50)}

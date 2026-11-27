@@ -1,0 +1,26 @@
+{
+  "scope": "source/recorded-frame semantics check only; no singleton-versus-batched measurements",
+  "source_sha256": {
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/_base_task.py": "448f7152b65cb9102217cf5463aa821d72810ca56f63d5a797ec7bd43e23e101",
+    "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/sources/robotwin/envs/robot/robot.py": "3dcd80acc8cab489a4c5edb507cc460dab1724be0226b8d5c4c1b218dee605cb",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/measure_lingbot_pilot_stability.py": "bbb1b93bdb460651b2d95d49784eaa65ae3c3cd0c6cfa054eff33d326cd7a687",
+    "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/scripts/summarize_lingbot_full_paired_stability.py": "de6566a5cb27f127391df05ba8824844372ca34506f1c677bb2b44c1f25b7476"
+  },
+  "end_effector_pose_source_chain": [
+    "raw.observation.endpose",
+    "Base_Task.get_arm_pose",
+    "Robot.get_left_ee_pose/get_right_ee_pose",
+    "Robot._trans_endpose",
+    "left_ee/right_ee.global_pose"
+  ],
+  "pose_frame": "released benchmark end-effector frame; rigid transform of actual simulated link pose",
+  "joint_action_input_semantics": "command drive targets; physical qpos is separately retained in physics.articulations",
+  "checked_raw_frame": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/adjust_bottle/frames/frame-000002.pt",
+  "checked_raw_frame_sha256": "6265db8500fb2642c48e6d88dea5aaf70abfa8b1c49a26f34498d5705d00e888",
+  "checked_replay_sha256": "bd9145861a41f515271e52918074083d8d35da966599e237fb0fb78b7428cb87",
+  "frame_index": 1,
+  "articulation_qpos_to_drive_target_max_absolute_difference": [
+    0.0017578618135303259
+  ],
+  "paired_stability_measured": false
+}
