@@ -1,0 +1,67 @@
+{
+  "status": "partial_campaign001_historical_containers_recovered_by_original_sha256",
+  "scope": "Nine old campaign001 request roles backed by original bytes also recovered for campaign002; not nine additional unique containers",
+  "authority_path": "/home/hadjiyiannis_3_gmail_com/batch-invariance-research/robotics-batch-invariant-ops/results/four_model/current_evidence/lingbot_native_corpus_partial_audit.json",
+  "authority_sha256": "b3134e2aece77a3ad009498186fa5f31552c46d2a79e7a3a992cf3e89434eaa5",
+  "independently_audited_source_request_count": 82,
+  "recovered_campaign001_request_roles": 9,
+  "new_unique_containers_beyond_campaign002_recovery": 0,
+  "request_files": [
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/01e70d0dab534373fe8bf596e88bf92e0c4269c3c04d3757b705c39c21f752f0.pt.gz",
+      "original_sha256": "f3b755bdb28cf3c5410ca2d5a99be6c010c1f3186a2611aaf4148ea3cba9e065",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/01e70d0dab534373fe8bf596e88bf92e0c4269c3c04d3757b705c39c21f752f0.pt.gz",
+      "also_recovered_for_campaign002": true
+    },
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/0d6002eaaf34a9a5997c7f254dc527c4fd9e823dc0983fd440ca0d1847951bb5.pt.gz",
+      "original_sha256": "725cb1302bcb77734ac027b71a5ff470746733386f15d3ffd33c6aa397a3deb7",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/0d6002eaaf34a9a5997c7f254dc527c4fd9e823dc0983fd440ca0d1847951bb5.pt.gz",
+      "also_recovered_for_campaign002": true
+    },
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/35d4ceeef2ba6cf99dea395a98da6ff60480e0eb97c12668d64eeefe07ec1423.pt.gz",
+      "original_sha256": "e157a6692e5b03872955717a1793fc7b57dfea47c7fcfe4ac67f5464174dffa6",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/35d4ceeef2ba6cf99dea395a98da6ff60480e0eb97c12668d64eeefe07ec1423.pt.gz",
+      "also_recovered_for_campaign002": true
+    },
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/409d0d7d662cc274e8b634bb82317ae4ffaf628f0512146049bf933c6aa2b6a1.pt.gz",
+      "original_sha256": "d4267081bf27bdfdeb1e34b003f080cf1b58ff3941700fac041723469d800acc",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/409d0d7d662cc274e8b634bb82317ae4ffaf628f0512146049bf933c6aa2b6a1.pt.gz",
+      "also_recovered_for_campaign002": true
+    },
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/44b43edb52b4b37a6ca82812c2298868276b0a26ed67fca95ab13f9f6a2efa4c.pt.gz",
+      "original_sha256": "5d3150c14d4d371a3879308f8c4d7050074458eb3c5eed85f1efd16e9b080a52",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/44b43edb52b4b37a6ca82812c2298868276b0a26ed67fca95ab13f9f6a2efa4c.pt.gz",
+      "also_recovered_for_campaign002": true
+    },
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/468f3a9d3799808873ec20ff8ef5abdaaf431ce56d8c9ed102140a1267b2390e.pt.gz",
+      "original_sha256": "2faaa1bfc2be0be5aa36519bb94528a395c2b00a67f982a4dca859f1299b9657",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/468f3a9d3799808873ec20ff8ef5abdaaf431ce56d8c9ed102140a1267b2390e.pt.gz",
+      "also_recovered_for_campaign002": true
+    },
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/5034e17d248ddd96ecf630308ae79f52fa2a3b2cd452b9c5730c77b351e8abd6.pt.gz",
+      "original_sha256": "4f1ccf8a4a6dea642155576f054810cc845915b09ab999def536aff344de798e",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/5034e17d248ddd96ecf630308ae79f52fa2a3b2cd452b9c5730c77b351e8abd6.pt.gz",
+      "also_recovered_for_campaign002": true
+    },
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/d4f0dc2e35038b6b8f14a64951dfd8c40929b42bc5b7e5cd412619abf037272b.pt.gz",
+      "original_sha256": "d6498814d35b7cd8b74e15fcc2b1570337a058fbd599de7549b56f49cb7ca728",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/d4f0dc2e35038b6b8f14a64951dfd8c40929b42bc5b7e5cd412619abf037272b.pt.gz",
+      "also_recovered_for_campaign002": true
+    },
+    {
+      "original_path": "/scratch/hadjiyiannis_3_gmail_com/pi0-libero/four-model-campaign/replay/lingbot-robotwin-campaign-001/requests/fe5d4815abd917bd5085933c5416d6919a28129d7830cab028feeefe9517fb16.pt.gz",
+      "original_sha256": "9e478387145443d9c5a384859d7ad4e144498b481f439669052298de67bec094",
+      "recovered_path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/history_recovery/campaign001_current_matches001/requests/fe5d4815abd917bd5085933c5416d6919a28129d7830cab028feeefe9517fb16.pt.gz",
+      "also_recovered_for_campaign002": true
+    }
+  ],
+  "neural_inference_performed": false,
+  "complete_historical_exposure_coverage": false
+}
