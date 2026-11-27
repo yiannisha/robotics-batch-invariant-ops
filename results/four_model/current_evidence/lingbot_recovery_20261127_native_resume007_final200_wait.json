@@ -1,0 +1,16 @@
+{
+  "status": "waiting_on_verified_48_task_collector_before_final_all50_resume",
+  "waiter_pid": 3801122,
+  "waiter_start_ticks": "51858347",
+  "predecessor_pid": 3745962,
+  "predecessor_start_ticks": "51844329",
+  "expected_predecessor_episodes": 192,
+  "required_qualification_tasks": 50,
+  "required_final_source_episodes": 200,
+  "final_independent_audit_require_complete": true,
+  "waiter_script_sha256": "8890a470d1550b19dfcaf1126d269f0f5db0ed17b0fd02fe5fe7c9c21a64afe4",
+  "observed_utc": "2026-11-27T01:19:41.392873+00:00",
+  "next_collector_launched": false,
+  "final_source_audit_launched": false,
+  "full_model_campaign_complete": false
+}
