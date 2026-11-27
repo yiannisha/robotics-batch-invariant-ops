@@ -1,0 +1,32 @@
+{
+  "seed": 100000,
+  "selection": {
+    "eligible": true,
+    "episode_info": {
+      "cluttered_table_info": [],
+      "texture_info": {
+        "wall_texture": null,
+        "table_texture": null
+      },
+      "info": {
+        "{A}": "003_plate/base0",
+        "{B}": "002_bowl/base3",
+        "{a}": "right"
+      }
+    },
+    "instruction": "Grab container with the small smooth brown-rimmed bowl, place it on the smooth round plate for serving.",
+    "canonical": {
+      "path": "/scratch/hadjiyiannis_3_gmail_com/lingbot-recovery-20261126/qualification/task_roster_visual_v5_002/place_container_plate/frames/frame-000000.pt",
+      "observation_sha256": "17154f9e2410e62a2106f2abac4f0d51ad18c88faa9ac0aaea86f51acea89e05",
+      "physics_sha256": "51988cb49beaf572dbea17bd001654de64165ce6804090e23fcc5ad5d76f9923",
+      "rng_sha256": "7a3dccbaf0fbf36198685049bcfda6d483a65cb2f2c977cbbdfab3d3d6bfb587",
+      "task_state_sha256": "9752640491ff8ad4bb3d2cfc5a6a6a250bc7781e5c4e03fe5349c5d04ef0279f",
+      "controller": {
+        "take_action_count": 0,
+        "step_limit": 400,
+        "eval_success": false,
+        "instruction": "Grab container with the small smooth brown-rimmed bowl, place it on the smooth round plate for serving."
+      }
+    }
+  }
+}
