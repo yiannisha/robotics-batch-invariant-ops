@@ -325,3 +325,13 @@ all 200 source episodes remain required. Latest independently accepted source
 coverage is still 64 episodes, and the separate 64-episode held-out reselection
 audit remains pending. No new numerical or paired stability completion is
 inferred from full reset qualification.
+
+The corrected-selection smoke passed independent reconstruction on its complete
+64-episode scope: 20,371 frames, 436 native calls, all 320 selected inputs and
+each nearest-candidate rejection trace. All 21,563 audited retained file hashes
+were rechecked after the audit. Exactly seven held-out rows changed; the 256
+held-out identities are distinct and disjoint from native source calls and
+diagnostic inputs. Episodes and diagnostic rows are preserved byte-for-byte.
+This accepts the correction method on the partial snapshot, not full numerical
+input qualification or historical/paired freshness. The full 200-episode
+correction and independent reconstruction remain required.

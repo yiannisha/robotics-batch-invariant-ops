@@ -1,0 +1,19 @@
+{
+  "status": "partial_64_episode_derived_selection_independently_rebuilt_and_raw_hashes_reverified",
+  "observed_utc": "2026-11-27T01:26:10.254166+00:00",
+  "episodes": 64,
+  "selected_inputs": 320,
+  "heldout_inputs": 256,
+  "changed_heldout_rows": 7,
+  "source_episodes_and_diagnostic_inputs_preserved": true,
+  "native_and_diagnostic_collision_count": 0,
+  "raw_file_count": 21563,
+  "all_audited_raw_hashes_reverified": true,
+  "audit_sha256": "92812126f2e094edca3fa92a0003872fa661f11f117884dc58da081ed85b3bfa",
+  "manifest_snapshot_sha256": "ad3136fb51feb76ef8f6b6ba3281c30a9937e472d962bae94668d9ae544e7f9d",
+  "neural_inference_executed": false,
+  "full200_numerical_input_qualification_complete": false,
+  "final_historical_and_paired_freshness_pending": true,
+  "primary_paired_stability_measured": false,
+  "acceptance_script_sha256": "580bc0a89e09dc54bf395cc5f97779b279c10ddc30e79eec5fd5eb2328b47a9d"
+}
